@@ -24,31 +24,31 @@ prioritized feature list for v1 prototype. each item is **implement → test →
 ## phase 1 — connector framework (the spine for all 11 tools)
 
 - [x] **F1.1** `lib/connectors/base.ts` — `Connector` interface, `ToolDefinition` type, registration pattern (`lib/connectors/registry.ts`)
-- [x] **F1.2** mock data loader — `lib/connectors/seed-loader.ts` reads `data/seed/<tool>.json`, validates against zod schema, caches in memory
+- [x] **F1.2** mock data loader — `lib/connectors/seed-loader.ts` reads `data/seed/<size>/<tool>.json`, validates against zod schema, caches by `(baseDir, size, connectorId)`
 - [ ] **F1.3** sync-state tracker (in-memory for now, db-backed later)
-- [ ] **F1.4** zod schema convention — every connector exports `<tool>.schema.ts`
+- [x] **F1.4** zod schema convention — every connector exports `<tool>.schema.ts` (reference: `bloomerang.schema.ts`)
 
 ## phase 2 — seed data: one coherent fictional org
 
-- [ ] **F2.1** master entity graph: "Rivertown Community Foundation" — staff, donors, programs, grants, vendors, board, partners. ONE source of truth.
-- [ ] **F2.2** generator script: `scripts/seed.ts` produces all 11 connector json files from the master graph. Cross-references guaranteed consistent.
-- [ ] **F2.3** seed: bloomerang (1.2K donors, 2.8K donations, 15K touchpoints)
-- [ ] **F2.4** seed: salesforce npsp (200 contacts, 80 accounts, 350 opps)
-- [ ] **F2.5** seed: m365 (30 staff, 1500 emails, 200 calendar events)
-- [ ] **F2.6** seed: zoom (30 meetings, 18 transcripts)
-- [ ] **F2.7** seed: sharepoint (200 docs)
-- [ ] **F2.8** seed: instrumentl (80 grants, 40 funders)
-- [ ] **F2.9** seed: quickbooks (12mo P&L, 1K txns, 6 program budgets)
-- [ ] **F2.10** seed: solana (devnet wallet metadata, 30 historical disbursements)
-- [ ] **F2.11** seed: powerbi (4 dashboards, 50 KPIs)
-- [ ] **F2.12** seed: powerautomate (12 flows, 6mo run history)
-- [ ] **F2.13** seed: knowbe4 (30 user risk scores, 6mo phishing data)
+- [x] **F2.1** master entity graph: "Rivertown Community Foundation" — `lib/seed/build-graph.ts` builds tenant + people (staff, board, donors, prospects, vendors, partners) + orgs + events + donations + campaigns + grants + docs + emails + calendar + zoom + flows + dashboards + qb txns + knowbe4 + solana txs from one seeded RNG. Three sized fixtures (small/medium/large).
+- [x] **F2.2** generator script: `scripts/generate-seed.ts` builds the graph and projects to all 11 connectors via `lib/seed/project.ts`. Cross-references stable across runs (deterministic seed).
+- [x] **F2.3** seed: bloomerang (medium: 830 constituents, 2,437 transactions, 4 online forms)
+- [x] **F2.4** seed: salesforce npsp (medium: ~200 contacts, ~80 accounts, ~350 opps via `projectSalesforce`)
+- [x] **F2.5** seed: m365 (medium: 22 staff, 3,200 emails, 1,229 calendar events)
+- [x] **F2.6** seed: zoom (medium: 60 meetings, 30 transcripts)
+- [x] **F2.7** seed: sharepoint (medium: 220 docs across 5 sites)
+- [x] **F2.8** seed: instrumentl (medium: 38 grants — 21 awarded — across foundations + government funders)
+- [x] **F2.9** seed: quickbooks (medium: trailing-12-mo P&L, 2,779 txns, 6 program budgets)
+- [x] **F2.10** seed: solana (devnet wallet metadata, 55 historical disbursements totaling $365K USDC)
+- [x] **F2.11** seed: powerbi (4 dashboards across donor health / program impact / fundraising pipeline / financial health)
+- [x] **F2.12** seed: powerautomate (12 flows with 6mo run history)
+- [x] **F2.13** seed: knowbe4 (22 staff risk scores, 6mo phishing data)
 
 ## phase 3 — connector implementations
 
-each connector exposes its query functions per the scope, validates with zod, returns hydrated typed records.
+each connector exposes its query functions per the scope, validates with zod, returns hydrated typed records, and self-registers with `lib/connectors/registry.ts`. test coverage is mandatory — see `lib/connectors/bloomerang.test.ts` for the pattern (schema validation + pure-query tests + tool-handler audit assertions).
 
-- [ ] **F3.1** bloomerang (reference connector — sets pattern for all others)
+- [x] **F3.1** bloomerang (reference connector — sets pattern for all others). `lib/connectors/bloomerang.{schema,ts,test}.ts`. 6 tools: `searchDonors`, `getDonor`, `getDonations`, `getRecentDonations`, `getEngagementScore`, `getOnlineDonationForms`. 41 tests passing.
 - [ ] **F3.2** salesforce
 - [ ] **F3.3** m365
 - [ ] **F3.4** zoom
@@ -119,8 +119,8 @@ each demoable end-to-end: query → tools fire → citations land.
 
 ## current cursor
 
-**building right now:** phase 2 (master entity graph + seed data generator).
+**building right now:** phase 3 — porting the remaining 10 connectors (salesforce, m365, zoom, sharepoint, instrumentl, quickbooks, solana, powerbi, powerautomate, knowbe4) onto the bloomerang reference pattern.
 
-**last shipped:** F0.4 drizzle schema, F0.5 project layout, F0.6 env contract, F1.1 connector base interface + registry, F1.2 seed loader. All on `main`, deployed at https://kali-v0.vercel.app.
+**last shipped:** F0.4 drizzle schema, F0.5 project layout, F0.6 env contract, F1.1 connector base interface + registry, F1.2 seed loader (size-aware + cache-keyed), F1.4 zod schema convention, F2.* full master entity graph + 11 connector seeds (small/medium/large), F3.1 bloomerang reference connector with 41 passing tests. `bun test` runs the suite.
 
 frank/nicole — you don't need to wait on any of this to start the landing page. work on `app/page.tsx` and add components in `components/marketing/`. avoid touching `lib/` for now (that's tenzin's lane).

@@ -1,10 +1,16 @@
 import { Faker, en } from "@faker-js/faker";
 import seedrandom from "seedrandom";
 
-export type Rng = ReturnType<typeof seedrandom>;
+/**
+ * A pseudo-random number generator producing floats in `[0, 1)`. We declare
+ * this explicitly because seedrandom's default-import types resolve to
+ * `unknown` under bundler module resolution — the cast in `makeRng` keeps the
+ * call sites strongly typed.
+ */
+export type Rng = () => number;
 
 export function makeRng(seed: string): Rng {
-  return seedrandom(seed);
+  return (seedrandom as unknown as (s: string) => Rng)(seed);
 }
 
 export function makeFaker(seed: number): Faker {
