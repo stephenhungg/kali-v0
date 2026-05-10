@@ -1,5 +1,8 @@
 import Link from "next/link";
 import { QueryDemo } from "@/components/marketing/QueryDemo";
+import { HeroDisplay } from "@/components/marketing/HeroDisplay";
+import { CountUp } from "@/components/marketing/CountUp";
+import { RevealStack } from "@/components/marketing/RevealStack";
 
 const SERVICES = [
   { num: "01", label: "agentic context layer" },
@@ -34,9 +37,9 @@ const QUERIES = [
 
 export default function HomePage() {
   return (
-    <main className="relative min-h-screen overflow-hidden bg-[#17191a] text-zinc-100 antialiased">
+    <main className="relative min-h-screen overflow-x-hidden bg-[#17191a] text-zinc-100 antialiased">
       <Header />
-      <Hero />
+      <HeroDisplay />
       <ServicesBar />
       <section className="mx-auto max-w-7xl px-6 sm:px-10">
         <QueryDemo />
@@ -93,50 +96,6 @@ function KaliMark({ className }: { className?: string }) {
   );
 }
 
-/* ─── hero ─────────────────────────────────────────────────────────────── */
-
-function Hero() {
-  return (
-    <section className="mx-auto max-w-7xl px-6 pb-24 pt-20 sm:px-10 sm:pb-32 sm:pt-28">
-      <div className="mb-8 flex items-center gap-3 font-mono text-[11px] uppercase tracking-[0.18em] text-zinc-400">
-        <span className="inline-block h-1.5 w-1.5 bg-[#cbf478]" />
-        kali — for nonprofits — hackdavis 2026
-      </div>
-
-      <h1 className="kali-display font-display text-[18vw] font-semibold leading-[0.92] tracking-tighter text-white sm:text-[15vw] md:text-[170px] lg:text-[200px]">
-        creating
-        <br />
-        <span className="text-[#cbf478]">all things</span>
-        <span className="text-[#cbf478] kali-mark"> </span>
-        <br />
-        <span className="text-zinc-500">nonprofits.</span>
-      </h1>
-
-      <div className="mt-12 grid grid-cols-1 items-end gap-10 md:grid-cols-2">
-        <p className="max-w-xl text-balance text-base leading-relaxed text-zinc-400 sm:text-lg">
-          one chat across <span className="text-white">eleven SaaS tools</span>{" "}
-          and onchain payouts on solana. ask in plain english, get an answer
-          with citations. no more spreadsheet archaeology.
-        </p>
-        <div className="flex flex-wrap items-center gap-3 md:justify-end">
-          <Link
-            href="#queries"
-            className="inline-flex items-center gap-2 bg-[#cbf478] px-5 py-3 font-mono text-[11px] font-semibold uppercase tracking-[0.18em] text-black transition-transform hover:scale-[1.02]"
-          >
-            see the demo →
-          </Link>
-          <Link
-            href="https://github.com/stephenhungg/kali-v0"
-            className="inline-flex items-center gap-2 border border-white/15 px-5 py-3 font-mono text-[11px] font-semibold uppercase tracking-[0.18em] text-zinc-200 transition-colors hover:border-white hover:text-white"
-          >
-            github
-          </Link>
-        </div>
-      </div>
-    </section>
-  );
-}
-
 /* ─── services bar ─────────────────────────────────────────────────────── */
 
 function ServicesBar() {
@@ -166,8 +125,8 @@ function ServicesBar() {
 function Why() {
   return (
     <section id="why" className="mx-auto max-w-7xl px-6 py-32 sm:px-10 sm:py-40">
-      <div className="grid grid-cols-1 gap-12 md:grid-cols-12">
-        <div className="md:col-span-5">
+      <RevealStack className="grid grid-cols-1 gap-12 md:grid-cols-12">
+        <div data-reveal className="md:col-span-5">
           <div className="font-mono text-[11px] uppercase tracking-[0.18em] text-[#cbf478]">
             01 / why
           </div>
@@ -177,29 +136,67 @@ function Why() {
             friction alone.
           </h2>
         </div>
-        <div className="md:col-span-7 md:pl-8">
+        <div data-reveal className="md:col-span-7 md:pl-8">
           <p className="text-balance text-lg leading-relaxed text-zinc-400 sm:text-xl">
             $400k a year in vendor payments, board stipends, grant
             disbursements. ach delays, wire fees, reconciliation hell. that
             $8–12k is a part-time staffer they could&apos;ve hired.
           </p>
-          <div className="mt-12 grid grid-cols-1 gap-0 sm:grid-cols-3">
-            <Stat value="$0.0001" label="solana txn fee" />
-            <Stat value="400ms" label="settlement" />
-            <Stat value="11" label="tools unified" />
-          </div>
+          <RevealStack
+            className="mt-12 grid grid-cols-1 gap-0 sm:grid-cols-3"
+            stagger={0.12}
+          >
+            <Stat
+              valueRaw={
+                <CountUp
+                  to={0.0001}
+                  prefix="$"
+                  decimals={4}
+                  duration={2.0}
+                  className="font-display text-3xl font-semibold tracking-tight text-white sm:text-4xl"
+                />
+              }
+              label="solana txn fee"
+            />
+            <Stat
+              valueRaw={
+                <span className="font-display text-3xl font-semibold tracking-tight text-white sm:text-4xl">
+                  <CountUp to={400} duration={1.4} />
+                  ms
+                </span>
+              }
+              label="settlement"
+            />
+            <Stat
+              valueRaw={
+                <CountUp
+                  to={11}
+                  duration={1.2}
+                  className="font-display text-3xl font-semibold tracking-tight text-white sm:text-4xl"
+                />
+              }
+              label="tools unified"
+            />
+          </RevealStack>
         </div>
-      </div>
+      </RevealStack>
     </section>
   );
 }
 
-function Stat({ value, label }: { value: string; label: string }) {
+function Stat({
+  valueRaw,
+  label,
+}: {
+  valueRaw: React.ReactNode;
+  label: string;
+}) {
   return (
-    <div className="border-l border-white/10 px-6 py-4 first:border-l-0 first:pl-0 sm:border-l sm:first:border-l">
-      <div className="font-display text-3xl font-semibold tracking-tight text-white sm:text-4xl">
-        {value}
-      </div>
+    <div
+      data-reveal
+      className="border-l border-white/10 px-6 py-4 first:border-l-0 first:pl-0 sm:border-l sm:first:border-l"
+    >
+      <div>{valueRaw}</div>
       <div className="mt-2 font-mono text-[11px] uppercase tracking-[0.18em] text-zinc-500">
         {label}
       </div>
@@ -215,8 +212,8 @@ function Queries() {
       id="queries"
       className="mx-auto max-w-7xl scroll-mt-12 px-6 py-32 sm:px-10 sm:py-40"
     >
-      <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
-        <div>
+      <RevealStack className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
+        <div data-reveal>
           <div className="font-mono text-[11px] uppercase tracking-[0.18em] text-[#cbf478]">
             02 / queries
           </div>
@@ -225,23 +222,25 @@ function Queries() {
             can answer.
           </h2>
         </div>
-        <p className="max-w-md text-zinc-400">
+        <p data-reveal className="max-w-md text-zinc-400">
           each one runs across 3–5 sources in a single turn. cited, exportable,
           live on stage in under 8 seconds.
         </p>
-      </div>
+      </RevealStack>
 
-      <div className="mt-16 grid grid-cols-1 gap-0 md:grid-cols-2">
+      <RevealStack
+        className="mt-16 grid grid-cols-1 gap-0 md:grid-cols-2"
+        stagger={0.1}
+      >
         {QUERIES.map((q, i) => (
           <article
             key={q.title}
+            data-reveal
             className={[
               "border border-white/10 p-8 transition-colors hover:bg-white/[0.02]",
               i % 2 === 1 ? "md:border-l-0" : "",
               i >= 2 ? "md:border-t-0" : "",
-              "highlight" in q && q.highlight
-                ? "bg-[#cbf478]/[0.04]"
-                : "",
+              "highlight" in q && q.highlight ? "bg-[#cbf478]/[0.04]" : "",
             ].join(" ")}
           >
             <div className="flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.18em] text-zinc-500">
@@ -265,7 +264,7 @@ function Queries() {
             </div>
           </article>
         ))}
-      </div>
+      </RevealStack>
     </section>
   );
 }
