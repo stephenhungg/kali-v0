@@ -18,7 +18,7 @@
  * `conversations` / `messages` tables.
  */
 
-import { NextResponse, type NextRequest } from "next/server";
+import { NextResponse } from "next/server";
 import {
   appendMessage,
   getOrCreateConversation,
@@ -41,7 +41,7 @@ interface ChatRequestBody {
   title?: string;
 }
 
-export async function POST(req: NextRequest) {
+export async function POST(req: Request) {
   let body: ChatRequestBody;
   try {
     body = (await req.json()) as ChatRequestBody;
@@ -148,8 +148,9 @@ export async function POST(req: NextRequest) {
  * Returns the persisted message history for a conversation. Used by the
  * UI to hydrate when the user reopens a chat.
  */
-export async function GET(req: NextRequest) {
-  const id = req.nextUrl.searchParams.get("conversationId");
+export async function GET(req: Request) {
+  const url = new URL(req.url);
+  const id = url.searchParams.get("conversationId");
   if (!id)
     return NextResponse.json(
       { error: "missing conversationId" },
