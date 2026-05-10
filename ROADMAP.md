@@ -63,9 +63,9 @@ each connector exposes its query functions per the scope, validates with zod, re
 ## phase 4 — context layer
 
 - [x] **F4.1** entity resolution (rule-based) — `lib/context/entityResolver.ts` scans bloomerang.constituents + salesforce.contacts + m365.users + zoom participants. Confidence ladder: email exact (100) > phone normalized (90) > full-name exact (80) > name substring + corroborating attribute (60) > name substring (40). Plus a `context.entityProfile` "donor dossier" tool that aggregates one entity across every connector in a single call. Registered as a `context` meta-connector (added to ConnectorId). 22 tests passing.
-- [ ] **F4.2** embedding pipeline (voyage-3 with openai fallback)
-- [ ] **F4.3** pgvector storage with per-tenant namespaces
-- [ ] **F4.4** hybrid retriever (semantic + structured filters, top-K=20 with reranking)
+- [x] **F4.2** embedding pipeline — `lib/context/embed.ts` Embedder protocol + OpenAIEmbedder (text-embedding-3-small, default) + VoyageEmbedder (voyage-3, optional cost-optimized) + deterministic FakeEmbedder (256-dim hash sketch, offline). Provider order: `KALI_EMBEDDER` pin > OPENAI_API_KEY > VOYAGE_API_KEY > Fake. L2-normalized vectors so cosine == dot product.
+- [x] **F4.3** pgvector storage with per-tenant namespaces — `lib/context/vectorStore.ts` in-memory equivalent (Map keyed by namespace, upsert by source+sourceRecordId+chunkIndex). Production migration to pgvector is a 1:1 schema swap (record_id, vector, metadata columns already in `lib/db/schema.ts`).
+- [x] **F4.4** hybrid retriever — `lib/context/semanticSearch.ts` top-K cosine over the vector store, pre-filtered by `sources` / `kali_entity_id` / `metaEq`. Lazy bulk-indexer in `lib/context/indexer.ts` walks every connector's high-signal text (zoom transcripts, sharepoint bodies, m365 emails, instrumentl notes, bloomerang summaries, powerbi tile titles, powerautomate descriptions). Exposed as `context.semanticSearch` + `context.rebuildIndex` tools. 35 new tests passing.
 - [ ] **F4.5** structured query DSL (typed, compiles to SQL)
 - [x] **F4.6** audit log infrastructure (immutable, append-only) — `lib/audit/log.ts` AuditLog class, per-tenant Map, `makeToolContext()` factory, CSV export. 16 tests passing.
 
@@ -119,8 +119,8 @@ each demoable end-to-end: query → tools fire → citations land.
 
 ## current cursor
 
-**backend complete for v1 demo.** F4.2-4.5 (embeddings/pgvector/retrieval/DSL) deferred past v1 — current tool coverage exceeds demo needs. Frontend lanes (F5.5 / F5.7) waiting on chat UI.
+**backend feature-complete.** Only F4.5 (typed query DSL) deferred — current tool surface gives the agent fully-typed structured queries per connector, so a separate DSL is duplicate work for v1. Frontend lanes (F5.5 / F5.7) waiting on chat UI.
 
-**last shipped:** all 11 SaaS connectors + 1 meta-context connector (F3.1–F3.11 + F4.1), F1.3 sync-state tracker w/ status endpoint, F4.6 audit log, F5.1–5.3 (anthropic SDK + prompt caching + tool registry + system prompt), F5.4 streaming SSE chat endpoint, F5.6 parallel tool-use, F5.8 conversation persistence. **399 passing tests across 18 test files.** 71 tools wired to Claude. `bun run sanity` boots the full stack offline; `bun run demo` fires the 5 wow queries against live Anthropic when ANTHROPIC_API_KEY is set.
+**last shipped:** all 11 SaaS connectors + context meta-connector with 4 cross-source tools (F3.1–F3.11 + F4.1 + F4.2-4.4), F1.3 sync-state tracker w/ status endpoint, F4.6 audit log, F5.1–5.3 (anthropic SDK + prompt caching + tool registry + dynamic system prompt), F5.4 streaming SSE chat endpoint, F5.6 parallel tool-use, F5.8 conversation persistence. **437 passing tests across 21 test files.** 73 tools wired to Claude. `bun run sanity` boots offline; `bun run demo` fires the 5 wow queries against live Anthropic.
 
 frank/nicole — you don't need to wait on any of this to start the landing page. work on `app/page.tsx` and add components in `components/marketing/`. avoid touching `lib/` for now (that's tenzin's lane).

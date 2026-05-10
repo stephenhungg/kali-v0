@@ -168,9 +168,14 @@ describe("Connector / registry integration", () => {
     expect(listConnectors().some((c) => c.id === "context")).toBe(true);
   });
 
-  test("exposes both context tools", () => {
+  test("exposes the four context tools", () => {
     const names = context.tools.map((t) => t.name).sort();
-    expect(names).toEqual(["context.entityProfile", "context.resolveEntity"]);
+    expect(names).toEqual([
+      "context.entityProfile",
+      "context.rebuildIndex",
+      "context.resolveEntity",
+      "context.semanticSearch",
+    ]);
   });
 
   test("listTools() includes the context tools", () => {

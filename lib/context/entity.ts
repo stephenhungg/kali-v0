@@ -16,6 +16,8 @@ import {
   type EntityProfile,
   type ResolverHit,
 } from "./entityResolver";
+import { semanticSearch } from "./semanticSearch";
+import { indexAll } from "./indexer";
 
 const resolverHitSchema = z.object({
   kali_entity_id: z.string(),
@@ -139,6 +141,78 @@ const tools: ToolDefinition[] = [
     collectRecordIds: (out) =>
       out ? [(out as EntityProfile).kali_entity_id] : [],
     run: async (input) => entityProfile(input.kali_entity_id),
+  }),
+
+  makeContextTool({
+    name: "context.semanticSearch",
+    description:
+      "Hybrid semantic + structured retrieval across every connector's text content (zoom transcripts, sharepoint document bodies, m365 email subjects/snippets, instrumentl grant notes, bloomerang donor summaries, powerbi tile titles, powerautomate flow descriptions). Returns top-K matches sorted by cosine similarity, with source + sourceRecordId + chunk text. Filter by `sources` (list of connector ids), a specific `kali_entity_id`, or `metaEq` key/value pairs. Use this for vague-natured questions like 'what's the youth mentorship cohort sentiment from board meetings' that span multiple sources.",
+    domain: "donor",
+    input: z.object({
+      query: z.string().min(1),
+      sources: z
+        .array(
+          z.enum([
+            "bloomerang",
+            "salesforce",
+            "m365",
+            "zoom",
+            "sharepoint",
+            "instrumentl",
+            "quickbooks",
+            "solana",
+            "powerbi",
+            "powerautomate",
+            "knowbe4",
+            "context",
+          ]),
+        )
+        .optional(),
+      kali_entity_id: z.string().optional(),
+      metaEq: z.record(z.string(), z.unknown()).optional(),
+      limit: z.number().int().positive().max(50).optional(),
+      minScore: z.number().min(-1).max(1).optional(),
+    }),
+    output: z.object({
+      query: z.string(),
+      embedder: z.string(),
+      totalCandidates: z.number().int().nonnegative(),
+      count: z.number().int().nonnegative(),
+      hits: z.array(
+        z.object({
+          id: z.string(),
+          score: z.number(),
+          source: z.string(),
+          sourceRecordId: z.string(),
+          kali_entity_id: z.string().optional(),
+          text: z.string(),
+          chunkIndex: z.number().int().nonnegative(),
+          meta: z.record(z.string(), z.unknown()).optional(),
+        }),
+      ),
+    }),
+    collectRecordIds: (out) => out.hits.map((h) => h.sourceRecordId),
+    run: async (input) => semanticSearch(input),
+  }),
+
+  makeContextTool({
+    name: "context.rebuildIndex",
+    description:
+      "Force a rebuild of the semantic search index over every connector's text content. Use after seed regeneration or when sources have changed. Returns chunk counts per source.",
+    domain: "donor",
+    input: z.object({
+      namespace: z.string().optional(),
+    }),
+    output: z.object({
+      namespace: z.string(),
+      embedder: z.string(),
+      embedderDim: z.number().int().positive(),
+      chunksBySource: z.record(z.string(), z.number()),
+      total: z.number().int().nonnegative(),
+      durationMs: z.number().nonnegative(),
+    }),
+    collectRecordIds: () => [],
+    run: async (input) => indexAll({ namespace: input.namespace }),
   }),
 ];
 
