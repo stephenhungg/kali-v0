@@ -282,5 +282,66 @@ export function useAgentStream() {
     setConversationId(null);
   }, []);
 
-  return { messages, streaming, pulse, conversationId, send, stop, reset };
+  /**
+   * Hydrate the chat from a saved conversation. Fetches GET /api/chat?conversationId=…
+   * and rebuilds the local ChatMessage[] from persisted user + assistant
+   * turns (tool calls + citations included). Subsequent `send()` calls
+   * continue this thread.
+   */
+  const loadConversation = useCallback(async (id: string) => {
+    abortRef.current?.abort();
+    try {
+      const res = await fetch(`/api/chat?conversationId=${encodeURIComponent(id)}`);
+      if (!res.ok) throw new Error(`load ${res.status}`);
+      const data = await res.json();
+      const conv = data.conversation;
+      if (!conv) throw new Error("missing conversation");
+
+      const rebuilt: ChatMessage[] = [];
+      for (const m of conv.messages ?? []) {
+        if (m.role === "user") {
+          rebuilt.push({ id: m.id, role: "user", text: m.content });
+        } else if (m.role === "assistant") {
+          const toolCalls: ToolCallRow[] = (m.toolCalls ?? []).map((tc: any, i: number) => ({
+            id: `${m.id}_tc_${i}`,
+            name: tc.name,
+            input: tc.input,
+            result: tc.result,
+            isError: !!tc.isError,
+            durationMs: tc.durationMs ?? 0,
+            status: tc.isError ? "error" : "done",
+            startedAt: 0,
+          }));
+          rebuilt.push({
+            id: m.id,
+            role: "assistant",
+            text: m.content,
+            streaming: false,
+            toolCalls,
+            citations: m.citations ?? [],
+            citationsCited: [], // NOTE: citationsCited isn't persisted; chips re-resolve from text vs citations
+            stats: {
+              iterations: 0,
+              toolCalls: toolCalls.length,
+              inputTokens: 0,
+              outputTokens: 0,
+              cachedInputTokens: 0,
+              durationMs: toolCalls.reduce((s: number, t: ToolCallRow) => s + (t.durationMs ?? 0), 0),
+              done: true,
+            },
+            error: m.content?.startsWith("[error]") ? m.content : undefined,
+          });
+        }
+        // tool-role messages are skipped (we don't render them separately)
+      }
+
+      setMessages(rebuilt);
+      setConversationId(conv.id);
+      setPulse({ activeUntil: {}, callCount: {} });
+    } catch {
+      // Silent failure — caller can show a toast if needed
+    }
+  }, []);
+
+  return { messages, streaming, pulse, conversationId, send, stop, reset, loadConversation };
 }

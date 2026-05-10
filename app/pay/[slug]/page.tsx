@@ -176,12 +176,15 @@ export default async function PayPage({ params }: PageProps) {
           <StatCard
             label="Tax-deductible"
             value={`$${taxDeductible30d.toLocaleString()}`}
-            sub="auto-receipted"
+            sub={`${recent.filter((r) => r.taxDeductible).length} of ${recent.length} gifts`}
           />
           <StatCard
-            label="Avg confirm time"
-            value="412ms"
-            sub="solana devnet finality"
+            label="Autonomous (agent) gifts"
+            value={`${recent.filter((r) => r.attribution === "autonomous").length}`}
+            sub={`$${recent
+              .filter((r) => r.attribution === "autonomous")
+              .reduce((s, r) => s + r.amountUsdc, 0)
+              .toFixed(2)} from agent wallets`}
           />
           <div className="chat-card p-5">
             <div className="font-mono text-[11px] uppercase tracking-[0.18em] opacity-60">

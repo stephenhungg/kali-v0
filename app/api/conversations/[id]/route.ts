@@ -23,7 +23,7 @@ interface RouteContext {
 
 export async function GET(_req: Request, ctx: RouteContext) {
   const { id } = await ctx.params;
-  const c = getConversation(id);
+  const c = await getConversation(id);
   if (!c) {
     return NextResponse.json({ error: "not found" }, { status: 404 });
   }
@@ -32,7 +32,7 @@ export async function GET(_req: Request, ctx: RouteContext) {
 
 export async function DELETE(_req: Request, ctx: RouteContext) {
   const { id } = await ctx.params;
-  const ok = deleteConversation(id);
+  const ok = await deleteConversation(id);
   if (!ok) {
     return NextResponse.json({ error: "not found" }, { status: 404 });
   }

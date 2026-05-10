@@ -40,33 +40,40 @@ export function TradePanel({
 
   useEffect(() => {
     let cancelled = false;
-    if (!usdc) return;
-    void (async () => {
-      try {
-        // Cheap client-side estimate using current price + fee math.
-        const fee = (usdc * feeBps) / 10000;
-        const net = usdc - fee;
-        const tokensOut = net / currentPrice;
-        const slippage = 0;
-        const treasuryFee = fee * (1 - communityFundBps / 10000);
-        if (cancelled) return;
-        setSim({
-          tokensOut,
-          priceBefore: currentPrice,
-          priceAfter: currentPrice * 1.001,
-          feeUsdc: fee,
-          treasuryFeeUsdc: treasuryFee,
-          communityFundFeeUsdc: fee - treasuryFee,
-          slippagePct: slippage,
-        });
-      } catch {
-        /* ignore */
-      }
-    })();
+    if (!usdc || usdc <= 0) {
+      setSim(null);
+      return;
+    }
+    // Debounce so we don't hammer the endpoint on every keystroke.
+    const handle = setTimeout(() => {
+      void (async () => {
+        try {
+          const res = await fetch(
+            `/api/coin/${encodeURIComponent(mint)}/simulate?usdc=${usdc}`,
+            { cache: "no-store" },
+          );
+          if (!res.ok) {
+            if (!cancelled) setSim(null);
+            return;
+          }
+          const data = (await res.json()) as SimResult;
+          if (!cancelled) setSim(data);
+        } catch {
+          if (!cancelled) setSim(null);
+        }
+      })();
+    }, 250);
     return () => {
       cancelled = true;
+      clearTimeout(handle);
     };
-  }, [usdc, currentPrice, feeBps, communityFundBps]);
+  }, [usdc, mint]);
+  // currentPrice / feeBps / communityFundBps are informational only — every
+  // displayed number comes from the simulate endpoint, which runs the real
+  // bonding-curve math (lib/causecoin/curve.ts) server-side.
+  void currentPrice;
+  void feeBps;
+  void communityFundBps;
 
   async function buy() {
     if (!acknowledged) return;

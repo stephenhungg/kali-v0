@@ -1,16 +1,36 @@
 import type { ReactNode } from "react";
 import Link from "next/link";
+import { cookies } from "next/headers";
 import { getOnboardingState } from "../../lib/supabase/server";
+import { UserMenu } from "../../components/chat/UserMenu";
 
 /**
- * Dashboard layout — header bar shared with /chat.
- * Tenant name pill renders the user's actual org. Nav links between
- * Dashboard | Chat | Sources | Settings.
+ * Dashboard layout — header bar shared with /chat. Avatar opens a profile
+ * popover with email, tenant info, quick links, and sign-out.
  */
 
 export default async function DashboardLayout({ children }: { children: ReactNode }) {
-  const { state } = await getOnboardingState();
-  const tenantName = state?.tenant?.name ?? "Rivertown Community Foundation";
+  const supaConfigured = !!(
+    process.env.NEXT_PUBLIC_SUPABASE_URL && process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
+  );
+
+  let tenantName = "Rivertown Community Foundation";
+  let tenantMission: string | undefined;
+  let userEmail: string | null = null;
+  let isDemo = !supaConfigured;
+
+  if (supaConfigured) {
+    const cookieJar = await cookies();
+    const demoCookie = cookieJar.get("kali_demo_mode")?.value === "rivertown";
+    if (demoCookie) {
+      isDemo = true;
+    } else {
+      const { email, state } = await getOnboardingState();
+      tenantName = state?.tenant?.name ?? tenantName;
+      tenantMission = state?.tenant?.mission;
+      userEmail = email;
+    }
+  }
 
   return (
     <div className="chat-surface min-h-screen">
@@ -36,13 +56,16 @@ export default async function DashboardLayout({ children }: { children: ReactNod
         <div className="hidden items-center gap-2 sm:flex">
           <span className="inline-block h-1.5 w-1.5 rounded-full bg-[var(--matcha-mid)] blink-soft" />
           <span className="font-mono text-[11px] uppercase tracking-[0.18em] text-[var(--gray-ink)]">
-            {tenantName.toLowerCase()}
+            {tenantName.toLowerCase()}{isDemo ? " · demo tenant" : ""}
           </span>
         </div>
 
-        <div className="flex h-8 w-8 items-center justify-center rounded-full bg-[var(--matcha-mid)]/15 text-xs font-medium text-[var(--matcha-deep)]">
-          {tenantName.charAt(0).toUpperCase()}
-        </div>
+        <UserMenu
+          email={userEmail}
+          tenantName={tenantName}
+          tenantMission={tenantMission}
+          isDemo={isDemo}
+        />
       </header>
       <div className="pt-16">{children}</div>
     </div>

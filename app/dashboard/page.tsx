@@ -16,6 +16,7 @@
  */
 
 import Link from "next/link";
+import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
 import "@/lib/agent/registrations";
 import { listConnectors } from "@/lib/connectors/registry";
@@ -40,18 +41,31 @@ const NETWORK = (process.env.KALI_X402_NETWORK ?? "solana-devnet") as
 
 const DEFAULT_TENANT = "rivertown";
 
-export default async function DashboardPage() {
+export default async function DashboardPage({
+  searchParams,
+}: {
+  searchParams: Promise<Record<string, string | string[] | undefined>>;
+}) {
+  const sp = await searchParams;
   const supaConfigured = !!(
     process.env.NEXT_PUBLIC_SUPABASE_URL && process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
   );
+  // Demo bypass works two ways:
+  //   1. ?demo=rivertown directly in the URL (first hit)
+  //   2. cookie kali_demo_mode=rivertown (set by middleware on prior demo hit)
+  // The cookie is needed for follow-up requests that don't carry the param.
+  const demoFromQuery = sp.demo === "rivertown";
+  const cookieStore = await cookies();
+  const demoFromCookie =
+    cookieStore.get("kali_demo_mode")?.value === "rivertown";
+  const demoMode = demoFromQuery || demoFromCookie;
 
   // Resolve tenant + onboarding state.
   let tenantName = "Rivertown Community Foundation";
   let tenantMission: string | undefined;
   let selectedConnectors: string[] = [];
-  let seedId = "rivertown-demo";
 
-  if (supaConfigured) {
+  if (supaConfigured && !demoMode) {
     const { userId, state } = await getOnboardingState();
     if (!userId) redirect("/onboarding");
     if (!state?.onboardedAt) {
@@ -61,7 +75,6 @@ export default async function DashboardPage() {
     tenantName = state.tenant?.name ?? tenantName;
     tenantMission = state.tenant?.mission;
     selectedConnectors = state.selectedConnectors ?? [];
-    seedId = userId;
   }
 
   // Force connector init + load downstream data.
@@ -90,7 +103,7 @@ export default async function DashboardPage() {
         tenantName={tenantName}
         tenantMission={tenantMission}
         selectedConnectors={selectedConnectors}
-        seedId={seedId}
+        tenantId={tenant?.id ?? DEFAULT_TENANT}
       />
 
       {/* Onchain hero — preserved from existing dashboard */}

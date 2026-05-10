@@ -72,17 +72,18 @@ bun install
 
 downloads everything the project needs. ~30 seconds first time.
 
-### 4. set up Supabase (for the onboarding flow)
+### 4. set up Supabase (for the onboarding flow + chat history)
 
-The 6-step onboarding wizard at `/onboarding` uses real Supabase auth. Without it, you can still demo `/chat?demo=rivertown` — the wizard just won't complete.
+The 6-step onboarding wizard at `/onboarding` uses real Supabase auth, and chat history is persisted to Supabase Postgres so users see their past conversations on each visit. Without Supabase, you can still demo `/chat?demo=rivertown` — auth + history just fall back to in-memory.
 
 1. Create a free project at [app.supabase.com](https://app.supabase.com).
 2. **Disable email confirmation** for the demo: project → Auth → Providers → Email → toggle "Confirm email" off. (Otherwise step 1 stalls waiting for a confirmation link.)
-3. Copy keys from project → Settings → API:
+3. **Run the chat schema** once: project → SQL Editor → New query → paste contents of [`scripts/supabase-schema.sql`](./scripts/supabase-schema.sql) → Run. Creates `kali_conversations` + `kali_messages` tables with row-level security so each user only sees their own threads.
+4. Copy keys from project → Settings → API:
    - Project URL → `NEXT_PUBLIC_SUPABASE_URL`
    - `anon` key → `NEXT_PUBLIC_SUPABASE_ANON_KEY`
-   - `service_role` key → `SUPABASE_SERVICE_ROLE_KEY`
-4. Paste into `.env.local`:
+   - `service_role` key → `SUPABASE_SERVICE_ROLE_KEY` (optional — onboarding writes work via the user session)
+5. Paste into `.env.local`:
 
 ```sh
 cp .env.example .env.local

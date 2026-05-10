@@ -3,6 +3,7 @@ import Link from "next/link";
 import { redirect } from "next/navigation";
 import { cookies } from "next/headers";
 import { getOnboardingState } from "../../lib/supabase/server";
+import { UserMenu } from "../../components/chat/UserMenu";
 
 /**
  * Chat-app layout — locked-viewport flex column.
@@ -26,6 +27,8 @@ export default async function ChatLayout({ children }: { children: ReactNode }) 
   );
 
   let tenantName = "Rivertown Community Foundation";
+  let tenantMission: string | undefined;
+  let userEmail: string | null = null;
   let isDemo = !supaConfigured;
 
   if (supaConfigured) {
@@ -34,25 +37,42 @@ export default async function ChatLayout({ children }: { children: ReactNode }) 
     if (demoCookie) {
       isDemo = true;
     } else {
-      const { userId, state } = await getOnboardingState();
+      const { userId, email, state } = await getOnboardingState();
       if (!userId) redirect("/onboarding");
       if (!state?.onboardedAt) {
         const step = state?.currentStep ?? 1;
         redirect(`/onboarding?step=${step}`);
       }
       tenantName = state.tenant?.name ?? tenantName;
+      tenantMission = state.tenant?.mission;
+      userEmail = email;
     }
   }
 
   return (
     <div className="chat-surface flex h-[100dvh] flex-col overflow-hidden">
-      <ChatHeader tenantName={tenantName} isDemo={isDemo} />
+      <ChatHeader
+        tenantName={tenantName}
+        tenantMission={tenantMission}
+        userEmail={userEmail}
+        isDemo={isDemo}
+      />
       <div className="flex min-h-0 flex-1 flex-col">{children}</div>
     </div>
   );
 }
 
-function ChatHeader({ tenantName, isDemo }: { tenantName: string; isDemo: boolean }) {
+function ChatHeader({
+  tenantName,
+  tenantMission,
+  userEmail,
+  isDemo,
+}: {
+  tenantName: string;
+  tenantMission?: string;
+  userEmail: string | null;
+  isDemo: boolean;
+}) {
   return (
     <header className="flex h-16 shrink-0 items-center justify-between border-b border-[var(--mint-line)] bg-[var(--surface)]/95 px-4 backdrop-blur sm:px-6">
       <div className="flex items-center gap-4">
@@ -80,9 +100,12 @@ function ChatHeader({ tenantName, isDemo }: { tenantName: string; isDemo: boolea
         </span>
       </div>
 
-      <div className="flex h-8 w-8 items-center justify-center rounded-full bg-[var(--matcha-mid)]/15 text-xs font-medium text-[var(--matcha-deep)]">
-        {tenantName.charAt(0).toUpperCase()}
-      </div>
+      <UserMenu
+        email={userEmail}
+        tenantName={tenantName}
+        tenantMission={tenantMission}
+        isDemo={isDemo}
+      />
     </header>
   );
 }

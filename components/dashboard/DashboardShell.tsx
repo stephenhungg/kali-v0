@@ -9,11 +9,11 @@ interface DashboardShellProps {
   tenantName: string;
   tenantMission?: string;
   selectedConnectors: string[];
-  /** Stable id for seeding the forged activity feed. */
-  seedId: string;
+  /** Tenant id used to scope the real audit log feed. */
+  tenantId: string;
 }
 
-export function DashboardShell({ tenantName, tenantMission, selectedConnectors, seedId }: DashboardShellProps) {
+export function DashboardShell({ tenantName, tenantMission, selectedConnectors, tenantId }: DashboardShellProps) {
   const firstName = tenantName.split(/\s+/)[0];
 
   return (
@@ -38,7 +38,7 @@ export function DashboardShell({ tenantName, tenantMission, selectedConnectors, 
         <StatCards tenantName={tenantName} />
 
         <div className="grid gap-6 lg:grid-cols-[2fr_3fr]">
-          <RecentActivity seed={seedId} />
+          <RecentActivity tenantId={tenantId} />
           <SourcesGrid selectedConnectors={selectedConnectors} />
         </div>
 

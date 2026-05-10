@@ -45,34 +45,49 @@ export async function loadAllSeeds(size?: string): Promise<{
 
   const out = { receiptsLoaded: 0, coinsLoaded: 0, holdersLoaded: 0, tradesLoaded: 0, walletLinks: 0 };
 
-  // x402 receipts.
+  // x402 receipts. Idempotent: skip rows whose id is already in the store
+  // (HMR re-evaluates this module without resetting `loaded` cleanly).
   try {
     const raw = await readFile(path.join(root, "x402.json"), "utf8");
     const parsed = JSON.parse(raw) as X402Seed;
+    const receipts = memoryStore.get("receipts");
+    const seen = new Set(receipts.map((r) => r.id));
     for (const r of parsed.receipts ?? []) {
-      memoryStore.get("receipts").push(r);
+      if (seen.has(r.id)) continue;
+      receipts.push(r);
+      seen.add(r.id);
+      out.receiptsLoaded += 1;
     }
-    out.receiptsLoaded = parsed.receipts?.length ?? 0;
   } catch {
     /* missing seed is fine */
   }
 
-  // Cause coin.
+  // Cause coin. Same idempotency: skip rows whose id is already present.
   try {
     const raw = await readFile(path.join(root, "causecoin.json"), "utf8");
     const parsed = JSON.parse(raw) as CauseCoinSeed;
-    if (parsed.causeCoin) {
-      memoryStore.get("causeCoins").push(parsed.causeCoin);
+    const coins = memoryStore.get("causeCoins");
+    if (parsed.causeCoin && !coins.some((c) => c.id === parsed.causeCoin.id)) {
+      coins.push(parsed.causeCoin);
       out.coinsLoaded = 1;
     }
+    const holders = memoryStore.get("causeCoinHolders");
+    const holderKey = (h: { coinId: string; wallet: string }) => `${h.coinId}::${h.wallet}`;
+    const holderSeen = new Set(holders.map(holderKey));
     for (const h of parsed.holders ?? []) {
-      memoryStore.get("causeCoinHolders").push(h);
+      if (holderSeen.has(holderKey(h))) continue;
+      holders.push(h);
+      holderSeen.add(holderKey(h));
+      out.holdersLoaded += 1;
     }
-    out.holdersLoaded = parsed.holders?.length ?? 0;
+    const trades = memoryStore.get("causeCoinTrades");
+    const tradeSeen = new Set(trades.map((t) => t.id));
     for (const t of parsed.trades ?? []) {
-      memoryStore.get("causeCoinTrades").push(t);
+      if (tradeSeen.has(t.id)) continue;
+      trades.push(t);
+      tradeSeen.add(t.id);
+      out.tradesLoaded += 1;
     }
-    out.tradesLoaded = parsed.trades?.length ?? 0;
     for (const link of parsed.walletLinks ?? []) {
       registerWalletLink(link);
     }
