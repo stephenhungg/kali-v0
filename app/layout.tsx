@@ -5,6 +5,7 @@ import {
   Bagel_Fat_One,
   Instrument_Serif,
   Nunito,
+  Noto_Serif_JP,
   Plus_Jakarta_Sans,
 } from "next/font/google";
 import "./globals.css";
@@ -48,6 +49,13 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const notoSerifJP = Noto_Serif_JP({
+  variable: "--font-noto-jp",
+  subsets: ["latin"],
+  weight: ["400", "500"],
+  display: "swap",
+});
+
 export const metadata: Metadata = {
   title: "kali",
   description: "Agentic context layer for nonprofits.",
@@ -65,7 +73,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${inter.variable} ${plusJakartaSans.variable} ${bagelFatOne.variable} ${instrumentSerif.variable} ${nunito.variable} ${geistMono.variable} h-full antialiased`}
+      className={`${inter.variable} ${plusJakartaSans.variable} ${bagelFatOne.variable} ${instrumentSerif.variable} ${nunito.variable} ${geistMono.variable} ${notoSerifJP.variable} h-full antialiased`}
     >
       <body className="min-h-full">{children}</body>
     </html>

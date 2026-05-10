@@ -1,432 +1,562 @@
-import Link from "next/link";
-import "@/lib/agent/registrations";
-import { listConnectors } from "@/lib/connectors/registry";
+"use client";
 
-export const runtime = "nodejs";
-export const dynamic = "force-dynamic";
+import Image from "next/image";
+import { useRef } from "react";
+import { useGSAP } from "@gsap/react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { KaliWordmark, MiniKaliWordmark, ReceiptSticker } from "@/components/brand/KawaiiBrand";
+import { KaliBaitIntro } from "@/components/landing/KaliBaitIntro";
+import { SparkleField } from "@/components/landing/SparkleField";
 
-export default async function HomePage() {
-  // Ground the landing page in real numbers from the connector registry.
-  const connectors = listConnectors();
-  const totalTools = connectors.reduce((s, c) => s + c.tools.length, 0);
+if (typeof window !== "undefined") {
+  gsap.registerPlugin(ScrollTrigger, useGSAP);
+}
+
+const HERO_DRIFT = -197;
+
+const WORK_ITEMS = [
+  {
+    n: "01",
+    title: "donor reactivation",
+    tags: ["Salesforce", "Gmail"],
+    blurb: "Find lapsed donors across the CRM, draft warm outreach in your voice, send only after you approve.",
+    src: "/kawaii/generated/work-donor-v2.png",
+    alt: "kawaii sticker scene of a matcha mascot reactivating donor outreach",
+  },
+  {
+    n: "02",
+    title: "grant research",
+    tags: ["Drive", "Docs"],
+    blurb: "Pull eligibility, deadlines, and program fit across your grants folder. Every claim cited back to the source doc.",
+    src: "/kawaii/generated/work-grant-v2.png",
+    alt: "kawaii sticker scene of a matcha mascot reading grant documents",
+  },
+  {
+    n: "03",
+    title: "volunteer ops",
+    tags: ["Calendar", "Slack"],
+    blurb: "Schedule shifts, send reminders, fill cancellations. Coordinated across calendar and Slack with one ask.",
+    src: "/kawaii/generated/work-volunteer-v2.png",
+    alt: "kawaii sticker scene of a matcha mascot waving a calendar of volunteer days",
+  },
+];
+
+export default function HomePage() {
+  const rootRef = useRef<HTMLElement>(null);
+
+  useGSAP(
+    () => {
+      const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+      if (reduceMotion) {
+        gsap.set("[data-appear], .hero-line, [data-selected-drift]", { autoAlpha: 1, x: 0, y: 0, yPercent: 0 });
+        return;
+      }
+
+      gsap.from(".hero-line", {
+        yPercent: 100,
+        autoAlpha: 0,
+        duration: 1,
+        stagger: 0.1,
+        ease: "expo.out",
+      });
+
+      gsap.utils.toArray<HTMLElement>("[data-appear]").forEach((el) => {
+        const delay = Number(el.dataset.appearDelay ?? 0);
+        gsap.from(el, {
+          autoAlpha: 0,
+          y: 24,
+          duration: 0.65,
+          delay,
+          ease: "expo.out",
+          scrollTrigger: { trigger: el, start: "top 88%", once: true },
+        });
+      });
+
+      gsap.utils.toArray<HTMLElement>("[data-scatter-parallax]").forEach((el) => {
+        const target = Number(el.dataset.parallaxY ?? HERO_DRIFT);
+        gsap.fromTo(
+          el,
+          { y: 0 },
+          {
+            y: target,
+            ease: "none",
+            scrollTrigger: {
+              trigger: "[data-hero]",
+              start: "top top",
+              end: "+=1967",
+              scrub: true,
+            },
+          }
+        );
+      });
+
+      gsap.to("[data-hero-brand]", {
+        autoAlpha: 0,
+        y: -8,
+        ease: "none",
+        scrollTrigger: {
+          trigger: "[data-hero]",
+          start: "bottom 320px",
+          end: "bottom 180px",
+          scrub: true,
+        },
+      });
+
+      const selectedWork = rootRef.current?.querySelector<HTMLElement>("[data-selected-work]");
+      const mm = gsap.matchMedia();
+      if (selectedWork) {
+        mm.add("(min-width: 768px)", () => {
+          const driftTrigger = () => ({
+            trigger: selectedWork,
+            start: "top+=327 top",
+            end: "bottom top",
+            scrub: true,
+          });
+
+          gsap.to("[data-selected-drift='left']", {
+            x: -185,
+            ease: "none",
+            scrollTrigger: driftTrigger(),
+          });
+          gsap.to("[data-selected-drift='right']", {
+            x: 185,
+            ease: "none",
+            scrollTrigger: driftTrigger(),
+          });
+          gsap.to("[data-selected-drift='label']", {
+            x: 185,
+            ease: "none",
+            scrollTrigger: driftTrigger(),
+          });
+        });
+      }
+
+      ScrollTrigger.refresh();
+      return () => mm.revert();
+    },
+    { scope: rootRef }
+  );
 
   return (
-    <main className="bg-[var(--matcha-deep)] text-[var(--cream)] antialiased">
-      <Header />
-      <Hero />
-      <Capabilities />
-      <DreamToReality />
-      <Stats connectorCount={connectors.length} toolCount={totalTools} />
-      <Status />
-      <Footer />
-    </main>
+    <KaliBaitIntro>
+      <main id="top" ref={rootRef} className="matcha-page min-h-screen font-subtext text-ink-near antialiased">
+        <h1 className="sr-only">
+          Kali is an agentic context layer for nonprofits, bringing answers across tools into one cited chat.
+        </h1>
+        <StickyNav />
+        <Hero />
+        <SplitIntro />
+        <WorkSection />
+        <Footer />
+      </main>
+    </KaliBaitIntro>
   );
 }
 
-/* ─── header ───────────────────────────────────────────────────────────── */
+function StickyNav() {
+  const navRef = useRef<HTMLElement>(null);
 
-function Header() {
+  useGSAP(() => {
+    const shell = navRef.current;
+    const brandPanel = shell?.querySelector<HTMLElement>("[data-nav-brand-panel]");
+    const brandText = shell?.querySelector<HTMLElement>("[data-nav-brand-text]");
+    const linksPanel = shell?.querySelector<HTMLElement>("[data-nav-links-panel]");
+    if (!shell || !brandPanel || !brandText || !linksPanel) return;
+
+    const createHeroExitTrigger = (timeline: gsap.core.Timeline) => {
+      const hero = document.querySelector<HTMLElement>("[data-hero]");
+      let expanded = false;
+
+      const shouldExpand = () => Boolean(hero && hero.getBoundingClientRect().bottom <= 0);
+      const setExpanded = (next: boolean, immediate = false) => {
+        if (!immediate && next === expanded) return;
+
+        expanded = next;
+        if (immediate) {
+          timeline.progress(next ? 1 : 0).pause();
+          return;
+        }
+
+        if (next) timeline.play();
+        else timeline.reverse();
+      };
+
+      const trigger = ScrollTrigger.create({
+        start: 0,
+        end: "max",
+        onUpdate: () => setExpanded(shouldExpand()),
+        onRefresh: () => setExpanded(shouldExpand(), true),
+      });
+
+      setExpanded(shouldExpand(), true);
+      return () => {
+        trigger.kill();
+        timeline.kill();
+      };
+    };
+
+    const createDesktopTimeline = () => {
+      gsap.set(shell, { width: 248, height: 32 });
+      gsap.set(brandPanel, { autoAlpha: 0, width: 248, height: 52 });
+      gsap.set(brandText, { x: 0, y: 1.2 });
+      gsap.set(linksPanel, { x: 21.33, y: 0, width: 226.67, height: 32 });
+
+      return gsap
+        .timeline({ paused: true })
+        .to(shell, { height: 84.41, duration: 0.42, ease: "power3.out" }, 0)
+        .to(linksPanel, { x: 0, y: 52, width: 248, duration: 0.42, ease: "power3.out" }, 0)
+        .to(brandText, { y: 6, duration: 0.42, ease: "power3.out" }, 0)
+        .to(brandPanel, { autoAlpha: 1, duration: 0.18, ease: "power1.out" }, 0.3);
+    };
+
+    const createMobileTimeline = () => {
+      const shellWidth = window.innerWidth - 16;
+      const compactWidth = Math.min(226.67, shellWidth);
+      const expandedWidth = shellWidth - 9;
+
+      gsap.set(shell, { width: shellWidth, height: 32 });
+      gsap.set(brandPanel, { autoAlpha: 0, width: shellWidth, height: 32 });
+      gsap.set(brandText, { x: 0, y: 5 });
+      gsap.set(linksPanel, { x: shellWidth - compactWidth, y: 0, width: compactWidth, height: 32 });
+
+      return gsap
+        .timeline({ paused: true })
+        .to(shell, { height: 64, duration: 0.42, ease: "power3.out" }, 0)
+        .to(linksPanel, { x: shellWidth - expandedWidth, y: 40, width: expandedWidth, duration: 0.42, ease: "power3.out" }, 0)
+        .to(brandPanel, { autoAlpha: 1, duration: 0.18, ease: "power1.out" }, 0.3);
+    };
+
+    const mm = gsap.matchMedia();
+    mm.add("(min-width: 768px)", () => {
+      return createHeroExitTrigger(createDesktopTimeline());
+    });
+    mm.add("(max-width: 767px)", () => {
+      return createHeroExitTrigger(createMobileTimeline());
+    });
+
+    return () => mm.revert();
+  }, []);
+
   return (
-    <header className="fixed inset-x-0 top-0 z-50 mx-auto flex max-w-[1400px] items-center justify-between px-8 py-6 sm:px-12">
-      <div className="flex items-center gap-2.5">
-        <KaliMark className="h-5 w-5" />
-        <span className="r-display text-2xl font-medium tracking-tight">kali</span>
+    <header
+      ref={navRef}
+      data-nav-shell
+      className="fixed right-2 top-2 z-50 h-8 w-[calc(100vw-16px)] overflow-visible text-ink-near md:right-4 md:top-4 md:w-[248px]"
+      aria-label="Primary navigation"
+    >
+      <div
+        data-nav-brand-panel
+        className="ceramic-panel absolute left-0 top-0 z-10 h-8 overflow-hidden rounded-[22px] opacity-0 md:h-[52px]"
+      >
+        <a
+          data-nav-brand-text
+          href="#top"
+          className="absolute left-4 top-0 block leading-none"
+        >
+          <MiniKaliWordmark />
+        </a>
       </div>
-      <nav className="hidden items-center gap-10 text-sm md:flex">
-        <a href="#capabilities" className="transition-colors hover:text-[var(--strawberry-soft)]">
-          Capabilities
+      <nav
+        data-nav-links-panel
+        className="absolute left-0 top-0 z-20 flex h-8 items-center gap-3 overflow-hidden rounded-pill border border-white/90 bg-cloud/90 px-4 text-[16px] font-medium leading-none shadow-[0_5px_0_rgba(107,137,93,0.28)] backdrop-blur"
+      >
+        <a data-nav-link href="#what" className="kali-link">
+          Product
         </a>
-        <a href="#numbers" className="transition-colors hover:text-[var(--strawberry-soft)]">
-          The numbers
+        <a data-nav-link href="#queries" className="kali-link">
+          Uses
         </a>
-        <a href="#status" className="transition-colors hover:text-[var(--strawberry-soft)]">
-          Status
+        <a data-nav-link href="/chat" className="kali-link">
+          Open Kali
         </a>
       </nav>
-      <Link
-        href="/dashboard?demo=rivertown"
-        className="inline-flex items-center gap-2 bg-[var(--cream)] px-5 py-2.5 text-sm text-[var(--matcha-deep)] transition-transform hover:scale-[1.02]"
-      >
-        Open the demo
-      </Link>
     </header>
   );
 }
 
-function KaliMark({ className }: { className?: string }) {
-  return (
-    <svg viewBox="0 0 20 20" className={className} aria-hidden>
-      <circle cx="10" cy="10" r="8" stroke="currentColor" strokeWidth="1" fill="none" opacity="0.4" />
-      <circle cx="10" cy="10" r="3" fill="currentColor" />
-      <circle cx="2.5" cy="10" r="1" fill="currentColor" opacity="0.6" />
-      <circle cx="17.5" cy="10" r="1" fill="currentColor" opacity="0.6" />
-      <circle cx="10" cy="2.5" r="1" fill="currentColor" opacity="0.6" />
-      <circle cx="10" cy="17.5" r="1" fill="currentColor" opacity="0.6" />
-    </svg>
-  );
-}
-
-/* ─── hero ─────────────────────────────────────────────────────────────── */
-
 function Hero() {
   return (
-    <section className="relative min-h-screen overflow-hidden bg-[var(--cream)] text-[var(--matcha-deep)]">
-      {/* photo strip — layered overlapping panels */}
-      <div className="pointer-events-none absolute inset-0 z-0">
-        <div
-          className="absolute right-[10%] top-[18%] h-[280px] w-[400px] -rotate-3 bg-[var(--strawberry-soft)] sm:h-[340px] sm:w-[480px]"
-          style={{
-            backgroundImage:
-              "url('https://images.unsplash.com/photo-1509316785289-025f5b846b35?w=900&q=80')",
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-          }}
-        />
-        <div
-          className="absolute left-[8%] top-[40%] h-[220px] w-[300px] rotate-[2deg] bg-[var(--matcha-mid)] sm:h-[260px] sm:w-[360px]"
-          style={{
-            backgroundImage:
-              "url('https://images.unsplash.com/photo-1598970434795-0c54fe7c0648?w=900&q=80')",
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-          }}
-        />
-        <div
-          className="absolute bottom-[12%] right-[18%] h-[200px] w-[280px] -rotate-[6deg] bg-[var(--strawberry-deep)] sm:h-[240px] sm:w-[340px]"
-          style={{
-            backgroundImage:
-              "url('https://images.unsplash.com/photo-1542401886-65d6c61db217?w=900&q=80')",
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-          }}
-        />
-      </div>
-
-      <div className="relative z-10 mx-auto flex min-h-screen max-w-[1400px] flex-col px-8 pt-32 sm:px-12">
-        <div className="font-mono text-xs uppercase tracking-[0.18em] text-[var(--matcha-deep)]/60">
-          (kali · for nonprofits · hackdavis 2026)
-        </div>
-
-        <h1 className="r-display mt-8 text-[18vw] font-medium leading-[0.9] tracking-tight text-[var(--matcha-deep)] sm:text-[14vw] md:text-[200px]">
-          <span className="block">Ask once.</span>
-          <span className="block">
-            <span className="r-italic font-light text-[var(--strawberry-deep)]">Across</span>
-          </span>
-          <span className="block">every tool.</span>
-        </h1>
-
-        <div className="mt-auto flex flex-col gap-6 pb-12 md:flex-row md:items-end md:justify-between">
-          <div className="flex items-center gap-3 font-mono text-xs uppercase tracking-[0.18em] text-[var(--matcha-deep)]/70">
-            <span className="inline-block h-3 w-3 animate-bounce rounded-full bg-[var(--strawberry-deep)]" />
-            Scroll down
-          </div>
-          <p className="max-w-md text-sm leading-relaxed text-[var(--matcha-deep)]/70 sm:text-base">
-            One agentic chat across 11 nonprofit SaaS tools — Bloomerang, Salesforce NPSP, M365,
-            QuickBooks, Instrumentl, SharePoint, Zoom, Power Automate, Power BI, KnowBe4, Solana.
-            Every answer cited back to its source. Plus a real x402 + Solana payments rail.
-          </p>
-          <Link
-            href="/dashboard?demo=rivertown"
-            className="inline-flex items-center gap-2 self-start border border-[var(--matcha-deep)]/20 bg-transparent px-5 py-2.5 text-sm text-[var(--matcha-deep)] transition-colors hover:bg-[var(--matcha-deep)] hover:text-[var(--cream)] md:self-end"
-          >
-            See the demo →
-          </Link>
-        </div>
-      </div>
-    </section>
-  );
-}
-
-/* ─── capabilities ─────────────────────────────────────────────────────── */
-
-const CAPABILITIES = [
-  {
-    title: "Cross-tool reasoning",
-    blurb:
-      "Ask in plain English. The agent fans out to every connected SaaS tool in parallel, joins the data through entity resolution, and answers with citations to source records.",
-    tag: "Donors · Grants · Finance · Comms",
-    href: "/chat?demo=rivertown",
-  },
-  {
-    title: "x402 agent donations",
-    blurb:
-      "Public HTTP 402 endpoint per tenant. Any AI agent can pay USDC over the wire. Tax-deductible receipts auto-issued for human-attributed gifts. Real onchain settlement on Solana.",
-    tag: "Solana devnet · USDC · Privy delegation",
-    href: "/pay/rivertown",
-  },
-  {
-    title: "Cause Coins",
-    blurb:
-      "Per-tenant SPL Token-2022 mint with onchain metadata, no freeze authority, 1B initial supply to the treasury. The wow query: cross-reference holders against your existing donor base.",
-    tag: "Token-2022 · Bonding curve · Holder governance",
-    href: "/crypto",
-  },
-  {
-    title: "Audit log + receipts",
-    blurb:
-      "Every tool call and every onchain receipt is recorded immutably. CSV-exportable. Tax-receipt PDFs (HMAC-signed URLs) for any human-attributed donation, IRS-compliant attestation language.",
-    tag: "Compliance · Provenance · pdf-lib",
-    href: "/dashboard",
-  },
-] as const;
-
-function Capabilities() {
-  return (
-    <section id="capabilities" className="bg-[var(--cream)] text-[var(--matcha-deep)]">
-      <div className="mx-auto max-w-[1400px] px-8 py-32 sm:px-12 sm:py-40">
-        <div className="mb-16 flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
-          <div>
-            <div className="font-mono text-xs uppercase tracking-[0.18em] text-[var(--matcha-deep)]/60">
-              (capabilities)
-            </div>
-            <h2 className="r-display mt-4 text-[12vw] font-medium leading-[0.9] tracking-tight text-[var(--matcha-deep)] sm:text-[8vw] md:text-[120px]">
-              What it{" "}
-              <span className="r-italic font-light text-[var(--strawberry-deep)]">does</span>
-            </h2>
-          </div>
-          <p className="max-w-md text-sm leading-relaxed text-[var(--matcha-deep)]/70 sm:text-base">
-            One agent. Eleven SaaS connectors. A real onchain payments rail. Built for nonprofits
-            that drown in tool sprawl.
-          </p>
-        </div>
-
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
-          {CAPABILITIES.map((c, i) => (
-            <article
-              key={c.title}
-              className={`group relative flex flex-col gap-6 border border-[var(--matcha-deep)]/15 bg-[var(--surface)] p-8 transition-colors hover:bg-[var(--mint-pale)] ${
-                i === 0 ? "md:col-span-2" : ""
-              }`}
-            >
-              <div className="font-mono text-xs uppercase tracking-[0.18em] text-[var(--matcha-deep)]/50">
-                {c.tag}
-              </div>
-              <h3 className="r-display text-3xl font-medium tracking-tight sm:text-4xl">
-                {c.title}
-              </h3>
-              <p className="text-sm leading-relaxed text-[var(--matcha-deep)]/70 sm:text-base">
-                {c.blurb}
-              </p>
-              <Link
-                href={c.href}
-                className="mt-auto inline-flex items-center gap-2 self-start border border-[var(--matcha-deep)]/20 bg-transparent px-4 py-2 text-xs uppercase tracking-[0.15em] transition-colors hover:bg-[var(--matcha-deep)] hover:text-[var(--cream)]"
-              >
-                Open →
-              </Link>
-            </article>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
-
-/* ─── from dream to reality ────────────────────────────────────────────── */
-
-function DreamToReality() {
-  return (
-    <section className="overflow-hidden bg-[var(--matcha-deep)] py-2">
-      <div className="r-display flex animate-r-marquee whitespace-nowrap text-[14vw] font-medium tracking-tight text-[var(--cream)] sm:text-[12vw] md:text-[150px]">
-        {Array.from({ length: 6 }).map((_, i) => (
-          <span key={i} className="mx-8 inline-flex items-center gap-8">
-            ask{" "}
-            <span className="r-italic font-light text-[var(--strawberry-soft)]">across</span>{" "}
-            every tool
-            <span className="text-[var(--strawberry-deep)]">✦</span>
-          </span>
-        ))}
-      </div>
-    </section>
-  );
-}
-
-/* ─── stats (real numbers from the connector registry) ─────────────────── */
-
-function Stats({
-  connectorCount,
-  toolCount,
-}: {
-  connectorCount: number;
-  toolCount: number;
-}) {
-  // Every number on this row is computed at request time from real code:
-  //   - connectorCount: listConnectors().length
-  //   - toolCount     : sum of c.tools.length across connectors
-  //   - 1             : the one tenant ("Rivertown") wired into lib/tenants.ts
-  // Add a stat → ground it in something computable. No estimates.
-  const STATS = [
-    { value: String(connectorCount), label: "connectors wired" },
-    { value: String(toolCount), label: "agent tools live" },
-    { value: "1", label: "demo tenant ready" },
-  ] as const;
-
-  return (
     <section
-      id="numbers"
-      className="bg-[var(--matcha-deep)] py-32 text-[var(--cream)] sm:py-40"
+      data-hero
+      data-section-tone="dark-on-light"
+      className="matcha-page relative flex min-h-screen w-full items-center justify-center overflow-hidden"
     >
-      <div className="mx-auto max-w-[1400px] px-8 sm:px-12">
-        <div className="grid grid-cols-1 gap-12 md:grid-cols-12 md:gap-16">
-          <div className="md:col-span-5">
-            <div className="flex items-baseline gap-6 sm:gap-10">
-              {STATS.map((s) => (
-                <div key={s.label} className="flex-1">
-                  <div className="r-display text-[18vw] font-medium leading-none tracking-tight sm:text-[8vw] md:text-[92px]">
-                    {s.value}
-                  </div>
-                  <div className="mt-2 text-xs uppercase tracking-[0.15em] text-[var(--cream)]/60">
-                    {s.label}
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-          <div className="md:col-span-7 md:pl-16">
-            <p className="text-balance text-lg leading-relaxed text-[var(--cream)]/80 sm:text-xl">
-              Each number above is computed at page-render time from{" "}
-              <code className="rounded bg-[var(--cream)]/10 px-1.5 text-[var(--strawberry-soft)]">
-                listConnectors()
-              </code>{" "}
-              over the live registry — they're not hardcoded marketing copy. Every metric in this
-              app traces to real code or seed data; the dashboard uses real audit-log entries, the
-              x402 endpoint returns real onchain receipts, and the cause-coin launcher deploys real
-              Token-2022 mints on Solana devnet.
-            </p>
-          </div>
-        </div>
+      <SparkleField density={26} />
+      <div aria-hidden className="absolute inset-0 mint-stripes opacity-80" />
+      <ReceiptSticker
+        label="Built for"
+        value="Nonprofit teams"
+        className="absolute left-4 top-4 z-20 max-w-[186px] rotate-[-3deg] text-[13px] font-medium leading-[1.15] md:left-5 md:top-5"
+      >
+        Two staff, eleven tools, never enough time.
+      </ReceiptSticker>
+
+      <ReceiptSticker
+        label="Connects"
+        value="11 tools"
+        className="absolute right-4 top-[18%] z-20 hidden max-w-[200px] rotate-3 text-right md:block"
+      >
+        Salesforce, Drive, Gmail, Calendar, Slack, Notion, and more.
+      </ReceiptSticker>
+
+      <div data-hero-brand className="absolute bottom-4 left-1/2 z-20 -translate-x-1/2 leading-none opacity-70">
+        <MiniKaliWordmark />
       </div>
-    </section>
-  );
-}
 
-/* ─── status (build state, not pricing) ────────────────────────────────── */
-
-function Status() {
-  return (
-    <section
-      id="status"
-      className="bg-[var(--cream)] py-32 text-[var(--matcha-deep)] sm:py-40"
-    >
-      <div className="mx-auto max-w-[1400px] px-8 sm:px-12">
-        <div className="mb-16 max-w-3xl">
-          <div className="font-mono text-xs uppercase tracking-[0.18em] text-[var(--matcha-deep)]/60">
-            (status)
-          </div>
-          <h2 className="r-display mt-4 text-[10vw] font-medium leading-[0.95] tracking-tight sm:text-[6vw] md:text-[85px]">
-            Where this{" "}
-            <span className="r-italic font-light text-[var(--strawberry-deep)]">is</span> right now
-          </h2>
+      <div className="relative z-30 mx-auto flex w-full max-w-[860px] flex-col items-center justify-center px-4 text-center">
+        <div className="hero-line">
+          <KaliWordmark />
         </div>
-
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
-          <StatusCard
-            phase="v1 prototype"
-            tone="green"
-            blurb="11 connectors mocked with seed data. Agent runtime + chat UI live. Audit log persists. CSV export works. Demo tenant Rivertown pre-seeded across every tool."
-          />
-          <StatusCard
-            phase="onchain"
-            tone="green"
-            blurb="x402 endpoint settles real USDC on Solana devnet. Token-2022 cause coins deploy with onchain metadata + 1B initial supply, no freeze authority. Tax-receipt PDFs HMAC-signed."
-          />
-          <StatusCard
-            phase="post-hackathon"
-            tone="amber"
-            blurb="Real OAuth on each connector. Mainnet deploy gated on securities counsel review. Recurring x402 cron via Inngest in production. Multi-tenant with Privy server wallets."
-          />
+        <div
+          className="hero-line ceramic-panel mt-5 max-w-[760px] -rotate-1 rounded-[32px] px-6 py-5 text-[34px] font-medium leading-[1.02] text-ink-near md:mt-7 md:text-[56px] lg:text-[68px]"
+          aria-hidden
+        >
+          <span className="block">One chat,</span>
+          <span className="block text-matcha-700">every tool you run on.</span>
         </div>
-
-        <div className="mt-12 flex flex-wrap items-center gap-3">
-          <Link
-            href="/dashboard?demo=rivertown"
-            className="rounded-none bg-[var(--matcha-deep)] px-5 py-3 text-sm uppercase tracking-[0.15em] text-[var(--cream)] transition-transform hover:scale-[1.02]"
-          >
-            Open the dashboard
-          </Link>
-          <Link
-            href="/crypto"
-            className="rounded-none border border-[var(--matcha-deep)]/20 px-5 py-3 text-sm uppercase tracking-[0.15em] transition-colors hover:bg-[var(--matcha-deep)] hover:text-[var(--cream)]"
-          >
-            Crypto desk
-          </Link>
+        <p className="hero-line mt-6 max-w-[560px] font-subtext text-[16px] font-bold leading-[1.48] text-muted-deep md:text-[18px]">
+          Kali is the agentic context layer for nonprofits. Ask anything across your CRM, drive, inbox, and calendar &mdash; get a single cited answer, with every write held until you approve it.
+        </p>
+        <div className="hero-line mt-8 flex flex-wrap items-center justify-center gap-3">
           <a
-            href="https://github.com/stephenhungg/kali-v0"
-            className="rounded-none border border-[var(--matcha-deep)]/20 px-5 py-3 text-sm uppercase tracking-[0.15em] transition-colors hover:bg-[var(--matcha-deep)] hover:text-[var(--cream)]"
+            href="/chat"
+            className="source-transition mochi-button inline-flex h-12 items-center justify-center bg-matcha-700 px-6 text-[16px] font-medium leading-none text-cloud hover:bg-matcha-500"
           >
-            GitHub →
+            Try Kali
+          </a>
+          <a
+            href="#queries"
+            className="source-transition mochi-button inline-flex h-12 items-center justify-center bg-cloud px-6 text-[16px] font-medium leading-none text-matcha-700 ring-1 ring-matcha-700/20 hover:bg-matcha-100"
+          >
+            See uses
           </a>
         </div>
       </div>
+
+      <ScatterSticker
+        src="/kawaii/generated/hero-laptop-v2.png"
+        alt=""
+        className="hidden md:block right-[4%] bottom-[14%] h-[150px] w-[150px] rotate-6"
+      />
+      <ScatterSticker
+        src="/kawaii/generated/hero-phone-v2.png"
+        alt=""
+        className="hidden md:block left-[4%] bottom-[14%] h-[140px] w-[140px] -rotate-6"
+      />
+      <ScatterSticker
+        src="/kawaii/generated/hero-book-v2.png"
+        alt=""
+        className="hidden md:block left-[5%] top-[42%] h-[120px] w-[120px] rotate-[-8deg]"
+      />
     </section>
   );
 }
 
-function StatusCard({
-  phase,
-  tone,
-  blurb,
+function ScatterSticker({
+  src,
+  alt,
+  className,
 }: {
-  phase: string;
-  tone: "green" | "amber";
-  blurb: string;
+  src: string;
+  alt: string;
+  className: string;
 }) {
-  const dotColor = tone === "green" ? "var(--matcha-mid)" : "var(--strawberry-deep)";
-  const labelText = tone === "green" ? "shipping" : "post-v1";
   return (
-    <article className="flex flex-col gap-6 border border-[var(--matcha-deep)]/15 bg-[var(--surface)] p-8">
-      <div className="flex items-center gap-3">
-        <span
-          className="inline-block h-2 w-2 rounded-full"
-          style={{ background: dotColor }}
-        />
-        <span className="font-mono text-xs uppercase tracking-[0.18em] text-[var(--matcha-deep)]/60">
-          {labelText}
-        </span>
-      </div>
-      <h3 className="r-display text-3xl font-medium tracking-tight">{phase}</h3>
-      <p className="text-sm leading-relaxed text-[var(--matcha-deep)]/70">{blurb}</p>
-    </article>
+    <div
+      data-scatter-parallax
+      data-parallax-y={HERO_DRIFT}
+      className={`pointer-events-none absolute z-20 ${className}`}
+    >
+      <Image
+        src={src}
+        alt={alt}
+        fill
+        sizes="(min-width: 768px) 220px, 160px"
+        className="object-contain drop-shadow-[0_8px_0_rgba(107,137,93,0.28)]"
+        priority
+      />
+    </div>
   );
 }
 
-/* ─── footer ───────────────────────────────────────────────────────────── */
+function SplitIntro() {
+  return (
+    <section
+      id="what"
+      data-section-tone="dark-on-light"
+      className="relative min-h-[831px] overflow-hidden mint-gingham text-ink-near md:min-h-[751px]"
+    >
+      <SparkleField density={18} />
+      <div className="pointer-events-none absolute right-[-40px] top-[70px] hidden h-[470px] w-[620px] rotate-3 md:block">
+        <Image src="/kawaii/generated/intro-scene-v2.png" alt="" fill sizes="620px" className="object-contain drop-shadow-[0_10px_0_rgba(107,137,93,0.24)]" />
+      </div>
+      <div className="gutter relative z-10 flex min-h-[831px] flex-col justify-between py-[80px] md:min-h-[751px] md:py-[112px]">
+        <div data-appear className="ceramic-panel max-w-[704px] rounded-[36px] p-7 font-subtext text-[24px] font-bold leading-[1.22] md:p-10 md:text-[32px]">
+          <p>
+            Nonprofits run lean. Two staff, eleven tools, donor data scattered across systems that were never built to talk.
+          </p>
+          <p className="mt-6 max-w-[563px] pl-[10%] text-matcha-700">
+            Kali sits across all of them and answers in one place &mdash; with citations, with drafts, and with a clear approval step before anything is sent or saved.
+          </p>
+        </div>
+
+        <div className="grid gap-8 md:grid-cols-12 md:items-end">
+          <h2 data-appear className="font-bagel text-[38px] font-normal leading-[0.95] text-matcha-800 md:col-span-5 md:text-[60px]">
+            Cute surface. Serious backend.
+          </h2>
+          <div data-appear data-appear-delay="0.08" className="md:col-span-3 md:col-start-10">
+            <ul className="space-y-2 text-[22px] font-medium leading-[1.15] text-matcha-700 md:text-[28px]">
+              <li>Cited answers</li>
+              <li>Parallel tool calls</li>
+              <li>Human-in-the-loop writes</li>
+            </ul>
+            <a
+              href="#queries"
+              className="source-transition mochi-button mt-5 inline-flex h-12 w-44 items-center justify-center bg-matcha-500 text-[16px] font-medium leading-none text-cloud hover:bg-matcha-700"
+            >
+              See uses
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function WorkSection() {
+  return (
+    <section
+      id="queries"
+      data-selected-work
+      data-section-tone="dark-on-light"
+      className="relative h-[3487px] mint-stripes"
+    >
+      <div className="pointer-events-none sticky top-0 z-0 h-screen overflow-hidden">
+        <div className="relative mx-auto h-full max-w-[1080px]">
+          <h2
+            data-selected-drift="left"
+            className="text-sticker-matcha absolute left-0 top-[190px] font-bagel text-[72px] font-normal leading-[0.85] will-change-transform md:top-[214px] md:text-[200px]"
+          >
+            Uses
+          </h2>
+          <h2
+            data-selected-drift="right"
+            className="text-sticker-matcha absolute right-0 top-[350px] font-bagel text-[72px] font-normal leading-[0.85] will-change-transform md:top-[503px] md:text-[200px]"
+          >
+            today
+          </h2>
+          <div
+            data-selected-drift="label"
+            className="receipt-sticker absolute right-4 top-[245px] text-right text-[13px] font-medium leading-none will-change-transform md:right-[127px] md:top-[419px]"
+          >
+            What teams ask Kali
+            <br />
+            on day one
+          </div>
+        </div>
+      </div>
+
+      <div data-work-list className="gutter absolute inset-x-0 top-[1060px] z-10">
+        <ul className="mx-auto flex max-w-[950px] flex-col gap-[160px] md:gap-[160px]">
+          {WORK_ITEMS.map((item) => (
+            <li key={item.title}>
+              <a
+                href="/chat"
+                className="group grid gap-4 md:min-h-[629px] md:grid-cols-[244px_437px_244px] md:gap-3"
+              >
+                <div className="hidden items-end md:flex">
+                  <h3 className="receipt-sticker rotate-[-2deg] text-[28px] font-medium leading-[1.05]">{toSentenceCase(item.title)}</h3>
+                </div>
+                <div
+                  data-work-image={item.n}
+                  className="source-media-tint relative aspect-[351/505] overflow-hidden bg-hairline md:h-[629px] md:w-[437px]"
+                >
+                  <Image
+                    src={item.src}
+                    alt={item.alt}
+                    fill
+                    sizes="(min-width: 768px) 437px, calc(100vw - 32px)"
+                    className="object-cover source-transition group-hover:scale-[1.02]"
+                  />
+                </div>
+                <div className="receipt-sticker hidden rotate-2 space-y-3 text-[14px] font-medium leading-[1.45] text-muted-secondary md:block">
+                  <p className="text-[15px] leading-[1.4] text-ink-near">{item.blurb}</p>
+                  <div className="space-y-1 text-[13px] uppercase tracking-[0.12em] text-matcha-700">
+                    <p>{item.tags[0]}</p>
+                    <p>{item.tags[1]}</p>
+                  </div>
+                  <p className="text-ink-near/35">({item.n})</p>
+                </div>
+                <span className="sr-only">
+                  {item.title}, {item.tags.join(" and ")}
+                </span>
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </section>
+  );
+}
 
 function Footer() {
   return (
-    <footer className="bg-[var(--matcha-deep)] text-[var(--cream)]">
-      <div className="border-t border-[var(--cream)]/10">
-        <div className="mx-auto flex max-w-[1400px] items-end justify-between px-8 py-20 sm:px-12 sm:py-32">
-          <h2 className="r-display text-[14vw] font-medium leading-[0.9] tracking-tight sm:text-[10vw] md:text-[150px]">
-            Try{" "}
-            <span className="r-italic font-light text-[var(--strawberry-soft)]">it</span>
-          </h2>
-          <Link
-            href="/dashboard?demo=rivertown"
-            className="hidden h-32 w-32 items-center justify-center rounded-full border border-[var(--cream)]/20 transition-transform hover:scale-105 md:flex"
-            aria-label="Open the demo"
-          >
-            <span className="text-3xl">→</span>
-          </Link>
+    <footer data-section-tone="dark-on-light" className="relative overflow-hidden text-ink-near">
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0 -z-10"
+        style={{
+          backgroundImage: "url(/kawaii/generated/footer-leaves-v1.png)",
+          backgroundRepeat: "repeat",
+          backgroundSize: "640px auto",
+        }}
+      />
+      <div aria-hidden className="pointer-events-none absolute inset-0 -z-10 bg-[var(--paper)]/55" />
+      <SparkleField density={30} />
+      <div className="gutter py-16 md:py-20">
+        <div className="grid gap-10 text-[15px] font-medium leading-[1.5] md:grid-cols-12 md:gap-12">
+          <p className="max-w-[420px] text-[18px] leading-[1.45] text-ink-near md:col-span-5 md:text-[20px]">
+            Kali is the agentic context layer for nonprofits. Cited answers across every tool you run on, with human approval before anything writes back.
+          </p>
+
+          <div className="grid gap-8 sm:grid-cols-3 md:col-span-7">
+            <div>
+              <p className="text-[11px] uppercase tracking-[0.16em] text-muted-secondary">Status</p>
+              <p className="mt-2">Private beta</p>
+              <p className="text-muted-secondary">Onboarding nonprofits now</p>
+            </div>
+            <div>
+              <p className="text-[11px] uppercase tracking-[0.16em] text-muted-secondary">Reach the team</p>
+              <a href="mailto:founders@kalilabs.ai" className="kali-link mt-2 block">
+                founders@kalilabs.ai
+              </a>
+              <a href="https://github.com/stephenhungg/kali-v0" className="kali-link block text-muted-secondary">
+                github.com/stephenhungg/kali-v0
+              </a>
+            </div>
+            <div>
+              <p className="text-[11px] uppercase tracking-[0.16em] text-muted-secondary">Built at</p>
+              <p className="mt-2">HackDavis 2026</p>
+              <p className="text-muted-secondary">UC Davis &middot; May 10</p>
+            </div>
+          </div>
         </div>
       </div>
 
-      <div className="overflow-hidden border-t border-[var(--cream)]/10">
-        <div className="r-display flex animate-r-marquee whitespace-nowrap py-6 text-[18vw] font-medium tracking-tighter text-[var(--cream)] sm:text-[16vw]">
-          {Array.from({ length: 6 }).map((_, i) => (
-            <span key={i} className="mx-6 inline-flex items-center gap-6">
-              kali
-              <span className="text-[var(--strawberry-deep)]">✦</span>
-            </span>
-          ))}
-        </div>
-      </div>
-
-      <div className="border-t border-[var(--cream)]/10">
-        <div className="mx-auto flex max-w-[1400px] flex-col gap-2 px-8 py-6 text-xs uppercase tracking-[0.15em] text-[var(--cream)]/60 sm:flex-row sm:items-center sm:justify-between sm:px-12">
-          <span>© Kali — HackDavis 2026</span>
-          <span>Stephen Hung · Matthew Kim · Silas Wu · Jake Li</span>
+      <div className="gutter flex flex-col items-center gap-3 border-t border-hairline pb-8 pt-8 text-[12px] text-muted-secondary md:flex-row md:justify-between">
+        <p>&copy; 2026 Kali Labs &middot; Made with matcha at UC Davis</p>
+        <div className="flex items-center gap-4">
+          <a href="#top" className="kali-link">Back to top</a>
+          <a href="mailto:founders@kalilabs.ai" className="kali-link">Email</a>
         </div>
       </div>
     </footer>
   );
 }
+
+function toSentenceCase(value: string) {
+  return value ? value.charAt(0).toUpperCase() + value.slice(1) : value;
+}
+
