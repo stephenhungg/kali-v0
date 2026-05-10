@@ -1,66 +1,183 @@
 @import "tailwindcss";
 
+@font-face {
+  font-family: "Switzer";
+  src: url("/thingsagency/fonts/switzer.woff2") format("woff2");
+  font-weight: 400 700;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
-  /* strawberry matcha palette */
-  --cream: #F9ECE5;
-  --strawberry-soft: #FFCBC9;
-  --strawberry-deep: #9C3C4B;
-  --matcha-mid: #639067;
-  --matcha-deep: #044B3A;
+  /* fresh matcha-latte kawaii identity */
+  --paper: #FFFDF6;
+  --cloud: #FFFFFF;
+  --soft: #F1FAE9;
+  --hairline: rgba(107, 137, 93, 0.18);
 
-  /* white + mint extensions (chat surface) */
-  --mint-pale: #E7F0E9;       /* hover/active surfaces */
-  --mint-line: #C9DCCD;       /* subtle borders */
-  --mint-line-soft: #E4ECE5;  /* softer dividers */
-  --gray-ink: #6B7A6E;        /* muted mono captions */
-  --gray-line: #ECEFEC;       /* very subtle dividers on white */
+  --ink: #2D241C;
+  --ink-near: #2D241C;
+  --muted-deep: rgba(45, 36, 28, 0.76);
+  --muted-secondary: rgba(45, 36, 28, 0.56);
+  --muted-tertiary: rgba(45, 36, 28, 0.34);
+
+  --matcha-50: #FFFDF6;
+  --matcha-100: #F1FAE9;
+  --matcha-200: #DCEFCF;
+  --matcha-300: #C2E4B8;
+  --matcha-400: #9BCF88;
+  --matcha-500: #78A86B;
+  --matcha-600: #5C8A58;
+  --matcha-700: #365E3C;
+  --matcha-800: #204C37;
+  --matcha-900: #163525;
+
+  /* legacy/chat aliases from the dashboard branch */
+  --cream: #FFF4DF;
+  --matcha-mid: #78A86B;
+  --matcha-deep: #204C37;
+  --mint-pale: #F1FAE9;
+  --mint-line: #DCEFCF;
+  --mint-line-soft: #EDF7E7;
+  --gray-ink: #6B7A5F;
+  --gray-line: #EEF4EA;
   --surface: #FFFFFF;
-  --surface-raised: #FAFBF9;
+  --surface-raised: #FFFDF6;
 
-  /* radiance-derived motion tokens */
+  /* tiny berry accent, only for warmth */
+  --strawberry-soft: #FFD9DE;
+  --strawberry-deep: #B84D62;
+  --yuzu-soft: #FFE7A3;
+  --yuzu-deep: #9B6F18;
+
+  /* motion — captured from thingsagency: 0.4s cubic-bezier(0.44, 0, 0.56, 1) */
+  --hover-ease: cubic-bezier(0.44, 0, 0.56, 1);
+  --hover-duration: 0.4s;
   --r-ease: cubic-bezier(0.04, 1.13, 0.5, 1);
   --r-duration: 800ms;
   --r-fade-duration: 400ms;
 
-  /* page defaults */
-  --background: var(--matcha-deep);
-  --foreground: var(--cream);
+  --background: var(--paper);
+  --foreground: var(--ink-near);
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-paper: var(--paper);
+  --color-cloud: var(--cloud);
+  --color-soft: var(--soft);
+  --color-hairline: var(--hairline);
+  --color-ink: var(--ink);
+  --color-ink-near: var(--ink-near);
+  --color-muted-deep: var(--muted-deep);
+  --color-muted-secondary: var(--muted-secondary);
+  --color-muted-tertiary: var(--muted-tertiary);
+  --color-matcha-50: var(--matcha-50);
+  --color-matcha-100: var(--matcha-100);
+  --color-matcha-200: var(--matcha-200);
+  --color-matcha-300: var(--matcha-300);
+  --color-matcha-400: var(--matcha-400);
+  --color-matcha-500: var(--matcha-500);
+  --color-matcha-600: var(--matcha-600);
+  --color-matcha-700: var(--matcha-700);
+  --color-matcha-800: var(--matcha-800);
+  --color-matcha-900: var(--matcha-900);
   --color-cream: var(--cream);
-  --color-strawberry-soft: var(--strawberry-soft);
-  --color-strawberry-deep: var(--strawberry-deep);
   --color-matcha-mid: var(--matcha-mid);
   --color-matcha-deep: var(--matcha-deep);
-  --font-sans: var(--font-sans-inter);
-  --font-display: var(--font-display);
-  --font-italic: var(--font-italic);
+  --color-strawberry-soft: var(--strawberry-soft);
+  --color-strawberry-deep: var(--strawberry-deep);
+  --color-yuzu-soft: var(--yuzu-soft);
+  --color-yuzu-deep: var(--yuzu-deep);
+
+  --font-sans: var(--font-subtext);
+  --font-swiss: var(--font-swiss);
+  --font-bagel: var(--font-bagel);
+  --font-subtext: var(--font-subtext);
+  --font-instrument-serif: var(--font-instrument-serif);
+  --font-display: var(--font-swiss);
+  --font-italic: var(--font-instrument-serif);
   --font-mono: var(--font-mono-geist);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: var(--font-sans-inter), Inter, system-ui, sans-serif;
+  background:
+    radial-gradient(ellipse at 12% 0%, rgba(220, 239, 207, 0.82), transparent 42%),
+    radial-gradient(ellipse at 85% 6%, rgba(255, 244, 223, 0.9), transparent 38%),
+    var(--paper);
+  color: var(--ink-near);
+  font-family: var(--font-subtext), Nunito, var(--font-sans-inter), Inter, system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
 }
 
-/* radiance display rhythm */
-.r-display {
-  font-family: var(--font-display), "Instrument Sans", sans-serif;
+::selection {
+  background: var(--matcha-500);
+  color: var(--cloud);
+}
+
+/* responsive page-edge gutter */
+.gutter {
+  padding-left: 16px;
+  padding-right: 16px;
+}
+@media (min-width: 940px) {
+  .gutter { padding-left: 40px; padding-right: 40px; }
+}
+@media (min-width: 1440px) {
+  .gutter { padding-left: 80px; padding-right: 80px; }
+}
+
+/* font helpers
+   - .font-swiss = headline / wordmark editorial sans (Plus Jakarta — closest
+     open-license to Switzer; tight tracking, swiss-brutalist feel)
+   - .font-bagel = kawaii bubble (kept for tiny brand accents only)
+   - .font-cute  = italic serif flourish (✦ + accent marks) */
+.font-swiss {
+  font-family: "Switzer", var(--font-swiss), "Helvetica Neue", Arial, sans-serif;
+  font-weight: 500;
+  font-feature-settings: "ss01", "ss02";
+  letter-spacing: 0;
+  line-height: 0.95;
+}
+.font-swiss-tight {
+  font-family: "Switzer", var(--font-swiss), "Helvetica Neue", Arial, sans-serif;
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 0.92;
+}
+.font-bagel {
+  font-family: var(--font-bagel), "Bagel Fat One", system-ui, sans-serif;
   font-weight: 400;
-  letter-spacing: -0.04em;
-  line-height: 0.9;
+  letter-spacing: 0;
+  line-height: 0.95;
+}
+.font-cute {
+  font-family: var(--font-instrument-serif), Georgia, serif;
+  font-style: italic;
+  font-weight: 400;
+}
+.font-subtext {
+  font-family: var(--font-subtext), Nunito, var(--font-sans-inter), Inter, system-ui, sans-serif;
+  letter-spacing: 0;
+}
+
+/* dashboard/pay pages from the chat branch still use the earlier radiance
+   utility names. Keep them mapped to the landing typography tokens. */
+.r-display {
+  font-family: "Switzer", var(--font-swiss), "Helvetica Neue", Arial, sans-serif;
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 0.95;
 }
 
 .r-italic {
-  font-family: var(--font-italic), "Inria Serif", serif;
+  font-family: var(--font-instrument-serif), Georgia, serif;
   font-style: italic;
 }
 
-/* radiance scroll-marquee keyframe (used in footer + decorative bands) */
 @keyframes r-marquee {
   from { transform: translateX(0); }
   to { transform: translateX(-33.3333%); }
@@ -70,44 +187,192 @@ body {
   animation: r-marquee 28s linear infinite;
 }
 
-/* radiance entrance */
 @keyframes r-rise {
   0% { transform: translateY(105%); opacity: 0; }
   100% { transform: translateY(0); opacity: 1; }
 }
 
-/* chat surface utilities — used by /chat */
 .chat-surface {
-  background: var(--surface);
+  background:
+    radial-gradient(ellipse at 18% 4%, rgba(220, 239, 207, 0.72), transparent 42%),
+    repeating-linear-gradient(135deg, rgba(241, 250, 233, 0.58) 0 24px, rgba(255, 255, 255, 0.78) 24px 48px),
+    var(--paper);
   color: var(--matcha-deep);
 }
 
 .chat-card {
-  background: var(--surface);
-  border: 1px solid var(--mint-line);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.94), rgba(255, 253, 246, 0.9)),
+    radial-gradient(ellipse at 16% 0%, rgba(241, 250, 233, 0.88), transparent 58%);
+  border: 2px solid rgba(255, 255, 255, 0.94);
+  border-radius: 22px;
+  box-shadow:
+    0 6px 0 rgba(213, 198, 165, 0.44),
+    0 20px 46px -32px rgba(45, 36, 28, 0.36);
 }
 
-/* source-pulse glow — fired when a tool runs */
 @keyframes source-pulse {
-  0%   { box-shadow: 0 0 0 0 var(--matcha-mid), 0 0 0 0 transparent; background: var(--surface); }
-  20%  { box-shadow: 0 0 0 4px color-mix(in oklab, var(--matcha-mid) 40%, transparent), 0 0 24px 0 color-mix(in oklab, var(--matcha-mid) 30%, transparent); background: var(--mint-pale); }
-  100% { box-shadow: 0 0 0 0 transparent, 0 0 0 0 transparent; background: var(--surface); }
+  0% {
+    box-shadow: 0 0 0 0 var(--matcha-mid), 0 0 0 0 transparent;
+    background: var(--surface);
+  }
+  20% {
+    box-shadow:
+      0 0 0 4px color-mix(in oklab, var(--matcha-mid) 40%, transparent),
+      0 0 24px 0 color-mix(in oklab, var(--matcha-mid) 30%, transparent);
+    background: var(--mint-pale);
+  }
+  100% {
+    box-shadow: 0 0 0 0 transparent, 0 0 0 0 transparent;
+    background: var(--surface);
+  }
 }
 
 .source-pulse {
   animation: source-pulse 1200ms var(--r-ease);
 }
 
-/* subtle blink for in-flight indicators */
 @keyframes blink-soft {
   0%, 100% { opacity: 0.35; }
-  50%      { opacity: 1; }
+  50% { opacity: 1; }
 }
-.blink-soft { animation: blink-soft 1.4s ease-in-out infinite; }
 
-/* per-row stagger entrance for tool-call ledger + receipts items */
+.blink-soft {
+  animation: blink-soft 1.4s ease-in-out infinite;
+}
+
 @keyframes row-rise {
-  0%   { opacity: 0; transform: translateY(6px); }
+  0% { opacity: 0; transform: translateY(6px); }
   100% { opacity: 1; transform: translateY(0); }
 }
-.row-rise { animation: row-rise 320ms var(--r-ease) both; }
+
+.row-rise {
+  animation: row-rise 320ms var(--r-ease) both;
+}
+
+/* link hover — captured timing from thingsagency */
+.kali-link {
+  transition: color var(--hover-duration) var(--hover-ease);
+}
+
+.source-transition {
+  transition-property: color, background-color, border-color, opacity, transform;
+  transition-duration: var(--hover-duration);
+  transition-timing-function: var(--hover-ease);
+}
+
+.source-media-tint {
+  overflow: hidden;
+  border: 8px solid var(--cloud);
+  border-radius: 28px;
+  background: var(--matcha-200);
+  box-shadow:
+    0 9px 0 rgba(107, 137, 93, 0.34),
+    0 22px 54px -30px rgba(45, 36, 28, 0.42);
+}
+
+.source-media-tint img {
+  display: block;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  opacity: 0.9;
+  filter: saturate(0.85) contrast(0.96) brightness(1.04);
+}
+
+.rounded-pill { border-radius: 999px; }
+.text-balance { text-wrap: balance; }
+
+.matcha-page {
+  background:
+    radial-gradient(ellipse at 18% 8%, rgba(220, 239, 207, 0.72), transparent 42%),
+    radial-gradient(ellipse at 78% 10%, rgba(255, 244, 223, 0.78), transparent 38%),
+    repeating-linear-gradient(135deg, rgba(194, 228, 184, 0.28) 0 22px, rgba(255, 255, 255, 0.48) 22px 44px),
+    var(--paper);
+}
+
+.mint-stripes {
+  background:
+    linear-gradient(180deg, rgba(255, 253, 246, 0.86), rgba(255, 255, 255, 0.72)),
+    repeating-linear-gradient(135deg, rgba(220, 239, 207, 0.92) 0 24px, rgba(255, 255, 255, 0.95) 24px 48px);
+}
+
+.mint-gingham {
+  background-color: var(--paper);
+  background-image:
+    linear-gradient(90deg, rgba(194, 228, 184, 0.32) 50%, transparent 50%),
+    linear-gradient(rgba(194, 228, 184, 0.32) 50%, transparent 50%);
+  background-size: 42px 42px;
+}
+
+.ceramic-panel {
+  border: 2px solid rgba(255, 255, 255, 0.94);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.94), rgba(255, 253, 246, 0.86)),
+    radial-gradient(ellipse at 16% 0%, rgba(241, 250, 233, 0.9), transparent 58%);
+  box-shadow:
+    0 8px 0 rgba(213, 198, 165, 0.58),
+    0 24px 70px -32px rgba(45, 36, 28, 0.38);
+}
+
+.sticker-shell {
+  border: 8px solid var(--cloud);
+  border-radius: 36px;
+  box-shadow:
+    0 10px 0 rgba(107, 137, 93, 0.32),
+    0 28px 60px -34px rgba(45, 36, 28, 0.44);
+}
+
+.receipt-sticker {
+  font-family: var(--font-subtext), Nunito, var(--font-sans-inter), Inter, system-ui, sans-serif;
+  border: 2px dashed rgba(107, 137, 93, 0.34);
+  border-radius: 22px;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.94), rgba(255, 253, 246, 0.92)),
+    repeating-linear-gradient(0deg, rgba(241, 250, 233, 0.65) 0 12px, transparent 12px 24px);
+  padding: 18px;
+  box-shadow:
+    0 6px 0 rgba(213, 198, 165, 0.46),
+    0 20px 44px -30px rgba(45, 36, 28, 0.38);
+}
+
+.text-sticker-matcha {
+  color: var(--matcha-800);
+  -webkit-text-stroke: 10px var(--cloud);
+  paint-order: stroke fill;
+  text-shadow:
+    0 12px 0 rgba(107, 137, 93, 0.45),
+    0 26px 36px rgba(45, 36, 28, 0.16);
+}
+
+.text-sticker-matcha-sm {
+  color: var(--matcha-800);
+  -webkit-text-stroke: 4px var(--cloud);
+  paint-order: stroke fill;
+  text-shadow: 0 4px 0 rgba(107, 137, 93, 0.36);
+}
+
+.mochi-button {
+  border-radius: 999px;
+  box-shadow:
+    0 8px 0 rgba(54, 94, 60, 0.28),
+    inset 0 1px 0 rgba(255, 255, 255, 0.45);
+}
+
+@keyframes kawaii-float {
+  0%, 100% { transform: translateY(0) rotate(-2deg); }
+  50% { transform: translateY(-10px) rotate(2deg); }
+}
+
+@keyframes kawaii-twinkle {
+  0%, 100% { transform: scale(1) rotate(0deg); opacity: 0.9; }
+  50% { transform: scale(0.58) rotate(18deg); opacity: 0.45; }
+}
+
+.animate-kawaii-float {
+  animation: kawaii-float 4.4s ease-in-out infinite;
+}
+
+.animate-kawaii-twinkle {
+  animation: kawaii-twinkle 1.8s ease-in-out infinite;
+}

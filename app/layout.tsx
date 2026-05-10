@@ -1,5 +1,12 @@
 import type { Metadata } from "next";
-import { Geist_Mono, Inter, Instrument_Sans, Inria_Serif } from "next/font/google";
+import {
+  Geist_Mono,
+  Inter,
+  Bagel_Fat_One,
+  Instrument_Serif,
+  Nunito,
+  Plus_Jakarta_Sans,
+} from "next/font/google";
 import "./globals.css";
 
 const inter = Inter({
@@ -7,17 +14,33 @@ const inter = Inter({
   subsets: ["latin"],
 });
 
-const instrumentSans = Instrument_Sans({
-  variable: "--font-display",
+const plusJakartaSans = Plus_Jakarta_Sans({
+  variable: "--font-swiss",
   subsets: ["latin"],
-  weight: ["400", "500", "600"],
+  weight: ["400", "500", "600", "700", "800"],
+  display: "swap",
 });
 
-const inriaSerif = Inria_Serif({
-  variable: "--font-italic",
+const bagelFatOne = Bagel_Fat_One({
+  variable: "--font-bagel",
   subsets: ["latin"],
-  weight: ["300", "400", "700"],
+  weight: ["400"],
+  display: "swap",
+});
+
+const instrumentSerif = Instrument_Serif({
+  variable: "--font-instrument-serif",
+  subsets: ["latin"],
+  weight: ["400"],
   style: ["italic", "normal"],
+  display: "swap",
+});
+
+const nunito = Nunito({
+  variable: "--font-subtext",
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800"],
+  display: "swap",
 });
 
 const geistMono = Geist_Mono({
@@ -26,9 +49,12 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Kali — agentic context layer for nonprofits",
-  description:
-    "One chat across eleven SaaS tools. Ask anything in plain English, get answers with citations. v1 prototype for HackDavis 2026.",
+  title: "kali",
+  description: "Agentic context layer for nonprofits.",
+  icons: {
+    icon: "/kawaii/app-icon.png",
+    apple: "/kawaii/app-icon.png",
+  },
 };
 
 export default function RootLayout({
@@ -39,9 +65,9 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${inter.variable} ${instrumentSans.variable} ${inriaSerif.variable} ${geistMono.variable} h-full antialiased`}
+      className={`${inter.variable} ${plusJakartaSans.variable} ${bagelFatOne.variable} ${instrumentSerif.variable} ${nunito.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full">{children}</body>
     </html>
   );
 }
