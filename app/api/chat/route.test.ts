@@ -49,7 +49,7 @@ function installFetchStub(scripted: AnthropicLikeResponse[]): void {
       throw new Error("stub: unexpected extra fetch call");
     }
     return jsonResponse(scripted[i++]);
-  }) as typeof fetch;
+  }) as unknown as typeof fetch;
 }
 
 function restoreFetch(): void {
@@ -178,7 +178,7 @@ describe("POST /api/chat — SSE streaming + persistence", () => {
   test("error event is captured into the conversation when Anthropic fails", async () => {
     globalThis.fetch = (async () => {
       throw new Error("upstream down");
-    }) as typeof fetch;
+    }) as unknown as typeof fetch;
 
     const res = await POST(
       new Request("http://localhost/api/chat", {

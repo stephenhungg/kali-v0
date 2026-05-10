@@ -18,6 +18,7 @@ import {
 } from "./entityResolver";
 import { semanticSearch } from "./semanticSearch";
 import { indexAll } from "./indexer";
+import { runQuery } from "./query";
 
 const resolverHitSchema = z.object({
   kali_entity_id: z.string(),
@@ -213,6 +214,53 @@ const tools: ToolDefinition[] = [
     }),
     collectRecordIds: () => [],
     run: async (input) => indexAll({ namespace: input.namespace }),
+  }),
+
+  makeContextTool({
+    name: "context.query",
+    description:
+      "CROSS-SOURCE STRUCTURED QUERY. Express a multi-source intersection in one call: find entities that match filters across bloomerang, salesforce, m365, zoom, instrumentl, knowbe4 — joined on kali_entity_id. Each filter has a source + a property path + an op (= | != | > | >= | < | <= | in | contains | exists) + a value. Returns surviving kali_entity_ids and their full cross-source profiles. Use this for the F8.1 wow-query (lapsed major donors w/ matching-gift employer who attended ≥N events). Computed virtuals: salesforce.$employerHasMatchingGifts, salesforce.$employer, zoom.$attendanceCount.",
+    domain: "donor",
+    input: z.object({
+      filters: z
+        .array(
+          z.object({
+            source: z.enum([
+              "bloomerang",
+              "salesforce",
+              "m365",
+              "zoom",
+              "instrumentl",
+              "knowbe4",
+            ]),
+            path: z.string(),
+            op: z.enum([
+              "=",
+              "!=",
+              ">",
+              ">=",
+              "<",
+              "<=",
+              "in",
+              "contains",
+              "exists",
+            ]),
+            value: z.unknown().optional(),
+          }),
+        )
+        .min(1)
+        .max(20),
+      limit: z.number().int().positive().max(200).optional(),
+    }),
+    output: z.object({
+      count: z.number().int().nonnegative(),
+      filtersApplied: z.number().int().nonnegative(),
+      perSourceCounts: z.record(z.string(), z.number()),
+      entityIds: z.array(z.string()),
+      profiles: z.array(entityProfileSchema),
+    }),
+    collectRecordIds: (out) => out.entityIds,
+    run: async (input) => runQuery(input as Parameters<typeof runQuery>[0]),
   }),
 ];
 
