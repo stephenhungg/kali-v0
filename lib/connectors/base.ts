@@ -19,7 +19,9 @@ export type ConnectorId =
   | "solana"
   | "powerbi"
   | "powerautomate"
-  | "knowbe4";
+  | "knowbe4"
+  /** Meta-connector: cross-source entity resolution + dossier (lib/context/). */
+  | "context";
 
 export type ToolDomain =
   | "donor"

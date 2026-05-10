@@ -17,11 +17,12 @@ import { SYSTEM_PROMPT, toAnthropicTools } from "./runtime";
 import { AuditLog, makeToolContext } from "../audit/log";
 
 describe("connector registration", () => {
-  test("all 11 expected connectors registered", () => {
+  test("all 11 SaaS connectors + context meta-connector registered", () => {
     const ids = listConnectors().map((c) => c.id).sort();
     expect(ids).toEqual(
       [
         "bloomerang",
+        "context",
         "instrumentl",
         "knowbe4",
         "m365",
@@ -36,7 +37,7 @@ describe("connector registration", () => {
     );
   });
 
-  test("listTools() returns ~70 tools across 11 connectors", () => {
+  test("listTools() returns ~70 tools across all connectors", () => {
     const tools = listTools();
     expect(tools.length).toBeGreaterThanOrEqual(60);
     expect(tools.length).toBeLessThanOrEqual(100);

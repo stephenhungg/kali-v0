@@ -62,7 +62,7 @@ each connector exposes its query functions per the scope, validates with zod, re
 
 ## phase 4 — context layer
 
-- [ ] **F4.1** entity resolution (rule-based: email > name+org > phone > fuzzy match)
+- [x] **F4.1** entity resolution (rule-based) — `lib/context/entityResolver.ts` scans bloomerang.constituents + salesforce.contacts + m365.users + zoom participants. Confidence ladder: email exact (100) > phone normalized (90) > full-name exact (80) > name substring + corroborating attribute (60) > name substring (40). Plus a `context.entityProfile` "donor dossier" tool that aggregates one entity across every connector in a single call. Registered as a `context` meta-connector (added to ConnectorId). 22 tests passing.
 - [ ] **F4.2** embedding pipeline (voyage-3 with openai fallback)
 - [ ] **F4.3** pgvector storage with per-tenant namespaces
 - [ ] **F4.4** hybrid retriever (semantic + structured filters, top-K=20 with reranking)
@@ -119,8 +119,8 @@ each demoable end-to-end: query → tools fire → citations land.
 
 ## current cursor
 
-**building right now:** phase 4 context layer (F4.1 entity resolution, F4.2-4.5 embeddings/retrieval/DSL still pending). Frontend lanes (F5.5 / F5.7) blocked on chat UI.
+**building right now:** phase 4 context layer cont. (F4.2-4.5 embeddings/retrieval/DSL — likely defer past v1; current tools cover demo). Frontend lanes (F5.5 / F5.7) blocked on chat UI.
 
-**last shipped:** all 11 connectors (F3.1–F3.11), F4.6 audit log, F5.1–5.3 anthropic SDK + prompt caching + tool registry + system prompt with dynamic inventory, **F5.4 streaming SSE chat endpoint at `app/api/chat/route.ts`, F5.6 parallel tool-use event surfacing, F5.8 in-memory conversation persistence.** **367 passing tests across 16 test files.** Frontend can hit POST /api/chat with `{query, conversationId?}` and consume the event stream — source-pulse animation, citation rendering, and final-answer streaming all driven by the protocol.
+**last shipped:** all 11 connectors (F3.1–F3.11) + F4.1 entity resolution (`context.resolveEntity` + `context.entityProfile` dossier tool), F4.6 audit log, F5.1–5.3 anthropic SDK + prompt caching + tool registry + system prompt with dynamic inventory, F5.4 streaming SSE chat endpoint, F5.6 parallel tool-use, F5.8 conversation persistence. **387 passing tests across 17 test files.** 12 connectors total (11 SaaS + 1 meta). Frontend can hit POST /api/chat with `{query, conversationId?}` and consume the event stream.
 
 frank/nicole — you don't need to wait on any of this to start the landing page. work on `app/page.tsx` and add components in `components/marketing/`. avoid touching `lib/` for now (that's tenzin's lane).

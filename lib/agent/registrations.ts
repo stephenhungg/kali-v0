@@ -17,3 +17,4 @@ import "../connectors/solana";
 import "../connectors/powerbi";
 import "../connectors/powerautomate";
 import "../connectors/knowbe4";
+import "../context/entity";
