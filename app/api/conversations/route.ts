@@ -21,7 +21,10 @@ export async function GET(req: Request) {
   const tenantId = url.searchParams.get("tenantId") ?? undefined;
   const userId = url.searchParams.get("userId") ?? undefined;
   const limitParam = url.searchParams.get("limit");
-  const limit = limitParam ? Math.min(Math.max(parseInt(limitParam, 10), 1), 200) : 50;
+  const limitNum = limitParam ? parseInt(limitParam, 10) : NaN;
+  const limit = Number.isFinite(limitNum)
+    ? Math.min(Math.max(limitNum, 1), 200)
+    : 50;
 
   const conversations = listConversations({ tenantId, userId, limit });
   return NextResponse.json({

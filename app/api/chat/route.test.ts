@@ -206,10 +206,165 @@ describe("GET /api/chat?conversationId=…", () => {
     expect(res.status).toBe(400);
   });
 
-  test("returns 404 for unknown conversation", async () => {
+  test("returns 400 for empty conversationId", async () => {
+    const res = await GET(
+      new Request("http://localhost/api/chat?conversationId=") as never,
+    );
+    expect(res.status).toBe(400);
+  });
+
+  test("returns 404 for unknown conversation WITHOUT creating it (no get-side effects)", async () => {
     const res = await GET(
       new Request("http://localhost/api/chat?conversationId=ghost") as never,
     );
     expect(res.status).toBe(404);
+    // Confirm the GET did NOT create a ghost conversation: a list call
+    // shouldn't surface anything.
+    const { listConversations } = await import("@/lib/agent/conversations");
+    const all = listConversations();
+    expect(all.find((c) => c.id === "ghost")).toBeUndefined();
+  });
+});
+
+describe("POST /api/chat — incremental persistence (client disconnect resilience)", () => {
+  test("assistant message is persisted on `text` event, not just `done`", async () => {
+    let textFired = false;
+    let messagesAfterText = 0;
+    let messagesAfterDone = 0;
+
+    installFetchStub([
+      {
+        id: "msg_a",
+        role: "assistant",
+        content: [{ type: "text", text: "Quick answer." }],
+        stop_reason: "end_turn",
+        usage: { input_tokens: 1, output_tokens: 1 },
+      },
+    ]);
+
+    const res = await POST(
+      new Request("http://localhost/api/chat", {
+        method: "POST",
+        body: JSON.stringify({ query: "test" }),
+      }) as never,
+    );
+    const reader = res.body!.getReader();
+    const decoder = new TextDecoder();
+    let buffer = "";
+    let convoId = "";
+    while (true) {
+      const { value, done } = await reader.read();
+      if (done) break;
+      buffer += decoder.decode(value, { stream: true });
+      let idx: number;
+      while ((idx = buffer.indexOf("\n\n")) !== -1) {
+        const frame = buffer.slice(0, idx);
+        buffer = buffer.slice(idx + 2);
+        const dataLine = frame.split("\n").find((l) => l.startsWith("data: "));
+        if (!dataLine) continue;
+        const ev = JSON.parse(dataLine.slice("data: ".length));
+        if (ev.type === "start") convoId = ev.conversationId;
+        if (ev.type === "text") {
+          textFired = true;
+          // Right after text: assistant message should already be persisted.
+          const conv = getConversation(convoId);
+          messagesAfterText = conv?.messages.length ?? 0;
+        }
+        if (ev.type === "done") {
+          const conv = getConversation(convoId);
+          messagesAfterDone = conv?.messages.length ?? 0;
+        }
+      }
+    }
+    expect(textFired).toBe(true);
+    expect(messagesAfterText).toBe(2); // user + assistant
+    expect(messagesAfterDone).toBe(2); // still 2, just updated in place
+  });
+
+  test("done updates the same assistant message with citations (no duplicates)", async () => {
+    installFetchStub([
+      {
+        id: "msg_a",
+        role: "assistant",
+        content: [
+          {
+            type: "tool_use",
+            id: "tool_1",
+            name: "bloomerang.searchDonors",
+            input: { segment: "lapsed", limit: 1 },
+          },
+        ],
+        stop_reason: "tool_use",
+        usage: { input_tokens: 1, output_tokens: 1 },
+      },
+      {
+        id: "msg_b",
+        role: "assistant",
+        content: [{ type: "text", text: "Found one. [1]" }],
+        stop_reason: "end_turn",
+        usage: { input_tokens: 1, output_tokens: 1 },
+      },
+    ]);
+    const res = await POST(
+      new Request("http://localhost/api/chat", {
+        method: "POST",
+        body: JSON.stringify({ query: "x" }),
+      }) as never,
+    );
+    const events = await readSSE(res);
+    const start = events.find((e) => e.type === "start") as { conversationId: string };
+    const conv = getConversation(start.conversationId);
+    // user + ONE assistant (not two — done shouldn't duplicate)
+    expect(conv!.messages.length).toBe(2);
+    expect(conv!.messages[1].citations!.length).toBeGreaterThan(0);
+  });
+
+  test("end_turn with empty content[] still persists an assistant message", async () => {
+    installFetchStub([
+      {
+        id: "msg_a",
+        role: "assistant",
+        content: [], // model returned nothing
+        stop_reason: "end_turn",
+        usage: { input_tokens: 1, output_tokens: 1 },
+      },
+    ]);
+    const res = await POST(
+      new Request("http://localhost/api/chat", {
+        method: "POST",
+        body: JSON.stringify({ query: "x" }),
+      }) as never,
+    );
+    const events = await readSSE(res);
+    const start = events.find((e) => e.type === "start") as { conversationId: string };
+    const conv = getConversation(start.conversationId);
+    expect(conv!.messages.length).toBe(2);
+    expect(conv!.messages[1].content).toBe("(empty response)");
+  });
+
+  test("max_tokens is treated as terminal and persists what we have", async () => {
+    installFetchStub([
+      {
+        id: "msg_a",
+        role: "assistant",
+        content: [{ type: "text", text: "Partial answer cut off here" }],
+        stop_reason: "max_tokens",
+        usage: { input_tokens: 1, output_tokens: 1 },
+      },
+    ]);
+    const res = await POST(
+      new Request("http://localhost/api/chat", {
+        method: "POST",
+        body: JSON.stringify({ query: "x" }),
+      }) as never,
+    );
+    const events = await readSSE(res);
+    const types = events.map((e) => e.type);
+    // Should NOT include an error event; should reach `done`.
+    expect(types).toContain("done");
+    expect(types).not.toContain("error");
+    const start = events.find((e) => e.type === "start") as { conversationId: string };
+    const conv = getConversation(start.conversationId);
+    expect(conv!.messages[1].content).toBe("Partial answer cut off here");
   });
 });

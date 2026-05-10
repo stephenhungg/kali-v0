@@ -6,6 +6,7 @@ import {
   getConversation,
   getOrCreateConversation,
   listConversations,
+  updateMessage,
   __conversationsCount,
   __resetConversations,
 } from "./conversations";
@@ -56,6 +57,24 @@ describe("getConversation / getOrCreateConversation", () => {
     const r = getOrCreateConversation("brand-new");
     expect(r.created).toBe(true);
     expect(r.conversation.id).toBe("brand-new");
+  });
+
+  test("getOrCreate generates a fresh id for empty string (not reuse '')", () => {
+    const a = getOrCreateConversation("");
+    const b = getOrCreateConversation("");
+    expect(a.created).toBe(true);
+    expect(b.created).toBe(true);
+    // Neither should have id="" — they get fresh generated ids that don't
+    // collide with each other.
+    expect(a.conversation.id).not.toBe("");
+    expect(b.conversation.id).not.toBe("");
+    expect(a.conversation.id).not.toBe(b.conversation.id);
+  });
+
+  test("createConversation rejects empty-string id and generates one", () => {
+    const c = createConversation({ id: "" });
+    expect(c.id).not.toBe("");
+    expect(c.id).toMatch(/^conv_/);
   });
 });
 
@@ -140,6 +159,64 @@ describe("listConversations", () => {
     expect(xList[0].updatedAt >= xList[1].updatedAt).toBe(true);
     const yList = listConversations({ tenantId: "y" });
     expect(yList.map((c) => c.id)).toContain(c.id);
+  });
+});
+
+describe("updateMessage", () => {
+  test("patches content/toolCalls/citations of an existing message", () => {
+    const c = createConversation();
+    const m = appendMessage({
+      conversationId: c.id,
+      role: "assistant",
+      content: "initial",
+    });
+    const updated = updateMessage({
+      conversationId: c.id,
+      messageId: m.id,
+      content: "updated",
+      citations: ["ppl_a"],
+    });
+    expect(updated).not.toBeNull();
+    expect(updated!.content).toBe("updated");
+    expect(updated!.citations).toEqual(["ppl_a"]);
+  });
+
+  test("returns null for unknown conversation", () => {
+    expect(
+      updateMessage({
+        conversationId: "ghost",
+        messageId: "msg_x",
+        content: "new",
+      }),
+    ).toBeNull();
+  });
+
+  test("returns null for unknown message id", () => {
+    const c = createConversation();
+    expect(
+      updateMessage({
+        conversationId: c.id,
+        messageId: "msg_doesnotexist",
+        content: "new",
+      }),
+    ).toBeNull();
+  });
+
+  test("undefined fields don't clobber existing values", () => {
+    const c = createConversation();
+    const m = appendMessage({
+      conversationId: c.id,
+      role: "assistant",
+      content: "v1",
+      citations: ["ppl_a"],
+    });
+    updateMessage({
+      conversationId: c.id,
+      messageId: m.id,
+      content: "v2",
+      // citations omitted — should preserve ["ppl_a"]
+    });
+    expect(m.citations).toEqual(["ppl_a"]);
   });
 });
 

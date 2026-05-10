@@ -168,6 +168,34 @@ describe("GET /api/conversations", () => {
     expect(body.count).toBe(2);
   });
 
+  test("non-numeric limit falls back to default (no NaN-induced empty results)", async () => {
+    for (let i = 0; i < 3; i++) {
+      await POST(
+        req("http://localhost/api/conversations", {
+          method: "POST",
+          body: JSON.stringify({}),
+        }),
+      );
+    }
+    const res = await GET(req("http://localhost/api/conversations?limit=abc"));
+    const body = (await res.json()) as { count: number };
+    // With NaN, the old code did slice(0, NaN) = []. The fix returns the
+    // default (50), so all 3 should come back.
+    expect(body.count).toBe(3);
+  });
+
+  test("empty limit string also falls back to default", async () => {
+    await POST(
+      req("http://localhost/api/conversations", {
+        method: "POST",
+        body: JSON.stringify({}),
+      }),
+    );
+    const res = await GET(req("http://localhost/api/conversations?limit="));
+    const body = (await res.json()) as { count: number };
+    expect(body.count).toBe(1);
+  });
+
   test("strips messages from the list response (count only)", async () => {
     const c = await POST(
       req("http://localhost/api/conversations", {

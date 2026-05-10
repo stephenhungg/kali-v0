@@ -94,12 +94,18 @@ function getPath(obj: unknown, path: string): unknown {
 }
 
 function compare(left: unknown, op: QueryOp, right: unknown): boolean {
+  // Treat null/undefined as "field not present". Most operators should
+  // return false in that case so a typo in a field path doesn't match
+  // every row in the corpus.
   switch (op) {
     case "exists":
       return left !== undefined && left !== null;
     case "=":
       return left === right;
     case "!=":
+      // STRICT: a missing field is not a match for "!=". Otherwise typos
+      // like `donorSegmnt != "lapsed"` flag every row.
+      if (left === undefined || left === null) return false;
       return left !== right;
     case ">":
       return typeof left === "number" && typeof right === "number" && left > right;
@@ -110,8 +116,11 @@ function compare(left: unknown, op: QueryOp, right: unknown): boolean {
     case "<=":
       return typeof left === "number" && typeof right === "number" && left <= right;
     case "in":
+      if (left === undefined || left === null) return false;
       return Array.isArray(right) && right.includes(left);
     case "contains":
+      // Empty string matches everything → reject explicitly.
+      if (typeof right === "string" && right.length === 0) return false;
       if (typeof left === "string" && typeof right === "string")
         return left.toLowerCase().includes(right.toLowerCase());
       if (Array.isArray(left)) return left.includes(right);

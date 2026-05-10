@@ -183,13 +183,20 @@ export async function* runStream(
       totalCached += resp.usage.cache_read_input_tokens ?? 0;
       messages.push({ role: "assistant", content: resp.content });
 
-      if (resp.stop_reason === "end_turn") {
+      // Treat both end_turn and max_tokens as terminal "the model said its
+      // piece" — max_tokens means the answer was truncated, but the
+      // accumulated text + tool calls + citations are still valid and we
+      // should persist them. Throwing on max_tokens (the prior behavior)
+      // dropped everything we already had.
+      if (resp.stop_reason === "end_turn" || resp.stop_reason === "max_tokens") {
         answer = resp.content
           .filter((b) => b.type === "text")
           .map((b) => (b as unknown as { text: string }).text)
           .join("\n")
           .trim();
-        yield { type: "text", text: answer };
+        if (answer.length > 0) {
+          yield { type: "text", text: answer };
+        }
         const citationsArr = Array.from(citations);
         yield {
           type: "done",

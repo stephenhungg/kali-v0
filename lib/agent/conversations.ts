@@ -56,7 +56,9 @@ export interface CreateOptions {
 }
 
 export function createConversation(opts: CreateOptions = {}): Conversation {
-  const id = opts.id ?? nextId("conv");
+  // Reject empty-string ids — they collide and look like a "missing id" to
+  // every other API surface. If the caller passed `""`, generate a fresh one.
+  const id = opts.id && opts.id.length > 0 ? opts.id : nextId("conv");
   const now = new Date().toISOString();
   const c: Conversation = {
     id,
@@ -76,20 +78,28 @@ export function getConversation(id: string): Conversation | null {
 }
 
 /**
- * Get-or-create. If `id` is missing or unknown, creates a new conversation.
- * Returns both the conversation and a boolean flag for whether it was
- * created on this call (useful for setting titles from the first user
- * message).
+ * Get-or-create. Behavior:
+ *   - If `id` is non-empty AND present in the store: return existing.
+ *   - If `id` is non-empty AND unknown: create with that id.
+ *   - If `id` is empty/undefined: create with a freshly-generated id
+ *     (never reuses the empty string — that would collide across callers).
  */
 export function getOrCreateConversation(
   id: string | undefined,
   opts: CreateOptions = {},
 ): { conversation: Conversation; created: boolean } {
-  if (id) {
+  if (id && id.length > 0) {
     const existing = __byId.get(id);
     if (existing) return { conversation: existing, created: false };
+    return {
+      conversation: createConversation({ ...opts, id }),
+      created: true,
+    };
   }
-  return { conversation: createConversation({ ...opts, id }), created: true };
+  // No id (or empty string) — generate a fresh one. Drop any stale id from opts.
+  const { id: _drop, ...rest } = opts;
+  void _drop;
+  return { conversation: createConversation(rest), created: true };
 }
 
 export interface AppendMessageOpts {
@@ -118,6 +128,33 @@ export function appendMessage(opts: AppendMessageOpts): ConversationMessage {
   if (!c.title && opts.role === "user" && c.messages.length === 1) {
     c.title = opts.content.slice(0, 80);
   }
+  return msg;
+}
+
+export interface UpdateMessageOpts {
+  conversationId: string;
+  messageId: string;
+  content?: string;
+  toolCalls?: ConversationMessage["toolCalls"];
+  citations?: string[];
+}
+
+/**
+ * Patch an existing message in place. Used by the streaming chat route to
+ * persist the assistant turn on the `text` event (so a client disconnect
+ * doesn't drop the answer) and then top up `citations` once the `done`
+ * event arrives. Returns the updated message, or null if the conversation
+ * or message id doesn't exist.
+ */
+export function updateMessage(opts: UpdateMessageOpts): ConversationMessage | null {
+  const c = __byId.get(opts.conversationId);
+  if (!c) return null;
+  const msg = c.messages.find((m) => m.id === opts.messageId);
+  if (!msg) return null;
+  if (opts.content !== undefined) msg.content = opts.content;
+  if (opts.toolCalls !== undefined) msg.toolCalls = opts.toolCalls;
+  if (opts.citations !== undefined) msg.citations = opts.citations;
+  c.updatedAt = new Date().toISOString();
   return msg;
 }
 

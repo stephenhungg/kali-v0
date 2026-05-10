@@ -201,19 +201,38 @@ function explorerFor(signature: string, cluster: string): string {
 }
 
 /**
- * Resolve a recipient wallet. Either an explicit address (preferred), or a
- * stable derived address from a kali_entity_id (so the same demo recipient
- * always lands on the same wallet across runs without needing a real lookup).
+ * Resolve a recipient wallet to a valid base58 Solana PublicKey. Either an
+ * explicit address (preferred), or a stable derived address from a
+ * kali_entity_id present in the seed.
+ *
+ * Returns the PublicKey on success. Throws a descriptive error otherwise —
+ * we DO NOT silently fall back to the signer's own wallet (which would
+ * silently burn fees while looking like a successful payout).
  */
-function resolveRecipientWallet(p: PayoutInput, seed: SolanaSeed): string {
-  if (p.recipientWallet) return p.recipientWallet;
+function resolveRecipientPubkey(p: PayoutInput, seed: SolanaSeed): PublicKey {
+  if (p.recipientWallet) {
+    try {
+      return new PublicKey(p.recipientWallet);
+    } catch {
+      throw new Error(
+        `recipientWallet '${p.recipientWallet}' is not a valid base58 Solana address`,
+      );
+    }
+  }
   if (p.recipientKaliId) {
-    // Try the seed first — if the recipient has historical txs, reuse the
-    // toWallet that's already on file (consistent demo experience).
     const prior = seed.transactions.find((t) => t.recipientId === p.recipientKaliId);
-    if (prior) return prior.toWallet;
-    // Otherwise derive a deterministic 44-char string from the kali id.
-    return p.recipientKaliId.padEnd(44, "k").slice(0, 44);
+    if (!prior) {
+      throw new Error(
+        `recipientKaliId '${p.recipientKaliId}' has no historical Solana wallet on file — pass an explicit recipientWallet`,
+      );
+    }
+    try {
+      return new PublicKey(prior.toWallet);
+    } catch {
+      throw new Error(
+        `historical wallet '${prior.toWallet}' for ${p.recipientKaliId} is not valid base58`,
+      );
+    }
   }
   throw new Error("payout missing both recipientWallet and recipientKaliId");
 }
@@ -287,7 +306,6 @@ export async function batchPayout(
   }
 
   const connection = new Connection(args.rpcUrl ?? DEVNET_RPC, "confirmed");
-  const signatures: string[] = [];
 
   // 1 lamport = 0.000000001 SOL. We translate "amountUsdc" to a tiny SOL
   // transfer for the demo (devnet SOL has no value). Production swaps to
@@ -295,21 +313,24 @@ export async function batchPayout(
   const SOL_PER_USDC_DEMO = 0.000_001; // sub-cent transfers — keeps faucet SOL alive
   const memoProgramId = new PublicKey("MemoSq4gqABAXKb96qnH8TysNcWxMyWCqXgDLGmfcHr");
 
+  // ATOMIC: build ONE transaction containing every payout's transfer (and
+  // optional memo) instruction. Either the whole batch confirms or none of
+  // it does — matches the tool's documented semantics. Solana caps at
+  // ~64 instructions per tx depending on size; we max input.payouts to 20
+  // at the zod boundary so this fits comfortably.
+  const tx = new Transaction();
+  const recipients: PublicKey[] = [];
   for (const p of args.payouts) {
-    const toBase58 = resolveRecipientWallet(p, seed);
-    let toPubkey: PublicKey;
-    try {
-      toPubkey = new PublicKey(toBase58);
-    } catch {
-      // Bogus address — burn back to ourselves so the tx still confirms +
-      // explorer link is real. Demo continuity over correctness here.
-      toPubkey = signer.publicKey;
-    }
+    // Throws with a clear message if the wallet doesn't resolve — we let
+    // it propagate up so the caller sees the error instead of silently
+    // burning fees to ourselves.
+    const toPubkey = resolveRecipientPubkey(p, seed);
+    recipients.push(toPubkey);
     const lamports = Math.max(
       1,
       Math.floor(p.amountUsdc * SOL_PER_USDC_DEMO * LAMPORTS_PER_SOL),
     );
-    const tx = new Transaction().add(
+    tx.add(
       SystemProgram.transfer({
         fromPubkey: signer.publicKey,
         toPubkey,
@@ -325,15 +346,20 @@ export async function batchPayout(
         }),
       );
     }
-    const sig = await sendAndConfirmTransaction(connection, tx, [signer], {
-      commitment: "confirmed",
-    });
-    signatures.push(sig);
   }
+
+  const sig = await sendAndConfirmTransaction(connection, tx, [signer], {
+    commitment: "confirmed",
+  });
+
+  // Every payout shares the same tx signature (atomic batch). Explorer URLs
+  // all point at the same tx — that's correct, the model can cite each
+  // payout to the same on-chain proof.
+  const signatures = args.payouts.map(() => sig);
   return {
     mode: "live",
     cluster,
-    executedCount: signatures.length,
+    executedCount: args.payouts.length,
     totalUsdc,
     feesUsd: fee.feeUsd,
     signatures,

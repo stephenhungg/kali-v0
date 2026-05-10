@@ -21,7 +21,9 @@
 import { NextResponse } from "next/server";
 import {
   appendMessage,
+  getConversation,
   getOrCreateConversation,
+  updateMessage,
   type ConversationMessage,
 } from "@/lib/agent/conversations";
 import {
@@ -79,13 +81,18 @@ export async function POST(req: Request) {
     conversationId: conversation.id,
   });
 
-  // Tee the stream — one branch is forwarded as SSE to the client, the
-  // other accumulates into the conversation store.
+  // Persist incrementally so a client disconnect mid-stream still leaves
+  // the assistant turn on disk:
+  //   - on `text`: appendMessage with the answer + accumulated toolCalls.
+  //                we save the message id so we can update it later.
+  //   - on `done`: updateMessage to attach the final citations array.
+  //   - on `error`: append a [error] assistant message if we never got
+  //                 to `text`. If we DID, leave the persisted answer alone
+  //                 and just append a separate error note.
   const persisted: {
-    answer: string;
     toolCalls: NonNullable<ConversationMessage["toolCalls"]>;
-    citations: string[];
-  } = { answer: "", toolCalls: [], citations: [] };
+    assistantMessageId: string | null;
+  } = { toolCalls: [], assistantMessageId: null };
   const inProgressById = new Map<string, { name: string; input: unknown }>();
 
   async function* tap() {
@@ -106,24 +113,44 @@ export async function POST(req: Request) {
           });
           break;
         }
-        case "text":
-          persisted.answer = ev.text;
-          break;
-        case "done":
-          persisted.citations = ev.citations;
-          appendMessage({
+        case "text": {
+          const msg = appendMessage({
             conversationId: conversation.id,
             role: "assistant",
-            content: persisted.answer,
+            content: ev.text,
             toolCalls: persisted.toolCalls,
-            citations: persisted.citations,
+            citations: [],
           });
+          persisted.assistantMessageId = msg.id;
+          break;
+        }
+        case "done":
+          if (persisted.assistantMessageId) {
+            updateMessage({
+              conversationId: conversation.id,
+              messageId: persisted.assistantMessageId,
+              toolCalls: persisted.toolCalls,
+              citations: ev.citations,
+            });
+          } else {
+            // No `text` ever fired (model returned empty content array,
+            // for instance). Persist whatever we have so the conversation
+            // still records the run.
+            appendMessage({
+              conversationId: conversation.id,
+              role: "assistant",
+              content: ev.answer || "(empty response)",
+              toolCalls: persisted.toolCalls,
+              citations: ev.citations,
+            });
+          }
           break;
         case "error":
           appendMessage({
             conversationId: conversation.id,
             role: "assistant",
             content: `[error] ${ev.message}`,
+            toolCalls: persisted.toolCalls,
           });
           break;
       }
@@ -151,15 +178,14 @@ export async function POST(req: Request) {
 export async function GET(req: Request) {
   const url = new URL(req.url);
   const id = url.searchParams.get("conversationId");
-  if (!id)
+  if (!id || id.length === 0)
     return NextResponse.json(
       { error: "missing conversationId" },
       { status: 400 },
     );
-  const { conversation, created } = getOrCreateConversation(id);
-  if (created) {
-    // We auto-create on get-or-create; for the GET semantics, return 404 for
-    // unknown ids instead.
+  // Pure read — no get-or-create side effect. Unknown id → 404.
+  const conversation = getConversation(id);
+  if (!conversation) {
     return NextResponse.json({ error: "not found" }, { status: 404 });
   }
   return NextResponse.json({ conversation });

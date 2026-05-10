@@ -207,6 +207,39 @@ describe("ops", () => {
       expect(c?.lastGiftDate).not.toBeNull();
     }
   });
+
+  test("'!=' on a missing/typo'd field returns NO matches (was: matched everything)", async () => {
+    // 'donorSegmnt' is a typo — the field doesn't exist on any constituent.
+    // With the old buggy compare(): undefined !== "lapsed" → true → every
+    // row matches. With the fix: undefined-on-left returns false.
+    const r = await runQuery({
+      filters: [
+        { source: "bloomerang", path: "donorSegmnt", op: "!=", value: "lapsed" },
+      ],
+      limit: 5000,
+    });
+    expect(r.count).toBe(0);
+  });
+
+  test("'in' on a missing field returns no matches", async () => {
+    const r = await runQuery({
+      filters: [
+        { source: "bloomerang", path: "doesNotExist", op: "in", value: ["x"] },
+      ],
+      limit: 100,
+    });
+    expect(r.count).toBe(0);
+  });
+
+  test("'contains' with an empty string does NOT match every row", async () => {
+    const r = await runQuery({
+      filters: [
+        { source: "bloomerang", path: "address.city", op: "contains", value: "" },
+      ],
+      limit: 5000,
+    });
+    expect(r.count).toBe(0);
+  });
 });
 
 describe("Tool registration", () => {
