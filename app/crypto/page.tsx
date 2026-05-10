@@ -1,19 +1,10 @@
 /**
- * Crypto dashboard. Trading-desk aesthetic — dark, monospace, dense.
- * Totally separate from the main /dashboard (which is the nonprofit-OS
- * surface). This is where the operator launches coins, watches inflows,
- * and trades.
- *
- * Sections:
- *   1. Header + tenant chip + network indicator
- *   2. Live stat row: treasury, x402 inflows, $COIN fees, coin count
- *   3. Launch panel — form posts to /api/coin/launch
- *   4. Launched coins table — with one-click trade buttons
- *   5. x402 inflows feed (live)
- *   6. Treasury disbursements feed (from solana connector)
+ * Crypto desk — kawaii edition. Pastel surface with mascot in chart pose,
+ * sticker stat cards, sticker-style coin sticker, and a live treasury
+ * ticker that pulses sakura on every recorded fee. Same grounded data as
+ * before — only the dressing changes.
  */
 
-import Link from "next/link";
 import "@/lib/agent/registrations";
 import { listConnectors } from "@/lib/connectors/registry";
 import { initAllAndTrack } from "@/lib/connectors/sync-state";
@@ -29,6 +20,16 @@ import {
 import { isMemoryMode, memoryStore } from "@/lib/db/memory";
 import { LaunchCoinForm } from "./LaunchCoinForm";
 import { LiveTreasuryTicker } from "./LiveTreasuryTicker";
+import {
+  CuteCard,
+  CuteButton,
+  CuteStat,
+  CutePill,
+} from "@/components/kawaii/CutePrimitives";
+import { Mascot } from "@/components/kawaii/Mascot";
+import { StickerLogo } from "@/components/kawaii/StickerLogo";
+import { StickerAccent } from "@/components/kawaii/StickerAccent";
+import Link from "next/link";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -63,74 +64,154 @@ export default async function CryptoDashboard() {
   const recentTrades = myCoin ? listTrades(myCoin.id, 10) : [];
   const curve = myCoin ? curveStateFor(myCoin) : null;
   const price =
-    curve && myCoin
-      ? curve.config.initialPriceUsdc + curve.config.slope * curve.progression
-      : 0;
-  const marketCap =
-    curve && myCoin
-      ? price * curve.config.totalSupply
-      : 0;
+    curve && myCoin ? curve.config.initialPriceUsdc + curve.config.slope * curve.progression : 0;
+  const marketCap = curve && myCoin ? price * curve.config.totalSupply : 0;
 
   const x402Recent = await listReceipts({ tenantId: tenant.id, windowDays: 30, limit: 10 });
   const x402Total = x402Recent.reduce((s, r) => s + r.amountUsdc, 0);
 
   return (
-    <main className="min-h-screen bg-[#0a0d0c] font-mono text-[#c8e6cb]">
+    <main className="kawaii-page">
       {/* header */}
-      <header className="border-b border-[#1a2421] px-6 py-4">
-        <div className="mx-auto flex max-w-[1600px] items-center justify-between">
-          <div className="flex items-center gap-4">
-            <Link href="/" className="text-sm uppercase tracking-[0.2em] text-[#c8e6cb]/70 hover:text-[#c8e6cb]">
-              ← kali
+      <header
+        style={{
+          borderBottom: "2px dashed var(--hair)",
+          padding: "20px 0 18px",
+        }}
+      >
+        <div className="mx-auto max-w-[1500px] px-6 sm:px-10">
+          <div style={{ display: "flex", alignItems: "center", gap: 18, flexWrap: "wrap" }}>
+            <Link href="/" style={{ display: "inline-flex", alignItems: "center", gap: 10 }}>
+              <StickerLogo size={64} />
             </Link>
-            <span className="text-xl font-semibold tracking-tight">crypto desk</span>
-            <span className="rounded-sm bg-[#1a2421] px-2 py-1 text-[10px] uppercase tracking-wider text-[#7fae7e]">
-              {NETWORK}
+            <span
+              className="kawaii-display"
+              style={{
+                fontSize: 22,
+                color: "var(--ink)",
+                marginLeft: 4,
+              }}
+            >
+              · crypto desk
             </span>
-            <span className="rounded-sm bg-[#1a2421] px-2 py-1 text-[10px] uppercase tracking-wider">
-              {tenant.name}
-            </span>
+            <CutePill tone="lemon">{NETWORK}</CutePill>
+            <CutePill tone="matcha">{tenant.name}</CutePill>
+            <nav
+              style={{
+                marginLeft: "auto",
+                display: "flex",
+                gap: 14,
+                alignItems: "center",
+                fontFamily: 'var(--font-quicksand), "Quicksand", system-ui, sans-serif',
+                fontWeight: 700,
+                fontSize: 13,
+              }}
+            >
+              <Link
+                href="/crypto"
+                style={{ color: "var(--ink)", textDecoration: "none" }}
+              >
+                overview
+              </Link>
+              <Link
+                href="/crypto/launch"
+                style={{ color: "var(--mute)", textDecoration: "none" }}
+              >
+                launch
+              </Link>
+              <Link
+                href="/crypto/coins"
+                style={{ color: "var(--mute)", textDecoration: "none" }}
+              >
+                all coins
+              </Link>
+              <CuteButton href="/dashboard" tone="ghost" size="sm">
+                main →
+              </CuteButton>
+            </nav>
           </div>
-          <nav className="flex gap-6 text-xs uppercase tracking-wider">
-            <Link href="/crypto" className="text-[#c8e6cb]">overview</Link>
-            <Link href="/crypto/launch" className="text-[#c8e6cb]/60 hover:text-[#c8e6cb]">launch</Link>
-            <Link href="/crypto/coins" className="text-[#c8e6cb]/60 hover:text-[#c8e6cb]">all coins</Link>
-            <Link href="/dashboard" className="text-[#c8e6cb]/60 hover:text-[#c8e6cb]">main →</Link>
-          </nav>
         </div>
       </header>
 
-      {/* live stat row */}
-      <section className="mx-auto max-w-[1600px] px-6 py-6">
-        <div className="grid grid-cols-2 gap-3 md:grid-cols-4">
-          <StatTile
+      {/* live stat row + mascot */}
+      <section className="mx-auto max-w-[1500px] px-6 py-8 sm:px-10">
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "1fr auto",
+            alignItems: "center",
+            gap: 24,
+            marginBottom: 24,
+          }}
+        >
+          <div>
+            <h1
+              className="kawaii-display"
+              style={{
+                fontSize: "clamp(36px, 5vw, 56px)",
+                lineHeight: 1.0,
+                color: "var(--ink)",
+                margin: 0,
+              }}
+            >
+              real{" "}
+              <span style={{ color: "var(--sakura)", fontStyle: "italic" }}>
+                onchain
+              </span>{" "}
+              · zero fluff
+              <StickerAccent prop="sparkle" size={32} tiltDeg={20} style={{ marginLeft: 10 }} />
+            </h1>
+            <p style={{ color: "var(--mute)", fontSize: 14, marginTop: 8, maxWidth: 540 }}>
+              SPL Token-2022 mints with onchain metadata. 1% trading fees route to the nonprofit's
+              treasury. Every number below is computed from real data.
+            </p>
+          </div>
+          <div className="hidden md:block">
+            <Mascot pose="chart" size={130} tiltDeg={6} />
+          </div>
+        </div>
+
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))",
+            gap: 14,
+          }}
+        >
+          <CuteStat
             label="x402 inflows · 30d"
             value={`$${x402Total.toFixed(2)}`}
             sub={`${x402Recent.length} receipts`}
-            tone="cyan"
+            tone="mochi"
+            accent="letter"
           />
-          <StatTile
+          <CuteStat
             label={myCoin ? `${myCoin.symbol} treasury fees` : "no coin yet"}
             value={fees ? `$${fees.treasury.toFixed(2)}` : "—"}
             sub={myCoin ? `${holders.length} holders` : "deploy below"}
-            tone="green"
+            tone="matcha"
+            accent="matcha-bowl"
           />
-          <StatTile
+          <CuteStat
             label={myCoin ? `${myCoin.symbol} market cap` : "—"}
-            value={myCoin ? `$${marketCap.toLocaleString(undefined, { maximumFractionDigits: 0 })}` : "—"}
+            value={
+              myCoin ? `$${marketCap.toLocaleString(undefined, { maximumFractionDigits: 0 })}` : "—"
+            }
             sub={myCoin ? `price $${price.toFixed(8)}` : "—"}
-            tone="amber"
+            tone="lemon"
+            accent="coin"
           />
-          <StatTile
+          <CuteStat
             label="all coins"
             value={`${allCoins.length}`}
             sub={`${allCoins.filter((c) => c.graduationStatus === "graduated").length} graduated`}
-            tone="purple"
+            tone="cloud"
+            accent="cloud"
           />
         </div>
 
         {myCoin && (
-          <div className="mt-4">
+          <div style={{ marginTop: 18 }}>
             <LiveTreasuryTicker
               mint={myCoin.mint}
               initial={fees ?? { treasury: 0, communityFund: 0, total: 0, tradeCount: 0 }}
@@ -140,11 +221,18 @@ export default async function CryptoDashboard() {
         )}
       </section>
 
-      {/* launch panel */}
-      <section className="mx-auto max-w-[1600px] px-6 py-6">
-        <div className="grid grid-cols-1 gap-6 lg:grid-cols-[1fr_400px]">
-          <div className="rounded-md border border-[#1a2421] bg-[#0e1413] p-6">
-            <div className="text-[10px] uppercase tracking-[0.2em] text-[#7fae7e]">
+      {/* launch + how-it-works */}
+      <section className="mx-auto max-w-[1500px] px-6 pb-8 sm:px-10">
+        <div
+          className="crypto-launch-row"
+          style={{
+            display: "grid",
+            gridTemplateColumns: "1fr 360px",
+            gap: 24,
+          }}
+        >
+          <CuteCard tone="paper" accent="sparkle">
+            <div className="kawaii-mono-tag" style={{ marginBottom: 4 }}>
               launch / manage
             </div>
             <LaunchCoinForm
@@ -164,59 +252,121 @@ export default async function CryptoDashboard() {
                   : null
               }
             />
-          </div>
+          </CuteCard>
 
-          <div className="rounded-md border border-[#1a2421] bg-[#0e1413] p-6">
-            <div className="text-[10px] uppercase tracking-[0.2em] text-[#7fae7e]">how it works</div>
-            <ol className="mt-4 space-y-3 text-xs leading-relaxed text-[#c8e6cb]/80">
-              <li>
-                <span className="text-[#7fae7e]">1.</span> Pick a symbol + name. This becomes
-                the SPL mint metadata embedded with your EIN + IRS status.
-              </li>
-              <li>
-                <span className="text-[#7fae7e]">2.</span> Treasury, community-fund, and
-                platform-reserve wallets auto-derive from your tenant id (deterministic — same
-                pubkeys every run).
-              </li>
-              <li>
-                <span className="text-[#7fae7e]">3.</span> Meteora bonding curve pool is created
-                with 1% fee → 100% to treasury (20% routes to a holder-governed community fund).
-              </li>
-              <li>
-                <span className="text-[#7fae7e]">4.</span> Live deploy when{" "}
-                <code className="rounded bg-black/40 px-1">KALI_SOLANA_DEVNET_SECRET_KEY</code>{" "}
-                is set + funder has SOL. Otherwise simulated with realistic-looking pubkeys.
-              </li>
-              <li>
-                <span className="text-[#7fae7e]">5.</span> Public trading page goes live at{" "}
-                <code className="rounded bg-black/40 px-1">coin.kalilabs.ai/{tenant.slug}</code>.
-              </li>
+          <CuteCard tone="cloud">
+            <div className="kawaii-mono-tag" style={{ marginBottom: 8 }}>
+              how it works
+            </div>
+            <ol style={{ margin: 0, paddingLeft: 0, listStyle: "none", display: "grid", gap: 12 }}>
+              <Step n={1}>
+                Pick a symbol + name. The SPL mint metadata embeds your EIN + IRS status onchain.
+              </Step>
+              <Step n={2}>
+                Treasury / community-fund / platform-reserve wallets auto-derive from your tenant
+                id (deterministic).
+              </Step>
+              <Step n={3}>
+                Token-2022 mint deployed atomically with metadata pointer + 1B initial supply →
+                treasury ATA.
+              </Step>
+              <Step n={4}>
+                Live deploy when{" "}
+                <code
+                  style={{
+                    background: "white",
+                    border: "1px solid var(--hair)",
+                    borderRadius: 4,
+                    padding: "1px 5px",
+                    fontFamily: "var(--font-mono-geist), monospace",
+                    fontSize: 11,
+                  }}
+                >
+                  KALI_SOLANA_DEVNET_SECRET_KEY
+                </code>{" "}
+                is set + funder has ≥ 0.02 SOL.
+              </Step>
+              <Step n={5}>
+                Public trading page at{" "}
+                <code
+                  style={{
+                    background: "white",
+                    border: "1px solid var(--hair)",
+                    borderRadius: 4,
+                    padding: "1px 5px",
+                    fontFamily: "var(--font-mono-geist), monospace",
+                    fontSize: 11,
+                  }}
+                >
+                  coin.kalilabs.ai/{tenant.slug}
+                </code>
+                .
+              </Step>
             </ol>
-          </div>
+          </CuteCard>
         </div>
+
+        <style>{`
+          @media (max-width: 980px) {
+            .crypto-launch-row { grid-template-columns: 1fr !important; }
+          }
+        `}</style>
       </section>
 
       {/* recent inflows + trades */}
-      <section className="mx-auto max-w-[1600px] px-6 py-6">
-        <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
-          <Card title="x402 inflows · live">
+      <section className="mx-auto max-w-[1500px] px-6 pb-12 sm:px-10">
+        <div
+          className="crypto-feeds"
+          style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 24 }}
+        >
+          <CuteCard tone="mochi" accent="letter">
+            <div className="kawaii-mono-tag" style={{ marginBottom: 10 }}>
+              x402 inflows · live
+            </div>
             {x402Recent.length === 0 ? (
-              <Empty msg="no donations yet — try `bun run x402:donate --amount 25`" />
+              <Empty msg="no donations yet — try `bun run x402:donate`" />
             ) : (
-              <ul className="divide-y divide-[#1a2421]">
+              <ul style={{ margin: 0, padding: 0, listStyle: "none" }}>
                 {x402Recent.map((r) => (
                   <li
                     key={r.id}
-                    className="grid grid-cols-[auto_1fr_auto_auto] gap-3 py-2 text-xs items-center"
+                    style={{
+                      display: "grid",
+                      gridTemplateColumns: "auto 1fr auto auto",
+                      alignItems: "center",
+                      gap: 10,
+                      padding: "8px 0",
+                      borderBottom: "1px dashed var(--hair)",
+                    }}
                   >
-                    <AttrPill a={r.attribution} />
-                    <span>{shortAddr(r.payerWallet)}</span>
-                    <span className="text-right text-[#7fae7e]">${r.amountUsdc.toFixed(2)}</span>
+                    <CutePill
+                      tone={
+                        r.attribution === "human"
+                          ? "mochi"
+                          : r.attribution === "autonomous"
+                            ? "matcha"
+                            : "neutral"
+                      }
+                    >
+                      {r.attribution}
+                    </CutePill>
+                    <code
+                      style={{
+                        fontFamily: "var(--font-mono-geist), monospace",
+                        fontSize: 12,
+                        color: "var(--ink)",
+                      }}
+                    >
+                      {shortAddr(r.payerWallet)}
+                    </code>
+                    <span style={{ fontSize: 14, fontWeight: 700, color: "var(--matcha-deep-warm)" }}>
+                      ${r.amountUsdc.toFixed(2)}
+                    </span>
                     <a
                       href={explorer(r.txSignature, "tx")}
                       target="_blank"
                       rel="noreferrer"
-                      className="text-[#5fa088] underline-offset-2 hover:underline"
+                      style={{ color: "var(--sakura)", textDecoration: "none", fontSize: 14 }}
                     >
                       ↗
                     </a>
@@ -224,29 +374,46 @@ export default async function CryptoDashboard() {
                 ))}
               </ul>
             )}
-          </Card>
+          </CuteCard>
 
-          <Card title={myCoin ? `${myCoin.symbol} trades · live` : "trades — launch a coin first"}>
+          <CuteCard tone="lemon" accent={myCoin ? "coin" : "cloud"}>
+            <div className="kawaii-mono-tag" style={{ marginBottom: 10 }}>
+              {myCoin ? `${myCoin.symbol} trades · live` : "trades — launch a coin first"}
+            </div>
             {!myCoin || recentTrades.length === 0 ? (
               <Empty msg={myCoin ? "no trades yet" : "deploy your coin to start"} />
             ) : (
-              <ul className="divide-y divide-[#1a2421]">
+              <ul style={{ margin: 0, padding: 0, listStyle: "none" }}>
                 {recentTrades.map((t) => (
-                  <li key={t.id} className="grid grid-cols-[auto_1fr_auto_auto] gap-3 py-2 text-xs items-center">
-                    <span
-                      className={`text-[10px] uppercase tracking-wider ${
-                        t.side === "buy" ? "text-[#7fae7e]" : "text-[#e88a8a]"
-                      }`}
+                  <li
+                    key={t.id}
+                    style={{
+                      display: "grid",
+                      gridTemplateColumns: "auto 1fr auto auto",
+                      alignItems: "center",
+                      gap: 10,
+                      padding: "8px 0",
+                      borderBottom: "1px dashed var(--hair)",
+                    }}
+                  >
+                    <CutePill tone={t.side === "buy" ? "matcha" : "sakura"}>{t.side}</CutePill>
+                    <code
+                      style={{
+                        fontFamily: "var(--font-mono-geist), monospace",
+                        fontSize: 12,
+                        color: "var(--ink)",
+                      }}
                     >
-                      {t.side}
+                      {shortAddr(t.wallet)}
+                    </code>
+                    <span style={{ fontSize: 14, fontWeight: 700, color: "var(--ink)" }}>
+                      ${t.usdcAmount.toFixed(2)}
                     </span>
-                    <span>{shortAddr(t.wallet)}</span>
-                    <span className="text-right">${t.usdcAmount.toFixed(2)}</span>
                     <a
                       href={explorer(t.txSignature, "tx")}
                       target="_blank"
                       rel="noreferrer"
-                      className="text-[#5fa088] underline-offset-2 hover:underline"
+                      style={{ color: "var(--sakura)", textDecoration: "none", fontSize: 14 }}
                     >
                       ↗
                     </a>
@@ -254,69 +421,69 @@ export default async function CryptoDashboard() {
                 ))}
               </ul>
             )}
-          </Card>
+          </CuteCard>
+
+          <style>{`
+            @media (max-width: 900px) {
+              .crypto-feeds { grid-template-columns: 1fr !important; }
+            }
+          `}</style>
         </div>
       </section>
 
-      {/* footer */}
-      <footer className="mt-12 border-t border-[#1a2421] px-6 py-4">
-        <div className="mx-auto flex max-w-[1600px] items-center justify-between text-[10px] uppercase tracking-wider text-[#c8e6cb]/40">
-          <span>kali · crypto desk</span>
-          <span>{NETWORK} · ein {tenant.ein}</span>
-        </div>
+      <footer
+        className="mx-auto max-w-[1500px] px-6 sm:px-10"
+        style={{ paddingBottom: 24, fontSize: 11, color: "var(--mute)", letterSpacing: "0.1em", textTransform: "uppercase" }}
+      >
+        kali · crypto desk · {NETWORK}
       </footer>
     </main>
   );
 }
 
-function StatTile({
-  label,
-  value,
-  sub,
-  tone,
-}: {
-  label: string;
-  value: string;
-  sub: string;
-  tone: "cyan" | "green" | "amber" | "purple";
-}) {
-  const colors = {
-    cyan: "text-[#7fbed1]",
-    green: "text-[#7fae7e]",
-    amber: "text-[#d4b27a]",
-    purple: "text-[#b08cd1]",
-  };
+function Step({ n, children }: { n: number; children: React.ReactNode }) {
   return (
-    <div className="rounded-md border border-[#1a2421] bg-[#0e1413] p-4">
-      <div className="text-[10px] uppercase tracking-[0.2em] text-[#c8e6cb]/50">{label}</div>
-      <div className={`mt-2 text-2xl font-semibold tabular-nums ${colors[tone]}`}>{value}</div>
-      <div className="mt-1 text-[10px] text-[#c8e6cb]/40">{sub}</div>
-    </div>
-  );
-}
-
-function Card({ title, children }: { title: string; children: React.ReactNode }) {
-  return (
-    <div className="rounded-md border border-[#1a2421] bg-[#0e1413] p-4">
-      <div className="text-[10px] uppercase tracking-[0.2em] text-[#7fae7e]">{title}</div>
-      <div className="mt-3">{children}</div>
-    </div>
+    <li
+      style={{
+        display: "grid",
+        gridTemplateColumns: "auto 1fr",
+        gap: 10,
+        alignItems: "flex-start",
+        fontSize: 13,
+        color: "var(--ink)",
+        lineHeight: 1.55,
+      }}
+    >
+      <span
+        style={{
+          width: 24,
+          height: 24,
+          borderRadius: 999,
+          background: "var(--sakura)",
+          color: "white",
+          fontSize: 12,
+          fontWeight: 800,
+          display: "inline-flex",
+          alignItems: "center",
+          justifyContent: "center",
+          fontFamily: 'var(--font-quicksand), "Quicksand", system-ui, sans-serif',
+          border: "2px solid white",
+          boxShadow: "1px 1px 0 var(--sticker-shadow)",
+          flexShrink: 0,
+        }}
+      >
+        {n}
+      </span>
+      <span>{children}</span>
+    </li>
   );
 }
 
 function Empty({ msg }: { msg: string }) {
-  return <div className="py-6 text-center text-[10px] text-[#c8e6cb]/40">{msg}</div>;
-}
-
-function AttrPill({ a }: { a: "human" | "autonomous" | "unknown" }) {
-  const map = {
-    human: "bg-[#3a1d28] text-[#e88a8a]",
-    autonomous: "bg-[#1d3a2a] text-[#7fae7e]",
-    unknown: "bg-[#1a2421] text-[#c8e6cb]/60",
-  };
   return (
-    <span className={`rounded-sm px-1.5 py-[1px] text-[9px] uppercase tracking-wider ${map[a]}`}>
-      {a}
-    </span>
+    <div style={{ padding: "20px 8px", textAlign: "center", color: "var(--mute)", fontSize: 12 }}>
+      <Mascot pose="sleep" size={56} />
+      <div style={{ marginTop: 4 }}>{msg}</div>
+    </div>
   );
 }

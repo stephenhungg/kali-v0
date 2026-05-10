@@ -1,6 +1,8 @@
 "use client";
 
 import { useState } from "react";
+import { CuteButton } from "@/components/kawaii/CutePrimitives";
+import { Mascot } from "@/components/kawaii/Mascot";
 
 interface CurrentCoin {
   symbol: string;
@@ -38,38 +40,49 @@ export function LaunchCoinForm({
 
   if (currentCoin && !result) {
     return (
-      <div className="mt-4">
-        <div className="text-2xl font-semibold tracking-tight text-[#7fae7e]">
-          ${currentCoin.symbol}
-          <span className="ml-2 text-sm text-[#c8e6cb]/40">deployed</span>
+      <div style={{ marginTop: 8 }}>
+        <div
+          style={{
+            display: "flex",
+            alignItems: "center",
+            gap: 14,
+            marginBottom: 14,
+          }}
+        >
+          <Mascot pose="cheer" size={88} tiltDeg={-4} />
+          <div>
+            <div
+              className="kawaii-display"
+              style={{ fontSize: 30, color: "var(--matcha-deep-warm)", lineHeight: 1.1 }}
+            >
+              ${currentCoin.symbol}
+              <span style={{ marginLeft: 10, fontSize: 14, color: "var(--mute)", fontWeight: 600 }}>
+                deployed
+              </span>
+            </div>
+            <p style={{ marginTop: 4, fontSize: 13, color: "var(--mute)" }}>
+              {tenantName} already has a cause coin live. one coin per tenant in v1.
+            </p>
+          </div>
         </div>
-        <p className="mt-2 text-xs text-[#c8e6cb]/60">
-          {tenantName} already has a cause coin live. One coin per tenant in v1 — to relaunch,
-          reset the in-memory store via{" "}
-          <code className="rounded bg-black/40 px-1">bun run seed:causecoin</code>.
-        </p>
 
-        <div className="mt-6 grid grid-cols-1 gap-3 text-xs">
+        <div style={{ display: "grid", gap: 10 }}>
           <KV label="mint" value={currentCoin.mint} link={currentCoin.mintExplorer} />
-          <KV label="bonding pool" value={currentCoin.bondingCurvePool} link={currentCoin.poolExplorer} />
+          <KV
+            label="bonding pool"
+            value={currentCoin.bondingCurvePool}
+            link={currentCoin.poolExplorer}
+          />
           <KV label="treasury" value={currentCoin.treasuryWallet} />
         </div>
 
-        <div className="mt-6 flex gap-3">
-          <a
-            href={currentCoin.tradeUrl}
-            className="rounded bg-[#1d3a2a] px-4 py-2 text-xs uppercase tracking-wider text-[#7fae7e] hover:bg-[#244638]"
-          >
+        <div style={{ display: "flex", gap: 10, marginTop: 18, flexWrap: "wrap" }}>
+          <CuteButton href={currentCoin.tradeUrl} tone="sakura">
             open trading page →
-          </a>
-          <a
-            href={currentCoin.mintExplorer}
-            target="_blank"
-            rel="noreferrer"
-            className="rounded border border-[#1a2421] px-4 py-2 text-xs uppercase tracking-wider hover:bg-[#1a2421]"
-          >
+          </CuteButton>
+          <CuteButton href={currentCoin.mintExplorer} tone="ghost">
             view on explorer ↗
-          </a>
+          </CuteButton>
         </div>
       </div>
     );
@@ -77,13 +90,21 @@ export function LaunchCoinForm({
 
   if (result) {
     return (
-      <div className="mt-4">
-        <div className="text-2xl font-semibold tracking-tight text-[#7fae7e]">
-          ${result.symbol} deployed
+      <div style={{ marginTop: 8 }}>
+        <div style={{ display: "flex", alignItems: "center", gap: 14, marginBottom: 14 }}>
+          <Mascot pose="cheer" size={88} tiltDeg={-4} />
+          <div>
+            <div
+              className="kawaii-display"
+              style={{ fontSize: 30, color: "var(--matcha-deep-warm)", lineHeight: 1.1 }}
+            >
+              ${result.symbol} deployed
+            </div>
+            <p style={{ marginTop: 4, fontSize: 13, color: "var(--mute)" }}>{result.message}</p>
+          </div>
         </div>
-        <p className="mt-2 text-xs text-[#c8e6cb]/60">{result.message}</p>
 
-        <div className="mt-6 grid grid-cols-1 gap-3 text-xs">
+        <div style={{ display: "grid", gap: 10 }}>
           <KV label="mint" value={result.mint} link={result.explorerUrls.mint} />
           <KV
             label="bonding pool"
@@ -92,32 +113,25 @@ export function LaunchCoinForm({
           />
           <KV label="treasury" value={result.treasuryWallet} />
           {result.explorerUrls.deployTx && (
-            <KV
-              label="deploy tx"
-              value="on-chain"
-              link={result.explorerUrls.deployTx}
-            />
+            <KV label="deploy tx" value="on-chain" link={result.explorerUrls.deployTx} />
           )}
         </div>
 
-        <div className="mt-6 flex gap-3">
-          <a
-            href={`/coin/${tenantSlug}`}
-            className="rounded bg-[#1d3a2a] px-4 py-2 text-xs uppercase tracking-wider text-[#7fae7e] hover:bg-[#244638]"
-          >
+        <div style={{ display: "flex", gap: 10, marginTop: 18, flexWrap: "wrap" }}>
+          <CuteButton href={`/coin/${tenantSlug}`} tone="sakura">
             open trading page →
-          </a>
-          <button
+          </CuteButton>
+          <CuteButton
+            tone="ghost"
             onClick={() => {
               setResult(null);
               setSymbol("");
               setName("");
               setCause("");
             }}
-            className="rounded border border-[#1a2421] px-4 py-2 text-xs uppercase tracking-wider hover:bg-[#1a2421]"
           >
             launch another
-          </button>
+          </CuteButton>
         </div>
       </div>
     );
@@ -152,21 +166,25 @@ export function LaunchCoinForm({
   }
 
   return (
-    <div className="mt-4">
-      <div className="text-2xl font-semibold tracking-tight">launch cause coin</div>
-      <p className="mt-2 text-xs text-[#c8e6cb]/60">
-        deploy an SPL token + meteora bonding curve for {tenantName}. all fields persist into
-        onchain metadata via the kali_tenant_id pointer.
+    <div style={{ marginTop: 8 }}>
+      <div
+        className="kawaii-display"
+        style={{ fontSize: 28, color: "var(--ink)", lineHeight: 1.1, marginTop: 6 }}
+      >
+        launch a cause coin
+      </div>
+      <p style={{ marginTop: 6, fontSize: 13, color: "var(--mute)", maxWidth: 560 }}>
+        deploy an SPL Token-2022 mint for {tenantName}. all fields persist into onchain metadata.
       </p>
 
-      <div className="mt-6 space-y-4">
+      <div style={{ display: "grid", gap: 14, marginTop: 18 }}>
         <Field label="symbol — 2 to 8 caps">
           <input
             value={symbol}
             onChange={(e) => setSymbol(e.target.value.toUpperCase().replace(/[^A-Z]/g, ""))}
             maxLength={8}
             placeholder="RVRT"
-            className="w-full rounded border border-[#1a2421] bg-[#050807] px-3 py-2 font-mono text-base text-[#7fae7e] focus:border-[#7fae7e] focus:outline-none"
+            style={inputStyle({ size: 18, fontFamily: 'var(--font-quicksand), "Quicksand", system-ui, sans-serif' })}
           />
         </Field>
         <Field label="display name">
@@ -175,7 +193,7 @@ export function LaunchCoinForm({
             onChange={(e) => setName(e.target.value)}
             maxLength={64}
             placeholder="Rivertown"
-            className="w-full rounded border border-[#1a2421] bg-[#050807] px-3 py-2 text-sm focus:border-[#7fae7e] focus:outline-none"
+            style={inputStyle({})}
           />
         </Field>
         <Field label="cause (optional)">
@@ -183,28 +201,44 @@ export function LaunchCoinForm({
             value={cause}
             onChange={(e) => setCause(e.target.value)}
             placeholder="Sacramento community foundation — six core programs"
-            className="w-full rounded border border-[#1a2421] bg-[#050807] px-3 py-2 text-sm focus:border-[#7fae7e] focus:outline-none"
+            style={inputStyle({})}
           />
         </Field>
       </div>
 
       {error && (
-        <div className="mt-4 rounded border border-[#5a2a2a] bg-[#2a0e0e] px-3 py-2 text-xs text-[#e88a8a]">
+        <div
+          style={{
+            marginTop: 14,
+            background: "var(--mochi)",
+            color: "var(--strawberry-deep)",
+            border: "2px solid white",
+            borderRadius: 12,
+            padding: "10px 14px",
+            fontSize: 13,
+            fontWeight: 600,
+            boxShadow: "1px 2px 0 var(--sticker-shadow)",
+          }}
+        >
           {error}
         </div>
       )}
 
-      <button
-        onClick={submit}
-        disabled={!symbol || !name || submitting}
-        className="mt-6 w-full rounded bg-[#1d3a2a] px-6 py-3 text-sm uppercase tracking-wider text-[#7fae7e] hover:bg-[#244638] disabled:opacity-40"
-      >
-        {submitting ? "deploying…" : `launch $${symbol || "TOKEN"}`}
-      </button>
+      <div style={{ marginTop: 18 }}>
+        <CuteButton
+          tone="sakura"
+          size="lg"
+          onClick={submit}
+          disabled={!symbol || !name || submitting}
+          style={{ width: "100%", justifyContent: "center" }}
+        >
+          {submitting ? "deploying…" : `launch $${symbol || "TOKEN"}`}
+        </CuteButton>
+      </div>
 
-      <p className="mt-4 text-[10px] text-[#c8e6cb]/40">
+      <p style={{ marginTop: 12, fontSize: 11, color: "var(--mute)", lineHeight: 1.5 }}>
         24h cooling-off recommended before mainnet. devnet deploys are instant. zero insider
-        allocation, fee recipient is the tenant treasury (audit-able onchain).
+        allocation, fee recipient is the tenant treasury (auditable onchain).
       </p>
     </div>
   );
@@ -213,23 +247,64 @@ export function LaunchCoinForm({
 function Field({ label, children }: { label: string; children: React.ReactNode }) {
   return (
     <div>
-      <div className="text-[10px] uppercase tracking-[0.2em] text-[#c8e6cb]/50">{label}</div>
-      <div className="mt-1.5">{children}</div>
+      <div className="kawaii-mono-tag" style={{ color: "var(--mute)", marginBottom: 6 }}>
+        {label}
+      </div>
+      {children}
     </div>
   );
 }
 
+function inputStyle({ size = 14, fontFamily }: { size?: number; fontFamily?: string }) {
+  return {
+    width: "100%",
+    background: "white",
+    border: "2px solid white",
+    borderRadius: 12,
+    padding: "10px 14px",
+    fontSize: size,
+    color: "var(--ink)",
+    outline: "none",
+    boxShadow: "1px 2px 0 var(--sticker-shadow)",
+    fontFamily: fontFamily ?? 'var(--font-quicksand), "Quicksand", "Inter", system-ui, sans-serif',
+    fontWeight: 600,
+  } as React.CSSProperties;
+}
+
 function KV({ label, value, link }: { label: string; value: string; link?: string }) {
   return (
-    <div className="grid grid-cols-[120px_1fr_auto] items-center gap-3">
-      <span className="text-[10px] uppercase tracking-[0.2em] text-[#c8e6cb]/50">{label}</span>
-      <code className="break-all text-[#7fae7e]">{value}</code>
+    <div
+      style={{
+        display: "grid",
+        gridTemplateColumns: "120px 1fr auto",
+        alignItems: "center",
+        gap: 12,
+        background: "white",
+        border: "2px solid white",
+        borderRadius: 10,
+        padding: "8px 12px",
+        boxShadow: "1px 2px 0 var(--sticker-shadow)",
+      }}
+    >
+      <span className="kawaii-mono-tag" style={{ color: "var(--mute)" }}>
+        {label}
+      </span>
+      <code
+        style={{
+          fontFamily: "var(--font-mono-geist), monospace",
+          fontSize: 12,
+          color: "var(--ink)",
+          wordBreak: "break-all",
+        }}
+      >
+        {value}
+      </code>
       {link && (
         <a
           href={link}
           target="_blank"
           rel="noreferrer"
-          className="text-[#5fa088] underline-offset-2 hover:underline"
+          style={{ color: "var(--sakura)", fontWeight: 700, textDecoration: "none" }}
         >
           ↗
         </a>

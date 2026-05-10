@@ -159,7 +159,7 @@ export function Step2Profile({ state, setState, next, back }: StepProps) {
 }
 
 const inputClass =
-  "w-full rounded border border-[var(--mint-line)] bg-[var(--surface)] px-3 py-2 font-sans text-[15px] text-[var(--matcha-deep)] outline-none transition-colors placeholder:text-[var(--gray-ink)] focus:border-[var(--matcha-mid)] focus:bg-[var(--mint-pale)]/30";
+  "kali-cute-input w-full rounded-xl border-[2px] border-white bg-white px-4 py-2.5 text-[15px] text-[var(--ink)] outline-none transition-colors placeholder:text-[var(--mute)] focus:border-[var(--sakura)]";
 
 function formatEin(s: string): string {
   const digits = s.replace(/\D/g, "").slice(0, 9);

@@ -59,6 +59,16 @@
 
   --background: var(--paper);
   --foreground: var(--ink-near);
+
+  /* dashboard / chat / onboarding — aliases used outside the landing page */
+  --mochi: var(--matcha-200);
+  --sakura: var(--matcha-600);
+  --matcha-pale: var(--matcha-200);
+  --matcha-deep-warm: var(--matcha-800);
+  --mute: var(--gray-ink);
+  --hair: var(--mint-line);
+  --sticker-shadow: rgba(107, 137, 93, 0.35);
+  --sticker-shadow-deep: rgba(54, 94, 60, 0.42);
 }
 
 @theme inline {
@@ -375,4 +385,137 @@ body {
 
 .animate-kawaii-twinkle {
   animation: kawaii-twinkle 1.8s ease-in-out infinite;
+}
+
+/* ─── app surfaces (chat, dashboard, crypto) — Quicksand + sticker UI ─── */
+
+.kawaii-display {
+  font-family: var(--font-quicksand), "Quicksand", var(--font-subtext), Inter, system-ui, sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.kawaii-mono-tag {
+  font-family: var(--font-quicksand), "Quicksand", var(--font-subtext), Inter, system-ui, sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-size: 11px;
+  color: var(--mute);
+}
+
+.kawaii-sticker {
+  filter: drop-shadow(2px 3px 0 var(--sticker-shadow));
+}
+
+.kawaii-sticker-deep {
+  filter: drop-shadow(2px 3px 0 var(--sticker-shadow-deep));
+}
+
+@keyframes mochi-bob {
+  0%,
+  100% {
+    transform: translateY(0) rotate(var(--mochi-tilt, -3deg));
+  }
+  50% {
+    transform: translateY(-4px) rotate(calc(var(--mochi-tilt, -3deg) + 0.5deg));
+  }
+}
+
+@keyframes sticker-pop {
+  0% {
+    transform: scale(0.85) rotate(-6deg);
+    opacity: 0;
+  }
+  60% {
+    transform: scale(1.06) rotate(2deg);
+  }
+  100% {
+    transform: scale(1) rotate(-1deg);
+    opacity: 1;
+  }
+}
+
+.sticker-pop {
+  animation: sticker-pop 480ms cubic-bezier(0.34, 1.56, 0.64, 1) both;
+}
+
+@keyframes sparkle-twinkle {
+  0%,
+  100% {
+    transform: scale(1) rotate(0);
+    opacity: 0.7;
+  }
+  50% {
+    transform: scale(1.15) rotate(10deg);
+    opacity: 1;
+  }
+}
+
+.sparkle-twinkle {
+  animation: sparkle-twinkle 2.4s ease-in-out infinite;
+}
+
+.cute-btn:hover {
+  transform: rotate(0deg) translateY(-1px) !important;
+  box-shadow: 3px 5px 0 var(--sticker-shadow) !important;
+}
+
+.cute-btn:active {
+  transform: rotate(-0.4deg) translateY(1px) !important;
+  box-shadow: 1px 2px 0 var(--sticker-shadow) !important;
+}
+
+.kali-cute-input {
+  font-family: var(--font-quicksand), "Quicksand", var(--font-subtext), Inter, system-ui, sans-serif;
+  font-weight: 600;
+  box-shadow: 1px 2px 0 var(--sticker-shadow);
+  background: white;
+}
+
+.kali-cute-input:focus {
+  box-shadow: 2px 3px 0 var(--sticker-shadow);
+}
+
+.kawaii-bubble {
+  position: relative;
+  background: white;
+  border: 3px solid white;
+  border-radius: 22px;
+  padding: 14px 18px;
+  box-shadow: 2px 3px 0 var(--sticker-shadow);
+  color: var(--ink);
+}
+
+.kawaii-bubble--mochi {
+  background: var(--mochi);
+}
+
+.kawaii-bubble--matcha {
+  background: var(--matcha-pale);
+}
+
+.kawaii-bubble--cloud {
+  background: var(--cloud);
+}
+
+.kawaii-page {
+  background:
+    radial-gradient(circle at 10% 0%, var(--mochi) 0%, transparent 35%),
+    radial-gradient(circle at 90% 10%, var(--matcha-pale) 0%, transparent 32%),
+    radial-gradient(circle at 80% 90%, var(--cloud) 0%, transparent 30%),
+    var(--paper);
+  color: var(--ink);
+  min-height: 100vh;
+}
+
+.kawaii-mono-surface {
+  font-family: var(--font-mono-geist), "Geist Mono", ui-monospace, monospace;
+  font-size: 12px;
+  background: white;
+  border: 2px solid var(--hair);
+  border-radius: 10px;
+  padding: 8px 12px;
+  color: var(--ink);
+  word-break: break-all;
 }

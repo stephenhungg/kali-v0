@@ -18,12 +18,37 @@ export function Message({ message, onActivateCitation }: MessageProps) {
     return (
       <div className="mx-auto max-w-3xl px-4 sm:px-6">
         <div className="flex items-start gap-3 py-4">
-          <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[var(--matcha-mid)]/15 text-xs font-medium text-[var(--matcha-deep)]">
-            R
+          <div
+            style={{
+              flexShrink: 0,
+              width: 32,
+              height: 32,
+              borderRadius: 12,
+              background: "var(--mochi)",
+              border: "2px solid white",
+              color: "var(--matcha-deep-warm)",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              fontSize: 11,
+              fontWeight: 800,
+              fontFamily: 'var(--font-quicksand), "Quicksand", system-ui, sans-serif',
+              boxShadow: "1px 2px 0 var(--sticker-shadow)",
+              transform: "rotate(-2deg)",
+            }}
+            aria-label="you"
+          >
+            you
           </div>
           <div className="flex-1 pt-0.5">
-            <span className="font-mono text-[10px] uppercase tracking-[0.14em] text-[var(--gray-ink)]">you</span>
-            <p className="mt-0.5 text-[15px] leading-relaxed text-[var(--matcha-deep)]">{message.text}</p>
+            <div
+              className="kawaii-bubble kawaii-bubble--mochi"
+              style={{ display: "inline-block", maxWidth: "100%" }}
+            >
+              <p style={{ margin: 0, fontSize: 15, lineHeight: 1.5, color: "var(--ink)" }}>
+                {message.text}
+              </p>
+            </div>
           </div>
         </div>
       </div>
@@ -35,8 +60,27 @@ export function Message({ message, onActivateCitation }: MessageProps) {
   return (
     <div className="mx-auto max-w-3xl px-4 sm:px-6">
       <div className="flex items-start gap-3 py-5">
-        <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[var(--matcha-deep)] text-[11px] font-medium text-[var(--cream)]">
-          K
+        <div
+          style={{
+            flexShrink: 0,
+            width: 32,
+            height: 32,
+            borderRadius: 12,
+            background: "var(--matcha-pale)",
+            border: "2px solid white",
+            color: "var(--matcha-deep-warm)",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            fontSize: 12,
+            fontWeight: 800,
+            fontFamily: 'var(--font-quicksand), "Quicksand", system-ui, sans-serif',
+            boxShadow: "1px 2px 0 var(--sticker-shadow-deep)",
+            transform: "rotate(2deg)",
+          }}
+          aria-label="kali"
+        >
+          k
         </div>
         <div className="flex-1 space-y-2 pt-0.5">
           <span className="flex items-center gap-2 font-mono text-[10px] uppercase tracking-[0.14em] text-[var(--gray-ink)]">

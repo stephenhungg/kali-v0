@@ -1,8 +1,11 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { useSearchParams } from "next/navigation";
 import { getSupabaseBrowserClient } from "../../lib/supabase/client";
 import type { StepProps } from "./OnboardingShell";
+import { Mascot as KawaiiMascot } from "../kawaii/Mascot";
+import { CuteCard } from "../kawaii/CutePrimitives";
 
 interface Step1Props extends StepProps {
   onSignedUp: () => Promise<void>;
@@ -11,7 +14,11 @@ interface Step1Props extends StepProps {
 type Mode = "signup" | "signin" | "confirm-email";
 
 export function Step1Signup({ onSignedUp }: Step1Props) {
-  const [mode, setMode] = useState<Mode>("signup");
+  // Deep-link support: /onboarding?mode=signin opens the signin form
+  // directly instead of the default signup flow.
+  const sp = useSearchParams();
+  const initialMode: Mode = sp.get("mode") === "signin" ? "signin" : "signup";
+  const [mode, setMode] = useState<Mode>(initialMode);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [name, setName] = useState("");
@@ -185,20 +192,33 @@ export function Step1Signup({ onSignedUp }: Step1Props) {
   return (
     <div className="grid gap-8 sm:grid-cols-[1fr_240px]">
       <div className="flex flex-col gap-5">
-        <div className="flex flex-col gap-2">
-          <span className="font-mono text-[11px] uppercase tracking-[0.18em] text-[var(--gray-ink)]">
-            {mode === "signup" ? "create your account" : "welcome back"}
-          </span>
-          <h1 className="r-display text-[36px] font-medium leading-[0.95] tracking-tight text-[var(--matcha-deep)] sm:text-[48px]">
-            {mode === "signup" ? "Set up Kali for your nonprofit" : "Sign back in"}{" "}
-            <span className="r-italic font-light text-[var(--matcha-mid)]">in 4 minutes.</span>
-          </h1>
-          <p className="text-[14px] leading-relaxed text-[var(--matcha-deep)]/70">
-            {mode === "signup"
-              ? "We'll connect to your existing tools, index your historical data, and have your team asking questions in plain English by the end of this flow."
-              : "Pick up where you left off. Your tenant + connector selections + uploads are saved."}
-          </p>
+        <div className="flex items-end gap-4">
+          <KawaiiMascot pose="wave" size={92} tiltDeg={-4} />
+          <div className="flex flex-col gap-2 flex-1">
+            <span className="kawaii-mono-tag" style={{ color: "var(--mute)" }}>
+              {mode === "signup" ? "create your account" : "welcome back"}
+            </span>
+            <h1
+              className="kawaii-display"
+              style={{
+                fontSize: "clamp(30px, 4vw, 44px)",
+                lineHeight: 1.0,
+                color: "var(--ink)",
+                margin: 0,
+              }}
+            >
+              {mode === "signup" ? "set up kali for your nonprofit" : "sign back in"}{" "}
+              <span style={{ color: "var(--sakura)", fontStyle: "italic", fontWeight: 600 }}>
+                in 4 minutes.
+              </span>
+            </h1>
+          </div>
         </div>
+        <p style={{ fontSize: 14, lineHeight: 1.55, color: "var(--mute)" }}>
+          {mode === "signup"
+            ? "we'll connect to your existing tools, index your historical data, and have your team asking questions in plain english by the end of this flow."
+            : "pick up where you left off. your tenant + connector selections + uploads are saved."}
+        </p>
 
         <form onSubmit={submit} className="flex flex-col gap-3">
           {mode === "signup" && (
@@ -251,7 +271,22 @@ export function Step1Signup({ onSignedUp }: Step1Props) {
             <button
               type="submit"
               disabled={busy || !email || !password || (mode === "signup" && !name)}
-              className="rounded bg-[var(--matcha-deep)] px-5 py-2.5 font-mono text-[12px] uppercase tracking-[0.14em] text-[var(--cream)] transition-transform hover:scale-[1.02] disabled:cursor-not-allowed disabled:opacity-40"
+              style={{
+                background: "var(--sakura)",
+                color: "white",
+                border: "3px solid white",
+                borderRadius: 14,
+                padding: "10px 22px",
+                fontFamily: 'var(--font-quicksand), "Quicksand", system-ui, sans-serif',
+                fontSize: 14,
+                fontWeight: 700,
+                letterSpacing: "0.04em",
+                cursor: "pointer",
+                boxShadow: "2px 3px 0 var(--sticker-shadow)",
+                transform: "rotate(-0.8deg)",
+                transition: "transform 120ms ease, box-shadow 120ms ease",
+              }}
+              className="cute-btn"
             >
               {busy
                 ? mode === "signup" ? "creating…" : "signing in…"
@@ -260,7 +295,17 @@ export function Step1Signup({ onSignedUp }: Step1Props) {
             <button
               type="button"
               onClick={() => { setMode(mode === "signup" ? "signin" : "signup"); setError(null); setInfo(null); }}
-              className="font-mono text-[11px] text-[var(--gray-ink)] underline-offset-2 hover:text-[var(--matcha-deep)] hover:underline"
+              style={{
+                background: "transparent",
+                border: "none",
+                cursor: "pointer",
+                padding: 0,
+                fontFamily: 'var(--font-quicksand), "Quicksand", system-ui, sans-serif',
+                fontSize: 12,
+                color: "var(--mute)",
+                textDecoration: "underline",
+                textUnderlineOffset: 3,
+              }}
             >
               {mode === "signup" ? "already have an account? sign in" : "new here? create account"}
             </button>
@@ -269,15 +314,15 @@ export function Step1Signup({ onSignedUp }: Step1Props) {
       </div>
 
       <SidebarNote
-        title="Why we ask"
-        body="Kali is a SaaS — every nonprofit gets its own isolated instance with their data, their connectors, their team. We use email + password for sign-in (SSO is on the roadmap)."
+        title="why we ask"
+        body="every nonprofit gets its own isolated instance with their data + connectors + team. email + password for sign-in (SSO on the roadmap)."
       />
     </div>
   );
 }
 
 const inputClass =
-  "w-full rounded border border-[var(--mint-line)] bg-[var(--surface)] px-3 py-2 font-sans text-[15px] text-[var(--matcha-deep)] outline-none transition-colors placeholder:text-[var(--gray-ink)] focus:border-[var(--matcha-mid)] focus:bg-[var(--mint-pale)]/30";
+  "kali-cute-input w-full rounded-xl border-[2px] border-white bg-white px-4 py-2.5 text-[15px] text-[var(--ink)] outline-none transition-colors placeholder:text-[var(--mute)] focus:border-[var(--sakura)]";
 
 function humanError(msg: string): string {
   if (/already registered|already exists/i.test(msg)) return "An account with that email already exists.";
@@ -301,11 +346,13 @@ export function Field({ label, hint, children }: { label: string; hint?: string;
 
 export function SidebarNote({ title, body }: { title: string; body: string }) {
   return (
-    <aside className="hidden self-start rounded border border-[var(--mint-line)] bg-[var(--surface-raised)] p-4 sm:block">
-      <h3 className="font-mono text-[10px] uppercase tracking-[0.18em] text-[var(--matcha-mid)]">
-        {title}
-      </h3>
-      <p className="mt-2 text-[12px] leading-relaxed text-[var(--matcha-deep)]/80">{body}</p>
+    <aside className="hidden self-start sm:block">
+      <CuteCard tone="cloud">
+        <div className="kawaii-mono-tag" style={{ color: "var(--sakura)", marginBottom: 6 }}>
+          {title}
+        </div>
+        <p style={{ margin: 0, fontSize: 12, lineHeight: 1.55, color: "var(--ink)" }}>{body}</p>
+      </CuteCard>
     </aside>
   );
 }

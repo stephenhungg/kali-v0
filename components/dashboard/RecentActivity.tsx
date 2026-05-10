@@ -1,9 +1,10 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { CuteCard, CutePill } from "../kawaii/CutePrimitives";
+import { Mascot } from "../kawaii/Mascot";
 
 interface RecentActivityProps {
-  /** Tenant id to query the audit log for. */
   tenantId?: string;
 }
 
@@ -20,21 +21,21 @@ interface AuditRecord {
   durationMs: number;
 }
 
-const ACCENT_BY_SOURCE: Record<string, string> = {
-  bloomerang: "var(--matcha-mid)",
-  salesforce: "var(--matcha-mid)",
-  m365: "var(--matcha-mid)",
-  zoom: "var(--matcha-mid)",
-  sharepoint: "var(--matcha-mid)",
-  instrumentl: "var(--matcha-deep)",
-  quickbooks: "var(--matcha-deep)",
-  solana: "var(--matcha-deep)",
-  powerbi: "var(--matcha-deep)",
-  powerautomate: "var(--matcha-deep)",
-  knowbe4: "var(--strawberry-deep)",
-  x402: "var(--strawberry-deep)",
-  causecoin: "var(--strawberry-deep)",
-  context: "var(--gray-ink)",
+const TONE_BY_SOURCE: Record<string, "matcha" | "sakura" | "lemon" | "cloud" | "mochi" | "neutral"> = {
+  bloomerang: "mochi",
+  salesforce: "matcha",
+  m365: "cloud",
+  zoom: "cloud",
+  sharepoint: "lemon",
+  instrumentl: "matcha",
+  quickbooks: "matcha",
+  solana: "lemon",
+  powerbi: "matcha",
+  powerautomate: "lemon",
+  knowbe4: "sakura",
+  x402: "sakura",
+  causecoin: "lemon",
+  context: "neutral",
 };
 
 export function RecentActivity({ tenantId = "rivertown" }: RecentActivityProps) {
@@ -59,55 +60,69 @@ export function RecentActivity({ tenantId = "rivertown" }: RecentActivityProps) 
   return (
     <section>
       <div className="mb-3 flex items-baseline justify-between">
-        <h2 className="font-mono text-[10px] uppercase tracking-[0.18em] text-[var(--gray-ink)]">
-          recent agent activity
-        </h2>
-        <span className="font-mono text-[10px] text-[var(--gray-ink)]">
+        <h2 className="kawaii-mono-tag">recent agent activity</h2>
+        <span className="kawaii-mono-tag" style={{ color: "var(--mute)" }}>
           {entries?.length ?? 0} tool calls
         </span>
       </div>
-      <ul className="chat-card divide-y divide-[var(--mint-line-soft)] rounded">
+      <CuteCard tone="paper" style={{ padding: 0 }}>
         {entries === null && !error && (
-          <li className="px-3 py-3 text-[12px] text-[var(--gray-ink)]">loading…</li>
+          <div style={{ padding: "32px 22px", textAlign: "center", color: "var(--mute)", fontSize: 13 }}>
+            loading…
+          </div>
         )}
         {error && (
-          <li className="px-3 py-3 text-[12px] text-[var(--strawberry-deep)]">
+          <div style={{ padding: "20px 22px", color: "var(--strawberry-deep)", fontSize: 13 }}>
             could not load audit log: {error}
-          </li>
+          </div>
         )}
         {entries && entries.length === 0 && (
-          <li className="px-3 py-4 text-[12px] text-[var(--gray-ink)]">
-            no agent activity yet — open the chat and ask a question to populate the audit log.
-          </li>
+          <div style={{ padding: "30px 22px 28px", textAlign: "center" }}>
+            <Mascot pose="sleep" size={72} />
+            <div style={{ marginTop: 8, color: "var(--mute)", fontSize: 13, lineHeight: 1.5 }}>
+              no agent activity yet — open the chat and ask a question
+              <br />to populate the audit log.
+            </div>
+          </div>
         )}
-        {entries?.map((e) => (
-          <li key={e.id} className="flex items-start gap-3 px-3 py-2.5">
-            <span
-              className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full font-mono text-[10px] font-medium"
-              style={{
-                background: "var(--mint-pale)",
-                color: ACCENT_BY_SOURCE[e.source] ?? "var(--gray-ink)",
-              }}
-              title={e.source}
-            >
-              ·
-            </span>
-            <span className="min-w-0 flex-1 text-[13px] leading-snug text-[var(--matcha-deep)]">
-              <code className="font-mono text-[11px] text-[var(--matcha-mid)]">
-                {e.toolName}
-              </code>
-              <span className="ml-2 text-[var(--gray-ink)]">
-                {e.recordIds.length > 0
-                  ? `→ ${e.recordIds.length} record${e.recordIds.length === 1 ? "" : "s"}`
-                  : "→ no records"}
-              </span>
-            </span>
-            <span className="shrink-0 font-mono text-[10px] text-[var(--gray-ink)]">
-              {formatRelative(e.recordedAt)} · {e.durationMs}ms
-            </span>
-          </li>
-        ))}
-      </ul>
+        {entries && entries.length > 0 && (
+          <ul style={{ margin: 0, padding: 0, listStyle: "none" }}>
+            {entries.map((e, i) => (
+              <li
+                key={e.id}
+                className="row-rise"
+                style={{
+                  display: "grid",
+                  gridTemplateColumns: "auto 1fr auto",
+                  alignItems: "center",
+                  gap: 10,
+                  padding: "10px 16px",
+                  borderTop: i === 0 ? "none" : "1px dashed var(--hair)",
+                }}
+              >
+                <CutePill tone={TONE_BY_SOURCE[e.source] ?? "neutral"}>{e.source}</CutePill>
+                <code
+                  style={{
+                    fontFamily: "var(--font-mono-geist), ui-monospace, monospace",
+                    fontSize: 12,
+                    color: "var(--ink)",
+                  }}
+                >
+                  {e.toolName}
+                  <span style={{ color: "var(--mute)", marginLeft: 8 }}>
+                    {e.recordIds.length > 0
+                      ? `→ ${e.recordIds.length} record${e.recordIds.length === 1 ? "" : "s"}`
+                      : "→ no records"}
+                  </span>
+                </code>
+                <span style={{ fontSize: 11, color: "var(--mute)" }}>
+                  {formatRelative(e.recordedAt)} · {e.durationMs}ms
+                </span>
+              </li>
+            ))}
+          </ul>
+        )}
+      </CuteCard>
     </section>
   );
 }

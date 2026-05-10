@@ -1,12 +1,10 @@
 "use client";
 
 import { useState } from "react";
+import { CuteButton, CuteCard, CutePill } from "@/components/kawaii/CutePrimitives";
+import { Mascot } from "@/components/kawaii/Mascot";
 
-export function LaunchCoinFormStandalone({
-  defaultTenantSlug,
-}: {
-  defaultTenantSlug: string;
-}) {
+export function LaunchCoinFormStandalone({ defaultTenantSlug }: { defaultTenantSlug: string }) {
   const [tenantSlug] = useState(defaultTenantSlug);
   const [symbol, setSymbol] = useState("");
   const [name, setName] = useState("");
@@ -80,18 +78,18 @@ export function LaunchCoinFormStandalone({
 
   return (
     <div>
-      <div className="text-[10px] uppercase tracking-[0.2em] text-[#7fae7e]">
-        launch parameters
-      </div>
+      <div className="kawaii-mono-tag">launch parameters</div>
 
-      <div className="mt-4 grid grid-cols-1 gap-4 md:grid-cols-2">
+      <div
+        style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 14, marginTop: 12 }}
+      >
         <Field label="symbol — 2 to 8 caps">
           <input
             value={symbol}
             onChange={(e) => setSymbol(e.target.value.toUpperCase().replace(/[^A-Z]/g, ""))}
             maxLength={8}
             placeholder="RVRT"
-            className="w-full rounded border border-[#1a2421] bg-[#050807] px-3 py-2 text-base font-semibold text-[#7fae7e] focus:border-[#7fae7e] focus:outline-none"
+            style={inputStyle({ size: 18, weight: 800, color: "var(--matcha-deep-warm)" })}
           />
         </Field>
         <Field label="display name">
@@ -100,22 +98,24 @@ export function LaunchCoinFormStandalone({
             onChange={(e) => setName(e.target.value)}
             maxLength={64}
             placeholder="Rivertown"
-            className="w-full rounded border border-[#1a2421] bg-[#050807] px-3 py-2 text-sm focus:border-[#7fae7e] focus:outline-none"
+            style={inputStyle({})}
           />
         </Field>
       </div>
 
-      <Field label="cause description (optional)">
-        <input
-          value={cause}
-          onChange={(e) => setCause(e.target.value)}
-          placeholder="Sacramento community foundation — six core programs"
-          className="mt-1.5 w-full rounded border border-[#1a2421] bg-[#050807] px-3 py-2 text-sm focus:border-[#7fae7e] focus:outline-none"
-        />
-      </Field>
+      <div style={{ marginTop: 14 }}>
+        <Field label="cause description (optional)">
+          <input
+            value={cause}
+            onChange={(e) => setCause(e.target.value)}
+            placeholder="Sacramento community foundation — six core programs"
+            style={inputStyle({})}
+          />
+        </Field>
+      </div>
 
-      <div className="mt-4 grid grid-cols-2 gap-4">
-        <Field label={`trading fee (bps · ${feeBps / 100}%)`}>
+      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 14, marginTop: 14 }}>
+        <Field label={`trading fee · ${feeBps / 100}%`}>
           <input
             type="range"
             min={0}
@@ -123,10 +123,10 @@ export function LaunchCoinFormStandalone({
             step={25}
             value={feeBps}
             onChange={(e) => setFeeBps(Number(e.target.value))}
-            className="w-full"
+            style={{ width: "100%", accentColor: "var(--sakura)" }}
           />
         </Field>
-        <Field label={`community fund split (${communityFundBps / 100}% of fee)`}>
+        <Field label={`community fund · ${communityFundBps / 100}% of fee`}>
           <input
             type="range"
             min={0}
@@ -134,67 +134,93 @@ export function LaunchCoinFormStandalone({
             step={500}
             value={communityFundBps}
             onChange={(e) => setCommunityFundBps(Number(e.target.value))}
-            className="w-full"
+            style={{ width: "100%", accentColor: "var(--matcha)" }}
           />
         </Field>
       </div>
 
       {error && (
-        <div className="mt-4 rounded border border-[#5a2a2a] bg-[#2a0e0e] px-3 py-2 text-xs text-[#e88a8a]">
+        <div
+          style={{
+            marginTop: 14,
+            background: "var(--mochi)",
+            color: "var(--strawberry-deep)",
+            border: "2px solid white",
+            borderRadius: 12,
+            padding: "10px 14px",
+            fontSize: 13,
+            fontWeight: 600,
+            boxShadow: "1px 2px 0 var(--sticker-shadow)",
+          }}
+        >
           {error}
         </div>
       )}
 
-      <button
-        onClick={submit}
-        disabled={!symbol || !name || submitting}
-        className="mt-6 w-full rounded bg-[#1d3a2a] px-6 py-4 text-sm uppercase tracking-wider text-[#7fae7e] hover:bg-[#244638] disabled:opacity-40"
-      >
-        {submitting ? "deploying…" : `deploy $${symbol || "TOKEN"} on ${tenantSlug}`}
-      </button>
+      <div style={{ marginTop: 18 }}>
+        <CuteButton
+          tone="sakura"
+          size="lg"
+          onClick={submit}
+          disabled={!symbol || !name || submitting}
+          style={{ width: "100%", justifyContent: "center" }}
+        >
+          {submitting ? "deploying…" : `deploy $${symbol || "TOKEN"} on ${tenantSlug}`}
+        </CuteButton>
+      </div>
 
       {log.length > 0 && (
-        <div className="mt-6 rounded border border-[#1a2421] bg-[#050807] p-4">
-          <div className="text-[10px] uppercase tracking-[0.2em] text-[#7fae7e]">
+        <CuteCard tone="paper" style={{ marginTop: 16, padding: "14px 16px" }}>
+          <div className="kawaii-mono-tag" style={{ marginBottom: 8 }}>
             deploy log
           </div>
-          <pre className="mt-2 max-h-[280px] overflow-y-auto text-[11px] text-[#c8e6cb]/80">
+          <pre
+            className="kawaii-mono-surface"
+            style={{
+              maxHeight: 240,
+              overflowY: "auto",
+              margin: 0,
+              fontSize: 11,
+              lineHeight: 1.55,
+            }}
+          >
             {log.join("\n")}
           </pre>
-        </div>
+        </CuteCard>
       )}
 
       {result && (
-        <div className="mt-6 rounded border border-[#7fae7e]/30 bg-[#0d1f17] p-4">
-          <div className="text-[10px] uppercase tracking-[0.2em] text-[#7fae7e]">
-            ✓ ${result.symbol} live
+        <CuteCard tone="matcha" accent="sparkle" style={{ marginTop: 16 }}>
+          <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 8 }}>
+            <Mascot pose="cheer" size={64} tiltDeg={-3} />
+            <div>
+              <div className="kawaii-mono-tag" style={{ color: "var(--matcha-deep-warm)" }}>
+                ✓ live
+              </div>
+              <div
+                className="kawaii-display"
+                style={{ fontSize: 24, color: "var(--matcha-deep-warm)" }}
+              >
+                ${result.symbol} deployed
+              </div>
+            </div>
           </div>
-          <p className="mt-2 text-xs text-[#c8e6cb]/70">{result.message}</p>
-          <div className="mt-4 flex flex-wrap gap-3">
-            <a
-              href={`/coin/${tenantSlug}`}
-              className="rounded bg-[#1d3a2a] px-4 py-2 text-xs uppercase tracking-wider text-[#7fae7e] hover:bg-[#244638]"
-            >
+          <p style={{ fontSize: 13, color: "var(--ink)", margin: 0 }}>{result.message}</p>
+          <div style={{ marginTop: 12, display: "flex", flexWrap: "wrap", gap: 10 }}>
+            <CuteButton href={`/coin/${tenantSlug}`} tone="sakura" size="sm">
               open trading page →
-            </a>
-            <a
-              href={result.explorerUrls.mint}
-              target="_blank"
-              rel="noreferrer"
-              className="rounded border border-[#1a2421] px-4 py-2 text-xs uppercase tracking-wider hover:bg-[#1a2421]"
-            >
+            </CuteButton>
+            <CuteButton href={result.explorerUrls.mint} tone="ghost" size="sm">
               view mint ↗
-            </a>
-            <a
-              href={result.explorerUrls.pool}
-              target="_blank"
-              rel="noreferrer"
-              className="rounded border border-[#1a2421] px-4 py-2 text-xs uppercase tracking-wider hover:bg-[#1a2421]"
-            >
+            </CuteButton>
+            <CuteButton href={result.explorerUrls.pool} tone="ghost" size="sm">
               view pool ↗
-            </a>
+            </CuteButton>
+            {result.explorerUrls.deployTx && (
+              <CutePill tone="matcha">live onchain</CutePill>
+            )}
           </div>
-        </div>
+        </CuteCard>
       )}
     </div>
   );
@@ -203,8 +229,34 @@ export function LaunchCoinFormStandalone({
 function Field({ label, children }: { label: string; children: React.ReactNode }) {
   return (
     <div>
-      <div className="text-[10px] uppercase tracking-[0.2em] text-[#c8e6cb]/50">{label}</div>
-      <div className="mt-1.5">{children}</div>
+      <div className="kawaii-mono-tag" style={{ color: "var(--mute)", marginBottom: 6 }}>
+        {label}
+      </div>
+      {children}
     </div>
   );
+}
+
+function inputStyle({
+  size = 14,
+  weight = 600,
+  color,
+}: {
+  size?: number;
+  weight?: number;
+  color?: string;
+}) {
+  return {
+    width: "100%",
+    background: "white",
+    border: "2px solid white",
+    borderRadius: 12,
+    padding: "10px 14px",
+    fontSize: size,
+    color: color ?? "var(--ink)",
+    outline: "none",
+    boxShadow: "1px 2px 0 var(--sticker-shadow)",
+    fontFamily: 'var(--font-quicksand), "Quicksand", "Inter", system-ui, sans-serif',
+    fontWeight: weight,
+  } as React.CSSProperties;
 }

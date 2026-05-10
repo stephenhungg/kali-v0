@@ -15,6 +15,13 @@ import {
   listHolders,
   tradesIn,
 } from "@/lib/causecoin/trading";
+import {
+  CuteCard,
+  CuteButton,
+  CutePill,
+} from "@/components/kawaii/CutePrimitives";
+import { Mascot } from "@/components/kawaii/Mascot";
+import { StickerLogo } from "@/components/kawaii/StickerLogo";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -62,44 +69,52 @@ export default async function AllCoinsPage() {
   enriched.sort((a, b) => b.fees.treasury - a.fees.treasury);
 
   return (
-    <main className="min-h-screen bg-[#0a0d0c] font-mono text-[#c8e6cb]">
-      <header className="border-b border-[#1a2421] px-6 py-4">
-        <div className="mx-auto flex max-w-[1600px] items-center justify-between">
-          <div className="flex items-center gap-4">
-            <Link
-              href="/crypto"
-              className="text-sm uppercase tracking-[0.2em] text-[#c8e6cb]/70 hover:text-[#c8e6cb]"
-            >
-              ← crypto desk
-            </Link>
-            <span className="text-xl font-semibold tracking-tight">all coins</span>
+    <main className="kawaii-page">
+      <header style={{ borderBottom: "2px dashed var(--hair)", padding: "20px 0" }}>
+        <div className="mx-auto max-w-[1500px] px-6 sm:px-10" style={{ display: "flex", alignItems: "center", gap: 14 }}>
+          <Link href="/crypto"><StickerLogo size={56} /></Link>
+          <span className="kawaii-display" style={{ fontSize: 22, color: "var(--ink)" }}>· all coins</span>
+          <CutePill tone="lemon">{NETWORK}</CutePill>
+          <div style={{ marginLeft: "auto" }}>
+            <CuteButton href="/crypto/launch" tone="sakura" size="sm">+ launch new</CuteButton>
           </div>
-          <Link
-            href="/crypto/launch"
-            className="rounded bg-[#1d3a2a] px-3 py-1.5 text-xs uppercase tracking-wider text-[#7fae7e] hover:bg-[#244638]"
-          >
-            + launch new
-          </Link>
         </div>
       </header>
 
-      <section className="mx-auto max-w-[1600px] px-6 py-8">
+      <section className="mx-auto max-w-[1500px] px-6 py-10 sm:px-10">
         {enriched.length === 0 ? (
-          <div className="rounded-md border border-[#1a2421] bg-[#0e1413] p-12 text-center">
-            <div className="text-2xl text-[#c8e6cb]/40">no coins deployed yet</div>
-            <p className="mt-3 text-xs text-[#c8e6cb]/60">
-              run <code className="rounded bg-black/40 px-2 py-0.5">bun run seed:causecoin</code>{" "}
-              to load the demo $RVRT, or{" "}
-              <Link href="/crypto/launch" className="text-[#7fae7e] underline-offset-2 hover:underline">
-                launch your first coin →
-              </Link>
+          <CuteCard tone="cloud" style={{ padding: "32px 24px", textAlign: "center" }}>
+            <Mascot pose="sleep" size={96} />
+            <div className="kawaii-display" style={{ fontSize: 22, color: "var(--ink)", marginTop: 12 }}>
+              no coins deployed yet
+            </div>
+            <p style={{ marginTop: 8, fontSize: 13, color: "var(--mute)" }}>
+              run{" "}
+              <code
+                style={{
+                  background: "white",
+                  border: "1px solid var(--hair)",
+                  borderRadius: 4,
+                  padding: "1px 5px",
+                  fontFamily: "var(--font-mono-geist), monospace",
+                  fontSize: 11,
+                }}
+              >
+                bun run seed:causecoin
+              </code>{" "}
+              to load the demo $RVRT.
             </p>
-          </div>
+            <div style={{ marginTop: 16 }}>
+              <CuteButton href="/crypto/launch" tone="sakura">
+                launch your first coin →
+              </CuteButton>
+            </div>
+          </CuteCard>
         ) : (
-          <div className="overflow-x-auto rounded-md border border-[#1a2421] bg-[#0e1413]">
-            <table className="w-full text-xs">
-              <thead className="border-b border-[#1a2421] text-[10px] uppercase tracking-[0.2em] text-[#c8e6cb]/40">
-                <tr>
+          <CuteCard tone="paper" style={{ padding: 0, overflow: "hidden" }}>
+            <table style={{ width: "100%", borderCollapse: "collapse", fontSize: 13 }}>
+              <thead>
+                <tr style={{ background: "var(--cloud)" }}>
                   <Th>symbol</Th>
                   <Th>tenant</Th>
                   <Th align="right">market cap</Th>
@@ -113,19 +128,23 @@ export default async function AllCoinsPage() {
                 </tr>
               </thead>
               <tbody>
-                {enriched.map((row) => (
+                {enriched.map((row, i) => (
                   <tr
                     key={row.coin.id}
-                    className="border-b border-[#1a2421]/50 hover:bg-[#1a2421]/30"
+                    style={{
+                      borderTop: i === 0 ? "none" : "1px dashed var(--hair)",
+                      background: i % 2 === 0 ? "transparent" : "rgba(252, 233, 225, 0.4)",
+                    }}
                   >
                     <Td>
-                      <span className="text-base font-semibold text-[#7fae7e]">
+                      <span
+                        className="kawaii-display"
+                        style={{ fontSize: 18, color: "var(--matcha-deep-warm)" }}
+                      >
                         ${row.coin.symbol}
                       </span>
                     </Td>
-                    <Td className="text-[#c8e6cb]/80">
-                      {row.tenant?.name ?? row.coin.tenantId}
-                    </Td>
+                    <Td className="ink">{row.tenant?.name ?? row.coin.tenantId}</Td>
                     <Td align="right">
                       ${row.mcap.toLocaleString(undefined, { maximumFractionDigits: 0 })}
                     </Td>
@@ -133,38 +152,49 @@ export default async function AllCoinsPage() {
                       ${row.vol24h.toLocaleString(undefined, { maximumFractionDigits: 0 })}
                     </Td>
                     <Td align="right">{row.trades24h}</Td>
-                    <Td align="right" className="text-[#7fae7e]">
+                    <Td align="right" style={{ color: "var(--matcha-deep-warm)", fontWeight: 700 }}>
                       ${row.fees.treasury.toFixed(2)}
                     </Td>
                     <Td align="right">{row.holderCount}</Td>
                     <Td align="right">
-                      <StatusBadge status={row.coin.graduationStatus} />
+                      <CutePill
+                        tone={
+                          row.coin.graduationStatus === "graduated"
+                            ? "matcha"
+                            : row.coin.graduationStatus === "graduating"
+                              ? "lemon"
+                              : "sakura"
+                        }
+                      >
+                        {row.coin.graduationStatus}
+                      </CutePill>
                     </Td>
                     <Td>
                       <a
                         href={explorer(row.coin.mint)}
                         target="_blank"
                         rel="noreferrer"
-                        className="text-[#5fa088] underline-offset-2 hover:underline"
+                        style={{
+                          color: "var(--sakura)",
+                          textDecoration: "none",
+                          fontFamily: "var(--font-mono-geist), monospace",
+                        }}
                       >
                         {shortAddr(row.coin.mint)} ↗
                       </a>
                     </Td>
                     <Td>
                       {row.tenant && (
-                        <Link
-                          href={`/coin/${row.tenant.slug}`}
-                          className="rounded bg-[#1d3a2a] px-3 py-1 text-[10px] uppercase tracking-wider text-[#7fae7e] hover:bg-[#244638]"
-                        >
+                        <CuteButton href={`/coin/${row.tenant.slug}`} tone="sakura" size="sm">
                           trade →
-                        </Link>
+                        </CuteButton>
                       )}
                     </Td>
                   </tr>
                 ))}
               </tbody>
             </table>
-          </div>
+          </CuteCard>
         )}
       </section>
     </main>
@@ -173,7 +203,20 @@ export default async function AllCoinsPage() {
 
 function Th({ children, align = "left" }: { children?: React.ReactNode; align?: "left" | "right" }) {
   return (
-    <th className={`px-4 py-3 text-${align} font-normal`}>{children}</th>
+    <th
+      style={{
+        padding: "12px 16px",
+        textAlign: align,
+        fontSize: 11,
+        fontWeight: 700,
+        letterSpacing: "0.12em",
+        textTransform: "uppercase",
+        color: "var(--mute)",
+        fontFamily: 'var(--font-quicksand), "Quicksand", system-ui, sans-serif',
+      }}
+    >
+      {children}
+    </th>
   );
 }
 
@@ -181,25 +224,25 @@ function Td({
   children,
   align = "left",
   className = "",
+  style,
 }: {
   children?: React.ReactNode;
   align?: "left" | "right";
   className?: string;
+  style?: React.CSSProperties;
 }) {
   return (
-    <td className={`px-4 py-3 text-${align} tabular-nums ${className}`}>{children}</td>
-  );
-}
-
-function StatusBadge({ status }: { status: "bonding" | "graduating" | "graduated" }) {
-  const map = {
-    bonding: "bg-[#1d3a2a] text-[#7fae7e]",
-    graduating: "bg-[#3a3a1d] text-[#d4b27a]",
-    graduated: "bg-[#1d2a3a] text-[#7fbed1]",
-  };
-  return (
-    <span className={`rounded-sm px-2 py-[2px] text-[9px] uppercase tracking-wider ${map[status]}`}>
-      {status}
-    </span>
+    <td
+      className={className}
+      style={{
+        padding: "12px 16px",
+        textAlign: align,
+        fontVariantNumeric: "tabular-nums",
+        color: "var(--ink)",
+        ...style,
+      }}
+    >
+      {children}
+    </td>
   );
 }

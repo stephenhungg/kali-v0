@@ -151,11 +151,21 @@ export function OnboardingShell() {
   }
 
   return (
-    <div className="flex min-h-[calc(100dvh-56px)] flex-col">
-      <div className="border-b border-[var(--mint-line)] bg-[var(--surface)] py-3 sm:py-4">
+    <div
+      className="kawaii-page"
+      style={{ display: "flex", minHeight: "calc(100dvh - 56px)", flexDirection: "column" }}
+    >
+      <div
+        style={{
+          borderBottom: "2px dashed var(--hair)",
+          background: "rgba(255, 247, 240, 0.85)",
+          backdropFilter: "blur(6px)",
+          padding: "16px 0",
+        }}
+      >
         <StepIndicator current={state.currentStep} />
       </div>
-      <div className="flex-1 overflow-y-auto py-6 sm:py-10">
+      <div className="flex-1 overflow-y-auto py-8 sm:py-12">
         <div className="mx-auto w-full max-w-2xl px-4 sm:px-6">
           {state.currentStep === 1 && <Step1Signup {...props} onSignedUp={onSignedUp} />}
           {state.currentStep === 2 && <Step2Profile {...props} />}

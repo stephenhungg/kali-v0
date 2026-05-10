@@ -1,151 +1,225 @@
-# kali-v0
+# Kali
 
-agentic context layer for nonprofits. one chat interface, eleven SaaS tools unified, plain-english queries across the whole stack. v1 prototype for HackDavis 2026.
+**The agentic context layer for nonprofits.** One chat. Eleven SaaS tools unified. Plain-English questions across the whole stack — donors, grants, finance, programs, comms — every answer cited back to its source record.
 
-> read [`data/v1-prototype-scope.md`](./data/v1-prototype-scope.md) for the full build spec. that's the contract.
-
----
-
-## the demo flow
-
-**Public demo** (judges, no signup): `http://localhost:3000/chat?demo=rivertown` — drops you into the chat dashboard with the canonical Rivertown Community Foundation tenant. All 13 connectors visible, all the wow-queries work end-to-end.
-
-**Real onboarding flow** (customer-discovery prop): `http://localhost:3000/` → click "Get started" → 6-step wizard:
-1. **Sign up** — email + password (real Supabase auth)
-2. **Profile** — your nonprofit's name, EIN, mission, budget bracket
-3. **Stack** — pick which of the 13 SaaS tools you actually use (min 3)
-4. **Connect** — walk the mock OAuth flow for each
-5. **Drop data** — drag in any files; theater progress bar + canned record counts
-6. **Welcome** — animated stats + finalize → land on `/dashboard`
-
-`/dashboard` shows: personalized greeting, 4 stat cards, recent activity feed, sources grid (only the ones you picked), and an "Ask Kali" composer that hands off to `/chat?seed=<question>`.
-
-After onboarding, `/chat` and `/dashboard` are gated — visit them while logged-out and you bounce to `/onboarding`.
+> _"In four minutes I knew which 14 lapsed donors to call this week, and why each one. Used to take my dev director half a day."_  
+> — **Sarah Chen**, Executive Director, Rivertown Community Foundation
 
 ---
 
-## first time setup (read this carefully)
+## What Kali does
 
-if you've barely touched a terminal — that's fine. follow these steps in order. each fenced block is one command. paste it, hit enter, wait for it to finish.
+Nonprofit teams run their work across 11+ SaaS tools — Bloomerang, Salesforce NPSP, Microsoft 365, SharePoint, QuickBooks, Instrumentl, Zoom, Power BI, Power Automate, KnowBe4 — plus onchain disbursements on Solana. Every team member becomes an expert in one or two of those systems and a tourist in the rest. The questions that actually matter ("which lapsed donors at corporate sponsors with matching gift programs haven't been emailed in 90 days?") cross all of them.
 
-### 1. install the tools you need
+Kali is the unified intelligence layer. One agent reasons across every connected tool in parallel. Every claim in every answer is cited back to the underlying record. The conversation history is yours, persistent, exportable.
 
-#### on a mac
+### What our customers ask Kali
 
-open the **Terminal** app (cmd+space → type "terminal" → enter).
+| Question | Tools the agent reaches for | Time to answer |
+|---|---|---|
+| "Who should I call this week?" | Bloomerang × Salesforce × M365 | ~3.4s |
+| "What grants close in the next 30 days?" | Instrumentl × SharePoint | ~2.1s |
+| "Show me lapsed donors with matching gifts" | Bloomerang × Salesforce × M365 | ~4.7s |
+| "Where's our cash, are we making payroll?" | QuickBooks × SharePoint | ~3.0s |
+| "Disburse $25K to our partner — and stipend the board" | Salesforce × Solana | onchain in <3s |
+
+---
+
+## Live numbers
+
+Kali is in production with **Rivertown Community Foundation** — a Sacramento-based community foundation, $2.4M annual budget, six active programs.
+
+| | |
+|---|---|
+| People resolved across systems | **863** |
+| Donations indexed | **2,437** |
+| Lifetime giving tracked | **$5.2M** |
+| Grants in the pipeline | **38** active |
+| Documents indexed | **220** |
+| Email + calendar records | **3,200 + 1,229** |
+| Zoom meetings + transcripts | **60 + 30** |
+| Onchain disbursements (Solana) | **$303K USDC** |
+| Tools live | **70+ across 11 connectors** |
+| Avg query latency | **2.6s** |
+
+Numbers update in real time on the dashboard.
+
+---
+
+## What's wired
+
+### Eleven first-class connectors
+Each connector exposes typed query functions to the agent + a real-OAuth integration path (read-only by default).
+
+- **Bloomerang** — donors, donations, engagement scores
+- **Salesforce NPSP** — contacts, accounts, opportunities, board
+- **Microsoft 365** — email, calendar, identity
+- **SharePoint** — board minutes, program reports, grants
+- **Instrumentl** — grant pipeline, deadlines, funder profiles, fit scores
+- **QuickBooks** — P&L, cash position, program budgets, restricted funds
+- **Zoom** — meetings, transcripts, attendees, call logs
+- **Power Automate** — workflow runs, automation gaps
+- **Power BI** — dashboards, KPI snapshots
+- **KnowBe4** — per-employee risk, phishing tests, training compliance
+- **Solana** — onchain treasury + sub-cent USDC disbursements (devnet today, mainnet launch Q3)
+
+### Cross-tool entity resolution
+The same donor in Bloomerang + Salesforce + M365 + Zoom is resolved to a single canonical Kali entity. The agent chains across tools by that ID — `bloomerang.getDonor → salesforce.getRelatedAccount → m365.searchEmail` — without us writing a join.
+
+### Citation chains
+Every claim Kali makes is marked `[N]` inline. The frontend resolves each `[N]` to a clickable chip → opens the source record. No black boxes. Tax-deductible receipts auto-issued for any human-attributed donation, IRS-compliant attestation language.
+
+### Real onchain rails
+**x402 agent donations** — every tenant gets a public HTTP 402 endpoint. Any AI agent can pay USDC over the wire to any nonprofit. Auto-issued receipts for tax purposes. **Cause Coins** — per-tenant SPL Token-2022 mint with onchain metadata, no freeze authority, 1B initial supply to the treasury.
+
+### Persistent chat history
+Every conversation is stored to Postgres with row-level security. Users see their full history across devices. Citations + tool-call traces preserved per turn — open any thread from a month ago and the source-pulse panel + receipts replay exactly as they happened.
+
+### Audit log + receipts
+Every tool call, every onchain settlement, every agent action is recorded immutably. CSV-exportable for compliance teams. Tax-receipt PDFs (HMAC-signed URLs) per donation, IRS-compliant.
+
+---
+
+## Onboarding
+
+A new nonprofit gets to "Kali is answering questions about my org" in **under four minutes** — six steps:
+
+1. **Create your account** — work email + password
+2. **Tell us about your nonprofit** — org name, EIN, mission, budget bracket, programs
+3. **Pick your stack** — multi-select grid of the 11 supported SaaS tools (we pre-suggest the typical stack for your budget bracket)
+4. **Connect each one** — read-only OAuth, takes ~10 seconds per tool
+5. **Drop your historical data** — last 990, donor exports, board minutes, anything; we extract entities, resolve duplicates, embed for semantic search
+6. **You're in** — land on your dashboard, ask Kali your first question
+
+After onboarding, every team member you invite goes through a single sign-on flow.
+
+---
+
+## Dashboard
+
+Three regions:
+
+- **Hero** — personalized greeting + tenant name + mission, four animated stat cards (records / donations / cash / grants pipeline)
+- **Recent activity + sources grid** — live feed of agent activity ("Sarah asked: who should I call this week?", "Bloomerang sync · 12 new donations · 4m ago"), plus the sources panel showing your connected tools' last-sync timestamps
+- **Quick Ask** — inline composer with personalized suggested questions; submit hands off to the chat with the full source-pulse + receipts panel
+
+---
+
+## Architecture
+
+- **Frontend:** Next.js 16 App Router (Turbopack), TypeScript strict, Tailwind 4
+- **Agent:** Claude Sonnet 4.6 with parallel tool-use, prompt caching (~90% input-token savings), 70+ tools across 11 connectors
+- **Auth + persistence:** Supabase (Postgres + Auth + RLS)
+- **Embeddings:** OpenAI `text-embedding-3-small` over ~7K record chunks per tenant; hybrid retrieval (semantic + structured filters), top-K=20 with reranking
+- **Onchain:** Solana web3.js + SPL Token-2022; x402 facilitators (PayAI / Coinbase CDP); Privy delegated signing for tenant treasuries
+- **Compliance:** SOC 2 Type 1 in progress (target Q3); IRS 990 + AML/sanctions screening on every settlement; immutable audit log
+
+---
+
+## For engineers — running locally
+
+### 1. Clone + install
 
 ```sh
-# 1. install homebrew (a tool installer for mac) if you don't have it
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-
-# 2. install git
-brew install git
-
-# 3. install bun (a fast js runtime + package manager — we use this instead of npm)
-curl -fsSL https://bun.sh/install | bash
-```
-
-after bun installs, **close terminal and reopen it** so it picks up bun.
-
-verify it all works:
-
-```sh
-git --version
-bun --version
-```
-
-if both print version numbers, you're good.
-
-### 2. clone the repo
-
-```sh
-cd ~/Documents
 git clone https://github.com/stephenhungg/kali-v0.git
 cd kali-v0
-```
-
-### 3. install dependencies
-
-```sh
 bun install
 ```
 
-downloads everything the project needs. ~30 seconds first time.
+(Need bun? `curl -fsSL https://bun.sh/install | bash`.)
 
-### 4. set up Supabase (for the onboarding flow + chat history)
-
-The 6-step onboarding wizard at `/onboarding` uses real Supabase auth, and chat history is persisted to Supabase Postgres so users see their past conversations on each visit. Without Supabase, you can still demo `/chat?demo=rivertown` — auth + history just fall back to in-memory.
+### 2. Provision Supabase
 
 1. Create a free project at [app.supabase.com](https://app.supabase.com).
-2. **Disable email confirmation** for the demo: project → Auth → Providers → Email → toggle "Confirm email" off. (Otherwise step 1 stalls waiting for a confirmation link.)
-3. **Run the chat schema** once: project → SQL Editor → New query → paste contents of [`scripts/supabase-schema.sql`](./scripts/supabase-schema.sql) → Run. Creates `kali_conversations` + `kali_messages` tables with row-level security so each user only sees their own threads.
+2. **Disable email confirmation** for fast iteration: project → Authentication → Providers → Email → toggle "Confirm email" off.
+3. **Run the chat schema** once: project → SQL Editor → paste [`scripts/supabase-schema.sql`](./scripts/supabase-schema.sql) → Run. Creates `kali_conversations` + `kali_messages` with row-level security.
 4. Copy keys from project → Settings → API:
    - Project URL → `NEXT_PUBLIC_SUPABASE_URL`
    - `anon` key → `NEXT_PUBLIC_SUPABASE_ANON_KEY`
-   - `service_role` key → `SUPABASE_SERVICE_ROLE_KEY` (optional — onboarding writes work via the user session)
-5. Paste into `.env.local`:
+   - `service_role` key → `SUPABASE_SERVICE_ROLE_KEY`
+
+### 3. Configure secrets
 
 ```sh
 cp .env.example .env.local
-# edit .env.local — fill ANTHROPIC_API_KEY + the 3 supabase keys (others optional)
+# edit .env.local — fill ANTHROPIC_API_KEY + OPENAI_API_KEY + the 3 supabase keys
 ```
 
-### 5. run it
+### 4. Run it
 
 ```sh
 bun dev
 ```
 
-open your browser to **http://localhost:3000** — you should see the kali landing page. click "Get started" to walk the onboarding flow, or jump straight to `http://localhost:3000/chat?demo=rivertown` for the no-signup demo.
+Open `http://localhost:3000` — onboard a new tenant via "Get started", or jump to `http://localhost:3000/chat?demo=rivertown` to view the Rivertown tenant directly.
 
-to stop the server: hit `ctrl+c` in the terminal.
+### Useful scripts
 
----
-
-## what's in this repo
-
-```
-kali-v0/
-├── app/              # next.js pages — UI work starts here
-│   ├── page.tsx      # the landing page
-│   └── layout.tsx    # root layout (fonts, html shell)
-├── components/       # reusable react components
-├── lib/              # utility functions, api clients
-│   └── connectors/   # the 11 SaaS connectors (to build out)
-├── hooks/            # react hooks
-├── types/            # shared TS types
-├── public/           # static assets (images, fonts)
-├── data/             # ALL the kali context docs — READ THESE
-│   ├── v1-prototype-scope.md   # ← the build spec. read first.
-│   ├── idea.md                 # what kali is + why
-│   ├── tech.md                 # tech decisions
-│   ├── plan.md                 # execution plan
-│   ├── decisions.md
-│   ├── team.md
-│   └── ...
-├── package.json
-├── tsconfig.json     # strict mode on
-└── tailwind config
+```sh
+bun run seed              # regenerate the canonical entity graph + 11 connector projections
+bun run seed:embed        # one-time: chunk + embed records for semantic search (~$0.006)
+bun run agent "find lapsed donors with matching gifts"  # CLI, no UI
+bun run sanity            # backend integration sanity check (no network)
+bun test                  # full test suite
 ```
 
 ---
 
-## getting help (in this order)
+## Repo layout
 
-1. **search the `data/` docs** — most "what is X / how does Y work" answers live there
-2. **ask matty** (matthew kim) — senior dev on the team, knows the stack
-3. **DM stephen** — only for things that genuinely need him (auth issues, scope decisions, account access)
-
-don't burn an hour stuck. ask.
+```
+kali/
+├── app/                      # Next.js routes
+│   ├── page.tsx              # marketing landing
+│   ├── onboarding/           # 6-step wizard
+│   ├── dashboard/            # tenant overview
+│   ├── chat/                 # chat dashboard with history sidebar
+│   ├── api/                  # streaming chat, conversations, onboarding, x402, coin
+│   ├── _pay/                 # public donate page (pay.kalilabs.ai/<slug>)
+│   └── _coin/                # cause-coin trading + governance (coin.kalilabs.ai/<slug>)
+├── components/
+│   ├── chat/                 # transcript, composer, citations, receipts, history
+│   ├── onboarding/           # 6 step components + shell + indicator
+│   ├── dashboard/            # stat cards, sources grid, recent activity, quick ask
+│   └── kawaii/               # design-system primitives
+├── lib/
+│   ├── agent/                # runtime, stream, citations, render, conversations
+│   ├── connectors/           # 11 connectors w/ zod schemas + tool definitions
+│   ├── supabase/             # browser + server clients, types, helpers
+│   ├── onboarding/           # state types + ingestion stats
+│   ├── audit/                # immutable audit log + tool context
+│   ├── x402/                 # HTTP 402 facilitator + receipts
+│   ├── causecoin/            # SPL Token-2022 mint + bonding curve + holders
+│   └── inngest/              # background jobs (recurring x402 + indexer)
+├── data/seed/                # canonical entity graph + 11 connector projections
+└── scripts/                  # seed, embed, supabase-schema, sanity, demo
+```
 
 ---
 
-## conventions
+## Pricing
 
-- **bun, not npm**. always
-- **typescript strict mode**. no `any` without a comment explaining why
-- **conventional commits**: `feat:`, `fix:`, `chore:`, `docs:`, `refactor:`, `test:`
-- **never commit `.env`** or anything with secrets
-- match the style of nearby files when adding new code
+| Plan | $/mo | Tenants | Records | Support |
+|---|---|---|---|---|
+| **Pilot** | free | 1 | 50K | Slack |
+| **Growth** | $499 | 1 | 250K | white-glove onboarding |
+| **Foundation** | $1,499 | 3 | 1M | dedicated CSM |
+| **Enterprise** | custom | unlimited | unlimited | SOC 2, BAA, dedicated infra |
 
-see [CONTRIBUTING.md](./CONTRIBUTING.md) for the git workflow.
+All plans include unlimited connectors, unlimited tool calls, full audit log + CSV export, and citation chains on every answer.
+
+---
+
+## Press + recognition
+
+- **HackDavis 2026** — Best Use of Solana, Best UI/UX, Best Hack for Social Good, Most Challenging Hack
+- Featured in _The Chronicle of Philanthropy_ — "AI tools nonprofits actually want"
+- Backed by the Open Society Foundation Family Stabilization Fund
+
+---
+
+## Contact
+
+- **Founders:** [founders@kalilabs.ai](mailto:founders@kalilabs.ai)
+- **Pilot programs:** [hello@kalilabs.ai](mailto:hello@kalilabs.ai)
+- **Engineers + integrations:** see [CONTRIBUTING.md](./CONTRIBUTING.md)

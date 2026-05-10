@@ -1,27 +1,39 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import { Mascot } from "../kawaii/Mascot";
+import { CuteCard } from "../kawaii/CutePrimitives";
+import { StickerAccent, type StickerProp } from "../kawaii/StickerAccent";
 
-const PLAYBOOKS = [
+const PLAYBOOKS: Array<{
+  label: string;
+  sub: string;
+  detail: string;
+  accent: StickerProp;
+}> = [
   {
     label: "Who should I call this week?",
     sub: "donor outreach prioritization",
     detail: "Lapsed donors, recent engagement signals, matching-gift eligible.",
+    accent: "letter",
   },
   {
     label: "What grants close in the next 30 days?",
     sub: "grant pipeline triage",
     detail: "Deadlines + fit scores + funder ties from the board.",
+    accent: "chart",
   },
   {
     label: "Show me lapsed donors with matching gifts",
     sub: "the wow query — 3 connectors",
     detail: "Bloomerang × Salesforce × M365 — last contact + employer match.",
+    accent: "strawberry",
   },
   {
     label: "Where's my cash, am I gonna make payroll?",
     sub: "finance × programs cross-check",
     detail: "Cash position + 90-day runway + at-risk program flags.",
+    accent: "matcha-bowl",
   },
 ];
 
@@ -34,7 +46,7 @@ export function EmptyState({ onPick }: EmptyStateProps) {
 
   useEffect(() => {
     let mounted = true;
-    (async () => {
+    void (async () => {
       const { gsap } = await import("gsap");
       if (!mounted || !rootRef.current) return;
       gsap.fromTo(
@@ -48,58 +60,129 @@ export function EmptyState({ onPick }: EmptyStateProps) {
         { opacity: 1, y: 0, duration: 0.6, ease: "power3.out", stagger: 0.05 },
       );
     })();
-    return () => { mounted = false; };
+    return () => {
+      mounted = false;
+    };
   }, []);
 
   return (
-    <div ref={rootRef} className="mx-auto flex max-w-3xl flex-col gap-8 px-4 py-10 sm:px-6 sm:py-14">
-      <div className="flex flex-col gap-2">
-        <span className="pb-head font-mono text-[11px] uppercase tracking-[0.18em] text-[var(--gray-ink)]">
-          ask kali · cited answers across your nonprofit stack
-        </span>
-        <h1 className="pb-head r-display text-[44px] leading-[0.95] tracking-tight text-[var(--matcha-deep)] sm:text-[64px]">
-          What do you want to know{" "}
-          <span className="r-italic font-light text-[var(--matcha-mid)]">today?</span>
-        </h1>
-        <p className="pb-head max-w-xl text-[15px] leading-relaxed text-[var(--matcha-deep)]/70">
-          Pick a starting question or type your own. Every answer is cited back to the
-          source record — donors, grants, emails, transcripts, txns. No black boxes.
-        </p>
+    <div
+      ref={rootRef}
+      className="mx-auto flex max-w-3xl flex-col gap-7 px-4 py-10 sm:px-6 sm:py-14"
+    >
+      <div
+        className="pb-head"
+        style={{
+          display: "flex",
+          alignItems: "flex-end",
+          gap: 16,
+          marginBottom: 4,
+        }}
+      >
+        <Mascot pose="wave" size={108} tiltDeg={-4} />
+        <div style={{ flex: 1 }}>
+          <span className="kawaii-mono-tag" style={{ color: "var(--mute)" }}>
+            ask kali · cited answers across your nonprofit stack
+          </span>
+          <h1
+            className="kawaii-display"
+            style={{
+              fontSize: "clamp(36px, 5vw, 56px)",
+              lineHeight: 1.0,
+              color: "var(--ink)",
+              marginTop: 8,
+            }}
+          >
+            what do you want to know{" "}
+            <span style={{ color: "var(--sakura)", fontStyle: "italic" }}>today?</span>
+            <StickerAccent prop="sparkle" size={28} tiltDeg={20} style={{ marginLeft: 8 }} />
+          </h1>
+          <p
+            style={{
+              marginTop: 10,
+              maxWidth: 520,
+              fontSize: 14,
+              lineHeight: 1.55,
+              color: "var(--mute)",
+            }}
+          >
+            pick a starting question or type your own. every answer is cited back to the source
+            record — donors, grants, emails, transcripts, txns. no black boxes.
+          </p>
+        </div>
       </div>
 
-      <div className="flex flex-col gap-2">
-        {PLAYBOOKS.map((p) => (
+      <div style={{ display: "grid", gap: 10 }}>
+        {PLAYBOOKS.map((p, i) => (
           <button
             key={p.label}
             onClick={() => onPick(p.label)}
-            className="pb-row group flex flex-col items-start gap-1 rounded border border-[var(--mint-line)] bg-[var(--surface)] px-4 py-3.5 text-left transition-all hover:border-[var(--matcha-mid)] hover:bg-[var(--mint-pale)] sm:flex-row sm:items-center sm:justify-between sm:gap-4"
+            className="pb-row"
+            style={{
+              display: "flex",
+              alignItems: "center",
+              gap: 14,
+              textAlign: "left",
+              background: "white",
+              border: "3px solid white",
+              borderRadius: 16,
+              padding: "12px 16px",
+              cursor: "pointer",
+              boxShadow: "2px 3px 0 var(--sticker-shadow)",
+              transform: i % 2 === 0 ? "rotate(-0.4deg)" : "rotate(0.4deg)",
+              transition: "transform 120ms ease, box-shadow 120ms ease",
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.transform = "rotate(0deg) translateY(-1px)";
+              e.currentTarget.style.boxShadow = "3px 5px 0 var(--sticker-shadow)";
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.transform = i % 2 === 0 ? "rotate(-0.4deg)" : "rotate(0.4deg)";
+              e.currentTarget.style.boxShadow = "2px 3px 0 var(--sticker-shadow)";
+            }}
           >
-            <div className="flex flex-col">
-              <span className="text-[15px] font-medium text-[var(--matcha-deep)] sm:text-[16px]">
+            <StickerAccent prop={p.accent} size={42} tiltDeg={i % 2 === 0 ? -8 : 8} />
+            <div style={{ flex: 1, minWidth: 0 }}>
+              <span
+                style={{
+                  fontSize: 15,
+                  fontWeight: 700,
+                  color: "var(--ink)",
+                  fontFamily: 'var(--font-quicksand), "Quicksand", system-ui, sans-serif',
+                }}
+              >
                 {p.label}
               </span>
-              <span className="hidden text-[12px] leading-snug text-[var(--gray-ink)] sm:inline">
+              <span
+                style={{
+                  display: "block",
+                  fontSize: 12,
+                  color: "var(--mute)",
+                  marginTop: 2,
+                  lineHeight: 1.4,
+                }}
+              >
                 {p.detail}
               </span>
             </div>
-            <span className="flex items-center gap-2 font-mono text-[10px] uppercase tracking-[0.14em] text-[var(--gray-ink)] group-hover:text-[var(--matcha-mid)]">
-              <span className="hidden sm:inline">{p.sub}</span>
-              <span className="text-[14px]">→</span>
+            <span
+              className="kawaii-mono-tag"
+              style={{ color: "var(--sakura)", flexShrink: 0 }}
+            >
+              {p.sub} →
             </span>
           </button>
         ))}
       </div>
 
-      <div className="rounded border border-dashed border-[var(--mint-line)] bg-[var(--mint-pale)]/30 px-4 py-3 text-[12px] leading-relaxed text-[var(--matcha-deep)]/70">
-        <span className="font-mono text-[10px] uppercase tracking-[0.14em] text-[var(--gray-ink)]">
-          how this works
-        </span>
-        <p className="mt-1">
-          Kali calls real tools across your connected systems and shows you the work — every
-          tool firing, every record it cited. The right panel is the receipt. The left panel
-          pulses as sources get hit.
+      <CuteCard tone="cloud" style={{ padding: "12px 16px" }}>
+        <span className="kawaii-mono-tag">how this works</span>
+        <p style={{ marginTop: 6, fontSize: 13, color: "var(--ink)", lineHeight: 1.55 }}>
+          Kali calls real tools across your connected systems and shows you the work — every tool
+          firing, every record it cited. the right panel is the receipt. the left panel pulses as
+          sources get hit.
         </p>
-      </div>
+      </CuteCard>
     </div>
   );
 }

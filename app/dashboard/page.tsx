@@ -15,7 +15,6 @@
  *   6. Full connector grid (every registered connector)
  */
 
-import Link from "next/link";
 import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
 import "@/lib/agent/registrations";
@@ -31,6 +30,12 @@ import {
 import { resolveTenant } from "@/lib/tenants";
 import { getOnboardingState } from "@/lib/supabase/server";
 import { DashboardShell } from "@/components/dashboard/DashboardShell";
+import {
+  CuteCard,
+  CuteButton,
+  CuteStat,
+  CutePill,
+} from "@/components/kawaii/CutePrimitives";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -97,8 +102,10 @@ export default async function DashboardPage({
         curve.config.totalSupply
       : 0;
 
+  const x402Total = recentReceipts.reduce((s, r) => s + r.amountUsdc, 0);
+
   return (
-    <main className="min-h-screen bg-[var(--surface)] text-[var(--matcha-deep)]">
+    <main className="kawaii-page">
       <DashboardShell
         tenantName={tenantName}
         tenantMission={tenantMission}
@@ -106,117 +113,126 @@ export default async function DashboardPage({
         tenantId={tenant?.id ?? DEFAULT_TENANT}
       />
 
-      {/* Onchain hero — preserved from existing dashboard */}
-      <section className="mx-auto max-w-6xl border-t border-[var(--mint-line)] px-4 py-10 sm:px-6">
-        <h2 className="r-display mb-1 text-2xl text-[var(--matcha-deep)]">onchain & web3</h2>
-        <p className="mb-6 text-xs text-[var(--gray-ink)]">
-          x402 donation receipts + cause coin economics
-        </p>
+      {/* Onchain row — sticker-style cards */}
+      <section className="mx-auto max-w-6xl px-4 pb-10 sm:px-6">
+        <div className="mb-3 flex items-baseline justify-between">
+          <h2 className="kawaii-mono-tag">onchain &amp; web3</h2>
+          <span className="kawaii-mono-tag" style={{ color: "var(--mute)" }}>
+            {NETWORK}
+          </span>
+        </div>
         <div className="grid grid-cols-1 gap-4 lg:grid-cols-3">
-          <ChromeCard
+          <CuteStat
             label="x402 last 30d"
-            value={`$${recentReceipts.reduce((s, r) => s + r.amountUsdc, 0).toFixed(2)}`}
-            sub={`${recentReceipts.length} receipts · network ${NETWORK}`}
-            cta={{
-              href: `https://${process.env.KALI_PAY_HOST ?? "pay.kalilabs.ai"}/${DEFAULT_TENANT}`,
-              text: "view donate page →",
-            }}
+            value={`$${x402Total.toFixed(2)}`}
+            sub={`${recentReceipts.length} receipts settled`}
+            tone="mochi"
+            accent="letter"
           />
-          <ChromeCard
+          <CuteStat
             label={coin ? `$${coin.symbol} fees to treasury` : "cause coin"}
             value={fees ? `$${fees.treasury.toFixed(2)}` : "not launched"}
             sub={
               coin
-                ? `${holders.length} holders · ${marketCap.toLocaleString(undefined, { maximumFractionDigits: 0 })} mcap`
-                : "launch to enable"
+                ? `${holders.length} holders · $${marketCap.toLocaleString(undefined, { maximumFractionDigits: 0 })} mcap`
+                : "launch from the crypto desk"
             }
-            cta={
-              coin
-                ? {
-                    href: `https://${process.env.KALI_COIN_HOST ?? "coin.kalilabs.ai"}/${DEFAULT_TENANT}`,
-                    text: "view trading →",
-                  }
-                : undefined
-            }
+            tone="lemon"
+            accent="coin"
           />
-          <ChromeCard
+          <CuteStat
             label="agent activity"
-            value={`${connectors.length} connectors`}
-            sub={`${connectors.reduce((s, c) => s + c.tools.length, 0)} tools live`}
-            cta={{ href: "/chat", text: "open chat →" }}
+            value={`${connectors.length}`}
+            sub={`${connectors.reduce((s, c) => s + c.tools.length, 0)} tools live · ${connectors.length} connectors`}
+            tone="matcha"
+            accent="sparkle"
           />
+        </div>
+        <div style={{ display: "flex", gap: 12, marginTop: 16, flexWrap: "wrap" }}>
+          <CuteButton
+            href={`https://${process.env.KALI_PAY_HOST ?? "pay.kalilabs.ai"}/${DEFAULT_TENANT}`}
+            tone="sakura"
+            size="sm"
+          >
+            donate page →
+          </CuteButton>
+          <CuteButton href="/crypto" tone="matcha" size="sm">
+            crypto desk →
+          </CuteButton>
+          <CuteButton href="/chat" tone="ghost" size="sm">
+            open chat →
+          </CuteButton>
         </div>
       </section>
 
       {/* Recent x402 receipts */}
       {recentReceipts.length > 0 && (
-        <section className="mx-auto max-w-6xl border-t border-[var(--mint-line)] px-4 py-10 sm:px-6">
-          <h2 className="r-display mb-1 text-2xl">recent x402 donations</h2>
-          <p className="mb-6 text-xs text-[var(--gray-ink)]">
-            machine-payable HTTP donation receipts
-          </p>
-          <ul className="divide-y divide-[var(--mint-line-soft)] border-y border-[var(--mint-line-soft)]">
-            {recentReceipts.map((r) => (
-              <li key={r.id} className="grid grid-cols-[1fr_auto_auto_auto] items-center gap-4 py-3">
-                <code className="font-mono text-xs">
-                  {r.payerWallet.slice(0, 4)}…{r.payerWallet.slice(-4)}
-                </code>
-                <span className="font-mono text-sm">${r.amountUsdc.toFixed(2)}</span>
-                <span
-                  className={`rounded-full px-2 py-[2px] text-[10px] uppercase tracking-wide ${
-                    r.attribution === "human"
-                      ? "bg-[var(--strawberry-soft)] text-[var(--strawberry-deep)]"
-                      : r.attribution === "autonomous"
-                      ? "bg-[var(--matcha-mid)] text-[var(--cream)]"
-                      : "bg-[var(--mint-pale)]"
-                  }`}
+        <section className="mx-auto max-w-6xl px-4 pb-12 sm:px-6">
+          <div className="mb-3 flex items-baseline justify-between">
+            <h2 className="kawaii-mono-tag">recent x402 donations</h2>
+            <span className="kawaii-mono-tag" style={{ color: "var(--mute)" }}>
+              {recentReceipts.length} on file
+            </span>
+          </div>
+          <CuteCard tone="paper" style={{ padding: 0 }}>
+            <ul style={{ margin: 0, padding: 0, listStyle: "none" }}>
+              {recentReceipts.map((r, i) => (
+                <li
+                  key={r.id}
+                  style={{
+                    display: "grid",
+                    gridTemplateColumns: "1fr auto auto auto",
+                    alignItems: "center",
+                    gap: 12,
+                    padding: "12px 16px",
+                    borderTop: i === 0 ? "none" : "1px dashed var(--hair)",
+                  }}
                 >
-                  {r.attribution}
-                </span>
-                <span className="text-xs text-[var(--gray-ink)]">
-                  {new Date(r.receivedAt).toLocaleString()}
-                </span>
-              </li>
-            ))}
-          </ul>
+                  <code
+                    style={{
+                      fontFamily: "var(--font-mono-geist), ui-monospace, monospace",
+                      fontSize: 12,
+                      color: "var(--ink)",
+                    }}
+                  >
+                    {r.payerWallet.slice(0, 4)}…{r.payerWallet.slice(-4)}
+                  </code>
+                  <span style={{ fontSize: 14, fontWeight: 700, color: "var(--ink)" }}>
+                    ${r.amountUsdc.toFixed(2)}
+                  </span>
+                  <CutePill
+                    tone={
+                      r.attribution === "human"
+                        ? "mochi"
+                        : r.attribution === "autonomous"
+                          ? "matcha"
+                          : "neutral"
+                    }
+                  >
+                    {r.attribution}
+                  </CutePill>
+                  <span style={{ fontSize: 11, color: "var(--mute)" }}>
+                    {new Date(r.receivedAt).toLocaleString()}
+                  </span>
+                </li>
+              ))}
+            </ul>
+          </CuteCard>
         </section>
       )}
 
-      <footer className="mx-auto max-w-6xl border-t border-[var(--mint-line)] px-4 py-6 sm:px-6">
-        <span className="font-mono text-xs text-[var(--gray-ink)]">
+      <footer
+        style={{
+          borderTop: "1px dashed var(--hair)",
+          padding: "16px 0",
+          marginTop: 8,
+        }}
+        className="mx-auto max-w-6xl px-4 sm:px-6"
+      >
+        <span style={{ fontSize: 11, color: "var(--mute)", letterSpacing: "0.1em" }}>
           kali · {NETWORK} · tenant {tenant?.ein ?? "—"}
         </span>
-        <Link href="/chat" className="ml-4 font-mono text-xs text-[var(--matcha-mid)] underline-offset-2 hover:underline">
-          open chat →
-        </Link>
       </footer>
     </main>
-  );
-}
-
-function ChromeCard({
-  label,
-  value,
-  sub,
-  cta,
-}: {
-  label: string;
-  value: string;
-  sub: string;
-  cta?: { href: string; text: string };
-}) {
-  return (
-    <div className="chat-card flex flex-col p-6">
-      <div className="font-mono text-[11px] uppercase tracking-[0.18em] text-[var(--gray-ink)]">
-        {label}
-      </div>
-      <div className="r-display mt-2 text-3xl text-[var(--matcha-deep)]">{value}</div>
-      <div className="mt-1 text-xs text-[var(--gray-ink)]">{sub}</div>
-      {cta && (
-        <Link href={cta.href} className="mt-4 text-xs text-[var(--matcha-mid)] underline-offset-2 hover:underline">
-          {cta.text}
-        </Link>
-      )}
-    </div>
   );
 }

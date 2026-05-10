@@ -1,6 +1,8 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { CuteCard } from "@/components/kawaii/CutePrimitives";
+import { StickerAccent } from "@/components/kawaii/StickerAccent";
 
 interface FeeSnapshot {
   treasury: number;
@@ -45,43 +47,133 @@ export function LiveTreasuryTicker({
   const delta = snap.total - prev.total;
 
   return (
-    <div
-      className={`rounded-md border bg-[#0e1413] p-5 transition-all duration-300 ${
-        pulse
-          ? "border-[#7fae7e] shadow-[0_0_24px_0_rgba(127,174,126,0.3)]"
-          : "border-[#1a2421]"
-      }`}
+    <CuteCard
+      tone="matcha"
+      style={{
+        padding: 22,
+        transition: "box-shadow 300ms ease, transform 300ms ease",
+        boxShadow: pulse
+          ? "3px 5px 0 var(--sticker-shadow-deep), 0 0 0 4px rgba(122, 178, 129, 0.25)"
+          : "3px 4px 0 var(--sticker-shadow-deep)",
+        transform: pulse ? "translateY(-2px)" : undefined,
+      }}
     >
-      <div className="flex items-center justify-between">
-        <div className="text-[10px] uppercase tracking-[0.2em] text-[#7fae7e]">
+      <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
+        <div className="kawaii-mono-tag" style={{ color: "var(--matcha-deep-warm)" }}>
           ${symbol} live treasury · sse
         </div>
-        <div className="flex items-center gap-2 text-[10px] text-[#c8e6cb]/40">
-          <span className="h-2 w-2 rounded-full bg-[#7fae7e] blink-soft" />
-          <span>connected · {snap.tradeCount} trades indexed</span>
+        <div
+          style={{
+            display: "flex",
+            alignItems: "center",
+            gap: 6,
+            fontSize: 11,
+            color: "var(--mute)",
+            letterSpacing: "0.04em",
+          }}
+        >
+          <span
+            style={{
+              display: "inline-block",
+              width: 8,
+              height: 8,
+              borderRadius: "50%",
+              background: "var(--matcha)",
+            }}
+            className="blink-soft"
+          />
+          connected · {snap.tradeCount} trades indexed
         </div>
       </div>
-      <div className="mt-3 grid grid-cols-3 gap-6">
-        <div>
-          <div className="text-[10px] uppercase tracking-wider text-[#c8e6cb]/40">treasury</div>
-          <div className="mt-1 text-3xl font-semibold tabular-nums text-[#7fae7e]">
+
+      <div
+        style={{
+          marginTop: 14,
+          display: "grid",
+          gridTemplateColumns: "1.4fr 1fr 1fr",
+          gap: 22,
+        }}
+      >
+        <div style={{ position: "relative" }}>
+          <div className="kawaii-mono-tag" style={{ color: "var(--mute)" }}>
+            treasury
+          </div>
+          <div
+            className="kawaii-display"
+            style={{
+              fontSize: 40,
+              color: "var(--matcha-deep-warm)",
+              marginTop: 4,
+              letterSpacing: "-0.02em",
+              fontVariantNumeric: "tabular-nums",
+            }}
+          >
             ${snap.treasury.toFixed(2)}
           </div>
           {pulse && delta > 0 && (
-            <div className="mt-1 text-[10px] text-[#7fae7e]/80">+ ${delta.toFixed(4)}</div>
+            <span
+              className="sticker-pop"
+              style={{
+                position: "absolute",
+                top: -10,
+                right: 0,
+                background: "var(--sakura)",
+                color: "white",
+                fontSize: 11,
+                fontWeight: 800,
+                padding: "3px 9px",
+                borderRadius: 999,
+                border: "2px solid white",
+                boxShadow: "1px 2px 0 var(--sticker-shadow)",
+                fontFamily: 'var(--font-quicksand), "Quicksand", system-ui, sans-serif',
+              }}
+            >
+              + ${delta.toFixed(4)}
+            </span>
+          )}
+          {pulse && (
+            <StickerAccent
+              prop="sparkle"
+              size={28}
+              tiltDeg={20}
+              style={{ position: "absolute", top: -16, left: -10 }}
+              className="sparkle-twinkle"
+            />
           )}
         </div>
         <div>
-          <div className="text-[10px] uppercase tracking-wider text-[#c8e6cb]/40">community fund</div>
-          <div className="mt-1 text-3xl font-semibold tabular-nums text-[#b08cd1]">
+          <div className="kawaii-mono-tag" style={{ color: "var(--mute)" }}>
+            community fund
+          </div>
+          <div
+            className="kawaii-display"
+            style={{
+              fontSize: 26,
+              color: "var(--ink)",
+              marginTop: 4,
+              fontVariantNumeric: "tabular-nums",
+            }}
+          >
             ${snap.communityFund.toFixed(2)}
           </div>
         </div>
         <div>
-          <div className="text-[10px] uppercase tracking-wider text-[#c8e6cb]/40">total</div>
-          <div className="mt-1 text-3xl font-semibold tabular-nums">${snap.total.toFixed(2)}</div>
+          <div className="kawaii-mono-tag" style={{ color: "var(--mute)" }}>
+            total fees
+          </div>
+          <div
+            className="kawaii-display"
+            style={{
+              fontSize: 26,
+              color: "var(--ink)",
+              marginTop: 4,
+              fontVariantNumeric: "tabular-nums",
+            }}
+          >
+            ${snap.total.toFixed(2)}
+          </div>
         </div>
       </div>
-    </div>
+    </CuteCard>
   );
 }

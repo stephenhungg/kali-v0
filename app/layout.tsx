@@ -7,6 +7,7 @@ import {
   Nunito,
   Noto_Serif_JP,
   Plus_Jakarta_Sans,
+  Quicksand,
 } from "next/font/google";
 import "./globals.css";
 
@@ -56,12 +57,20 @@ const notoSerifJP = Noto_Serif_JP({
   display: "swap",
 });
 
+/** Rounded display for dashboard / chat / onboarding kawaii surfaces */
+const quicksand = Quicksand({
+  variable: "--font-quicksand",
+  subsets: ["latin"],
+  weight: ["500", "600", "700"],
+  display: "swap",
+});
+
 export const metadata: Metadata = {
   title: "kali",
   description: "Agentic context layer for nonprofits.",
   icons: {
-    icon: "/kawaii/app-icon.png",
-    apple: "/kawaii/app-icon.png",
+    icon: "/kawaii/logo-sticker-t.png",
+    apple: "/kawaii/logo-sticker-t.png",
   },
 };
 
@@ -73,7 +82,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${inter.variable} ${plusJakartaSans.variable} ${bagelFatOne.variable} ${instrumentSerif.variable} ${nunito.variable} ${geistMono.variable} ${notoSerifJP.variable} h-full antialiased`}
+      className={`${inter.variable} ${plusJakartaSans.variable} ${bagelFatOne.variable} ${instrumentSerif.variable} ${nunito.variable} ${geistMono.variable} ${notoSerifJP.variable} ${quicksand.variable} h-full antialiased`}
     >
       <body className="min-h-full">{children}</body>
     </html>

@@ -4,6 +4,7 @@ import { redirect } from "next/navigation";
 import { cookies } from "next/headers";
 import { getOnboardingState } from "../../lib/supabase/server";
 import { UserMenu } from "../../components/chat/UserMenu";
+import { StickerLogo } from "../../components/kawaii/StickerLogo";
 
 /**
  * Chat-app layout — locked-viewport flex column.
@@ -50,7 +51,15 @@ export default async function ChatLayout({ children }: { children: ReactNode }) 
   }
 
   return (
-    <div className="chat-surface flex h-[100dvh] flex-col overflow-hidden">
+    <div
+      className="kawaii-page"
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        height: "100dvh",
+        overflow: "hidden",
+      }}
+    >
       <ChatHeader
         tenantName={tenantName}
         tenantMission={tenantMission}
@@ -74,29 +83,55 @@ function ChatHeader({
   isDemo: boolean;
 }) {
   return (
-    <header className="flex h-16 shrink-0 items-center justify-between border-b border-[var(--mint-line)] bg-[var(--surface)]/95 px-4 backdrop-blur sm:px-6">
-      <div className="flex items-center gap-4">
-        <Link href="/" className="flex items-center gap-2.5">
-          <KaliMark className="h-5 w-5 text-[var(--matcha-deep)]" />
-          <span className="r-display text-xl font-medium tracking-tight text-[var(--matcha-deep)]">kali</span>
+    <header
+      style={{
+        display: "flex",
+        height: 64,
+        flexShrink: 0,
+        alignItems: "center",
+        justifyContent: "space-between",
+        borderBottom: "2px dashed var(--hair)",
+        background: "rgba(255, 247, 240, 0.9)",
+        backdropFilter: "blur(8px)",
+        padding: "0 18px",
+      }}
+    >
+      <div style={{ display: "flex", alignItems: "center", gap: 14 }}>
+        <Link href="/" style={{ display: "flex", alignItems: "center" }}>
+          <StickerLogo size={56} />
         </Link>
-        <nav className="hidden items-center gap-3 sm:flex">
-          <Link href="/dashboard" className="font-mono text-[10px] uppercase tracking-[0.14em] text-[var(--gray-ink)] hover:text-[var(--matcha-deep)]">
-            dashboard
-          </Link>
-          <Link href="/chat" className="rounded bg-[var(--mint-pale)] px-2.5 py-1 font-mono text-[10px] uppercase tracking-[0.14em] text-[var(--matcha-deep)]">
+        <nav className="hidden sm:flex" style={{ alignItems: "center", gap: 4 }}>
+          <NavLink href="/dashboard">dashboard</NavLink>
+          <NavLink href="/chat" active>
             chat
-          </Link>
-          <Link href="/crypto" className="font-mono text-[10px] uppercase tracking-[0.14em] text-[var(--gray-ink)] hover:text-[var(--matcha-deep)]">
-            crypto
-          </Link>
+          </NavLink>
+          <NavLink href="/crypto">crypto</NavLink>
         </nav>
       </div>
 
-      <div className="hidden items-center gap-2 sm:flex">
-        <span className="inline-block h-1.5 w-1.5 rounded-full bg-[var(--matcha-mid)] blink-soft" />
-        <span className="font-mono text-[11px] uppercase tracking-[0.18em] text-[var(--gray-ink)]">
-          {tenantName.toLowerCase()}{isDemo ? " · demo tenant" : ""}
+      <div className="hidden sm:flex" style={{ alignItems: "center", gap: 8 }}>
+        <span
+          style={{
+            display: "inline-block",
+            width: 6,
+            height: 6,
+            borderRadius: "50%",
+            background: "var(--matcha)",
+          }}
+          className="blink-soft"
+        />
+        <span
+          style={{
+            fontFamily: 'var(--font-quicksand), "Quicksand", system-ui, sans-serif',
+            fontSize: 11,
+            fontWeight: 700,
+            letterSpacing: "0.16em",
+            textTransform: "uppercase",
+            color: "var(--mute)",
+          }}
+        >
+          {tenantName.toLowerCase()}
+          {isDemo ? " · demo tenant" : ""}
         </span>
       </div>
 
@@ -110,15 +145,34 @@ function ChatHeader({
   );
 }
 
-function KaliMark({ className }: { className?: string }) {
+function NavLink({
+  href,
+  active = false,
+  children,
+}: {
+  href: string;
+  active?: boolean;
+  children: ReactNode;
+}) {
   return (
-    <svg viewBox="0 0 20 20" className={className} aria-hidden>
-      <circle cx="10" cy="10" r="8" stroke="currentColor" strokeWidth="1" fill="none" opacity="0.4" />
-      <circle cx="10" cy="10" r="3" fill="currentColor" />
-      <circle cx="2.5" cy="10" r="1" fill="currentColor" opacity="0.6" />
-      <circle cx="17.5" cy="10" r="1" fill="currentColor" opacity="0.6" />
-      <circle cx="10" cy="2.5" r="1" fill="currentColor" opacity="0.6" />
-      <circle cx="10" cy="17.5" r="1" fill="currentColor" opacity="0.6" />
-    </svg>
+    <Link
+      href={href}
+      style={{
+        padding: "6px 12px",
+        borderRadius: 999,
+        fontSize: 11,
+        fontWeight: 700,
+        letterSpacing: "0.14em",
+        textTransform: "uppercase",
+        textDecoration: "none",
+        background: active ? "var(--mochi)" : "transparent",
+        color: active ? "var(--matcha-deep-warm)" : "var(--mute)",
+        border: active ? "2px solid white" : "2px solid transparent",
+        boxShadow: active ? "1px 2px 0 var(--sticker-shadow)" : "none",
+        fontFamily: 'var(--font-quicksand), "Quicksand", system-ui, sans-serif',
+      }}
+    >
+      {children}
+    </Link>
   );
 }
