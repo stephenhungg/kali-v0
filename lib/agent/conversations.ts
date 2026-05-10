@@ -1,0 +1,148 @@
+/**
+ * In-memory conversation store for v1.
+ *
+ * Each conversation is an ordered list of role-tagged messages plus tool-
+ * call traces and audit pointers. Production swaps the backing store for
+ * the Drizzle `conversations` + `messages` tables (see `lib/db/schema.ts`).
+ *
+ * The store is keyed by conversationId. Concurrent appends are safe in
+ * Bun/Node (single-threaded JS) — every mutation is an array `push`.
+ */
+
+export type ConversationRole = "user" | "assistant" | "tool";
+
+export interface ConversationMessage {
+  id: string;
+  conversationId: string;
+  role: ConversationRole;
+  content: string;
+  /** Tool calls made by the assistant in this turn (for assistant role). */
+  toolCalls?: Array<{
+    name: string;
+    input: unknown;
+    result: unknown;
+    isError: boolean;
+    durationMs: number;
+  }>;
+  /** Citation list — kali_entity_id strings the assistant referenced. */
+  citations?: string[];
+  createdAt: string;
+}
+
+export interface Conversation {
+  id: string;
+  tenantId: string;
+  userId: string;
+  title?: string;
+  createdAt: string;
+  updatedAt: string;
+  messages: ConversationMessage[];
+}
+
+let __seq = 0;
+function nextId(prefix: string): string {
+  __seq++;
+  return `${prefix}_${Date.now().toString(36)}_${__seq.toString(36)}`;
+}
+
+const __byId = new Map<string, Conversation>();
+
+export interface CreateOptions {
+  tenantId?: string;
+  userId?: string;
+  title?: string;
+  /** Pre-set the conversation id (e.g. for tests). */
+  id?: string;
+}
+
+export function createConversation(opts: CreateOptions = {}): Conversation {
+  const id = opts.id ?? nextId("conv");
+  const now = new Date().toISOString();
+  const c: Conversation = {
+    id,
+    tenantId: opts.tenantId ?? "rivertown",
+    userId: opts.userId ?? "demo",
+    title: opts.title,
+    createdAt: now,
+    updatedAt: now,
+    messages: [],
+  };
+  __byId.set(id, c);
+  return c;
+}
+
+export function getConversation(id: string): Conversation | null {
+  return __byId.get(id) ?? null;
+}
+
+/**
+ * Get-or-create. If `id` is missing or unknown, creates a new conversation.
+ * Returns both the conversation and a boolean flag for whether it was
+ * created on this call (useful for setting titles from the first user
+ * message).
+ */
+export function getOrCreateConversation(
+  id: string | undefined,
+  opts: CreateOptions = {},
+): { conversation: Conversation; created: boolean } {
+  if (id) {
+    const existing = __byId.get(id);
+    if (existing) return { conversation: existing, created: false };
+  }
+  return { conversation: createConversation({ ...opts, id }), created: true };
+}
+
+export interface AppendMessageOpts {
+  conversationId: string;
+  role: ConversationRole;
+  content: string;
+  toolCalls?: ConversationMessage["toolCalls"];
+  citations?: string[];
+}
+
+export function appendMessage(opts: AppendMessageOpts): ConversationMessage {
+  const c = __byId.get(opts.conversationId);
+  if (!c) throw new Error(`unknown conversation: ${opts.conversationId}`);
+  const msg: ConversationMessage = {
+    id: nextId("msg"),
+    conversationId: c.id,
+    role: opts.role,
+    content: opts.content,
+    toolCalls: opts.toolCalls,
+    citations: opts.citations,
+    createdAt: new Date().toISOString(),
+  };
+  c.messages.push(msg);
+  c.updatedAt = msg.createdAt;
+  // Auto-title from the first user message if none set.
+  if (!c.title && opts.role === "user" && c.messages.length === 1) {
+    c.title = opts.content.slice(0, 80);
+  }
+  return msg;
+}
+
+export function listConversations(args: {
+  tenantId?: string;
+  userId?: string;
+  limit?: number;
+} = {}): Conversation[] {
+  let out = Array.from(__byId.values());
+  if (args.tenantId) out = out.filter((c) => c.tenantId === args.tenantId);
+  if (args.userId) out = out.filter((c) => c.userId === args.userId);
+  out = out.sort((a, b) => b.updatedAt.localeCompare(a.updatedAt));
+  return out.slice(0, args.limit ?? 50);
+}
+
+export function deleteConversation(id: string): boolean {
+  return __byId.delete(id);
+}
+
+/** Test/dev-only: drop every conversation. */
+export function __resetConversations(): void {
+  __byId.clear();
+}
+
+/** Total count across all tenants — for sanity checks in tests. */
+export function __conversationsCount(): number {
+  return __byId.size;
+}

@@ -77,8 +77,11 @@ function zodToJsonSchema(schema: z.ZodTypeAny): Record<string, unknown> {
   // because Anthropic's tool API wants a plain JSON Schema body.
   const json = (z as unknown as { toJSONSchema: (s: z.ZodTypeAny) => Record<string, unknown> })
     .toJSONSchema(schema);
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const { $schema, ...rest } = json as { $schema?: string };
+  const { $schema: _drop, ...rest } = json as Record<string, unknown> & {
+    $schema?: string;
+    type?: string;
+  };
+  void _drop;
   // Anthropic requires `type: "object"` at the top level for tool inputs.
   if (rest.type !== "object") {
     return { type: "object", properties: {}, ...rest };
@@ -210,7 +213,7 @@ export async function run(opts: RunOptions): Promise<RunResult> {
     if (resp.stop_reason === "end_turn") {
       const text = resp.content
         .filter((b) => b.type === "text")
-        .map((b) => (b as { text: string }).text)
+        .map((b) => (b as unknown as { text: string }).text)
         .join("\n");
       return {
         answer: text.trim(),

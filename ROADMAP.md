@@ -74,11 +74,11 @@ each connector exposes its query functions per the scope, validates with zod, re
 - [x] **F5.1** anthropic SDK wired up with prompt caching — `lib/agent/runtime.ts` upgraded to `claude-sonnet-4-6` with `cache_control: { type: "ephemeral" }` on the system prompt + tools array tail. ~90% input-token savings after first turn. Tracks `cache_read_input_tokens` in RunResult.
 - [x] **F5.2** tool registry — all 69 connector functions exposed as anthropic tools via `lib/agent/runtime.ts::toAnthropicTools()`. zod 4 → JSON Schema conversion with `$schema` stripped. Side-effect imports in `lib/agent/registrations.ts` register all 11 connectors at startup.
 - [x] **F5.3** system prompt v1 (cached prefix, domain-tagged tool groupings, citation rules) — Kali identity + tenant context + per-domain reasoning approach + citation requirement + dynamic tool inventory (built from `listConnectors()` so it stays in sync as connectors evolve).
-- [ ] **F5.4** streaming chat endpoint (`app/api/chat/route.ts`) with vercel ai sdk
-- [ ] **F5.5** tool-call rendering in the message stream
-- [ ] **F5.6** parallel tool-use surfacing (multiple tool calls in one turn)
-- [ ] **F5.7** citation chain rendering (`[1]` style with hover-to-source)
-- [ ] **F5.8** conversation persistence
+- [x] **F5.4** streaming chat endpoint (`app/api/chat/route.ts`) — SSE stream of `start | tool_call | tool_result | text | done | error` events. Backed by `lib/agent/stream.ts::runStream()` async generator.
+- [ ] **F5.5** tool-call rendering in the message stream — frontend lane (the SSE protocol carries every event the UI needs)
+- [x] **F5.6** parallel tool-use surfacing — `runStream` emits a `tool_call` event per parallel block BEFORE handlers run, then `tool_result` events as they complete. Tested with multi-tool turns.
+- [ ] **F5.7** citation chain rendering — backend ready (`done.citations[]` carries every kali_entity_id surfaced); frontend lane to render
+- [x] **F5.8** conversation persistence — `lib/agent/conversations.ts` in-memory store: createConversation / getOrCreate / appendMessage / listConversations / deleteConversation. Auto-titles from first user message. Persisted from the chat endpoint as the SSE stream flows.
 
 ## phase 6 — chat UI
 
@@ -119,8 +119,8 @@ each demoable end-to-end: query → tools fire → citations land.
 
 ## current cursor
 
-**building right now:** phase 4 context layer (entity resolution / embeddings / retrieval / structured query DSL still pending — F4.1–F4.5).
+**building right now:** phase 4 context layer (F4.1 entity resolution, F4.2-4.5 embeddings/retrieval/DSL still pending). Frontend lanes (F5.5 / F5.7) blocked on chat UI.
 
-**last shipped:** all 11 connectors (F3.1–F3.11), F4.6 audit log infrastructure, F5.1 anthropic SDK + prompt caching wired up on `claude-sonnet-4-6`, F5.2 tool registry exposing all 69 connector tools to Claude via zod→JSON Schema conversion, F5.3 system prompt v1 with dynamic tool inventory + citation rules. **347 passing tests across 14 test files.** Legacy `lib/agent/tools.ts` deleted — registry is now the single source of truth.
+**last shipped:** all 11 connectors (F3.1–F3.11), F4.6 audit log, F5.1–5.3 anthropic SDK + prompt caching + tool registry + system prompt with dynamic inventory, **F5.4 streaming SSE chat endpoint at `app/api/chat/route.ts`, F5.6 parallel tool-use event surfacing, F5.8 in-memory conversation persistence.** **367 passing tests across 16 test files.** Frontend can hit POST /api/chat with `{query, conversationId?}` and consume the event stream — source-pulse animation, citation rendering, and final-answer streaming all driven by the protocol.
 
 frank/nicole — you don't need to wait on any of this to start the landing page. work on `app/page.tsx` and add components in `components/marketing/`. avoid touching `lib/` for now (that's tenzin's lane).
