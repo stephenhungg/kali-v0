@@ -43,3 +43,6 @@ next-env.d.ts
 # kali-specific
 .env.local
 .env.*.local
+
+# allow the env contract example
+!.env.example
