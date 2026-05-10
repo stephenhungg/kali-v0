@@ -53,7 +53,7 @@ each connector exposes its query functions per the scope, validates with zod, re
 - [x] **F3.3** m365 (mail + calendar + directory). `lib/connectors/m365.{schema,ts,test}.ts`. 7 tools: `getUser`, `searchUsers`, `searchEmails`, `getEmailThread`, `getLastEmailToEmail`, `getCalendarEvents`, `getDistributionLists`. 33 tests passing.
 - [x] **F3.4** zoom (meetings + transcripts + attendance). `lib/connectors/zoom.{schema,ts,test}.ts`. 7 tools: `searchMeetings`, `getMeeting`, `getMeetingTranscript`, `searchTranscripts` (full-text with snippet context), `getAttendees`, `getAttendanceForPerson` (powers "donor attended N events"), `getPhoneCallLogs`. 33 tests passing.
 - [x] **F3.5** sharepoint (documents + sites + sharing audit). `lib/connectors/sharepoint.{schema,ts,test}.ts`. 6 tools: `searchDocuments` (query+type+site+tag+program+grant+date filters with query-aware snippets), `getDocument`, `getRecentDocuments`, `getDocumentsByTag`, `getSharedWithExternalUsers`, `listSites`. 26 tests passing.
-- [ ] **F3.6** instrumentl
+- [x] **F3.6** instrumentl (grants + funders). `lib/connectors/instrumentl.{schema,ts,test}.ts`. 7 tools: `searchGrants`, `getGrant`, `getTrackedGrants` (active pipeline statuses), `getDeadlinesInRange` (sorted ascending with daysUntilDeadline — powers F8.2 grant-ops wow-query), `getFunderProfile`, `getMatchScore`, `searchFunders`. 28 tests passing.
 - [ ] **F3.7** quickbooks
 - [ ] **F3.8** solana (devnet wired up)
 - [ ] **F3.9** powerbi
@@ -119,8 +119,8 @@ each demoable end-to-end: query → tools fire → citations land.
 
 ## current cursor
 
-**building right now:** phase 3 — 6 connectors left (instrumentl, quickbooks, solana, powerbi, powerautomate, knowbe4) on the bloomerang reference pattern.
+**building right now:** phase 3 — 5 connectors left (quickbooks, solana, powerbi, powerautomate, knowbe4) on the bloomerang reference pattern.
 
-**last shipped:** F0.4 drizzle schema, F0.5 project layout, F0.6 env contract, F1.1 connector base interface + registry, F1.2 seed loader (size-aware + cache-keyed), F1.4 zod schema convention, F2.* full master entity graph + 11 connector seeds (small/medium/large), F3.1 bloomerang + F3.2 salesforce + F3.3 m365 + F3.4 zoom + F3.5 sharepoint connectors with 178 passing tests. Shared `_tool-factory.ts` powers all five.
+**last shipped:** F0.4 drizzle schema, F0.5 project layout, F0.6 env contract, F1.1 connector base interface + registry, F1.2 seed loader (size-aware + cache-keyed), F1.4 zod schema convention, F2.* full master entity graph + 11 connector seeds (small/medium/large), F3.1–F3.6 (bloomerang, salesforce, m365, zoom, sharepoint, instrumentl) with 206 passing tests. Shared `_tool-factory.ts`.
 
 frank/nicole — you don't need to wait on any of this to start the landing page. work on `app/page.tsx` and add components in `components/marketing/`. avoid touching `lib/` for now (that's tenzin's lane).
