@@ -1,31 +1,17 @@
 import Link from "next/link";
 import { QueryDemo } from "@/components/marketing/QueryDemo";
 
-const STORIES = [
-  {
-    name: "Sarah",
-    title: "Director of Development",
-    quote:
-      "I spend 6 hours every week stitching together donor history from four different systems. That's not the work I came here to do.",
-  },
-  {
-    name: "Marcus",
-    title: "Program Officer",
-    quote:
-      "Grant deadlines slip through the cracks because nobody can see across instrumentl, salesforce, and our shared drive at once.",
-  },
-  {
-    name: "Elena",
-    title: "Finance Manager",
-    quote:
-      "Wire fees and ach delays cost us $11,000 last year. On a small budget, that's a part-time staffer we couldn't hire.",
-  },
+const SERVICES = [
+  { num: "01", label: "agentic context layer" },
+  { num: "02", label: "eleven saas connectors" },
+  { num: "03", label: "onchain payouts" },
+  { num: "04", label: "audit + citations" },
 ] as const;
 
 const QUERIES = [
   {
     title: "find the donors who matter",
-    body: "lapsed donors who gave $1k+ last year, attended at least two events, work at companies with active matching gifts, no re-engagement email in 90 days.",
+    body: "lapsed donors who gave $1k+ in 2024, attended ≥2 events, work at companies with active matching gifts, no re-engagement email in 90 days.",
     sources: ["bloomerang", "salesforce", "zoom", "m365"],
   },
   {
@@ -34,7 +20,7 @@ const QUERIES = [
     sources: ["instrumentl", "salesforce", "sharepoint"],
   },
   {
-    title: "see your cash and your programs together",
+    title: "cash and programs in one view",
     body: "show our cash runway against projected program spend over the next 90 days. flag programs at risk of going over budget, with citations.",
     sources: ["quickbooks", "sharepoint", "powerbi"],
   },
@@ -48,20 +34,16 @@ const QUERIES = [
 
 export default function HomePage() {
   return (
-    <main className="relative min-h-screen overflow-hidden bg-amber-50/40 text-stone-900 antialiased">
-      <BackgroundGlow />
-
-      <div className="relative z-10 mx-auto max-w-5xl px-6 sm:px-10">
-        <Header />
-        <Hero />
-        <section className="mt-14 sm:mt-20">
-          <QueryDemo />
-        </section>
-        <Stories />
-        <Why />
-        <Queries />
-        <Footer />
-      </div>
+    <main className="relative min-h-screen overflow-hidden bg-[#17191a] text-zinc-100 antialiased">
+      <Header />
+      <Hero />
+      <ServicesBar />
+      <section className="mx-auto max-w-7xl px-6 sm:px-10">
+        <QueryDemo />
+      </section>
+      <Why />
+      <Queries />
+      <Footer />
     </main>
   );
 }
@@ -70,16 +52,30 @@ export default function HomePage() {
 
 function Header() {
   return (
-    <header className="flex items-center justify-between pt-8 sm:pt-10">
+    <header className="mx-auto flex max-w-7xl items-center justify-between border-b border-white/10 px-6 py-5 sm:px-10">
       <div className="flex items-center gap-3">
-        <KaliMark className="h-5 w-5 text-amber-700" />
-        <span className="font-serif text-xl tracking-tight text-stone-800">
+        <KaliMark className="h-5 w-5 text-[#cbf478]" />
+        <span className="font-display text-lg font-semibold tracking-tight kali-mark">
           kali
         </span>
       </div>
-      <span className="font-mono text-[11px] uppercase tracking-[0.2em] text-stone-500">
-        hackdavis · 2026
-      </span>
+      <nav className="hidden items-center gap-8 font-mono text-[11px] uppercase tracking-[0.18em] text-zinc-400 md:flex">
+        <a href="#what" className="transition-colors hover:text-white">
+          what
+        </a>
+        <a href="#why" className="transition-colors hover:text-white">
+          why
+        </a>
+        <a href="#queries" className="transition-colors hover:text-white">
+          queries
+        </a>
+      </nav>
+      <Link
+        href="https://github.com/stephenhungg/kali-v0"
+        className="inline-flex items-center gap-2 bg-[#cbf478] px-4 py-2 font-mono text-[11px] font-semibold uppercase tracking-[0.18em] text-black transition-transform hover:scale-[1.02]"
+      >
+        view repo
+      </Link>
     </header>
   );
 }
@@ -87,12 +83,12 @@ function Header() {
 function KaliMark({ className }: { className?: string }) {
   return (
     <svg viewBox="0 0 20 20" className={className} aria-hidden>
-      <circle cx="10" cy="10" r="8" stroke="currentColor" strokeWidth="1.2" fill="none" opacity="0.5" />
-      <circle cx="10" cy="10" r="3" fill="currentColor" />
-      <circle cx="2.5" cy="10" r="1" fill="currentColor" opacity="0.6" />
-      <circle cx="17.5" cy="10" r="1" fill="currentColor" opacity="0.6" />
-      <circle cx="10" cy="2.5" r="1" fill="currentColor" opacity="0.6" />
-      <circle cx="10" cy="17.5" r="1" fill="currentColor" opacity="0.6" />
+      <circle cx="10" cy="10" r="3.5" fill="currentColor" />
+      <circle cx="10" cy="10" r="8" stroke="currentColor" strokeWidth="1" fill="none" opacity="0.4" />
+      <circle cx="2.5" cy="10" r="1" fill="currentColor" opacity="0.7" />
+      <circle cx="17.5" cy="10" r="1" fill="currentColor" opacity="0.7" />
+      <circle cx="10" cy="2.5" r="1" fill="currentColor" opacity="0.7" />
+      <circle cx="10" cy="17.5" r="1" fill="currentColor" opacity="0.7" />
     </svg>
   );
 }
@@ -101,127 +97,112 @@ function KaliMark({ className }: { className?: string }) {
 
 function Hero() {
   return (
-    <section className="pt-20 sm:pt-32">
-      <div className="mb-7 inline-flex items-center gap-2 rounded-full border border-amber-900/10 bg-white/70 px-3.5 py-1.5 font-mono text-[11px] uppercase tracking-widest text-amber-900/70">
-        <span className="inline-block h-1.5 w-1.5 rounded-full bg-emerald-500/80" />
-        built for the staff actually doing the work
+    <section className="mx-auto max-w-7xl px-6 pb-24 pt-20 sm:px-10 sm:pb-32 sm:pt-28">
+      <div className="mb-8 flex items-center gap-3 font-mono text-[11px] uppercase tracking-[0.18em] text-zinc-400">
+        <span className="inline-block h-1.5 w-1.5 bg-[#cbf478]" />
+        kali — for nonprofits — hackdavis 2026
       </div>
 
-      <h1 className="text-balance font-serif text-4xl leading-[1.05] tracking-tight text-stone-900 sm:text-6xl md:text-7xl">
-        nonprofits don&apos;t need{" "}
-        <span className="text-stone-500">more software.</span>
+      <h1 className="kali-display font-display text-[18vw] font-semibold leading-[0.92] tracking-tighter text-white sm:text-[15vw] md:text-[170px] lg:text-[200px]">
+        creating
         <br />
-        they need their software to{" "}
-        <span className="bg-gradient-to-r from-amber-700 via-rose-500 to-amber-600 bg-clip-text text-transparent">
-          finally talk to each other.
-        </span>
+        <span className="text-[#cbf478]">all things</span>
+        <span className="text-[#cbf478] kali-mark"> </span>
+        <br />
+        <span className="text-zinc-500">nonprofits.</span>
       </h1>
 
-      <p className="mt-8 max-w-2xl text-balance text-lg leading-relaxed text-stone-600 sm:text-xl">
-        kali is a single chat that reasons across the eleven tools every modern
-        nonprofit runs on. ask in plain english, get a real answer with
-        citations, and skip the spreadsheet archaeology.
-      </p>
-
-      <div className="mt-10 flex flex-wrap items-center gap-3">
-        <Link
-          href="https://github.com/stephenhungg/kali-v0"
-          className="inline-flex items-center gap-2 rounded-full bg-stone-900 px-5 py-2.5 font-mono text-sm text-amber-50 transition-transform hover:scale-[1.02]"
-        >
-          view the repo →
-        </Link>
-        <Link
-          href="#queries"
-          className="inline-flex items-center gap-2 rounded-full border border-stone-300 bg-white/60 px-5 py-2.5 font-mono text-sm text-stone-700 transition-colors hover:border-stone-500 hover:text-stone-900"
-        >
-          see the demo
-        </Link>
+      <div className="mt-12 grid grid-cols-1 items-end gap-10 md:grid-cols-2">
+        <p className="max-w-xl text-balance text-base leading-relaxed text-zinc-400 sm:text-lg">
+          one chat across <span className="text-white">eleven SaaS tools</span>{" "}
+          and onchain payouts on solana. ask in plain english, get an answer
+          with citations. no more spreadsheet archaeology.
+        </p>
+        <div className="flex flex-wrap items-center gap-3 md:justify-end">
+          <Link
+            href="#queries"
+            className="inline-flex items-center gap-2 bg-[#cbf478] px-5 py-3 font-mono text-[11px] font-semibold uppercase tracking-[0.18em] text-black transition-transform hover:scale-[1.02]"
+          >
+            see the demo →
+          </Link>
+          <Link
+            href="https://github.com/stephenhungg/kali-v0"
+            className="inline-flex items-center gap-2 border border-white/15 px-5 py-3 font-mono text-[11px] font-semibold uppercase tracking-[0.18em] text-zinc-200 transition-colors hover:border-white hover:text-white"
+          >
+            github
+          </Link>
+        </div>
       </div>
     </section>
   );
 }
 
-/* ─── stories ──────────────────────────────────────────────────────────── */
+/* ─── services bar ─────────────────────────────────────────────────────── */
 
-function Stories() {
+function ServicesBar() {
   return (
-    <section className="mt-28 sm:mt-36">
-      <div className="font-mono text-[11px] uppercase tracking-widest text-amber-900/60">
-        the people we&apos;re building for
-      </div>
-      <h2 className="mt-3 max-w-3xl text-balance font-serif text-3xl leading-tight tracking-tight text-stone-900 sm:text-4xl">
-        the staff at small foundations spend their days as detectives, not
-        program officers.
-      </h2>
-
-      <div className="mt-12 grid grid-cols-1 gap-5 md:grid-cols-3">
-        {STORIES.map((s) => (
-          <article
-            key={s.name}
-            className="rounded-2xl border border-amber-900/10 bg-white/60 p-6 backdrop-blur-sm"
-          >
-            <p className="font-serif text-base italic leading-relaxed text-stone-700">
-              “{s.quote}”
-            </p>
-            <div className="mt-5 border-t border-amber-900/10 pt-4">
-              <div className="font-medium text-stone-800">{s.name}</div>
-              <div className="text-sm text-stone-500">{s.title}</div>
-            </div>
-          </article>
+    <section
+      id="what"
+      className="border-y border-white/10 bg-[#0e1011] py-3 overflow-hidden"
+    >
+      <div className="flex animate-[scroll_25s_linear_infinite] whitespace-nowrap font-display text-3xl font-medium text-zinc-400 sm:text-4xl">
+        {[...SERVICES, ...SERVICES, ...SERVICES].map((s, i) => (
+          <span key={`${s.num}-${i}`} className="mx-8 inline-flex items-center gap-3">
+            <span className="font-mono text-[11px] uppercase tracking-[0.2em] text-[#cbf478]">
+              {s.num}
+            </span>
+            <span>{s.label}</span>
+            <span className="ml-8 text-[#cbf478]">✦</span>
+          </span>
         ))}
       </div>
+      <style>{`@keyframes scroll { from { transform: translateX(0); } to { transform: translateX(-33.333%); } }`}</style>
     </section>
   );
 }
 
-/* ─── why this matters ─────────────────────────────────────────────────── */
+/* ─── why ──────────────────────────────────────────────────────────────── */
 
 function Why() {
   return (
-    <section className="mt-28 sm:mt-36">
-      <div className="rounded-3xl border border-amber-900/10 bg-gradient-to-br from-amber-100/60 via-rose-50/40 to-amber-50/40 p-8 sm:p-12">
-        <div className="font-mono text-[11px] uppercase tracking-widest text-amber-900/60">
-          why this matters
+    <section id="why" className="mx-auto max-w-7xl px-6 py-32 sm:px-10 sm:py-40">
+      <div className="grid grid-cols-1 gap-12 md:grid-cols-12">
+        <div className="md:col-span-5">
+          <div className="font-mono text-[11px] uppercase tracking-[0.18em] text-[#cbf478]">
+            01 / why
+          </div>
+          <h2 className="mt-4 font-display text-5xl font-semibold leading-[0.95] tracking-tight text-white sm:text-6xl md:text-7xl">
+            small foundations bleed{" "}
+            <span className="text-[#cbf478]">$8–12k</span> a year on payment
+            friction alone.
+          </h2>
         </div>
-        <h2 className="mt-3 max-w-3xl text-balance font-serif text-3xl leading-tight tracking-tight text-stone-900 sm:text-4xl">
-          a small foundation moves $400k/yr in payments. they bleed{" "}
-          <span className="text-amber-800">$8–12k</span> a year on wires and
-          ach delays alone.
-        </h2>
-        <p className="mt-5 max-w-2xl leading-relaxed text-stone-600">
-          on a tight budget, that&apos;s a part-time staffer they could&apos;ve
-          hired. solana payouts cost a fraction of a cent and clear in 400
-          milliseconds. kali makes the savings real.
-        </p>
-
-        <div className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-3">
-          <Stat value="$0.0001" label="solana txn fee" sub="vs ach $1.50 floor" />
-          <Stat value="400ms" label="settlement time" sub="vs ach 3-day wait" />
-          <Stat value="11" label="tools unified" sub="one chat, one brain" />
+        <div className="md:col-span-7 md:pl-8">
+          <p className="text-balance text-lg leading-relaxed text-zinc-400 sm:text-xl">
+            $400k a year in vendor payments, board stipends, grant
+            disbursements. ach delays, wire fees, reconciliation hell. that
+            $8–12k is a part-time staffer they could&apos;ve hired.
+          </p>
+          <div className="mt-12 grid grid-cols-1 gap-0 sm:grid-cols-3">
+            <Stat value="$0.0001" label="solana txn fee" />
+            <Stat value="400ms" label="settlement" />
+            <Stat value="11" label="tools unified" />
+          </div>
         </div>
       </div>
     </section>
   );
 }
 
-function Stat({
-  value,
-  label,
-  sub,
-}: {
-  value: string;
-  label: string;
-  sub: string;
-}) {
+function Stat({ value, label }: { value: string; label: string }) {
   return (
-    <div className="rounded-2xl border border-amber-900/10 bg-white/70 p-6">
-      <div className="font-serif text-3xl tracking-tight text-stone-900 sm:text-4xl">
+    <div className="border-l border-white/10 px-6 py-4 first:border-l-0 first:pl-0 sm:border-l sm:first:border-l">
+      <div className="font-display text-3xl font-semibold tracking-tight text-white sm:text-4xl">
         {value}
       </div>
-      <div className="mt-1 font-mono text-[11px] uppercase tracking-widest text-amber-900/60">
+      <div className="mt-2 font-mono text-[11px] uppercase tracking-[0.18em] text-zinc-500">
         {label}
       </div>
-      <div className="mt-3 text-sm text-stone-500">{sub}</div>
     </div>
   );
 }
@@ -230,46 +211,54 @@ function Stat({
 
 function Queries() {
   return (
-    <section id="queries" className="mt-28 scroll-mt-12 sm:mt-36">
-      <div className="font-mono text-[11px] uppercase tracking-widest text-amber-900/60">
-        what kali helps with
+    <section
+      id="queries"
+      className="mx-auto max-w-7xl scroll-mt-12 px-6 py-32 sm:px-10 sm:py-40"
+    >
+      <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
+        <div>
+          <div className="font-mono text-[11px] uppercase tracking-[0.18em] text-[#cbf478]">
+            02 / queries
+          </div>
+          <h2 className="mt-3 max-w-3xl font-display text-5xl font-semibold leading-[0.95] tracking-tight text-white sm:text-6xl md:text-7xl">
+            four questions <span className="text-[#cbf478]">no other tool</span>{" "}
+            can answer.
+          </h2>
+        </div>
+        <p className="max-w-md text-zinc-400">
+          each one runs across 3–5 sources in a single turn. cited, exportable,
+          live on stage in under 8 seconds.
+        </p>
       </div>
-      <h2 className="mt-3 max-w-3xl text-balance font-serif text-3xl leading-tight tracking-tight text-stone-900 sm:text-4xl">
-        four real questions, answered live, across multiple tools.
-      </h2>
-      <p className="mt-4 max-w-2xl text-stone-600">
-        each one runs across three to five sources in a single turn — cited,
-        exportable, demo-ready in under eight seconds.
-      </p>
 
-      <div className="mt-10 grid grid-cols-1 gap-4 md:grid-cols-2">
-        {QUERIES.map((q) => (
+      <div className="mt-16 grid grid-cols-1 gap-0 md:grid-cols-2">
+        {QUERIES.map((q, i) => (
           <article
             key={q.title}
             className={[
-              "rounded-2xl border p-6 transition-colors",
+              "border border-white/10 p-8 transition-colors hover:bg-white/[0.02]",
+              i % 2 === 1 ? "md:border-l-0" : "",
+              i >= 2 ? "md:border-t-0" : "",
               "highlight" in q && q.highlight
-                ? "border-amber-700/30 bg-gradient-to-br from-amber-100/70 to-rose-50/50"
-                : "border-amber-900/10 bg-white/60 hover:border-amber-900/30",
+                ? "bg-[#cbf478]/[0.04]"
+                : "",
             ].join(" ")}
           >
-            <div className="flex items-center gap-2 font-mono text-[11px] uppercase tracking-widest text-amber-900/60">
-              {q.title}
+            <div className="flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.18em] text-zinc-500">
+              <span className="text-[#cbf478]">0{i + 1}</span>
+              <span>{q.title}</span>
               {"highlight" in q && q.highlight ? (
-                <span className="rounded-full bg-amber-700/15 px-2 py-0.5 text-[10px] text-amber-800">
+                <span className="bg-[#cbf478] px-2 py-0.5 text-[10px] text-black">
                   the wow
                 </span>
               ) : null}
             </div>
-            <p className="mt-3 text-balance font-serif text-base leading-relaxed text-stone-800">
+            <p className="mt-5 font-display text-xl font-medium leading-snug text-white sm:text-2xl">
               {q.body}
             </p>
-            <div className="mt-5 flex flex-wrap gap-1.5 font-mono text-[10px] uppercase tracking-widest text-stone-500">
+            <div className="mt-6 flex flex-wrap gap-1.5 font-mono text-[10px] uppercase tracking-[0.15em] text-zinc-500">
               {q.sources.map((s) => (
-                <span
-                  key={s}
-                  className="rounded border border-amber-900/10 bg-white/70 px-2 py-1"
-                >
+                <span key={s} className="border border-white/10 px-2 py-1">
                   {s}
                 </span>
               ))}
@@ -285,49 +274,30 @@ function Queries() {
 
 function Footer() {
   return (
-    <footer className="mt-28 border-t border-amber-900/10 py-12 sm:mt-36">
-      <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
-        <div>
-          <div className="flex items-center gap-2">
-            <KaliMark className="h-4 w-4 text-amber-700" />
-            <span className="font-serif text-base tracking-tight text-stone-800">
-              kali
-            </span>
-          </div>
-          <p className="mt-2 max-w-md text-sm leading-relaxed text-stone-500">
-            v1 prototype · agentic context layer for nonprofits · scope at{" "}
-            <code className="text-stone-700">data/v1-prototype-scope.md</code>
-          </p>
+    <footer className="border-t border-white/10 bg-[#0e1011]">
+      <div className="mx-auto max-w-7xl px-6 py-16 sm:px-10 sm:py-20">
+        <div className="font-display text-[14vw] font-semibold leading-[0.85] tracking-tighter text-zinc-700 sm:text-[12vw] md:text-[140px]">
+          let&apos;s build it
+          <span className="text-[#cbf478]">.</span>
         </div>
-        <div className="font-mono text-[11px] uppercase tracking-widest text-stone-500">
-          built by stephen, matty, frank, nicole · hackdavis 2026
+        <div className="mt-12 flex flex-col gap-4 border-t border-white/10 pt-8 md:flex-row md:items-end md:justify-between">
+          <div>
+            <div className="flex items-center gap-2">
+              <KaliMark className="h-4 w-4 text-[#cbf478]" />
+              <span className="font-display text-base font-semibold tracking-tight kali-mark">
+                kali
+              </span>
+            </div>
+            <p className="mt-2 max-w-md text-sm leading-relaxed text-zinc-500">
+              v1 prototype · agentic context layer for nonprofits · scope at{" "}
+              <code className="text-zinc-300">data/v1-prototype-scope.md</code>
+            </p>
+          </div>
+          <div className="font-mono text-[11px] uppercase tracking-[0.18em] text-zinc-500">
+            built by stephen, matty, frank, nicole · hackdavis 2026
+          </div>
         </div>
       </div>
     </footer>
-  );
-}
-
-/* ─── decorative background ────────────────────────────────────────────── */
-
-function BackgroundGlow() {
-  return (
-    <>
-      <div
-        aria-hidden
-        className="pointer-events-none absolute inset-x-0 top-0 -z-0 h-[700px]"
-        style={{
-          background:
-            "radial-gradient(ellipse 70% 50% at 50% 0%, rgba(251, 191, 36, 0.18), transparent 60%)",
-        }}
-      />
-      <div
-        aria-hidden
-        className="pointer-events-none absolute right-0 top-[300px] -z-0 h-[500px] w-[600px]"
-        style={{
-          background:
-            "radial-gradient(ellipse at center, rgba(244, 114, 182, 0.10), transparent 70%)",
-        }}
-      />
-    </>
   );
 }
