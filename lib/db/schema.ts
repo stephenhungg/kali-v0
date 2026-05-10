@@ -15,9 +15,12 @@ import {
   index,
   integer,
   jsonb,
+  numeric,
   pgTable,
+  primaryKey,
   text,
   timestamp,
+  uniqueIndex,
   uuid,
 } from "drizzle-orm/pg-core";
 
@@ -198,6 +201,227 @@ export const agentRuns = pgTable(
   (t) => [index("agent_runs_tenant_idx").on(t.tenantId)],
 );
 
+/* ─── tenant wallets (Privy-managed, per kind) ────────────────────────── */
+
+export const tenantWallets = pgTable(
+  "tenant_wallets",
+  {
+    id: uuid("id").primaryKey().defaultRandom(),
+    tenantId: tenantId(),
+    network: text("network").notNull(), // solana-devnet | solana-mainnet
+    pubkey: text("pubkey").notNull(),
+    privyWalletId: text("privy_wallet_id"),
+    kind: text("kind").notNull(), // treasury | community_fund | platform_reserve
+    createdAt: timestamp("created_at", { withTimezone: true }).defaultNow().notNull(),
+  },
+  (t) => [
+    index("tenant_wallets_tenant_idx").on(t.tenantId),
+    uniqueIndex("tenant_wallets_unique").on(t.tenantId, t.network, t.kind),
+  ],
+);
+
+/* ─── x402 receipts (every donation, real or seed) ────────────────────── */
+
+export const x402Receipts = pgTable(
+  "x402_receipts",
+  {
+    id: uuid("id").primaryKey().defaultRandom(),
+    tenantId: tenantId(),
+    txSignature: text("tx_signature").notNull(),
+    network: text("network").notNull(),
+    amountUsdc: numeric("amount_usdc", { precision: 18, scale: 6 }).notNull(),
+    payerWallet: text("payer_wallet").notNull(),
+    attribution: text("attribution").notNull(), // human | autonomous | unknown
+    attributionProof: jsonb("attribution_proof").$type<Record<string, unknown>>(),
+    taxDeductible: boolean("tax_deductible").notNull().default(false),
+    taxReceiptUrl: text("tax_receipt_url"),
+    memo: text("memo"),
+    programDesignation: text("program_designation"),
+    subscriptionId: uuid("subscription_id"),
+    syncedToCrm: boolean("synced_to_crm").notNull().default(false),
+    receivedAt: timestamp("received_at", { withTimezone: true }).defaultNow().notNull(),
+    seedFlag: boolean("seed_flag").notNull().default(false),
+  },
+  (t) => [
+    index("x402_receipts_tenant_idx").on(t.tenantId),
+    uniqueIndex("x402_receipts_signature_unique").on(t.txSignature),
+    index("x402_receipts_attribution_idx").on(t.attribution),
+    index("x402_receipts_received_at_idx").on(t.receivedAt),
+  ],
+);
+
+/* ─── x402 recurring subscriptions ────────────────────────────────────── */
+
+export const x402Subscriptions = pgTable(
+  "x402_subscriptions",
+  {
+    id: uuid("id").primaryKey().defaultRandom(),
+    tenantId: tenantId(),
+    payerWallet: text("payer_wallet").notNull(),
+    amountUsdc: numeric("amount_usdc", { precision: 18, scale: 6 }).notNull(),
+    period: text("period").notNull(), // weekly | monthly
+    nextChargeAt: timestamp("next_charge_at", { withTimezone: true }).notNull(),
+    endDate: timestamp("end_date", { withTimezone: true }),
+    delegationProof: jsonb("delegation_proof").$type<Record<string, unknown>>().notNull(),
+    status: text("status").notNull().default("active"), // active | paused | canceled | failed
+    retryCount: integer("retry_count").notNull().default(0),
+    lastReceiptId: uuid("last_receipt_id"),
+    memo: text("memo"),
+    programDesignation: text("program_designation"),
+    createdAt: timestamp("created_at", { withTimezone: true }).defaultNow().notNull(),
+  },
+  (t) => [
+    index("x402_subscriptions_tenant_idx").on(t.tenantId),
+    index("x402_subscriptions_next_charge_idx").on(t.nextChargeAt),
+    index("x402_subscriptions_status_idx").on(t.status),
+  ],
+);
+
+/* ─── cause coins (one per tenant, optional) ──────────────────────────── */
+
+export const causeCoins = pgTable(
+  "cause_coins",
+  {
+    id: uuid("id").primaryKey().defaultRandom(),
+    tenantId: tenantId(),
+    mint: text("mint").notNull(),
+    symbol: text("symbol").notNull(),
+    name: text("name").notNull(),
+    decimals: integer("decimals").notNull().default(9),
+    bondingCurvePool: text("bonding_curve_pool").notNull(),
+    treasuryWallet: text("treasury_wallet").notNull(),
+    communityFundWallet: text("community_fund_wallet").notNull(),
+    platformReserveWallet: text("platform_reserve_wallet").notNull(),
+    feeBps: integer("fee_bps").notNull().default(100),
+    communityFundBps: integer("community_fund_bps").notNull().default(2000),
+    graduationThresholdUsd: numeric("graduation_threshold_usd", {
+      precision: 18,
+      scale: 2,
+    })
+      .notNull()
+      .default("69000"),
+    graduationStatus: text("graduation_status").notNull().default("bonding"),
+    ammPool: text("amm_pool"),
+    lpLockStreamflowId: text("lp_lock_streamflow_id"),
+    metadata: jsonb("metadata").$type<{
+      ein?: string;
+      irs_status?: string;
+      cause?: string;
+      launch_disclaimer?: string;
+      kali_tenant_id?: string;
+      uri?: string;
+    }>().notNull().default({}),
+    network: text("network").notNull().default("solana-devnet"),
+    launchedAt: timestamp("launched_at", { withTimezone: true }).defaultNow().notNull(),
+    launchTxSig: text("launch_tx_sig"),
+    lastIndexedSig: text("last_indexed_sig"),
+  },
+  (t) => [
+    index("cause_coins_tenant_idx").on(t.tenantId),
+    uniqueIndex("cause_coins_tenant_unique").on(t.tenantId),
+    uniqueIndex("cause_coins_mint_unique").on(t.mint),
+  ],
+);
+
+/* ─── cause coin holders (balances + cumulative contribution) ─────────── */
+
+export const causeCoinHolders = pgTable(
+  "cause_coin_holders",
+  {
+    coinId: uuid("coin_id")
+      .references(() => causeCoins.id, { onDelete: "cascade" })
+      .notNull(),
+    wallet: text("wallet").notNull(),
+    balance: numeric("balance", { precision: 28, scale: 9 }).notNull().default("0"),
+    firstAcquiredAt: timestamp("first_acquired_at", { withTimezone: true }).defaultNow().notNull(),
+    lastTradeAt: timestamp("last_trade_at", { withTimezone: true }),
+    cumulativeContributedUsd: numeric("cumulative_contributed_usd", {
+      precision: 18,
+      scale: 6,
+    })
+      .notNull()
+      .default("0"),
+  },
+  (t) => [
+    primaryKey({ columns: [t.coinId, t.wallet] }),
+    index("cause_coin_holders_balance_idx").on(t.balance),
+  ],
+);
+
+/* ─── cause coin trades (indexer output) ──────────────────────────────── */
+
+export const causeCoinTrades = pgTable(
+  "cause_coin_trades",
+  {
+    id: uuid("id").primaryKey().defaultRandom(),
+    coinId: uuid("coin_id")
+      .references(() => causeCoins.id, { onDelete: "cascade" })
+      .notNull(),
+    txSignature: text("tx_signature").notNull(),
+    wallet: text("wallet").notNull(),
+    side: text("side").notNull(), // buy | sell
+    usdcAmount: numeric("usdc_amount", { precision: 18, scale: 6 }).notNull(),
+    tokenAmount: numeric("token_amount", { precision: 28, scale: 9 }).notNull(),
+    feeUsdc: numeric("fee_usdc", { precision: 18, scale: 6 }).notNull(),
+    treasuryFeeUsdc: numeric("treasury_fee_usdc", { precision: 18, scale: 6 }).notNull(),
+    communityFundFeeUsdc: numeric("community_fund_fee_usdc", {
+      precision: 18,
+      scale: 6,
+    }).notNull(),
+    priceAfter: numeric("price_after", { precision: 28, scale: 12 }).notNull(),
+    blockTime: integer("block_time").notNull(),
+    seedFlag: boolean("seed_flag").notNull().default(false),
+  },
+  (t) => [
+    index("cause_coin_trades_coin_idx").on(t.coinId),
+    uniqueIndex("cause_coin_trades_signature_unique").on(t.txSignature),
+    index("cause_coin_trades_block_time_idx").on(t.blockTime),
+  ],
+);
+
+/* ─── cause coin governance proposals + votes ─────────────────────────── */
+
+export const causeCoinProposals = pgTable(
+  "cause_coin_proposals",
+  {
+    id: uuid("id").primaryKey().defaultRandom(),
+    coinId: uuid("coin_id")
+      .references(() => causeCoins.id, { onDelete: "cascade" })
+      .notNull(),
+    title: text("title").notNull(),
+    description: text("description").notNull().default(""),
+    recipientWallet: text("recipient_wallet").notNull(),
+    amountUsdc: numeric("amount_usdc", { precision: 18, scale: 6 }).notNull(),
+    snapshotBlock: integer("snapshot_block").notNull(),
+    voteStart: timestamp("vote_start", { withTimezone: true }).defaultNow().notNull(),
+    voteEnd: timestamp("vote_end", { withTimezone: true }).notNull(),
+    status: text("status").notNull().default("open"), // open | passed | rejected | executed
+    executionTxSig: text("execution_tx_sig"),
+  },
+  (t) => [
+    index("cause_coin_proposals_coin_idx").on(t.coinId),
+    index("cause_coin_proposals_status_idx").on(t.status),
+  ],
+);
+
+export const causeCoinVotes = pgTable(
+  "cause_coin_votes",
+  {
+    proposalId: uuid("proposal_id")
+      .references(() => causeCoinProposals.id, { onDelete: "cascade" })
+      .notNull(),
+    wallet: text("wallet").notNull(),
+    voteWeight: numeric("vote_weight", { precision: 28, scale: 9 }).notNull(),
+    direction: text("direction").notNull(), // for | against | abstain
+    signedMessage: text("signed_message").notNull(),
+    castAt: timestamp("cast_at", { withTimezone: true }).defaultNow().notNull(),
+  },
+  (t) => [
+    primaryKey({ columns: [t.proposalId, t.wallet] }),
+    index("cause_coin_votes_proposal_idx").on(t.proposalId),
+  ],
+);
+
 /* embeddings table is declared in lib/db/embeddings.ts because it depends
  * on the pgvector custom type which is loaded dynamically. */
 
@@ -214,4 +438,12 @@ export const schema = {
   messages,
   auditLog,
   agentRuns,
+  tenantWallets,
+  x402Receipts,
+  x402Subscriptions,
+  causeCoins,
+  causeCoinHolders,
+  causeCoinTrades,
+  causeCoinProposals,
+  causeCoinVotes,
 };

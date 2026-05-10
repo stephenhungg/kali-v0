@@ -17,4 +17,6 @@ import "../connectors/solana";
 import "../connectors/powerbi";
 import "../connectors/powerautomate";
 import "../connectors/knowbe4";
+import "../connectors/x402";
+import "../connectors/causecoin";
 import "../context/entity";
