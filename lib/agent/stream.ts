@@ -19,7 +19,7 @@
 import { listTools } from "../connectors/registry";
 import { makeToolContext } from "../audit/log";
 import "./registrations";
-import { toAnthropicTools } from "./runtime";
+import { fromAnthropicName, toAnthropicTools } from "./runtime";
 import { resolveCitedNumbers } from "./citations";
 
 const MODEL = "claude-sonnet-4-6";
@@ -220,9 +220,16 @@ export async function* runStream(
         (b) => b.type === "tool_use",
       ) as Array<{ type: "tool_use"; id: string; name: string; input: unknown }>;
 
+      // Convert each block's Anthropic-safe name back to the dotted internal
+      // name so emitted events + handler lookups use the canonical name.
+      const normalizedBlocks = toolUseBlocks.map((b) => ({
+        ...b,
+        name: fromAnthropicName(b.name),
+      }));
+
       // Yield tool_call events FIRST so the UI lights up tiles before the
       // handlers actually run.
-      for (const block of toolUseBlocks) {
+      for (const block of normalizedBlocks) {
         yield {
           type: "tool_call",
           id: block.id,
@@ -233,7 +240,7 @@ export async function* runStream(
 
       // Execute in parallel, but emit results in completion order.
       const results = await Promise.all(
-        toolUseBlocks.map(async (block) => {
+        normalizedBlocks.map(async (block) => {
           const tStart = Date.now();
           const tool = toolByName.get(block.name);
           try {

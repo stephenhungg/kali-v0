@@ -67,6 +67,25 @@ describe("toAnthropicTools / zod → JSON schema", () => {
       expect((t.input_schema as { $schema?: string }).$schema).toBeUndefined();
     }
   });
+
+  // Regression: Anthropic's tool-name regex is ^[a-zA-Z0-9_-]{1,128}$ —
+  // dots are rejected with HTTP 400. Our internal naming is dotted
+  // (`bloomerang.searchDonors`) and we transform on the API boundary.
+  test("emitted tool names match Anthropic's allowed pattern (no dots)", () => {
+    const tools = toAnthropicTools(listTools());
+    const allowed = /^[a-zA-Z0-9_-]{1,128}$/;
+    for (const t of tools) {
+      expect(t.name).toMatch(allowed);
+      expect(t.name).not.toContain(".");
+    }
+  });
+
+  test("toAnthropicName / fromAnthropicName round-trip every registered tool", async () => {
+    const { toAnthropicName, fromAnthropicName } = await import("./runtime");
+    for (const t of listTools()) {
+      expect(fromAnthropicName(toAnthropicName(t.name))).toBe(t.name);
+    }
+  });
 });
 
 describe("SYSTEM_PROMPT", () => {

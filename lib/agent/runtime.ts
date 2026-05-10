@@ -17,7 +17,7 @@
 import { z } from "zod";
 import { listConnectors, listTools } from "../connectors/registry";
 import type { ToolDefinition } from "../connectors/base";
-import { getGlobalAuditLog, makeToolContext } from "../audit/log";
+import { getAuditLog, makeToolContext } from "../audit/log";
 import "./registrations";
 
 const MODEL = "claude-sonnet-4-6";
@@ -72,6 +72,25 @@ interface AnthropicTool {
   input_schema: Record<string, unknown>;
 }
 
+/**
+ * Anthropic's tool-name regex is `^[a-zA-Z0-9_-]{1,128}$` — dots aren't
+ * allowed. Our internal naming convention is `<connector>.<function>`
+ * (matches the spec + reads naturally in code), so we transform on the
+ * API boundary: dots become double-underscores on the way out, and back
+ * to dots on the way in.
+ *
+ * Round-trip is unambiguous because no current tool name contains `__`
+ * literally. If a future tool wants `__` in its name, switch to a single
+ * uncommon character or maintain a map.
+ */
+const SEPARATOR_TOKEN = "__";
+export function toAnthropicName(name: string): string {
+  return name.replace(/\./g, SEPARATOR_TOKEN);
+}
+export function fromAnthropicName(name: string): string {
+  return name.replace(new RegExp(SEPARATOR_TOKEN, "g"), ".");
+}
+
 function zodToJsonSchema(schema: z.ZodTypeAny): Record<string, unknown> {
   // zod 4 ships `z.toJSONSchema` natively. We strip the `$schema` field
   // because Anthropic's tool API wants a plain JSON Schema body.
@@ -91,7 +110,7 @@ function zodToJsonSchema(schema: z.ZodTypeAny): Record<string, unknown> {
 
 export function toAnthropicTools(tools: ToolDefinition[]): AnthropicTool[] {
   return tools.map((t) => ({
-    name: t.name,
+    name: toAnthropicName(t.name),
     description: t.description,
     input_schema: zodToJsonSchema(t.input),
   }));
@@ -237,14 +256,18 @@ export async function run(opts: RunOptions): Promise<RunResult> {
     const toolResults = await Promise.all(
       toolUseBlocks.map(async (block) => {
         const tStart = Date.now();
-        const tool = toolByName.get(block.name);
+        // Convert Anthropic-safe name (`bloomerang__searchDonors`) back to
+        // our internal dotted name (`bloomerang.searchDonors`) for handler
+        // lookup.
+        const internalName = fromAnthropicName(block.name);
+        const tool = toolByName.get(internalName);
         try {
-          if (!tool) throw new Error(`unknown tool: ${block.name}`);
+          if (!tool) throw new Error(`unknown tool: ${internalName}`);
           const validatedInput = tool.input.parse(block.input);
           const out = await tool.handler(validatedInput, ctx);
           const dur = Date.now() - tStart;
           trace.push({
-            name: block.name,
+            name: internalName,
             input: block.input,
             result: out,
             isError: false,
@@ -258,7 +281,7 @@ export async function run(opts: RunOptions): Promise<RunResult> {
         } catch (e: unknown) {
           const msg = e instanceof Error ? e.message : String(e);
           trace.push({
-            name: block.name,
+            name: internalName,
             input: block.input,
             result: msg,
             isError: true,
@@ -318,7 +341,9 @@ async function main() {
   console.log(
     `iterations=${result.iterations} | tools=${result.toolCalls.length} | tokens in=${result.totalInputTokens} (${result.cachedInputTokens} cached) out=${result.totalOutputTokens} | ${result.totalDurationMs}ms`,
   );
-  console.log(`audit entries: ${getGlobalAuditLog().size()}`);
+  // The CLI run defaults to tenantId="rivertown" inside `run()`, so we
+  // surface that log's size, not the global one (which would always be 0).
+  console.log(`audit entries: ${getAuditLog("rivertown").size()}`);
 }
 
 if (import.meta.main) {
