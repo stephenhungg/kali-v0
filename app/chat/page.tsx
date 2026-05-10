@@ -1,6 +1,7 @@
 "use client";
 
-import { useState } from "react";
+import { Suspense, useEffect, useRef, useState } from "react";
+import { useSearchParams } from "next/navigation";
 import { ChatTranscript } from "../../components/chat/ChatTranscript";
 import { Composer } from "../../components/chat/Composer";
 import { ConnectorDrawer } from "../../components/chat/ConnectorDrawer";
@@ -10,12 +11,34 @@ import { ReceiptsPanel } from "../../components/chat/ReceiptsPanel";
 import { useAgentStream } from "../../hooks/useAgentStream";
 
 export default function ChatPage() {
+  // useSearchParams requires a Suspense boundary during prerender.
+  return (
+    <Suspense fallback={<div className="p-8 text-[var(--gray-ink)]">loading…</div>}>
+      <ChatPageBody />
+    </Suspense>
+  );
+}
+
+function ChatPageBody() {
   const { messages, streaming, pulse, send, stop } = useAgentStream();
   const [draft, setDraft] = useState("");
   const [activeConnector, setActiveConnector] = useState<string | null>(null);
 
   const [showSourcesOnMobile, setShowSourcesOnMobile] = useState(false);
   const [showReceiptsOnMobile, setShowReceiptsOnMobile] = useState(false);
+
+  // Auto-fire a query passed via ?seed= (used by Dashboard QuickAsk).
+  const sp = useSearchParams();
+  const seedFiredRef = useRef(false);
+  useEffect(() => {
+    if (seedFiredRef.current) return;
+    const seed = sp.get("seed");
+    if (seed && seed.trim().length > 0) {
+      seedFiredRef.current = true;
+      send(seed);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [sp]);
 
   const submit = () => {
     const text = draft.trim();

@@ -10,6 +10,7 @@
  * `initAllAndTrack` so the response carries fresh state.
  */
 
+import { cookies } from "next/headers";
 import { NextResponse } from "next/server";
 import { listConnectors } from "@/lib/connectors/registry";
 import {
@@ -17,6 +18,7 @@ import {
   listSyncStates,
 } from "@/lib/connectors/sync-state";
 import "@/lib/agent/registrations";
+import { getOnboardingState } from "@/lib/supabase/server";
 
 export const runtime = "nodejs";
 
@@ -37,12 +39,40 @@ async function ensureInited() {
 
 export async function GET() {
   await ensureInited();
+  const all = listSyncStates();
+
+  // Resolve tenant's selected connectors (if any). Demo escape: cookie
+  // `kali_demo_mode=rivertown` skips filtering and shows everything.
+  const cookieJar = await cookies();
+  const demoMode = cookieJar.get("kali_demo_mode")?.value === "rivertown";
+  let selected: string[] | null = null;
+
+  const supaConfigured = !!(
+    process.env.NEXT_PUBLIC_SUPABASE_URL && process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
+  );
+
+  if (supaConfigured && !demoMode) {
+    try {
+      const { state } = await getOnboardingState();
+      if (state?.selectedConnectors && state.selectedConnectors.length > 0) {
+        selected = state.selectedConnectors;
+      }
+    } catch {
+      // unauthenticated or env mis-set — return all (the chat / dashboard
+      // routes will redirect to /onboarding anyway).
+    }
+  }
+
+  const filtered = selected
+    ? all.filter(s => selected!.includes(s.connectorId))
+    : all;
+
   return NextResponse.json({
-    connectors: listSyncStates(),
+    connectors: filtered,
     summary: {
-      total: listConnectors().length,
-      connected: listSyncStates().filter((s) => s.status === "connected").length,
-      error: listSyncStates().filter((s) => s.status === "error").length,
+      total: filtered.length,
+      connected: filtered.filter((s) => s.status === "connected").length,
+      error: filtered.filter((s) => s.status === "error").length,
     },
   });
 }

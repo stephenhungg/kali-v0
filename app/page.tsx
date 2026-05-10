@@ -38,7 +38,7 @@ function Header() {
         </a>
       </nav>
       <Link
-        href="https://github.com/stephenhungg/kali-v0"
+        href="/onboarding"
         className="inline-flex items-center gap-2 bg-[var(--cream)] px-5 py-2.5 text-sm text-[var(--matcha-deep)] transition-transform hover:scale-[1.02]"
       >
         Get started
@@ -368,15 +368,16 @@ function Pricing() {
                 ))}
               </ul>
               <div className="mt-10 flex flex-col gap-3 sm:flex-row">
-                <button
-                  className={`flex-1 px-5 py-3 text-sm uppercase tracking-[0.15em] transition-transform hover:scale-[1.02] ${
+                <Link
+                  href="/onboarding"
+                  className={`flex-1 px-5 py-3 text-center text-sm uppercase tracking-[0.15em] transition-transform hover:scale-[1.02] ${
                     "featured" in p && p.featured
                       ? "bg-[var(--cream)] text-[var(--matcha-deep)]"
                       : "bg-[var(--matcha-deep)] text-[var(--cream)]"
                   }`}
                 >
                   Get started
-                </button>
+                </Link>
                 <button
                   className={`flex-1 border px-5 py-3 text-sm uppercase tracking-[0.15em] transition-colors ${
                     "featured" in p && p.featured
