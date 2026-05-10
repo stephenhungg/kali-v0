@@ -20,6 +20,7 @@ import { listTools } from "../connectors/registry";
 import { makeToolContext } from "../audit/log";
 import "./registrations";
 import { toAnthropicTools } from "./runtime";
+import { resolveCitedNumbers } from "./citations";
 
 const MODEL = "claude-sonnet-4-6";
 const API_VERSION = "2023-06-01";
@@ -51,7 +52,14 @@ export type AgentEvent =
       totalOutputTokens: number;
       cachedInputTokens: number;
       totalDurationMs: number;
+      /** Every kali_entity_id surfaced by tool calls during the run. */
       citations: string[];
+      /**
+       * The subset of `citations` actually referenced by `[N]` markers in
+       * the final answer, with their 1-based index. Frontend uses this to
+       * render exactly the chips that appear inline in the prose.
+       */
+      citationsCited: Array<{ n: number; kali_entity_id: string }>;
       answer: string;
     }
   | { type: "error"; message: string };
@@ -182,6 +190,7 @@ export async function* runStream(
           .join("\n")
           .trim();
         yield { type: "text", text: answer };
+        const citationsArr = Array.from(citations);
         yield {
           type: "done",
           conversationId,
@@ -190,7 +199,8 @@ export async function* runStream(
           totalOutputTokens: totalOutput,
           cachedInputTokens: totalCached,
           totalDurationMs: Date.now() - t0,
-          citations: Array.from(citations),
+          citations: citationsArr,
+          citationsCited: resolveCitedNumbers(answer, citationsArr),
           answer,
         };
         return;

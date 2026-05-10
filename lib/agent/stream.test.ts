@@ -83,6 +83,45 @@ describe("runStream", () => {
     expect(done.cachedInputTokens).toBe(80);
     expect(done.answer).toContain("lapsed donors");
     expect(done.citations.length).toBeGreaterThan(0);
+    // [1][2][3] in the answer should resolve to the first 3 citations.
+    expect(done.citationsCited.length).toBe(3);
+    expect(done.citationsCited[0].n).toBe(1);
+    expect(done.citationsCited[0].kali_entity_id).toBe(done.citations[0]);
+  });
+
+  test("citationsCited drops markers that exceed the citations array", async () => {
+    const stub = makeStubFetch([
+      {
+        id: "msg_a",
+        role: "assistant",
+        content: [
+          {
+            type: "tool_use",
+            id: "tool_1",
+            name: "bloomerang.searchDonors",
+            input: { segment: "lapsed", limit: 1 },
+          },
+        ],
+        stop_reason: "tool_use",
+        usage: { input_tokens: 1, output_tokens: 1 },
+      },
+      {
+        id: "msg_b",
+        role: "assistant",
+        // model hallucinates [99] which doesn't exist in citations
+        content: [{ type: "text", text: "Got one [1]. Also [99] hallucinated." }],
+        stop_reason: "end_turn",
+        usage: { input_tokens: 1, output_tokens: 1 },
+      },
+    ]);
+
+    let done!: Extract<AgentEvent, { type: "done" }>;
+    for await (const ev of runStream({ apiKey: "test", query: "x", fetch: stub })) {
+      if (ev.type === "done") done = ev;
+    }
+    // [1] resolves; [99] doesn't because citations only has one entry.
+    expect(done.citationsCited.length).toBe(1);
+    expect(done.citationsCited[0].n).toBe(1);
   });
 
   test("tool_call event fires BEFORE tool_result for the same id", async () => {
