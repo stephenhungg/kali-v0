@@ -1,0 +1,112 @@
+{
+  "colorScheme": "dark",
+  "fonts": [
+    {
+      "family": "Instrument Sans",
+      "role": "body"
+    }
+  ],
+  "colors": {
+    "primary": "#0000EE",
+    "accent": "#110A2F",
+    "background": "#0D0D12",
+    "textPrimary": "#0D0D12",
+    "link": "#110A2F"
+  },
+  "typography": {
+    "fontFamilies": {
+      "primary": "Instrument Sans",
+      "heading": "Instrument Sans"
+    },
+    "fontStacks": {
+      "heading": [
+        "sans-serif"
+      ],
+      "body": [
+        "sans-serif"
+      ],
+      "paragraph": [
+        "Instrument Sans",
+        "sans-serif"
+      ]
+    },
+    "fontSizes": {
+      "h1": "12px",
+      "h2": "185px",
+      "body": "16px"
+    }
+  },
+  "spacing": {
+    "baseUnit": 10,
+    "borderRadius": "0px"
+  },
+  "components": {
+    "buttonPrimary": {
+      "background": "#0D0D12",
+      "textColor": "#0000EE",
+      "borderRadius": "4px",
+      "borderRadiusCorners": {
+        "topLeft": "4px",
+        "topRight": "4px",
+        "bottomRight": "4px",
+        "bottomLeft": "4px"
+      },
+      "shadow": "none"
+    }
+  },
+  "images": {
+    "logo": "https://framerusercontent.com/images/sg8hSiDeUZ2UFVKshu27scPcb08.svg?width=96&height=20",
+    "favicon": "https://framerusercontent.com/images/bSUkxP3THsaZZyzMVh7YH0UUOKw.png",
+    "ogImage": "https://framerusercontent.com/images/WZphmgHFzQlZz8c037bRpSzpDM.jpg",
+    "logoHref": "./"
+  },
+  "__llm_logo_reasoning": {
+    "selectedIndex": 0,
+    "reasoning": "Selected #0 because it is located in the header, is visible, and links to the homepage, which are strong indicators of being the main brand logo.",
+    "confidence": 0.95,
+    "source": "llm"
+  },
+  "__llm_button_reasoning": {
+    "primary": {
+      "index": 0,
+      "text": "Get started",
+      "reasoning": "The button labeled 'Get started' is the only button detected and uses a dark background with a vibrant blue text color, making it stand out as the primary call-to-action."
+    },
+    "secondary": {
+      "index": -1,
+      "text": "N/A",
+      "reasoning": "There is only one button detected, so no secondary button is available."
+    },
+    "confidence": 0.9
+  },
+  "personality": {
+    "tone": "modern",
+    "energy": "medium",
+    "targetAudience": "designers and developers"
+  },
+  "designSystem": {
+    "framework": "custom",
+    "componentLibrary": ""
+  },
+  "confidence": {
+    "buttons": 0.9,
+    "colors": 0.9,
+    "overall": 0.9
+  },
+  "__llm_metadata": {
+    "logoSelection": {
+      "llmCalled": true,
+      "llmSucceeded": true,
+      "finalSource": "llm",
+      "rawLogoSelection": {
+        "selectedLogoIndex": 0,
+        "selectedLogoReasoning": "Selected #0 because it is located in the header, is visible, and links to the homepage, which are strong indicators of being the main brand logo.",
+        "confidence": 0.95
+      }
+    },
+    "buttonClassification": {
+      "llmCalled": true,
+      "llmSucceeded": true
+    }
+  }
+}

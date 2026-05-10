@@ -1,38 +1,68 @@
 @import "tailwindcss";
 
 :root {
-  --background: #17191a;
-  --foreground: #ededed;
-  --accent: #cbf478;
-  --accent-foreground: #0a0c0a;
+  /* strawberry matcha palette */
+  --cream: #F9ECE5;
+  --strawberry-soft: #FFCBC9;
+  --strawberry-deep: #9C3C4B;
+  --matcha-mid: #639067;
+  --matcha-deep: #044B3A;
+
+  /* radiance-derived motion tokens */
+  --r-ease: cubic-bezier(0.04, 1.13, 0.5, 1);
+  --r-duration: 800ms;
+  --r-fade-duration: 400ms;
+
+  /* page defaults */
+  --background: var(--matcha-deep);
+  --foreground: var(--cream);
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --color-accent: var(--accent);
-  --color-accent-foreground: var(--accent-foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-cream: var(--cream);
+  --color-strawberry-soft: var(--strawberry-soft);
+  --color-strawberry-deep: var(--strawberry-deep);
+  --color-matcha-mid: var(--matcha-mid);
+  --color-matcha-deep: var(--matcha-deep);
+  --font-sans: var(--font-sans-inter);
   --font-display: var(--font-display);
+  --font-italic: var(--font-italic);
+  --font-mono: var(--font-mono-geist);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
+  font-family: var(--font-sans-inter), Inter, system-ui, sans-serif;
 }
 
-/* tighter letter-spacing on the huge display headings */
-.kali-display {
+/* radiance display rhythm */
+.r-display {
+  font-family: var(--font-display), "Instrument Sans", sans-serif;
+  font-weight: 400;
   letter-spacing: -0.04em;
-  line-height: 0.92;
+  line-height: 0.9;
 }
 
-/* the kali ® mark — small superscript */
-.kali-mark::after {
-  content: "®";
-  font-size: 0.45em;
-  vertical-align: super;
-  margin-left: 0.05em;
-  opacity: 0.75;
+.r-italic {
+  font-family: var(--font-italic), "Inria Serif", serif;
+  font-style: italic;
+}
+
+/* radiance scroll-marquee keyframe (used in footer + decorative bands) */
+@keyframes r-marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-33.3333%); }
+}
+
+.animate-r-marquee {
+  animation: r-marquee 28s linear infinite;
+}
+
+/* radiance entrance */
+@keyframes r-rise {
+  0% { transform: translateY(105%); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
 }

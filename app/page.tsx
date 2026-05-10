@@ -1,51 +1,15 @@
 import Link from "next/link";
-import { QueryDemo } from "@/components/marketing/QueryDemo";
-import { HeroDisplay } from "@/components/marketing/HeroDisplay";
-import { CountUp } from "@/components/marketing/CountUp";
-import { RevealStack } from "@/components/marketing/RevealStack";
-
-const SERVICES = [
-  { num: "01", label: "agentic context layer" },
-  { num: "02", label: "eleven saas connectors" },
-  { num: "03", label: "onchain payouts" },
-  { num: "04", label: "audit + citations" },
-] as const;
-
-const QUERIES = [
-  {
-    title: "find the donors who matter",
-    body: "lapsed donors who gave $1k+ in 2024, attended ≥2 events, work at companies with active matching gifts, no re-engagement email in 90 days.",
-    sources: ["bloomerang", "salesforce", "zoom", "m365"],
-  },
-  {
-    title: "never miss a grant",
-    body: "what grants closing in the next 30 days am i eligible for, and which board members or major donors have ties to those funders?",
-    sources: ["instrumentl", "salesforce", "sharepoint"],
-  },
-  {
-    title: "cash and programs in one view",
-    body: "show our cash runway against projected program spend over the next 90 days. flag programs at risk of going over budget, with citations.",
-    sources: ["quickbooks", "sharepoint", "powerbi"],
-  },
-  {
-    title: "send the money in 400ms",
-    body: "we just got awarded $50k. disburse $25k to our partner, stipend the board for this quarter, refund the two donors from the cancelled gala.",
-    sources: ["instrumentl", "salesforce", "bloomerang", "solana", "quickbooks"],
-    highlight: true,
-  },
-] as const;
 
 export default function HomePage() {
   return (
-    <main className="relative min-h-screen overflow-x-hidden bg-[#17191a] text-zinc-100 antialiased">
+    <main className="bg-[var(--matcha-deep)] text-[var(--cream)] antialiased">
       <Header />
-      <HeroDisplay />
-      <ServicesBar />
-      <section className="mx-auto max-w-7xl px-6 sm:px-10">
-        <QueryDemo />
-      </section>
-      <Why />
-      <Queries />
+      <Hero />
+      <Projects />
+      <DreamToReality />
+      <Stats />
+      <Pricing />
+      <Testimonial />
       <Footer />
     </main>
   );
@@ -55,29 +19,29 @@ export default function HomePage() {
 
 function Header() {
   return (
-    <header className="mx-auto flex max-w-7xl items-center justify-between border-b border-white/10 px-6 py-5 sm:px-10">
-      <div className="flex items-center gap-3">
-        <KaliMark className="h-5 w-5 text-[#cbf478]" />
-        <span className="font-display text-lg font-semibold tracking-tight kali-mark">
+    <header className="fixed inset-x-0 top-0 z-50 mx-auto flex max-w-[1400px] items-center justify-between px-8 py-6 sm:px-12">
+      <div className="flex items-center gap-2.5">
+        <KaliMark className="h-5 w-5" />
+        <span className="r-display text-2xl font-medium tracking-tight">
           kali
         </span>
       </div>
-      <nav className="hidden items-center gap-8 font-mono text-[11px] uppercase tracking-[0.18em] text-zinc-400 md:flex">
-        <a href="#what" className="transition-colors hover:text-white">
-          what
+      <nav className="hidden items-center gap-10 text-sm md:flex">
+        <a href="#projects" className="transition-colors hover:text-[var(--strawberry-soft)]">
+          Projects
         </a>
-        <a href="#why" className="transition-colors hover:text-white">
-          why
+        <a href="#pricing" className="transition-colors hover:text-[var(--strawberry-soft)]">
+          Pricing
         </a>
-        <a href="#queries" className="transition-colors hover:text-white">
-          queries
+        <a href="#about" className="transition-colors hover:text-[var(--strawberry-soft)]">
+          About
         </a>
       </nav>
       <Link
         href="https://github.com/stephenhungg/kali-v0"
-        className="inline-flex items-center gap-2 bg-[#cbf478] px-4 py-2 font-mono text-[11px] font-semibold uppercase tracking-[0.18em] text-black transition-transform hover:scale-[1.02]"
+        className="inline-flex items-center gap-2 bg-[var(--cream)] px-5 py-2.5 text-sm text-[var(--matcha-deep)] transition-transform hover:scale-[1.02]"
       >
-        view repo
+        Get started
       </Link>
     </header>
   );
@@ -86,185 +50,380 @@ function Header() {
 function KaliMark({ className }: { className?: string }) {
   return (
     <svg viewBox="0 0 20 20" className={className} aria-hidden>
-      <circle cx="10" cy="10" r="3.5" fill="currentColor" />
       <circle cx="10" cy="10" r="8" stroke="currentColor" strokeWidth="1" fill="none" opacity="0.4" />
-      <circle cx="2.5" cy="10" r="1" fill="currentColor" opacity="0.7" />
-      <circle cx="17.5" cy="10" r="1" fill="currentColor" opacity="0.7" />
-      <circle cx="10" cy="2.5" r="1" fill="currentColor" opacity="0.7" />
-      <circle cx="10" cy="17.5" r="1" fill="currentColor" opacity="0.7" />
+      <circle cx="10" cy="10" r="3" fill="currentColor" />
+      <circle cx="2.5" cy="10" r="1" fill="currentColor" opacity="0.6" />
+      <circle cx="17.5" cy="10" r="1" fill="currentColor" opacity="0.6" />
+      <circle cx="10" cy="2.5" r="1" fill="currentColor" opacity="0.6" />
+      <circle cx="10" cy="17.5" r="1" fill="currentColor" opacity="0.6" />
     </svg>
   );
 }
 
-/* ─── services bar ─────────────────────────────────────────────────────── */
+/* ─── hero ─────────────────────────────────────────────────────────────── */
 
-function ServicesBar() {
+function Hero() {
+  return (
+    <section className="relative min-h-screen overflow-hidden bg-[var(--cream)] text-[var(--matcha-deep)]">
+      {/* photo strip — desert-style soft palette photos overlapping the text */}
+      <div className="pointer-events-none absolute inset-0 z-0">
+        <div
+          className="absolute right-[10%] top-[18%] h-[280px] w-[400px] -rotate-3 bg-[var(--strawberry-soft)] sm:h-[340px] sm:w-[480px]"
+          style={{
+            backgroundImage:
+              "url('https://images.unsplash.com/photo-1509316785289-025f5b846b35?w=900&q=80')",
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+          }}
+        />
+        <div
+          className="absolute left-[8%] top-[40%] h-[220px] w-[300px] rotate-[2deg] bg-[var(--matcha-mid)] sm:h-[260px] sm:w-[360px]"
+          style={{
+            backgroundImage:
+              "url('https://images.unsplash.com/photo-1598970434795-0c54fe7c0648?w=900&q=80')",
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+          }}
+        />
+        <div
+          className="absolute bottom-[12%] right-[18%] h-[200px] w-[280px] -rotate-[6deg] bg-[var(--strawberry-deep)] sm:h-[240px] sm:w-[340px]"
+          style={{
+            backgroundImage:
+              "url('https://images.unsplash.com/photo-1542401886-65d6c61db217?w=900&q=80')",
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+          }}
+        />
+      </div>
+
+      <div className="relative z-10 mx-auto flex min-h-screen max-w-[1400px] flex-col px-8 pt-32 sm:px-12">
+        {/* eyebrow */}
+        <div className="font-mono text-xs uppercase tracking-[0.18em] text-[var(--matcha-deep)]/60">
+          (introduction)
+        </div>
+
+        {/* stacked headlines — radiance signature */}
+        <h1 className="r-display mt-8 text-[18vw] font-medium leading-[0.9] tracking-tight text-[var(--matcha-deep)] sm:text-[14vw] md:text-[200px]">
+          <span className="block">Plan</span>
+          <span className="block">
+            <span className="r-italic font-light text-[var(--strawberry-deep)]">
+              Create
+            </span>
+          </span>
+          <span className="block">Realize it.</span>
+        </h1>
+
+        {/* bottom row */}
+        <div className="mt-auto flex flex-col gap-6 pb-12 md:flex-row md:items-end md:justify-between">
+          <div className="flex items-center gap-3 font-mono text-xs uppercase tracking-[0.18em] text-[var(--matcha-deep)]/70">
+            <span className="inline-block h-3 w-3 animate-bounce rounded-full bg-[var(--strawberry-deep)]" />
+            Scroll down
+          </div>
+          <p className="max-w-md text-sm leading-relaxed text-[var(--matcha-deep)]/70 sm:text-base">
+            We&apos;re masters of inventive strategies. Accuracy, creativity,
+            and the passion for perfection define our approach, making us a
+            partner of choice for nonprofits.
+          </p>
+          <a
+            href="#about"
+            className="inline-flex items-center gap-2 self-start border border-[var(--matcha-deep)]/20 bg-transparent px-5 py-2.5 text-sm text-[var(--matcha-deep)] transition-colors hover:bg-[var(--matcha-deep)] hover:text-[var(--cream)] md:self-end"
+          >
+            About us →
+          </a>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ─── projects ─────────────────────────────────────────────────────────── */
+
+const PROJECTS = [
+  {
+    name: "Innovative Roots",
+    tags: ["Web design", "Brand Identity"],
+    img: "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?w=1200&q=80",
+  },
+  {
+    name: "Minimalist Mind",
+    tags: ["Web Design", "Brand Identity"],
+    img: "https://images.unsplash.com/photo-1620207418302-439b387441b0?w=1200&q=80",
+  },
+  {
+    name: "Commerce Catalyst",
+    tags: ["Social Media Integration"],
+    img: "https://images.unsplash.com/photo-1532712938310-34cb3982ef74?w=1200&q=80",
+  },
+  {
+    name: "Digital Avenue",
+    tags: ["Web Design"],
+    img: "https://images.unsplash.com/photo-1542838132-92c53300491e?w=1200&q=80",
+  },
+] as const;
+
+function Projects() {
   return (
     <section
-      id="what"
-      className="border-y border-white/10 bg-[#0e1011] py-3 overflow-hidden"
+      id="projects"
+      className="bg-[var(--cream)] text-[var(--matcha-deep)]"
     >
-      <div className="flex animate-[scroll_25s_linear_infinite] whitespace-nowrap font-display text-3xl font-medium text-zinc-400 sm:text-4xl">
-        {[...SERVICES, ...SERVICES, ...SERVICES].map((s, i) => (
-          <span key={`${s.num}-${i}`} className="mx-8 inline-flex items-center gap-3">
-            <span className="font-mono text-[11px] uppercase tracking-[0.2em] text-[#cbf478]">
-              {s.num}
-            </span>
-            <span>{s.label}</span>
-            <span className="ml-8 text-[#cbf478]">✦</span>
+      <div className="mx-auto max-w-[1400px] px-8 py-32 sm:px-12 sm:py-40">
+        <div className="mb-16 flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
+          <div>
+            <div className="font-mono text-xs uppercase tracking-[0.18em] text-[var(--matcha-deep)]/60">
+              (Projects)
+            </div>
+            <h2 className="r-display mt-4 text-[12vw] font-medium leading-[0.9] tracking-tight text-[var(--matcha-deep)] sm:text-[8vw] md:text-[120px]">
+              Recent <span className="r-italic font-light text-[var(--strawberry-deep)]">projects</span>
+            </h2>
+          </div>
+          <p className="max-w-md text-sm leading-relaxed text-[var(--matcha-deep)]/70 sm:text-base">
+            Highlighting the exceptional in our latest grand projects.
+            Delivering creativity and quality in every effort.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+          {PROJECTS.map((p, i) => (
+            <article
+              key={p.name}
+              className={`group relative overflow-hidden ${
+                i === 0 ? "md:col-span-2" : ""
+              }`}
+            >
+              <div
+                className="aspect-[4/3] w-full bg-[var(--matcha-mid)] transition-transform duration-[800ms] [transition-timing-function:var(--r-ease)] group-hover:scale-[1.02]"
+                style={{
+                  backgroundImage: `url(${p.img})`,
+                  backgroundSize: "cover",
+                  backgroundPosition: "center",
+                }}
+              />
+              <div className="mt-4 flex items-baseline justify-between gap-4">
+                <div>
+                  <h3 className="r-display text-2xl font-medium tracking-tight sm:text-3xl">
+                    {p.name}
+                  </h3>
+                  <div className="mt-1 text-sm text-[var(--matcha-deep)]/60">
+                    — {p.tags.join(", ")}
+                  </div>
+                </div>
+                <button className="inline-flex items-center gap-1 border border-[var(--matcha-deep)]/20 px-4 py-1.5 text-xs uppercase tracking-[0.15em] transition-colors hover:bg-[var(--matcha-deep)] hover:text-[var(--cream)]">
+                  View
+                </button>
+              </div>
+            </article>
+          ))}
+        </div>
+
+        <div className="mt-16 flex justify-center">
+          <button className="inline-flex items-center gap-2 border border-[var(--matcha-deep)]/30 px-6 py-3 text-sm uppercase tracking-[0.15em] transition-colors hover:bg-[var(--matcha-deep)] hover:text-[var(--cream)]">
+            See all work →
+          </button>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ─── from dream to reality ────────────────────────────────────────────── */
+
+function DreamToReality() {
+  return (
+    <section className="overflow-hidden bg-[var(--matcha-deep)] py-2">
+      <div className="r-display flex animate-r-marquee whitespace-nowrap text-[14vw] font-medium tracking-tight text-[var(--cream)] sm:text-[12vw] md:text-[150px]">
+        {Array.from({ length: 6 }).map((_, i) => (
+          <span key={i} className="mx-8 inline-flex items-center gap-8">
+            From{" "}
+            <span className="r-italic font-light text-[var(--strawberry-soft)]">
+              dream
+            </span>{" "}
+            to reality
+            <span className="text-[var(--strawberry-deep)]">✦</span>
           </span>
         ))}
       </div>
-      <style>{`@keyframes scroll { from { transform: translateX(0); } to { transform: translateX(-33.333%); } }`}</style>
     </section>
   );
 }
 
-/* ─── why ──────────────────────────────────────────────────────────────── */
+/* ─── stats ────────────────────────────────────────────────────────────── */
 
-function Why() {
-  return (
-    <section id="why" className="mx-auto max-w-7xl px-6 py-32 sm:px-10 sm:py-40">
-      <RevealStack className="grid grid-cols-1 gap-12 md:grid-cols-12">
-        <div data-reveal className="md:col-span-5">
-          <div className="font-mono text-[11px] uppercase tracking-[0.18em] text-[#cbf478]">
-            01 / why
-          </div>
-          <h2 className="mt-4 font-display text-5xl font-semibold leading-[0.95] tracking-tight text-white sm:text-6xl md:text-7xl">
-            small foundations bleed{" "}
-            <span className="text-[#cbf478]">$8–12k</span> a year on payment
-            friction alone.
-          </h2>
-        </div>
-        <div data-reveal className="md:col-span-7 md:pl-8">
-          <p className="text-balance text-lg leading-relaxed text-zinc-400 sm:text-xl">
-            $400k a year in vendor payments, board stipends, grant
-            disbursements. ach delays, wire fees, reconciliation hell. that
-            $8–12k is a part-time staffer they could&apos;ve hired.
-          </p>
-          <RevealStack
-            className="mt-12 grid grid-cols-1 gap-0 sm:grid-cols-3"
-            stagger={0.12}
-          >
-            <Stat
-              valueRaw={
-                <CountUp
-                  to={0.0001}
-                  prefix="$"
-                  decimals={4}
-                  duration={2.0}
-                  className="font-display text-3xl font-semibold tracking-tight text-white sm:text-4xl"
-                />
-              }
-              label="solana txn fee"
-            />
-            <Stat
-              valueRaw={
-                <span className="font-display text-3xl font-semibold tracking-tight text-white sm:text-4xl">
-                  <CountUp to={400} duration={1.4} />
-                  ms
-                </span>
-              }
-              label="settlement"
-            />
-            <Stat
-              valueRaw={
-                <CountUp
-                  to={11}
-                  duration={1.2}
-                  className="font-display text-3xl font-semibold tracking-tight text-white sm:text-4xl"
-                />
-              }
-              label="tools unified"
-            />
-          </RevealStack>
-        </div>
-      </RevealStack>
-    </section>
-  );
-}
+const STATS = [
+  { value: "93", label: "realized projects" },
+  { value: "14", label: "awards won" },
+  { value: "35", label: "team members" },
+] as const;
 
-function Stat({
-  valueRaw,
-  label,
-}: {
-  valueRaw: React.ReactNode;
-  label: string;
-}) {
-  return (
-    <div
-      data-reveal
-      className="border-l border-white/10 px-6 py-4 first:border-l-0 first:pl-0 sm:border-l sm:first:border-l"
-    >
-      <div>{valueRaw}</div>
-      <div className="mt-2 font-mono text-[11px] uppercase tracking-[0.18em] text-zinc-500">
-        {label}
-      </div>
-    </div>
-  );
-}
-
-/* ─── queries ──────────────────────────────────────────────────────────── */
-
-function Queries() {
+function Stats() {
   return (
     <section
-      id="queries"
-      className="mx-auto max-w-7xl scroll-mt-12 px-6 py-32 sm:px-10 sm:py-40"
+      id="about"
+      className="bg-[var(--matcha-deep)] py-32 text-[var(--cream)] sm:py-40"
     >
-      <RevealStack className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
-        <div data-reveal>
-          <div className="font-mono text-[11px] uppercase tracking-[0.18em] text-[#cbf478]">
-            02 / queries
-          </div>
-          <h2 className="mt-3 max-w-3xl font-display text-5xl font-semibold leading-[0.95] tracking-tight text-white sm:text-6xl md:text-7xl">
-            four questions <span className="text-[#cbf478]">no other tool</span>{" "}
-            can answer.
-          </h2>
-        </div>
-        <p data-reveal className="max-w-md text-zinc-400">
-          each one runs across 3–5 sources in a single turn. cited, exportable,
-          live on stage in under 8 seconds.
-        </p>
-      </RevealStack>
-
-      <RevealStack
-        className="mt-16 grid grid-cols-1 gap-0 md:grid-cols-2"
-        stagger={0.1}
-      >
-        {QUERIES.map((q, i) => (
-          <article
-            key={q.title}
-            data-reveal
-            className={[
-              "border border-white/10 p-8 transition-colors hover:bg-white/[0.02]",
-              i % 2 === 1 ? "md:border-l-0" : "",
-              i >= 2 ? "md:border-t-0" : "",
-              "highlight" in q && q.highlight ? "bg-[#cbf478]/[0.04]" : "",
-            ].join(" ")}
-          >
-            <div className="flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.18em] text-zinc-500">
-              <span className="text-[#cbf478]">0{i + 1}</span>
-              <span>{q.title}</span>
-              {"highlight" in q && q.highlight ? (
-                <span className="bg-[#cbf478] px-2 py-0.5 text-[10px] text-black">
-                  the wow
-                </span>
-              ) : null}
-            </div>
-            <p className="mt-5 font-display text-xl font-medium leading-snug text-white sm:text-2xl">
-              {q.body}
-            </p>
-            <div className="mt-6 flex flex-wrap gap-1.5 font-mono text-[10px] uppercase tracking-[0.15em] text-zinc-500">
-              {q.sources.map((s) => (
-                <span key={s} className="border border-white/10 px-2 py-1">
-                  {s}
-                </span>
+      <div className="mx-auto max-w-[1400px] px-8 sm:px-12">
+        <div className="grid grid-cols-1 gap-12 md:grid-cols-12 md:gap-16">
+          <div className="md:col-span-5">
+            <div className="flex items-baseline gap-6 sm:gap-10">
+              {STATS.map((s) => (
+                <div key={s.label} className="flex-1">
+                  <div className="r-display text-[18vw] font-medium leading-none tracking-tight sm:text-[8vw] md:text-[92px]">
+                    {s.value}
+                  </div>
+                  <div className="mt-2 text-xs uppercase tracking-[0.15em] text-[var(--cream)]/60">
+                    {s.label}
+                  </div>
+                </div>
               ))}
             </div>
-          </article>
-        ))}
-      </RevealStack>
+          </div>
+          <div className="md:col-span-7 md:pl-16">
+            <p className="text-balance text-lg leading-relaxed text-[var(--cream)]/80 sm:text-xl">
+              By combining our professional strengths and engaging in
+              exchanges, we have created a cooperative atmosphere in which
+              collaboration thrives. Fueled by enthusiasm, a team of young
+              innovators are poised to craft something extraordinary.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ─── pricing ──────────────────────────────────────────────────────────── */
+
+const PRICING = [
+  {
+    name: "Just design",
+    price: "$1999",
+    period: "/mo",
+    note: "Pause or cancel anytime",
+    features: [
+      "Unlimited projects",
+      "One request at a time",
+      "Average 48 hour delivery",
+      "Easy one-click payments",
+      "Unlimited stock assets",
+    ],
+  },
+  {
+    name: "Design + development",
+    price: "$2499",
+    period: "/mo",
+    note: "Pause or cancel anytime",
+    features: [
+      "Unlimited projects",
+      "One request at a time",
+      "Average 48 hour delivery",
+      "Easy one-click payments",
+      "Webflow development",
+    ],
+    featured: true,
+  },
+] as const;
+
+function Pricing() {
+  return (
+    <section
+      id="pricing"
+      className="bg-[var(--cream)] py-32 text-[var(--matcha-deep)] sm:py-40"
+    >
+      <div className="mx-auto max-w-[1400px] px-8 sm:px-12">
+        <div className="mb-20 max-w-3xl">
+          <div className="font-mono text-xs uppercase tracking-[0.18em] text-[var(--matcha-deep)]/60">
+            (Pricing)
+          </div>
+          <h2 className="r-display mt-4 text-[10vw] font-medium leading-[0.95] tracking-tight sm:text-[6vw] md:text-[85px]">
+            Fueled by <span className="r-italic font-light text-[var(--strawberry-deep)]">enthusiasm</span>, a team of young innovators are poised to craft something extraordinary.
+          </h2>
+        </div>
+
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+          {PRICING.map((p) => (
+            <article
+              key={p.name}
+              className={`flex flex-col border border-[var(--matcha-deep)]/15 p-8 ${
+                "featured" in p && p.featured
+                  ? "bg-[var(--matcha-deep)] text-[var(--cream)]"
+                  : "bg-[var(--cream)]"
+              }`}
+            >
+              <div className="text-sm uppercase tracking-[0.15em] opacity-70">
+                {p.name}
+              </div>
+              <div className="mt-6 flex items-baseline gap-1">
+                <span className="r-display text-6xl font-medium tracking-tight sm:text-7xl">
+                  {p.price}
+                </span>
+                <span className="text-base opacity-60">{p.period}</span>
+              </div>
+              <div className="mt-2 text-sm opacity-60">{p.note}</div>
+              <ul className="mt-8 space-y-3 text-base">
+                {p.features.map((f) => (
+                  <li key={f} className="flex items-center gap-3">
+                    <span className="inline-block h-1.5 w-1.5 bg-current opacity-70" />
+                    {f}
+                  </li>
+                ))}
+              </ul>
+              <div className="mt-10 flex flex-col gap-3 sm:flex-row">
+                <button
+                  className={`flex-1 px-5 py-3 text-sm uppercase tracking-[0.15em] transition-transform hover:scale-[1.02] ${
+                    "featured" in p && p.featured
+                      ? "bg-[var(--cream)] text-[var(--matcha-deep)]"
+                      : "bg-[var(--matcha-deep)] text-[var(--cream)]"
+                  }`}
+                >
+                  Get started
+                </button>
+                <button
+                  className={`flex-1 border px-5 py-3 text-sm uppercase tracking-[0.15em] transition-colors ${
+                    "featured" in p && p.featured
+                      ? "border-[var(--cream)]/30 hover:bg-[var(--cream)] hover:text-[var(--matcha-deep)]"
+                      : "border-[var(--matcha-deep)]/20 hover:bg-[var(--matcha-deep)] hover:text-[var(--cream)]"
+                  }`}
+                >
+                  Book a call
+                </button>
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ─── testimonial ──────────────────────────────────────────────────────── */
+
+function Testimonial() {
+  return (
+    <section className="bg-[var(--matcha-deep)] py-32 text-[var(--cream)] sm:py-40">
+      <div className="mx-auto max-w-[1100px] px-8 text-center sm:px-12">
+        <div className="r-italic text-6xl text-[var(--strawberry-soft)] sm:text-8xl">
+          “
+        </div>
+        <blockquote className="r-display mt-2 text-balance text-2xl font-medium leading-snug tracking-tight sm:text-4xl md:text-5xl">
+          The team behind our project demonstrated exceptional creativity and
+          flawless execution. Their{" "}
+          <span className="r-italic font-light text-[var(--strawberry-soft)]">
+            collaborative
+          </span>{" "}
+          approach and attention to detail truly stand out.
+        </blockquote>
+        <div className="mt-12 flex flex-col items-center gap-1">
+          <div className="text-base">Emma Smith</div>
+          <div className="text-sm opacity-60">— CEO Neeqola</div>
+        </div>
+        <div className="mt-12 flex justify-center gap-8 font-mono text-xs uppercase tracking-[0.18em] text-[var(--cream)]/40">
+          <span>Innovative</span>
+          <span aria-hidden>•</span>
+          <span>Imaginative</span>
+          <span aria-hidden>•</span>
+          <span>Astute</span>
+        </div>
+      </div>
     </section>
   );
 }
@@ -273,28 +432,43 @@ function Queries() {
 
 function Footer() {
   return (
-    <footer className="border-t border-white/10 bg-[#0e1011]">
-      <div className="mx-auto max-w-7xl px-6 py-16 sm:px-10 sm:py-20">
-        <div className="font-display text-[14vw] font-semibold leading-[0.85] tracking-tighter text-zinc-700 sm:text-[12vw] md:text-[140px]">
-          let&apos;s build it
-          <span className="text-[#cbf478]">.</span>
+    <footer className="bg-[var(--matcha-deep)] text-[var(--cream)]">
+      {/* big "Connect with us" CTA row */}
+      <div className="border-t border-[var(--cream)]/10">
+        <div className="mx-auto flex max-w-[1400px] items-end justify-between px-8 py-20 sm:px-12 sm:py-32">
+          <h2 className="r-display text-[14vw] font-medium leading-[0.9] tracking-tight sm:text-[10vw] md:text-[150px]">
+            Connect <br />
+            <span className="r-italic font-light text-[var(--strawberry-soft)]">
+              with us
+            </span>
+          </h2>
+          <Link
+            href="https://github.com/stephenhungg/kali-v0"
+            className="hidden h-32 w-32 items-center justify-center rounded-full border border-[var(--cream)]/20 transition-transform hover:scale-105 md:flex"
+            aria-label="Get in touch"
+          >
+            <span className="text-3xl">→</span>
+          </Link>
         </div>
-        <div className="mt-12 flex flex-col gap-4 border-t border-white/10 pt-8 md:flex-row md:items-end md:justify-between">
-          <div>
-            <div className="flex items-center gap-2">
-              <KaliMark className="h-4 w-4 text-[#cbf478]" />
-              <span className="font-display text-base font-semibold tracking-tight kali-mark">
-                kali
-              </span>
-            </div>
-            <p className="mt-2 max-w-md text-sm leading-relaxed text-zinc-500">
-              v1 prototype · agentic context layer for nonprofits · scope at{" "}
-              <code className="text-zinc-300">data/v1-prototype-scope.md</code>
-            </p>
-          </div>
-          <div className="font-mono text-[11px] uppercase tracking-[0.18em] text-zinc-500">
-            built by stephen, matty, frank, nicole · hackdavis 2026
-          </div>
+      </div>
+
+      {/* gigantic wordmark marquee */}
+      <div className="overflow-hidden border-t border-[var(--cream)]/10">
+        <div className="r-display flex animate-r-marquee whitespace-nowrap py-6 text-[18vw] font-medium tracking-tighter text-[var(--cream)] sm:text-[16vw]">
+          {Array.from({ length: 6 }).map((_, i) => (
+            <span key={i} className="mx-6 inline-flex items-center gap-6">
+              kali
+              <span className="text-[var(--strawberry-deep)]">✦</span>
+            </span>
+          ))}
+        </div>
+      </div>
+
+      {/* bottom bar */}
+      <div className="border-t border-[var(--cream)]/10">
+        <div className="mx-auto flex max-w-[1400px] flex-col gap-2 px-8 py-6 text-xs uppercase tracking-[0.15em] text-[var(--cream)]/60 sm:flex-row sm:items-center sm:justify-between sm:px-12">
+          <span>© Kali — HackDavis 2026</span>
+          <span>Built by Stephen, Matty, Frank, Nicole</span>
         </div>
       </div>
     </footer>
