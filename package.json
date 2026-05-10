@@ -10,7 +10,9 @@
     "seed:small": "bun scripts/generate-seed.ts small",
     "seed": "bun scripts/generate-seed.ts medium",
     "seed:large": "bun scripts/generate-seed.ts large",
-    "agent": "bun lib/agent/runtime.ts medium",
+    "agent": "bun lib/agent/runtime.ts",
+    "sanity": "bun scripts/sanity.ts",
+    "demo": "bun scripts/demo.ts",
     "test": "bun test"
   },
   "dependencies": {

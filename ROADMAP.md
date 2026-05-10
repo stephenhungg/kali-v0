@@ -25,7 +25,7 @@ prioritized feature list for v1 prototype. each item is **implement → test →
 
 - [x] **F1.1** `lib/connectors/base.ts` — `Connector` interface, `ToolDefinition` type, registration pattern (`lib/connectors/registry.ts`)
 - [x] **F1.2** mock data loader — `lib/connectors/seed-loader.ts` reads `data/seed/<size>/<tool>.json`, validates against zod schema, caches by `(baseDir, size, connectorId)`
-- [ ] **F1.3** sync-state tracker (in-memory for now, db-backed later)
+- [x] **F1.3** sync-state tracker (in-memory for now, db-backed later) — `lib/connectors/sync-state.ts` per-connector status (`never|syncing|connected|error`) + `lastSyncAt` + `lastSuccessAt` + `recordCount` + `lastError`. `trackInit()` wraps connector init. Exposed via GET `/api/connectors/status` for the source-pulse panel. 13 tests passing.
 - [x] **F1.4** zod schema convention — every connector exports `<tool>.schema.ts` (reference: `bloomerang.schema.ts`)
 
 ## phase 2 — seed data: one coherent fictional org
@@ -119,8 +119,8 @@ each demoable end-to-end: query → tools fire → citations land.
 
 ## current cursor
 
-**building right now:** phase 4 context layer cont. (F4.2-4.5 embeddings/retrieval/DSL — likely defer past v1; current tools cover demo). Frontend lanes (F5.5 / F5.7) blocked on chat UI.
+**backend complete for v1 demo.** F4.2-4.5 (embeddings/pgvector/retrieval/DSL) deferred past v1 — current tool coverage exceeds demo needs. Frontend lanes (F5.5 / F5.7) waiting on chat UI.
 
-**last shipped:** all 11 connectors (F3.1–F3.11) + F4.1 entity resolution (`context.resolveEntity` + `context.entityProfile` dossier tool), F4.6 audit log, F5.1–5.3 anthropic SDK + prompt caching + tool registry + system prompt with dynamic inventory, F5.4 streaming SSE chat endpoint, F5.6 parallel tool-use, F5.8 conversation persistence. **387 passing tests across 17 test files.** 12 connectors total (11 SaaS + 1 meta). Frontend can hit POST /api/chat with `{query, conversationId?}` and consume the event stream.
+**last shipped:** all 11 SaaS connectors + 1 meta-context connector (F3.1–F3.11 + F4.1), F1.3 sync-state tracker w/ status endpoint, F4.6 audit log, F5.1–5.3 (anthropic SDK + prompt caching + tool registry + system prompt), F5.4 streaming SSE chat endpoint, F5.6 parallel tool-use, F5.8 conversation persistence. **399 passing tests across 18 test files.** 71 tools wired to Claude. `bun run sanity` boots the full stack offline; `bun run demo` fires the 5 wow queries against live Anthropic when ANTHROPIC_API_KEY is set.
 
 frank/nicole — you don't need to wait on any of this to start the landing page. work on `app/page.tsx` and add components in `components/marketing/`. avoid touching `lib/` for now (that's tenzin's lane).
