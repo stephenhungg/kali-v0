@@ -49,7 +49,7 @@ prioritized feature list for v1 prototype. each item is **implement → test →
 each connector exposes its query functions per the scope, validates with zod, returns hydrated typed records, and self-registers with `lib/connectors/registry.ts`. test coverage is mandatory — see `lib/connectors/bloomerang.test.ts` for the pattern (schema validation + pure-query tests + tool-handler audit assertions).
 
 - [x] **F3.1** bloomerang (reference connector — sets pattern for all others). `lib/connectors/bloomerang.{schema,ts,test}.ts`. 6 tools: `searchDonors`, `getDonor`, `getDonations`, `getRecentDonations`, `getEngagementScore`, `getOnlineDonationForms`. 41 tests passing.
-- [ ] **F3.2** salesforce
+- [x] **F3.2** salesforce npsp. `lib/connectors/salesforce.{schema,ts,test}.ts`. 8 tools: `getAccount`, `searchAccounts`, `getContact`, `searchContacts`, `getOpportunitiesForContact`, `getRelatedAccount`, `getCampaignMembers`, `searchCampaigns`. 45 tests passing.
 - [ ] **F3.3** m365
 - [ ] **F3.4** zoom
 - [ ] **F3.5** sharepoint
@@ -119,8 +119,8 @@ each demoable end-to-end: query → tools fire → citations land.
 
 ## current cursor
 
-**building right now:** phase 3 — porting the remaining 10 connectors (salesforce, m365, zoom, sharepoint, instrumentl, quickbooks, solana, powerbi, powerautomate, knowbe4) onto the bloomerang reference pattern.
+**building right now:** phase 3 — 9 connectors left (m365, zoom, sharepoint, instrumentl, quickbooks, solana, powerbi, powerautomate, knowbe4) on the bloomerang reference pattern.
 
-**last shipped:** F0.4 drizzle schema, F0.5 project layout, F0.6 env contract, F1.1 connector base interface + registry, F1.2 seed loader (size-aware + cache-keyed), F1.4 zod schema convention, F2.* full master entity graph + 11 connector seeds (small/medium/large), F3.1 bloomerang reference connector with 41 passing tests. `bun test` runs the suite.
+**last shipped:** F0.4 drizzle schema, F0.5 project layout, F0.6 env contract, F1.1 connector base interface + registry, F1.2 seed loader (size-aware + cache-keyed), F1.4 zod schema convention, F2.* full master entity graph + 11 connector seeds (small/medium/large), F3.1 bloomerang + F3.2 salesforce connectors with 86 passing tests. Shared `_tool-factory.ts` powers both. `bun test` runs the suite.
 
 frank/nicole — you don't need to wait on any of this to start the landing page. work on `app/page.tsx` and add components in `components/marketing/`. avoid touching `lib/` for now (that's tenzin's lane).
