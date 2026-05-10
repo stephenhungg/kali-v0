@@ -6,21 +6,30 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "seed:small": "bun scripts/generate-seed.ts small",
+    "seed": "bun scripts/generate-seed.ts medium",
+    "seed:large": "bun scripts/generate-seed.ts large",
+    "agent": "bun lib/agent/runtime.ts medium"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.95.1",
+    "@faker-js/faker": "^10.4.0",
     "drizzle-orm": "^0.45.2",
+    "framer-motion": "^12.38.0",
     "next": "16.2.6",
     "react": "19.2.4",
     "react-dom": "19.2.4",
+    "seedrandom": "^3.0.5",
     "zod": "^4.4.3"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
+    "@types/bun": "^1.3.13",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "@types/seedrandom": "^3.0.8",
     "drizzle-kit": "^0.31.10",
     "eslint": "^9",
     "eslint-config-next": "16.2.6",
