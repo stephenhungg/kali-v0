@@ -27,6 +27,9 @@ export default async function DashboardLayout({ children }: { children: ReactNod
             <Link href="/chat" className="font-mono text-[10px] uppercase tracking-[0.14em] text-[var(--gray-ink)] hover:text-[var(--matcha-deep)]">
               chat
             </Link>
+            <Link href="/crypto" className="font-mono text-[10px] uppercase tracking-[0.14em] text-[var(--gray-ink)] hover:text-[var(--matcha-deep)]">
+              crypto
+            </Link>
           </nav>
         </div>
 

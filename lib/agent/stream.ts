@@ -71,6 +71,13 @@ export interface StreamRunOptions {
   userId?: string;
   conversationId?: string;
   /**
+   * Prior conversation turns to seed the agent with — flat (role + content)
+   * shape from the conversation store. Tool-use blocks from earlier turns
+   * are deliberately dropped (we keep the final answer text only) so the
+   * model has the dialog context without re-validating tool_use_ids.
+   */
+  priorMessages?: Array<{ role: "user" | "assistant"; content: string }>;
+  /**
    * Override the Anthropic HTTP call. Used by tests + benchmarks. The
    * function receives the request body and returns a fake `Response`-like
    * object's `.json()` payload directly.
@@ -162,7 +169,12 @@ export async function* runStream(
     const anthropicTools = toAnthropicTools(tools);
     const toolByName = new Map(tools.map((t) => [t.name, t] as const));
 
+    // Multi-turn: seed with prior conversation turns (text only — tool-use
+    // blocks from past turns are dropped to avoid stale tool_use_id pairing).
     const messages: AnthropicMessage[] = [
+      ...(opts.priorMessages ?? [])
+        .filter(m => m.content && m.content.trim().length > 0)
+        .map(m => ({ role: m.role, content: m.content })),
       { role: "user", content: opts.query },
     ];
     let totalInput = 0;

@@ -8,9 +8,10 @@ import type { Connector, ConnectorId, ToolDefinition } from "./base";
 const registry = new Map<ConnectorId, Connector>();
 
 export function registerConnector(connector: Connector): void {
-  if (registry.has(connector.id)) {
-    throw new Error(`connector ${connector.id} already registered`);
-  }
+  // Idempotent: replace if already registered. This makes Next.js HMR safe —
+  // when a connector module is re-evaluated, its local `registered` flag
+  // resets but the registry persists. Without this, the second eval throws.
+  // In production (no HMR), this still only fires once per id.
   registry.set(connector.id, connector);
 }
 

@@ -3,7 +3,7 @@
 import { Suspense, useEffect, useRef, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import { ChatTranscript } from "../../components/chat/ChatTranscript";
-import { Composer } from "../../components/chat/Composer";
+import { Composer, type ComposerHandle } from "../../components/chat/Composer";
 import { ConnectorDrawer } from "../../components/chat/ConnectorDrawer";
 import { ConnectorMenu } from "../../components/chat/ConnectorMenu";
 import { EmptyState } from "../../components/chat/EmptyState";
@@ -20,12 +20,13 @@ export default function ChatPage() {
 }
 
 function ChatPageBody() {
-  const { messages, streaming, pulse, send, stop } = useAgentStream();
+  const { messages, streaming, pulse, send, stop, reset } = useAgentStream();
   const [draft, setDraft] = useState("");
   const [activeConnector, setActiveConnector] = useState<string | null>(null);
 
   const [showSourcesOnMobile, setShowSourcesOnMobile] = useState(false);
   const [showReceiptsOnMobile, setShowReceiptsOnMobile] = useState(false);
+  const composerRef = useRef<ComposerHandle>(null);
 
   // Auto-fire a query passed via ?seed= (used by Dashboard QuickAsk).
   const sp = useSearchParams();
@@ -40,16 +41,47 @@ function ChatPageBody() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [sp]);
 
+  // After streaming completes, return focus to the composer so the user
+  // can immediately type their follow-up. Standard ChatGPT-like UX.
+  const wasStreamingRef = useRef(false);
+  useEffect(() => {
+    if (wasStreamingRef.current && !streaming) {
+      // Tiny delay so the textarea isn't disabled at the moment we focus.
+      setTimeout(() => composerRef.current?.focus(), 30);
+    }
+    wasStreamingRef.current = streaming;
+  }, [streaming]);
+
+  // Esc clears the draft (without losing the conversation).
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape" && draft.length > 0) {
+        setDraft("");
+      }
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [draft]);
+
   const submit = () => {
     const text = draft.trim();
-    if (!text) return;
+    if (!text || streaming) return;
     send(text);
     setDraft("");
   };
 
   const pickPlaybook = (text: string) => {
+    if (streaming) return;
     setDraft("");
     send(text);
+  };
+
+  const onNewChat = () => {
+    if (streaming) stop();
+    seedFiredRef.current = false;
+    reset();
+    setDraft("");
+    setTimeout(() => composerRef.current?.focus(), 30);
   };
 
   // Citation chip clicks — for v0, just opens the connector drawer matching
@@ -66,33 +98,53 @@ function ChatPageBody() {
   };
 
   const empty = messages.length === 0;
+  const turnCount = messages.filter(m => m.role === "user").length;
 
   return (
-    <div className="flex h-[calc(100dvh-64px)] flex-col">
-      <div className="flex items-center justify-between gap-2 border-b border-[var(--mint-line)] bg-[var(--surface)] px-4 py-2 lg:hidden">
-        <button
-          type="button"
-          onClick={() => setShowSourcesOnMobile(true)}
-          className="rounded-full border border-[var(--mint-line)] bg-[var(--surface)] px-3 py-1.5 text-[11px] text-[var(--matcha-deep)]"
-        >
-          Sources
-        </button>
-        <button
-          type="button"
-          onClick={() => setShowReceiptsOnMobile(v => !v)}
-          className="rounded-full border border-[var(--mint-line)] bg-[var(--surface)] px-3 py-1.5 text-[11px] text-[var(--matcha-deep)]"
-        >
-          {showReceiptsOnMobile ? "hide receipts" : "show receipts"}
-        </button>
+    <div className="flex min-h-0 flex-1 flex-col">
+      {/* Top utility bar — always present, shows turn count + new chat button */}
+      <div className="flex shrink-0 items-center justify-between gap-2 border-b border-[var(--mint-line)] bg-[var(--surface)] px-4 py-2 sm:px-6">
+        <div className="flex items-center gap-2 lg:hidden">
+          <button
+            type="button"
+            onClick={() => setShowSourcesOnMobile(true)}
+            className="rounded-full border border-[var(--mint-line)] bg-[var(--surface)] px-3 py-1.5 text-[11px] text-[var(--matcha-deep)]"
+          >
+            sources
+          </button>
+          <button
+            type="button"
+            onClick={() => setShowReceiptsOnMobile(v => !v)}
+            className="rounded-full border border-[var(--mint-line)] bg-[var(--surface)] px-3 py-1.5 text-[11px] text-[var(--matcha-deep)]"
+          >
+            {showReceiptsOnMobile ? "hide receipts" : "receipts"}
+          </button>
+        </div>
+        <div className="hidden flex-1 items-center gap-2 font-mono text-[10px] uppercase tracking-[0.14em] text-[var(--gray-ink)] lg:flex">
+          {empty ? (
+            <span>start a conversation · or pick a playbook below</span>
+          ) : (
+            <span>{turnCount} turn{turnCount === 1 ? "" : "s"} · single thread</span>
+          )}
+        </div>
+        {!empty && (
+          <button
+            type="button"
+            onClick={onNewChat}
+            className="rounded border border-[var(--mint-line)] bg-[var(--surface)] px-3 py-1.5 font-mono text-[10px] uppercase tracking-[0.14em] text-[var(--matcha-deep)] transition-colors hover:border-[var(--matcha-mid)] hover:bg-[var(--mint-pale)]"
+          >
+            + new chat
+          </button>
+        )}
       </div>
 
-      <div className="grid flex-1 grid-cols-1 overflow-hidden lg:grid-cols-[280px_minmax(0,1fr)_360px]">
-        <div className="hidden lg:block">
+      <div className="grid min-h-0 flex-1 grid-cols-1 overflow-hidden lg:grid-cols-[280px_minmax(0,1fr)_360px]">
+        <div className="hidden min-h-0 lg:block">
           <ConnectorMenu pulse={pulse} onOpenConnector={setActiveConnector} />
         </div>
 
-        <main className="flex min-w-0 flex-col overflow-hidden">
-          <div className="flex-1 overflow-hidden">
+        <main className="flex min-h-0 min-w-0 flex-col overflow-hidden">
+          <div className="min-h-0 flex-1 overflow-hidden">
             {empty ? (
               <div className="h-full overflow-y-auto">
                 <EmptyState onPick={pickPlaybook} />
@@ -111,6 +163,7 @@ function ChatPageBody() {
           )}
 
           <Composer
+            ref={composerRef}
             value={draft}
             onChange={setDraft}
             onSubmit={submit}
@@ -119,7 +172,7 @@ function ChatPageBody() {
           />
         </main>
 
-        <div className="hidden border-l border-[var(--mint-line)] lg:block">
+        <div className="hidden min-h-0 border-l border-[var(--mint-line)] lg:block">
           <ReceiptsPanel messages={messages} onActivateCitation={onActivateCitation} />
         </div>
       </div>

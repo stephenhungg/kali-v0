@@ -5,7 +5,13 @@ import { cookies } from "next/headers";
 import { getOnboardingState } from "../../lib/supabase/server";
 
 /**
- * Chat-app layout — minimal header bar over the three-region grid.
+ * Chat-app layout — locked-viewport flex column.
+ *
+ * Header at top (h-16, in normal flow), the rest of the viewport `flex-1`
+ * for the chat shell. No more `pt-16` + fixed-header dance — that gave the
+ * top utility bar nowhere to live and pushed the composer off-screen on
+ * smaller viewports. Internal regions use `min-h-0` so they actually
+ * shrink instead of overflowing.
  *
  * Auth gate: requires Supabase session AND completed onboarding. Routes
  * unauthenticated visitors to /onboarding; routes mid-flow to last step.
@@ -39,16 +45,16 @@ export default async function ChatLayout({ children }: { children: ReactNode }) 
   }
 
   return (
-    <div className="chat-surface min-h-screen">
+    <div className="chat-surface flex h-[100dvh] flex-col overflow-hidden">
       <ChatHeader tenantName={tenantName} isDemo={isDemo} />
-      <div className="pt-[64px]">{children}</div>
+      <div className="flex min-h-0 flex-1 flex-col">{children}</div>
     </div>
   );
 }
 
 function ChatHeader({ tenantName, isDemo }: { tenantName: string; isDemo: boolean }) {
   return (
-    <header className="fixed inset-x-0 top-0 z-40 flex h-16 items-center justify-between border-b border-[var(--mint-line)] bg-[var(--surface)]/95 px-4 backdrop-blur sm:px-6">
+    <header className="flex h-16 shrink-0 items-center justify-between border-b border-[var(--mint-line)] bg-[var(--surface)]/95 px-4 backdrop-blur sm:px-6">
       <div className="flex items-center gap-4">
         <Link href="/" className="flex items-center gap-2.5">
           <KaliMark className="h-5 w-5 text-[var(--matcha-deep)]" />
@@ -60,6 +66,9 @@ function ChatHeader({ tenantName, isDemo }: { tenantName: string; isDemo: boolea
           </Link>
           <Link href="/chat" className="rounded bg-[var(--mint-pale)] px-2.5 py-1 font-mono text-[10px] uppercase tracking-[0.14em] text-[var(--matcha-deep)]">
             chat
+          </Link>
+          <Link href="/crypto" className="font-mono text-[10px] uppercase tracking-[0.14em] text-[var(--gray-ink)] hover:text-[var(--matcha-deep)]">
+            crypto
           </Link>
         </nav>
       </div>

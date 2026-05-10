@@ -61,13 +61,20 @@ export async function POST(req: Request) {
     );
   }
 
-  const { conversation } = getOrCreateConversation(body.conversationId, {
+  const { conversation } = await getOrCreateConversation(body.conversationId, {
     tenantId: body.tenantId,
     userId: body.userId,
     title: body.title,
   });
 
-  appendMessage({
+  // Snapshot the existing turns BEFORE we append the new user message — these
+  // become the agent's seed history so it answers in the context of the whole
+  // conversation, not just the latest query.
+  const priorMessages = conversation.messages
+    .filter(m => m.role === "user" || m.role === "assistant")
+    .map(m => ({ role: m.role as "user" | "assistant", content: m.content }));
+
+  await appendMessage({
     conversationId: conversation.id,
     role: "user",
     content: body.query,
@@ -76,6 +83,7 @@ export async function POST(req: Request) {
   const stream = runStream({
     apiKey,
     query: body.query,
+    priorMessages,
     tenantId: conversation.tenantId,
     userId: conversation.userId,
     conversationId: conversation.id,
@@ -114,7 +122,7 @@ export async function POST(req: Request) {
           break;
         }
         case "text": {
-          const msg = appendMessage({
+          const msg = await appendMessage({
             conversationId: conversation.id,
             role: "assistant",
             content: ev.text,
@@ -126,7 +134,7 @@ export async function POST(req: Request) {
         }
         case "done":
           if (persisted.assistantMessageId) {
-            updateMessage({
+            await updateMessage({
               conversationId: conversation.id,
               messageId: persisted.assistantMessageId,
               toolCalls: persisted.toolCalls,
@@ -136,7 +144,7 @@ export async function POST(req: Request) {
             // No `text` ever fired (model returned empty content array,
             // for instance). Persist whatever we have so the conversation
             // still records the run.
-            appendMessage({
+            await appendMessage({
               conversationId: conversation.id,
               role: "assistant",
               content: ev.answer || "(empty response)",
@@ -146,7 +154,7 @@ export async function POST(req: Request) {
           }
           break;
         case "error":
-          appendMessage({
+          await appendMessage({
             conversationId: conversation.id,
             role: "assistant",
             content: `[error] ${ev.message}`,
@@ -184,7 +192,7 @@ export async function GET(req: Request) {
       { status: 400 },
     );
   // Pure read — no get-or-create side effect. Unknown id → 404.
-  const conversation = getConversation(id);
+  const conversation = await getConversation(id);
   if (!conversation) {
     return NextResponse.json({ error: "not found" }, { status: 404 });
   }

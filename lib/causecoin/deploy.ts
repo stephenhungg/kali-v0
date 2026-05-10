@@ -29,9 +29,21 @@ import {
 } from "@solana/web3.js";
 import {
   createInitializeMintInstruction,
+  createInitializeMetadataPointerInstruction,
+  createMintToInstruction,
+  createAssociatedTokenAccountInstruction,
+  getAssociatedTokenAddressSync,
+  getMintLen,
+  ExtensionType,
   TOKEN_2022_PROGRAM_ID,
-  MINT_SIZE,
+  LENGTH_SIZE,
+  TYPE_SIZE,
 } from "@solana/spl-token";
+import {
+  createInitializeInstruction as createInitializeMetadataInstruction,
+  pack,
+  type TokenMetadata,
+} from "@solana/spl-token-metadata";
 import { isMemoryMode, memoryStore, uuid, type MemCauseCoin } from "@/lib/db/memory";
 import {
   getOrCreateTreasuryWallet,
@@ -76,19 +88,42 @@ export async function launchCauseCoin(
   tenant: TenantRecord,
   opts: LaunchOptions,
 ): Promise<LaunchResult> {
-  // Reject if a coin already exists for this tenant.
+  // If a coin already exists for this tenant, return it UNLESS it's a stale
+  // simulated record and the env now has live-mode keys — in that case we
+  // wipe the simulated row + its dependent state so the new launch can
+  // upgrade to onchain.
   if (isMemoryMode()) {
-    const existing = memoryStore.get("causeCoins").find((c) => c.tenantId === tenant.id);
-    if (existing) {
-      return {
-        coin: existing,
-        explorerUrls: {
-          mint: explorerFor(existing.mint),
-          pool: explorerFor(existing.bondingCurvePool),
-          deployTx: existing.launchTxSig ? explorerFor(existing.launchTxSig, "tx") : null,
-        },
-        message: `coin already deployed for ${tenant.slug} — returning existing record`,
-      };
+    const coins = memoryStore.get("causeCoins");
+    const existingIdx = coins.findIndex((c) => c.tenantId === tenant.id);
+    if (existingIdx >= 0) {
+      const existing = coins[existingIdx]!;
+      const wantLive = Boolean(process.env.KALI_SOLANA_DEVNET_SECRET_KEY);
+      const isSimulated = !existing.launchTxSig;
+      if (isSimulated && wantLive) {
+        // Wipe the simulated coin + its trades + its holders so the next
+        // launch is clean.
+        coins.splice(existingIdx, 1);
+        const trades = memoryStore.get("causeCoinTrades");
+        for (let i = trades.length - 1; i >= 0; i--) {
+          if (trades[i]!.coinId === existing.id) trades.splice(i, 1);
+        }
+        const holders = memoryStore.get("causeCoinHolders");
+        for (let i = holders.length - 1; i >= 0; i--) {
+          if (holders[i]!.coinId === existing.id) holders.splice(i, 1);
+        }
+      } else {
+        return {
+          coin: existing,
+          explorerUrls: {
+            mint: explorerFor(existing.mint),
+            pool: explorerFor(existing.bondingCurvePool),
+            deployTx: existing.launchTxSig ? explorerFor(existing.launchTxSig, "tx") : null,
+          },
+          message: existing.launchTxSig
+            ? `coin already deployed onchain for ${tenant.slug} — returning existing record`
+            : `simulated coin already exists for ${tenant.slug}; set KALI_SOLANA_DEVNET_SECRET_KEY + restart to upgrade`,
+        };
+      }
     }
   }
 
@@ -108,6 +143,13 @@ export async function launchCauseCoin(
     communityFundWallet: fund.pubkey,
     platformReserveWallet: reserve.pubkey,
     feeBps: opts.feeBps ?? 100,
+    symbol: opts.symbol,
+    name: opts.name,
+    uri: `https://${process.env.KALI_COIN_HOST ?? "coin.kalilabs.ai"}/${tenant.slug}/metadata.json`,
+    cause: opts.cause ?? meta.properties.cause,
+    ein: tenant.ein,
+    irsStatus: tenant.taxStatus,
+    kaliTenantId: tenant.id,
   });
 
   const row: MemCauseCoin = {
@@ -164,28 +206,42 @@ interface DeployResult {
   txSignature: string | null;
 }
 
-async function deployOnchain(opts: {
+interface DeployOnchainOpts {
   treasuryWallet: string;
   communityFundWallet: string;
   platformReserveWallet: string;
   feeBps: number;
-}): Promise<DeployResult> {
+  symbol: string;
+  name: string;
+  uri: string;
+  cause: string;
+  ein: string;
+  irsStatus: string;
+  kaliTenantId: string;
+}
+
+const INITIAL_SUPPLY_TOKENS = 1_000_000_000n; // 1B tokens, decimals=9
+const DECIMALS = 9;
+
+async function deployOnchain(opts: DeployOnchainOpts): Promise<DeployResult> {
+  const haveKey = Boolean(process.env.KALI_SOLANA_DEVNET_SECRET_KEY);
   const funder = getPlatformFunder();
   const connection: Connection = getConnection(NETWORK);
 
-  // The mint keypair is fresh on every launch, so subsequent demo runs each
-  // produce a new $RVRT clone. Persisted in the cause_coins row.
+  // Fresh mint + pool pubkeys per launch.
   const mintKeypair = Keypair.generate();
   const poolKeypair = Keypair.generate();
 
-  // If the funder has no SOL on devnet (faucet not run), we can't actually
-  // deploy. Surface a "simulated" record but still produce realistic-looking
-  // pubkeys + an explorer link so the demo flow stays glassy.
   let txSignature: TransactionSignature | null = null;
   try {
     const balance = await connection.getBalance(funder.publicKey).catch(() => 0);
-    if (balance < 5_000_000) {
-      // < 0.005 SOL — not enough to mint + create pool. Simulate.
+    if (balance < 20_000_000) {
+      // Need ~0.02 SOL for mint init + metadata extension + initial supply.
+      if (haveKey) {
+        throw new Error(
+          `live deploy requested but funder ${funder.publicKey.toBase58()} only has ${(balance / 1e9).toFixed(6)} SOL. need at least 0.02 SOL. airdrop at https://faucet.solana.com or run: bun run wallet:balance`,
+        );
+      }
       return {
         mintPubkey: mintKeypair.publicKey.toBase58(),
         poolPubkey: poolKeypair.publicKey.toBase58(),
@@ -193,39 +249,122 @@ async function deployOnchain(opts: {
       };
     }
 
-    // Initialize the SPL mint. Real Meteora deploy would be a separate tx
-    // chain — for the v1 demo we just initialize the mint and skip the
-    // bonding curve config (it's faked via the indexer's pricing logic).
-    const lamports = await connection.getMinimumBalanceForRentExemption(MINT_SIZE);
-    const ix = createInitializeMintInstruction(
-      mintKeypair.publicKey,
-      9, // decimals
-      funder.publicKey,
-      funder.publicKey,
-      TOKEN_2022_PROGRAM_ID,
-    );
-    const { SystemProgram } = await import("@solana/web3.js");
-    const createAcc = SystemProgram.createAccount({
-      fromPubkey: funder.publicKey,
-      newAccountPubkey: mintKeypair.publicKey,
-      space: MINT_SIZE,
-      lamports,
-      programId: TOKEN_2022_PROGRAM_ID,
-    });
+    // ─── 1. Build the on-chain TokenMetadata struct ─────────────────────
+    const treasuryPub = new PublicKey(opts.treasuryWallet);
+    const metadata: TokenMetadata = {
+      mint: mintKeypair.publicKey,
+      name: `${opts.name} ($${opts.symbol})`,
+      symbol: opts.symbol,
+      uri: opts.uri,
+      additionalMetadata: [
+        ["cause", opts.cause],
+        ["ein", opts.ein],
+        ["irs_status", opts.irsStatus],
+        ["kali_tenant_id", opts.kaliTenantId],
+        ["disclaimer", "Speculative purchase. NOT a donation. NOT tax-deductible."],
+      ],
+      // Update authority lives on the funder for v1; production rotates to a
+      // tenant-controlled key + eventually renounces.
+      updateAuthority: funder.publicKey,
+    };
 
+    // Token-2022 metadata is stored TLV-encoded INSIDE the mint account.
+    // Total mint size = mintLen (with extensions) + LENGTH_SIZE + TYPE_SIZE +
+    // pack(metadata).length.
+    const extensions = [ExtensionType.MetadataPointer];
+    const mintLen = getMintLen(extensions);
+    const metadataLen = TYPE_SIZE + LENGTH_SIZE + pack(metadata).length;
+    const totalLen = mintLen + metadataLen;
+
+    const lamports = await connection.getMinimumBalanceForRentExemption(totalLen);
+    const { SystemProgram, sendAndConfirmTransaction } = await import(
+      "@solana/web3.js"
+    );
+
+    // ─── 2. Single tx: createAccount + initMetadataPointer + initMint +
+    //                   initMetadata + create treasury ATA + mintTo ──────
+    // (We keep mint init + metadata init in the SAME tx as account creation
+    //  because metadata init reads the mint's authority field, which is set
+    //  by initMint.)
     const tx = new Transaction();
     tx.feePayer = funder.publicKey;
+
+    tx.add(
+      SystemProgram.createAccount({
+        fromPubkey: funder.publicKey,
+        newAccountPubkey: mintKeypair.publicKey,
+        space: mintLen, // only the mint+ext part — metadata is appended via realloc
+        lamports,
+        programId: TOKEN_2022_PROGRAM_ID,
+      }),
+      // Metadata pointer points to the mint itself (self-describing token).
+      createInitializeMetadataPointerInstruction(
+        mintKeypair.publicKey,
+        funder.publicKey,
+        mintKeypair.publicKey, // metadata lives ON the mint
+        TOKEN_2022_PROGRAM_ID,
+      ),
+      // Initialize the mint (sets decimals, mint authority, freeze authority).
+      createInitializeMintInstruction(
+        mintKeypair.publicKey,
+        DECIMALS,
+        funder.publicKey,
+        null, // no freeze authority — guarantees we can't blacklist holders
+        TOKEN_2022_PROGRAM_ID,
+      ),
+      // Initialize the metadata in the mint account.
+      createInitializeMetadataInstruction({
+        programId: TOKEN_2022_PROGRAM_ID,
+        metadata: mintKeypair.publicKey,
+        updateAuthority: funder.publicKey,
+        mint: mintKeypair.publicKey,
+        mintAuthority: funder.publicKey,
+        name: metadata.name,
+        symbol: metadata.symbol,
+        uri: metadata.uri,
+      }),
+      // Create the tenant treasury's associated token account for this mint.
+      createAssociatedTokenAccountInstruction(
+        funder.publicKey, // payer
+        getAssociatedTokenAddressSync(
+          mintKeypair.publicKey,
+          treasuryPub,
+          true,
+          TOKEN_2022_PROGRAM_ID,
+        ),
+        treasuryPub,
+        mintKeypair.publicKey,
+        TOKEN_2022_PROGRAM_ID,
+      ),
+      // Mint the entire initial supply directly to the treasury ATA. (In a
+      // real Meteora DBC flow, ~80% would go to the bonding curve pool; for
+      // v1 the curve is server-side so the supply lives on the treasury.)
+      createMintToInstruction(
+        mintKeypair.publicKey,
+        getAssociatedTokenAddressSync(
+          mintKeypair.publicKey,
+          treasuryPub,
+          true,
+          TOKEN_2022_PROGRAM_ID,
+        ),
+        funder.publicKey,
+        INITIAL_SUPPLY_TOKENS * BigInt(10 ** DECIMALS),
+        [],
+        TOKEN_2022_PROGRAM_ID,
+      ),
+    );
+
     const { blockhash } = await connection.getLatestBlockhash("confirmed");
     tx.recentBlockhash = blockhash;
-    tx.add(createAcc, ix);
 
-    const { sendAndConfirmTransaction } = await import("@solana/web3.js");
-    txSignature = await sendAndConfirmTransaction(connection, tx, [funder, mintKeypair], {
-      commitment: "confirmed",
-    });
+    txSignature = await sendAndConfirmTransaction(
+      connection,
+      tx,
+      [funder, mintKeypair],
+      { commitment: "confirmed" },
+    );
   } catch (e) {
-    // Silently fall back to simulated. The error is surfaced via the absence
-    // of `launchTxSig` in the resulting row.
+    if (haveKey) throw e;
     console.error("[causecoin/deploy] live path failed, simulating:", (e as Error).message);
     txSignature = null;
   }

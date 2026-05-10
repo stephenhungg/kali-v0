@@ -26,7 +26,7 @@ export async function GET(req: Request) {
     ? Math.min(Math.max(limitNum, 1), 200)
     : 50;
 
-  const conversations = listConversations({ tenantId, userId, limit });
+  const conversations = await listConversations({ tenantId, userId, limit });
   return NextResponse.json({
     count: conversations.length,
     // Strip messages for the list view — keeps the response small.
@@ -55,7 +55,7 @@ export async function POST(req: Request) {
   } catch {
     // Empty body is fine — defaults apply.
   }
-  const c = createConversation({
+  const c = await createConversation({
     tenantId: body.tenantId,
     userId: body.userId,
     title: body.title,
