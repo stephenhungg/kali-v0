@@ -119,8 +119,44 @@ each demoable end-to-end: query → tools fire → citations land.
 
 ## current cursor
 
-**backend feature-complete.** Only F4.5 (typed query DSL) deferred — current tool surface gives the agent fully-typed structured queries per connector, so a separate DSL is duplicate work for v1. Frontend lanes (F5.5 / F5.7) waiting on chat UI.
+**🟢 backend feature-complete vs the v1 spec.** Every phase 1–5 backend item is shipped. Frontend lanes (F5.5 / F5.7 / phase 6) are next.
 
-**last shipped:** all 11 SaaS connectors + context meta-connector with 4 cross-source tools (F3.1–F3.11 + F4.1 + F4.2-4.4), F1.3 sync-state tracker w/ status endpoint, F4.6 audit log, F5.1–5.3 (anthropic SDK + prompt caching + tool registry + dynamic system prompt), F5.4 streaming SSE chat endpoint, F5.6 parallel tool-use, F5.8 conversation persistence. **437 passing tests across 21 test files.** 73 tools wired to Claude. `bun run sanity` boots offline; `bun run demo` fires the 5 wow queries against live Anthropic.
+### what's done (513 tests passing)
+
+- **All 11 SaaS connectors** (F3.1–F3.11) on the framework: bloomerang, salesforce, m365, zoom, sharepoint, instrumentl, quickbooks, solana (live devnet path env-gated), powerbi, powerautomate, knowbe4. **74 tools** wired to Claude.
+- **`context` meta-connector** with 5 cross-source tools (F4.1 entity resolver + dossier, F4.2-4.4 embeddings + vector store + semantic search, F4.5 cross-source query DSL with multi-source intersection on kali_entity_id).
+- **Audit log** (F4.6) per-tenant, append-only, CSV export.
+- **Sync-state tracker** (F1.3) feeding the source-pulse panel.
+- **Agent runtime** (F5.1–5.3) on `claude-sonnet-4-6` with prompt caching + parallel tool use + dynamic system prompt + zod→JSON Schema conversion.
+- **Streaming SSE chat endpoint** (F5.4 + F5.6) at `POST /api/chat` emitting `start | tool_call | tool_result | text | done | error`.
+- **Conversation persistence** (F5.8) in-memory.
+- **Citation pipeline** (F5.7 backend): system prompt instructs `[N]` markers, `done` event carries `citationsCited`, helper at `lib/agent/render.ts` tokenizes the answer into `text|chip` spans for the UI.
+
+### HTTP API surface
+
+| route | method | purpose |
+|---|---|---|
+| `/api/chat` | POST | SSE agent stream |
+| `/api/chat` | GET | conversation history |
+| `/api/conversations` | GET / POST | list / create |
+| `/api/conversations/[id]` | GET / DELETE | one / delete |
+| `/api/connectors/status` | GET | per-connector sync state |
+| `/api/tools` | GET | full tool inventory + schemas |
+| `/api/audit` | GET | audit trail (JSON or `?format=csv`) |
+| `/api/warmup` | POST / GET | pre-load + index for fast first-query |
+
+### scripts
+
+- `bun run sanity` — offline backend smoke test (no API keys)
+- `bun run agent "<query>"` — CLI agent run
+- `bun run demo` — fire the 5 wow queries against live Anthropic
+- (on `tenzin/scroll-fx-library` only) `bun run solana:setup` — devnet keypair + airdrop + env-var print
+
+### what's NOT shipped here
+
+- **Frontend chat UI** (F5.5 visual tool-call rendering, F5.7 visual citation chips, phase 6 layout) — frank/nicole/stephen lane. Backend hands them everything they need over the SSE protocol.
+- **Auth** (phase 7) — Clerk wiring deferred; demo runs as the seeded "Rivertown Community Foundation" tenant.
+- **Real OAuth** for any SaaS connector — every connector still reads from the seeded fixture. Production migration is a transport swap per the per-file `Real-OAuth path` comments.
+- **pgvector** — current vector store is in-memory. Schema-compatible swap path documented in `lib/db/schema.ts`.
 
 frank/nicole — you don't need to wait on any of this to start the landing page. work on `app/page.tsx` and add components in `components/marketing/`. avoid touching `lib/` for now (that's tenzin's lane).
