@@ -113,15 +113,7 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  icons: {
-    icon: [
-      { url: "/kawaii/app-icon.png", type: "image/png" },
-    ],
-    apple: [
-      { url: "/kawaii/app-icon.png", sizes: "180x180", type: "image/png" },
-    ],
-    shortcut: "/kawaii/app-icon.png",
-  },
+  // icons are auto-detected from app/favicon.ico, app/icon.png, app/apple-icon.png
   manifest: "/manifest.webmanifest",
   openGraph: {
     type: "website",
