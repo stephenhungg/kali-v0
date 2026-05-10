@@ -1,7 +1,9 @@
 "use client";
 
-import { Fragment, type ReactNode } from "react";
-import { tokenizeAnswer } from "../../lib/agent/render";
+import { Children, type ReactNode } from "react";
+import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
+import { buildCitationMap } from "../../lib/agent/citations";
 import type { ChatMessage } from "../../hooks/useAgentStream";
 import { CitationChip } from "./CitationChip";
 import { ToolCallTrace } from "./ToolCallTrace";
@@ -45,8 +47,8 @@ export function Message({ message, onActivateCitation }: MessageProps) {
           {toolCalls.length > 0 && <ToolCallTrace toolCalls={toolCalls} />}
 
           {text && (
-            <div className="space-y-1.5">
-              <AnswerBody text={text} citations={citations} onActivate={onActivateCitation} />
+            <div className="markdown-body space-y-2">
+              <AnswerMarkdown text={text} citations={citations} onActivate={onActivateCitation} />
               {streaming && <span className="inline-block h-4 w-[2px] bg-[var(--matcha-mid)] blink-soft align-middle" />}
             </div>
           )}
@@ -75,11 +77,12 @@ export function Message({ message, onActivateCitation }: MessageProps) {
 }
 
 /**
- * Render the assistant's answer with [N] citation markers replaced by chips,
- * preserving line breaks and lightweight bullet lists. We use lib/agent/render's
- * `tokenizeAnswer` so the citation indexing matches what the backend emitted.
+ * Render the assistant's answer as proper markdown (headers, bullets,
+ * numbered lists, code blocks, tables) AND replace `[N]` citation markers
+ * inline with <CitationChip>. We use react-markdown for the block-level
+ * structure and walk text-node children to splice in chips.
  */
-function AnswerBody({
+function AnswerMarkdown({
   text,
   citations,
   onActivate,
@@ -88,86 +91,144 @@ function AnswerBody({
   citations: string[];
   onActivate?: (kaliId: string) => void;
 }) {
-  const tokens = tokenizeAnswer(text, citations);
-  // Re-segment tokens by line breaks so we can render <p> per line + <li> for bullets.
-  const lines: Array<Array<typeof tokens[number]>> = [[]];
-  for (const tok of tokens) {
-    if (tok.kind === "text") {
-      const parts = tok.value.split("\n");
-      parts.forEach((part, i) => {
-        if (i > 0) lines.push([]);
-        if (part) lines[lines.length - 1].push({ kind: "text", value: part });
-      });
-    } else {
-      lines[lines.length - 1].push(tok);
-    }
-  }
+  const map = buildCitationMap(citations);
+
+  const wrap = (children: ReactNode) => withChips(children, map, onActivate);
 
   return (
-    <>
-      {lines.map((lineTokens, lineIdx) => {
-        const flat = lineTokens.map(t => t.kind === "text" ? t.value : "").join("");
-        if (flat.trim() === "" && lineTokens.every(t => t.kind === "text")) {
-          return <div key={lineIdx} className="h-2" aria-hidden />;
-        }
-        const isBullet = /^\s*[-•]\s/.test(flat);
-        if (isBullet) {
-          // strip the leading marker from the first text token
-          const stripped = stripBulletPrefix(lineTokens);
+    <ReactMarkdown
+      remarkPlugins={[remarkGfm]}
+      components={{
+        h1: ({ children }) => (
+          <h1 className="r-display mt-3 text-[26px] font-medium leading-tight tracking-tight text-[var(--matcha-deep)] sm:text-[28px]">
+            {wrap(children)}
+          </h1>
+        ),
+        h2: ({ children }) => (
+          <h2 className="r-display mt-3 text-[22px] font-medium leading-tight tracking-tight text-[var(--matcha-deep)]">
+            {wrap(children)}
+          </h2>
+        ),
+        h3: ({ children }) => (
+          <h3 className="mt-3 text-[16px] font-semibold leading-snug text-[var(--matcha-deep)]">
+            {wrap(children)}
+          </h3>
+        ),
+        h4: ({ children }) => (
+          <h4 className="mt-2 text-[14px] font-semibold uppercase tracking-[0.08em] text-[var(--matcha-deep)]">
+            {wrap(children)}
+          </h4>
+        ),
+        p: ({ children }) => (
+          <p className="text-[15px] leading-relaxed text-[var(--matcha-deep)]">{wrap(children)}</p>
+        ),
+        ul: ({ children }) => (
+          <ul className="my-2 ml-4 list-disc space-y-1 text-[15px] leading-relaxed text-[var(--matcha-deep)] marker:text-[var(--matcha-mid)]">
+            {children}
+          </ul>
+        ),
+        ol: ({ children }) => (
+          <ol className="my-2 ml-5 list-decimal space-y-1 text-[15px] leading-relaxed text-[var(--matcha-deep)] marker:text-[var(--matcha-mid)]">
+            {children}
+          </ol>
+        ),
+        li: ({ children }) => <li className="pl-1">{wrap(children)}</li>,
+        strong: ({ children }) => <strong className="font-semibold text-[var(--matcha-deep)]">{children}</strong>,
+        em: ({ children }) => <em className="italic">{children}</em>,
+        a: ({ children, href }) => (
+          <a href={href} target="_blank" rel="noreferrer" className="text-[var(--matcha-mid)] underline underline-offset-2 hover:text-[var(--matcha-deep)]">
+            {children}
+          </a>
+        ),
+        blockquote: ({ children }) => (
+          <blockquote className="my-2 border-l-2 border-[var(--matcha-mid)] bg-[var(--mint-pale)]/30 px-3 py-1.5 text-[14px] italic text-[var(--matcha-deep)]">
+            {children}
+          </blockquote>
+        ),
+        code: ({ children, className }) => {
+          const isBlock = (className ?? "").startsWith("language-");
+          if (isBlock) {
+            return (
+              <code className="block">{children}</code>
+            );
+          }
           return (
-            <li key={lineIdx} className="ml-4 list-disc text-[15px] leading-relaxed text-[var(--matcha-deep)] marker:text-[var(--matcha-mid)]">
-              {renderTokens(stripped, onActivate)}
-            </li>
+            <code className="rounded bg-[var(--mint-pale)] px-1.5 py-0.5 font-mono text-[13px] text-[var(--matcha-deep)]">
+              {children}
+            </code>
           );
-        }
-        return (
-          <p key={lineIdx} className="text-[15px] leading-relaxed text-[var(--matcha-deep)]">
-            {renderTokens(lineTokens, onActivate)}
-          </p>
-        );
-      })}
-    </>
+        },
+        pre: ({ children }) => (
+          <pre className="my-2 overflow-x-auto rounded border border-[var(--mint-line)] bg-[var(--surface-raised)] p-3 font-mono text-[12px] leading-snug text-[var(--matcha-deep)]">
+            {children}
+          </pre>
+        ),
+        hr: () => <hr className="my-3 border-t border-[var(--mint-line)]" />,
+        table: ({ children }) => (
+          <div className="my-2 overflow-x-auto">
+            <table className="w-full border-collapse text-[13px] text-[var(--matcha-deep)]">{children}</table>
+          </div>
+        ),
+        thead: ({ children }) => (
+          <thead className="border-b border-[var(--mint-line)] bg-[var(--mint-pale)]/40 text-left">{children}</thead>
+        ),
+        th: ({ children }) => <th className="px-2 py-1.5 font-medium">{wrap(children)}</th>,
+        td: ({ children }) => <td className="border-b border-[var(--mint-line-soft)] px-2 py-1.5">{wrap(children)}</td>,
+      }}
+    >
+      {text}
+    </ReactMarkdown>
   );
 }
 
-function stripBulletPrefix(tokens: Array<{ kind: "text"; value: string } | { kind: "chip"; n: number; kali_entity_id: string; raw: string }>) {
-  if (tokens.length === 0) return tokens;
-  const first = tokens[0];
-  if (first.kind === "text") {
-    return [{ kind: "text" as const, value: first.value.replace(/^\s*[-•]\s/, "") }, ...tokens.slice(1)];
-  }
-  return tokens;
-}
-
-function renderTokens(
-  tokens: Array<{ kind: "text"; value: string } | { kind: "chip"; n: number; kali_entity_id: string; raw: string }>,
+/**
+ * Walk a ReactNode children prop and, for any string segment, splice
+ * `[N]` markers into <CitationChip number={N} kaliId={...} /> components.
+ * Non-string children pass through untouched.
+ */
+function withChips(
+  children: ReactNode,
+  map: Record<number, string>,
   onActivate?: (id: string) => void,
-): ReactNode[] {
-  return tokens.map((t, i) => {
-    if (t.kind === "chip") {
-      return <CitationChip key={i} number={t.n} kaliId={t.kali_entity_id} onActivate={onActivate} />;
+): ReactNode {
+  const out: ReactNode[] = [];
+  let key = 0;
+  Children.forEach(children, (child) => {
+    if (typeof child === "string") {
+      out.push(...spliceChips(child, map, onActivate, () => key++));
+    } else {
+      out.push(child);
     }
-    return <Fragment key={i}>{renderInline(t.value, `${i}_inl`)}</Fragment>;
   });
+  return out;
 }
 
-/** Inline emphasis: **bold** and `code`. */
-function renderInline(text: string, keyBase: string): ReactNode[] {
+const CITATION_RE = /\[(\d+)\]/g;
+
+function spliceChips(
+  s: string,
+  map: Record<number, string>,
+  onActivate?: (id: string) => void,
+  nextKey?: () => number,
+): ReactNode[] {
   const out: ReactNode[] = [];
-  const re = /(\*\*[^*]+\*\*|`[^`]+`)/g;
-  let last = 0;
+  CITATION_RE.lastIndex = 0;
+  let cursor = 0;
   let m: RegExpExecArray | null;
   let i = 0;
-  while ((m = re.exec(text)) !== null) {
-    if (m.index > last) out.push(<Fragment key={`${keyBase}_${i++}`}>{text.slice(last, m.index)}</Fragment>);
-    const tok = m[0];
-    if (tok.startsWith("**")) {
-      out.push(<strong key={`${keyBase}_${i++}`} className="font-semibold text-[var(--matcha-deep)]">{tok.slice(2, -2)}</strong>);
-    } else if (tok.startsWith("`")) {
-      out.push(<code key={`${keyBase}_${i++}`} className="rounded bg-[var(--mint-pale)] px-1.5 py-0.5 font-mono text-[13px] text-[var(--matcha-deep)]">{tok.slice(1, -1)}</code>);
+  const k = () => (nextKey ? nextKey() : i++);
+  while ((m = CITATION_RE.exec(s)) !== null) {
+    if (m.index > cursor) out.push(<span key={k()}>{s.slice(cursor, m.index)}</span>);
+    const n = parseInt(m[1], 10);
+    const id = map[n];
+    if (id) {
+      out.push(<CitationChip key={k()} number={n} kaliId={id} onActivate={onActivate} />);
+    } else {
+      // unresolved — keep literal so prose isn't dropped
+      out.push(<span key={k()}>{m[0]}</span>);
     }
-    last = m.index + tok.length;
+    cursor = m.index + m[0].length;
   }
-  if (last < text.length) out.push(<Fragment key={`${keyBase}_${i++}`}>{text.slice(last)}</Fragment>);
+  if (cursor < s.length) out.push(<span key={k()}>{s.slice(cursor)}</span>);
   return out;
 }

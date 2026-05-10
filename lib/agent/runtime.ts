@@ -89,9 +89,21 @@ function zodToJsonSchema(schema: z.ZodTypeAny): Record<string, unknown> {
   return rest;
 }
 
+/**
+ * Anthropic's tool-name regex is `^[a-zA-Z0-9_-]{1,128}$` — no dots allowed.
+ * Our tool names use `connector.fn` form (e.g. `bloomerang.searchDonors`),
+ * so we encode `.` → `__` on the wire and decode on receipt.
+ */
+export function encodeToolName(name: string): string {
+  return name.replace(/\./g, "__");
+}
+export function decodeToolName(name: string): string {
+  return name.replace(/__/g, ".");
+}
+
 export function toAnthropicTools(tools: ToolDefinition[]): AnthropicTool[] {
   return tools.map((t) => ({
-    name: t.name,
+    name: encodeToolName(t.name),
     description: t.description,
     input_schema: zodToJsonSchema(t.input),
   }));
@@ -237,14 +249,16 @@ export async function run(opts: RunOptions): Promise<RunResult> {
     const toolResults = await Promise.all(
       toolUseBlocks.map(async (block) => {
         const tStart = Date.now();
-        const tool = toolByName.get(block.name);
+        // Anthropic emits the encoded name (dots → double-underscores); decode for lookup.
+        const originalName = decodeToolName(block.name);
+        const tool = toolByName.get(originalName);
         try {
-          if (!tool) throw new Error(`unknown tool: ${block.name}`);
+          if (!tool) throw new Error(`unknown tool: ${originalName}`);
           const validatedInput = tool.input.parse(block.input);
           const out = await tool.handler(validatedInput, ctx);
           const dur = Date.now() - tStart;
           trace.push({
-            name: block.name,
+            name: originalName,
             input: block.input,
             result: out,
             isError: false,
@@ -258,7 +272,7 @@ export async function run(opts: RunOptions): Promise<RunResult> {
         } catch (e: unknown) {
           const msg = e instanceof Error ? e.message : String(e);
           trace.push({
-            name: block.name,
+            name: originalName,
             input: block.input,
             result: msg,
             isError: true,

@@ -20,6 +20,10 @@ export type ConnectorId =
   | "powerbi"
   | "powerautomate"
   | "knowbe4"
+  /** Agent-driven USDC donations over HTTP 402 (data/x402-nonprofit-donations.md). */
+  | "x402"
+  /** Per-nonprofit Solana token via Meteora DBC (data/cause-coins-spec.md). */
+  | "causecoin"
   /** Meta-connector: cross-source entity resolution + dossier (lib/context/). */
   | "context";
 

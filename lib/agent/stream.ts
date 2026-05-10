@@ -19,7 +19,7 @@
 import { listTools } from "../connectors/registry";
 import { makeToolContext } from "../audit/log";
 import "./registrations";
-import { toAnthropicTools } from "./runtime";
+import { toAnthropicTools, decodeToolName } from "./runtime";
 import { resolveCitedNumbers } from "./citations";
 
 const MODEL = "claude-sonnet-4-6";
@@ -221,12 +221,14 @@ export async function* runStream(
       ) as Array<{ type: "tool_use"; id: string; name: string; input: unknown }>;
 
       // Yield tool_call events FIRST so the UI lights up tiles before the
-      // handlers actually run.
+      // handlers actually run. Decode the wire-encoded name back to the
+      // canonical `connector.fn` form so the frontend's source-pulse map +
+      // ledger render the human-readable label.
       for (const block of toolUseBlocks) {
         yield {
           type: "tool_call",
           id: block.id,
-          name: block.name,
+          name: decodeToolName(block.name),
           input: block.input,
         };
       }
@@ -235,9 +237,10 @@ export async function* runStream(
       const results = await Promise.all(
         toolUseBlocks.map(async (block) => {
           const tStart = Date.now();
-          const tool = toolByName.get(block.name);
+          const originalName = decodeToolName(block.name);
+          const tool = toolByName.get(originalName);
           try {
-            if (!tool) throw new Error(`unknown tool: ${block.name}`);
+            if (!tool) throw new Error(`unknown tool: ${originalName}`);
             const validated = tool.input.parse(block.input);
             const out = await tool.handler(validated, ctx);
             const dur = Date.now() - tStart;
@@ -246,7 +249,7 @@ export async function* runStream(
             collectCitations(out, citations);
             return {
               id: block.id,
-              name: block.name,
+              name: originalName,
               result: out,
               isError: false,
               durationMs: dur,
@@ -254,7 +257,7 @@ export async function* runStream(
           } catch (e: unknown) {
             return {
               id: block.id,
-              name: block.name,
+              name: originalName,
               result: e instanceof Error ? e.message : String(e),
               isError: true,
               durationMs: Date.now() - tStart,
