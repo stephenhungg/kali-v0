@@ -19,10 +19,10 @@
  */
 
 import { z } from "zod";
-import type { Connector, ToolContext, ToolDefinition } from "./base";
+import type { Connector, ToolDefinition } from "./base";
 import { registerConnector } from "./registry";
 import { loadSeed, type SeedSize } from "./seed-loader";
-import { hashParams } from "./test-helpers";
+import { makeToolFactory } from "./_tool-factory";
 import {
   bloomerangSeedSchema,
   donorSegmentSchema,
@@ -283,47 +283,7 @@ const onlineFormsOutput = z.array(
   }),
 );
 
-/**
- * Wrap a query in a ToolDefinition: validates input via zod, executes the
- * query against the seed, validates output, audit-logs the call.
- */
-function makeTool<
-  TInput extends z.ZodTypeAny,
-  TOutput extends z.ZodTypeAny,
->(spec: {
-  name: string;
-  description: string;
-  domain: ToolDefinition["domain"];
-  input: TInput;
-  output: TOutput;
-  collectRecordIds?: (out: z.infer<TOutput>) => string[];
-  run: (
-    seed: BloomerangSeed,
-    input: z.infer<TInput>,
-  ) => z.infer<TOutput> | Promise<z.infer<TOutput>>;
-}): ToolDefinition<TInput, TOutput> {
-  return {
-    name: spec.name,
-    description: spec.description,
-    domain: spec.domain,
-    input: spec.input,
-    output: spec.output,
-    handler: async (input, ctx: ToolContext) => {
-      const t0 = Date.now();
-      const seed = await getBloomerangSeed();
-      const result = await spec.run(seed, input);
-      const recordIds = spec.collectRecordIds ? spec.collectRecordIds(result) : [];
-      await ctx.audit({
-        source: "bloomerang",
-        toolName: spec.name,
-        paramsHash: hashParams(input),
-        recordIds,
-        durationMs: Date.now() - t0,
-      });
-      return result;
-    },
-  };
-}
+const makeTool = makeToolFactory<BloomerangSeed>("bloomerang", getBloomerangSeed);
 
 const tools: ToolDefinition[] = [
   makeTool({
