@@ -509,11 +509,16 @@ function serializeCoin(c: import("@/lib/db/memory").MemCauseCoin) {
 
 void walletForKaliEntityId;
 
+import { loadAllSeeds } from "@/lib/causecoin/seed";
+
 export const causecoinConnector: Connector = {
   id: CONNECTOR_ID,
   label: "Cause Coins",
   domain: "payouts",
   tools,
+  init: async () => {
+    await loadAllSeeds();
+  },
 };
 
 let registered = false;
