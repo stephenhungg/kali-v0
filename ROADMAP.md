@@ -17,14 +17,14 @@ prioritized feature list for v1 prototype. each item is **implement → test →
 - [x] **F0.1** repo scaffold: next.js 16 + ts strict + tailwind 4 + bun + app router
 - [x] **F0.2** vercel deployment + auto-deploy on push
 - [x] **F0.3** beginner-friendly README + CONTRIBUTING
-- [ ] **F0.4** drizzle schema (tenants, users, connectors, entities, records, embeddings, conversations, messages, audit_log) — code only, no DB connection yet
-- [ ] **F0.5** project layout per scope §9: `lib/connectors/`, `lib/context/`, `lib/agent/`, `lib/db/`, `lib/audit/`, `data/seed/`
-- [ ] **F0.6** env var contract documented: `.env.example` extended with everything we'll eventually need (anthropic, voyage, neon, clerk, solana, etc.)
+- [x] **F0.4** drizzle schema (tenants, users, connectors, entities, records, conversations, messages, agent_runs, audit_log) — code only, no DB connection yet
+- [x] **F0.5** project layout per scope §9: `lib/connectors/`, `lib/context/`, `lib/agent/`, `lib/db/`, `lib/audit/`, `data/seed/`
+- [x] **F0.6** env var contract documented: `.env.example` extended with everything we'll eventually need (anthropic, voyage, neon, clerk, solana, etc.)
 
 ## phase 1 — connector framework (the spine for all 11 tools)
 
-- [ ] **F1.1** `lib/connectors/base.ts` — `Connector` interface, `ToolDefinition` type, registration pattern
-- [ ] **F1.2** mock data loader — reads `data/seed/<tool>.json`, validates against zod schema, caches in memory
+- [x] **F1.1** `lib/connectors/base.ts` — `Connector` interface, `ToolDefinition` type, registration pattern (`lib/connectors/registry.ts`)
+- [x] **F1.2** mock data loader — `lib/connectors/seed-loader.ts` reads `data/seed/<tool>.json`, validates against zod schema, caches in memory
 - [ ] **F1.3** sync-state tracker (in-memory for now, db-backed later)
 - [ ] **F1.4** zod schema convention — every connector exports `<tool>.schema.ts`
 
@@ -119,6 +119,8 @@ each demoable end-to-end: query → tools fire → citations land.
 
 ## current cursor
 
-**building right now:** phase 1 (connector framework) + phase 0 (drizzle schema + project layout).
+**building right now:** phase 2 (master entity graph + seed data generator).
+
+**last shipped:** F0.4 drizzle schema, F0.5 project layout, F0.6 env contract, F1.1 connector base interface + registry, F1.2 seed loader. All on `main`, deployed at https://kali-v0.vercel.app.
 
 frank/nicole — you don't need to wait on any of this to start the landing page. work on `app/page.tsx` and add components in `components/marketing/`. avoid touching `lib/` for now (that's tenzin's lane).
