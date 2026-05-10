@@ -199,33 +199,33 @@ function StickyNav() {
     };
 
     const createDesktopTimeline = () => {
-      gsap.set(shell, { width: 248, height: 32 });
-      gsap.set(brandPanel, { autoAlpha: 0, width: 248, height: 52 });
-      gsap.set(brandText, { x: 0, y: 1.2 });
-      gsap.set(linksPanel, { x: 21.33, y: 0, width: 226.67, height: 32 });
+      gsap.set(shell, { width: 380, height: 36 });
+      gsap.set(brandPanel, { autoAlpha: 0, width: 380, height: 54 });
+      gsap.set(brandText, { x: 0, xPercent: -50, y: 1.2 });
+      gsap.set(linksPanel, { x: 0, y: 0, width: 380, height: 36 });
 
       return gsap
         .timeline({ paused: true })
-        .to(shell, { height: 84.41, duration: 0.42, ease: "power3.out" }, 0)
-        .to(linksPanel, { x: 0, y: 52, width: 248, duration: 0.42, ease: "power3.out" }, 0)
+        .to(shell, { height: 90, duration: 0.42, ease: "power3.out" }, 0)
+        .to(linksPanel, { x: 0, y: 54, width: 380, duration: 0.42, ease: "power3.out" }, 0)
         .to(brandText, { y: 6, duration: 0.42, ease: "power3.out" }, 0)
         .to(brandPanel, { autoAlpha: 1, duration: 0.18, ease: "power1.out" }, 0.3);
     };
 
     const createMobileTimeline = () => {
       const shellWidth = window.innerWidth - 16;
-      const compactWidth = Math.min(226.67, shellWidth);
+      const compactWidth = shellWidth;
       const expandedWidth = shellWidth - 9;
 
-      gsap.set(shell, { width: shellWidth, height: 32 });
-      gsap.set(brandPanel, { autoAlpha: 0, width: shellWidth, height: 32 });
-      gsap.set(brandText, { x: 0, y: 5 });
-      gsap.set(linksPanel, { x: shellWidth - compactWidth, y: 0, width: compactWidth, height: 32 });
+      gsap.set(shell, { width: shellWidth, height: 36 });
+      gsap.set(brandPanel, { autoAlpha: 0, width: shellWidth, height: 36 });
+      gsap.set(brandText, { x: 0, xPercent: -50, y: 5 });
+      gsap.set(linksPanel, { x: shellWidth - compactWidth, y: 0, width: compactWidth, height: 36 });
 
       return gsap
         .timeline({ paused: true })
-        .to(shell, { height: 64, duration: 0.42, ease: "power3.out" }, 0)
-        .to(linksPanel, { x: shellWidth - expandedWidth, y: 40, width: expandedWidth, duration: 0.42, ease: "power3.out" }, 0)
+        .to(shell, { height: 74, duration: 0.42, ease: "power3.out" }, 0)
+        .to(linksPanel, { x: shellWidth - expandedWidth, y: 44, width: expandedWidth, duration: 0.42, ease: "power3.out" }, 0)
         .to(brandPanel, { autoAlpha: 1, duration: 0.18, ease: "power1.out" }, 0.3);
     };
 
@@ -244,35 +244,35 @@ function StickyNav() {
     <header
       ref={navRef}
       data-nav-shell
-      className="fixed right-2 top-2 z-50 h-8 w-[calc(100vw-16px)] overflow-visible text-ink-near md:right-4 md:top-4 md:w-[248px]"
+      className="fixed right-2 top-2 z-50 h-9 w-[calc(100vw-16px)] overflow-visible text-ink-near md:right-4 md:top-4 md:w-[380px]"
       aria-label="Primary navigation"
     >
       <div
         data-nav-brand-panel
-        className="ceramic-panel absolute left-0 top-0 z-10 h-8 overflow-hidden rounded-[22px] opacity-0 md:h-[52px]"
+        className="ceramic-panel absolute left-0 top-0 z-10 h-9 overflow-hidden rounded-[22px] opacity-0 md:h-[54px]"
       >
         <a
           data-nav-brand-text
           href="#top"
-          className="absolute left-4 top-0 block leading-none"
+          className="absolute left-1/2 top-0 block leading-none"
         >
           <MiniKaliWordmark />
         </a>
       </div>
       <nav
         data-nav-links-panel
-        className="absolute left-0 top-0 z-20 flex h-8 items-center gap-3 overflow-hidden rounded-pill border border-white/90 bg-cloud/90 px-4 text-[16px] font-medium leading-none shadow-[0_5px_0_rgba(107,137,93,0.28)] backdrop-blur"
+        className="absolute left-0 top-0 z-20 flex h-9 items-center justify-between gap-4 overflow-hidden rounded-pill border border-white/90 bg-cloud/90 px-5 text-[15px] font-medium leading-none shadow-[0_5px_0_rgba(107,137,93,0.28)] backdrop-blur"
       >
-        <a data-nav-link href="#what" className="kali-link">
+        <a data-nav-link href="#what" className="kali-link whitespace-nowrap">
           Product
         </a>
-        <a data-nav-link href="#queries" className="kali-link">
+        <a data-nav-link href="#queries" className="kali-link whitespace-nowrap">
           Uses
         </a>
-        <a data-nav-link href="#solana" className="kali-link">
+        <a data-nav-link href="#solana" className="kali-link whitespace-nowrap">
           Onchain
         </a>
-        <a data-nav-link href="/chat" className="kali-link">
+        <a data-nav-link href="/chat" className="kali-link whitespace-nowrap">
           Open Kali
         </a>
       </nav>
@@ -511,18 +511,24 @@ const SOLANA_PILLARS = [
     blurb:
       "Every nonprofit gets a public HTTP 402 endpoint. Any AI agent can pay USDC over the wire — real onchain settlement on Solana, with tax-deductible receipts auto-issued for human-attributed gifts.",
     tag: "USDC · HTTP 402 · Privy delegation",
+    src: "/kawaii/generated/solana-x402-v2.png",
+    alt: "kawaii sticker scene of the kali matcha mascot handing a USDC coin sticker to a tiny robot agent",
   },
   {
     title: "Cause coins",
     blurb:
       "Launch a tokenized version of your cause on Solana. Supporters trade, hold, and govern — bonding curves seed liquidity, and a portion of fees streams back to the nonprofit's treasury.",
     tag: "SPL · bonding curve · governance",
+    src: "/kawaii/generated/solana-coins-v2.png",
+    alt: "kawaii sticker scene of the kali matcha mascot holding up a heart-marked cause-coin token with a bonding curve graph",
   },
   {
     title: "Onchain receipts",
     blurb:
       "Every donation, every approval, every agent call gets a verifiable receipt — a permanent, citable record your board, your auditors, and your donors can all read.",
     tag: "Devnet · Solana Pay · transparency",
+    src: "/kawaii/generated/solana-receipts-v2.png",
+    alt: "kawaii sticker scene of the kali matcha mascot holding a long ribbon receipt with a chain-link onchain provenance icon",
   },
 ];
 
@@ -583,19 +589,30 @@ function SolanaSection() {
                 key={pillar.title}
                 data-appear
                 data-appear-delay={(0.05 * (i + 1)).toFixed(2)}
-                className="ceramic-panel rounded-[28px] p-6 md:p-7"
+                className="ceramic-panel flex items-start gap-5 rounded-[28px] p-5 md:gap-6 md:p-7"
               >
-                <div className="flex flex-wrap items-baseline justify-between gap-3">
-                  <h3 className="font-bagel text-[24px] font-normal leading-[1.05] text-matcha-800 md:text-[28px]">
-                    {pillar.title}
-                  </h3>
-                  <span className="font-mono text-[11px] uppercase tracking-[0.14em] text-matcha-700">
-                    {pillar.tag}
-                  </span>
+                <div className="relative h-[88px] w-[88px] shrink-0 md:h-[112px] md:w-[112px]">
+                  <Image
+                    src={pillar.src}
+                    alt={pillar.alt}
+                    fill
+                    sizes="(min-width: 768px) 112px, 88px"
+                    className="object-contain"
+                  />
                 </div>
-                <p className="mt-3 font-subtext text-[15px] font-medium leading-[1.5] text-muted-deep md:text-[16px]">
-                  {pillar.blurb}
-                </p>
+                <div className="min-w-0 flex-1">
+                  <div className="flex flex-wrap items-baseline justify-between gap-3">
+                    <h3 className="font-bagel text-[22px] font-normal leading-[1.05] text-matcha-800 md:text-[26px]">
+                      {pillar.title}
+                    </h3>
+                    <span className="font-mono text-[11px] uppercase tracking-[0.14em] text-matcha-700">
+                      {pillar.tag}
+                    </span>
+                  </div>
+                  <p className="mt-3 font-subtext text-[15px] font-medium leading-[1.5] text-muted-deep md:text-[16px]">
+                    {pillar.blurb}
+                  </p>
+                </div>
               </li>
             ))}
           </ul>
@@ -607,49 +624,57 @@ function SolanaSection() {
 
 function Footer() {
   return (
-    <footer data-section-tone="dark-on-light" className="relative overflow-hidden text-ink-near">
+    <footer data-section-tone="dark-on-light" className="relative isolate overflow-hidden bg-[var(--paper)] text-ink-near">
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-0 -z-10"
+        className="pointer-events-none absolute inset-0 z-0"
         style={{
           backgroundImage: "url(/kawaii/generated/footer-leaves-v1.png)",
           backgroundRepeat: "repeat",
           backgroundSize: "640px auto",
         }}
       />
-      <div aria-hidden className="pointer-events-none absolute inset-0 -z-10 bg-[var(--paper)]/55" />
+      <div aria-hidden className="pointer-events-none absolute inset-0 z-0 bg-[var(--paper)]/55" />
       <SparkleField density={30} />
-      <div className="gutter py-16 md:py-20">
+      <div className="gutter relative z-10 py-16 md:py-20">
         <div className="grid gap-10 text-[15px] font-medium leading-[1.5] md:grid-cols-12 md:gap-12">
-          <p className="max-w-[420px] text-[18px] leading-[1.45] text-ink-near md:col-span-5 md:text-[20px]">
-            Kali is the agentic context layer for nonprofits. Cited answers across every tool you run on, with human approval before anything writes back.
-          </p>
+          <div className="ceramic-panel max-w-[460px] rounded-[28px] p-6 md:col-span-5 md:p-7">
+            <p className="text-[18px] leading-[1.45] text-ink-near md:text-[20px]">
+              Kali is the agentic context layer for nonprofits. Cited answers across every tool you run on, with human approval before anything writes back.
+            </p>
+          </div>
 
-          <div className="grid gap-8 sm:grid-cols-3 md:col-span-7">
+          <div className="grid gap-4 sm:grid-cols-3 md:col-span-7">
             <div>
-              <p className="text-[11px] uppercase tracking-[0.16em] text-muted-secondary">Status</p>
-              <p className="mt-2">Private beta</p>
-              <p className="text-muted-secondary">Onboarding nonprofits now</p>
+              <div className="ceramic-panel h-full rounded-[24px] p-5">
+                <p className="text-[11px] uppercase tracking-[0.16em] text-muted-secondary">Status</p>
+                <p className="mt-2">Private beta</p>
+                <p className="text-muted-secondary">Onboarding nonprofits now</p>
+              </div>
             </div>
             <div>
-              <p className="text-[11px] uppercase tracking-[0.16em] text-muted-secondary">Reach the team</p>
-              <a href="mailto:founders@kalilabs.ai" className="kali-link mt-2 block">
-                founders@kalilabs.ai
-              </a>
-              <a href="https://github.com/stephenhungg/kali-v0" className="kali-link block text-muted-secondary">
-                github.com/stephenhungg/kali-v0
-              </a>
+              <div className="ceramic-panel h-full rounded-[24px] p-5">
+                <p className="text-[11px] uppercase tracking-[0.16em] text-muted-secondary">Reach the team</p>
+                <a href="mailto:founders@kalilabs.ai" className="kali-link mt-2 block break-words">
+                  founders@kalilabs.ai
+                </a>
+                <a href="https://github.com/stephenhungg/kali-v0" className="kali-link block break-words text-muted-secondary">
+                  github.com/stephenhungg/kali-v0
+                </a>
+              </div>
             </div>
             <div>
-              <p className="text-[11px] uppercase tracking-[0.16em] text-muted-secondary">Built at</p>
-              <p className="mt-2">HackDavis 2026</p>
-              <p className="text-muted-secondary">UC Davis &middot; May 10</p>
+              <div className="ceramic-panel h-full rounded-[24px] p-5">
+                <p className="text-[11px] uppercase tracking-[0.16em] text-muted-secondary">Built at</p>
+                <p className="mt-2">HackDavis 2026</p>
+                <p className="text-muted-secondary">UC Davis &middot; May 10</p>
+              </div>
             </div>
           </div>
         </div>
       </div>
 
-      <div className="gutter flex flex-col items-center gap-3 border-t border-hairline pb-8 pt-8 text-[12px] text-muted-secondary md:flex-row md:justify-between">
+      <div className="gutter relative z-10 flex flex-col items-center gap-3 border-t border-hairline pb-8 pt-8 text-[12px] text-muted-secondary md:flex-row md:justify-between">
         <p>&copy; 2026 Kali Labs &middot; Made with matcha at UC Davis</p>
         <div className="flex items-center gap-4">
           <a href="#top" className="kali-link">Back to top</a>
@@ -663,4 +688,3 @@ function Footer() {
 function toSentenceCase(value: string) {
   return value ? value.charAt(0).toUpperCase() + value.slice(1) : value;
 }
-
