@@ -1,0 +1,23 @@
+{
+  "name": "kali-data",
+  "version": "0.0.1",
+  "private": true,
+  "type": "module",
+  "description": "Seed data generator + ingestion for Kali. Produces realistic nonprofit-scale messy data across 11 SaaS connectors.",
+  "scripts": {
+    "generate": "bun run src/index.ts",
+    "generate:small": "bun run src/index.ts small",
+    "generate:medium": "bun run src/index.ts medium",
+    "generate:large": "bun run src/index.ts large",
+    "stats": "bun run scripts/stats.ts"
+  },
+  "dependencies": {
+    "@faker-js/faker": "^9.0.0",
+    "seedrandom": "^3.0.5"
+  },
+  "devDependencies": {
+    "@types/bun": "latest",
+    "@types/seedrandom": "^3.0.8",
+    "typescript": "^5.6.0"
+  }
+}

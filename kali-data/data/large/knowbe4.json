@@ -1,0 +1,4716 @@
+{
+  "userResults": [
+    {
+      "kbUserId": "kb_00006z",
+      "kali_entity_id": "ppl_00006z",
+      "userName": "Zackery Batz",
+      "email": "zackery.batz@rivertowncf.org",
+      "department": "Operations",
+      "riskScore": 59,
+      "trainingCompletionPercent": 76,
+      "phishingTests": [
+        {
+          "date": "2026-02-02",
+          "result": "passed"
+        },
+        {
+          "date": "2025-12-18",
+          "result": "passed"
+        },
+        {
+          "date": "2026-05-09",
+          "result": "passed"
+        },
+        {
+          "date": "2026-01-13",
+          "result": "passed"
+        },
+        {
+          "date": "2025-07-07",
+          "result": "failed_clicked"
+        },
+        {
+          "date": "2025-09-03",
+          "result": "passed"
+        },
+        {
+          "date": "2026-04-24",
+          "result": "passed"
+        },
+        {
+          "date": "2026-03-09",
+          "result": "passed"
+        },
+        {
+          "date": "2026-03-12",
+          "result": "passed"
+        },
+        {
+          "date": "2026-04-16",
+          "result": "failed_clicked"
+        },
+        {
+          "date": "2025-05-29",
+          "result": "passed"
+        },
+        {
+          "date": "2025-11-19",
+          "result": "passed"
+        },
+        {
+          "date": "2025-05-29",
+          "result": "passed"
+        },
+        {
+          "date": "2026-02-16",
+          "result": "passed"
+        },
+        {
+          "date": "2025-10-26",
+          "result": "failed_clicked"
+        },
+        {
+          "date": "2025-06-17",
+          "result": "passed"
+        },
+        {
+          "date": "2025-06-23",
+          "result": "failed_clicked"
+        },
+        {
+          "date": "2026-04-29",
+          "result": "passed"
+        },
+        {
+          "date": "2025-05-10",
+          "result": "passed"
+        },
+        {
+          "date": "2026-04-21",
+          "result": "passed"
+        },
+        {
+          "date": "2025-11-13",
+          "result": "passed"
+        }
+      ],
+      "flagged": []
+    },
+    {
+      "kbUserId": "kb_000070",
+      "kali_entity_id": "ppl_000070",
+      "userName": "Alexa Welch",
+      "email": "alexa.welch@rivertowncf.org",
+      "department": "Operations",
+      "riskScore": 25,
+      "trainingCompletionPercent": 95,
+      "phishingTests": [
+        {
+          "date": "2025-10-28",
+          "result": "failed_clicked"
+        },
+        {
+          "date": "2026-04-03",
+          "result": "passed"
+        },
+        {
+          "date": "2025-11-20",
+          "result": "passed"
+        },
+        {
+          "date": "2025-11-28",
+          "result": "passed"
+        },
+        {
+          "date": "2025-11-05",
+          "result": "passed"
+        },
+        {
+          "date": "2025-12-29",
+          "result": "passed"
+        },
+        {
+          "date": "2025-10-18",
+          "result": "passed"
+        },
+        {
+          "date": "2026-03-15",
+          "result": "passed"
+        },
+        {
+          "date": "2025-07-19",
+          "result": "passed"
+        }
+      ],
+      "flagged": []
+    },
+    {
+      "kbUserId": "kb_000071",
+      "kali_entity_id": "ppl_000071",
+      "userName": "Giovanna Breitenberg",
+      "email": "giovanna.breitenberg@rivertowncf.org",
+      "department": "Development",
+      "riskScore": 67,
+      "trainingCompletionPercent": 82,
+      "phishingTests": [
+        {
+          "date": "2025-05-31",
+          "result": "failed_clicked"
+        },
+        {
+          "date": "2026-03-06",
+          "result": "passed"
+        },
+        {
+          "date": "2026-02-10",
+          "result": "passed"
+        },
+        {
+          "date": "2025-08-10",
+          "result": "passed"
+        },
+        {
+          "date": "2026-02-16",
+          "result": "passed"
+        },
+        {
+          "date": "2025-11-26",
+          "result": "passed"
+        },
+        {
+          "date": "2025-12-20",
+          "result": "passed"
+        },
+        {
+          "date": "2025-06-06",
+          "result": "failed_clicked"
+        },
+        {
+          "date": "2026-02-27",
+          "result": "passed"
+        },
+        {
+          "date": "2026-01-21",
+          "result": "passed"
+        },
+        {
+          "date": "2025-12-05",
+          "result": "passed"
+        },
+        {
+          "date": "2026-03-03",
+          "result": "passed"
+        },
+        {
+          "date": "2025-12-17",
+          "result": "passed"
+        },
+        {
+          "date": "2026-02-12",
+          "result": "passed"
+        },
+        {
+          "date": "2025-08-11",
+          "result": "passed"
+        },
+        {
+          "date": "2025-09-15",
+          "result": "passed"
+        },
+        {
+          "date": "2025-07-17",
+          "result": "failed_clicked"
+        },
+        {
+          "date": "2025-07-19",
+          "result": "passed"
+        },
+        {
+          "date": "2026-03-31",
+          "result": "failed_clicked"
+        },
+        {
+          "date": "2025-07-08",
+          "result": "passed"
+        },
+        {
+          "date": "2025-06-26",
+          "result": "passed"
+        }
+      ],
+      "flagged": [
+        {
+          "date": "2026-05-03",
+          "reason": "Reported suspicious attachment late"
+        }
+      ]
+    },
+    {
+      "kbUserId": "kb_000072",
+      "kali_entity_id": "ppl_000072",
+      "userName": "Helga Kertzmann",
+      "email": "helga.kertzmann@rivertowncf.org",
+      "department": "Operations",
+      "riskScore": 47,
+      "trainingCompletionPercent": 84,
+      "phishingTests": [
+        {
+          "date": "2025-08-16",
+          "result": "failed_clicked"
+        },
+        {
+          "date": "2025-08-19",
+          "result": "passed"
+        },
+        {
+          "date": "2025-09-01",
+          "result": "passed"
+        },
+        {
+          "date": "2026-05-09",
+          "result": "passed"
+        },
+        {
+          "date": "2025-07-15",
+          "result": "passed"
+        },
+        {
+          "date": "2025-11-15",
+          "result": "passed"
+        },
+        {
+          "date": "2025-10-31",
+          "result": "failed_clicked"
+        },
+        {
+          "date": "2025-06-22",
+          "result": "passed"
+        },
+        {
+          "date": "2026-04-27",
+          "result": "passed"
+        },
+        {
+          "date": "2025-07-09",
+          "result": "passed"
+        },
+        {
+          "date": "2025-10-26",
+          "result": "passed"
+        }
+      ],
+      "flagged": []
+    },
+    {
+      "kbUserId": "kb_000073",
+      "kali_entity_id": "ppl_000073",
+      "userName": "Mable Miller",
+      "email": "mable.miller@rivertowncf.org",
+      "department": "Operations",
+      "riskScore": 83,
+      "trainingCompletionPercent": 83,
+      "phishingTests": [
+        {
+          "date": "2026-03-10",
+          "result": "passed"
+        },
+        {
+          "date": "2025-06-27",
+          "result": "failed_credentials"
+        },
+        {
+          "date": "2025-10-20",
+          "result": "passed"
+        },
+        {
+          "date": "2025-12-13",
+          "result": "passed"
+        },
+        {
+          "date": "2026-03-14",
+          "result": "passed"
+        },
+        {
+          "date": "2025-07-23",
+          "result": "passed"
+        },
+        {
+          "date": "2025-09-02",
+          "result": "passed"
+        },
+        {
+          "date": "2025-07-08",
+          "result": "passed"
+        },
+        {
+          "date": "2025-06-19",
+          "result": "passed"
+        },
+        {
+          "date": "2026-01-22",
+          "result": "passed"
+        },
+        {
+          "date": "2026-02-05",
+          "result": "failed_credentials"
+        },
+        {
+          "date": "2025-07-13",
+          "result": "passed"
+        },
+        {
+          "date": "2025-10-29",
+          "result": "passed"
+        },
+        {
+          "date": "2026-01-07",
+          "result": "failed_credentials"
+        },
+        {
+          "date": "2025-07-07",
+          "result": "passed"
+        },
+        {
+          "date": "2025-07-13",
+          "result": "passed"
+        },
+        {
+          "date": "2025-12-03",
+          "result": "passed"
+        },
+        {
+          "date": "2025-09-17",
+          "result": "passed"
+        },
+        {
+          "date": "2026-01-27",
+          "result": "failed_credentials"
+        },
+        {
+          "date": "2026-03-15",
+          "result": "passed"
+        },
+        {
+          "date": "2025-09-28",
+          "result": "failed_clicked"
+        }
+      ],
+      "flagged": []
+    },
+    {
+      "kbUserId": "kb_000074",
+      "kali_entity_id": "ppl_000074",
+      "userName": "Paxton Hodkiewicz",
+      "email": "paxton.hodkiewicz@rivertowncf.org",
+      "department": "Operations",
+      "riskScore": 25,
+      "trainingCompletionPercent": 88,
+      "phishingTests": [
+        {
+          "date": "2025-06-01",
+          "result": "passed"
+        },
+        {
+          "date": "2025-08-10",
+          "result": "passed"
+        },
+        {
+          "date": "2025-08-09",
+          "result": "passed"
+        },
+        {
+          "date": "2025-09-29",
+          "result": "passed"
+        },
+        {
+          "date": "2025-12-05",
+          "result": "passed"
+        },
+        {
+          "date": "2025-11-30",
+          "result": "passed"
+        },
+        {
+          "date": "2025-05-16",
+          "result": "passed"
+        },
+        {
+          "date": "2025-07-04",
+          "result": "passed"
+        },
+        {
+          "date": "2025-12-14",
+          "result": "passed"
+        },
+        {
+          "date": "2025-09-16",
+          "result": "passed"
+        },
+        {
+          "date": "2026-01-26",
+          "result": "passed"
+        }
+      ],
+      "flagged": []
+    },
+    {
+      "kbUserId": "kb_000075",
+      "kali_entity_id": "ppl_000075",
+      "userName": "Bobbie Turcotte",
+      "email": "bobbie.turcotte@rivertowncf.org",
+      "department": "Programs",
+      "riskScore": 66,
+      "trainingCompletionPercent": 73,
+      "phishingTests": [
+        {
+          "date": "2025-06-30",
+          "result": "failed_clicked"
+        },
+        {
+          "date": "2026-01-18",
+          "result": "failed_credentials"
+        },
+        {
+          "date": "2025-09-21",
+          "result": "passed"
+        },
+        {
+          "date": "2025-07-14",
+          "result": "passed"
+        },
+        {
+          "date": "2026-04-27",
+          "result": "passed"
+        },
+        {
+          "date": "2025-07-25",
+          "result": "passed"
+        },
+        {
+          "date": "2026-03-15",
+          "result": "passed"
+        },
+        {
+          "date": "2025-10-07",
+          "result": "failed_clicked"
+        },
+        {
+          "date": "2025-07-06",
+          "result": "passed"
+        },
+        {
+          "date": "2025-08-26",
+          "result": "failed_clicked"
+        },
+        {
+          "date": "2025-09-03",
+          "result": "failed_credentials"
+        },
+        {
+          "date": "2025-08-28",
+          "result": "passed"
+        },
+        {
+          "date": "2025-07-11",
+          "result": "passed"
+        },
+        {
+          "date": "2025-10-25",
+          "result": "passed"
+        },
+        {
+          "date": "2025-11-29",
+          "result": "passed"
+        }
+      ],
+      "flagged": []
+    },
+    {
+      "kbUserId": "kb_000076",
+      "kali_entity_id": "ppl_000076",
+      "userName": "Katlynn Hilpert",
+      "email": "katlynn.hilpert@rivertowncf.org",
+      "department": "Programs",
+      "riskScore": 39,
+      "trainingCompletionPercent": 95,
+      "phishingTests": [
+        {
+          "date": "2025-11-22",
+          "result": "failed_clicked"
+        },
+        {
+          "date": "2025-07-10",
+          "result": "passed"
+        },
+        {
+          "date": "2025-10-25",
+          "result": "passed"
+        },
+        {
+          "date": "2026-04-06",
+          "result": "failed_clicked"
+        },
+        {
+          "date": "2025-07-24",
+          "result": "passed"
+        },
+        {
+          "date": "2025-09-04",
+          "result": "passed"
+        },
+        {
+          "date": "2025-05-12",
+          "result": "passed"
+        },
+        {
+          "date": "2026-04-05",
+          "result": "passed"
+        },
+        {
+          "date": "2026-01-11",
+          "result": "passed"
+        },
+        {
+          "date": "2025-08-02",
+          "result": "passed"
+        },
+        {
+          "date": "2025-12-29",
+          "result": "passed"
+        }
+      ],
+      "flagged": []
+    },
+    {
+      "kbUserId": "kb_000077",
+      "kali_entity_id": "ppl_000077",
+      "userName": "Ignatius Adams",
+      "email": "ignatius.adams@rivertowncf.org",
+      "department": "Programs",
+      "riskScore": 53,
+      "trainingCompletionPercent": 82,
+      "phishingTests": [
+        {
+          "date": "2025-08-08",
+          "result": "passed"
+        },
+        {
+          "date": "2026-05-04",
+          "result": "failed_credentials"
+        },
+        {
+          "date": "2026-02-24",
+          "result": "passed"
+        },
+        {
+          "date": "2025-08-06",
+          "result": "failed_clicked"
+        },
+        {
+          "date": "2025-07-26",
+          "result": "passed"
+        },
+        {
+          "date": "2025-09-25",
+          "result": "passed"
+        },
+        {
+          "date": "2025-08-12",
+          "result": "passed"
+        },
+        {
+          "date": "2025-11-14",
+          "result": "passed"
+        },
+        {
+          "date": "2025-11-08",
+          "result": "passed"
+        },
+        {
+          "date": "2025-11-26",
+          "result": "passed"
+        },
+        {
+          "date": "2025-12-10",
+          "result": "passed"
+        },
+        {
+          "date": "2025-09-12",
+          "result": "passed"
+        },
+        {
+          "date": "2025-11-23",
+          "result": "passed"
+        }
+      ],
+      "flagged": []
+    },
+    {
+      "kbUserId": "kb_000078",
+      "kali_entity_id": "ppl_000078",
+      "userName": "Nikko O'Kon",
+      "email": "nikko.okon@rivertowncf.org",
+      "department": "Programs",
+      "riskScore": 71,
+      "trainingCompletionPercent": 67,
+      "phishingTests": [
+        {
+          "date": "2026-05-05",
+          "result": "passed"
+        },
+        {
+          "date": "2025-05-15",
+          "result": "passed"
+        },
+        {
+          "date": "2025-08-14",
+          "result": "passed"
+        },
+        {
+          "date": "2026-01-08",
+          "result": "failed_credentials"
+        },
+        {
+          "date": "2025-07-08",
+          "result": "passed"
+        },
+        {
+          "date": "2025-05-21",
+          "result": "passed"
+        },
+        {
+          "date": "2026-03-25",
+          "result": "failed_credentials"
+        },
+        {
+          "date": "2026-04-08",
+          "result": "passed"
+        },
+        {
+          "date": "2026-03-07",
+          "result": "passed"
+        },
+        {
+          "date": "2026-03-18",
+          "result": "failed_credentials"
+        },
+        {
+          "date": "2025-09-24",
+          "result": "passed"
+        },
+        {
+          "date": "2026-01-20",
+          "result": "passed"
+        },
+        {
+          "date": "2026-05-09",
+          "result": "passed"
+        },
+        {
+          "date": "2025-06-18",
+          "result": "passed"
+        },
+        {
+          "date": "2025-07-03",
+          "result": "passed"
+        },
+        {
+          "date": "2026-02-16",
+          "result": "passed"
+        }
+      ],
+      "flagged": [
+        {
+          "date": "2026-03-01",
+          "reason": "Reported suspicious attachment late"
+        }
+      ]
+    },
+    {
+      "kbUserId": "kb_000079",
+      "kali_entity_id": "ppl_000079",
+      "userName": "Houston Bauch",
+      "email": "houston.bauch@rivertowncf.org",
+      "department": "Programs",
+      "riskScore": 32,
+      "trainingCompletionPercent": 93,
+      "phishingTests": [
+        {
+          "date": "2026-05-06",
+          "result": "passed"
+        },
+        {
+          "date": "2025-05-29",
+          "result": "passed"
+        },
+        {
+          "date": "2025-06-28",
+          "result": "passed"
+        },
+        {
+          "date": "2026-01-09",
+          "result": "passed"
+        },
+        {
+          "date": "2026-04-20",
+          "result": "passed"
+        },
+        {
+          "date": "2026-02-19",
+          "result": "failed_clicked"
+        },
+        {
+          "date": "2026-02-05",
+          "result": "passed"
+        },
+        {
+          "date": "2026-04-02",
+          "result": "passed"
+        },
+        {
+          "date": "2025-12-03",
+          "result": "failed_credentials"
+        },
+        {
+          "date": "2025-11-21",
+          "result": "passed"
+        },
+        {
+          "date": "2026-02-07",
+          "result": "passed"
+        },
+        {
+          "date": "2025-12-19",
+          "result": "passed"
+        },
+        {
+          "date": "2025-08-03",
+          "result": "passed"
+        },
+        {
+          "date": "2026-01-23",
+          "result": "passed"
+        },
+        {
+          "date": "2026-03-26",
+          "result": "passed"
+        },
+        {
+          "date": "2025-06-27",
+          "result": "passed"
+        },
+        {
+          "date": "2025-12-26",
+          "result": "passed"
+        },
+        {
+          "date": "2026-02-26",
+          "result": "passed"
+        },
+        {
+          "date": "2025-10-22",
+          "result": "passed"
+        },
+        {
+          "date": "2025-06-23",
+          "result": "passed"
+        },
+        {
+          "date": "2026-04-19",
+          "result": "passed"
+        }
+      ],
+      "flagged": []
+    },
+    {
+      "kbUserId": "kb_00007a",
+      "kali_entity_id": "ppl_00007a",
+      "userName": "Syble Bode",
+      "email": "syble.bode@rivertowncf.org",
+      "department": "Operations",
+      "riskScore": 83,
+      "trainingCompletionPercent": 60,
+      "phishingTests": [
+        {
+          "date": "2025-11-17",
+          "result": "passed"
+        },
+        {
+          "date": "2025-10-10",
+          "result": "failed_credentials"
+        },
+        {
+          "date": "2025-09-10",
+          "result": "passed"
+        },
+        {
+          "date": "2025-08-17",
+          "result": "passed"
+        },
+        {
+          "date": "2025-06-14",
+          "result": "passed"
+        },
+        {
+          "date": "2025-08-15",
+          "result": "passed"
+        },
+        {
+          "date": "2026-03-09",
+          "result": "passed"
+        },
+        {
+          "date": "2026-04-18",
+          "result": "failed_clicked"
+        },
+        {
+          "date": "2026-05-08",
+          "result": "passed"
+        },
+        {
+          "date": "2025-12-14",
+          "result": "passed"
+        },
+        {
+          "date": "2025-05-20",
+          "result": "passed"
+        },
+        {
+          "date": "2025-12-10",
+          "result": "passed"
+        },
+        {
+          "date": "2025-10-01",
+          "result": "passed"
+        },
+        {
+          "date": "2026-04-24",
+          "result": "passed"
+        },
+        {
+          "date": "2025-07-11",
+          "result": "passed"
+        },
+        {
+          "date": "2026-03-12",
+          "result": "passed"
+        },
+        {
+          "date": "2026-04-17",
+          "result": "failed_credentials"
+        },
+        {
+          "date": "2026-04-19",
+          "result": "passed"
+        },
+        {
+          "date": "2025-09-24",
+          "result": "passed"
+        },
+        {
+          "date": "2026-05-04",
+          "result": "passed"
+        },
+        {
+          "date": "2026-01-03",
+          "result": "passed"
+        },
+        {
+          "date": "2026-05-06",
+          "result": "failed_credentials"
+        },
+        {
+          "date": "2025-11-02",
+          "result": "failed_clicked"
+        },
+        {
+          "date": "2025-12-07",
+          "result": "passed"
+        }
+      ],
+      "flagged": []
+    },
+    {
+      "kbUserId": "kb_00007b",
+      "kali_entity_id": "ppl_00007b",
+      "userName": "Davin McKenzie",
+      "email": "davin.mckenzie@rivertowncf.org",
+      "department": "Operations",
+      "riskScore": 58,
+      "trainingCompletionPercent": 67,
+      "phishingTests": [
+        {
+          "date": "2026-02-14",
+          "result": "passed"
+        },
+        {
+          "date": "2025-06-24",
+          "result": "passed"
+        },
+        {
+          "date": "2025-11-14",
+          "result": "passed"
+        },
+        {
+          "date": "2026-01-27",
+          "result": "passed"
+        },
+        {
+          "date": "2026-01-21",
+          "result": "failed_credentials"
+        },
+        {
+          "date": "2026-01-07",
+          "result": "passed"
+        },
+        {
+          "date": "2025-08-19",
+          "result": "passed"
+        },
+        {
+          "date": "2025-10-18",
+          "result": "passed"
+        },
+        {
+          "date": "2026-04-30",
+          "result": "passed"
+        },
+        {
+          "date": "2025-07-26",
+          "result": "passed"
+        },
+        {
+          "date": "2025-07-17",
+          "result": "passed"
+        },
+        {
+          "date": "2025-10-13",
+          "result": "passed"
+        },
+        {
+          "date": "2026-02-21",
+          "result": "failed_credentials"
+        },
+        {
+          "date": "2025-06-22",
+          "result": "passed"
+        },
+        {
+          "date": "2026-02-05",
+          "result": "passed"
+        },
+        {
+          "date": "2025-09-13",
+          "result": "passed"
+        },
+        {
+          "date": "2025-08-20",
+          "result": "passed"
+        }
+      ],
+      "flagged": []
+    },
+    {
+      "kbUserId": "kb_00007c",
+      "kali_entity_id": "ppl_00007c",
+      "userName": "Monroe Mosciski",
+      "email": "monroe.mosciski@rivertowncf.org",
+      "department": "Operations",
+      "riskScore": 39,
+      "trainingCompletionPercent": 95,
+      "phishingTests": [
+        {
+          "date": "2026-02-17",
+          "result": "passed"
+        },
+        {
+          "date": "2025-10-22",
+          "result": "passed"
+        },
+        {
+          "date": "2026-02-14",
+          "result": "passed"
+        },
+        {
+          "date": "2025-06-28",
+          "result": "failed_credentials"
+        },
+        {
+          "date": "2025-08-12",
+          "result": "passed"
+        },
+        {
+          "date": "2025-10-08",
+          "result": "passed"
+        },
+        {
+          "date": "2025-06-05",
+          "result": "passed"
+        },
+        {
+          "date": "2025-12-07",
+          "result": "passed"
+        },
+        {
+          "date": "2025-08-25",
+          "result": "passed"
+        }
+      ],
+      "flagged": []
+    },
+    {
+      "kbUserId": "kb_00007d",
+      "kali_entity_id": "ppl_00007d",
+      "userName": "Cali Kiehn",
+      "email": "cali.kiehn@rivertowncf.org",
+      "department": "Finance",
+      "riskScore": 41,
+      "trainingCompletionPercent": 62,
+      "phishingTests": [
+        {
+          "date": "2026-01-20",
+          "result": "passed"
+        },
+        {
+          "date": "2025-11-19",
+          "result": "passed"
+        },
+        {
+          "date": "2025-07-12",
+          "result": "passed"
+        },
+        {
+          "date": "2025-09-19",
+          "result": "passed"
+        },
+        {
+          "date": "2025-11-09",
+          "result": "failed_credentials"
+        },
+        {
+          "date": "2025-07-21",
+          "result": "passed"
+        },
+        {
+          "date": "2026-01-27",
+          "result": "passed"
+        },
+        {
+          "date": "2025-11-24",
+          "result": "passed"
+        },
+        {
+          "date": "2025-11-04",
+          "result": "failed_clicked"
+        },
+        {
+          "date": "2026-02-25",
+          "result": "passed"
+        },
+        {
+          "date": "2026-01-22",
+          "result": "passed"
+        },
+        {
+          "date": "2026-01-17",
+          "result": "passed"
+        },
+        {
+          "date": "2025-10-27",
+          "result": "passed"
+        },
+        {
+          "date": "2025-06-14",
+          "result": "passed"
+        },
+        {
+          "date": "2026-01-03",
+          "result": "passed"
+        },
+        {
+          "date": "2025-06-06",
+          "result": "passed"
+        },
+        {
+          "date": "2025-06-18",
+          "result": "passed"
+        },
+        {
+          "date": "2025-12-08",
+          "result": "passed"
+        },
+        {
+          "date": "2025-07-13",
+          "result": "passed"
+        },
+        {
+          "date": "2026-03-12",
+          "result": "passed"
+        },
+        {
+          "date": "2025-07-21",
+          "result": "passed"
+        }
+      ],
+      "flagged": []
+    },
+    {
+      "kbUserId": "kb_00007e",
+      "kali_entity_id": "ppl_00007e",
+      "userName": "Ofelia Macejkovic",
+      "email": "ofelia.macejkovic@rivertowncf.org",
+      "department": "Operations",
+      "riskScore": 59,
+      "trainingCompletionPercent": 71,
+      "phishingTests": [
+        {
+          "date": "2025-06-20",
+          "result": "passed"
+        },
+        {
+          "date": "2025-08-10",
+          "result": "failed_clicked"
+        },
+        {
+          "date": "2026-02-07",
+          "result": "passed"
+        },
+        {
+          "date": "2026-02-15",
+          "result": "passed"
+        },
+        {
+          "date": "2025-06-05",
+          "result": "passed"
+        },
+        {
+          "date": "2026-02-06",
+          "result": "passed"
+        },
+        {
+          "date": "2026-02-04",
+          "result": "passed"
+        },
+        {
+          "date": "2025-06-13",
+          "result": "passed"
+        },
+        {
+          "date": "2026-02-16",
+          "result": "passed"
+        },
+        {
+          "date": "2025-05-12",
+          "result": "passed"
+        },
+        {
+          "date": "2025-05-15",
+          "result": "failed_credentials"
+        },
+        {
+          "date": "2025-05-30",
+          "result": "passed"
+        },
+        {
+          "date": "2025-06-13",
+          "result": "failed_credentials"
+        },
+        {
+          "date": "2025-05-26",
+          "result": "passed"
+        },
+        {
+          "date": "2025-08-29",
+          "result": "passed"
+        },
+        {
+          "date": "2025-12-06",
+          "result": "passed"
+        },
+        {
+          "date": "2025-06-20",
+          "result": "passed"
+        },
+        {
+          "date": "2025-05-23",
+          "result": "failed_credentials"
+        },
+        {
+          "date": "2026-04-18",
+          "result": "passed"
+        }
+      ],
+      "flagged": []
+    },
+    {
+      "kbUserId": "kb_00007f",
+      "kali_entity_id": "ppl_00007f",
+      "userName": "Norris Bergnaum",
+      "email": "norris.bergnaum@rivertowncf.org",
+      "department": "Operations",
+      "riskScore": 40,
+      "trainingCompletionPercent": 78,
+      "phishingTests": [
+        {
+          "date": "2025-05-17",
+          "result": "passed"
+        },
+        {
+          "date": "2026-04-18",
+          "result": "passed"
+        },
+        {
+          "date": "2026-02-09",
+          "result": "passed"
+        },
+        {
+          "date": "2025-06-02",
+          "result": "passed"
+        },
+        {
+          "date": "2025-05-19",
+          "result": "passed"
+        },
+        {
+          "date": "2026-02-27",
+          "result": "passed"
+        },
+        {
+          "date": "2025-09-02",
+          "result": "passed"
+        },
+        {
+          "date": "2025-10-04",
+          "result": "passed"
+        },
+        {
+          "date": "2025-06-29",
+          "result": "passed"
+        },
+        {
+          "date": "2026-02-06",
+          "result": "passed"
+        },
+        {
+          "date": "2025-06-02",
+          "result": "passed"
+        },
+        {
+          "date": "2026-01-03",
+          "result": "failed_clicked"
+        },
+        {
+          "date": "2026-02-12",
+          "result": "passed"
+        },
+        {
+          "date": "2026-01-20",
+          "result": "passed"
+        },
+        {
+          "date": "2026-05-02",
+          "result": "passed"
+        },
+        {
+          "date": "2026-04-08",
+          "result": "passed"
+        },
+        {
+          "date": "2026-04-19",
+          "result": "passed"
+        }
+      ],
+      "flagged": []
+    },
+    {
+      "kbUserId": "kb_00007g",
+      "kali_entity_id": "ppl_00007g",
+      "userName": "Annamarie Morar",
+      "email": "annamarie.morar@rivertowncf.org",
+      "department": "Operations",
+      "riskScore": 41,
+      "trainingCompletionPercent": 87,
+      "phishingTests": [
+        {
+          "date": "2025-08-22",
+          "result": "passed"
+        },
+        {
+          "date": "2025-11-29",
+          "result": "failed_clicked"
+        },
+        {
+          "date": "2025-06-01",
+          "result": "passed"
+        },
+        {
+          "date": "2025-09-03",
+          "result": "passed"
+        },
+        {
+          "date": "2025-06-12",
+          "result": "passed"
+        },
+        {
+          "date": "2026-02-06",
+          "result": "passed"
+        },
+        {
+          "date": "2026-03-11",
+          "result": "failed_clicked"
+        },
+        {
+          "date": "2026-04-14",
+          "result": "passed"
+        },
+        {
+          "date": "2025-10-21",
+          "result": "passed"
+        }
+      ],
+      "flagged": []
+    },
+    {
+      "kbUserId": "kb_00007h",
+      "kali_entity_id": "ppl_00007h",
+      "userName": "Adolph Reichert",
+      "email": "adolph.reichert@rivertowncf.org",
+      "department": "Operations",
+      "riskScore": 42,
+      "trainingCompletionPercent": 87,
+      "phishingTests": [
+        {
+          "date": "2025-10-26",
+          "result": "passed"
+        },
+        {
+          "date": "2025-06-04",
+          "result": "passed"
+        },
+        {
+          "date": "2025-08-28",
+          "result": "passed"
+        },
+        {
+          "date": "2025-11-22",
+          "result": "passed"
+        },
+        {
+          "date": "2025-08-07",
+          "result": "passed"
+        },
+        {
+          "date": "2025-12-04",
+          "result": "failed_clicked"
+        },
+        {
+          "date": "2025-06-14",
+          "result": "passed"
+        },
+        {
+          "date": "2025-06-24",
+          "result": "passed"
+        },
+        {
+          "date": "2025-12-24",
+          "result": "passed"
+        },
+        {
+          "date": "2026-01-26",
+          "result": "passed"
+        },
+        {
+          "date": "2026-05-07",
+          "result": "passed"
+        },
+        {
+          "date": "2025-05-20",
+          "result": "passed"
+        },
+        {
+          "date": "2026-01-14",
+          "result": "passed"
+        },
+        {
+          "date": "2025-07-18",
+          "result": "passed"
+        },
+        {
+          "date": "2025-11-14",
+          "result": "passed"
+        },
+        {
+          "date": "2025-11-04",
+          "result": "passed"
+        }
+      ],
+      "flagged": []
+    },
+    {
+      "kbUserId": "kb_00007i",
+      "kali_entity_id": "ppl_00007i",
+      "userName": "Khalid Beatty",
+      "email": "khalid.beatty@rivertowncf.org",
+      "department": "Operations",
+      "riskScore": 35,
+      "trainingCompletionPercent": 97,
+      "phishingTests": [
+        {
+          "date": "2025-07-04",
+          "result": "passed"
+        },
+        {
+          "date": "2025-10-02",
+          "result": "passed"
+        },
+        {
+          "date": "2025-10-01",
+          "result": "passed"
+        },
+        {
+          "date": "2025-09-02",
+          "result": "passed"
+        },
+        {
+          "date": "2026-01-18",
+          "result": "passed"
+        },
+        {
+          "date": "2025-05-20",
+          "result": "passed"
+        },
+        {
+          "date": "2025-07-12",
+          "result": "passed"
+        },
+        {
+          "date": "2025-08-06",
+          "result": "passed"
+        },
+        {
+          "date": "2026-04-10",
+          "result": "failed_clicked"
+        },
+        {
+          "date": "2025-09-05",
+          "result": "passed"
+        },
+        {
+          "date": "2026-04-14",
+          "result": "failed_credentials"
+        },
+        {
+          "date": "2026-01-25",
+          "result": "passed"
+        },
+        {
+          "date": "2025-09-01",
+          "result": "passed"
+        },
+        {
+          "date": "2026-03-24",
+          "result": "passed"
+        },
+        {
+          "date": "2025-06-17",
+          "result": "passed"
+        },
+        {
+          "date": "2026-03-14",
+          "result": "passed"
+        },
+        {
+          "date": "2025-10-14",
+          "result": "passed"
+        },
+        {
+          "date": "2025-09-28",
+          "result": "passed"
+        }
+      ],
+      "flagged": []
+    },
+    {
+      "kbUserId": "kb_00007j",
+      "kali_entity_id": "ppl_00007j",
+      "userName": "Norma Sawayn",
+      "email": "norma.sawayn@rivertowncf.org",
+      "department": "Operations",
+      "riskScore": 95,
+      "trainingCompletionPercent": 76,
+      "phishingTests": [
+        {
+          "date": "2025-09-22",
+          "result": "failed_clicked"
+        },
+        {
+          "date": "2026-01-28",
+          "result": "passed"
+        },
+        {
+          "date": "2025-06-10",
+          "result": "failed_credentials"
+        },
+        {
+          "date": "2025-08-03",
+          "result": "passed"
+        },
+        {
+          "date": "2026-05-10",
+          "result": "failed_clicked"
+        },
+        {
+          "date": "2025-12-05",
+          "result": "passed"
+        },
+        {
+          "date": "2025-07-28",
+          "result": "passed"
+        },
+        {
+          "date": "2026-03-19",
+          "result": "failed_credentials"
+        },
+        {
+          "date": "2026-04-28",
+          "result": "passed"
+        },
+        {
+          "date": "2026-05-09",
+          "result": "passed"
+        },
+        {
+          "date": "2025-09-27",
+          "result": "passed"
+        },
+        {
+          "date": "2025-06-29",
+          "result": "passed"
+        },
+        {
+          "date": "2025-06-11",
+          "result": "passed"
+        },
+        {
+          "date": "2026-03-29",
+          "result": "passed"
+        },
+        {
+          "date": "2026-03-30",
+          "result": "failed_credentials"
+        },
+        {
+          "date": "2025-10-18",
+          "result": "passed"
+        },
+        {
+          "date": "2025-08-17",
+          "result": "passed"
+        },
+        {
+          "date": "2026-01-25",
+          "result": "failed_clicked"
+        },
+        {
+          "date": "2026-03-07",
+          "result": "passed"
+        }
+      ],
+      "flagged": []
+    },
+    {
+      "kbUserId": "kb_00007k",
+      "kali_entity_id": "ppl_00007k",
+      "userName": "Emerson Schowalter",
+      "email": "emerson.schowalter@rivertowncf.org",
+      "department": "Operations",
+      "riskScore": 77,
+      "trainingCompletionPercent": 60,
+      "phishingTests": [
+        {
+          "date": "2025-09-04",
+          "result": "passed"
+        },
+        {
+          "date": "2025-06-20",
+          "result": "passed"
+        },
+        {
+          "date": "2025-05-23",
+          "result": "passed"
+        },
+        {
+          "date": "2025-12-05",
+          "result": "passed"
+        },
+        {
+          "date": "2025-07-04",
+          "result": "passed"
+        },
+        {
+          "date": "2025-12-15",
+          "result": "passed"
+        },
+        {
+          "date": "2025-09-21",
+          "result": "failed_credentials"
+        },
+        {
+          "date": "2025-12-31",
+          "result": "passed"
+        },
+        {
+          "date": "2025-08-08",
+          "result": "passed"
+        },
+        {
+          "date": "2025-06-20",
+          "result": "passed"
+        },
+        {
+          "date": "2026-02-07",
+          "result": "failed_credentials"
+        },
+        {
+          "date": "2025-06-23",
+          "result": "passed"
+        },
+        {
+          "date": "2025-06-07",
+          "result": "passed"
+        },
+        {
+          "date": "2025-10-26",
+          "result": "passed"
+        },
+        {
+          "date": "2026-05-05",
+          "result": "passed"
+        },
+        {
+          "date": "2025-11-22",
+          "result": "failed_clicked"
+        },
+        {
+          "date": "2025-10-06",
+          "result": "passed"
+        },
+        {
+          "date": "2025-09-26",
+          "result": "passed"
+        },
+        {
+          "date": "2025-10-26",
+          "result": "failed_clicked"
+        },
+        {
+          "date": "2025-12-19",
+          "result": "passed"
+        },
+        {
+          "date": "2026-01-10",
+          "result": "passed"
+        }
+      ],
+      "flagged": []
+    },
+    {
+      "kbUserId": "kb_00007l",
+      "kali_entity_id": "ppl_00007l",
+      "userName": "Nova Torphy-Leffler",
+      "email": "nova.torphyleffler@rivertowncf.org",
+      "department": "Operations",
+      "riskScore": 99,
+      "trainingCompletionPercent": 81,
+      "phishingTests": [
+        {
+          "date": "2025-11-14",
+          "result": "failed_clicked"
+        },
+        {
+          "date": "2025-06-26",
+          "result": "passed"
+        },
+        {
+          "date": "2025-06-18",
+          "result": "passed"
+        },
+        {
+          "date": "2025-11-02",
+          "result": "passed"
+        },
+        {
+          "date": "2025-12-17",
+          "result": "passed"
+        },
+        {
+          "date": "2026-04-09",
+          "result": "passed"
+        },
+        {
+          "date": "2026-04-03",
+          "result": "passed"
+        },
+        {
+          "date": "2026-03-31",
+          "result": "passed"
+        },
+        {
+          "date": "2025-06-28",
+          "result": "passed"
+        },
+        {
+          "date": "2025-08-30",
+          "result": "passed"
+        },
+        {
+          "date": "2026-01-18",
+          "result": "failed_clicked"
+        },
+        {
+          "date": "2025-11-16",
+          "result": "passed"
+        },
+        {
+          "date": "2026-02-21",
+          "result": "failed_credentials"
+        },
+        {
+          "date": "2025-11-02",
+          "result": "passed"
+        },
+        {
+          "date": "2025-09-23",
+          "result": "passed"
+        },
+        {
+          "date": "2025-12-19",
+          "result": "failed_clicked"
+        },
+        {
+          "date": "2026-03-26",
+          "result": "passed"
+        },
+        {
+          "date": "2025-12-09",
+          "result": "failed_credentials"
+        },
+        {
+          "date": "2025-11-03",
+          "result": "passed"
+        },
+        {
+          "date": "2025-06-03",
+          "result": "failed_credentials"
+        }
+      ],
+      "flagged": []
+    },
+    {
+      "kbUserId": "kb_00007m",
+      "kali_entity_id": "ppl_00007m",
+      "userName": "Jacinthe Beier",
+      "email": "jacinthe.beier@rivertowncf.org",
+      "department": "Operations",
+      "riskScore": 100,
+      "trainingCompletionPercent": 90,
+      "phishingTests": [
+        {
+          "date": "2025-12-19",
+          "result": "passed"
+        },
+        {
+          "date": "2025-09-25",
+          "result": "passed"
+        },
+        {
+          "date": "2026-01-02",
+          "result": "passed"
+        },
+        {
+          "date": "2025-07-13",
+          "result": "passed"
+        },
+        {
+          "date": "2025-12-15",
+          "result": "failed_credentials"
+        },
+        {
+          "date": "2026-01-18",
+          "result": "passed"
+        },
+        {
+          "date": "2025-09-17",
+          "result": "passed"
+        },
+        {
+          "date": "2025-10-11",
+          "result": "passed"
+        },
+        {
+          "date": "2026-04-05",
+          "result": "passed"
+        },
+        {
+          "date": "2025-12-13",
+          "result": "failed_credentials"
+        },
+        {
+          "date": "2025-12-07",
+          "result": "failed_credentials"
+        },
+        {
+          "date": "2026-01-11",
+          "result": "failed_clicked"
+        },
+        {
+          "date": "2025-08-19",
+          "result": "passed"
+        },
+        {
+          "date": "2026-03-19",
+          "result": "failed_credentials"
+        },
+        {
+          "date": "2025-09-04",
+          "result": "passed"
+        },
+        {
+          "date": "2026-03-30",
+          "result": "failed_credentials"
+        },
+        {
+          "date": "2025-12-18",
+          "result": "passed"
+        },
+        {
+          "date": "2025-05-23",
+          "result": "failed_clicked"
+        },
+        {
+          "date": "2025-10-09",
+          "result": "passed"
+        }
+      ],
+      "flagged": [
+        {
+          "date": "2026-03-27",
+          "reason": "Reported suspicious attachment late"
+        }
+      ]
+    },
+    {
+      "kbUserId": "kb_00007n",
+      "kali_entity_id": "ppl_00007n",
+      "userName": "Ericka Toy",
+      "email": "ericka.toy@rivertowncf.org",
+      "department": "Operations",
+      "riskScore": 26,
+      "trainingCompletionPercent": 85,
+      "phishingTests": [
+        {
+          "date": "2025-06-03",
+          "result": "passed"
+        },
+        {
+          "date": "2026-04-13",
+          "result": "passed"
+        },
+        {
+          "date": "2025-06-25",
+          "result": "passed"
+        },
+        {
+          "date": "2025-08-23",
+          "result": "passed"
+        },
+        {
+          "date": "2025-09-01",
+          "result": "passed"
+        },
+        {
+          "date": "2025-12-03",
+          "result": "passed"
+        },
+        {
+          "date": "2025-10-11",
+          "result": "passed"
+        },
+        {
+          "date": "2025-12-03",
+          "result": "passed"
+        },
+        {
+          "date": "2026-02-07",
+          "result": "passed"
+        },
+        {
+          "date": "2025-12-22",
+          "result": "passed"
+        },
+        {
+          "date": "2025-09-26",
+          "result": "passed"
+        },
+        {
+          "date": "2025-05-12",
+          "result": "passed"
+        },
+        {
+          "date": "2026-03-29",
+          "result": "passed"
+        },
+        {
+          "date": "2026-02-25",
+          "result": "passed"
+        },
+        {
+          "date": "2026-01-09",
+          "result": "passed"
+        }
+      ],
+      "flagged": []
+    },
+    {
+      "kbUserId": "kb_00007o",
+      "kali_entity_id": "ppl_00007o",
+      "userName": "Edyth Osinski",
+      "email": "edyth.osinski@rivertowncf.org",
+      "department": "Development",
+      "riskScore": 61,
+      "trainingCompletionPercent": 82,
+      "phishingTests": [
+        {
+          "date": "2025-05-29",
+          "result": "passed"
+        },
+        {
+          "date": "2025-06-21",
+          "result": "passed"
+        },
+        {
+          "date": "2025-06-28",
+          "result": "passed"
+        },
+        {
+          "date": "2025-10-18",
+          "result": "passed"
+        },
+        {
+          "date": "2025-07-25",
+          "result": "passed"
+        },
+        {
+          "date": "2026-01-10",
+          "result": "failed_clicked"
+        },
+        {
+          "date": "2026-02-26",
+          "result": "passed"
+        },
+        {
+          "date": "2026-01-01",
+          "result": "passed"
+        },
+        {
+          "date": "2025-08-26",
+          "result": "failed_credentials"
+        },
+        {
+          "date": "2025-09-16",
+          "result": "passed"
+        },
+        {
+          "date": "2025-05-28",
+          "result": "passed"
+        },
+        {
+          "date": "2025-11-19",
+          "result": "failed_credentials"
+        },
+        {
+          "date": "2025-12-17",
+          "result": "passed"
+        },
+        {
+          "date": "2025-12-28",
+          "result": "passed"
+        }
+      ],
+      "flagged": []
+    },
+    {
+      "kbUserId": "kb_00007p",
+      "kali_entity_id": "ppl_00007p",
+      "userName": "Antonio Yost",
+      "email": "antonio.yost@rivertowncf.org",
+      "department": "Operations",
+      "riskScore": 31,
+      "trainingCompletionPercent": 60,
+      "phishingTests": [
+        {
+          "date": "2025-07-28",
+          "result": "passed"
+        },
+        {
+          "date": "2026-04-30",
+          "result": "passed"
+        },
+        {
+          "date": "2026-02-04",
+          "result": "passed"
+        },
+        {
+          "date": "2025-10-03",
+          "result": "passed"
+        },
+        {
+          "date": "2026-05-07",
+          "result": "passed"
+        },
+        {
+          "date": "2025-08-16",
+          "result": "passed"
+        },
+        {
+          "date": "2025-07-14",
+          "result": "passed"
+        },
+        {
+          "date": "2025-06-12",
+          "result": "passed"
+        },
+        {
+          "date": "2025-12-30",
+          "result": "passed"
+        },
+        {
+          "date": "2025-05-24",
+          "result": "passed"
+        },
+        {
+          "date": "2026-04-14",
+          "result": "passed"
+        },
+        {
+          "date": "2026-01-10",
+          "result": "passed"
+        },
+        {
+          "date": "2025-11-26",
+          "result": "passed"
+        },
+        {
+          "date": "2025-06-18",
+          "result": "failed_credentials"
+        },
+        {
+          "date": "2025-07-27",
+          "result": "failed_credentials"
+        },
+        {
+          "date": "2026-03-14",
+          "result": "passed"
+        },
+        {
+          "date": "2026-04-07",
+          "result": "passed"
+        },
+        {
+          "date": "2026-03-03",
+          "result": "passed"
+        }
+      ],
+      "flagged": []
+    },
+    {
+      "kbUserId": "kb_00007q",
+      "kali_entity_id": "ppl_00007q",
+      "userName": "Wilson Gorczany",
+      "email": "wilson.gorczany@rivertowncf.org",
+      "department": "Operations",
+      "riskScore": 41,
+      "trainingCompletionPercent": 86,
+      "phishingTests": [
+        {
+          "date": "2025-12-01",
+          "result": "passed"
+        },
+        {
+          "date": "2025-07-27",
+          "result": "passed"
+        },
+        {
+          "date": "2025-08-24",
+          "result": "passed"
+        },
+        {
+          "date": "2025-09-29",
+          "result": "passed"
+        },
+        {
+          "date": "2025-11-10",
+          "result": "passed"
+        },
+        {
+          "date": "2026-05-08",
+          "result": "passed"
+        },
+        {
+          "date": "2025-09-13",
+          "result": "passed"
+        },
+        {
+          "date": "2025-12-30",
+          "result": "passed"
+        },
+        {
+          "date": "2025-09-29",
+          "result": "passed"
+        },
+        {
+          "date": "2026-02-23",
+          "result": "passed"
+        },
+        {
+          "date": "2026-03-16",
+          "result": "passed"
+        },
+        {
+          "date": "2025-09-22",
+          "result": "passed"
+        },
+        {
+          "date": "2025-10-06",
+          "result": "failed_clicked"
+        },
+        {
+          "date": "2025-12-11",
+          "result": "passed"
+        },
+        {
+          "date": "2025-11-27",
+          "result": "failed_credentials"
+        },
+        {
+          "date": "2025-12-05",
+          "result": "passed"
+        },
+        {
+          "date": "2025-07-11",
+          "result": "passed"
+        },
+        {
+          "date": "2025-10-18",
+          "result": "passed"
+        },
+        {
+          "date": "2025-12-28",
+          "result": "passed"
+        },
+        {
+          "date": "2025-07-10",
+          "result": "failed_credentials"
+        },
+        {
+          "date": "2026-01-27",
+          "result": "passed"
+        }
+      ],
+      "flagged": []
+    },
+    {
+      "kbUserId": "kb_00007r",
+      "kali_entity_id": "ppl_00007r",
+      "userName": "Joesph Haag",
+      "email": "joesph.haag@rivertowncf.org",
+      "department": "Operations",
+      "riskScore": 47,
+      "trainingCompletionPercent": 68,
+      "phishingTests": [
+        {
+          "date": "2025-05-31",
+          "result": "passed"
+        },
+        {
+          "date": "2026-03-02",
+          "result": "passed"
+        },
+        {
+          "date": "2025-12-12",
+          "result": "failed_clicked"
+        },
+        {
+          "date": "2025-07-27",
+          "result": "passed"
+        },
+        {
+          "date": "2026-05-10",
+          "result": "passed"
+        },
+        {
+          "date": "2026-02-28",
+          "result": "passed"
+        },
+        {
+          "date": "2025-07-31",
+          "result": "passed"
+        },
+        {
+          "date": "2025-12-07",
+          "result": "passed"
+        },
+        {
+          "date": "2025-11-23",
+          "result": "passed"
+        },
+        {
+          "date": "2025-09-09",
+          "result": "passed"
+        },
+        {
+          "date": "2026-03-22",
+          "result": "passed"
+        },
+        {
+          "date": "2026-04-20",
+          "result": "passed"
+        },
+        {
+          "date": "2026-02-06",
+          "result": "passed"
+        },
+        {
+          "date": "2025-10-03",
+          "result": "passed"
+        }
+      ],
+      "flagged": []
+    },
+    {
+      "kbUserId": "kb_00007s",
+      "kali_entity_id": "ppl_00007s",
+      "userName": "Gaston Bergstrom",
+      "email": "gaston.bergstrom@rivertowncf.org",
+      "department": "Operations",
+      "riskScore": 48,
+      "trainingCompletionPercent": 85,
+      "phishingTests": [
+        {
+          "date": "2026-01-26",
+          "result": "passed"
+        },
+        {
+          "date": "2025-12-28",
+          "result": "passed"
+        },
+        {
+          "date": "2026-02-12",
+          "result": "passed"
+        },
+        {
+          "date": "2025-08-04",
+          "result": "passed"
+        },
+        {
+          "date": "2025-11-10",
+          "result": "passed"
+        },
+        {
+          "date": "2025-10-09",
+          "result": "passed"
+        },
+        {
+          "date": "2025-09-11",
+          "result": "passed"
+        },
+        {
+          "date": "2025-07-15",
+          "result": "failed_clicked"
+        },
+        {
+          "date": "2025-07-20",
+          "result": "passed"
+        },
+        {
+          "date": "2025-12-25",
+          "result": "passed"
+        },
+        {
+          "date": "2026-04-08",
+          "result": "passed"
+        },
+        {
+          "date": "2025-06-18",
+          "result": "passed"
+        },
+        {
+          "date": "2026-01-24",
+          "result": "passed"
+        },
+        {
+          "date": "2026-05-06",
+          "result": "passed"
+        },
+        {
+          "date": "2025-09-02",
+          "result": "passed"
+        },
+        {
+          "date": "2026-03-30",
+          "result": "passed"
+        },
+        {
+          "date": "2025-08-10",
+          "result": "failed_clicked"
+        },
+        {
+          "date": "2025-10-01",
+          "result": "passed"
+        }
+      ],
+      "flagged": []
+    },
+    {
+      "kbUserId": "kb_00007t",
+      "kali_entity_id": "ppl_00007t",
+      "userName": "Lupe Schultz",
+      "email": "lupe.schultz@rivertowncf.org",
+      "department": "Operations",
+      "riskScore": 69,
+      "trainingCompletionPercent": 79,
+      "phishingTests": [
+        {
+          "date": "2025-07-06",
+          "result": "passed"
+        },
+        {
+          "date": "2025-12-13",
+          "result": "passed"
+        },
+        {
+          "date": "2025-10-10",
+          "result": "failed_clicked"
+        },
+        {
+          "date": "2026-04-13",
+          "result": "passed"
+        },
+        {
+          "date": "2026-02-19",
+          "result": "passed"
+        },
+        {
+          "date": "2025-09-27",
+          "result": "passed"
+        },
+        {
+          "date": "2026-04-05",
+          "result": "passed"
+        },
+        {
+          "date": "2025-11-04",
+          "result": "passed"
+        },
+        {
+          "date": "2026-03-04",
+          "result": "passed"
+        },
+        {
+          "date": "2025-11-03",
+          "result": "passed"
+        },
+        {
+          "date": "2025-07-23",
+          "result": "failed_clicked"
+        },
+        {
+          "date": "2026-05-05",
+          "result": "passed"
+        },
+        {
+          "date": "2026-03-05",
+          "result": "passed"
+        },
+        {
+          "date": "2025-07-01",
+          "result": "failed_clicked"
+        },
+        {
+          "date": "2025-09-11",
+          "result": "passed"
+        },
+        {
+          "date": "2026-03-12",
+          "result": "passed"
+        },
+        {
+          "date": "2026-05-08",
+          "result": "passed"
+        },
+        {
+          "date": "2026-05-07",
+          "result": "failed_clicked"
+        }
+      ],
+      "flagged": [
+        {
+          "date": "2026-04-21",
+          "reason": "Skipped quarterly training"
+        }
+      ]
+    },
+    {
+      "kbUserId": "kb_00007u",
+      "kali_entity_id": "ppl_00007u",
+      "userName": "Krystel Doyle",
+      "email": "krystel.doyle@rivertowncf.org",
+      "department": "Operations",
+      "riskScore": 27,
+      "trainingCompletionPercent": 86,
+      "phishingTests": [
+        {
+          "date": "2025-10-08",
+          "result": "passed"
+        },
+        {
+          "date": "2026-01-18",
+          "result": "passed"
+        },
+        {
+          "date": "2025-09-08",
+          "result": "passed"
+        },
+        {
+          "date": "2026-04-30",
+          "result": "passed"
+        },
+        {
+          "date": "2025-10-30",
+          "result": "passed"
+        },
+        {
+          "date": "2025-12-30",
+          "result": "passed"
+        },
+        {
+          "date": "2025-07-19",
+          "result": "passed"
+        },
+        {
+          "date": "2025-09-01",
+          "result": "passed"
+        },
+        {
+          "date": "2025-08-26",
+          "result": "passed"
+        },
+        {
+          "date": "2025-09-04",
+          "result": "failed_credentials"
+        },
+        {
+          "date": "2025-10-01",
+          "result": "passed"
+        },
+        {
+          "date": "2026-02-02",
+          "result": "passed"
+        },
+        {
+          "date": "2026-01-19",
+          "result": "passed"
+        }
+      ],
+      "flagged": []
+    },
+    {
+      "kbUserId": "kb_00007v",
+      "kali_entity_id": "ppl_00007v",
+      "userName": "Maude Greenholt",
+      "email": "maude.greenholt@rivertowncf.org",
+      "department": "Operations",
+      "riskScore": 40,
+      "trainingCompletionPercent": 75,
+      "phishingTests": [
+        {
+          "date": "2025-11-18",
+          "result": "passed"
+        },
+        {
+          "date": "2026-01-28",
+          "result": "passed"
+        },
+        {
+          "date": "2025-10-14",
+          "result": "failed_credentials"
+        },
+        {
+          "date": "2026-03-21",
+          "result": "passed"
+        },
+        {
+          "date": "2025-05-24",
+          "result": "passed"
+        },
+        {
+          "date": "2025-09-11",
+          "result": "passed"
+        },
+        {
+          "date": "2026-02-07",
+          "result": "passed"
+        },
+        {
+          "date": "2026-03-03",
+          "result": "passed"
+        },
+        {
+          "date": "2026-04-07",
+          "result": "failed_clicked"
+        },
+        {
+          "date": "2025-09-07",
+          "result": "passed"
+        }
+      ],
+      "flagged": []
+    },
+    {
+      "kbUserId": "kb_00007w",
+      "kali_entity_id": "ppl_00007w",
+      "userName": "Keshawn Bogisich",
+      "email": "keshawn.bogisich@rivertowncf.org",
+      "department": "Operations",
+      "riskScore": 46,
+      "trainingCompletionPercent": 78,
+      "phishingTests": [
+        {
+          "date": "2025-06-11",
+          "result": "passed"
+        },
+        {
+          "date": "2025-11-25",
+          "result": "passed"
+        },
+        {
+          "date": "2025-10-04",
+          "result": "passed"
+        },
+        {
+          "date": "2026-01-23",
+          "result": "passed"
+        },
+        {
+          "date": "2026-02-05",
+          "result": "passed"
+        },
+        {
+          "date": "2026-03-04",
+          "result": "passed"
+        },
+        {
+          "date": "2026-05-01",
+          "result": "passed"
+        },
+        {
+          "date": "2026-04-23",
+          "result": "passed"
+        },
+        {
+          "date": "2025-06-05",
+          "result": "failed_credentials"
+        },
+        {
+          "date": "2026-03-12",
+          "result": "passed"
+        },
+        {
+          "date": "2025-12-07",
+          "result": "passed"
+        },
+        {
+          "date": "2026-03-03",
+          "result": "passed"
+        },
+        {
+          "date": "2025-06-03",
+          "result": "failed_clicked"
+        },
+        {
+          "date": "2026-04-13",
+          "result": "passed"
+        },
+        {
+          "date": "2025-12-28",
+          "result": "passed"
+        }
+      ],
+      "flagged": []
+    },
+    {
+      "kbUserId": "kb_00007x",
+      "kali_entity_id": "ppl_00007x",
+      "userName": "Alayna Conn",
+      "email": "alayna.conn@rivertowncf.org",
+      "department": "Operations",
+      "riskScore": 43,
+      "trainingCompletionPercent": 71,
+      "phishingTests": [
+        {
+          "date": "2025-09-06",
+          "result": "passed"
+        },
+        {
+          "date": "2026-02-24",
+          "result": "passed"
+        },
+        {
+          "date": "2025-09-01",
+          "result": "passed"
+        },
+        {
+          "date": "2026-05-05",
+          "result": "passed"
+        },
+        {
+          "date": "2026-01-26",
+          "result": "failed_credentials"
+        },
+        {
+          "date": "2026-04-27",
+          "result": "passed"
+        },
+        {
+          "date": "2026-01-14",
+          "result": "passed"
+        },
+        {
+          "date": "2026-03-23",
+          "result": "passed"
+        },
+        {
+          "date": "2026-02-18",
+          "result": "failed_clicked"
+        },
+        {
+          "date": "2025-10-24",
+          "result": "passed"
+        },
+        {
+          "date": "2025-06-27",
+          "result": "passed"
+        },
+        {
+          "date": "2026-02-10",
+          "result": "passed"
+        }
+      ],
+      "flagged": []
+    },
+    {
+      "kbUserId": "kb_00007y",
+      "kali_entity_id": "ppl_00007y",
+      "userName": "Demetris Kemmer-Schamberger",
+      "email": "demetris.kemmerschamberger@rivertowncf.org",
+      "department": "Operations",
+      "riskScore": 21,
+      "trainingCompletionPercent": 73,
+      "phishingTests": [
+        {
+          "date": "2025-12-10",
+          "result": "passed"
+        },
+        {
+          "date": "2026-04-19",
+          "result": "passed"
+        },
+        {
+          "date": "2025-09-30",
+          "result": "passed"
+        },
+        {
+          "date": "2026-04-13",
+          "result": "passed"
+        },
+        {
+          "date": "2025-05-29",
+          "result": "passed"
+        },
+        {
+          "date": "2026-04-10",
+          "result": "passed"
+        },
+        {
+          "date": "2025-08-23",
+          "result": "passed"
+        },
+        {
+          "date": "2025-08-23",
+          "result": "passed"
+        },
+        {
+          "date": "2025-06-01",
+          "result": "passed"
+        },
+        {
+          "date": "2025-08-23",
+          "result": "passed"
+        },
+        {
+          "date": "2026-01-11",
+          "result": "passed"
+        },
+        {
+          "date": "2026-04-27",
+          "result": "passed"
+        }
+      ],
+      "flagged": []
+    },
+    {
+      "kbUserId": "kb_00007z",
+      "kali_entity_id": "ppl_00007z",
+      "userName": "Samir Effertz",
+      "email": "samir.effertz@rivertowncf.org",
+      "department": "Programs",
+      "riskScore": 63,
+      "trainingCompletionPercent": 92,
+      "phishingTests": [
+        {
+          "date": "2025-12-22",
+          "result": "failed_credentials"
+        },
+        {
+          "date": "2026-04-02",
+          "result": "passed"
+        },
+        {
+          "date": "2026-04-03",
+          "result": "passed"
+        },
+        {
+          "date": "2025-05-16",
+          "result": "failed_clicked"
+        },
+        {
+          "date": "2026-03-06",
+          "result": "passed"
+        },
+        {
+          "date": "2025-05-13",
+          "result": "passed"
+        },
+        {
+          "date": "2026-02-17",
+          "result": "passed"
+        },
+        {
+          "date": "2025-05-15",
+          "result": "passed"
+        },
+        {
+          "date": "2025-08-21",
+          "result": "failed_clicked"
+        },
+        {
+          "date": "2026-04-12",
+          "result": "passed"
+        },
+        {
+          "date": "2026-05-01",
+          "result": "passed"
+        },
+        {
+          "date": "2025-09-10",
+          "result": "failed_clicked"
+        }
+      ],
+      "flagged": []
+    },
+    {
+      "kbUserId": "kb_000080",
+      "kali_entity_id": "ppl_000080",
+      "userName": "Amparo Spinka",
+      "email": "amparo.spinka@rivertowncf.org",
+      "department": "Operations",
+      "riskScore": 40,
+      "trainingCompletionPercent": 75,
+      "phishingTests": [
+        {
+          "date": "2026-04-17",
+          "result": "passed"
+        },
+        {
+          "date": "2025-06-21",
+          "result": "failed_clicked"
+        },
+        {
+          "date": "2025-06-25",
+          "result": "passed"
+        },
+        {
+          "date": "2026-04-30",
+          "result": "passed"
+        },
+        {
+          "date": "2025-07-01",
+          "result": "passed"
+        },
+        {
+          "date": "2026-01-21",
+          "result": "passed"
+        },
+        {
+          "date": "2025-07-30",
+          "result": "passed"
+        },
+        {
+          "date": "2025-05-10",
+          "result": "passed"
+        },
+        {
+          "date": "2025-10-17",
+          "result": "passed"
+        },
+        {
+          "date": "2026-03-22",
+          "result": "passed"
+        },
+        {
+          "date": "2025-07-04",
+          "result": "passed"
+        },
+        {
+          "date": "2025-09-26",
+          "result": "passed"
+        },
+        {
+          "date": "2026-04-11",
+          "result": "passed"
+        },
+        {
+          "date": "2025-12-21",
+          "result": "passed"
+        },
+        {
+          "date": "2026-04-24",
+          "result": "passed"
+        },
+        {
+          "date": "2025-10-11",
+          "result": "passed"
+        },
+        {
+          "date": "2025-07-09",
+          "result": "passed"
+        },
+        {
+          "date": "2026-02-17",
+          "result": "passed"
+        },
+        {
+          "date": "2026-03-14",
+          "result": "passed"
+        },
+        {
+          "date": "2025-07-21",
+          "result": "passed"
+        },
+        {
+          "date": "2025-07-04",
+          "result": "passed"
+        },
+        {
+          "date": "2026-05-07",
+          "result": "passed"
+        },
+        {
+          "date": "2025-08-23",
+          "result": "passed"
+        },
+        {
+          "date": "2025-05-28",
+          "result": "failed_clicked"
+        }
+      ],
+      "flagged": []
+    },
+    {
+      "kbUserId": "kb_000081",
+      "kali_entity_id": "ppl_000081",
+      "userName": "Izaiah Bednar",
+      "email": "izaiah.bednar@rivertowncf.org",
+      "department": "Operations",
+      "riskScore": 54,
+      "trainingCompletionPercent": 81,
+      "phishingTests": [
+        {
+          "date": "2025-09-20",
+          "result": "passed"
+        },
+        {
+          "date": "2025-09-20",
+          "result": "passed"
+        },
+        {
+          "date": "2025-12-23",
+          "result": "passed"
+        },
+        {
+          "date": "2026-03-18",
+          "result": "passed"
+        },
+        {
+          "date": "2025-12-25",
+          "result": "passed"
+        },
+        {
+          "date": "2025-07-20",
+          "result": "passed"
+        },
+        {
+          "date": "2025-10-14",
+          "result": "passed"
+        },
+        {
+          "date": "2026-02-19",
+          "result": "passed"
+        },
+        {
+          "date": "2026-01-26",
+          "result": "passed"
+        },
+        {
+          "date": "2026-02-01",
+          "result": "passed"
+        },
+        {
+          "date": "2025-12-12",
+          "result": "passed"
+        },
+        {
+          "date": "2025-11-22",
+          "result": "passed"
+        },
+        {
+          "date": "2025-10-18",
+          "result": "passed"
+        },
+        {
+          "date": "2025-06-01",
+          "result": "failed_credentials"
+        },
+        {
+          "date": "2025-07-13",
+          "result": "passed"
+        },
+        {
+          "date": "2025-07-14",
+          "result": "passed"
+        },
+        {
+          "date": "2025-05-17",
+          "result": "passed"
+        },
+        {
+          "date": "2025-09-18",
+          "result": "failed_credentials"
+        },
+        {
+          "date": "2025-12-04",
+          "result": "passed"
+        },
+        {
+          "date": "2025-12-20",
+          "result": "failed_credentials"
+        },
+        {
+          "date": "2025-08-14",
+          "result": "passed"
+        }
+      ],
+      "flagged": []
+    },
+    {
+      "kbUserId": "kb_000082",
+      "kali_entity_id": "ppl_000082",
+      "userName": "Patrick Renner",
+      "email": "patrick.renner@rivertowncf.org",
+      "department": "Operations",
+      "riskScore": 17,
+      "trainingCompletionPercent": 61,
+      "phishingTests": [
+        {
+          "date": "2025-06-08",
+          "result": "passed"
+        },
+        {
+          "date": "2025-11-12",
+          "result": "passed"
+        },
+        {
+          "date": "2026-04-15",
+          "result": "passed"
+        },
+        {
+          "date": "2025-10-01",
+          "result": "passed"
+        },
+        {
+          "date": "2025-08-06",
+          "result": "passed"
+        },
+        {
+          "date": "2026-01-03",
+          "result": "passed"
+        },
+        {
+          "date": "2025-08-27",
+          "result": "passed"
+        },
+        {
+          "date": "2025-09-18",
+          "result": "passed"
+        },
+        {
+          "date": "2026-04-13",
+          "result": "passed"
+        },
+        {
+          "date": "2025-07-22",
+          "result": "passed"
+        },
+        {
+          "date": "2025-06-15",
+          "result": "passed"
+        },
+        {
+          "date": "2025-08-20",
+          "result": "passed"
+        },
+        {
+          "date": "2026-04-29",
+          "result": "passed"
+        },
+        {
+          "date": "2025-10-07",
+          "result": "passed"
+        },
+        {
+          "date": "2026-02-09",
+          "result": "passed"
+        }
+      ],
+      "flagged": []
+    },
+    {
+      "kbUserId": "kb_000083",
+      "kali_entity_id": "ppl_000083",
+      "userName": "Tyshawn Wunsch",
+      "email": "tyshawn.wunsch@rivertowncf.org",
+      "department": "Operations",
+      "riskScore": 34,
+      "trainingCompletionPercent": 82,
+      "phishingTests": [
+        {
+          "date": "2025-07-24",
+          "result": "passed"
+        },
+        {
+          "date": "2025-09-17",
+          "result": "passed"
+        },
+        {
+          "date": "2026-01-22",
+          "result": "passed"
+        },
+        {
+          "date": "2026-01-13",
+          "result": "passed"
+        },
+        {
+          "date": "2026-03-21",
+          "result": "passed"
+        },
+        {
+          "date": "2026-03-16",
+          "result": "failed_clicked"
+        },
+        {
+          "date": "2026-01-21",
+          "result": "failed_clicked"
+        },
+        {
+          "date": "2026-02-27",
+          "result": "passed"
+        },
+        {
+          "date": "2025-09-21",
+          "result": "passed"
+        },
+        {
+          "date": "2025-08-11",
+          "result": "passed"
+        },
+        {
+          "date": "2025-05-31",
+          "result": "passed"
+        },
+        {
+          "date": "2026-03-03",
+          "result": "passed"
+        }
+      ],
+      "flagged": []
+    },
+    {
+      "kbUserId": "kb_000084",
+      "kali_entity_id": "ppl_000084",
+      "userName": "Marcel Stoltenberg",
+      "email": "marcel.stoltenberg@rivertowncf.org",
+      "department": "Development",
+      "riskScore": 68,
+      "trainingCompletionPercent": 96,
+      "phishingTests": [
+        {
+          "date": "2025-11-14",
+          "result": "passed"
+        },
+        {
+          "date": "2026-03-07",
+          "result": "passed"
+        },
+        {
+          "date": "2026-02-14",
+          "result": "passed"
+        },
+        {
+          "date": "2025-11-14",
+          "result": "passed"
+        },
+        {
+          "date": "2025-07-18",
+          "result": "passed"
+        },
+        {
+          "date": "2026-04-07",
+          "result": "passed"
+        },
+        {
+          "date": "2025-06-18",
+          "result": "passed"
+        },
+        {
+          "date": "2025-12-29",
+          "result": "passed"
+        },
+        {
+          "date": "2025-11-16",
+          "result": "passed"
+        },
+        {
+          "date": "2026-01-01",
+          "result": "passed"
+        },
+        {
+          "date": "2025-09-14",
+          "result": "failed_clicked"
+        },
+        {
+          "date": "2025-05-22",
+          "result": "passed"
+        },
+        {
+          "date": "2025-05-27",
+          "result": "failed_clicked"
+        },
+        {
+          "date": "2026-04-26",
+          "result": "passed"
+        },
+        {
+          "date": "2025-08-05",
+          "result": "passed"
+        },
+        {
+          "date": "2025-07-11",
+          "result": "passed"
+        },
+        {
+          "date": "2026-01-21",
+          "result": "passed"
+        },
+        {
+          "date": "2025-07-15",
+          "result": "passed"
+        },
+        {
+          "date": "2026-05-02",
+          "result": "failed_clicked"
+        },
+        {
+          "date": "2025-11-18",
+          "result": "passed"
+        },
+        {
+          "date": "2026-03-03",
+          "result": "failed_credentials"
+        }
+      ],
+      "flagged": [
+        {
+          "date": "2026-03-02",
+          "reason": "Clicked simulated phishing link"
+        }
+      ]
+    },
+    {
+      "kbUserId": "kb_000085",
+      "kali_entity_id": "ppl_000085",
+      "userName": "Maurine Harber",
+      "email": "maurine.harber@rivertowncf.org",
+      "department": "Operations",
+      "riskScore": 67,
+      "trainingCompletionPercent": 80,
+      "phishingTests": [
+        {
+          "date": "2025-05-12",
+          "result": "failed_clicked"
+        },
+        {
+          "date": "2025-06-26",
+          "result": "passed"
+        },
+        {
+          "date": "2025-05-30",
+          "result": "failed_credentials"
+        },
+        {
+          "date": "2025-08-18",
+          "result": "passed"
+        },
+        {
+          "date": "2026-04-28",
+          "result": "passed"
+        },
+        {
+          "date": "2025-06-02",
+          "result": "passed"
+        },
+        {
+          "date": "2026-02-03",
+          "result": "passed"
+        },
+        {
+          "date": "2025-09-22",
+          "result": "passed"
+        },
+        {
+          "date": "2026-01-12",
+          "result": "failed_credentials"
+        },
+        {
+          "date": "2026-05-09",
+          "result": "passed"
+        },
+        {
+          "date": "2025-07-21",
+          "result": "passed"
+        },
+        {
+          "date": "2026-05-08",
+          "result": "passed"
+        },
+        {
+          "date": "2025-12-23",
+          "result": "failed_clicked"
+        },
+        {
+          "date": "2025-12-10",
+          "result": "passed"
+        },
+        {
+          "date": "2026-04-01",
+          "result": "passed"
+        },
+        {
+          "date": "2025-09-03",
+          "result": "passed"
+        },
+        {
+          "date": "2025-11-13",
+          "result": "passed"
+        },
+        {
+          "date": "2026-05-09",
+          "result": "passed"
+        },
+        {
+          "date": "2025-09-25",
+          "result": "failed_credentials"
+        },
+        {
+          "date": "2025-12-04",
+          "result": "passed"
+        },
+        {
+          "date": "2026-03-26",
+          "result": "passed"
+        },
+        {
+          "date": "2025-06-12",
+          "result": "passed"
+        },
+        {
+          "date": "2025-12-07",
+          "result": "passed"
+        }
+      ],
+      "flagged": [
+        {
+          "date": "2026-04-28",
+          "reason": "Skipped quarterly training"
+        }
+      ]
+    },
+    {
+      "kbUserId": "kb_000086",
+      "kali_entity_id": "ppl_000086",
+      "userName": "Alfonzo Dare",
+      "email": "alfonzo.dare@rivertowncf.org",
+      "department": "Programs",
+      "riskScore": 78,
+      "trainingCompletionPercent": 77,
+      "phishingTests": [
+        {
+          "date": "2025-12-23",
+          "result": "passed"
+        },
+        {
+          "date": "2025-10-11",
+          "result": "failed_credentials"
+        },
+        {
+          "date": "2025-12-13",
+          "result": "passed"
+        },
+        {
+          "date": "2025-11-16",
+          "result": "failed_credentials"
+        },
+        {
+          "date": "2025-10-20",
+          "result": "passed"
+        },
+        {
+          "date": "2026-02-19",
+          "result": "failed_credentials"
+        },
+        {
+          "date": "2025-10-11",
+          "result": "passed"
+        },
+        {
+          "date": "2026-03-20",
+          "result": "passed"
+        },
+        {
+          "date": "2025-05-21",
+          "result": "failed_credentials"
+        },
+        {
+          "date": "2026-04-21",
+          "result": "passed"
+        },
+        {
+          "date": "2025-08-01",
+          "result": "failed_credentials"
+        },
+        {
+          "date": "2025-10-11",
+          "result": "passed"
+        }
+      ],
+      "flagged": [
+        {
+          "date": "2026-04-04",
+          "reason": "Reported suspicious attachment late"
+        }
+      ]
+    },
+    {
+      "kbUserId": "kb_000087",
+      "kali_entity_id": "ppl_000087",
+      "userName": "Malcolm Welch",
+      "email": "malcolm.welch@rivertowncf.org",
+      "department": "Development",
+      "riskScore": 42,
+      "trainingCompletionPercent": 91,
+      "phishingTests": [
+        {
+          "date": "2025-06-16",
+          "result": "passed"
+        },
+        {
+          "date": "2025-09-30",
+          "result": "passed"
+        },
+        {
+          "date": "2026-03-06",
+          "result": "passed"
+        },
+        {
+          "date": "2025-11-12",
+          "result": "failed_clicked"
+        },
+        {
+          "date": "2025-12-22",
+          "result": "passed"
+        },
+        {
+          "date": "2025-10-20",
+          "result": "failed_clicked"
+        },
+        {
+          "date": "2026-01-26",
+          "result": "failed_credentials"
+        },
+        {
+          "date": "2025-07-14",
+          "result": "passed"
+        },
+        {
+          "date": "2025-11-11",
+          "result": "passed"
+        },
+        {
+          "date": "2025-06-08",
+          "result": "passed"
+        },
+        {
+          "date": "2025-12-31",
+          "result": "passed"
+        },
+        {
+          "date": "2025-06-24",
+          "result": "passed"
+        },
+        {
+          "date": "2026-03-07",
+          "result": "passed"
+        }
+      ],
+      "flagged": []
+    },
+    {
+      "kbUserId": "kb_000088",
+      "kali_entity_id": "ppl_000088",
+      "userName": "Jerrod Reichert",
+      "email": "jerrod.reichert@rivertowncf.org",
+      "department": "Operations",
+      "riskScore": 75,
+      "trainingCompletionPercent": 86,
+      "phishingTests": [
+        {
+          "date": "2026-01-10",
+          "result": "passed"
+        },
+        {
+          "date": "2025-09-21",
+          "result": "passed"
+        },
+        {
+          "date": "2025-06-19",
+          "result": "passed"
+        },
+        {
+          "date": "2025-12-01",
+          "result": "failed_clicked"
+        },
+        {
+          "date": "2026-01-30",
+          "result": "passed"
+        },
+        {
+          "date": "2025-05-21",
+          "result": "failed_clicked"
+        },
+        {
+          "date": "2026-03-16",
+          "result": "passed"
+        },
+        {
+          "date": "2025-12-12",
+          "result": "passed"
+        },
+        {
+          "date": "2026-03-03",
+          "result": "failed_clicked"
+        },
+        {
+          "date": "2025-09-11",
+          "result": "passed"
+        },
+        {
+          "date": "2025-11-11",
+          "result": "passed"
+        },
+        {
+          "date": "2025-09-05",
+          "result": "passed"
+        },
+        {
+          "date": "2026-03-02",
+          "result": "passed"
+        },
+        {
+          "date": "2025-08-07",
+          "result": "passed"
+        },
+        {
+          "date": "2025-12-19",
+          "result": "passed"
+        },
+        {
+          "date": "2025-06-26",
+          "result": "passed"
+        },
+        {
+          "date": "2025-10-05",
+          "result": "passed"
+        },
+        {
+          "date": "2025-07-07",
+          "result": "failed_clicked"
+        },
+        {
+          "date": "2025-06-13",
+          "result": "failed_clicked"
+        },
+        {
+          "date": "2026-02-04",
+          "result": "passed"
+        },
+        {
+          "date": "2026-03-20",
+          "result": "passed"
+        },
+        {
+          "date": "2026-03-31",
+          "result": "passed"
+        },
+        {
+          "date": "2025-09-01",
+          "result": "passed"
+        }
+      ],
+      "flagged": [
+        {
+          "date": "2026-05-05",
+          "reason": "Skipped quarterly training"
+        }
+      ]
+    },
+    {
+      "kbUserId": "kb_000089",
+      "kali_entity_id": "ppl_000089",
+      "userName": "Cydney Batz",
+      "email": "cydney.batz@rivertowncf.org",
+      "department": "Operations",
+      "riskScore": 74,
+      "trainingCompletionPercent": 62,
+      "phishingTests": [
+        {
+          "date": "2025-10-26",
+          "result": "passed"
+        },
+        {
+          "date": "2025-11-15",
+          "result": "passed"
+        },
+        {
+          "date": "2026-04-20",
+          "result": "failed_credentials"
+        },
+        {
+          "date": "2026-02-07",
+          "result": "passed"
+        },
+        {
+          "date": "2026-03-13",
+          "result": "passed"
+        },
+        {
+          "date": "2025-12-22",
+          "result": "passed"
+        },
+        {
+          "date": "2025-05-13",
+          "result": "passed"
+        },
+        {
+          "date": "2025-10-22",
+          "result": "failed_clicked"
+        },
+        {
+          "date": "2026-04-18",
+          "result": "passed"
+        },
+        {
+          "date": "2026-04-28",
+          "result": "passed"
+        },
+        {
+          "date": "2025-11-13",
+          "result": "failed_clicked"
+        },
+        {
+          "date": "2025-06-20",
+          "result": "failed_clicked"
+        },
+        {
+          "date": "2025-08-23",
+          "result": "passed"
+        },
+        {
+          "date": "2025-12-31",
+          "result": "passed"
+        },
+        {
+          "date": "2026-03-04",
+          "result": "passed"
+        },
+        {
+          "date": "2026-01-06",
+          "result": "passed"
+        },
+        {
+          "date": "2026-01-14",
+          "result": "passed"
+        }
+      ],
+      "flagged": [
+        {
+          "date": "2026-02-12",
+          "reason": "Skipped quarterly training"
+        }
+      ]
+    },
+    {
+      "kbUserId": "kb_00008a",
+      "kali_entity_id": "ppl_00008a",
+      "userName": "Isadore Goyette",
+      "email": "isadore.goyette@rivertowncf.org",
+      "department": "Programs",
+      "riskScore": 52,
+      "trainingCompletionPercent": 76,
+      "phishingTests": [
+        {
+          "date": "2025-12-06",
+          "result": "failed_clicked"
+        },
+        {
+          "date": "2026-03-08",
+          "result": "passed"
+        },
+        {
+          "date": "2025-12-03",
+          "result": "passed"
+        },
+        {
+          "date": "2025-11-04",
+          "result": "passed"
+        },
+        {
+          "date": "2025-07-04",
+          "result": "passed"
+        },
+        {
+          "date": "2025-07-18",
+          "result": "passed"
+        },
+        {
+          "date": "2025-11-03",
+          "result": "passed"
+        },
+        {
+          "date": "2026-03-10",
+          "result": "passed"
+        },
+        {
+          "date": "2025-07-31",
+          "result": "passed"
+        },
+        {
+          "date": "2025-08-09",
+          "result": "failed_credentials"
+        }
+      ],
+      "flagged": []
+    },
+    {
+      "kbUserId": "kb_00008b",
+      "kali_entity_id": "ppl_00008b",
+      "userName": "Delphine Kemmer",
+      "email": "delphine.kemmer@rivertowncf.org",
+      "department": "Programs",
+      "riskScore": 46,
+      "trainingCompletionPercent": 100,
+      "phishingTests": [
+        {
+          "date": "2025-07-07",
+          "result": "passed"
+        },
+        {
+          "date": "2026-04-14",
+          "result": "passed"
+        },
+        {
+          "date": "2025-06-19",
+          "result": "passed"
+        },
+        {
+          "date": "2026-03-18",
+          "result": "passed"
+        },
+        {
+          "date": "2025-11-27",
+          "result": "passed"
+        },
+        {
+          "date": "2025-07-08",
+          "result": "passed"
+        },
+        {
+          "date": "2025-12-16",
+          "result": "passed"
+        },
+        {
+          "date": "2025-07-20",
+          "result": "passed"
+        },
+        {
+          "date": "2025-11-10",
+          "result": "passed"
+        },
+        {
+          "date": "2025-08-25",
+          "result": "passed"
+        },
+        {
+          "date": "2026-04-28",
+          "result": "passed"
+        },
+        {
+          "date": "2026-03-04",
+          "result": "failed_clicked"
+        },
+        {
+          "date": "2025-09-10",
+          "result": "passed"
+        },
+        {
+          "date": "2025-12-26",
+          "result": "passed"
+        }
+      ],
+      "flagged": []
+    },
+    {
+      "kbUserId": "kb_00008c",
+      "kali_entity_id": "ppl_00008c",
+      "userName": "Noelia Mosciski",
+      "email": "noelia.mosciski@rivertowncf.org",
+      "department": "Operations",
+      "riskScore": 71,
+      "trainingCompletionPercent": 61,
+      "phishingTests": [
+        {
+          "date": "2025-09-10",
+          "result": "failed_credentials"
+        },
+        {
+          "date": "2026-02-05",
+          "result": "failed_credentials"
+        },
+        {
+          "date": "2026-03-22",
+          "result": "failed_clicked"
+        },
+        {
+          "date": "2026-04-08",
+          "result": "passed"
+        },
+        {
+          "date": "2025-12-15",
+          "result": "passed"
+        },
+        {
+          "date": "2025-12-24",
+          "result": "passed"
+        },
+        {
+          "date": "2025-10-13",
+          "result": "passed"
+        },
+        {
+          "date": "2025-12-23",
+          "result": "passed"
+        },
+        {
+          "date": "2025-11-25",
+          "result": "failed_credentials"
+        },
+        {
+          "date": "2025-12-01",
+          "result": "passed"
+        },
+        {
+          "date": "2025-05-15",
+          "result": "failed_clicked"
+        },
+        {
+          "date": "2025-08-06",
+          "result": "passed"
+        },
+        {
+          "date": "2025-08-07",
+          "result": "passed"
+        }
+      ],
+      "flagged": [
+        {
+          "date": "2026-02-28",
+          "reason": "Reported suspicious attachment late"
+        }
+      ]
+    },
+    {
+      "kbUserId": "kb_00008d",
+      "kali_entity_id": "ppl_00008d",
+      "userName": "Adrian Koch",
+      "email": "adrian.koch@rivertowncf.org",
+      "department": "Programs",
+      "riskScore": 33,
+      "trainingCompletionPercent": 87,
+      "phishingTests": [
+        {
+          "date": "2025-05-28",
+          "result": "passed"
+        },
+        {
+          "date": "2026-05-01",
+          "result": "passed"
+        },
+        {
+          "date": "2025-10-13",
+          "result": "passed"
+        },
+        {
+          "date": "2025-07-30",
+          "result": "passed"
+        },
+        {
+          "date": "2025-07-07",
+          "result": "passed"
+        },
+        {
+          "date": "2025-10-02",
+          "result": "passed"
+        },
+        {
+          "date": "2025-06-04",
+          "result": "passed"
+        },
+        {
+          "date": "2025-05-28",
+          "result": "passed"
+        },
+        {
+          "date": "2025-12-06",
+          "result": "passed"
+        },
+        {
+          "date": "2025-07-31",
+          "result": "failed_clicked"
+        },
+        {
+          "date": "2025-06-07",
+          "result": "passed"
+        },
+        {
+          "date": "2025-10-08",
+          "result": "passed"
+        },
+        {
+          "date": "2025-07-25",
+          "result": "passed"
+        },
+        {
+          "date": "2025-07-03",
+          "result": "passed"
+        },
+        {
+          "date": "2025-09-01",
+          "result": "passed"
+        },
+        {
+          "date": "2025-05-20",
+          "result": "passed"
+        },
+        {
+          "date": "2026-03-10",
+          "result": "passed"
+        },
+        {
+          "date": "2026-04-27",
+          "result": "passed"
+        },
+        {
+          "date": "2026-04-11",
+          "result": "passed"
+        }
+      ],
+      "flagged": []
+    },
+    {
+      "kbUserId": "kb_00008e",
+      "kali_entity_id": "ppl_00008e",
+      "userName": "Shayne Moore",
+      "email": "shayne.moore@rivertowncf.org",
+      "department": "Operations",
+      "riskScore": 64,
+      "trainingCompletionPercent": 64,
+      "phishingTests": [
+        {
+          "date": "2025-06-26",
+          "result": "passed"
+        },
+        {
+          "date": "2026-03-09",
+          "result": "passed"
+        },
+        {
+          "date": "2025-11-04",
+          "result": "passed"
+        },
+        {
+          "date": "2026-03-12",
+          "result": "passed"
+        },
+        {
+          "date": "2025-07-07",
+          "result": "failed_clicked"
+        },
+        {
+          "date": "2025-09-18",
+          "result": "passed"
+        },
+        {
+          "date": "2025-10-08",
+          "result": "passed"
+        },
+        {
+          "date": "2025-10-28",
+          "result": "passed"
+        },
+        {
+          "date": "2025-07-08",
+          "result": "passed"
+        },
+        {
+          "date": "2025-11-13",
+          "result": "passed"
+        },
+        {
+          "date": "2026-03-26",
+          "result": "passed"
+        },
+        {
+          "date": "2025-12-13",
+          "result": "passed"
+        },
+        {
+          "date": "2025-12-24",
+          "result": "failed_clicked"
+        },
+        {
+          "date": "2025-07-25",
+          "result": "passed"
+        },
+        {
+          "date": "2025-05-25",
+          "result": "passed"
+        },
+        {
+          "date": "2025-10-07",
+          "result": "passed"
+        },
+        {
+          "date": "2025-11-21",
+          "result": "passed"
+        },
+        {
+          "date": "2026-01-19",
+          "result": "failed_credentials"
+        },
+        {
+          "date": "2025-10-12",
+          "result": "passed"
+        },
+        {
+          "date": "2025-10-31",
+          "result": "passed"
+        },
+        {
+          "date": "2025-07-03",
+          "result": "passed"
+        },
+        {
+          "date": "2025-06-04",
+          "result": "passed"
+        }
+      ],
+      "flagged": []
+    },
+    {
+      "kbUserId": "kb_00008f",
+      "kali_entity_id": "ppl_00008f",
+      "userName": "Fausto Cartwright-Abbott",
+      "email": "fausto.cartwrightabbott@rivertowncf.org",
+      "department": "Development",
+      "riskScore": 59,
+      "trainingCompletionPercent": 81,
+      "phishingTests": [
+        {
+          "date": "2025-08-07",
+          "result": "passed"
+        },
+        {
+          "date": "2025-10-12",
+          "result": "passed"
+        },
+        {
+          "date": "2025-07-28",
+          "result": "passed"
+        },
+        {
+          "date": "2025-07-06",
+          "result": "failed_clicked"
+        },
+        {
+          "date": "2025-12-31",
+          "result": "passed"
+        },
+        {
+          "date": "2025-10-23",
+          "result": "passed"
+        },
+        {
+          "date": "2025-11-22",
+          "result": "passed"
+        },
+        {
+          "date": "2025-07-21",
+          "result": "failed_clicked"
+        },
+        {
+          "date": "2026-03-29",
+          "result": "passed"
+        },
+        {
+          "date": "2025-10-18",
+          "result": "passed"
+        },
+        {
+          "date": "2025-07-11",
+          "result": "passed"
+        },
+        {
+          "date": "2025-06-30",
+          "result": "passed"
+        },
+        {
+          "date": "2026-02-08",
+          "result": "passed"
+        },
+        {
+          "date": "2025-09-30",
+          "result": "passed"
+        },
+        {
+          "date": "2026-04-05",
+          "result": "passed"
+        },
+        {
+          "date": "2026-02-16",
+          "result": "passed"
+        },
+        {
+          "date": "2025-10-31",
+          "result": "passed"
+        },
+        {
+          "date": "2026-04-27",
+          "result": "failed_credentials"
+        },
+        {
+          "date": "2025-05-18",
+          "result": "passed"
+        },
+        {
+          "date": "2025-12-17",
+          "result": "passed"
+        },
+        {
+          "date": "2026-04-02",
+          "result": "passed"
+        },
+        {
+          "date": "2026-01-15",
+          "result": "passed"
+        },
+        {
+          "date": "2025-06-20",
+          "result": "passed"
+        }
+      ],
+      "flagged": []
+    },
+    {
+      "kbUserId": "kb_00008g",
+      "kali_entity_id": "ppl_00008g",
+      "userName": "Douglas Jacobi",
+      "email": "douglas.jacobi@rivertowncf.org",
+      "department": "Operations",
+      "riskScore": 43,
+      "trainingCompletionPercent": 83,
+      "phishingTests": [
+        {
+          "date": "2026-04-16",
+          "result": "passed"
+        },
+        {
+          "date": "2025-09-06",
+          "result": "passed"
+        },
+        {
+          "date": "2025-08-03",
+          "result": "passed"
+        },
+        {
+          "date": "2026-03-13",
+          "result": "passed"
+        },
+        {
+          "date": "2025-12-13",
+          "result": "passed"
+        },
+        {
+          "date": "2025-09-18",
+          "result": "passed"
+        },
+        {
+          "date": "2026-01-17",
+          "result": "passed"
+        },
+        {
+          "date": "2025-11-19",
+          "result": "failed_credentials"
+        },
+        {
+          "date": "2025-08-03",
+          "result": "passed"
+        },
+        {
+          "date": "2026-02-08",
+          "result": "failed_credentials"
+        },
+        {
+          "date": "2025-11-27",
+          "result": "passed"
+        },
+        {
+          "date": "2026-02-22",
+          "result": "failed_clicked"
+        },
+        {
+          "date": "2025-05-13",
+          "result": "passed"
+        },
+        {
+          "date": "2025-12-25",
+          "result": "passed"
+        }
+      ],
+      "flagged": []
+    },
+    {
+      "kbUserId": "kb_00008h",
+      "kali_entity_id": "ppl_00008h",
+      "userName": "Elsa Rolfson-Grimes",
+      "email": "elsa.rolfsongrimes@rivertowncf.org",
+      "department": "Operations",
+      "riskScore": 43,
+      "trainingCompletionPercent": 92,
+      "phishingTests": [
+        {
+          "date": "2026-03-31",
+          "result": "passed"
+        },
+        {
+          "date": "2025-10-17",
+          "result": "passed"
+        },
+        {
+          "date": "2026-03-19",
+          "result": "passed"
+        },
+        {
+          "date": "2025-10-20",
+          "result": "passed"
+        },
+        {
+          "date": "2025-05-23",
+          "result": "passed"
+        },
+        {
+          "date": "2025-11-29",
+          "result": "passed"
+        },
+        {
+          "date": "2025-09-03",
+          "result": "failed_credentials"
+        },
+        {
+          "date": "2026-03-15",
+          "result": "passed"
+        },
+        {
+          "date": "2026-02-20",
+          "result": "passed"
+        },
+        {
+          "date": "2025-07-06",
+          "result": "passed"
+        }
+      ],
+      "flagged": []
+    },
+    {
+      "kbUserId": "kb_00008i",
+      "kali_entity_id": "ppl_00008i",
+      "userName": "Addie Marks",
+      "email": "addie.marks@rivertowncf.org",
+      "department": "Operations",
+      "riskScore": 53,
+      "trainingCompletionPercent": 80,
+      "phishingTests": [
+        {
+          "date": "2026-04-09",
+          "result": "passed"
+        },
+        {
+          "date": "2025-11-01",
+          "result": "passed"
+        },
+        {
+          "date": "2025-07-30",
+          "result": "passed"
+        },
+        {
+          "date": "2025-08-07",
+          "result": "passed"
+        },
+        {
+          "date": "2025-06-21",
+          "result": "passed"
+        },
+        {
+          "date": "2025-05-22",
+          "result": "passed"
+        },
+        {
+          "date": "2025-09-28",
+          "result": "passed"
+        },
+        {
+          "date": "2026-04-25",
+          "result": "passed"
+        },
+        {
+          "date": "2025-06-09",
+          "result": "passed"
+        },
+        {
+          "date": "2025-06-05",
+          "result": "failed_clicked"
+        },
+        {
+          "date": "2025-11-06",
+          "result": "passed"
+        },
+        {
+          "date": "2025-09-24",
+          "result": "passed"
+        },
+        {
+          "date": "2026-05-02",
+          "result": "failed_clicked"
+        },
+        {
+          "date": "2025-10-27",
+          "result": "passed"
+        },
+        {
+          "date": "2025-09-03",
+          "result": "passed"
+        },
+        {
+          "date": "2025-06-06",
+          "result": "passed"
+        }
+      ],
+      "flagged": []
+    },
+    {
+      "kbUserId": "kb_00008j",
+      "kali_entity_id": "ppl_00008j",
+      "userName": "Aurelio Pollich",
+      "email": "aurelio.pollich@rivertowncf.org",
+      "department": "Operations",
+      "riskScore": 20,
+      "trainingCompletionPercent": 96,
+      "phishingTests": [
+        {
+          "date": "2025-10-20",
+          "result": "passed"
+        },
+        {
+          "date": "2025-07-15",
+          "result": "passed"
+        },
+        {
+          "date": "2025-05-16",
+          "result": "passed"
+        },
+        {
+          "date": "2026-02-02",
+          "result": "passed"
+        },
+        {
+          "date": "2026-05-04",
+          "result": "passed"
+        },
+        {
+          "date": "2025-10-23",
+          "result": "passed"
+        },
+        {
+          "date": "2026-04-21",
+          "result": "passed"
+        },
+        {
+          "date": "2025-09-06",
+          "result": "passed"
+        },
+        {
+          "date": "2026-01-02",
+          "result": "passed"
+        },
+        {
+          "date": "2026-04-28",
+          "result": "passed"
+        },
+        {
+          "date": "2025-12-12",
+          "result": "passed"
+        },
+        {
+          "date": "2025-09-12",
+          "result": "failed_clicked"
+        },
+        {
+          "date": "2025-10-15",
+          "result": "passed"
+        },
+        {
+          "date": "2025-07-13",
+          "result": "passed"
+        },
+        {
+          "date": "2026-02-11",
+          "result": "passed"
+        },
+        {
+          "date": "2026-01-18",
+          "result": "passed"
+        },
+        {
+          "date": "2025-06-17",
+          "result": "passed"
+        },
+        {
+          "date": "2025-10-24",
+          "result": "passed"
+        },
+        {
+          "date": "2025-05-25",
+          "result": "passed"
+        },
+        {
+          "date": "2025-06-17",
+          "result": "passed"
+        }
+      ],
+      "flagged": []
+    },
+    {
+      "kbUserId": "kb_00008k",
+      "kali_entity_id": "ppl_00008k",
+      "userName": "Lily Anderson",
+      "email": "lily.anderson@rivertowncf.org",
+      "department": "Operations",
+      "riskScore": 28,
+      "trainingCompletionPercent": 92,
+      "phishingTests": [
+        {
+          "date": "2026-01-11",
+          "result": "passed"
+        },
+        {
+          "date": "2026-05-05",
+          "result": "passed"
+        },
+        {
+          "date": "2025-12-22",
+          "result": "passed"
+        },
+        {
+          "date": "2026-03-24",
+          "result": "passed"
+        },
+        {
+          "date": "2026-04-27",
+          "result": "failed_credentials"
+        },
+        {
+          "date": "2026-03-17",
+          "result": "passed"
+        },
+        {
+          "date": "2025-12-08",
+          "result": "passed"
+        },
+        {
+          "date": "2025-10-15",
+          "result": "passed"
+        },
+        {
+          "date": "2025-09-08",
+          "result": "passed"
+        },
+        {
+          "date": "2025-06-14",
+          "result": "passed"
+        }
+      ],
+      "flagged": []
+    },
+    {
+      "kbUserId": "kb_00008l",
+      "kali_entity_id": "ppl_00008l",
+      "userName": "Michelle Terry",
+      "email": "michelle.terry@rivertowncf.org",
+      "department": "Operations",
+      "riskScore": 40,
+      "trainingCompletionPercent": 100,
+      "phishingTests": [
+        {
+          "date": "2025-11-01",
+          "result": "passed"
+        },
+        {
+          "date": "2025-10-19",
+          "result": "passed"
+        },
+        {
+          "date": "2025-05-26",
+          "result": "passed"
+        },
+        {
+          "date": "2025-08-25",
+          "result": "passed"
+        },
+        {
+          "date": "2025-07-13",
+          "result": "passed"
+        },
+        {
+          "date": "2025-11-29",
+          "result": "passed"
+        },
+        {
+          "date": "2026-02-23",
+          "result": "passed"
+        },
+        {
+          "date": "2025-11-11",
+          "result": "passed"
+        },
+        {
+          "date": "2025-09-30",
+          "result": "passed"
+        },
+        {
+          "date": "2026-04-09",
+          "result": "failed_clicked"
+        },
+        {
+          "date": "2026-04-20",
+          "result": "passed"
+        },
+        {
+          "date": "2025-05-31",
+          "result": "passed"
+        },
+        {
+          "date": "2025-10-20",
+          "result": "passed"
+        },
+        {
+          "date": "2025-10-15",
+          "result": "passed"
+        },
+        {
+          "date": "2025-06-22",
+          "result": "passed"
+        },
+        {
+          "date": "2026-03-17",
+          "result": "passed"
+        },
+        {
+          "date": "2025-08-21",
+          "result": "passed"
+        },
+        {
+          "date": "2026-04-12",
+          "result": "passed"
+        },
+        {
+          "date": "2025-05-11",
+          "result": "passed"
+        },
+        {
+          "date": "2025-05-23",
+          "result": "passed"
+        }
+      ],
+      "flagged": []
+    },
+    {
+      "kbUserId": "kb_00008m",
+      "kali_entity_id": "ppl_00008m",
+      "userName": "Fermin Schultz",
+      "email": "fermin.schultz@rivertowncf.org",
+      "department": "Programs",
+      "riskScore": 44,
+      "trainingCompletionPercent": 93,
+      "phishingTests": [
+        {
+          "date": "2025-10-25",
+          "result": "passed"
+        },
+        {
+          "date": "2025-05-19",
+          "result": "passed"
+        },
+        {
+          "date": "2025-08-27",
+          "result": "passed"
+        },
+        {
+          "date": "2025-10-01",
+          "result": "passed"
+        },
+        {
+          "date": "2026-02-27",
+          "result": "passed"
+        },
+        {
+          "date": "2026-01-15",
+          "result": "passed"
+        },
+        {
+          "date": "2026-01-24",
+          "result": "passed"
+        },
+        {
+          "date": "2026-03-31",
+          "result": "passed"
+        },
+        {
+          "date": "2026-01-13",
+          "result": "failed_credentials"
+        },
+        {
+          "date": "2025-10-20",
+          "result": "passed"
+        },
+        {
+          "date": "2026-02-20",
+          "result": "passed"
+        },
+        {
+          "date": "2026-01-23",
+          "result": "passed"
+        },
+        {
+          "date": "2025-06-10",
+          "result": "passed"
+        },
+        {
+          "date": "2026-01-26",
+          "result": "passed"
+        },
+        {
+          "date": "2025-08-23",
+          "result": "passed"
+        },
+        {
+          "date": "2026-02-24",
+          "result": "passed"
+        },
+        {
+          "date": "2026-04-10",
+          "result": "passed"
+        },
+        {
+          "date": "2026-01-07",
+          "result": "passed"
+        },
+        {
+          "date": "2025-10-03",
+          "result": "passed"
+        },
+        {
+          "date": "2025-07-12",
+          "result": "failed_clicked"
+        },
+        {
+          "date": "2026-03-28",
+          "result": "passed"
+        }
+      ],
+      "flagged": []
+    }
+  ],
+  "orgPosture": {
+    "overallRisk": 51,
+    "overallTrainingCompletion": 81,
+    "flaggedUserCount": 10,
+    "lastPhishingCampaignDate": "2026-04-26"
+  }
+}

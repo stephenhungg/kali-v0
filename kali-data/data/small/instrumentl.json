@@ -1,0 +1,443 @@
+{
+  "grants": [
+    {
+      "grantId": "inst_0000ds",
+      "kali_entity_id": "grant_0000ds",
+      "title": "Sacramento County Public Health — Family Stabilization Grant",
+      "funderName": "Sacramento County Public Health",
+      "funderId": "org_00000m",
+      "amountRange": {
+        "min": 46913,
+        "max": 70369
+      },
+      "requestedAmount": 58641,
+      "awardedAmount": null,
+      "status": "rejected",
+      "deadline": "2026-09-08",
+      "submittedDate": "2026-07-20",
+      "fitScore": 80,
+      "programArea": "Family Stabilization",
+      "fundingFocus": [
+        "health"
+      ],
+      "relatedDocuments": []
+    },
+    {
+      "grantId": "inst_0000dt",
+      "kali_entity_id": "grant_0000dt",
+      "title": "Jakubowski Charitable Fund — Operating Grant",
+      "funderName": "Jakubowski Charitable Fund",
+      "funderId": "org_00000j",
+      "amountRange": {
+        "min": 211290,
+        "max": 316934
+      },
+      "requestedAmount": 264112,
+      "awardedAmount": null,
+      "status": "prospect",
+      "deadline": "2026-03-24",
+      "fitScore": 43,
+      "programArea": "Operating",
+      "fundingFocus": [
+        "health",
+        "workforce",
+        "food security"
+      ],
+      "notes": "Vox advoco victoria fugiat vinco.",
+      "relatedDocuments": [
+        "doc_0000e8"
+      ]
+    },
+    {
+      "grantId": "inst_0000du",
+      "kali_entity_id": "grant_0000du",
+      "title": "Zboncak Charitable Fund — Youth Mentorship Grant",
+      "funderName": "Zboncak Charitable Fund",
+      "funderId": "org_00000f",
+      "amountRange": {
+        "min": 83075,
+        "max": 124613
+      },
+      "requestedAmount": 103844,
+      "awardedAmount": null,
+      "status": "submitted",
+      "deadline": "2025-06-26",
+      "submittedDate": "2025-06-12",
+      "fitScore": 36,
+      "programArea": "Youth Mentorship",
+      "fundingFocus": [
+        "workforce",
+        "environment",
+        "youth"
+      ],
+      "notes": "Versus damno consuasor adhuc una animi vel accusator. Deporto veritas conor anser amet artificiose delego tres surgo vox.",
+      "relatedDocuments": []
+    },
+    {
+      "grantId": "inst_0000dv",
+      "kali_entity_id": "grant_0000dv",
+      "title": "Zboncak Charitable Fund — Food Security Network Grant",
+      "funderName": "Zboncak Charitable Fund",
+      "funderId": "org_00000f",
+      "amountRange": {
+        "min": 101150,
+        "max": 151724
+      },
+      "requestedAmount": 126437,
+      "awardedAmount": null,
+      "status": "prospect",
+      "deadline": "2026-07-18",
+      "fitScore": 48,
+      "programArea": "Food Security Network",
+      "fundingFocus": [
+        "workforce",
+        "environment",
+        "youth"
+      ],
+      "relatedDocuments": []
+    },
+    {
+      "grantId": "inst_0000dw",
+      "kali_entity_id": "grant_0000dw",
+      "title": "Abernathy Family Trust — Operating Grant",
+      "funderName": "Abernathy Family Trust",
+      "funderId": "org_00000g",
+      "amountRange": {
+        "min": 65254,
+        "max": 97882
+      },
+      "requestedAmount": 81568,
+      "awardedAmount": null,
+      "status": "submitted",
+      "deadline": "2026-08-22",
+      "submittedDate": "2026-07-20",
+      "fitScore": 43,
+      "programArea": "Operating",
+      "fundingFocus": [
+        "health"
+      ],
+      "notes": "Ventus capio aggredior vaco porro advoco aetas aduro avarus. Delego vitae possimus porro sopor articulus caput.",
+      "relatedDocuments": []
+    },
+    {
+      "grantId": "inst_0000dx",
+      "kali_entity_id": "grant_0000dx",
+      "title": "Kuphal Charitable Fund — Community Health Outreach Grant",
+      "funderName": "Kuphal Charitable Fund",
+      "funderId": "org_00000k",
+      "amountRange": {
+        "min": 76122,
+        "max": 114182
+      },
+      "requestedAmount": 95152,
+      "awardedAmount": null,
+      "status": "rejected",
+      "deadline": "2025-06-22",
+      "submittedDate": "2025-05-21",
+      "fitScore": 51,
+      "programArea": "Community Health Outreach",
+      "fundingFocus": [
+        "youth"
+      ],
+      "relatedDocuments": [
+        "doc_0000ex"
+      ]
+    },
+    {
+      "grantId": "inst_0000dy",
+      "kali_entity_id": "grant_0000dy",
+      "title": "Blick Foundation — General Operating Grant",
+      "funderName": "Blick Foundation",
+      "funderId": "org_00000h",
+      "amountRange": {
+        "min": 16710,
+        "max": 25066
+      },
+      "requestedAmount": 20888,
+      "awardedAmount": null,
+      "status": "submitted",
+      "deadline": "2026-01-29",
+      "submittedDate": "2025-12-29",
+      "fitScore": 36,
+      "fundingFocus": [
+        "education",
+        "environment"
+      ],
+      "notes": "Fugit turpis clibanus venustas tabernus summopere.",
+      "relatedDocuments": []
+    },
+    {
+      "grantId": "inst_0000dz",
+      "kali_entity_id": "grant_0000dz",
+      "title": "Blick Foundation — Operating Grant",
+      "funderName": "Blick Foundation",
+      "funderId": "org_00000h",
+      "amountRange": {
+        "min": 307530,
+        "max": 461296
+      },
+      "requestedAmount": 384413,
+      "awardedAmount": null,
+      "status": "submitted",
+      "deadline": "2025-10-03",
+      "submittedDate": "2025-08-16",
+      "fitScore": 46,
+      "programArea": "Operating",
+      "fundingFocus": [
+        "education",
+        "environment"
+      ],
+      "relatedDocuments": []
+    },
+    {
+      "grantId": "inst_0000e0",
+      "kali_entity_id": "grant_0000e0",
+      "title": "Kris-Sanford Charitable Fund — Food Security Network Grant",
+      "funderName": "Kris-Sanford Charitable Fund",
+      "funderId": "org_00000i",
+      "amountRange": {
+        "min": 17756,
+        "max": 26634
+      },
+      "requestedAmount": 22195,
+      "awardedAmount": null,
+      "status": "in_progress",
+      "deadline": "2025-09-12",
+      "fitScore": 74,
+      "programArea": "Food Security Network",
+      "fundingFocus": [
+        "workforce"
+      ],
+      "notes": "Ater modi thorax uredo capio consuasor officia truculenter versus cunae. Sed arx debitis damnatio. Conatus apparatus conitor aveho causa.",
+      "relatedDocuments": []
+    },
+    {
+      "grantId": "inst_0000e1",
+      "kali_entity_id": "grant_0000e1",
+      "title": "Abernathy Family Trust — Operating Grant",
+      "funderName": "Abernathy Family Trust",
+      "funderId": "org_00000g",
+      "amountRange": {
+        "min": 40389,
+        "max": 60583
+      },
+      "requestedAmount": 50486,
+      "awardedAmount": null,
+      "status": "in_progress",
+      "deadline": "2025-11-16",
+      "fitScore": 70,
+      "programArea": "Operating",
+      "fundingFocus": [
+        "health"
+      ],
+      "notes": "Tripudio iusto volup sponte repellendus adaugeo texo arto deleo valeo. Assentator suscipit thesis quae approbo colo ars aperio aestus verumtamen.",
+      "relatedDocuments": [
+        "doc_0000f7"
+      ]
+    },
+    {
+      "grantId": "inst_0000e2",
+      "kali_entity_id": "grant_0000e2",
+      "title": "Kris-Sanford Charitable Fund — Operating Grant",
+      "funderName": "Kris-Sanford Charitable Fund",
+      "funderId": "org_00000i",
+      "amountRange": {
+        "min": 22930,
+        "max": 34394
+      },
+      "requestedAmount": 28662,
+      "awardedAmount": null,
+      "status": "prospect",
+      "deadline": "2025-04-05",
+      "fitScore": 95,
+      "programArea": "Operating",
+      "fundingFocus": [
+        "workforce"
+      ],
+      "notes": "Quidem turbo correptius colo torqueo supellex animi.",
+      "relatedDocuments": [
+        "doc_0000em"
+      ]
+    },
+    {
+      "grantId": "inst_0000e3",
+      "kali_entity_id": "grant_0000e3",
+      "title": "California Department of Social Services — Food Security Network Grant",
+      "funderName": "California Department of Social Services",
+      "funderId": "org_00000n",
+      "amountRange": {
+        "min": 15606,
+        "max": 23410
+      },
+      "requestedAmount": 19508,
+      "awardedAmount": null,
+      "status": "submitted",
+      "deadline": "2025-09-21",
+      "submittedDate": "2025-09-04",
+      "fitScore": 76,
+      "programArea": "Food Security Network",
+      "fundingFocus": [
+        "housing",
+        "food security"
+      ],
+      "relatedDocuments": [
+        "doc_0000es",
+        "doc_0000et"
+      ]
+    },
+    {
+      "grantId": "inst_0000e4",
+      "kali_entity_id": "grant_0000e4",
+      "title": "Mayer Family Trust — Community Health Outreach Grant",
+      "funderName": "Mayer Family Trust",
+      "funderId": "org_00000l",
+      "amountRange": {
+        "min": 189066,
+        "max": 283598
+      },
+      "requestedAmount": 236332,
+      "awardedAmount": null,
+      "status": "prospect",
+      "deadline": "2025-05-01",
+      "fitScore": 76,
+      "programArea": "Community Health Outreach",
+      "fundingFocus": [
+        "education"
+      ],
+      "notes": "Votum speciosus arcesso error decet sunt. Decimus convoco cornu ver adhaero derideo deripio. Culpo clibanus soleo vix.",
+      "relatedDocuments": []
+    },
+    {
+      "grantId": "inst_0000e5",
+      "kali_entity_id": "grant_0000e5",
+      "title": "California Department of Social Services — Workforce Development Grant",
+      "funderName": "California Department of Social Services",
+      "funderId": "org_00000n",
+      "amountRange": {
+        "min": 74056,
+        "max": 111084
+      },
+      "requestedAmount": 92570,
+      "awardedAmount": 81819.2255873104,
+      "status": "closed",
+      "deadline": "2025-10-06",
+      "submittedDate": "2025-08-20",
+      "awardedDate": "2025-11-21",
+      "fitScore": 86,
+      "programArea": "Workforce Development",
+      "fundingFocus": [
+        "housing",
+        "food security"
+      ],
+      "relatedDocuments": []
+    }
+  ],
+  "funders": [
+    {
+      "funderId": "org_00000e",
+      "name": "Stehr Family Trust",
+      "type": "foundation",
+      "fundingFocus": [
+        "arts"
+      ],
+      "totalGivingPerYearEstimate": 12644053,
+      "typicalGrantSize": 140061
+    },
+    {
+      "funderId": "org_00000f",
+      "name": "Zboncak Charitable Fund",
+      "type": "foundation",
+      "fundingFocus": [
+        "workforce",
+        "environment",
+        "youth"
+      ],
+      "totalGivingPerYearEstimate": 8038130,
+      "typicalGrantSize": 294781
+    },
+    {
+      "funderId": "org_00000g",
+      "name": "Abernathy Family Trust",
+      "type": "foundation",
+      "fundingFocus": [
+        "health"
+      ],
+      "totalGivingPerYearEstimate": 4155772,
+      "typicalGrantSize": 66467
+    },
+    {
+      "funderId": "org_00000h",
+      "name": "Blick Foundation",
+      "type": "foundation",
+      "fundingFocus": [
+        "education",
+        "environment"
+      ],
+      "totalGivingPerYearEstimate": 2986491,
+      "typicalGrantSize": 92727
+    },
+    {
+      "funderId": "org_00000i",
+      "name": "Kris-Sanford Charitable Fund",
+      "type": "foundation",
+      "fundingFocus": [
+        "workforce"
+      ],
+      "totalGivingPerYearEstimate": 5423942,
+      "typicalGrantSize": 62184
+    },
+    {
+      "funderId": "org_00000j",
+      "name": "Jakubowski Charitable Fund",
+      "type": "foundation",
+      "fundingFocus": [
+        "health",
+        "workforce",
+        "food security"
+      ],
+      "totalGivingPerYearEstimate": 5602162,
+      "typicalGrantSize": 145059
+    },
+    {
+      "funderId": "org_00000k",
+      "name": "Kuphal Charitable Fund",
+      "type": "foundation",
+      "fundingFocus": [
+        "youth"
+      ],
+      "totalGivingPerYearEstimate": 13490614,
+      "typicalGrantSize": 252923
+    },
+    {
+      "funderId": "org_00000l",
+      "name": "Mayer Family Trust",
+      "type": "foundation",
+      "fundingFocus": [
+        "education"
+      ],
+      "totalGivingPerYearEstimate": 19612577,
+      "typicalGrantSize": 291056
+    },
+    {
+      "funderId": "org_00000m",
+      "name": "Sacramento County Public Health",
+      "type": "government",
+      "fundingFocus": [
+        "health"
+      ],
+      "totalGivingPerYearEstimate": 5812465,
+      "typicalGrantSize": 192627
+    },
+    {
+      "funderId": "org_00000n",
+      "name": "California Department of Social Services",
+      "type": "government",
+      "fundingFocus": [
+        "housing",
+        "food security"
+      ],
+      "totalGivingPerYearEstimate": 3843605,
+      "typicalGrantSize": 109683
+    }
+  ]
+}

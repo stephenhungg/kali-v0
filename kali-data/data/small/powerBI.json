@@ -1,0 +1,169 @@
+{
+  "dashboards": [
+    {
+      "id": "pbi_00015f",
+      "kali_entity_id": "dash_00015f",
+      "displayName": "Donor Health",
+      "embedUrl": "https://app.powerbi.com/dashboardEmbed?dashboardId=dash_00015f",
+      "tiles": [
+        {
+          "tileId": "tile_dash_00015f_0",
+          "title": "Active donors (LYBUNT-adjusted)",
+          "currentValue": 49,
+          "previousValue": 47,
+          "trendPct": 0.04
+        },
+        {
+          "tileId": "tile_dash_00015f_1",
+          "title": "Lapsed donor count",
+          "currentValue": 47,
+          "previousValue": 44,
+          "trendPct": 0.07
+        },
+        {
+          "tileId": "tile_dash_00015f_2",
+          "title": "Average gift size",
+          "currentValue": 217,
+          "previousValue": 221,
+          "trendPct": -0.02
+        },
+        {
+          "tileId": "tile_dash_00015f_3",
+          "title": "Retention rate",
+          "currentValue": 64,
+          "previousValue": 66,
+          "trendPct": -0.03
+        },
+        {
+          "tileId": "tile_dash_00015f_4",
+          "title": "New donor acquisition",
+          "currentValue": 8,
+          "previousValue": 7,
+          "trendPct": 0.12
+        }
+      ]
+    },
+    {
+      "id": "pbi_00015g",
+      "kali_entity_id": "dash_00015g",
+      "displayName": "Program Impact",
+      "embedUrl": "https://app.powerbi.com/dashboardEmbed?dashboardId=dash_00015g",
+      "tiles": [
+        {
+          "tileId": "tile_dash_00015g_0",
+          "title": "Youth Mentorship — beneficiaries served",
+          "currentValue": 1369,
+          "previousValue": 1368,
+          "trendPct": 0.0007149844893139745
+        },
+        {
+          "tileId": "tile_dash_00015g_1",
+          "title": "Community Health Outreach — beneficiaries served",
+          "currentValue": 2733,
+          "previousValue": 2675,
+          "trendPct": 0.021776302410415994
+        },
+        {
+          "tileId": "tile_dash_00015g_2",
+          "title": "Workforce Development — beneficiaries served",
+          "currentValue": 3086,
+          "previousValue": 3281,
+          "trendPct": -0.05937672109926451
+        },
+        {
+          "tileId": "tile_dash_00015g_3",
+          "title": "Food Security Network — beneficiaries served",
+          "currentValue": 1098,
+          "previousValue": 1299,
+          "trendPct": -0.15455604215356022
+        },
+        {
+          "tileId": "tile_dash_00015g_4",
+          "title": "Family Stabilization — beneficiaries served",
+          "currentValue": 1182,
+          "previousValue": 1071,
+          "trendPct": 0.10414851080966213
+        },
+        {
+          "tileId": "tile_dash_00015g_5",
+          "title": "Operating — beneficiaries served",
+          "currentValue": 1036,
+          "previousValue": 953,
+          "trendPct": 0.08751579934103014
+        }
+      ]
+    },
+    {
+      "id": "pbi_00015h",
+      "kali_entity_id": "dash_00015h",
+      "displayName": "Fundraising Pipeline",
+      "embedUrl": "https://app.powerbi.com/dashboardEmbed?dashboardId=dash_00015h",
+      "tiles": [
+        {
+          "tileId": "tile_dash_00015h_0",
+          "title": "Pipeline value (next 90d)",
+          "currentValue": 16136,
+          "previousValue": 14941,
+          "trendPct": 0.08
+        },
+        {
+          "tileId": "tile_dash_00015h_1",
+          "title": "Open grant requests ($)",
+          "currentValue": 682902,
+          "previousValue": 593828,
+          "trendPct": 0.15
+        },
+        {
+          "tileId": "tile_dash_00015h_2",
+          "title": "Major gift prospects",
+          "currentValue": 30,
+          "previousValue": 29,
+          "trendPct": 0.05
+        },
+        {
+          "tileId": "tile_dash_00015h_3",
+          "title": "Annual fund YTD",
+          "currentValue": 7677,
+          "previousValue": 7242,
+          "trendPct": 0.06
+        }
+      ]
+    },
+    {
+      "id": "pbi_00015i",
+      "kali_entity_id": "dash_00015i",
+      "displayName": "Financial Health",
+      "embedUrl": "https://app.powerbi.com/dashboardEmbed?dashboardId=dash_00015i",
+      "tiles": [
+        {
+          "tileId": "tile_dash_00015i_0",
+          "title": "Cash on hand",
+          "currentValue": 1039069,
+          "previousValue": 1049565,
+          "trendPct": -0.01
+        },
+        {
+          "tileId": "tile_dash_00015i_1",
+          "title": "Months of operating reserve",
+          "currentValue": 5,
+          "previousValue": 5,
+          "trendPct": -0.05
+        },
+        {
+          "tileId": "tile_dash_00015i_2",
+          "title": "Restricted fund balance",
+          "currentValue": 576675,
+          "previousValue": 559879,
+          "trendPct": 0.03
+        },
+        {
+          "tileId": "tile_dash_00015i_3",
+          "title": "FY budget % executed",
+          "currentValue": 35,
+          "previousValue": 35,
+          "trendPct": 0
+        }
+      ]
+    }
+  ]
+}

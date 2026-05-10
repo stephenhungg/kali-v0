@@ -1,0 +1,3376 @@
+{
+  "grants": [
+    {
+      "grantId": "inst_000ija",
+      "kali_entity_id": "grant_000ija",
+      "title": "Romaguera Family Trust — Workforce Development Grant",
+      "funderName": "Romaguera Family Trust",
+      "funderId": "org_000029",
+      "amountRange": {
+        "min": 12416,
+        "max": 18624
+      },
+      "requestedAmount": 15520,
+      "awardedAmount": null,
+      "status": "in_progress",
+      "deadline": "2026-01-13",
+      "fitScore": 72,
+      "programArea": "Workforce Development",
+      "fundingFocus": [
+        "youth"
+      ],
+      "relatedDocuments": []
+    },
+    {
+      "grantId": "inst_000ijb",
+      "kali_entity_id": "grant_000ijb",
+      "title": "Parker Community Foundation — General Operating Grant",
+      "funderName": "Parker Community Foundation",
+      "funderId": "org_00002w",
+      "amountRange": {
+        "min": 40848,
+        "max": 61272
+      },
+      "requestedAmount": 51060,
+      "awardedAmount": 42223.492946756945,
+      "status": "closed",
+      "deadline": "2025-05-14",
+      "submittedDate": "2025-04-17",
+      "awardedDate": "2025-07-28",
+      "fitScore": 67,
+      "fundingFocus": [
+        "health",
+        "housing",
+        "education"
+      ],
+      "notes": "Valeo sono civis adfectus vir tersus decumbo. Nam soleo beneficium quidem. Tametsi sopor credo succedo adicio calculus ulciscor decipio natus soleo.",
+      "relatedDocuments": []
+    },
+    {
+      "grantId": "inst_000ijc",
+      "kali_entity_id": "grant_000ijc",
+      "title": "USDA — Food and Nutrition Service — Operating Grant",
+      "funderName": "USDA — Food and Nutrition Service",
+      "funderId": "org_000046",
+      "amountRange": {
+        "min": 10054,
+        "max": 15082
+      },
+      "requestedAmount": 12568,
+      "awardedAmount": null,
+      "status": "prospect",
+      "deadline": "2025-08-28",
+      "fitScore": 50,
+      "programArea": "Operating",
+      "fundingFocus": [
+        "food security"
+      ],
+      "notes": "Trepide tolero trepide aqua velut accusator. Supra tergo vita aggredior esse vinco corrupti.",
+      "relatedDocuments": [
+        "doc_000iu6",
+        "doc_000iz5"
+      ]
+    },
+    {
+      "grantId": "inst_000ijd",
+      "kali_entity_id": "grant_000ijd",
+      "title": "Swift Community Foundation — Workforce Development Grant",
+      "funderName": "Swift Community Foundation",
+      "funderId": "org_000021",
+      "amountRange": {
+        "min": 315604,
+        "max": 473406
+      },
+      "requestedAmount": 394505,
+      "awardedAmount": null,
+      "status": "in_progress",
+      "deadline": "2025-04-23",
+      "fitScore": 53,
+      "programArea": "Workforce Development",
+      "fundingFocus": [
+        "housing",
+        "workforce"
+      ],
+      "relatedDocuments": [
+        "doc_000inx",
+        "doc_000iqx"
+      ]
+    },
+    {
+      "grantId": "inst_000ije",
+      "kali_entity_id": "grant_000ije",
+      "title": "Windler-Fisher Charitable Fund — General Operating Grant",
+      "funderName": "Windler-Fisher Charitable Fund",
+      "funderId": "org_000043",
+      "amountRange": {
+        "min": 6546,
+        "max": 9818
+      },
+      "requestedAmount": 8182,
+      "awardedAmount": 7524.12588135292,
+      "status": "closed",
+      "deadline": "2025-05-09",
+      "submittedDate": "2025-04-21",
+      "awardedDate": "2025-07-13",
+      "fitScore": 42,
+      "fundingFocus": [
+        "environment"
+      ],
+      "notes": "Reiciendis vitae cilicium. Deleo verbera aufero veritas libero libero tepidus. Tribuo cunctatio debitis texo tot.",
+      "relatedDocuments": [
+        "doc_000inu",
+        "doc_000io9",
+        "doc_000irs"
+      ]
+    },
+    {
+      "grantId": "inst_000ijf",
+      "kali_entity_id": "grant_000ijf",
+      "title": "Willms Foundation — Operating Grant",
+      "funderName": "Willms Foundation",
+      "funderId": "org_00002z",
+      "amountRange": {
+        "min": 35058,
+        "max": 52586
+      },
+      "requestedAmount": 43822,
+      "awardedAmount": null,
+      "status": "prospect",
+      "deadline": "2026-06-25",
+      "fitScore": 74,
+      "programArea": "Operating",
+      "fundingFocus": [
+        "workforce",
+        "food security",
+        "housing"
+      ],
+      "notes": "Somniculosus tutamen ipsa statim amplexus utor deorsum timor autus deleniti.",
+      "relatedDocuments": []
+    },
+    {
+      "grantId": "inst_000ijg",
+      "kali_entity_id": "grant_000ijg",
+      "title": "Williamson Family Trust — General Operating Grant",
+      "funderName": "Williamson Family Trust",
+      "funderId": "org_00002y",
+      "amountRange": {
+        "min": 106378,
+        "max": 159566
+      },
+      "requestedAmount": 132972,
+      "awardedAmount": null,
+      "status": "in_progress",
+      "deadline": "2026-04-20",
+      "fitScore": 57,
+      "fundingFocus": [
+        "food security",
+        "arts",
+        "education"
+      ],
+      "relatedDocuments": []
+    },
+    {
+      "grantId": "inst_000ijh",
+      "kali_entity_id": "grant_000ijh",
+      "title": "Rath Charitable Fund — Community Health Outreach Grant",
+      "funderName": "Rath Charitable Fund",
+      "funderId": "org_000031",
+      "amountRange": {
+        "min": 58066,
+        "max": 87100
+      },
+      "requestedAmount": 72583,
+      "awardedAmount": null,
+      "status": "in_progress",
+      "deadline": "2026-06-07",
+      "fitScore": 43,
+      "programArea": "Community Health Outreach",
+      "fundingFocus": [
+        "workforce",
+        "youth"
+      ],
+      "notes": "Anser depulso labore casus amplitudo cerno tres cursim aeternus autus.",
+      "relatedDocuments": [
+        "doc_000ion"
+      ]
+    },
+    {
+      "grantId": "inst_000iji",
+      "kali_entity_id": "grant_000iji",
+      "title": "Stehr Foundation — General Operating Grant",
+      "funderName": "Stehr Foundation",
+      "funderId": "org_00002d",
+      "amountRange": {
+        "min": 52546,
+        "max": 78820
+      },
+      "requestedAmount": 65683,
+      "awardedAmount": null,
+      "status": "submitted",
+      "deadline": "2025-09-04",
+      "submittedDate": "2025-07-09",
+      "fitScore": 84,
+      "fundingFocus": [
+        "environment",
+        "youth",
+        "education"
+      ],
+      "relatedDocuments": []
+    },
+    {
+      "grantId": "inst_000ijj",
+      "kali_entity_id": "grant_000ijj",
+      "title": "Mayert Foundation — Food Security Network Grant",
+      "funderName": "Mayert Foundation",
+      "funderId": "org_000038",
+      "amountRange": {
+        "min": 81996,
+        "max": 122994
+      },
+      "requestedAmount": 102495,
+      "awardedAmount": 72193.98236773617,
+      "status": "closed",
+      "deadline": "2025-11-16",
+      "submittedDate": "2025-10-04",
+      "awardedDate": "2026-01-27",
+      "fitScore": 54,
+      "programArea": "Food Security Network",
+      "fundingFocus": [
+        "education",
+        "youth",
+        "workforce"
+      ],
+      "notes": "Sortitus sint talis bonus apostolus sumptus. Certe cumque delego titulus acidus tamquam comes illum avaritia comptus. Cito ullus ullam tam adopto creptio ater deripio.",
+      "relatedDocuments": [
+        "doc_000itv"
+      ]
+    },
+    {
+      "grantId": "inst_000ijk",
+      "kali_entity_id": "grant_000ijk",
+      "title": "USDA — Food and Nutrition Service — Youth Mentorship Grant",
+      "funderName": "USDA — Food and Nutrition Service",
+      "funderId": "org_000046",
+      "amountRange": {
+        "min": 345514,
+        "max": 518272
+      },
+      "requestedAmount": 431893,
+      "awardedAmount": null,
+      "status": "submitted",
+      "deadline": "2025-02-27",
+      "submittedDate": "2025-02-17",
+      "fitScore": 48,
+      "programArea": "Youth Mentorship",
+      "fundingFocus": [
+        "food security"
+      ],
+      "notes": "Est subnecto vesper sophismata trans thermae. Avarus advenio vitiosus paulatim socius adhaero. Capillus debitis confero.",
+      "relatedDocuments": [
+        "doc_000iqn",
+        "doc_000itz"
+      ]
+    },
+    {
+      "grantId": "inst_000ijl",
+      "kali_entity_id": "grant_000ijl",
+      "title": "Koepp Charitable Fund — Family Stabilization Grant",
+      "funderName": "Koepp Charitable Fund",
+      "funderId": "org_000022",
+      "amountRange": {
+        "min": 16198,
+        "max": 24298
+      },
+      "requestedAmount": 20248,
+      "awardedAmount": 10763.346939030354,
+      "status": "awarded",
+      "deadline": "2026-07-27",
+      "submittedDate": "2026-06-22",
+      "awardedDate": "2026-10-16",
+      "fitScore": 89,
+      "programArea": "Family Stabilization",
+      "fundingFocus": [
+        "workforce",
+        "environment"
+      ],
+      "notes": "Adipiscor artificiose adsuesco sublime. Comptus adduco altus perferendis verto tamisium. Centum apparatus adstringo voro quas degusto vomer corrupti aedificium.",
+      "relatedDocuments": [
+        "doc_000ioh"
+      ]
+    },
+    {
+      "grantId": "inst_000ijm",
+      "kali_entity_id": "grant_000ijm",
+      "title": "California Department of Social Services — Youth Mentorship Grant",
+      "funderName": "California Department of Social Services",
+      "funderId": "org_000044",
+      "amountRange": {
+        "min": 11585,
+        "max": 17377
+      },
+      "requestedAmount": 14481,
+      "awardedAmount": 12691.203395681741,
+      "status": "awarded",
+      "deadline": "2026-08-05",
+      "submittedDate": "2026-06-15",
+      "awardedDate": "2026-09-28",
+      "fitScore": 82,
+      "programArea": "Youth Mentorship",
+      "fundingFocus": [
+        "health"
+      ],
+      "notes": "Succurro audentia architecto cetera adinventitias degenero delinquo vacuus aegrotatio abstergo.",
+      "relatedDocuments": [
+        "doc_000j0r"
+      ]
+    },
+    {
+      "grantId": "inst_000ijn",
+      "kali_entity_id": "grant_000ijn",
+      "title": "Balistreri Charitable Fund — Food Security Network Grant",
+      "funderName": "Balistreri Charitable Fund",
+      "funderId": "org_00002o",
+      "amountRange": {
+        "min": 30986,
+        "max": 46478
+      },
+      "requestedAmount": 38732,
+      "awardedAmount": null,
+      "status": "prospect",
+      "deadline": "2026-11-24",
+      "fitScore": 71,
+      "programArea": "Food Security Network",
+      "fundingFocus": [
+        "workforce"
+      ],
+      "notes": "Ipsum adsidue communis voluptatem depraedor. Nulla delibero ambulo.",
+      "relatedDocuments": [
+        "doc_000izd",
+        "doc_000j3x"
+      ]
+    },
+    {
+      "grantId": "inst_000ijo",
+      "kali_entity_id": "grant_000ijo",
+      "title": "Rutherford Community Foundation — Food Security Network Grant",
+      "funderName": "Rutherford Community Foundation",
+      "funderId": "org_00002k",
+      "amountRange": {
+        "min": 367256,
+        "max": 550884
+      },
+      "requestedAmount": 459070,
+      "awardedAmount": 270606.0278499916,
+      "status": "closed",
+      "deadline": "2026-06-04",
+      "submittedDate": "2026-04-10",
+      "awardedDate": "2026-07-27",
+      "fitScore": 68,
+      "programArea": "Food Security Network",
+      "fundingFocus": [
+        "workforce",
+        "housing"
+      ],
+      "notes": "Callide repellendus amicitia patria agnosco suggero uberrime censura. Tardus trado casso solitudo velit.",
+      "relatedDocuments": [
+        "doc_000ipw"
+      ]
+    },
+    {
+      "grantId": "inst_000ijp",
+      "kali_entity_id": "grant_000ijp",
+      "title": "Swift Community Foundation — Food Security Network Grant",
+      "funderName": "Swift Community Foundation",
+      "funderId": "org_000021",
+      "amountRange": {
+        "min": 104054,
+        "max": 156082
+      },
+      "requestedAmount": 130068,
+      "awardedAmount": null,
+      "status": "rejected",
+      "deadline": "2025-12-09",
+      "submittedDate": "2025-11-15",
+      "fitScore": 51,
+      "programArea": "Food Security Network",
+      "fundingFocus": [
+        "housing",
+        "workforce"
+      ],
+      "relatedDocuments": []
+    },
+    {
+      "grantId": "inst_000ijq",
+      "kali_entity_id": "grant_000ijq",
+      "title": "Sawayn Foundation — General Operating Grant",
+      "funderName": "Sawayn Foundation",
+      "funderId": "org_00003k",
+      "amountRange": {
+        "min": 28602,
+        "max": 42904
+      },
+      "requestedAmount": 35753,
+      "awardedAmount": 22925.23327094569,
+      "status": "reporting",
+      "deadline": "2025-08-22",
+      "submittedDate": "2025-07-14",
+      "awardedDate": "2025-11-18",
+      "reportDueDate": "2026-06-30",
+      "fitScore": 40,
+      "fundingFocus": [
+        "housing"
+      ],
+      "relatedDocuments": [
+        "doc_000ixv"
+      ]
+    },
+    {
+      "grantId": "inst_000ijr",
+      "kali_entity_id": "grant_000ijr",
+      "title": "Bartoletti Charitable Fund — Community Health Outreach Grant",
+      "funderName": "Bartoletti Charitable Fund",
+      "funderId": "org_00003j",
+      "amountRange": {
+        "min": 307758,
+        "max": 461636
+      },
+      "requestedAmount": 384697,
+      "awardedAmount": 218971.7624102202,
+      "status": "closed",
+      "deadline": "2026-09-06",
+      "submittedDate": "2026-07-30",
+      "awardedDate": "2026-11-14",
+      "fitScore": 81,
+      "programArea": "Community Health Outreach",
+      "fundingFocus": [
+        "workforce",
+        "housing",
+        "health"
+      ],
+      "relatedDocuments": [
+        "doc_000it8",
+        "doc_000iys"
+      ]
+    },
+    {
+      "grantId": "inst_000ijs",
+      "kali_entity_id": "grant_000ijs",
+      "title": "Swift Community Foundation — Youth Mentorship Grant",
+      "funderName": "Swift Community Foundation",
+      "funderId": "org_000021",
+      "amountRange": {
+        "min": 4262,
+        "max": 6392
+      },
+      "requestedAmount": 5327,
+      "awardedAmount": 4973.963476312278,
+      "status": "reporting",
+      "deadline": "2025-02-13",
+      "submittedDate": "2025-01-08",
+      "awardedDate": "2025-05-09",
+      "reportDueDate": "2026-08-04",
+      "fitScore": 37,
+      "programArea": "Youth Mentorship",
+      "fundingFocus": [
+        "housing",
+        "workforce"
+      ],
+      "notes": "Delicate temptatio perspiciatis inventore.",
+      "relatedDocuments": []
+    },
+    {
+      "grantId": "inst_000ijt",
+      "kali_entity_id": "grant_000ijt",
+      "title": "Reichert Community Foundation — Operating Grant",
+      "funderName": "Reichert Community Foundation",
+      "funderId": "org_00002m",
+      "amountRange": {
+        "min": 28242,
+        "max": 42362
+      },
+      "requestedAmount": 35302,
+      "awardedAmount": null,
+      "status": "in_progress",
+      "deadline": "2026-09-11",
+      "fitScore": 51,
+      "programArea": "Operating",
+      "fundingFocus": [
+        "environment",
+        "workforce"
+      ],
+      "notes": "Blandior confugo tabella speciosus derelinquo adiuvo peior claudeo eaque vomer. Audax solio molestiae cubitum dolorum magni cauda solus ullus facilis. Cometes talio amoveo utor quae delinquo subito caterva.",
+      "relatedDocuments": [
+        "doc_000j0d"
+      ]
+    },
+    {
+      "grantId": "inst_000iju",
+      "kali_entity_id": "grant_000iju",
+      "title": "Reichert Community Foundation — Community Health Outreach Grant",
+      "funderName": "Reichert Community Foundation",
+      "funderId": "org_00002m",
+      "amountRange": {
+        "min": 332513,
+        "max": 498769
+      },
+      "requestedAmount": 415641,
+      "awardedAmount": null,
+      "status": "in_progress",
+      "deadline": "2025-03-30",
+      "fitScore": 58,
+      "programArea": "Community Health Outreach",
+      "fundingFocus": [
+        "environment",
+        "workforce"
+      ],
+      "notes": "Utor vallum patria nemo asper voro vallum quam varietas acsi. Taceo abstergo vir ustulo commodi tendo. Antepono callide depopulo chirographum chirographum veritatis nam molestias attollo.",
+      "relatedDocuments": [
+        "doc_000j5c"
+      ]
+    },
+    {
+      "grantId": "inst_000ijv",
+      "kali_entity_id": "grant_000ijv",
+      "title": "Parker Community Foundation — General Operating Grant",
+      "funderName": "Parker Community Foundation",
+      "funderId": "org_00002w",
+      "amountRange": {
+        "min": 275206,
+        "max": 412808
+      },
+      "requestedAmount": 344007,
+      "awardedAmount": 241565.13998907237,
+      "status": "reporting",
+      "deadline": "2025-09-05",
+      "submittedDate": "2025-07-09",
+      "awardedDate": "2025-10-21",
+      "reportDueDate": "2026-07-02",
+      "fitScore": 66,
+      "fundingFocus": [
+        "health",
+        "housing",
+        "education"
+      ],
+      "notes": "Demonstro adiuvo confugo eos inventore carus thymum bis astrum expedita. Terga admitto veniam talio. Laborum pax solio pel defleo facere dignissimos bestia valde.",
+      "relatedDocuments": [
+        "doc_000iwt"
+      ]
+    },
+    {
+      "grantId": "inst_000ijw",
+      "kali_entity_id": "grant_000ijw",
+      "title": "USDA — Food and Nutrition Service — Operating Grant",
+      "funderName": "USDA — Food and Nutrition Service",
+      "funderId": "org_000046",
+      "amountRange": {
+        "min": 17164,
+        "max": 25746
+      },
+      "requestedAmount": 21455,
+      "awardedAmount": null,
+      "status": "in_progress",
+      "deadline": "2026-11-28",
+      "fitScore": 71,
+      "programArea": "Operating",
+      "fundingFocus": [
+        "food security"
+      ],
+      "relatedDocuments": [
+        "doc_000iqp"
+      ]
+    },
+    {
+      "grantId": "inst_000ijx",
+      "kali_entity_id": "grant_000ijx",
+      "title": "Schmeler Charitable Fund — Community Health Outreach Grant",
+      "funderName": "Schmeler Charitable Fund",
+      "funderId": "org_00003e",
+      "amountRange": {
+        "min": 28758,
+        "max": 43136
+      },
+      "requestedAmount": 35947,
+      "awardedAmount": 33776.26791425093,
+      "status": "active",
+      "deadline": "2026-10-30",
+      "submittedDate": "2026-09-30",
+      "awardedDate": "2026-12-19",
+      "fitScore": 95,
+      "programArea": "Community Health Outreach",
+      "fundingFocus": [
+        "environment"
+      ],
+      "relatedDocuments": []
+    },
+    {
+      "grantId": "inst_000ijy",
+      "kali_entity_id": "grant_000ijy",
+      "title": "Zieme Charitable Fund — Operating Grant",
+      "funderName": "Zieme Charitable Fund",
+      "funderId": "org_000034",
+      "amountRange": {
+        "min": 373898,
+        "max": 560848
+      },
+      "requestedAmount": 467373,
+      "awardedAmount": null,
+      "status": "prospect",
+      "deadline": "2025-05-06",
+      "fitScore": 45,
+      "programArea": "Operating",
+      "fundingFocus": [
+        "education",
+        "food security",
+        "arts"
+      ],
+      "relatedDocuments": [
+        "doc_000j00"
+      ]
+    },
+    {
+      "grantId": "inst_000ijz",
+      "kali_entity_id": "grant_000ijz",
+      "title": "Schamberger Family Trust — Workforce Development Grant",
+      "funderName": "Schamberger Family Trust",
+      "funderId": "org_00003t",
+      "amountRange": {
+        "min": 236396,
+        "max": 354594
+      },
+      "requestedAmount": 295495,
+      "awardedAmount": 162209.827193903,
+      "status": "awarded",
+      "deadline": "2025-07-24",
+      "submittedDate": "2025-07-08",
+      "awardedDate": "2025-09-24",
+      "fitScore": 73,
+      "programArea": "Workforce Development",
+      "fundingFocus": [
+        "environment",
+        "housing",
+        "health"
+      ],
+      "notes": "Constans adsidue thalassinus vinum. Conduco votum aeternus ab arguo. Aeternus acer urbanus iste vivo volo caterva.",
+      "relatedDocuments": [
+        "doc_000iq0",
+        "doc_000irv"
+      ]
+    },
+    {
+      "grantId": "inst_000ik0",
+      "kali_entity_id": "grant_000ik0",
+      "title": "California Department of Social Services — Operating Grant",
+      "funderName": "California Department of Social Services",
+      "funderId": "org_000044",
+      "amountRange": {
+        "min": 4527,
+        "max": 6791
+      },
+      "requestedAmount": 5659,
+      "awardedAmount": 4987.486894756421,
+      "status": "active",
+      "deadline": "2026-04-19",
+      "submittedDate": "2026-02-24",
+      "awardedDate": "2026-06-13",
+      "fitScore": 86,
+      "programArea": "Operating",
+      "fundingFocus": [
+        "health"
+      ],
+      "notes": "Curtus adfectus absum cena veniam. Trans curso alienus avaritia verumtamen sono adipisci. Cubo tabesco titulus.",
+      "relatedDocuments": []
+    },
+    {
+      "grantId": "inst_000ik1",
+      "kali_entity_id": "grant_000ik1",
+      "title": "Brown Family Trust — Operating Grant",
+      "funderName": "Brown Family Trust",
+      "funderId": "org_00003r",
+      "amountRange": {
+        "min": 17388,
+        "max": 26082
+      },
+      "requestedAmount": 21735,
+      "awardedAmount": null,
+      "status": "in_progress",
+      "deadline": "2026-11-02",
+      "fitScore": 86,
+      "programArea": "Operating",
+      "fundingFocus": [
+        "youth",
+        "food security"
+      ],
+      "notes": "Vinum carcer vicissitudo tracto.",
+      "relatedDocuments": []
+    },
+    {
+      "grantId": "inst_000ik2",
+      "kali_entity_id": "grant_000ik2",
+      "title": "Hills Foundation — General Operating Grant",
+      "funderName": "Hills Foundation",
+      "funderId": "org_00002a",
+      "amountRange": {
+        "min": 6972,
+        "max": 10458
+      },
+      "requestedAmount": 8715,
+      "awardedAmount": null,
+      "status": "in_progress",
+      "deadline": "2026-08-30",
+      "fitScore": 42,
+      "fundingFocus": [
+        "education"
+      ],
+      "relatedDocuments": []
+    },
+    {
+      "grantId": "inst_000ik3",
+      "kali_entity_id": "grant_000ik3",
+      "title": "Bergnaum Community Foundation — Workforce Development Grant",
+      "funderName": "Bergnaum Community Foundation",
+      "funderId": "org_00002t",
+      "amountRange": {
+        "min": 28897,
+        "max": 43345
+      },
+      "requestedAmount": 36121,
+      "awardedAmount": 35091.26299058321,
+      "status": "active",
+      "deadline": "2026-03-29",
+      "submittedDate": "2026-02-01",
+      "awardedDate": "2026-05-05",
+      "fitScore": 66,
+      "programArea": "Workforce Development",
+      "fundingFocus": [
+        "housing",
+        "arts",
+        "workforce"
+      ],
+      "notes": "Campana maiores calamitas audio cunae socius.",
+      "relatedDocuments": []
+    },
+    {
+      "grantId": "inst_000ik4",
+      "kali_entity_id": "grant_000ik4",
+      "title": "Schowalter Family Trust — Community Health Outreach Grant",
+      "funderName": "Schowalter Family Trust",
+      "funderId": "org_00002c",
+      "amountRange": {
+        "min": 15534,
+        "max": 23300
+      },
+      "requestedAmount": 19417,
+      "awardedAmount": null,
+      "status": "in_progress",
+      "deadline": "2025-06-12",
+      "fitScore": 63,
+      "programArea": "Community Health Outreach",
+      "fundingFocus": [
+        "housing",
+        "health"
+      ],
+      "notes": "Excepturi ciminatio thesis vallum tredecim alter tollo unus.",
+      "relatedDocuments": []
+    },
+    {
+      "grantId": "inst_000ik5",
+      "kali_entity_id": "grant_000ik5",
+      "title": "Brown Family Trust — Family Stabilization Grant",
+      "funderName": "Brown Family Trust",
+      "funderId": "org_00003r",
+      "amountRange": {
+        "min": 28753,
+        "max": 43129
+      },
+      "requestedAmount": 35941,
+      "awardedAmount": 26768.0373729807,
+      "status": "awarded",
+      "deadline": "2025-06-08",
+      "submittedDate": "2025-04-27",
+      "awardedDate": "2025-08-23",
+      "fitScore": 61,
+      "programArea": "Family Stabilization",
+      "fundingFocus": [
+        "youth",
+        "food security"
+      ],
+      "relatedDocuments": [
+        "doc_000ire"
+      ]
+    },
+    {
+      "grantId": "inst_000ik6",
+      "kali_entity_id": "grant_000ik6",
+      "title": "Lind Foundation — Family Stabilization Grant",
+      "funderName": "Lind Foundation",
+      "funderId": "org_000024",
+      "amountRange": {
+        "min": 136271,
+        "max": 204407
+      },
+      "requestedAmount": 170339,
+      "awardedAmount": 119427.88782783497,
+      "status": "closed",
+      "deadline": "2026-10-19",
+      "submittedDate": "2026-08-23",
+      "awardedDate": "2026-12-03",
+      "fitScore": 63,
+      "programArea": "Family Stabilization",
+      "fundingFocus": [
+        "education",
+        "workforce"
+      ],
+      "relatedDocuments": [
+        "doc_000ip3"
+      ]
+    },
+    {
+      "grantId": "inst_000ik7",
+      "kali_entity_id": "grant_000ik7",
+      "title": "Marvin Foundation — Workforce Development Grant",
+      "funderName": "Marvin Foundation",
+      "funderId": "org_00003i",
+      "amountRange": {
+        "min": 224085,
+        "max": 336127
+      },
+      "requestedAmount": 280106,
+      "awardedAmount": 156452.75277789452,
+      "status": "reporting",
+      "deadline": "2025-08-27",
+      "submittedDate": "2025-08-18",
+      "awardedDate": "2025-10-30",
+      "reportDueDate": "2026-07-19",
+      "fitScore": 57,
+      "programArea": "Workforce Development",
+      "fundingFocus": [
+        "health",
+        "arts"
+      ],
+      "relatedDocuments": []
+    },
+    {
+      "grantId": "inst_000ik8",
+      "kali_entity_id": "grant_000ik8",
+      "title": "Dietrich-Lowe Family Trust — Community Health Outreach Grant",
+      "funderName": "Dietrich-Lowe Family Trust",
+      "funderId": "org_000039",
+      "amountRange": {
+        "min": 11728,
+        "max": 17592
+      },
+      "requestedAmount": 14660,
+      "awardedAmount": 12821.486834394442,
+      "status": "active",
+      "deadline": "2025-01-16",
+      "submittedDate": "2024-11-29",
+      "awardedDate": "2025-02-28",
+      "fitScore": 95,
+      "programArea": "Community Health Outreach",
+      "fundingFocus": [
+        "education",
+        "youth",
+        "health"
+      ],
+      "notes": "Quam asper trepide templum laboriosam. Vix ventito corrigo thalassinus aeger. Maxime cibus advoco cometes depereo.",
+      "relatedDocuments": [
+        "doc_000img",
+        "doc_000irp"
+      ]
+    },
+    {
+      "grantId": "inst_000ik9",
+      "kali_entity_id": "grant_000ik9",
+      "title": "Beer Charitable Fund — General Operating Grant",
+      "funderName": "Beer Charitable Fund",
+      "funderId": "org_00003u",
+      "amountRange": {
+        "min": 16324,
+        "max": 24486
+      },
+      "requestedAmount": 20405,
+      "awardedAmount": 12179.956270706052,
+      "status": "awarded",
+      "deadline": "2025-05-22",
+      "submittedDate": "2025-04-11",
+      "awardedDate": "2025-07-28",
+      "fitScore": 92,
+      "fundingFocus": [
+        "environment",
+        "arts",
+        "food security"
+      ],
+      "notes": "Cupressus repudiandae cinis confugo pectus libero certe quis asporto causa.",
+      "relatedDocuments": []
+    },
+    {
+      "grantId": "inst_000ika",
+      "kali_entity_id": "grant_000ika",
+      "title": "Brown Family Trust — General Operating Grant",
+      "funderName": "Brown Family Trust",
+      "funderId": "org_00003r",
+      "amountRange": {
+        "min": 6906,
+        "max": 10360
+      },
+      "requestedAmount": 8633,
+      "awardedAmount": null,
+      "status": "rejected",
+      "deadline": "2026-10-15",
+      "submittedDate": "2026-09-23",
+      "fitScore": 43,
+      "fundingFocus": [
+        "youth",
+        "food security"
+      ],
+      "relatedDocuments": [
+        "doc_000ind"
+      ]
+    },
+    {
+      "grantId": "inst_000ikb",
+      "kali_entity_id": "grant_000ikb",
+      "title": "Torp Charitable Fund — Operating Grant",
+      "funderName": "Torp Charitable Fund",
+      "funderId": "org_00002g",
+      "amountRange": {
+        "min": 325098,
+        "max": 487648
+      },
+      "requestedAmount": 406373,
+      "awardedAmount": 211299.84125265325,
+      "status": "reporting",
+      "deadline": "2025-08-17",
+      "submittedDate": "2025-07-06",
+      "awardedDate": "2025-11-15",
+      "reportDueDate": "2026-08-06",
+      "fitScore": 47,
+      "programArea": "Operating",
+      "fundingFocus": [
+        "environment",
+        "food security",
+        "health"
+      ],
+      "relatedDocuments": []
+    },
+    {
+      "grantId": "inst_000ikc",
+      "kali_entity_id": "grant_000ikc",
+      "title": "Morissette Family Trust — Youth Mentorship Grant",
+      "funderName": "Morissette Family Trust",
+      "funderId": "org_00002h",
+      "amountRange": {
+        "min": 5061,
+        "max": 7591
+      },
+      "requestedAmount": 6326,
+      "awardedAmount": 5279.780770440193,
+      "status": "reporting",
+      "deadline": "2026-07-27",
+      "submittedDate": "2026-06-15",
+      "awardedDate": "2026-10-11",
+      "reportDueDate": "2026-06-20",
+      "fitScore": 89,
+      "programArea": "Youth Mentorship",
+      "fundingFocus": [
+        "food security",
+        "workforce"
+      ],
+      "notes": "Occaecati crux aeternus vomer tamdiu.",
+      "relatedDocuments": []
+    },
+    {
+      "grantId": "inst_000ikd",
+      "kali_entity_id": "grant_000ikd",
+      "title": "Lind Foundation — General Operating Grant",
+      "funderName": "Lind Foundation",
+      "funderId": "org_000024",
+      "amountRange": {
+        "min": 17888,
+        "max": 26832
+      },
+      "requestedAmount": 22360,
+      "awardedAmount": 20011.475166606484,
+      "status": "closed",
+      "deadline": "2026-09-18",
+      "submittedDate": "2026-07-24",
+      "awardedDate": "2026-10-20",
+      "fitScore": 61,
+      "fundingFocus": [
+        "education",
+        "workforce"
+      ],
+      "relatedDocuments": []
+    },
+    {
+      "grantId": "inst_000ike",
+      "kali_entity_id": "grant_000ike",
+      "title": "Torphy Community Foundation — General Operating Grant",
+      "funderName": "Torphy Community Foundation",
+      "funderId": "org_00003o",
+      "amountRange": {
+        "min": 19438,
+        "max": 29158
+      },
+      "requestedAmount": 24298,
+      "awardedAmount": 12895.819086759451,
+      "status": "closed",
+      "deadline": "2025-09-14",
+      "submittedDate": "2025-08-05",
+      "awardedDate": "2025-11-07",
+      "fitScore": 49,
+      "fundingFocus": [
+        "workforce",
+        "environment"
+      ],
+      "notes": "Beatae dens adeptio exercitationem.",
+      "relatedDocuments": [
+        "doc_000ioi",
+        "doc_000ipz"
+      ]
+    },
+    {
+      "grantId": "inst_000ikf",
+      "kali_entity_id": "grant_000ikf",
+      "title": "Romaguera Family Trust — Community Health Outreach Grant",
+      "funderName": "Romaguera Family Trust",
+      "funderId": "org_000029",
+      "amountRange": {
+        "min": 57322,
+        "max": 85984
+      },
+      "requestedAmount": 71653,
+      "awardedAmount": null,
+      "status": "submitted",
+      "deadline": "2026-05-28",
+      "submittedDate": "2026-04-14",
+      "fitScore": 40,
+      "programArea": "Community Health Outreach",
+      "fundingFocus": [
+        "youth"
+      ],
+      "notes": "Umerus quidem comptus patior tollo articulus.",
+      "relatedDocuments": [
+        "doc_000ivv"
+      ]
+    },
+    {
+      "grantId": "inst_000ikg",
+      "kali_entity_id": "grant_000ikg",
+      "title": "Williamson Family Trust — Workforce Development Grant",
+      "funderName": "Williamson Family Trust",
+      "funderId": "org_00002y",
+      "amountRange": {
+        "min": 4982,
+        "max": 7472
+      },
+      "requestedAmount": 6227,
+      "awardedAmount": null,
+      "status": "rejected",
+      "deadline": "2026-03-19",
+      "submittedDate": "2026-02-13",
+      "fitScore": 79,
+      "programArea": "Workforce Development",
+      "fundingFocus": [
+        "food security",
+        "arts",
+        "education"
+      ],
+      "relatedDocuments": []
+    },
+    {
+      "grantId": "inst_000ikh",
+      "kali_entity_id": "grant_000ikh",
+      "title": "Rath Community Foundation — Workforce Development Grant",
+      "funderName": "Rath Community Foundation",
+      "funderId": "org_00003g",
+      "amountRange": {
+        "min": 38832,
+        "max": 58248
+      },
+      "requestedAmount": 48540,
+      "awardedAmount": 24695.69743876835,
+      "status": "active",
+      "deadline": "2025-04-16",
+      "submittedDate": "2025-03-12",
+      "awardedDate": "2025-06-21",
+      "fitScore": 66,
+      "programArea": "Workforce Development",
+      "fundingFocus": [
+        "environment"
+      ],
+      "relatedDocuments": []
+    },
+    {
+      "grantId": "inst_000iki",
+      "kali_entity_id": "grant_000iki",
+      "title": "Lesch Family Trust — Operating Grant",
+      "funderName": "Lesch Family Trust",
+      "funderId": "org_00003s",
+      "amountRange": {
+        "min": 4693,
+        "max": 7039
+      },
+      "requestedAmount": 5866,
+      "awardedAmount": null,
+      "status": "rejected",
+      "deadline": "2025-11-05",
+      "submittedDate": "2025-10-01",
+      "fitScore": 42,
+      "programArea": "Operating",
+      "fundingFocus": [
+        "environment"
+      ],
+      "notes": "Ventito aqua canonicus tantillus vergo constans suffragium vulgus.",
+      "relatedDocuments": []
+    },
+    {
+      "grantId": "inst_000ikj",
+      "kali_entity_id": "grant_000ikj",
+      "title": "Marvin Foundation — Operating Grant",
+      "funderName": "Marvin Foundation",
+      "funderId": "org_00003i",
+      "amountRange": {
+        "min": 89844,
+        "max": 134766
+      },
+      "requestedAmount": 112305,
+      "awardedAmount": 68336.05064915174,
+      "status": "awarded",
+      "deadline": "2025-06-28",
+      "submittedDate": "2025-05-16",
+      "awardedDate": "2025-08-06",
+      "fitScore": 41,
+      "programArea": "Operating",
+      "fundingFocus": [
+        "health",
+        "arts"
+      ],
+      "relatedDocuments": [
+        "doc_000ir8"
+      ]
+    },
+    {
+      "grantId": "inst_000ikk",
+      "kali_entity_id": "grant_000ikk",
+      "title": "California Department of Social Services — General Operating Grant",
+      "funderName": "California Department of Social Services",
+      "funderId": "org_000048",
+      "amountRange": {
+        "min": 8430,
+        "max": 12646
+      },
+      "requestedAmount": 10538,
+      "awardedAmount": null,
+      "status": "prospect",
+      "deadline": "2026-01-31",
+      "fitScore": 51,
+      "fundingFocus": [
+        "food security",
+        "workforce"
+      ],
+      "notes": "Aperio uberrime vehemens in peccatus reiciendis molestias. Volubilis teneo tamdiu sui stabilis nam curvo cuppedia tergiversatio calamitas.",
+      "relatedDocuments": []
+    },
+    {
+      "grantId": "inst_000ikl",
+      "kali_entity_id": "grant_000ikl",
+      "title": "Reichert Community Foundation — Operating Grant",
+      "funderName": "Reichert Community Foundation",
+      "funderId": "org_00002m",
+      "amountRange": {
+        "min": 15865,
+        "max": 23797
+      },
+      "requestedAmount": 19831,
+      "awardedAmount": null,
+      "status": "rejected",
+      "deadline": "2026-07-31",
+      "submittedDate": "2026-06-02",
+      "fitScore": 76,
+      "programArea": "Operating",
+      "fundingFocus": [
+        "environment",
+        "workforce"
+      ],
+      "relatedDocuments": [
+        "doc_000iss"
+      ]
+    },
+    {
+      "grantId": "inst_000ikm",
+      "kali_entity_id": "grant_000ikm",
+      "title": "Herzog Foundation — Operating Grant",
+      "funderName": "Herzog Foundation",
+      "funderId": "org_00002v",
+      "amountRange": {
+        "min": 111581,
+        "max": 167371
+      },
+      "requestedAmount": 139476,
+      "awardedAmount": null,
+      "status": "in_progress",
+      "deadline": "2025-06-25",
+      "fitScore": 88,
+      "programArea": "Operating",
+      "fundingFocus": [
+        "food security"
+      ],
+      "relatedDocuments": []
+    },
+    {
+      "grantId": "inst_000ikn",
+      "kali_entity_id": "grant_000ikn",
+      "title": "Pfannerstill Family Trust — Operating Grant",
+      "funderName": "Pfannerstill Family Trust",
+      "funderId": "org_00002b",
+      "amountRange": {
+        "min": 36601,
+        "max": 54901
+      },
+      "requestedAmount": 45751,
+      "awardedAmount": null,
+      "status": "rejected",
+      "deadline": "2025-02-23",
+      "submittedDate": "2025-01-19",
+      "fitScore": 97,
+      "programArea": "Operating",
+      "fundingFocus": [
+        "youth"
+      ],
+      "relatedDocuments": []
+    },
+    {
+      "grantId": "inst_000iko",
+      "kali_entity_id": "grant_000iko",
+      "title": "Turcotte Foundation — Workforce Development Grant",
+      "funderName": "Turcotte Foundation",
+      "funderId": "org_000032",
+      "amountRange": {
+        "min": 25981,
+        "max": 38971
+      },
+      "requestedAmount": 32476,
+      "awardedAmount": 24711.59235942435,
+      "status": "awarded",
+      "deadline": "2025-07-20",
+      "submittedDate": "2025-06-24",
+      "awardedDate": "2025-09-03",
+      "fitScore": 71,
+      "programArea": "Workforce Development",
+      "fundingFocus": [
+        "food security"
+      ],
+      "notes": "Synagoga amaritudo caste mollitia adsidue. Alioqui sortitus summisse. Curia conduco combibo armarium adiuvo tergiversatio vitiosus sublime.",
+      "relatedDocuments": [
+        "doc_000iyb",
+        "doc_000j3g"
+      ]
+    },
+    {
+      "grantId": "inst_000ikp",
+      "kali_entity_id": "grant_000ikp",
+      "title": "California Department of Social Services — Community Health Outreach Grant",
+      "funderName": "California Department of Social Services",
+      "funderId": "org_00004c",
+      "amountRange": {
+        "min": 350123,
+        "max": 525185
+      },
+      "requestedAmount": 437654,
+      "awardedAmount": null,
+      "status": "submitted",
+      "deadline": "2026-11-05",
+      "submittedDate": "2026-10-28",
+      "fitScore": 79,
+      "programArea": "Community Health Outreach",
+      "fundingFocus": [
+        "workforce"
+      ],
+      "relatedDocuments": []
+    },
+    {
+      "grantId": "inst_000ikq",
+      "kali_entity_id": "grant_000ikq",
+      "title": "Turcotte Foundation — General Operating Grant",
+      "funderName": "Turcotte Foundation",
+      "funderId": "org_000032",
+      "amountRange": {
+        "min": 23453,
+        "max": 35179
+      },
+      "requestedAmount": 29316,
+      "awardedAmount": 14700.25019620719,
+      "status": "reporting",
+      "deadline": "2026-11-02",
+      "submittedDate": "2026-10-13",
+      "awardedDate": "2026-12-10",
+      "reportDueDate": "2026-07-18",
+      "fitScore": 35,
+      "fundingFocus": [
+        "food security"
+      ],
+      "relatedDocuments": []
+    },
+    {
+      "grantId": "inst_000ikr",
+      "kali_entity_id": "grant_000ikr",
+      "title": "Brakus Foundation — Community Health Outreach Grant",
+      "funderName": "Brakus Foundation",
+      "funderId": "org_00001w",
+      "amountRange": {
+        "min": 42665,
+        "max": 63997
+      },
+      "requestedAmount": 53331,
+      "awardedAmount": 28882.781699816358,
+      "status": "awarded",
+      "deadline": "2026-06-14",
+      "submittedDate": "2026-05-27",
+      "awardedDate": "2026-07-17",
+      "fitScore": 42,
+      "programArea": "Community Health Outreach",
+      "fundingFocus": [
+        "food security",
+        "arts"
+      ],
+      "relatedDocuments": []
+    },
+    {
+      "grantId": "inst_000iks",
+      "kali_entity_id": "grant_000iks",
+      "title": "California Department of Social Services — General Operating Grant",
+      "funderName": "California Department of Social Services",
+      "funderId": "org_00004c",
+      "amountRange": {
+        "min": 146800,
+        "max": 220200
+      },
+      "requestedAmount": 183500,
+      "awardedAmount": null,
+      "status": "in_progress",
+      "deadline": "2025-04-17",
+      "fitScore": 86,
+      "fundingFocus": [
+        "workforce"
+      ],
+      "relatedDocuments": [
+        "doc_000j4b"
+      ]
+    },
+    {
+      "grantId": "inst_000ikt",
+      "kali_entity_id": "grant_000ikt",
+      "title": "Brakus Foundation — Family Stabilization Grant",
+      "funderName": "Brakus Foundation",
+      "funderId": "org_00001w",
+      "amountRange": {
+        "min": 4231,
+        "max": 6347
+      },
+      "requestedAmount": 5289,
+      "awardedAmount": 4123.52341610897,
+      "status": "closed",
+      "deadline": "2026-09-08",
+      "submittedDate": "2026-08-30",
+      "awardedDate": "2026-10-31",
+      "fitScore": 97,
+      "programArea": "Family Stabilization",
+      "fundingFocus": [
+        "food security",
+        "arts"
+      ],
+      "relatedDocuments": [
+        "doc_000ir1"
+      ]
+    },
+    {
+      "grantId": "inst_000iku",
+      "kali_entity_id": "grant_000iku",
+      "title": "Von Community Foundation — Family Stabilization Grant",
+      "funderName": "Von Community Foundation",
+      "funderId": "org_00003h",
+      "amountRange": {
+        "min": 5974,
+        "max": 8962
+      },
+      "requestedAmount": 7468,
+      "awardedAmount": null,
+      "status": "rejected",
+      "deadline": "2026-01-26",
+      "submittedDate": "2026-01-16",
+      "fitScore": 36,
+      "programArea": "Family Stabilization",
+      "fundingFocus": [
+        "housing"
+      ],
+      "relatedDocuments": []
+    },
+    {
+      "grantId": "inst_000ikv",
+      "kali_entity_id": "grant_000ikv",
+      "title": "Hackett Family Trust — Operating Grant",
+      "funderName": "Hackett Family Trust",
+      "funderId": "org_00003z",
+      "amountRange": {
+        "min": 312424,
+        "max": 468636
+      },
+      "requestedAmount": 390530,
+      "awardedAmount": null,
+      "status": "submitted",
+      "deadline": "2025-12-29",
+      "submittedDate": "2025-12-08",
+      "fitScore": 48,
+      "programArea": "Operating",
+      "fundingFocus": [
+        "arts",
+        "health"
+      ],
+      "relatedDocuments": [
+        "doc_000im7"
+      ]
+    },
+    {
+      "grantId": "inst_000ikw",
+      "kali_entity_id": "grant_000ikw",
+      "title": "California Department of Social Services — Food Security Network Grant",
+      "funderName": "California Department of Social Services",
+      "funderId": "org_000048",
+      "amountRange": {
+        "min": 62981,
+        "max": 94471
+      },
+      "requestedAmount": 78726,
+      "awardedAmount": 68645.89045704469,
+      "status": "closed",
+      "deadline": "2025-02-12",
+      "submittedDate": "2025-01-08",
+      "awardedDate": "2025-03-28",
+      "fitScore": 55,
+      "programArea": "Food Security Network",
+      "fundingFocus": [
+        "food security",
+        "workforce"
+      ],
+      "notes": "Ipsum credo subvenio vaco.",
+      "relatedDocuments": [
+        "doc_000j15"
+      ]
+    },
+    {
+      "grantId": "inst_000ikx",
+      "kali_entity_id": "grant_000ikx",
+      "title": "Doyle Community Foundation — General Operating Grant",
+      "funderName": "Doyle Community Foundation",
+      "funderId": "org_000028",
+      "amountRange": {
+        "min": 6394,
+        "max": 9590
+      },
+      "requestedAmount": 7992,
+      "awardedAmount": null,
+      "status": "prospect",
+      "deadline": "2026-02-05",
+      "fitScore": 77,
+      "fundingFocus": [
+        "youth",
+        "health",
+        "arts"
+      ],
+      "relatedDocuments": []
+    },
+    {
+      "grantId": "inst_000iky",
+      "kali_entity_id": "grant_000iky",
+      "title": "Bartoletti Charitable Fund — General Operating Grant",
+      "funderName": "Bartoletti Charitable Fund",
+      "funderId": "org_00003j",
+      "amountRange": {
+        "min": 210770,
+        "max": 316156
+      },
+      "requestedAmount": 263463,
+      "awardedAmount": null,
+      "status": "submitted",
+      "deadline": "2026-08-04",
+      "submittedDate": "2026-07-23",
+      "fitScore": 89,
+      "fundingFocus": [
+        "workforce",
+        "housing",
+        "health"
+      ],
+      "notes": "Credo careo bardus.",
+      "relatedDocuments": [
+        "doc_000j22"
+      ]
+    },
+    {
+      "grantId": "inst_000ikz",
+      "kali_entity_id": "grant_000ikz",
+      "title": "California Department of Social Services — Workforce Development Grant",
+      "funderName": "California Department of Social Services",
+      "funderId": "org_000048",
+      "amountRange": {
+        "min": 50342,
+        "max": 75514
+      },
+      "requestedAmount": 62928,
+      "awardedAmount": 36240.26082815071,
+      "status": "awarded",
+      "deadline": "2025-11-13",
+      "submittedDate": "2025-09-15",
+      "awardedDate": "2026-01-20",
+      "fitScore": 77,
+      "programArea": "Workforce Development",
+      "fundingFocus": [
+        "food security",
+        "workforce"
+      ],
+      "notes": "Articulus officia surgo veritatis volo maiores uter acervus. Facilis baiulus audeo cognomen damno infit bibo. Attero caute cursus aeneus teres conitor utilis carcer.",
+      "relatedDocuments": []
+    },
+    {
+      "grantId": "inst_000il0",
+      "kali_entity_id": "grant_000il0",
+      "title": "Herzog Foundation — Food Security Network Grant",
+      "funderName": "Herzog Foundation",
+      "funderId": "org_00002v",
+      "amountRange": {
+        "min": 6222,
+        "max": 9334
+      },
+      "requestedAmount": 7778,
+      "awardedAmount": null,
+      "status": "submitted",
+      "deadline": "2026-05-25",
+      "submittedDate": "2026-05-15",
+      "fitScore": 65,
+      "programArea": "Food Security Network",
+      "fundingFocus": [
+        "food security"
+      ],
+      "notes": "Cunae villa vinitor vulticulus.",
+      "relatedDocuments": [
+        "doc_000ipc"
+      ]
+    },
+    {
+      "grantId": "inst_000il1",
+      "kali_entity_id": "grant_000il1",
+      "title": "Streich Community Foundation — General Operating Grant",
+      "funderName": "Streich Community Foundation",
+      "funderId": "org_00003m",
+      "amountRange": {
+        "min": 9258,
+        "max": 13886
+      },
+      "requestedAmount": 11572,
+      "awardedAmount": 9070.354459182452,
+      "status": "awarded",
+      "deadline": "2026-09-24",
+      "submittedDate": "2026-08-10",
+      "awardedDate": "2026-11-21",
+      "fitScore": 45,
+      "fundingFocus": [
+        "environment",
+        "health",
+        "arts"
+      ],
+      "notes": "Capillus infit maxime optio corroboro cogito delicate statim vulariter. Conservo debeo accusator voco consuasor depereo desino cattus neque.",
+      "relatedDocuments": []
+    },
+    {
+      "grantId": "inst_000il2",
+      "kali_entity_id": "grant_000il2",
+      "title": "California Endowment — Workforce Development Grant",
+      "funderName": "California Endowment",
+      "funderId": "org_00004g",
+      "amountRange": {
+        "min": 36791,
+        "max": 55187
+      },
+      "requestedAmount": 45989,
+      "awardedAmount": null,
+      "status": "rejected",
+      "deadline": "2026-11-05",
+      "submittedDate": "2026-10-27",
+      "fitScore": 62,
+      "programArea": "Workforce Development",
+      "fundingFocus": [
+        "housing"
+      ],
+      "notes": "Tonsor debilito subvenio catena. Quae abbas taceo subiungo certe.",
+      "relatedDocuments": [
+        "doc_000io0"
+      ]
+    },
+    {
+      "grantId": "inst_000il3",
+      "kali_entity_id": "grant_000il3",
+      "title": "Williamson Family Trust — Community Health Outreach Grant",
+      "funderName": "Williamson Family Trust",
+      "funderId": "org_00002y",
+      "amountRange": {
+        "min": 338993,
+        "max": 508489
+      },
+      "requestedAmount": 423741,
+      "awardedAmount": 282838.7403704185,
+      "status": "reporting",
+      "deadline": "2025-04-02",
+      "submittedDate": "2025-02-16",
+      "awardedDate": "2025-05-10",
+      "reportDueDate": "2026-07-12",
+      "fitScore": 94,
+      "programArea": "Community Health Outreach",
+      "fundingFocus": [
+        "food security",
+        "arts",
+        "education"
+      ],
+      "relatedDocuments": [
+        "doc_000ipm"
+      ]
+    },
+    {
+      "grantId": "inst_000il4",
+      "kali_entity_id": "grant_000il4",
+      "title": "Balistreri Charitable Fund — General Operating Grant",
+      "funderName": "Balistreri Charitable Fund",
+      "funderId": "org_00002o",
+      "amountRange": {
+        "min": 98056,
+        "max": 147084
+      },
+      "requestedAmount": 122570,
+      "awardedAmount": 107209.83752271214,
+      "status": "reporting",
+      "deadline": "2025-12-22",
+      "submittedDate": "2025-11-28",
+      "awardedDate": "2026-02-09",
+      "reportDueDate": "2026-07-19",
+      "fitScore": 51,
+      "fundingFocus": [
+        "workforce"
+      ],
+      "relatedDocuments": [
+        "doc_000izr",
+        "doc_000j40"
+      ]
+    },
+    {
+      "grantId": "inst_000il5",
+      "kali_entity_id": "grant_000il5",
+      "title": "Kohler Community Foundation — Community Health Outreach Grant",
+      "funderName": "Kohler Community Foundation",
+      "funderId": "org_00003c",
+      "amountRange": {
+        "min": 41232,
+        "max": 61848
+      },
+      "requestedAmount": 51540,
+      "awardedAmount": 33321.16443632079,
+      "status": "active",
+      "deadline": "2025-02-21",
+      "submittedDate": "2025-01-02",
+      "awardedDate": "2025-05-01",
+      "fitScore": 38,
+      "programArea": "Community Health Outreach",
+      "fundingFocus": [
+        "environment",
+        "housing"
+      ],
+      "notes": "Delicate condico sulum solus venia tolero cito saepe cruentus acsi. Benigne ipsa arguo defetiscor talio defetiscor vigilo pax antea caritas. Subito mollitia similique vobis communis accusator cena delectus absum cohaero.",
+      "relatedDocuments": []
+    },
+    {
+      "grantId": "inst_000il6",
+      "kali_entity_id": "grant_000il6",
+      "title": "California Department of Social Services — General Operating Grant",
+      "funderName": "California Department of Social Services",
+      "funderId": "org_00004f",
+      "amountRange": {
+        "min": 157118,
+        "max": 235678
+      },
+      "requestedAmount": 196398,
+      "awardedAmount": 183832.41311813434,
+      "status": "active",
+      "deadline": "2026-12-19",
+      "submittedDate": "2026-12-08",
+      "awardedDate": "2027-02-19",
+      "fitScore": 94,
+      "fundingFocus": [
+        "workforce",
+        "housing"
+      ],
+      "relatedDocuments": [
+        "doc_000j2r",
+        "doc_000j4i"
+      ]
+    },
+    {
+      "grantId": "inst_000il7",
+      "kali_entity_id": "grant_000il7",
+      "title": "Reichert Community Foundation — Workforce Development Grant",
+      "funderName": "Reichert Community Foundation",
+      "funderId": "org_00002m",
+      "amountRange": {
+        "min": 202673,
+        "max": 304009
+      },
+      "requestedAmount": 253341,
+      "awardedAmount": 221711.06377867525,
+      "status": "active",
+      "deadline": "2025-03-22",
+      "submittedDate": "2025-03-06",
+      "awardedDate": "2025-06-04",
+      "fitScore": 58,
+      "programArea": "Workforce Development",
+      "fundingFocus": [
+        "environment",
+        "workforce"
+      ],
+      "relatedDocuments": [
+        "doc_000ivb",
+        "doc_000j1f"
+      ]
+    },
+    {
+      "grantId": "inst_000il8",
+      "kali_entity_id": "grant_000il8",
+      "title": "California Department of Social Services — Community Health Outreach Grant",
+      "funderName": "California Department of Social Services",
+      "funderId": "org_000044",
+      "amountRange": {
+        "min": 6129,
+        "max": 9193
+      },
+      "requestedAmount": 7661,
+      "awardedAmount": null,
+      "status": "prospect",
+      "deadline": "2025-03-04",
+      "fitScore": 71,
+      "programArea": "Community Health Outreach",
+      "fundingFocus": [
+        "health"
+      ],
+      "relatedDocuments": [
+        "doc_000im2",
+        "doc_000iue",
+        "doc_000j2k"
+      ]
+    },
+    {
+      "grantId": "inst_000il9",
+      "kali_entity_id": "grant_000il9",
+      "title": "Williamson Family Trust — Family Stabilization Grant",
+      "funderName": "Williamson Family Trust",
+      "funderId": "org_00002y",
+      "amountRange": {
+        "min": 180929,
+        "max": 271393
+      },
+      "requestedAmount": 226161,
+      "awardedAmount": null,
+      "status": "rejected",
+      "deadline": "2026-06-09",
+      "submittedDate": "2026-05-16",
+      "fitScore": 74,
+      "programArea": "Family Stabilization",
+      "fundingFocus": [
+        "food security",
+        "arts",
+        "education"
+      ],
+      "relatedDocuments": [
+        "doc_000ir7"
+      ]
+    },
+    {
+      "grantId": "inst_000ila",
+      "kali_entity_id": "grant_000ila",
+      "title": "Wintheiser Family Trust — Youth Mentorship Grant",
+      "funderName": "Wintheiser Family Trust",
+      "funderId": "org_00002q",
+      "amountRange": {
+        "min": 14412,
+        "max": 21618
+      },
+      "requestedAmount": 18015,
+      "awardedAmount": 12294.29237391033,
+      "status": "active",
+      "deadline": "2026-05-08",
+      "submittedDate": "2026-04-19",
+      "awardedDate": "2026-06-27",
+      "fitScore": 90,
+      "programArea": "Youth Mentorship",
+      "fundingFocus": [
+        "health",
+        "environment",
+        "education"
+      ],
+      "notes": "Peccatus defero verto vivo decimus nisi.",
+      "relatedDocuments": [
+        "doc_000iz1"
+      ]
+    },
+    {
+      "grantId": "inst_000ilb",
+      "kali_entity_id": "grant_000ilb",
+      "title": "Price Community Foundation — Workforce Development Grant",
+      "funderName": "Price Community Foundation",
+      "funderId": "org_00003b",
+      "amountRange": {
+        "min": 66502,
+        "max": 99754
+      },
+      "requestedAmount": 83128,
+      "awardedAmount": 60549.31925905665,
+      "status": "reporting",
+      "deadline": "2026-09-28",
+      "submittedDate": "2026-09-07",
+      "awardedDate": "2026-11-25",
+      "reportDueDate": "2026-07-27",
+      "fitScore": 56,
+      "programArea": "Workforce Development",
+      "fundingFocus": [
+        "health",
+        "workforce"
+      ],
+      "relatedDocuments": []
+    },
+    {
+      "grantId": "inst_000ilc",
+      "kali_entity_id": "grant_000ilc",
+      "title": "Pfannerstill Family Trust — Family Stabilization Grant",
+      "funderName": "Pfannerstill Family Trust",
+      "funderId": "org_00002b",
+      "amountRange": {
+        "min": 8543,
+        "max": 12815
+      },
+      "requestedAmount": 10679,
+      "awardedAmount": 7763.9541167556545,
+      "status": "active",
+      "deadline": "2026-08-15",
+      "submittedDate": "2026-07-22",
+      "awardedDate": "2026-09-20",
+      "fitScore": 63,
+      "programArea": "Family Stabilization",
+      "fundingFocus": [
+        "youth"
+      ],
+      "notes": "Victus varietas ipsam crapula stultus summopere acidus depereo calculus deinde. Tendo tendo verbera infit sub. Officiis balbus advenio circumvenio.",
+      "relatedDocuments": []
+    },
+    {
+      "grantId": "inst_000ild",
+      "kali_entity_id": "grant_000ild",
+      "title": "Mraz Charitable Fund — Food Security Network Grant",
+      "funderName": "Mraz Charitable Fund",
+      "funderId": "org_00003x",
+      "amountRange": {
+        "min": 53289,
+        "max": 79933
+      },
+      "requestedAmount": 66611,
+      "awardedAmount": 47214.185687398865,
+      "status": "reporting",
+      "deadline": "2026-02-05",
+      "submittedDate": "2026-01-08",
+      "awardedDate": "2026-03-15",
+      "reportDueDate": "2026-06-19",
+      "fitScore": 62,
+      "programArea": "Food Security Network",
+      "fundingFocus": [
+        "workforce"
+      ],
+      "notes": "Casso tepesco ancilla tabgo assumenda abbas coruscus ventito casso.",
+      "relatedDocuments": [
+        "doc_000imj",
+        "doc_000iy9"
+      ]
+    },
+    {
+      "grantId": "inst_000ile",
+      "kali_entity_id": "grant_000ile",
+      "title": "California Endowment — Youth Mentorship Grant",
+      "funderName": "California Endowment",
+      "funderId": "org_00004g",
+      "amountRange": {
+        "min": 7606,
+        "max": 11410
+      },
+      "requestedAmount": 9508,
+      "awardedAmount": 5098.082183277325,
+      "status": "closed",
+      "deadline": "2026-09-13",
+      "submittedDate": "2026-07-21",
+      "awardedDate": "2026-11-01",
+      "fitScore": 52,
+      "programArea": "Youth Mentorship",
+      "fundingFocus": [
+        "housing"
+      ],
+      "relatedDocuments": []
+    },
+    {
+      "grantId": "inst_000ilf",
+      "kali_entity_id": "grant_000ilf",
+      "title": "Lehner Charitable Fund — Operating Grant",
+      "funderName": "Lehner Charitable Fund",
+      "funderId": "org_00002u",
+      "amountRange": {
+        "min": 15610,
+        "max": 23414
+      },
+      "requestedAmount": 19512,
+      "awardedAmount": 12944.376546517664,
+      "status": "closed",
+      "deadline": "2026-09-29",
+      "submittedDate": "2026-09-21",
+      "awardedDate": "2026-11-23",
+      "fitScore": 94,
+      "programArea": "Operating",
+      "fundingFocus": [
+        "housing"
+      ],
+      "relatedDocuments": []
+    },
+    {
+      "grantId": "inst_000ilg",
+      "kali_entity_id": "grant_000ilg",
+      "title": "Price Community Foundation — General Operating Grant",
+      "funderName": "Price Community Foundation",
+      "funderId": "org_00003b",
+      "amountRange": {
+        "min": 226543,
+        "max": 339815
+      },
+      "requestedAmount": 283179,
+      "awardedAmount": null,
+      "status": "submitted",
+      "deadline": "2025-03-19",
+      "submittedDate": "2025-02-14",
+      "fitScore": 86,
+      "fundingFocus": [
+        "health",
+        "workforce"
+      ],
+      "relatedDocuments": []
+    },
+    {
+      "grantId": "inst_000ilh",
+      "kali_entity_id": "grant_000ilh",
+      "title": "Wintheiser Family Trust — General Operating Grant",
+      "funderName": "Wintheiser Family Trust",
+      "funderId": "org_00002q",
+      "amountRange": {
+        "min": 89988,
+        "max": 134982
+      },
+      "requestedAmount": 112485,
+      "awardedAmount": null,
+      "status": "in_progress",
+      "deadline": "2025-06-10",
+      "fitScore": 78,
+      "fundingFocus": [
+        "health",
+        "environment",
+        "education"
+      ],
+      "notes": "Sint arma debitis paens combibo. Coniuratio vilitas certe patrocinor compello. Certe neque annus aurum voluptatum tamen acerbitas absens theatrum explicabo.",
+      "relatedDocuments": []
+    },
+    {
+      "grantId": "inst_000ili",
+      "kali_entity_id": "grant_000ili",
+      "title": "Waters Community Foundation — Food Security Network Grant",
+      "funderName": "Waters Community Foundation",
+      "funderId": "org_00003l",
+      "amountRange": {
+        "min": 4707,
+        "max": 7061
+      },
+      "requestedAmount": 5884,
+      "awardedAmount": 3451.88066589797,
+      "status": "awarded",
+      "deadline": "2025-02-02",
+      "submittedDate": "2025-01-25",
+      "awardedDate": "2025-04-17",
+      "fitScore": 57,
+      "programArea": "Food Security Network",
+      "fundingFocus": [
+        "food security",
+        "health",
+        "housing"
+      ],
+      "notes": "Dedecor pecco alveus depulso tribuo culpo patrocinor aspernatur desolo super.",
+      "relatedDocuments": [
+        "doc_000ipd"
+      ]
+    },
+    {
+      "grantId": "inst_000ilj",
+      "kali_entity_id": "grant_000ilj",
+      "title": "Marvin Foundation — Operating Grant",
+      "funderName": "Marvin Foundation",
+      "funderId": "org_00003i",
+      "amountRange": {
+        "min": 388168,
+        "max": 582252
+      },
+      "requestedAmount": 485210,
+      "awardedAmount": 337282.9303975588,
+      "status": "closed",
+      "deadline": "2026-10-20",
+      "submittedDate": "2026-10-06",
+      "awardedDate": "2026-12-06",
+      "fitScore": 58,
+      "programArea": "Operating",
+      "fundingFocus": [
+        "health",
+        "arts"
+      ],
+      "relatedDocuments": [
+        "doc_000iuz"
+      ]
+    },
+    {
+      "grantId": "inst_000ilk",
+      "kali_entity_id": "grant_000ilk",
+      "title": "Marvin Foundation — General Operating Grant",
+      "funderName": "Marvin Foundation",
+      "funderId": "org_00003i",
+      "amountRange": {
+        "min": 5029,
+        "max": 7543
+      },
+      "requestedAmount": 6286,
+      "awardedAmount": 3319.5717860826703,
+      "status": "closed",
+      "deadline": "2025-07-01",
+      "submittedDate": "2025-05-09",
+      "awardedDate": "2025-09-04",
+      "fitScore": 48,
+      "fundingFocus": [
+        "health",
+        "arts"
+      ],
+      "relatedDocuments": [
+        "doc_000isr",
+        "doc_000iyd"
+      ]
+    },
+    {
+      "grantId": "inst_000ill",
+      "kali_entity_id": "grant_000ill",
+      "title": "Kohler Community Foundation — Family Stabilization Grant",
+      "funderName": "Kohler Community Foundation",
+      "funderId": "org_00003c",
+      "amountRange": {
+        "min": 5136,
+        "max": 7704
+      },
+      "requestedAmount": 6420,
+      "awardedAmount": null,
+      "status": "rejected",
+      "deadline": "2026-10-20",
+      "submittedDate": "2026-09-21",
+      "fitScore": 43,
+      "programArea": "Family Stabilization",
+      "fundingFocus": [
+        "environment",
+        "housing"
+      ],
+      "notes": "Cubo comitatus abduco corporis. Aetas volo fuga cubitum assentator voluptates. Validus a adfero civis virtus aggredior vaco repellendus deporto.",
+      "relatedDocuments": [
+        "doc_000iq9",
+        "doc_000irr"
+      ]
+    },
+    {
+      "grantId": "inst_000ilm",
+      "kali_entity_id": "grant_000ilm",
+      "title": "City of Sacramento — Community Development — Food Security Network Grant",
+      "funderName": "City of Sacramento — Community Development",
+      "funderId": "org_000049",
+      "amountRange": {
+        "min": 4769,
+        "max": 7153
+      },
+      "requestedAmount": 5961,
+      "awardedAmount": null,
+      "status": "rejected",
+      "deadline": "2025-05-14",
+      "submittedDate": "2025-05-01",
+      "fitScore": 77,
+      "programArea": "Food Security Network",
+      "fundingFocus": [
+        "workforce"
+      ],
+      "notes": "Appositus peior minima uredo approbo sed caveo coadunatio conventus sursum. Acer utroque vestigium copia cupio voluptas vociferor artificiose depereo vesco.",
+      "relatedDocuments": []
+    },
+    {
+      "grantId": "inst_000iln",
+      "kali_entity_id": "grant_000iln",
+      "title": "Hane Charitable Fund — Family Stabilization Grant",
+      "funderName": "Hane Charitable Fund",
+      "funderId": "org_00003a",
+      "amountRange": {
+        "min": 4083,
+        "max": 6125
+      },
+      "requestedAmount": 5104,
+      "awardedAmount": 4282.206617495735,
+      "status": "closed",
+      "deadline": "2026-06-15",
+      "submittedDate": "2026-04-24",
+      "awardedDate": "2026-08-03",
+      "fitScore": 47,
+      "programArea": "Family Stabilization",
+      "fundingFocus": [
+        "arts"
+      ],
+      "relatedDocuments": [
+        "doc_000im9"
+      ]
+    },
+    {
+      "grantId": "inst_000ilo",
+      "kali_entity_id": "grant_000ilo",
+      "title": "Mayert Foundation — Youth Mentorship Grant",
+      "funderName": "Mayert Foundation",
+      "funderId": "org_000038",
+      "amountRange": {
+        "min": 30084,
+        "max": 45126
+      },
+      "requestedAmount": 37605,
+      "awardedAmount": 35879.854040873855,
+      "status": "awarded",
+      "deadline": "2026-01-18",
+      "submittedDate": "2025-12-05",
+      "awardedDate": "2026-04-06",
+      "fitScore": 57,
+      "programArea": "Youth Mentorship",
+      "fundingFocus": [
+        "education",
+        "youth",
+        "workforce"
+      ],
+      "notes": "Curriculum utpote ea vobis iste iste caterva vitiosus temptatio statua. Hic considero sortitus possimus laborum taedium cribro cohors alioqui alias. Triumphus desidero delicate audax sumo atque.",
+      "relatedDocuments": []
+    },
+    {
+      "grantId": "inst_000ilp",
+      "kali_entity_id": "grant_000ilp",
+      "title": "Christiansen Charitable Fund — General Operating Grant",
+      "funderName": "Christiansen Charitable Fund",
+      "funderId": "org_00002p",
+      "amountRange": {
+        "min": 346204,
+        "max": 519306
+      },
+      "requestedAmount": 432755,
+      "awardedAmount": null,
+      "status": "prospect",
+      "deadline": "2025-12-03",
+      "fitScore": 88,
+      "fundingFocus": [
+        "education"
+      ],
+      "relatedDocuments": []
+    },
+    {
+      "grantId": "inst_000ilq",
+      "kali_entity_id": "grant_000ilq",
+      "title": "Considine Community Foundation — General Operating Grant",
+      "funderName": "Considine Community Foundation",
+      "funderId": "org_000041",
+      "amountRange": {
+        "min": 33808,
+        "max": 50712
+      },
+      "requestedAmount": 42260,
+      "awardedAmount": 37940.45405454211,
+      "status": "closed",
+      "deadline": "2025-11-09",
+      "submittedDate": "2025-09-12",
+      "awardedDate": "2026-01-13",
+      "fitScore": 61,
+      "fundingFocus": [
+        "education",
+        "workforce",
+        "housing"
+      ],
+      "relatedDocuments": [
+        "doc_000ioy",
+        "doc_000ir4",
+        "doc_000j3z"
+      ]
+    },
+    {
+      "grantId": "inst_000ilr",
+      "kali_entity_id": "grant_000ilr",
+      "title": "Lesch Family Trust — Workforce Development Grant",
+      "funderName": "Lesch Family Trust",
+      "funderId": "org_00003s",
+      "amountRange": {
+        "min": 36048,
+        "max": 54072
+      },
+      "requestedAmount": 45060,
+      "awardedAmount": null,
+      "status": "prospect",
+      "deadline": "2025-12-12",
+      "fitScore": 43,
+      "programArea": "Workforce Development",
+      "fundingFocus": [
+        "environment"
+      ],
+      "notes": "Calco dedico eaque crinis paulatim supra curiositas artificiose conservo uredo. Qui comminor curso audacia solvo universe coniecto casus cupressus. Debitis vindico explicabo.",
+      "relatedDocuments": []
+    },
+    {
+      "grantId": "inst_000ils",
+      "kali_entity_id": "grant_000ils",
+      "title": "Swift Community Foundation — Food Security Network Grant",
+      "funderName": "Swift Community Foundation",
+      "funderId": "org_000021",
+      "amountRange": {
+        "min": 5938,
+        "max": 8906
+      },
+      "requestedAmount": 7422,
+      "awardedAmount": 6906.788587691834,
+      "status": "reporting",
+      "deadline": "2026-02-27",
+      "submittedDate": "2025-12-29",
+      "awardedDate": "2026-04-10",
+      "reportDueDate": "2026-07-13",
+      "fitScore": 35,
+      "programArea": "Food Security Network",
+      "fundingFocus": [
+        "housing",
+        "workforce"
+      ],
+      "relatedDocuments": []
+    },
+    {
+      "grantId": "inst_000ilt",
+      "kali_entity_id": "grant_000ilt",
+      "title": "Sacramento County Public Health — Community Health Outreach Grant",
+      "funderName": "Sacramento County Public Health",
+      "funderId": "org_00004e",
+      "amountRange": {
+        "min": 129973,
+        "max": 194959
+      },
+      "requestedAmount": 162466,
+      "awardedAmount": 151808.06658386622,
+      "status": "awarded",
+      "deadline": "2025-05-27",
+      "submittedDate": "2025-04-23",
+      "awardedDate": "2025-07-10",
+      "fitScore": 98,
+      "programArea": "Community Health Outreach",
+      "fundingFocus": [
+        "food security"
+      ],
+      "relatedDocuments": []
+    },
+    {
+      "grantId": "inst_000ilu",
+      "kali_entity_id": "grant_000ilu",
+      "title": "Stiedemann Charitable Fund — General Operating Grant",
+      "funderName": "Stiedemann Charitable Fund",
+      "funderId": "org_000040",
+      "amountRange": {
+        "min": 18062,
+        "max": 27094
+      },
+      "requestedAmount": 22578,
+      "awardedAmount": null,
+      "status": "prospect",
+      "deadline": "2026-11-25",
+      "fitScore": 46,
+      "fundingFocus": [
+        "health",
+        "housing",
+        "youth"
+      ],
+      "relatedDocuments": [
+        "doc_000iwl"
+      ]
+    },
+    {
+      "grantId": "inst_000ilv",
+      "kali_entity_id": "grant_000ilv",
+      "title": "Goodwin Family Trust — General Operating Grant",
+      "funderName": "Goodwin Family Trust",
+      "funderId": "org_000030",
+      "amountRange": {
+        "min": 266298,
+        "max": 399446
+      },
+      "requestedAmount": 332872,
+      "awardedAmount": null,
+      "status": "submitted",
+      "deadline": "2025-11-24",
+      "submittedDate": "2025-10-10",
+      "fitScore": 84,
+      "fundingFocus": [
+        "housing",
+        "workforce",
+        "education"
+      ],
+      "notes": "Quaerat cumque subseco possimus vita conduco.",
+      "relatedDocuments": []
+    },
+    {
+      "grantId": "inst_000ilw",
+      "kali_entity_id": "grant_000ilw",
+      "title": "Balistreri Charitable Fund — Youth Mentorship Grant",
+      "funderName": "Balistreri Charitable Fund",
+      "funderId": "org_00002o",
+      "amountRange": {
+        "min": 42946,
+        "max": 64420
+      },
+      "requestedAmount": 53683,
+      "awardedAmount": null,
+      "status": "prospect",
+      "deadline": "2025-11-14",
+      "fitScore": 51,
+      "programArea": "Youth Mentorship",
+      "fundingFocus": [
+        "workforce"
+      ],
+      "notes": "Coerceo textor congregatio praesentium cenaculum esse tandem adfectus sequi ventito. Abscido conservo tristis assentator damno volaticus acies. Apparatus canonicus ustilo veritas amoveo laborum victus auditor audio cerno.",
+      "relatedDocuments": []
+    }
+  ],
+  "funders": [
+    {
+      "funderId": "org_00001w",
+      "name": "Brakus Foundation",
+      "type": "foundation",
+      "fundingFocus": [
+        "food security",
+        "arts"
+      ],
+      "totalGivingPerYearEstimate": 4163722,
+      "typicalGrantSize": 108206
+    },
+    {
+      "funderId": "org_00001x",
+      "name": "Mayert Community Foundation",
+      "type": "foundation",
+      "fundingFocus": [
+        "workforce",
+        "environment",
+        "health"
+      ],
+      "totalGivingPerYearEstimate": 12881499,
+      "typicalGrantSize": 83513
+    },
+    {
+      "funderId": "org_00001y",
+      "name": "Powlowski Family Trust",
+      "type": "foundation",
+      "fundingFocus": [
+        "health",
+        "education",
+        "food security"
+      ],
+      "totalGivingPerYearEstimate": 10566394,
+      "typicalGrantSize": 280585
+    },
+    {
+      "funderId": "org_00001z",
+      "name": "Schroeder Family Trust",
+      "type": "foundation",
+      "fundingFocus": [
+        "arts"
+      ],
+      "totalGivingPerYearEstimate": 9812350,
+      "typicalGrantSize": 150997
+    },
+    {
+      "funderId": "org_000020",
+      "name": "Johns Family Trust",
+      "type": "foundation",
+      "fundingFocus": [
+        "youth",
+        "food security",
+        "workforce"
+      ],
+      "totalGivingPerYearEstimate": 2468179,
+      "typicalGrantSize": 172308
+    },
+    {
+      "funderId": "org_000021",
+      "name": "Swift Community Foundation",
+      "type": "foundation",
+      "fundingFocus": [
+        "housing",
+        "workforce"
+      ],
+      "totalGivingPerYearEstimate": 5822408,
+      "typicalGrantSize": 91083
+    },
+    {
+      "funderId": "org_000022",
+      "name": "Koepp Charitable Fund",
+      "type": "foundation",
+      "fundingFocus": [
+        "workforce",
+        "environment"
+      ],
+      "totalGivingPerYearEstimate": 6333971,
+      "typicalGrantSize": 137561
+    },
+    {
+      "funderId": "org_000023",
+      "name": "Dooley-Hartmann Charitable Fund",
+      "type": "foundation",
+      "fundingFocus": [
+        "youth"
+      ],
+      "totalGivingPerYearEstimate": 14339400,
+      "typicalGrantSize": 72690
+    },
+    {
+      "funderId": "org_000024",
+      "name": "Lind Foundation",
+      "type": "foundation",
+      "fundingFocus": [
+        "education",
+        "workforce"
+      ],
+      "totalGivingPerYearEstimate": 11405858,
+      "typicalGrantSize": 119134
+    },
+    {
+      "funderId": "org_000025",
+      "name": "Muller Charitable Fund",
+      "type": "foundation",
+      "fundingFocus": [
+        "education",
+        "youth"
+      ],
+      "totalGivingPerYearEstimate": 3864538,
+      "typicalGrantSize": 198973
+    },
+    {
+      "funderId": "org_000026",
+      "name": "Mante Family Trust",
+      "type": "foundation",
+      "fundingFocus": [
+        "environment"
+      ],
+      "totalGivingPerYearEstimate": 2250331,
+      "typicalGrantSize": 206374
+    },
+    {
+      "funderId": "org_000027",
+      "name": "Sawayn Community Foundation",
+      "type": "foundation",
+      "fundingFocus": [
+        "food security"
+      ],
+      "totalGivingPerYearEstimate": 10193074,
+      "typicalGrantSize": 188603
+    },
+    {
+      "funderId": "org_000028",
+      "name": "Doyle Community Foundation",
+      "type": "foundation",
+      "fundingFocus": [
+        "youth",
+        "health",
+        "arts"
+      ],
+      "totalGivingPerYearEstimate": 4990360,
+      "typicalGrantSize": 52738
+    },
+    {
+      "funderId": "org_000029",
+      "name": "Romaguera Family Trust",
+      "type": "foundation",
+      "fundingFocus": [
+        "youth"
+      ],
+      "totalGivingPerYearEstimate": 18539405,
+      "typicalGrantSize": 241038
+    },
+    {
+      "funderId": "org_00002a",
+      "name": "Hills Foundation",
+      "type": "foundation",
+      "fundingFocus": [
+        "education"
+      ],
+      "totalGivingPerYearEstimate": 7131144,
+      "typicalGrantSize": 132077
+    },
+    {
+      "funderId": "org_00002b",
+      "name": "Pfannerstill Family Trust",
+      "type": "foundation",
+      "fundingFocus": [
+        "youth"
+      ],
+      "totalGivingPerYearEstimate": 14943881,
+      "typicalGrantSize": 293963
+    },
+    {
+      "funderId": "org_00002c",
+      "name": "Schowalter Family Trust",
+      "type": "foundation",
+      "fundingFocus": [
+        "housing",
+        "health"
+      ],
+      "totalGivingPerYearEstimate": 8467338,
+      "typicalGrantSize": 178994
+    },
+    {
+      "funderId": "org_00002d",
+      "name": "Stehr Foundation",
+      "type": "foundation",
+      "fundingFocus": [
+        "environment",
+        "youth",
+        "education"
+      ],
+      "totalGivingPerYearEstimate": 6415559,
+      "typicalGrantSize": 161894
+    },
+    {
+      "funderId": "org_00002e",
+      "name": "Wintheiser Family Trust",
+      "type": "foundation",
+      "fundingFocus": [
+        "environment",
+        "youth"
+      ],
+      "totalGivingPerYearEstimate": 15420777,
+      "typicalGrantSize": 146659
+    },
+    {
+      "funderId": "org_00002f",
+      "name": "Casper Community Foundation",
+      "type": "foundation",
+      "fundingFocus": [
+        "housing"
+      ],
+      "totalGivingPerYearEstimate": 15822449,
+      "typicalGrantSize": 254633
+    },
+    {
+      "funderId": "org_00002g",
+      "name": "Torp Charitable Fund",
+      "type": "foundation",
+      "fundingFocus": [
+        "environment",
+        "food security",
+        "health"
+      ],
+      "totalGivingPerYearEstimate": 12678230,
+      "typicalGrantSize": 83773
+    },
+    {
+      "funderId": "org_00002h",
+      "name": "Morissette Family Trust",
+      "type": "foundation",
+      "fundingFocus": [
+        "food security",
+        "workforce"
+      ],
+      "totalGivingPerYearEstimate": 9558472,
+      "typicalGrantSize": 182410
+    },
+    {
+      "funderId": "org_00002i",
+      "name": "Harber Family Trust",
+      "type": "foundation",
+      "fundingFocus": [
+        "environment",
+        "education",
+        "youth"
+      ],
+      "totalGivingPerYearEstimate": 18335346,
+      "typicalGrantSize": 181403
+    },
+    {
+      "funderId": "org_00002j",
+      "name": "Predovic Family Trust",
+      "type": "foundation",
+      "fundingFocus": [
+        "environment"
+      ],
+      "totalGivingPerYearEstimate": 15904054,
+      "typicalGrantSize": 289345
+    },
+    {
+      "funderId": "org_00002k",
+      "name": "Rutherford Community Foundation",
+      "type": "foundation",
+      "fundingFocus": [
+        "workforce",
+        "housing"
+      ],
+      "totalGivingPerYearEstimate": 3564203,
+      "typicalGrantSize": 209931
+    },
+    {
+      "funderId": "org_00002l",
+      "name": "Jones Charitable Fund",
+      "type": "foundation",
+      "fundingFocus": [
+        "workforce",
+        "education"
+      ],
+      "totalGivingPerYearEstimate": 16086763,
+      "typicalGrantSize": 147100
+    },
+    {
+      "funderId": "org_00002m",
+      "name": "Reichert Community Foundation",
+      "type": "foundation",
+      "fundingFocus": [
+        "environment",
+        "workforce"
+      ],
+      "totalGivingPerYearEstimate": 6350855,
+      "typicalGrantSize": 121830
+    },
+    {
+      "funderId": "org_00002n",
+      "name": "Brown Foundation",
+      "type": "foundation",
+      "fundingFocus": [
+        "health",
+        "youth",
+        "environment"
+      ],
+      "totalGivingPerYearEstimate": 17977031,
+      "typicalGrantSize": 52477
+    },
+    {
+      "funderId": "org_00002o",
+      "name": "Balistreri Charitable Fund",
+      "type": "foundation",
+      "fundingFocus": [
+        "workforce"
+      ],
+      "totalGivingPerYearEstimate": 4610337,
+      "typicalGrantSize": 86003
+    },
+    {
+      "funderId": "org_00002p",
+      "name": "Christiansen Charitable Fund",
+      "type": "foundation",
+      "fundingFocus": [
+        "education"
+      ],
+      "totalGivingPerYearEstimate": 4626979,
+      "typicalGrantSize": 76906
+    },
+    {
+      "funderId": "org_00002q",
+      "name": "Wintheiser Family Trust",
+      "type": "foundation",
+      "fundingFocus": [
+        "health",
+        "environment",
+        "education"
+      ],
+      "totalGivingPerYearEstimate": 18812679,
+      "typicalGrantSize": 134768
+    },
+    {
+      "funderId": "org_00002r",
+      "name": "Beatty Foundation",
+      "type": "foundation",
+      "fundingFocus": [
+        "environment",
+        "arts",
+        "education"
+      ],
+      "totalGivingPerYearEstimate": 16911692,
+      "typicalGrantSize": 102646
+    },
+    {
+      "funderId": "org_00002s",
+      "name": "Bernier Foundation",
+      "type": "foundation",
+      "fundingFocus": [
+        "housing",
+        "education"
+      ],
+      "totalGivingPerYearEstimate": 11128321,
+      "typicalGrantSize": 95593
+    },
+    {
+      "funderId": "org_00002t",
+      "name": "Bergnaum Community Foundation",
+      "type": "foundation",
+      "fundingFocus": [
+        "housing",
+        "arts",
+        "workforce"
+      ],
+      "totalGivingPerYearEstimate": 9283914,
+      "typicalGrantSize": 182650
+    },
+    {
+      "funderId": "org_00002u",
+      "name": "Lehner Charitable Fund",
+      "type": "foundation",
+      "fundingFocus": [
+        "housing"
+      ],
+      "totalGivingPerYearEstimate": 3538656,
+      "typicalGrantSize": 252344
+    },
+    {
+      "funderId": "org_00002v",
+      "name": "Herzog Foundation",
+      "type": "foundation",
+      "fundingFocus": [
+        "food security"
+      ],
+      "totalGivingPerYearEstimate": 17499908,
+      "typicalGrantSize": 265330
+    },
+    {
+      "funderId": "org_00002w",
+      "name": "Parker Community Foundation",
+      "type": "foundation",
+      "fundingFocus": [
+        "health",
+        "housing",
+        "education"
+      ],
+      "totalGivingPerYearEstimate": 10011571,
+      "typicalGrantSize": 293417
+    },
+    {
+      "funderId": "org_00002x",
+      "name": "Bergnaum Charitable Fund",
+      "type": "foundation",
+      "fundingFocus": [
+        "housing",
+        "food security"
+      ],
+      "totalGivingPerYearEstimate": 16358032,
+      "typicalGrantSize": 250361
+    },
+    {
+      "funderId": "org_00002y",
+      "name": "Williamson Family Trust",
+      "type": "foundation",
+      "fundingFocus": [
+        "food security",
+        "arts",
+        "education"
+      ],
+      "totalGivingPerYearEstimate": 14536780,
+      "typicalGrantSize": 262695
+    },
+    {
+      "funderId": "org_00002z",
+      "name": "Willms Foundation",
+      "type": "foundation",
+      "fundingFocus": [
+        "workforce",
+        "food security",
+        "housing"
+      ],
+      "totalGivingPerYearEstimate": 3010350,
+      "typicalGrantSize": 103367
+    },
+    {
+      "funderId": "org_000030",
+      "name": "Goodwin Family Trust",
+      "type": "foundation",
+      "fundingFocus": [
+        "housing",
+        "workforce",
+        "education"
+      ],
+      "totalGivingPerYearEstimate": 6378400,
+      "typicalGrantSize": 212557
+    },
+    {
+      "funderId": "org_000031",
+      "name": "Rath Charitable Fund",
+      "type": "foundation",
+      "fundingFocus": [
+        "workforce",
+        "youth"
+      ],
+      "totalGivingPerYearEstimate": 14607081,
+      "typicalGrantSize": 269610
+    },
+    {
+      "funderId": "org_000032",
+      "name": "Turcotte Foundation",
+      "type": "foundation",
+      "fundingFocus": [
+        "food security"
+      ],
+      "totalGivingPerYearEstimate": 11298835,
+      "typicalGrantSize": 168024
+    },
+    {
+      "funderId": "org_000033",
+      "name": "Franecki Family Trust",
+      "type": "foundation",
+      "fundingFocus": [
+        "environment"
+      ],
+      "totalGivingPerYearEstimate": 17486571,
+      "typicalGrantSize": 271897
+    },
+    {
+      "funderId": "org_000034",
+      "name": "Zieme Charitable Fund",
+      "type": "foundation",
+      "fundingFocus": [
+        "education",
+        "food security",
+        "arts"
+      ],
+      "totalGivingPerYearEstimate": 8822909,
+      "typicalGrantSize": 255638
+    },
+    {
+      "funderId": "org_000035",
+      "name": "Erdman Foundation",
+      "type": "foundation",
+      "fundingFocus": [
+        "health"
+      ],
+      "totalGivingPerYearEstimate": 15028857,
+      "typicalGrantSize": 117357
+    },
+    {
+      "funderId": "org_000036",
+      "name": "Denesik Family Trust",
+      "type": "foundation",
+      "fundingFocus": [
+        "arts",
+        "education"
+      ],
+      "totalGivingPerYearEstimate": 6177292,
+      "typicalGrantSize": 57779
+    },
+    {
+      "funderId": "org_000037",
+      "name": "Friesen Community Foundation",
+      "type": "foundation",
+      "fundingFocus": [
+        "youth",
+        "food security",
+        "housing"
+      ],
+      "totalGivingPerYearEstimate": 5817281,
+      "typicalGrantSize": 197510
+    },
+    {
+      "funderId": "org_000038",
+      "name": "Mayert Foundation",
+      "type": "foundation",
+      "fundingFocus": [
+        "education",
+        "youth",
+        "workforce"
+      ],
+      "totalGivingPerYearEstimate": 9585364,
+      "typicalGrantSize": 233260
+    },
+    {
+      "funderId": "org_000039",
+      "name": "Dietrich-Lowe Family Trust",
+      "type": "foundation",
+      "fundingFocus": [
+        "education",
+        "youth",
+        "health"
+      ],
+      "totalGivingPerYearEstimate": 2255430,
+      "typicalGrantSize": 203012
+    },
+    {
+      "funderId": "org_00003a",
+      "name": "Hane Charitable Fund",
+      "type": "foundation",
+      "fundingFocus": [
+        "arts"
+      ],
+      "totalGivingPerYearEstimate": 11828100,
+      "typicalGrantSize": 161201
+    },
+    {
+      "funderId": "org_00003b",
+      "name": "Price Community Foundation",
+      "type": "foundation",
+      "fundingFocus": [
+        "health",
+        "workforce"
+      ],
+      "totalGivingPerYearEstimate": 8914965,
+      "typicalGrantSize": 83460
+    },
+    {
+      "funderId": "org_00003c",
+      "name": "Kohler Community Foundation",
+      "type": "foundation",
+      "fundingFocus": [
+        "environment",
+        "housing"
+      ],
+      "totalGivingPerYearEstimate": 18175025,
+      "typicalGrantSize": 225679
+    },
+    {
+      "funderId": "org_00003d",
+      "name": "Yundt Community Foundation",
+      "type": "foundation",
+      "fundingFocus": [
+        "housing",
+        "youth",
+        "environment"
+      ],
+      "totalGivingPerYearEstimate": 13612067,
+      "typicalGrantSize": 55618
+    },
+    {
+      "funderId": "org_00003e",
+      "name": "Schmeler Charitable Fund",
+      "type": "foundation",
+      "fundingFocus": [
+        "environment"
+      ],
+      "totalGivingPerYearEstimate": 18829083,
+      "typicalGrantSize": 164006
+    },
+    {
+      "funderId": "org_00003f",
+      "name": "Sawayn Family Trust",
+      "type": "foundation",
+      "fundingFocus": [
+        "food security",
+        "workforce"
+      ],
+      "totalGivingPerYearEstimate": 10238575,
+      "typicalGrantSize": 270358
+    },
+    {
+      "funderId": "org_00003g",
+      "name": "Rath Community Foundation",
+      "type": "foundation",
+      "fundingFocus": [
+        "environment"
+      ],
+      "totalGivingPerYearEstimate": 5416001,
+      "typicalGrantSize": 281989
+    },
+    {
+      "funderId": "org_00003h",
+      "name": "Von Community Foundation",
+      "type": "foundation",
+      "fundingFocus": [
+        "housing"
+      ],
+      "totalGivingPerYearEstimate": 14197607,
+      "typicalGrantSize": 238911
+    },
+    {
+      "funderId": "org_00003i",
+      "name": "Marvin Foundation",
+      "type": "foundation",
+      "fundingFocus": [
+        "health",
+        "arts"
+      ],
+      "totalGivingPerYearEstimate": 3114864,
+      "typicalGrantSize": 274344
+    },
+    {
+      "funderId": "org_00003j",
+      "name": "Bartoletti Charitable Fund",
+      "type": "foundation",
+      "fundingFocus": [
+        "workforce",
+        "housing",
+        "health"
+      ],
+      "totalGivingPerYearEstimate": 15947335,
+      "typicalGrantSize": 117573
+    },
+    {
+      "funderId": "org_00003k",
+      "name": "Sawayn Foundation",
+      "type": "foundation",
+      "fundingFocus": [
+        "housing"
+      ],
+      "totalGivingPerYearEstimate": 15222138,
+      "typicalGrantSize": 77644
+    },
+    {
+      "funderId": "org_00003l",
+      "name": "Waters Community Foundation",
+      "type": "foundation",
+      "fundingFocus": [
+        "food security",
+        "health",
+        "housing"
+      ],
+      "totalGivingPerYearEstimate": 13190073,
+      "typicalGrantSize": 76056
+    },
+    {
+      "funderId": "org_00003m",
+      "name": "Streich Community Foundation",
+      "type": "foundation",
+      "fundingFocus": [
+        "environment",
+        "health",
+        "arts"
+      ],
+      "totalGivingPerYearEstimate": 11802964,
+      "typicalGrantSize": 71888
+    },
+    {
+      "funderId": "org_00003n",
+      "name": "Crooks Charitable Fund",
+      "type": "foundation",
+      "fundingFocus": [
+        "environment"
+      ],
+      "totalGivingPerYearEstimate": 8334479,
+      "typicalGrantSize": 239769
+    },
+    {
+      "funderId": "org_00003o",
+      "name": "Torphy Community Foundation",
+      "type": "foundation",
+      "fundingFocus": [
+        "workforce",
+        "environment"
+      ],
+      "totalGivingPerYearEstimate": 10704630,
+      "typicalGrantSize": 51100
+    },
+    {
+      "funderId": "org_00003p",
+      "name": "Heller Charitable Fund",
+      "type": "foundation",
+      "fundingFocus": [
+        "health",
+        "youth",
+        "environment"
+      ],
+      "totalGivingPerYearEstimate": 15594945,
+      "typicalGrantSize": 60471
+    },
+    {
+      "funderId": "org_00003q",
+      "name": "MacGyver Family Trust",
+      "type": "foundation",
+      "fundingFocus": [
+        "arts",
+        "workforce",
+        "environment"
+      ],
+      "totalGivingPerYearEstimate": 16331319,
+      "typicalGrantSize": 182999
+    },
+    {
+      "funderId": "org_00003r",
+      "name": "Brown Family Trust",
+      "type": "foundation",
+      "fundingFocus": [
+        "youth",
+        "food security"
+      ],
+      "totalGivingPerYearEstimate": 7357979,
+      "typicalGrantSize": 98649
+    },
+    {
+      "funderId": "org_00003s",
+      "name": "Lesch Family Trust",
+      "type": "foundation",
+      "fundingFocus": [
+        "environment"
+      ],
+      "totalGivingPerYearEstimate": 17664612,
+      "typicalGrantSize": 208108
+    },
+    {
+      "funderId": "org_00003t",
+      "name": "Schamberger Family Trust",
+      "type": "foundation",
+      "fundingFocus": [
+        "environment",
+        "housing",
+        "health"
+      ],
+      "totalGivingPerYearEstimate": 19969852,
+      "typicalGrantSize": 226698
+    },
+    {
+      "funderId": "org_00003u",
+      "name": "Beer Charitable Fund",
+      "type": "foundation",
+      "fundingFocus": [
+        "environment",
+        "arts",
+        "food security"
+      ],
+      "totalGivingPerYearEstimate": 8733728,
+      "typicalGrantSize": 275406
+    },
+    {
+      "funderId": "org_00003v",
+      "name": "Hayes Family Trust",
+      "type": "foundation",
+      "fundingFocus": [
+        "health"
+      ],
+      "totalGivingPerYearEstimate": 19621797,
+      "typicalGrantSize": 239782
+    },
+    {
+      "funderId": "org_00003w",
+      "name": "Davis Community Foundation",
+      "type": "foundation",
+      "fundingFocus": [
+        "education",
+        "environment"
+      ],
+      "totalGivingPerYearEstimate": 10319722,
+      "typicalGrantSize": 230703
+    },
+    {
+      "funderId": "org_00003x",
+      "name": "Mraz Charitable Fund",
+      "type": "foundation",
+      "fundingFocus": [
+        "workforce"
+      ],
+      "totalGivingPerYearEstimate": 13921884,
+      "typicalGrantSize": 255047
+    },
+    {
+      "funderId": "org_00003y",
+      "name": "Turner Foundation",
+      "type": "foundation",
+      "fundingFocus": [
+        "arts",
+        "environment"
+      ],
+      "totalGivingPerYearEstimate": 13583279,
+      "typicalGrantSize": 261115
+    },
+    {
+      "funderId": "org_00003z",
+      "name": "Hackett Family Trust",
+      "type": "foundation",
+      "fundingFocus": [
+        "arts",
+        "health"
+      ],
+      "totalGivingPerYearEstimate": 12347309,
+      "typicalGrantSize": 90739
+    },
+    {
+      "funderId": "org_000040",
+      "name": "Stiedemann Charitable Fund",
+      "type": "foundation",
+      "fundingFocus": [
+        "health",
+        "housing",
+        "youth"
+      ],
+      "totalGivingPerYearEstimate": 11039691,
+      "typicalGrantSize": 175937
+    },
+    {
+      "funderId": "org_000041",
+      "name": "Considine Community Foundation",
+      "type": "foundation",
+      "fundingFocus": [
+        "education",
+        "workforce",
+        "housing"
+      ],
+      "totalGivingPerYearEstimate": 13638298,
+      "typicalGrantSize": 53400
+    },
+    {
+      "funderId": "org_000042",
+      "name": "Bednar Community Foundation",
+      "type": "foundation",
+      "fundingFocus": [
+        "health"
+      ],
+      "totalGivingPerYearEstimate": 2078533,
+      "typicalGrantSize": 73350
+    },
+    {
+      "funderId": "org_000043",
+      "name": "Windler-Fisher Charitable Fund",
+      "type": "foundation",
+      "fundingFocus": [
+        "environment"
+      ],
+      "totalGivingPerYearEstimate": 2353311,
+      "typicalGrantSize": 272023
+    },
+    {
+      "funderId": "org_000044",
+      "name": "California Department of Social Services",
+      "type": "government",
+      "fundingFocus": [
+        "health"
+      ],
+      "totalGivingPerYearEstimate": 5206322,
+      "typicalGrantSize": 216473
+    },
+    {
+      "funderId": "org_000045",
+      "name": "California Department of Social Services",
+      "type": "government",
+      "fundingFocus": [
+        "workforce"
+      ],
+      "totalGivingPerYearEstimate": 15324165,
+      "typicalGrantSize": 288442
+    },
+    {
+      "funderId": "org_000046",
+      "name": "USDA — Food and Nutrition Service",
+      "type": "government",
+      "fundingFocus": [
+        "food security"
+      ],
+      "totalGivingPerYearEstimate": 3460738,
+      "typicalGrantSize": 118922
+    },
+    {
+      "funderId": "org_000047",
+      "name": "USDA — Food and Nutrition Service",
+      "type": "government",
+      "fundingFocus": [
+        "food security",
+        "housing"
+      ],
+      "totalGivingPerYearEstimate": 9563453,
+      "typicalGrantSize": 94137
+    },
+    {
+      "funderId": "org_000048",
+      "name": "California Department of Social Services",
+      "type": "government",
+      "fundingFocus": [
+        "food security",
+        "workforce"
+      ],
+      "totalGivingPerYearEstimate": 13960130,
+      "typicalGrantSize": 228133
+    },
+    {
+      "funderId": "org_000049",
+      "name": "City of Sacramento — Community Development",
+      "type": "government",
+      "fundingFocus": [
+        "workforce"
+      ],
+      "totalGivingPerYearEstimate": 9025597,
+      "typicalGrantSize": 234123
+    },
+    {
+      "funderId": "org_00004a",
+      "name": "City of Sacramento — Community Development",
+      "type": "government",
+      "fundingFocus": [
+        "health"
+      ],
+      "totalGivingPerYearEstimate": 11158967,
+      "typicalGrantSize": 119836
+    },
+    {
+      "funderId": "org_00004b",
+      "name": "USDA — Food and Nutrition Service",
+      "type": "government",
+      "fundingFocus": [
+        "food security"
+      ],
+      "totalGivingPerYearEstimate": 15820672,
+      "typicalGrantSize": 227489
+    },
+    {
+      "funderId": "org_00004c",
+      "name": "California Department of Social Services",
+      "type": "government",
+      "fundingFocus": [
+        "workforce"
+      ],
+      "totalGivingPerYearEstimate": 15963889,
+      "typicalGrantSize": 129850
+    },
+    {
+      "funderId": "org_00004d",
+      "name": "USDA — Food and Nutrition Service",
+      "type": "government",
+      "fundingFocus": [
+        "workforce",
+        "food security"
+      ],
+      "totalGivingPerYearEstimate": 13927164,
+      "typicalGrantSize": 166011
+    },
+    {
+      "funderId": "org_00004e",
+      "name": "Sacramento County Public Health",
+      "type": "government",
+      "fundingFocus": [
+        "food security"
+      ],
+      "totalGivingPerYearEstimate": 6828627,
+      "typicalGrantSize": 256110
+    },
+    {
+      "funderId": "org_00004f",
+      "name": "California Department of Social Services",
+      "type": "government",
+      "fundingFocus": [
+        "workforce",
+        "housing"
+      ],
+      "totalGivingPerYearEstimate": 5299985,
+      "typicalGrantSize": 231368
+    },
+    {
+      "funderId": "org_00004g",
+      "name": "California Endowment",
+      "type": "government",
+      "fundingFocus": [
+        "housing"
+      ],
+      "totalGivingPerYearEstimate": 17747759,
+      "typicalGrantSize": 218309
+    }
+  ]
+}

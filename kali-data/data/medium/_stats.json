@@ -1,0 +1,33 @@
+{
+  "size": "medium",
+  "elapsedMs": 296,
+  "counts": {
+    "people": 863,
+    "staff": 22,
+    "board": 11,
+    "donors": 630,
+    "prospects": 200,
+    "lapsedDonors": 357,
+    "organizations": 81,
+    "corporateSponsors": 18,
+    "foundations": 24,
+    "vendors": 35,
+    "donations": 2422,
+    "donationsTotalUsd": 5551902,
+    "campaigns": 9,
+    "events": 38,
+    "grants": 38,
+    "grantsAwarded": 21,
+    "documents": 220,
+    "emails": 3200,
+    "calendarEvents": 1278,
+    "zoomMeetings": 60,
+    "zoomTranscripts": 30,
+    "powerAutomateFlows": 12,
+    "powerBIDashboards": 4,
+    "qbTransactions": 2764,
+    "knowBe4Records": 22,
+    "solanaTxs": 55,
+    "solanaTotalUsdcDisbursed": 303039
+  }
+}

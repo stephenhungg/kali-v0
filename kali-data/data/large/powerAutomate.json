@@ -1,0 +1,1420 @@
+{
+  "flows": [
+    {
+      "flowId": "pa_000wx5",
+      "kali_entity_id": "flow_000wx5",
+      "displayName": "Auto-acknowledge donations under $500",
+      "description": "Sends templated thank-you within 24h of any online gift under $500",
+      "trigger": "Bloomerang webhook: new_donation",
+      "state": "Started",
+      "createdTime": "2025-06-03",
+      "runs": {
+        "total": 41,
+        "succeeded": 39,
+        "failed": 2,
+        "avgDurationMs": 3839,
+        "history": [
+          {
+            "date": "2026-01-23T01:59:47.227Z",
+            "status": "success",
+            "durationMs": 1643
+          },
+          {
+            "date": "2026-01-25T05:15:38.827Z",
+            "status": "success",
+            "durationMs": 1260
+          },
+          {
+            "date": "2026-01-27T14:00:06.079Z",
+            "status": "success",
+            "durationMs": 7177
+          },
+          {
+            "date": "2026-02-06T13:09:55.763Z",
+            "status": "success",
+            "durationMs": 1771
+          },
+          {
+            "date": "2026-02-18T20:13:32.842Z",
+            "status": "success",
+            "durationMs": 3177
+          },
+          {
+            "date": "2026-02-21T06:50:42.992Z",
+            "status": "success",
+            "durationMs": 7179
+          },
+          {
+            "date": "2026-02-25T01:55:54.181Z",
+            "status": "success",
+            "durationMs": 3805
+          },
+          {
+            "date": "2026-02-25T02:51:58.505Z",
+            "status": "success",
+            "durationMs": 1549
+          },
+          {
+            "date": "2026-02-26T18:21:13.342Z",
+            "status": "success",
+            "durationMs": 4741
+          },
+          {
+            "date": "2026-03-11T21:55:58.355Z",
+            "status": "success",
+            "durationMs": 1107
+          },
+          {
+            "date": "2026-03-20T14:58:44.258Z",
+            "status": "success",
+            "durationMs": 4682
+          },
+          {
+            "date": "2026-03-30T05:28:27.647Z",
+            "status": "success",
+            "durationMs": 6782
+          },
+          {
+            "date": "2026-03-30T23:23:19.117Z",
+            "status": "success",
+            "durationMs": 1995
+          },
+          {
+            "date": "2026-04-02T05:03:54.066Z",
+            "status": "success",
+            "durationMs": 7767
+          },
+          {
+            "date": "2026-04-03T12:45:35.518Z",
+            "status": "success",
+            "durationMs": 5046
+          },
+          {
+            "date": "2026-04-12T15:44:26.573Z",
+            "status": "success",
+            "durationMs": 1022
+          },
+          {
+            "date": "2026-04-22T05:20:07.312Z",
+            "status": "success",
+            "durationMs": 7772
+          },
+          {
+            "date": "2026-04-30T23:24:38.697Z",
+            "status": "success",
+            "durationMs": 1800
+          },
+          {
+            "date": "2026-05-03T15:09:57.646Z",
+            "status": "success",
+            "durationMs": 2869
+          },
+          {
+            "date": "2026-05-06T08:50:47.136Z",
+            "status": "success",
+            "durationMs": 5924
+          }
+        ]
+      },
+      "ownerId": "ppl_000088"
+    },
+    {
+      "flowId": "pa_000wx6",
+      "kali_entity_id": "flow_000wx6",
+      "displayName": "Grant deadline 30-day alerts",
+      "description": "Posts to #grants Teams channel and emails Grants Manager 30 days before any tracked Instrumentl deadline",
+      "trigger": "Scheduled: daily 09:00",
+      "state": "Started",
+      "createdTime": "2023-02-01",
+      "runs": {
+        "total": 44,
+        "succeeded": 39,
+        "failed": 5,
+        "avgDurationMs": 3803,
+        "history": [
+          {
+            "date": "2026-03-07T00:01:51.757Z",
+            "status": "success",
+            "durationMs": 2296
+          },
+          {
+            "date": "2026-03-16T20:32:10.165Z",
+            "status": "success",
+            "durationMs": 7400
+          },
+          {
+            "date": "2026-03-24T12:13:05.552Z",
+            "status": "success",
+            "durationMs": 2371
+          },
+          {
+            "date": "2026-03-24T23:45:24.921Z",
+            "status": "success",
+            "durationMs": 6300
+          },
+          {
+            "date": "2026-03-25T06:06:55.302Z",
+            "status": "success",
+            "durationMs": 5833
+          },
+          {
+            "date": "2026-03-27T06:34:04.063Z",
+            "status": "success",
+            "durationMs": 6005
+          },
+          {
+            "date": "2026-04-01T11:03:59.759Z",
+            "status": "success",
+            "durationMs": 7706
+          },
+          {
+            "date": "2026-04-02T23:17:30.843Z",
+            "status": "success",
+            "durationMs": 3366
+          },
+          {
+            "date": "2026-04-05T23:01:00.563Z",
+            "status": "failure",
+            "durationMs": 653
+          },
+          {
+            "date": "2026-04-10T07:24:49.881Z",
+            "status": "success",
+            "durationMs": 6314
+          },
+          {
+            "date": "2026-04-11T15:52:35.742Z",
+            "status": "failure",
+            "durationMs": 7686
+          },
+          {
+            "date": "2026-04-14T06:04:21.573Z",
+            "status": "success",
+            "durationMs": 1830
+          },
+          {
+            "date": "2026-04-22T04:27:13.506Z",
+            "status": "success",
+            "durationMs": 500
+          },
+          {
+            "date": "2026-04-23T13:42:25.714Z",
+            "status": "success",
+            "durationMs": 5905
+          },
+          {
+            "date": "2026-04-25T21:04:25.939Z",
+            "status": "success",
+            "durationMs": 4027
+          },
+          {
+            "date": "2026-04-26T12:15:12.269Z",
+            "status": "success",
+            "durationMs": 2397
+          },
+          {
+            "date": "2026-05-03T18:34:26.512Z",
+            "status": "success",
+            "durationMs": 3134
+          },
+          {
+            "date": "2026-05-06T03:48:14.796Z",
+            "status": "success",
+            "durationMs": 2851
+          },
+          {
+            "date": "2026-05-08T12:35:38.072Z",
+            "status": "success",
+            "durationMs": 3352
+          },
+          {
+            "date": "2026-05-10T01:11:19.888Z",
+            "status": "success",
+            "durationMs": 5786
+          }
+        ]
+      },
+      "ownerId": "ppl_00008h"
+    },
+    {
+      "flowId": "pa_000wx7",
+      "kali_entity_id": "flow_000wx7",
+      "displayName": "Board meeting prep packet",
+      "description": "Pulls financials, program reports, donor pipeline 7 days before board meetings, drops in SharePoint",
+      "trigger": "Scheduled: 7d before calendar event tagged board",
+      "state": "Started",
+      "createdTime": "2024-02-14",
+      "runs": {
+        "total": 34,
+        "succeeded": 31,
+        "failed": 3,
+        "avgDurationMs": 3930,
+        "history": [
+          {
+            "date": "2026-01-31T09:15:28.303Z",
+            "status": "success",
+            "durationMs": 2591
+          },
+          {
+            "date": "2026-02-10T07:19:48.102Z",
+            "status": "success",
+            "durationMs": 5132
+          },
+          {
+            "date": "2026-02-10T17:25:43.834Z",
+            "status": "success",
+            "durationMs": 7227
+          },
+          {
+            "date": "2026-02-12T00:27:19.024Z",
+            "status": "success",
+            "durationMs": 6780
+          },
+          {
+            "date": "2026-02-16T06:51:04.593Z",
+            "status": "success",
+            "durationMs": 248
+          },
+          {
+            "date": "2026-02-17T23:06:20.498Z",
+            "status": "success",
+            "durationMs": 6948
+          },
+          {
+            "date": "2026-02-19T10:05:22.729Z",
+            "status": "success",
+            "durationMs": 7843
+          },
+          {
+            "date": "2026-02-22T09:29:52.400Z",
+            "status": "success",
+            "durationMs": 7396
+          },
+          {
+            "date": "2026-03-14T18:50:56.574Z",
+            "status": "failure",
+            "durationMs": 2265
+          },
+          {
+            "date": "2026-03-17T05:04:29.075Z",
+            "status": "success",
+            "durationMs": 998
+          },
+          {
+            "date": "2026-03-21T18:51:25.285Z",
+            "status": "success",
+            "durationMs": 1216
+          },
+          {
+            "date": "2026-03-26T12:00:36.344Z",
+            "status": "success",
+            "durationMs": 7126
+          },
+          {
+            "date": "2026-04-01T14:48:36.601Z",
+            "status": "success",
+            "durationMs": 5374
+          },
+          {
+            "date": "2026-04-04T09:29:45.556Z",
+            "status": "success",
+            "durationMs": 966
+          },
+          {
+            "date": "2026-04-07T00:04:46.207Z",
+            "status": "success",
+            "durationMs": 592
+          },
+          {
+            "date": "2026-04-13T01:36:23.408Z",
+            "status": "success",
+            "durationMs": 4348
+          },
+          {
+            "date": "2026-04-17T12:56:22.944Z",
+            "status": "success",
+            "durationMs": 2295
+          },
+          {
+            "date": "2026-04-21T20:51:29.791Z",
+            "status": "success",
+            "durationMs": 5942
+          },
+          {
+            "date": "2026-04-24T03:39:31.015Z",
+            "status": "success",
+            "durationMs": 6029
+          },
+          {
+            "date": "2026-04-26T10:42:13.986Z",
+            "status": "success",
+            "durationMs": 288
+          }
+        ]
+      },
+      "ownerId": "ppl_00007d"
+    },
+    {
+      "flowId": "pa_000wx8",
+      "kali_entity_id": "flow_000wx8",
+      "displayName": "Major gift alert ($5K+)",
+      "description": "Slacks ED + DOD when any Bloomerang gift > $5,000",
+      "trigger": "Bloomerang webhook",
+      "state": "Started",
+      "createdTime": "2024-08-12",
+      "runs": {
+        "total": 69,
+        "succeeded": 62,
+        "failed": 7,
+        "avgDurationMs": 3755,
+        "history": [
+          {
+            "date": "2026-03-26T06:36:01.767Z",
+            "status": "success",
+            "durationMs": 3702
+          },
+          {
+            "date": "2026-03-28T09:50:04.817Z",
+            "status": "success",
+            "durationMs": 1897
+          },
+          {
+            "date": "2026-03-30T14:56:00.242Z",
+            "status": "success",
+            "durationMs": 2984
+          },
+          {
+            "date": "2026-04-04T08:05:10.159Z",
+            "status": "success",
+            "durationMs": 6973
+          },
+          {
+            "date": "2026-04-04T16:39:45.327Z",
+            "status": "success",
+            "durationMs": 3719
+          },
+          {
+            "date": "2026-04-05T09:48:49.829Z",
+            "status": "success",
+            "durationMs": 5658
+          },
+          {
+            "date": "2026-04-06T10:14:58.867Z",
+            "status": "success",
+            "durationMs": 1231
+          },
+          {
+            "date": "2026-04-06T20:34:16.182Z",
+            "status": "success",
+            "durationMs": 3031
+          },
+          {
+            "date": "2026-04-12T10:31:03.990Z",
+            "status": "success",
+            "durationMs": 2981
+          },
+          {
+            "date": "2026-04-13T05:37:18.825Z",
+            "status": "success",
+            "durationMs": 7225
+          },
+          {
+            "date": "2026-04-15T01:28:43.032Z",
+            "status": "success",
+            "durationMs": 1022
+          },
+          {
+            "date": "2026-04-15T14:48:10.910Z",
+            "status": "failure",
+            "durationMs": 6472
+          },
+          {
+            "date": "2026-04-15T17:34:44.022Z",
+            "status": "success",
+            "durationMs": 3697
+          },
+          {
+            "date": "2026-04-19T11:04:47.691Z",
+            "status": "success",
+            "durationMs": 4818
+          },
+          {
+            "date": "2026-04-19T13:18:52.384Z",
+            "status": "success",
+            "durationMs": 4394
+          },
+          {
+            "date": "2026-04-20T06:58:53.134Z",
+            "status": "success",
+            "durationMs": 5769
+          },
+          {
+            "date": "2026-04-22T09:36:56.182Z",
+            "status": "success",
+            "durationMs": 844
+          },
+          {
+            "date": "2026-04-26T00:54:50.028Z",
+            "status": "success",
+            "durationMs": 4721
+          },
+          {
+            "date": "2026-05-02T10:25:58.651Z",
+            "status": "success",
+            "durationMs": 836
+          },
+          {
+            "date": "2026-05-07T08:06:07.582Z",
+            "status": "success",
+            "durationMs": 1115
+          }
+        ]
+      },
+      "ownerId": "ppl_000070"
+    },
+    {
+      "flowId": "pa_000wx9",
+      "kali_entity_id": "flow_000wx9",
+      "displayName": "Lapsed donor re-engagement queue",
+      "description": "Weekly: surfaces donors who haven't given in 14+ months and adds to outreach queue",
+      "trigger": "Scheduled: weekly Mon 08:00",
+      "state": "Started",
+      "createdTime": "2025-04-04",
+      "runs": {
+        "total": 45,
+        "succeeded": 42,
+        "failed": 3,
+        "avgDurationMs": 4204,
+        "history": [
+          {
+            "date": "2026-02-22T13:43:57.298Z",
+            "status": "success",
+            "durationMs": 3766
+          },
+          {
+            "date": "2026-02-24T17:47:06.232Z",
+            "status": "success",
+            "durationMs": 407
+          },
+          {
+            "date": "2026-02-26T18:47:57.580Z",
+            "status": "success",
+            "durationMs": 4449
+          },
+          {
+            "date": "2026-03-01T15:00:13.534Z",
+            "status": "success",
+            "durationMs": 2354
+          },
+          {
+            "date": "2026-03-03T23:42:47.878Z",
+            "status": "success",
+            "durationMs": 4598
+          },
+          {
+            "date": "2026-03-13T08:02:18.414Z",
+            "status": "failure",
+            "durationMs": 2809
+          },
+          {
+            "date": "2026-03-18T19:07:02.661Z",
+            "status": "success",
+            "durationMs": 4250
+          },
+          {
+            "date": "2026-03-21T05:18:58.660Z",
+            "status": "success",
+            "durationMs": 5775
+          },
+          {
+            "date": "2026-03-21T22:17:54.478Z",
+            "status": "success",
+            "durationMs": 2704
+          },
+          {
+            "date": "2026-04-07T00:02:27.494Z",
+            "status": "success",
+            "durationMs": 4872
+          },
+          {
+            "date": "2026-04-07T19:03:28.209Z",
+            "status": "success",
+            "durationMs": 5468
+          },
+          {
+            "date": "2026-04-13T05:47:55.064Z",
+            "status": "success",
+            "durationMs": 794
+          },
+          {
+            "date": "2026-04-25T03:23:47.422Z",
+            "status": "success",
+            "durationMs": 6360
+          },
+          {
+            "date": "2026-04-25T08:27:14.686Z",
+            "status": "success",
+            "durationMs": 1780
+          },
+          {
+            "date": "2026-04-29T10:48:46.071Z",
+            "status": "success",
+            "durationMs": 7595
+          },
+          {
+            "date": "2026-04-30T12:56:31.949Z",
+            "status": "success",
+            "durationMs": 7269
+          },
+          {
+            "date": "2026-05-01T06:29:54.094Z",
+            "status": "success",
+            "durationMs": 661
+          },
+          {
+            "date": "2026-05-03T00:56:17.287Z",
+            "status": "success",
+            "durationMs": 7154
+          },
+          {
+            "date": "2026-05-05T21:54:59.585Z",
+            "status": "success",
+            "durationMs": 7248
+          },
+          {
+            "date": "2026-05-10T03:42:41.775Z",
+            "status": "success",
+            "durationMs": 4897
+          }
+        ]
+      },
+      "ownerId": "ppl_00008i"
+    },
+    {
+      "flowId": "pa_000wxa",
+      "kali_entity_id": "flow_000wxa",
+      "displayName": "Volunteer day signup confirmation",
+      "description": "Sends Zoom link + parking instructions to volunteer registrations",
+      "trigger": "Form submission",
+      "state": "Started",
+      "createdTime": "2023-10-09",
+      "runs": {
+        "total": 31,
+        "succeeded": 29,
+        "failed": 2,
+        "avgDurationMs": 4505,
+        "history": [
+          {
+            "date": "2026-02-08T12:31:36.800Z",
+            "status": "success",
+            "durationMs": 7477
+          },
+          {
+            "date": "2026-02-10T10:13:35.581Z",
+            "status": "success",
+            "durationMs": 2937
+          },
+          {
+            "date": "2026-02-11T10:09:45.588Z",
+            "status": "success",
+            "durationMs": 1623
+          },
+          {
+            "date": "2026-02-15T17:49:21.861Z",
+            "status": "success",
+            "durationMs": 7646
+          },
+          {
+            "date": "2026-02-22T15:25:39.683Z",
+            "status": "success",
+            "durationMs": 7402
+          },
+          {
+            "date": "2026-02-23T09:26:29.093Z",
+            "status": "success",
+            "durationMs": 1647
+          },
+          {
+            "date": "2026-02-24T19:30:50.395Z",
+            "status": "success",
+            "durationMs": 275
+          },
+          {
+            "date": "2026-02-26T11:51:44.931Z",
+            "status": "success",
+            "durationMs": 1666
+          },
+          {
+            "date": "2026-02-26T17:35:44.179Z",
+            "status": "success",
+            "durationMs": 7290
+          },
+          {
+            "date": "2026-03-16T02:10:26.583Z",
+            "status": "success",
+            "durationMs": 7256
+          },
+          {
+            "date": "2026-03-17T17:51:37.158Z",
+            "status": "success",
+            "durationMs": 4667
+          },
+          {
+            "date": "2026-03-24T12:16:52.852Z",
+            "status": "success",
+            "durationMs": 6968
+          },
+          {
+            "date": "2026-03-25T03:36:49.953Z",
+            "status": "success",
+            "durationMs": 1721
+          },
+          {
+            "date": "2026-03-26T16:41:17.599Z",
+            "status": "success",
+            "durationMs": 3652
+          },
+          {
+            "date": "2026-03-31T09:28:09.651Z",
+            "status": "success",
+            "durationMs": 7040
+          },
+          {
+            "date": "2026-04-11T09:28:33.775Z",
+            "status": "success",
+            "durationMs": 5836
+          },
+          {
+            "date": "2026-04-16T22:04:08.400Z",
+            "status": "success",
+            "durationMs": 1695
+          },
+          {
+            "date": "2026-04-17T01:50:35.909Z",
+            "status": "success",
+            "durationMs": 2301
+          },
+          {
+            "date": "2026-04-30T16:40:22.347Z",
+            "status": "success",
+            "durationMs": 7609
+          },
+          {
+            "date": "2026-05-01T13:44:30.906Z",
+            "status": "success",
+            "durationMs": 2001
+          }
+        ]
+      },
+      "ownerId": "ppl_000080"
+    },
+    {
+      "flowId": "pa_000wxb",
+      "kali_entity_id": "flow_000wxb",
+      "displayName": "Quarterly impact report assembly",
+      "description": "Aggregates metrics from Power BI, drops PDF in board SharePoint folder",
+      "trigger": "Scheduled: quarterly",
+      "state": "Started",
+      "createdTime": "2023-06-12",
+      "runs": {
+        "total": 48,
+        "succeeded": 45,
+        "failed": 3,
+        "avgDurationMs": 3899,
+        "history": [
+          {
+            "date": "2026-02-20T20:46:08.748Z",
+            "status": "success",
+            "durationMs": 6446
+          },
+          {
+            "date": "2026-02-24T12:09:51.214Z",
+            "status": "success",
+            "durationMs": 2506
+          },
+          {
+            "date": "2026-02-27T18:47:42.848Z",
+            "status": "success",
+            "durationMs": 7001
+          },
+          {
+            "date": "2026-03-04T00:25:56.479Z",
+            "status": "success",
+            "durationMs": 3817
+          },
+          {
+            "date": "2026-03-09T05:06:22.105Z",
+            "status": "success",
+            "durationMs": 7804
+          },
+          {
+            "date": "2026-03-11T20:59:39.177Z",
+            "status": "failure",
+            "durationMs": 7813
+          },
+          {
+            "date": "2026-03-12T20:07:56.058Z",
+            "status": "success",
+            "durationMs": 4290
+          },
+          {
+            "date": "2026-03-19T15:37:14.811Z",
+            "status": "success",
+            "durationMs": 5566
+          },
+          {
+            "date": "2026-03-21T02:01:27.800Z",
+            "status": "success",
+            "durationMs": 3983
+          },
+          {
+            "date": "2026-03-24T00:28:11.022Z",
+            "status": "success",
+            "durationMs": 3923
+          },
+          {
+            "date": "2026-03-24T01:52:05.856Z",
+            "status": "success",
+            "durationMs": 1506
+          },
+          {
+            "date": "2026-03-25T21:06:50.557Z",
+            "status": "success",
+            "durationMs": 626
+          },
+          {
+            "date": "2026-03-27T16:34:58.039Z",
+            "status": "success",
+            "durationMs": 1666
+          },
+          {
+            "date": "2026-03-31T23:37:43.832Z",
+            "status": "success",
+            "durationMs": 3591
+          },
+          {
+            "date": "2026-04-02T01:28:01.898Z",
+            "status": "success",
+            "durationMs": 6860
+          },
+          {
+            "date": "2026-04-04T03:06:17.477Z",
+            "status": "success",
+            "durationMs": 5240
+          },
+          {
+            "date": "2026-04-21T22:21:33.936Z",
+            "status": "success",
+            "durationMs": 4457
+          },
+          {
+            "date": "2026-04-23T00:24:02.385Z",
+            "status": "success",
+            "durationMs": 3286
+          },
+          {
+            "date": "2026-04-26T00:46:32.315Z",
+            "status": "success",
+            "durationMs": 5871
+          },
+          {
+            "date": "2026-04-28T12:56:48.126Z",
+            "status": "success",
+            "durationMs": 928
+          }
+        ]
+      },
+      "ownerId": "ppl_000080"
+    },
+    {
+      "flowId": "pa_000wxc",
+      "kali_entity_id": "flow_000wxc",
+      "displayName": "Vendor invoice routing",
+      "description": "Routes vendor invoices > $5K to Finance Director for approval before paying",
+      "trigger": "QuickBooks: new bill",
+      "state": "Started",
+      "createdTime": "2023-12-02",
+      "runs": {
+        "total": 43,
+        "succeeded": 38,
+        "failed": 5,
+        "avgDurationMs": 4455,
+        "history": [
+          {
+            "date": "2026-02-16T16:35:57.703Z",
+            "status": "success",
+            "durationMs": 5319
+          },
+          {
+            "date": "2026-02-21T08:40:56.523Z",
+            "status": "success",
+            "durationMs": 7434
+          },
+          {
+            "date": "2026-02-23T00:52:43.084Z",
+            "status": "failure",
+            "durationMs": 7658
+          },
+          {
+            "date": "2026-02-23T12:20:11.990Z",
+            "status": "success",
+            "durationMs": 7783
+          },
+          {
+            "date": "2026-03-04T01:28:26.723Z",
+            "status": "success",
+            "durationMs": 441
+          },
+          {
+            "date": "2026-03-11T19:16:44.238Z",
+            "status": "success",
+            "durationMs": 4562
+          },
+          {
+            "date": "2026-03-19T01:25:15.911Z",
+            "status": "success",
+            "durationMs": 7247
+          },
+          {
+            "date": "2026-03-19T10:51:42.690Z",
+            "status": "success",
+            "durationMs": 6875
+          },
+          {
+            "date": "2026-03-23T09:27:10.873Z",
+            "status": "success",
+            "durationMs": 1079
+          },
+          {
+            "date": "2026-03-24T16:16:47.744Z",
+            "status": "success",
+            "durationMs": 1507
+          },
+          {
+            "date": "2026-04-10T19:27:39.306Z",
+            "status": "success",
+            "durationMs": 1398
+          },
+          {
+            "date": "2026-04-10T19:50:56.834Z",
+            "status": "success",
+            "durationMs": 4472
+          },
+          {
+            "date": "2026-04-16T14:57:02.247Z",
+            "status": "failure",
+            "durationMs": 6670
+          },
+          {
+            "date": "2026-04-20T21:51:55.730Z",
+            "status": "success",
+            "durationMs": 4145
+          },
+          {
+            "date": "2026-04-21T23:06:22.257Z",
+            "status": "success",
+            "durationMs": 6896
+          },
+          {
+            "date": "2026-04-27T07:56:51.815Z",
+            "status": "success",
+            "durationMs": 4520
+          },
+          {
+            "date": "2026-04-27T19:23:26.499Z",
+            "status": "success",
+            "durationMs": 4528
+          },
+          {
+            "date": "2026-04-28T01:44:19.912Z",
+            "status": "success",
+            "durationMs": 365
+          },
+          {
+            "date": "2026-05-05T02:26:42.845Z",
+            "status": "success",
+            "durationMs": 5473
+          },
+          {
+            "date": "2026-05-09T17:03:16.507Z",
+            "status": "success",
+            "durationMs": 334
+          }
+        ]
+      },
+      "ownerId": "ppl_00007e"
+    },
+    {
+      "flowId": "pa_000wxd",
+      "kali_entity_id": "flow_000wxd",
+      "displayName": "New donor welcome series",
+      "description": "5-email welcome series for first-time donors over 30 days",
+      "trigger": "Bloomerang: first-gift flag",
+      "state": "Started",
+      "createdTime": "2025-11-18",
+      "runs": {
+        "total": 40,
+        "succeeded": 38,
+        "failed": 2,
+        "avgDurationMs": 3334,
+        "history": [
+          {
+            "date": "2026-03-12T19:46:23.460Z",
+            "status": "success",
+            "durationMs": 4167
+          },
+          {
+            "date": "2026-03-14T14:19:52.009Z",
+            "status": "success",
+            "durationMs": 1607
+          },
+          {
+            "date": "2026-03-16T15:05:26.564Z",
+            "status": "success",
+            "durationMs": 292
+          },
+          {
+            "date": "2026-03-23T11:34:54.665Z",
+            "status": "success",
+            "durationMs": 6274
+          },
+          {
+            "date": "2026-03-23T17:16:11.194Z",
+            "status": "success",
+            "durationMs": 6434
+          },
+          {
+            "date": "2026-03-23T20:25:19.637Z",
+            "status": "success",
+            "durationMs": 5358
+          },
+          {
+            "date": "2026-03-26T02:46:27.262Z",
+            "status": "success",
+            "durationMs": 1484
+          },
+          {
+            "date": "2026-03-28T10:13:21.923Z",
+            "status": "success",
+            "durationMs": 3499
+          },
+          {
+            "date": "2026-04-06T13:21:12.411Z",
+            "status": "success",
+            "durationMs": 1660
+          },
+          {
+            "date": "2026-04-07T18:48:04.487Z",
+            "status": "failure",
+            "durationMs": 6208
+          },
+          {
+            "date": "2026-04-11T23:47:51.024Z",
+            "status": "success",
+            "durationMs": 1187
+          },
+          {
+            "date": "2026-04-16T23:15:35.718Z",
+            "status": "success",
+            "durationMs": 1569
+          },
+          {
+            "date": "2026-04-17T12:13:50.822Z",
+            "status": "success",
+            "durationMs": 1525
+          },
+          {
+            "date": "2026-04-17T14:17:17.160Z",
+            "status": "success",
+            "durationMs": 1575
+          },
+          {
+            "date": "2026-04-20T17:32:48.360Z",
+            "status": "success",
+            "durationMs": 1048
+          },
+          {
+            "date": "2026-04-24T03:40:16.984Z",
+            "status": "success",
+            "durationMs": 5189
+          },
+          {
+            "date": "2026-04-30T02:22:32.913Z",
+            "status": "success",
+            "durationMs": 2975
+          },
+          {
+            "date": "2026-05-01T22:24:10.457Z",
+            "status": "success",
+            "durationMs": 5600
+          },
+          {
+            "date": "2026-05-05T04:45:57.770Z",
+            "status": "success",
+            "durationMs": 277
+          },
+          {
+            "date": "2026-05-08T08:28:58.370Z",
+            "status": "success",
+            "durationMs": 3599
+          }
+        ]
+      },
+      "ownerId": "ppl_00007x"
+    },
+    {
+      "flowId": "pa_000wxe",
+      "kali_entity_id": "flow_000wxe",
+      "displayName": "Program report submission tracker",
+      "description": "Reminds program managers when monthly reports are 3 days overdue",
+      "trigger": "Scheduled",
+      "state": "Started",
+      "createdTime": "2025-04-27",
+      "runs": {
+        "total": 37,
+        "succeeded": 34,
+        "failed": 3,
+        "avgDurationMs": 4340,
+        "history": [
+          {
+            "date": "2026-02-03T09:32:14.780Z",
+            "status": "success",
+            "durationMs": 4383
+          },
+          {
+            "date": "2026-02-07T15:35:14.329Z",
+            "status": "success",
+            "durationMs": 2008
+          },
+          {
+            "date": "2026-02-15T06:17:29.663Z",
+            "status": "success",
+            "durationMs": 266
+          },
+          {
+            "date": "2026-02-20T06:49:19.710Z",
+            "status": "success",
+            "durationMs": 3180
+          },
+          {
+            "date": "2026-02-20T09:39:00.791Z",
+            "status": "success",
+            "durationMs": 1621
+          },
+          {
+            "date": "2026-02-22T15:24:02.276Z",
+            "status": "success",
+            "durationMs": 4220
+          },
+          {
+            "date": "2026-02-22T16:25:31.011Z",
+            "status": "success",
+            "durationMs": 6892
+          },
+          {
+            "date": "2026-03-04T23:54:20.609Z",
+            "status": "success",
+            "durationMs": 7169
+          },
+          {
+            "date": "2026-03-05T04:08:06.143Z",
+            "status": "success",
+            "durationMs": 2256
+          },
+          {
+            "date": "2026-03-07T10:49:15.546Z",
+            "status": "success",
+            "durationMs": 4774
+          },
+          {
+            "date": "2026-03-10T17:08:37.894Z",
+            "status": "success",
+            "durationMs": 5005
+          },
+          {
+            "date": "2026-03-20T22:14:07.523Z",
+            "status": "success",
+            "durationMs": 4477
+          },
+          {
+            "date": "2026-03-24T12:53:28.659Z",
+            "status": "success",
+            "durationMs": 5929
+          },
+          {
+            "date": "2026-03-24T16:37:48.944Z",
+            "status": "success",
+            "durationMs": 928
+          },
+          {
+            "date": "2026-03-28T19:54:38.504Z",
+            "status": "success",
+            "durationMs": 1525
+          },
+          {
+            "date": "2026-04-01T12:03:51.552Z",
+            "status": "success",
+            "durationMs": 4091
+          },
+          {
+            "date": "2026-04-03T06:17:46.429Z",
+            "status": "failure",
+            "durationMs": 6568
+          },
+          {
+            "date": "2026-04-06T05:28:03.160Z",
+            "status": "success",
+            "durationMs": 7641
+          },
+          {
+            "date": "2026-04-20T15:09:54.400Z",
+            "status": "success",
+            "durationMs": 2854
+          },
+          {
+            "date": "2026-04-21T09:43:35.356Z",
+            "status": "success",
+            "durationMs": 2759
+          }
+        ]
+      },
+      "ownerId": "ppl_000089"
+    },
+    {
+      "flowId": "pa_000wxf",
+      "kali_entity_id": "flow_000wxf",
+      "displayName": "Stale lead scrubber",
+      "description": "Archives Salesforce leads with no activity in 12 months",
+      "trigger": "Scheduled: monthly",
+      "state": "Started",
+      "createdTime": "2024-09-20",
+      "runs": {
+        "total": 43,
+        "succeeded": 41,
+        "failed": 2,
+        "avgDurationMs": 3976,
+        "history": [
+          {
+            "date": "2026-02-23T05:21:10.620Z",
+            "status": "success",
+            "durationMs": 635
+          },
+          {
+            "date": "2026-02-23T14:37:54.266Z",
+            "status": "success",
+            "durationMs": 4052
+          },
+          {
+            "date": "2026-03-01T13:36:49.045Z",
+            "status": "success",
+            "durationMs": 5872
+          },
+          {
+            "date": "2026-03-01T15:23:25.978Z",
+            "status": "success",
+            "durationMs": 4560
+          },
+          {
+            "date": "2026-03-03T17:26:43.402Z",
+            "status": "success",
+            "durationMs": 2796
+          },
+          {
+            "date": "2026-03-22T12:17:26.192Z",
+            "status": "success",
+            "durationMs": 5513
+          },
+          {
+            "date": "2026-04-02T06:58:33.330Z",
+            "status": "success",
+            "durationMs": 6666
+          },
+          {
+            "date": "2026-04-05T20:38:14.900Z",
+            "status": "success",
+            "durationMs": 7429
+          },
+          {
+            "date": "2026-04-08T18:18:34.058Z",
+            "status": "success",
+            "durationMs": 4942
+          },
+          {
+            "date": "2026-04-09T08:16:25.474Z",
+            "status": "success",
+            "durationMs": 398
+          },
+          {
+            "date": "2026-04-10T00:33:17.883Z",
+            "status": "success",
+            "durationMs": 690
+          },
+          {
+            "date": "2026-04-10T17:19:31.190Z",
+            "status": "success",
+            "durationMs": 398
+          },
+          {
+            "date": "2026-04-11T12:52:35.185Z",
+            "status": "success",
+            "durationMs": 5208
+          },
+          {
+            "date": "2026-04-16T00:35:53.073Z",
+            "status": "success",
+            "durationMs": 1510
+          },
+          {
+            "date": "2026-04-22T05:34:45.092Z",
+            "status": "success",
+            "durationMs": 7480
+          },
+          {
+            "date": "2026-04-23T22:05:13.000Z",
+            "status": "success",
+            "durationMs": 923
+          },
+          {
+            "date": "2026-04-24T17:59:42.468Z",
+            "status": "success",
+            "durationMs": 6642
+          },
+          {
+            "date": "2026-04-25T09:56:04.541Z",
+            "status": "success",
+            "durationMs": 279
+          },
+          {
+            "date": "2026-04-27T06:43:55.142Z",
+            "status": "success",
+            "durationMs": 6796
+          },
+          {
+            "date": "2026-05-09T01:42:47.949Z",
+            "status": "success",
+            "durationMs": 6698
+          }
+        ]
+      },
+      "ownerId": "ppl_00008m"
+    },
+    {
+      "flowId": "pa_000wxg",
+      "kali_entity_id": "flow_000wxg",
+      "displayName": "Board attendance compliance",
+      "description": "Flags board members who've missed 3+ consecutive meetings to Board Liaison",
+      "trigger": "Calendar event tagged board_meeting",
+      "state": "Started",
+      "createdTime": "2023-08-12",
+      "runs": {
+        "total": 44,
+        "succeeded": 38,
+        "failed": 6,
+        "avgDurationMs": 4169,
+        "history": [
+          {
+            "date": "2026-02-17T14:26:56.982Z",
+            "status": "success",
+            "durationMs": 691
+          },
+          {
+            "date": "2026-02-21T11:44:51.311Z",
+            "status": "success",
+            "durationMs": 5979
+          },
+          {
+            "date": "2026-02-24T13:11:24.728Z",
+            "status": "success",
+            "durationMs": 2538
+          },
+          {
+            "date": "2026-02-26T03:26:19.665Z",
+            "status": "success",
+            "durationMs": 7709
+          },
+          {
+            "date": "2026-03-02T17:05:47.459Z",
+            "status": "success",
+            "durationMs": 3605
+          },
+          {
+            "date": "2026-03-15T19:46:01.147Z",
+            "status": "success",
+            "durationMs": 6567
+          },
+          {
+            "date": "2026-03-26T16:44:01.671Z",
+            "status": "success",
+            "durationMs": 439
+          },
+          {
+            "date": "2026-03-27T06:24:48.700Z",
+            "status": "success",
+            "durationMs": 7348
+          },
+          {
+            "date": "2026-03-29T00:52:30.735Z",
+            "status": "success",
+            "durationMs": 623
+          },
+          {
+            "date": "2026-04-01T00:32:03.364Z",
+            "status": "failure",
+            "durationMs": 792
+          },
+          {
+            "date": "2026-04-10T18:36:24.597Z",
+            "status": "success",
+            "durationMs": 1153
+          },
+          {
+            "date": "2026-04-11T01:39:39.271Z",
+            "status": "success",
+            "durationMs": 3072
+          },
+          {
+            "date": "2026-04-14T06:10:56.768Z",
+            "status": "success",
+            "durationMs": 6300
+          },
+          {
+            "date": "2026-04-15T23:43:24.170Z",
+            "status": "success",
+            "durationMs": 1194
+          },
+          {
+            "date": "2026-04-18T07:17:53.831Z",
+            "status": "success",
+            "durationMs": 5759
+          },
+          {
+            "date": "2026-04-24T20:06:20.251Z",
+            "status": "success",
+            "durationMs": 2622
+          },
+          {
+            "date": "2026-04-24T22:42:12.520Z",
+            "status": "success",
+            "durationMs": 2047
+          },
+          {
+            "date": "2026-05-06T04:10:18.150Z",
+            "status": "success",
+            "durationMs": 5442
+          },
+          {
+            "date": "2026-05-06T08:58:55.633Z",
+            "status": "failure",
+            "durationMs": 2773
+          },
+          {
+            "date": "2026-05-06T14:01:24.830Z",
+            "status": "failure",
+            "durationMs": 2973
+          }
+        ]
+      },
+      "ownerId": "ppl_00007b"
+    }
+  ]
+}

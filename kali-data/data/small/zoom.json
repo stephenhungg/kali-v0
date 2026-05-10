@@ -1,0 +1,1394 @@
+{
+  "meetings": [
+    {
+      "meetingId": "zm_00014u",
+      "kali_entity_id": "zoom_00014u",
+      "hostId": "ppl_000010",
+      "topic": "Program Review",
+      "startTime": "2025-11-27T06:13:42.387Z",
+      "duration": 30,
+      "type": 2,
+      "participants": [
+        {
+          "userId": "ppl_00003h",
+          "name": "Rocio Schmeler",
+          "email": "rocio.schmeler@aol.com"
+        },
+        {
+          "userId": "ppl_000022",
+          "name": "Pierce Kertzmann",
+          "email": "pierce.kertzmann@aol.com"
+        },
+        {
+          "userId": "ppl_00001q",
+          "name": "Stella Ondricka",
+          "email": "stella.ondricka@yahoo.com"
+        },
+        {
+          "userId": "ppl_000019",
+          "name": "Michael Mills",
+          "email": "michael.mills@icloud.com"
+        },
+        {
+          "userId": "ppl_00002k",
+          "name": "Kyra Macejkovic",
+          "email": "kyra.macejkovic@aol.com"
+        },
+        {
+          "userId": "ppl_00002j",
+          "name": "Ford Berge",
+          "email": "ford.berge@aol.com"
+        },
+        {
+          "userId": "ppl_000039",
+          "name": "Clare Yost",
+          "email": ""
+        },
+        {
+          "userId": "ppl_000025",
+          "name": "Lauren Quitzon",
+          "email": "lauren.quitzon@icloud.com"
+        },
+        {
+          "userId": "ppl_00001s",
+          "name": "Jeanie Murphy-Schaefer",
+          "email": "jeanie.murphyschaefer@aol.com"
+        },
+        {
+          "userId": "ppl_000028",
+          "name": "Stefan Bruen",
+          "email": "stefan.bruen@icloud.com"
+        },
+        {
+          "userId": "ppl_000024",
+          "name": "Duncan Hagenes",
+          "email": "duncan.hagenes@comcast.net"
+        },
+        {
+          "userId": "ppl_00002u",
+          "name": "Kyla Mosciski",
+          "email": "kyla.mosciski@comcast.net"
+        },
+        {
+          "userId": "ppl_00003a",
+          "name": "Reilly Thiel",
+          "email": "reilly.thiel@icloud.com"
+        },
+        {
+          "userId": "ppl_00002t",
+          "name": "Cristina Lemke-Schmeler",
+          "email": "cristina.lemkeschmeler@comcast.net"
+        },
+        {
+          "userId": "ppl_00001b",
+          "name": "Josefa Marks-Runolfsson",
+          "email": "josefa.marksrunolfsson@outlook.com"
+        },
+        {
+          "userId": "ppl_00002e",
+          "name": "Joyce Pfannerstill",
+          "email": "joyce.pfannerstill@gmail.com"
+        },
+        {
+          "userId": "ppl_000012",
+          "name": "Eula Dach",
+          "email": "eula.dach@rivertowncf.org"
+        },
+        {
+          "userId": "ppl_00003j",
+          "name": "Maude Bernhard",
+          "email": "maude.bernhard@gmail.com"
+        },
+        {
+          "userId": "ppl_00001c",
+          "name": "Jackie Lubowitz",
+          "email": "jackie.lubowitz@comcast.net"
+        },
+        {
+          "userId": "ppl_000029",
+          "name": "Onie Haag",
+          "email": "onie.haag@gmail.com"
+        },
+        {
+          "userId": "ppl_00001n",
+          "name": "Johnny Von",
+          "email": "johnny.von@outlook.com"
+        },
+        {
+          "userId": "ppl_00001u",
+          "name": "Torey Bosco",
+          "email": "torey.bosco@icloud.com"
+        }
+      ],
+      "recordingFiles": [
+        {
+          "recordingType": "shared_screen_with_speaker_view",
+          "fileSize": 566231040,
+          "playUrl": "https://us02web.zoom.us/rec/play/zoom_00014u"
+        }
+      ],
+      "transcript": null
+    },
+    {
+      "meetingId": "zm_00014v",
+      "kali_entity_id": "zoom_00014v",
+      "hostId": "ppl_000016",
+      "topic": "Fundraising Pipeline Review",
+      "startTime": "2025-09-01T17:41:25.888Z",
+      "duration": 60,
+      "type": 2,
+      "participants": [
+        {
+          "userId": "ppl_000017",
+          "name": "Jacky Morissette-Robel",
+          "email": "jacky.morissetterobel@rivertowncf.org"
+        },
+        {
+          "userId": "ppl_000039",
+          "name": "Clare Yost",
+          "email": ""
+        },
+        {
+          "userId": "ppl_00003b",
+          "name": "Braden Lind",
+          "email": "braden.lind@aol.com"
+        },
+        {
+          "userId": "ppl_00002o",
+          "name": "Rigoberto Rippin-Turcotte",
+          "email": "rigoberto.rippinturcotte@icloud.com"
+        },
+        {
+          "userId": "ppl_00002y",
+          "name": "Casper Kutch",
+          "email": "casper.kutch@aol.com"
+        },
+        {
+          "userId": "ppl_00001s",
+          "name": "Jeanie Murphy-Schaefer",
+          "email": "jeanie.murphyschaefer@aol.com"
+        },
+        {
+          "userId": "ppl_000036",
+          "name": "Shaina Hand",
+          "email": "shaina.hand@icloud.com"
+        },
+        {
+          "userId": "ppl_00001t",
+          "name": "Grayson Hoppe",
+          "email": "grayson.hoppe@gmail.com"
+        },
+        {
+          "userId": "ppl_000013",
+          "name": "Makenna Jacobi",
+          "email": "makenna.jacobi@rivertowncf.org"
+        },
+        {
+          "userId": "ppl_00001f",
+          "name": "Patrick Wilkinson",
+          "email": "patrick.wilkinson@outlook.com"
+        },
+        {
+          "userId": "ppl_00002k",
+          "name": "Kyra Macejkovic",
+          "email": "kyra.macejkovic@aol.com"
+        },
+        {
+          "userId": "ppl_00002b",
+          "name": "Edna Zboncak",
+          "email": "edna.zboncak@comcast.net"
+        },
+        {
+          "userId": "ppl_00001d",
+          "name": "Lauriane Prosacco",
+          "email": "lauriane.prosacco@aol.com"
+        },
+        {
+          "userId": "ppl_000037",
+          "name": "Lawrence Gutmann",
+          "email": "lawrence.gutmann@outlook.com"
+        },
+        {
+          "userId": "ppl_000035",
+          "name": "Lavina Hudson",
+          "email": "lavina.hudson@outlook.com"
+        },
+        {
+          "userId": "ppl_000027",
+          "name": "Deanna Haley",
+          "email": "deanna.haley@gmail.com"
+        },
+        {
+          "userId": "ppl_000024",
+          "name": "Duncan Hagenes",
+          "email": "duncan.hagenes@comcast.net"
+        },
+        {
+          "userId": "ppl_000031",
+          "name": "Jennifer McDermott",
+          "email": "jennifer.mcdermott@aol.com"
+        },
+        {
+          "userId": "ppl_000033",
+          "name": "Reyes Mayert",
+          "email": "reyes.mayert@comcast.net"
+        },
+        {
+          "userId": "ppl_000021",
+          "name": "Asha Sauer-Parker",
+          "email": "asha.sauerparker@yahoo.com"
+        },
+        {
+          "userId": "ppl_00001b",
+          "name": "Josefa Marks-Runolfsson",
+          "email": "josefa.marksrunolfsson@outlook.com"
+        },
+        {
+          "userId": "ppl_00002d",
+          "name": "Liana Glover",
+          "email": "liana.glover@outlook.com"
+        }
+      ],
+      "recordingFiles": [
+        {
+          "recordingType": "shared_screen_with_speaker_view",
+          "fileSize": 1132462080,
+          "playUrl": "https://us02web.zoom.us/rec/play/zoom_00014v"
+        }
+      ],
+      "transcript": {
+        "vttUrl": "https://us02web.zoom.us/rec/transcript/zoom_00014v.vtt",
+        "text": "Constans defungo vel adicio thermae anser. Nesciunt comminor supplanto delego crur cohibeo contabesco beneficium pauper trucido. Caecus circumvenio audentia ante facere cunabula.\n\nUtor architecto cultura communis amicitia cuppedia patruus. Coadunatio tamen turbo usque deserunt maiores usus. Artificiose speciosus blanditiis mollitia.\n\nBeneficium ventosus cimentarius consuasor recusandae illum agnosco vulariter coadunatio. Aegrotatio vito thymbra addo ait desipio. Suscipit supplanto decet vix sublime.\n\nThalassinus rem clamo debitis inflammatio deputo approbo depulso bibo urbanus. Adeptio celebrer colo. Vel arx trucido conservo antiquus comes aufero non.\n\nVentito tamisium certus tollo carbo cerno. Advenio credo velit amet approbo. Nesciunt cras alienus tot.\n\nMaiores conatus causa utpote cicuta nobis corrupti. Delectatio consuasor cubicularis minima apud ulterius. Minima labore temporibus bis stella pel agnitio.\n\nCruciamentum summisse clam quia. Libero dolore adeo aeneus viridis supra aliqua similique ocer basium. Uberrime canis uxor cultellus qui creber vitium vaco quisquam.\n\nIure valde utrimque. Ipsam absum peccatus vetus velum celer cinis annus. Ater nisi vestrum cerno.\n\nAdopto tres sol arcus. Desino repudiandae arma. Cura caterva occaecati villa demonstro solutio aeger cenaculum tabernus.\n\nTabgo depono cui copiose inflammatio unde desipio copia. Vicinus tracto aspernatur aduro valens vitium. Veritatis eum id deorsum molestias uberrime ex.\n\nDemoror eos voluptate tutis denuo aliqua decerno voco defendo candidus. Arbor vestigium barba sum cervus aer adamo. Adversus quisquam adulescens ullam amplus nulla adhuc nostrum tredecim.\n\nAranea testimonium virgo collum. Adduco allatus utrum tendo pauper stabilis argumentum tempus tres speciosus. Apud earum deprimo thema vergo crur baiulus xiphias pauper varietas.\n\nAtrocitas doloribus itaque impedit. Cupiditas amet atrox despecto venustas vulnero amaritudo. Sublime umquam altus depono numquam vomito debeo cornu.\n\nAro adflicto catena patria cur aliquid tolero accendo. Tempora vomito hic uter molestiae. Decet deludo amiculum substantia velit terreo cauda officia.\n\nSoluta theologus urbanus animi ut casso in aufero confugo. Audax audentia patrocinor vis exercitationem aegre illo. Corona carus crudelis ademptio urbanus odit magni soleo magnam.\n\nPatruus auctus pauci. Cubitum debeo cerno adopto. Ago ascit utroque amaritudo aegrus trado artificiose textor."
+      }
+    },
+    {
+      "meetingId": "zm_00014w",
+      "kali_entity_id": "zoom_00014w",
+      "hostId": "ppl_000010",
+      "topic": "Donor Strategy Session",
+      "startTime": "2025-08-23T12:23:46.377Z",
+      "duration": 60,
+      "type": 2,
+      "participants": [
+        {
+          "userId": "ppl_00001t",
+          "name": "Grayson Hoppe",
+          "email": "grayson.hoppe@gmail.com"
+        },
+        {
+          "userId": "ppl_000034",
+          "name": "Ellis Feil",
+          "email": "ellis.feil@outlook.com"
+        },
+        {
+          "userId": "ppl_00001z",
+          "name": "Veda Runolfsdottir",
+          "email": "veda.runolfsdottir@gmail.com"
+        },
+        {
+          "userId": "ppl_00001h",
+          "name": "Fredrick Carter",
+          "email": "fredrick.carter@outlook.com"
+        },
+        {
+          "userId": "ppl_00003i",
+          "name": "Maynard Bosco",
+          "email": "maynard.bosco@outlook.com"
+        },
+        {
+          "userId": "ppl_00001f",
+          "name": "Patrick Wilkinson",
+          "email": "patrick.wilkinson@outlook.com"
+        },
+        {
+          "userId": "ppl_000019",
+          "name": "Michael Mills",
+          "email": "michael.mills@icloud.com"
+        },
+        {
+          "userId": "ppl_00002i",
+          "name": "Marcelina Donnelly",
+          "email": "marcelina.donnelly@icloud.com"
+        },
+        {
+          "userId": "ppl_00002a",
+          "name": "Emmalee Moore",
+          "email": "emmalee.moore@outlook.com"
+        },
+        {
+          "userId": "ppl_000024",
+          "name": "Duncan Hagenes",
+          "email": "duncan.hagenes@comcast.net"
+        },
+        {
+          "userId": "ppl_000029",
+          "name": "Onie Haag",
+          "email": "onie.haag@gmail.com"
+        },
+        {
+          "userId": "ppl_00001u",
+          "name": "Torey Bosco",
+          "email": "torey.bosco@icloud.com"
+        },
+        {
+          "userId": "ppl_00003j",
+          "name": "Maude Bernhard",
+          "email": "maude.bernhard@gmail.com"
+        },
+        {
+          "userId": "ppl_00001r",
+          "name": "Dean Kshlerin",
+          "email": "dean.kshlerin@icloud.com"
+        },
+        {
+          "userId": "ppl_000027",
+          "name": "Deanna Haley",
+          "email": "deanna.haley@gmail.com"
+        },
+        {
+          "userId": "ppl_00003d",
+          "name": "Logan Morar",
+          "email": "logan.morar@yahoo.com"
+        },
+        {
+          "userId": "ppl_00001e",
+          "name": "Evan Harris",
+          "email": "evan.harris@gmail.com"
+        }
+      ],
+      "recordingFiles": [],
+      "transcript": null
+    },
+    {
+      "meetingId": "zm_00014x",
+      "kali_entity_id": "zoom_00014x",
+      "hostId": "ppl_000012",
+      "topic": "Program Review",
+      "startTime": "2025-07-07T21:32:39.261Z",
+      "duration": 60,
+      "type": 2,
+      "participants": [
+        {
+          "userId": "ppl_00002u",
+          "name": "Kyla Mosciski",
+          "email": "kyla.mosciski@comcast.net"
+        },
+        {
+          "userId": "ppl_00002i",
+          "name": "Marcelina Donnelly",
+          "email": "marcelina.donnelly@icloud.com"
+        },
+        {
+          "userId": "ppl_000022",
+          "name": "Pierce Kertzmann",
+          "email": "pierce.kertzmann@aol.com"
+        },
+        {
+          "userId": "ppl_000039",
+          "name": "Clare Yost",
+          "email": ""
+        },
+        {
+          "userId": "ppl_00001x",
+          "name": "Cara Schmidt",
+          "email": "cara.schmidt@outlook.com"
+        },
+        {
+          "userId": "ppl_00002r",
+          "name": "Laurence Wiza",
+          "email": "laurence.wiza@aol.com"
+        }
+      ],
+      "recordingFiles": [
+        {
+          "recordingType": "shared_screen_with_speaker_view",
+          "fileSize": 1132462080,
+          "playUrl": "https://us02web.zoom.us/rec/play/zoom_00014x"
+        }
+      ],
+      "transcript": {
+        "vttUrl": "https://us02web.zoom.us/rec/transcript/zoom_00014x.vtt",
+        "text": "Pel quaerat accommodo curtus brevis. Voluptatibus ventus claro tamen quaerat caterva. Succurro ter vehemens certe defendo voluptas ubi spiculum brevis.\n\nAngulus ambitus magnam solum omnis. Cena uberrime cunae curiositas absconditus. Chirographum trado ait absens bardus ademptio bene cervus universe suggero.\n\nAbduco brevis verto impedit. Sustineo sophismata cribro eum laudantium umbra colo cerno circumvenio acervus. Textor corrigo beneficium curo balbus.\n\nSomnus decet adduco explicabo earum voluptas ea. Bestia centum amitto tertius aurum claustrum aliquam virgo cura doloremque. Carus suggero curvo solium paulatim cerno odio degusto.\n\nCurto coniecto fugiat amplexus. Decimus suspendo audax. Curto sapiente error cur vigilo.\n\nPraesentium vulgus tantum audax aperte. Coruscus conitor ipsa fugit crepusculum uter utrimque conventus fugit carus. Ter saepe coniuratio.\n\nAegrotatio peccatus vita ocer adficio territo vulgus vergo deporto. Truculenter cui odit amo cupiditate cado tergeo basium. Combibo copia tibi audacia voveo perspiciatis absum angulus tergeo.\n\nAdaugeo tandem curatio tollo ustulo desipio accommodo approbo deorsum. Turpis vulgaris theologus talus. Cerno tunc amaritudo desolo bos.\n\nAlienus combibo tot quae cubitum tremo speculum porro sollers usitas. Pecto combibo suscipio desolo arbor. Cimentarius nulla aureus.\n\nBardus soleo tubineus beneficium desolo. Tracto non altus subiungo decens ocer tyrannus at bos. Spes conatus solitudo tutis repellendus."
+      }
+    },
+    {
+      "meetingId": "zm_00014y",
+      "kali_entity_id": "zoom_00014y",
+      "hostId": "ppl_000014",
+      "topic": "Annual Gala — Virtual",
+      "startTime": "2026-03-29T03:34:02.296Z",
+      "duration": 60,
+      "type": 2,
+      "participants": [
+        {
+          "userId": "ppl_00003h",
+          "name": "Rocio Schmeler",
+          "email": "rocio.schmeler@aol.com"
+        },
+        {
+          "userId": "ppl_00001c",
+          "name": "Jackie Lubowitz",
+          "email": "jackie.lubowitz@comcast.net"
+        },
+        {
+          "userId": "ppl_00001q",
+          "name": "Stella Ondricka",
+          "email": "stella.ondricka@yahoo.com"
+        },
+        {
+          "userId": "ppl_00002h",
+          "name": "Orland Nienow",
+          "email": "orland.nienow@yahoo.com"
+        },
+        {
+          "userId": "ppl_00001p",
+          "name": "Pietro Sawayn",
+          "email": "pietro.sawayn@yahoo.com"
+        },
+        {
+          "userId": "ppl_000022",
+          "name": "Pierce Kertzmann",
+          "email": "pierce.kertzmann@aol.com"
+        },
+        {
+          "userId": "ppl_00002p",
+          "name": "Everardo Rau",
+          "email": "everardo.rau@outlook.com"
+        },
+        {
+          "userId": "ppl_000037",
+          "name": "Lawrence Gutmann",
+          "email": "lawrence.gutmann@outlook.com"
+        },
+        {
+          "userId": "ppl_000030",
+          "name": "Alverta Reynolds-Johns",
+          "email": "alverta.reynoldsjohns@comcast.net"
+        },
+        {
+          "userId": "ppl_00001w",
+          "name": "Elmer Berge",
+          "email": "elmer.berge@yahoo.com"
+        },
+        {
+          "userId": "ppl_00001x",
+          "name": "Cara Schmidt",
+          "email": "cara.schmidt@outlook.com"
+        },
+        {
+          "userId": "ppl_00001a",
+          "name": "Joey Feil",
+          "email": "joey.feil@outlook.com"
+        },
+        {
+          "userId": "ppl_000031",
+          "name": "Jennifer McDermott",
+          "email": "jennifer.mcdermott@aol.com"
+        }
+      ],
+      "recordingFiles": [
+        {
+          "recordingType": "shared_screen_with_speaker_view",
+          "fileSize": 1132462080,
+          "playUrl": "https://us02web.zoom.us/rec/play/zoom_00014y"
+        }
+      ],
+      "transcript": {
+        "vttUrl": "https://us02web.zoom.us/rec/transcript/zoom_00014y.vtt",
+        "text": "Claro aro maxime suggero tego aut canonicus acer coepi. Cunae carus sophismata deduco labore tametsi tepidus utpote vitium. Acerbitas bonus valeo capitulus asporto cunabula.\n\nAscisco bos crudelis adversus corrupti adduco. Canto currus video textor cumque aggero acquiro appello sursum aegrotatio. Cattus aperte vinitor cervus cernuus infit eius vereor quas.\n\nTres animadverto provident. Crinis tepidus patior excepturi tempore sodalitas casus tamquam conventus. Stipes adiuvo summa coepi adhuc synagoga aeneus tego.\n\nAdhuc terminatio facere. Delicate rerum aer vox. Clementia expedita soluta acsi tribuo eum.\n\nDefendo verbera deprimo repellendus timidus ultio viscus basium exercitationem tenus. Delectus iste stipes iste. Benevolentia ante non defleo varius.\n\nRatione cupressus cupiditas tero iure pecus. Valens decretum quis convoco rerum claustrum. Calcar solus tantillus vigor.\n\nTimor adsidue cruentus. Velut architecto cubo dolorem. Tener cernuus nobis.\n\nCarbo quis cunctatio venia spiculum volaticus. Animadverto traho maiores causa neque assumenda curvo ancilla. Circumvenio tametsi comburo conqueror atqui venio.\n\nAmoveo curso ancilla undique carmen adulatio. Certe ocer error asperiores aperiam. Usus capio ater.\n\nVos a bellicus crustulum caelestis ratione. Minima bonus volo vilicus pax aliqua inflammatio averto officiis. Vinco video totidem auxilium dignissimos soleo creta non vito crapula."
+      }
+    },
+    {
+      "meetingId": "zm_00014z",
+      "kali_entity_id": "zoom_00014z",
+      "hostId": "ppl_000010",
+      "topic": "Donor Strategy Session",
+      "startTime": "2026-02-25T18:07:25.327Z",
+      "duration": 60,
+      "type": 2,
+      "participants": [
+        {
+          "userId": "ppl_00002r",
+          "name": "Laurence Wiza",
+          "email": "laurence.wiza@aol.com"
+        },
+        {
+          "userId": "ppl_00002v",
+          "name": "Taryn Hartmann",
+          "email": "taryn.hartmann@gmail.com"
+        },
+        {
+          "userId": "ppl_00003a",
+          "name": "Reilly Thiel",
+          "email": "reilly.thiel@icloud.com"
+        },
+        {
+          "userId": "ppl_000037",
+          "name": "Lawrence Gutmann",
+          "email": "lawrence.gutmann@outlook.com"
+        },
+        {
+          "userId": "ppl_00001c",
+          "name": "Jackie Lubowitz",
+          "email": "jackie.lubowitz@comcast.net"
+        },
+        {
+          "userId": "ppl_00003b",
+          "name": "Braden Lind",
+          "email": "braden.lind@aol.com"
+        },
+        {
+          "userId": "ppl_000034",
+          "name": "Ellis Feil",
+          "email": "ellis.feil@outlook.com"
+        },
+        {
+          "userId": "ppl_00001g",
+          "name": "Gabrielle Mitchell",
+          "email": "gabrielle.mitchell@gmail.com"
+        },
+        {
+          "userId": "ppl_00001y",
+          "name": "Cheyenne Kuphal",
+          "email": "cheyenne.kuphal@outlook.com"
+        },
+        {
+          "userId": "ppl_00003l",
+          "name": "Mafalda Hettinger",
+          "email": "mafalda.hettinger@comcast.net"
+        },
+        {
+          "userId": "ppl_00002q",
+          "name": "Kirk Streich",
+          "email": "kirk.streich@aol.com"
+        },
+        {
+          "userId": "ppl_000014",
+          "name": "Talon Torp",
+          "email": "talon.torp@rivertowncf.org"
+        },
+        {
+          "userId": "ppl_00003d",
+          "name": "Logan Morar",
+          "email": "logan.morar@yahoo.com"
+        },
+        {
+          "userId": "ppl_00003m",
+          "name": "Zetta Huels",
+          "email": "zetta.huels@outlook.com"
+        },
+        {
+          "userId": "ppl_000025",
+          "name": "Lauren Quitzon",
+          "email": "lauren.quitzon@icloud.com"
+        },
+        {
+          "userId": "ppl_000038",
+          "name": "Lilla Kohler-Bednar",
+          "email": "lilla.kohlerbednar@gmail.com"
+        },
+        {
+          "userId": "ppl_00002m",
+          "name": "Sarah Huels",
+          "email": "sarah.huels@yahoo.com"
+        },
+        {
+          "userId": "ppl_000024",
+          "name": "Duncan Hagenes",
+          "email": "duncan.hagenes@comcast.net"
+        },
+        {
+          "userId": "ppl_000029",
+          "name": "Onie Haag",
+          "email": "onie.haag@gmail.com"
+        },
+        {
+          "userId": "ppl_00001h",
+          "name": "Fredrick Carter",
+          "email": "fredrick.carter@outlook.com"
+        },
+        {
+          "userId": "ppl_000039",
+          "name": "Clare Yost",
+          "email": ""
+        }
+      ],
+      "recordingFiles": [],
+      "transcript": null
+    },
+    {
+      "meetingId": "zm_000150",
+      "kali_entity_id": "zoom_000150",
+      "hostId": "ppl_000015",
+      "topic": "Donor Strategy Session",
+      "startTime": "2026-02-15T22:54:16.177Z",
+      "duration": 60,
+      "type": 2,
+      "participants": [
+        {
+          "userId": "ppl_000019",
+          "name": "Michael Mills",
+          "email": "michael.mills@icloud.com"
+        },
+        {
+          "userId": "ppl_00003p",
+          "name": "Elmer Berge",
+          "email": "elmer.berge@yahoo.com"
+        },
+        {
+          "userId": "ppl_00003k",
+          "name": "Glenda Pollich",
+          "email": "glenda.pollich@comcast.net"
+        },
+        {
+          "userId": "ppl_000026",
+          "name": "Donnie Wolf",
+          "email": "donnie.wolf@aol.com"
+        },
+        {
+          "userId": "ppl_00001x",
+          "name": "Cara Schmidt",
+          "email": "cara.schmidt@outlook.com"
+        },
+        {
+          "userId": "ppl_000017",
+          "name": "Jacky Morissette-Robel",
+          "email": "jacky.morissetterobel@rivertowncf.org"
+        },
+        {
+          "userId": "ppl_00001u",
+          "name": "Torey Bosco",
+          "email": "torey.bosco@icloud.com"
+        },
+        {
+          "userId": "ppl_00001w",
+          "name": "Elmer Berge",
+          "email": "elmer.berge@yahoo.com"
+        },
+        {
+          "userId": "ppl_000018",
+          "name": "Vernon Murphy",
+          "email": "vernon.murphy@gmail.com"
+        },
+        {
+          "userId": "ppl_00001y",
+          "name": "Cheyenne Kuphal",
+          "email": "cheyenne.kuphal@outlook.com"
+        },
+        {
+          "userId": "ppl_00003d",
+          "name": "Logan Morar",
+          "email": "logan.morar@yahoo.com"
+        },
+        {
+          "userId": "ppl_00003b",
+          "name": "Braden Lind",
+          "email": "braden.lind@aol.com"
+        },
+        {
+          "userId": "ppl_000027",
+          "name": "Deanna Haley",
+          "email": "deanna.haley@gmail.com"
+        },
+        {
+          "userId": "ppl_00002y",
+          "name": "Casper Kutch",
+          "email": "casper.kutch@aol.com"
+        },
+        {
+          "userId": "ppl_00002j",
+          "name": "Ford Berge",
+          "email": "ford.berge@aol.com"
+        },
+        {
+          "userId": "ppl_00001o",
+          "name": "Stephania Franecki",
+          "email": "stephania.franecki@aol.com"
+        },
+        {
+          "userId": "ppl_00002s",
+          "name": "Noemi Crona",
+          "email": "noemi.crona@yahoo.com"
+        },
+        {
+          "userId": "ppl_000022",
+          "name": "Pierce Kertzmann",
+          "email": "pierce.kertzmann@aol.com"
+        }
+      ],
+      "recordingFiles": [
+        {
+          "recordingType": "shared_screen_with_speaker_view",
+          "fileSize": 1132462080,
+          "playUrl": "https://us02web.zoom.us/rec/play/zoom_000150"
+        }
+      ],
+      "transcript": null
+    },
+    {
+      "meetingId": "zm_000151",
+      "kali_entity_id": "zoom_000151",
+      "hostId": "ppl_000017",
+      "topic": "Program Review",
+      "startTime": "2025-10-27T08:48:53.304Z",
+      "duration": 90,
+      "type": 2,
+      "participants": [
+        {
+          "userId": "ppl_000021",
+          "name": "Asha Sauer-Parker",
+          "email": "asha.sauerparker@yahoo.com"
+        },
+        {
+          "userId": "ppl_00001z",
+          "name": "Veda Runolfsdottir",
+          "email": "veda.runolfsdottir@gmail.com"
+        },
+        {
+          "userId": "ppl_000032",
+          "name": "Filiberto Cummings",
+          "email": "filiberto.cummings@gmail.com"
+        },
+        {
+          "userId": "ppl_00001g",
+          "name": "Gabrielle Mitchell",
+          "email": "gabrielle.mitchell@gmail.com"
+        },
+        {
+          "userId": "ppl_00001q",
+          "name": "Stella Ondricka",
+          "email": "stella.ondricka@yahoo.com"
+        },
+        {
+          "userId": "ppl_00002y",
+          "name": "Casper Kutch",
+          "email": "casper.kutch@aol.com"
+        },
+        {
+          "userId": "ppl_00002f",
+          "name": "Aron Stracke",
+          "email": "aron.stracke@gmail.com"
+        },
+        {
+          "userId": "ppl_00001n",
+          "name": "Johnny Von",
+          "email": "johnny.von@outlook.com"
+        },
+        {
+          "userId": "ppl_00001r",
+          "name": "Dean Kshlerin",
+          "email": "dean.kshlerin@icloud.com"
+        },
+        {
+          "userId": "ppl_00001b",
+          "name": "Josefa Marks-Runolfsson",
+          "email": "josefa.marksrunolfsson@outlook.com"
+        },
+        {
+          "userId": "ppl_000033",
+          "name": "Reyes Mayert",
+          "email": "reyes.mayert@comcast.net"
+        },
+        {
+          "userId": "ppl_00002k",
+          "name": "Kyra Macejkovic",
+          "email": "kyra.macejkovic@aol.com"
+        },
+        {
+          "userId": "ppl_00003a",
+          "name": "Reilly Thiel",
+          "email": "reilly.thiel@icloud.com"
+        },
+        {
+          "userId": "ppl_00002b",
+          "name": "Edna Zboncak",
+          "email": "edna.zboncak@comcast.net"
+        },
+        {
+          "userId": "ppl_000016",
+          "name": "Alexandrine Greenholt",
+          "email": "alexandrine.greenholt@rivertowncf.org"
+        },
+        {
+          "userId": "ppl_00001m",
+          "name": "Otilia Doyle",
+          "email": ""
+        },
+        {
+          "userId": "ppl_00001f",
+          "name": "Patrick Wilkinson",
+          "email": "patrick.wilkinson@outlook.com"
+        },
+        {
+          "userId": "ppl_00001e",
+          "name": "Evan Harris",
+          "email": "evan.harris@gmail.com"
+        }
+      ],
+      "recordingFiles": [],
+      "transcript": null
+    },
+    {
+      "meetingId": "zm_000152",
+      "kali_entity_id": "zoom_000152",
+      "hostId": "ppl_000016",
+      "topic": "Grant Strategy",
+      "startTime": "2025-11-28T14:29:03.829Z",
+      "duration": 60,
+      "type": 2,
+      "participants": [
+        {
+          "userId": "ppl_000014",
+          "name": "Talon Torp",
+          "email": "talon.torp@rivertowncf.org"
+        },
+        {
+          "userId": "ppl_00002y",
+          "name": "Casper Kutch",
+          "email": "casper.kutch@aol.com"
+        },
+        {
+          "userId": "ppl_00001m",
+          "name": "Otilia Doyle",
+          "email": ""
+        },
+        {
+          "userId": "ppl_00001n",
+          "name": "Johnny Von",
+          "email": "johnny.von@outlook.com"
+        },
+        {
+          "userId": "ppl_00001b",
+          "name": "Josefa Marks-Runolfsson",
+          "email": "josefa.marksrunolfsson@outlook.com"
+        },
+        {
+          "userId": "ppl_00002e",
+          "name": "Joyce Pfannerstill",
+          "email": "joyce.pfannerstill@gmail.com"
+        },
+        {
+          "userId": "ppl_00002n",
+          "name": "Hadley Kshlerin",
+          "email": "hadley.kshlerin@comcast.net"
+        },
+        {
+          "userId": "ppl_000015",
+          "name": "Kristina Nolan",
+          "email": "kristina.nolan@rivertowncf.org"
+        },
+        {
+          "userId": "ppl_000022",
+          "name": "Pierce Kertzmann",
+          "email": "pierce.kertzmann@aol.com"
+        }
+      ],
+      "recordingFiles": [
+        {
+          "recordingType": "shared_screen_with_speaker_view",
+          "fileSize": 1132462080,
+          "playUrl": "https://us02web.zoom.us/rec/play/zoom_000152"
+        }
+      ],
+      "transcript": {
+        "vttUrl": "https://us02web.zoom.us/rec/transcript/zoom_000152.vtt",
+        "text": "Pecco spero enim solum maxime vestrum abstergo. Degusto perspiciatis avarus aestivus stultus turpis varius cruciamentum una ancilla. Abduco commemoro animi.\n\nVereor creber absorbeo. Tertius cilicium tactus vacuus. Dedico minima atavus abundans vulgivagus patior.\n\nThorax tergiversatio carcer carbo soluta deinde. Anser canis ultra socius. Aperio amita victus natus perferendis cimentarius esse suscipio damnatio.\n\nApparatus triumphus perferendis tot celebrer appositus celer caecus statua. Abduco culpa audio vir cogo. Decimus creo accusator cupiditas bonus depulso.\n\nTribuo triumphus aut clam dolor vilis via aedificium cribro adsidue. Beneficium volup crux illum exercitationem ambitus rerum. Curso umerus temporibus conscendo demum.\n\nAttonbitus audax demitto cruciamentum similique. Tenuis desidero vesica adopto urbs cribro coerceo. Solus esse itaque suscipit.\n\nLaborum crastinus amet. Sed verbum armarium astrum constans occaecati. Alienus acidus crepusculum aperte.\n\nVulnus possimus quis sit balbus vir cupiditas acies esse. Vehemens quae defluo damnatio. Subnecto antiquus saepe confero sumo nesciunt.\n\nTam statua vigilo ter quis. Denuo illum degusto amplus comitatus crastinus aranea. Commodi facere sumo coma ars vallum conicio sordeo cariosus.\n\nDeripio facere sol carmen theologus succurro quidem ciminatio pecus aqua. Decretum suffoco curvo adnuo degusto tantum vorax turba bos temptatio. Conforto dedico cenaculum asperiores terebro facilis.\n\nSpiritus theca utor textus cunabula. Cunae qui voluptas dens amicitia combibo. Subiungo super cado dicta desipio subiungo cena speculum.\n\nConsequuntur quo vesco porro facilis voveo adicio valens. Vulgaris verbum cohors solio defungo valde deporto tabula agnitio calco. Terreo perferendis bos.\n\nAperio bene arbitro auctus apud adeptio toties terra summa. Crapula ancilla utilis cupiditas adflicto volaticus. Ratione bellum laudantium celo terra clamo ut cognomen."
+      }
+    },
+    {
+      "meetingId": "zm_000153",
+      "kali_entity_id": "zoom_000153",
+      "hostId": "ppl_000010",
+      "topic": "Team All-Hands",
+      "startTime": "2025-12-11T12:13:59.875Z",
+      "duration": 45,
+      "type": 2,
+      "participants": [
+        {
+          "userId": "ppl_00002c",
+          "name": "Astrid Lynch",
+          "email": "astrid.lynch@outlook.com"
+        },
+        {
+          "userId": "ppl_00003g",
+          "name": "Providenci Abernathy",
+          "email": "providenci.abernathy@yahoo.com"
+        },
+        {
+          "userId": "ppl_00002b",
+          "name": "Edna Zboncak",
+          "email": "edna.zboncak@comcast.net"
+        },
+        {
+          "userId": "ppl_00001m",
+          "name": "Otilia Doyle",
+          "email": ""
+        },
+        {
+          "userId": "ppl_00001l",
+          "name": "Ansley Schulist",
+          "email": ""
+        },
+        {
+          "userId": "ppl_00003k",
+          "name": "Glenda Pollich",
+          "email": "glenda.pollich@comcast.net"
+        },
+        {
+          "userId": "ppl_000014",
+          "name": "Talon Torp",
+          "email": "talon.torp@rivertowncf.org"
+        },
+        {
+          "userId": "ppl_000030",
+          "name": "Alverta Reynolds-Johns",
+          "email": "alverta.reynoldsjohns@comcast.net"
+        },
+        {
+          "userId": "ppl_00003o",
+          "name": "Dean Kshlerin",
+          "email": ""
+        },
+        {
+          "userId": "ppl_000024",
+          "name": "Duncan Hagenes",
+          "email": "duncan.hagenes@comcast.net"
+        },
+        {
+          "userId": "ppl_00002k",
+          "name": "Kyra Macejkovic",
+          "email": "kyra.macejkovic@aol.com"
+        },
+        {
+          "userId": "ppl_00001r",
+          "name": "Dean Kshlerin",
+          "email": "dean.kshlerin@icloud.com"
+        },
+        {
+          "userId": "ppl_00003n",
+          "name": "Kyra Macejkovic",
+          "email": "kyra.macejkovic@aol.con"
+        },
+        {
+          "userId": "ppl_00002g",
+          "name": "Alice Kuhic",
+          "email": "alice.kuhic@icloud.com"
+        },
+        {
+          "userId": "ppl_00001a",
+          "name": "Joey Feil",
+          "email": "joey.feil@outlook.com"
+        },
+        {
+          "userId": "ppl_00001i",
+          "name": "Dillan Haag",
+          "email": "dillan.haag@comcast.net"
+        },
+        {
+          "userId": "ppl_000029",
+          "name": "Onie Haag",
+          "email": "onie.haag@gmail.com"
+        },
+        {
+          "userId": "ppl_00001w",
+          "name": "Elmer Berge",
+          "email": "elmer.berge@yahoo.com"
+        },
+        {
+          "userId": "ppl_000027",
+          "name": "Deanna Haley",
+          "email": "deanna.haley@gmail.com"
+        },
+        {
+          "userId": "ppl_00001o",
+          "name": "Stephania Franecki",
+          "email": "stephania.franecki@aol.com"
+        },
+        {
+          "userId": "ppl_00003c",
+          "name": "Josefa Mohr",
+          "email": "josefa.mohr@yahoo.com"
+        }
+      ],
+      "recordingFiles": [],
+      "transcript": null
+    },
+    {
+      "meetingId": "zm_000154",
+      "kali_entity_id": "zoom_000154",
+      "hostId": "ppl_000015",
+      "topic": "Program Review",
+      "startTime": "2025-09-25T02:04:49.626Z",
+      "duration": 30,
+      "type": 2,
+      "participants": [
+        {
+          "userId": "ppl_000023",
+          "name": "Reina Heathcote",
+          "email": "reina.heathcote@outlook.com"
+        },
+        {
+          "userId": "ppl_000036",
+          "name": "Shaina Hand",
+          "email": "shaina.hand@icloud.com"
+        },
+        {
+          "userId": "ppl_00003g",
+          "name": "Providenci Abernathy",
+          "email": "providenci.abernathy@yahoo.com"
+        }
+      ],
+      "recordingFiles": [
+        {
+          "recordingType": "shared_screen_with_speaker_view",
+          "fileSize": 566231040,
+          "playUrl": "https://us02web.zoom.us/rec/play/zoom_000154"
+        }
+      ],
+      "transcript": null
+    },
+    {
+      "meetingId": "zm_000155",
+      "kali_entity_id": "zoom_000155",
+      "hostId": "ppl_000011",
+      "topic": "Donor Strategy Session",
+      "startTime": "2025-06-25T07:04:56.757Z",
+      "duration": 90,
+      "type": 2,
+      "participants": [
+        {
+          "userId": "ppl_00002v",
+          "name": "Taryn Hartmann",
+          "email": "taryn.hartmann@gmail.com"
+        },
+        {
+          "userId": "ppl_000022",
+          "name": "Pierce Kertzmann",
+          "email": "pierce.kertzmann@aol.com"
+        }
+      ],
+      "recordingFiles": [
+        {
+          "recordingType": "shared_screen_with_speaker_view",
+          "fileSize": 1698693120,
+          "playUrl": "https://us02web.zoom.us/rec/play/zoom_000155"
+        }
+      ],
+      "transcript": null
+    },
+    {
+      "meetingId": "zm_000156",
+      "kali_entity_id": "zoom_000156",
+      "hostId": "ppl_000017",
+      "topic": "Grant Strategy",
+      "startTime": "2025-08-25T16:57:57.297Z",
+      "duration": 90,
+      "type": 2,
+      "participants": [
+        {
+          "userId": "ppl_00003j",
+          "name": "Maude Bernhard",
+          "email": "maude.bernhard@gmail.com"
+        },
+        {
+          "userId": "ppl_00003k",
+          "name": "Glenda Pollich",
+          "email": "glenda.pollich@comcast.net"
+        },
+        {
+          "userId": "ppl_000024",
+          "name": "Duncan Hagenes",
+          "email": "duncan.hagenes@comcast.net"
+        },
+        {
+          "userId": "ppl_000039",
+          "name": "Clare Yost",
+          "email": ""
+        },
+        {
+          "userId": "ppl_00001b",
+          "name": "Josefa Marks-Runolfsson",
+          "email": "josefa.marksrunolfsson@outlook.com"
+        }
+      ],
+      "recordingFiles": [],
+      "transcript": null
+    },
+    {
+      "meetingId": "zm_000157",
+      "kali_entity_id": "zoom_000157",
+      "hostId": "ppl_000013",
+      "topic": "Board Meeting",
+      "startTime": "2026-04-16T19:49:07.241Z",
+      "duration": 30,
+      "type": 2,
+      "participants": [
+        {
+          "userId": "ppl_000025",
+          "name": "Lauren Quitzon",
+          "email": "lauren.quitzon@icloud.com"
+        },
+        {
+          "userId": "ppl_00002g",
+          "name": "Alice Kuhic",
+          "email": "alice.kuhic@icloud.com"
+        },
+        {
+          "userId": "ppl_00003m",
+          "name": "Zetta Huels",
+          "email": "zetta.huels@outlook.com"
+        },
+        {
+          "userId": "ppl_00003k",
+          "name": "Glenda Pollich",
+          "email": "glenda.pollich@comcast.net"
+        },
+        {
+          "userId": "ppl_00001m",
+          "name": "Otilia Doyle",
+          "email": ""
+        },
+        {
+          "userId": "ppl_00002r",
+          "name": "Laurence Wiza",
+          "email": "laurence.wiza@aol.com"
+        },
+        {
+          "userId": "ppl_00001a",
+          "name": "Joey Feil",
+          "email": "joey.feil@outlook.com"
+        }
+      ],
+      "recordingFiles": [],
+      "transcript": null
+    },
+    {
+      "meetingId": "zm_000158",
+      "kali_entity_id": "zoom_000158",
+      "hostId": "ppl_000014",
+      "topic": "Program Review",
+      "startTime": "2025-10-20T23:11:36.692Z",
+      "duration": 120,
+      "type": 2,
+      "participants": [
+        {
+          "userId": "ppl_00002q",
+          "name": "Kirk Streich",
+          "email": "kirk.streich@aol.com"
+        },
+        {
+          "userId": "ppl_00002l",
+          "name": "Reynold Schneider",
+          "email": "reynold.schneider@comcast.net"
+        },
+        {
+          "userId": "ppl_000018",
+          "name": "Vernon Murphy",
+          "email": "vernon.murphy@gmail.com"
+        },
+        {
+          "userId": "ppl_00003b",
+          "name": "Braden Lind",
+          "email": "braden.lind@aol.com"
+        },
+        {
+          "userId": "ppl_000016",
+          "name": "Alexandrine Greenholt",
+          "email": "alexandrine.greenholt@rivertowncf.org"
+        },
+        {
+          "userId": "ppl_00002o",
+          "name": "Rigoberto Rippin-Turcotte",
+          "email": "rigoberto.rippinturcotte@icloud.com"
+        },
+        {
+          "userId": "ppl_000038",
+          "name": "Lilla Kohler-Bednar",
+          "email": "lilla.kohlerbednar@gmail.com"
+        },
+        {
+          "userId": "ppl_000026",
+          "name": "Donnie Wolf",
+          "email": "donnie.wolf@aol.com"
+        },
+        {
+          "userId": "ppl_00002u",
+          "name": "Kyla Mosciski",
+          "email": "kyla.mosciski@comcast.net"
+        },
+        {
+          "userId": "ppl_000020",
+          "name": "Rickie Lueilwitz",
+          "email": "rickie.lueilwitz@aol.com"
+        },
+        {
+          "userId": "ppl_000021",
+          "name": "Asha Sauer-Parker",
+          "email": "asha.sauerparker@yahoo.com"
+        },
+        {
+          "userId": "ppl_00003j",
+          "name": "Maude Bernhard",
+          "email": "maude.bernhard@gmail.com"
+        },
+        {
+          "userId": "ppl_00003g",
+          "name": "Providenci Abernathy",
+          "email": "providenci.abernathy@yahoo.com"
+        },
+        {
+          "userId": "ppl_000017",
+          "name": "Jacky Morissette-Robel",
+          "email": "jacky.morissetterobel@rivertowncf.org"
+        },
+        {
+          "userId": "ppl_00001h",
+          "name": "Fredrick Carter",
+          "email": "fredrick.carter@outlook.com"
+        },
+        {
+          "userId": "ppl_00003a",
+          "name": "Reilly Thiel",
+          "email": "reilly.thiel@icloud.com"
+        },
+        {
+          "userId": "ppl_000014",
+          "name": "Talon Torp",
+          "email": "talon.torp@rivertowncf.org"
+        },
+        {
+          "userId": "ppl_00001c",
+          "name": "Jackie Lubowitz",
+          "email": "jackie.lubowitz@comcast.net"
+        },
+        {
+          "userId": "ppl_00002i",
+          "name": "Marcelina Donnelly",
+          "email": "marcelina.donnelly@icloud.com"
+        },
+        {
+          "userId": "ppl_000023",
+          "name": "Reina Heathcote",
+          "email": "reina.heathcote@outlook.com"
+        },
+        {
+          "userId": "ppl_00002t",
+          "name": "Cristina Lemke-Schmeler",
+          "email": "cristina.lemkeschmeler@comcast.net"
+        },
+        {
+          "userId": "ppl_00003m",
+          "name": "Zetta Huels",
+          "email": "zetta.huels@outlook.com"
+        },
+        {
+          "userId": "ppl_00002z",
+          "name": "Jensen Little",
+          "email": "jensen.little@outlook.com"
+        }
+      ],
+      "recordingFiles": [],
+      "transcript": null
+    },
+    {
+      "meetingId": "zm_000159",
+      "kali_entity_id": "zoom_000159",
+      "hostId": "ppl_000017",
+      "topic": "Annual Gala — Virtual",
+      "startTime": "2026-03-24T08:39:03.160Z",
+      "duration": 90,
+      "type": 2,
+      "participants": [
+        {
+          "userId": "ppl_00002e",
+          "name": "Joyce Pfannerstill",
+          "email": "joyce.pfannerstill@gmail.com"
+        },
+        {
+          "userId": "ppl_00002g",
+          "name": "Alice Kuhic",
+          "email": "alice.kuhic@icloud.com"
+        },
+        {
+          "userId": "ppl_00001a",
+          "name": "Joey Feil",
+          "email": "joey.feil@outlook.com"
+        },
+        {
+          "userId": "ppl_00001z",
+          "name": "Veda Runolfsdottir",
+          "email": "veda.runolfsdottir@gmail.com"
+        },
+        {
+          "userId": "ppl_00001d",
+          "name": "Lauriane Prosacco",
+          "email": "lauriane.prosacco@aol.com"
+        },
+        {
+          "userId": "ppl_000034",
+          "name": "Ellis Feil",
+          "email": "ellis.feil@outlook.com"
+        },
+        {
+          "userId": "ppl_00003c",
+          "name": "Josefa Mohr",
+          "email": "josefa.mohr@yahoo.com"
+        },
+        {
+          "userId": "ppl_00002b",
+          "name": "Edna Zboncak",
+          "email": "edna.zboncak@comcast.net"
+        },
+        {
+          "userId": "ppl_000026",
+          "name": "Donnie Wolf",
+          "email": "donnie.wolf@aol.com"
+        },
+        {
+          "userId": "ppl_00003b",
+          "name": "Braden Lind",
+          "email": "braden.lind@aol.com"
+        },
+        {
+          "userId": "ppl_00002v",
+          "name": "Taryn Hartmann",
+          "email": "taryn.hartmann@gmail.com"
+        },
+        {
+          "userId": "ppl_00002j",
+          "name": "Ford Berge",
+          "email": "ford.berge@aol.com"
+        },
+        {
+          "userId": "ppl_00001t",
+          "name": "Grayson Hoppe",
+          "email": "grayson.hoppe@gmail.com"
+        },
+        {
+          "userId": "ppl_000027",
+          "name": "Deanna Haley",
+          "email": "deanna.haley@gmail.com"
+        },
+        {
+          "userId": "ppl_000022",
+          "name": "Pierce Kertzmann",
+          "email": "pierce.kertzmann@aol.com"
+        },
+        {
+          "userId": "ppl_00002h",
+          "name": "Orland Nienow",
+          "email": "orland.nienow@yahoo.com"
+        }
+      ],
+      "recordingFiles": [
+        {
+          "recordingType": "shared_screen_with_speaker_view",
+          "fileSize": 1698693120,
+          "playUrl": "https://us02web.zoom.us/rec/play/zoom_000159"
+        }
+      ],
+      "transcript": null
+    }
+  ],
+  "phoneCallLogs": []
+}

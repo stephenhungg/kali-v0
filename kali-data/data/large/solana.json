@@ -1,0 +1,3971 @@
+{
+  "treasury": {
+    "walletAddress": "rivertowncf7Hp9YJK8Lm3X2N4P5Q6R7S8T9U0V1W2X3Y",
+    "balanceUsdc": 467003,
+    "balanceSol": 4.21,
+    "cluster": "devnet",
+    "explorerUrl": "https://explorer.solana.com/address/rivertowncf7Hp9YJK8Lm3X2N4P5Q6R7S8T9U0V1W2X3Y?cluster=devnet"
+  },
+  "transactions": [
+    {
+      "signature": "2fwUu2Hh5zqR1nHEmuYs9XdmtdGoKYjqWMFXYpirR3KDuXp0vHgDR0Hqj575QqOw9qdxfWbOZl4nagOKVNdRSFfB",
+      "kali_entity_id": "sol_001bre",
+      "type": "grant_disbursement",
+      "amountUsdc": 2671,
+      "blockTime": 1775054066,
+      "fromWallet": "rivertowncf7Hp9YJK8Lm3X2N4P5Q6R7S8T9U0V1W2X3Y",
+      "toWallet": "Krq2T8OtIlFiKGwQ5dOWNufNZtk05b8gH5lERU3zCF2M",
+      "recipientId": "org_00003o",
+      "reference": {
+        "kind": "grant",
+        "id": "grant_000ik8"
+      },
+      "feeLamports": 5573,
+      "feeUsd": 0.027586349999999996,
+      "status": "confirmed",
+      "explorerUrl": "https://explorer.solana.com/tx/2fwUu2Hh5zqR1nHEmuYs9XdmtdGoKYjqWMFXYpirR3KDuXp0vHgDR0Hqj575QqOw9qdxfWbOZl4nagOKVNdRSFfB?cluster=devnet"
+    },
+    {
+      "signature": "XGDAg8etpU2zWXWeqVyQaB7sWynOamOICbYVulsPreeI2Hoq8R4B9RSlTuW2SNWUOkTIilJly6HlL2mmII15OqBE",
+      "kali_entity_id": "sol_001brf",
+      "type": "donor_refund",
+      "amountUsdc": 127,
+      "blockTime": 1776624983,
+      "fromWallet": "rivertowncf7Hp9YJK8Lm3X2N4P5Q6R7S8T9U0V1W2X3Y",
+      "toWallet": "ZOlIiSOAtoiO1AguGD17gdSX6TRU9wDde8ABfbfYmUsE",
+      "recipientId": "ppl_0002s1",
+      "reference": {
+        "kind": "donation",
+        "id": "don_000eoq"
+      },
+      "feeLamports": 7537,
+      "feeUsd": 0.03730815,
+      "status": "confirmed",
+      "explorerUrl": "https://explorer.solana.com/tx/XGDAg8etpU2zWXWeqVyQaB7sWynOamOICbYVulsPreeI2Hoq8R4B9RSlTuW2SNWUOkTIilJly6HlL2mmII15OqBE?cluster=devnet"
+    },
+    {
+      "signature": "QQLiDpNIdAHwWu3qVydZXAfqSCOJ8Yb8qxmNd6am72LoP0PLyvmRBAl7QWHE3bBnzQKmmTRxLN5FJAkzJQzbgHNo",
+      "kali_entity_id": "sol_001brg",
+      "type": "vendor_payment",
+      "amountUsdc": 5716,
+      "blockTime": 1766301604,
+      "fromWallet": "rivertowncf7Hp9YJK8Lm3X2N4P5Q6R7S8T9U0V1W2X3Y",
+      "toWallet": "kctvYQe8tDb1nJHxRl9Ne4rtKDhSa4JFuViI3H4cbp11",
+      "recipientId": "org_00004l",
+      "reference": {
+        "kind": "vendor",
+        "id": "org_00004l"
+      },
+      "feeLamports": 9927,
+      "feeUsd": 0.04913864999999999,
+      "status": "confirmed",
+      "explorerUrl": "https://explorer.solana.com/tx/QQLiDpNIdAHwWu3qVydZXAfqSCOJ8Yb8qxmNd6am72LoP0PLyvmRBAl7QWHE3bBnzQKmmTRxLN5FJAkzJQzbgHNo?cluster=devnet"
+    },
+    {
+      "signature": "sawHMtjosPjYJnjxia5Flx0AZonBJwjxAxdFBzaJxHASnWapNx5fDj1z31WpeL1t8OCB3tWD7UtKkHdWGeiHUMKh",
+      "kali_entity_id": "sol_001brh",
+      "type": "vendor_payment",
+      "amountUsdc": 158,
+      "blockTime": 1769503858,
+      "fromWallet": "rivertowncf7Hp9YJK8Lm3X2N4P5Q6R7S8T9U0V1W2X3Y",
+      "toWallet": "UmUYwEtZFMcRP9x39AQWIzTGL6fltGyeQ5c13rvxmz3q",
+      "recipientId": "org_000058",
+      "reference": {
+        "kind": "vendor",
+        "id": "org_000058"
+      },
+      "feeLamports": 6637,
+      "feeUsd": 0.03285315,
+      "status": "confirmed",
+      "explorerUrl": "https://explorer.solana.com/tx/sawHMtjosPjYJnjxia5Flx0AZonBJwjxAxdFBzaJxHASnWapNx5fDj1z31WpeL1t8OCB3tWD7UtKkHdWGeiHUMKh?cluster=devnet"
+    },
+    {
+      "signature": "0BGnXmvLgwP4yCB2zOUPVSjmVUASIAb01E4K3RZshQiHA7wkTcr6rSLF85l6lPSDsjkgFUxl4lHfTkrSyA7bhBP1",
+      "kali_entity_id": "sol_001bri",
+      "type": "grant_disbursement",
+      "amountUsdc": 1279,
+      "blockTime": 1764997390,
+      "fromWallet": "rivertowncf7Hp9YJK8Lm3X2N4P5Q6R7S8T9U0V1W2X3Y",
+      "toWallet": "h8wb3nBUnj6FiXgDpuWCi3qpSQc8W1PXHAwKH3kel55Q",
+      "recipientId": "org_00001z",
+      "reference": {
+        "kind": "grant",
+        "id": "grant_000ilc"
+      },
+      "feeLamports": 6921,
+      "feeUsd": 0.034258949999999996,
+      "status": "confirmed",
+      "explorerUrl": "https://explorer.solana.com/tx/0BGnXmvLgwP4yCB2zOUPVSjmVUASIAb01E4K3RZshQiHA7wkTcr6rSLF85l6lPSDsjkgFUxl4lHfTkrSyA7bhBP1?cluster=devnet"
+    },
+    {
+      "signature": "vAsTg8n8EUeuMlXMfwdaCbdimK98rAtjqDR2MqirleSJGzHHGWgC1QLiRGFHdZoUv8dSw1eO2d4LAWjAGIxfxOUR",
+      "kali_entity_id": "sol_001brj",
+      "type": "grant_disbursement",
+      "amountUsdc": 23759,
+      "blockTime": 1777474200,
+      "fromWallet": "rivertowncf7Hp9YJK8Lm3X2N4P5Q6R7S8T9U0V1W2X3Y",
+      "toWallet": "MinyKtXlS4dBNOXcNCU8I8jxmVFnb8OioEMWKy0xQBE4",
+      "recipientId": "org_00003d",
+      "reference": {
+        "kind": "grant",
+        "id": "grant_000ijs"
+      },
+      "feeLamports": 9963,
+      "feeUsd": 0.049316849999999995,
+      "status": "confirmed",
+      "explorerUrl": "https://explorer.solana.com/tx/vAsTg8n8EUeuMlXMfwdaCbdimK98rAtjqDR2MqirleSJGzHHGWgC1QLiRGFHdZoUv8dSw1eO2d4LAWjAGIxfxOUR?cluster=devnet"
+    },
+    {
+      "signature": "HGyVi26kGQMKueB39Q6PXuWBnXucPUNya71AA8do3hXgBjZe9uQHL16KDdy5VlZnpnlHlLU3dNBxRr77DtW465vx",
+      "kali_entity_id": "sol_001brk",
+      "type": "board_stipend",
+      "amountUsdc": 500,
+      "blockTime": 1774847074,
+      "fromWallet": "rivertowncf7Hp9YJK8Lm3X2N4P5Q6R7S8T9U0V1W2X3Y",
+      "toWallet": "09frIQ7suit01wTmj0MWc8cyOCBmeJQavwVVveYEsvVE",
+      "recipientId": "ppl_00008q",
+      "reference": {
+        "kind": "board",
+        "id": "ppl_00008q"
+      },
+      "feeLamports": 10693,
+      "feeUsd": 0.05293035,
+      "status": "confirmed",
+      "explorerUrl": "https://explorer.solana.com/tx/HGyVi26kGQMKueB39Q6PXuWBnXucPUNya71AA8do3hXgBjZe9uQHL16KDdy5VlZnpnlHlLU3dNBxRr77DtW465vx?cluster=devnet"
+    },
+    {
+      "signature": "ngYZPSGAh7GOyBnqAOg2muRct2pgiVlwxhKx7HyaNYIP3Ww0ipfMvm5lcKJrafRbd649uRolCGgVRihhVN1OxlSG",
+      "kali_entity_id": "sol_001brl",
+      "type": "board_stipend",
+      "amountUsdc": 1000,
+      "blockTime": 1773873039,
+      "fromWallet": "rivertowncf7Hp9YJK8Lm3X2N4P5Q6R7S8T9U0V1W2X3Y",
+      "toWallet": "UqhbIii9iLA8sYQ5WtR9FNKjcbuicPP1TAlLS9c075U2",
+      "recipientId": "ppl_000092",
+      "reference": {
+        "kind": "board",
+        "id": "ppl_000092"
+      },
+      "feeLamports": 9922,
+      "feeUsd": 0.0491139,
+      "status": "confirmed",
+      "explorerUrl": "https://explorer.solana.com/tx/ngYZPSGAh7GOyBnqAOg2muRct2pgiVlwxhKx7HyaNYIP3Ww0ipfMvm5lcKJrafRbd649uRolCGgVRihhVN1OxlSG?cluster=devnet"
+    },
+    {
+      "signature": "D9KcmVC35u2C17OOS3jyoUQZKQP6zY5eQVwrDXqgK1MWufsaYk3iikaEeIC56PJCjdeC9GlDCD80yv5QKgjC1atj",
+      "kali_entity_id": "sol_001brm",
+      "type": "board_stipend",
+      "amountUsdc": 1000,
+      "blockTime": 1770982186,
+      "fromWallet": "rivertowncf7Hp9YJK8Lm3X2N4P5Q6R7S8T9U0V1W2X3Y",
+      "toWallet": "F08lV65mWSePJHENQZvUlKu5YYUTLGehNAL3Y3KoCaJo",
+      "recipientId": "ppl_00008t",
+      "reference": {
+        "kind": "board",
+        "id": "ppl_00008t"
+      },
+      "feeLamports": 6413,
+      "feeUsd": 0.03174435,
+      "status": "confirmed",
+      "explorerUrl": "https://explorer.solana.com/tx/D9KcmVC35u2C17OOS3jyoUQZKQP6zY5eQVwrDXqgK1MWufsaYk3iikaEeIC56PJCjdeC9GlDCD80yv5QKgjC1atj?cluster=devnet"
+    },
+    {
+      "signature": "5br1g5XiFzAppe2qtkeWStffkxBf4nBVSbJ9PSp7e06YStIkGQQUhAvNpvDFGwrguNsZh0MthhnPp24Yy7sOJ37L",
+      "kali_entity_id": "sol_001brn",
+      "type": "grant_disbursement",
+      "amountUsdc": 11178,
+      "blockTime": 1765692886,
+      "fromWallet": "rivertowncf7Hp9YJK8Lm3X2N4P5Q6R7S8T9U0V1W2X3Y",
+      "toWallet": "vWFFKRtjiNpVDxwc1L9GkV8xiPKIzuczlojquxxAdnHw",
+      "recipientId": "org_000034",
+      "reference": {
+        "kind": "grant",
+        "id": "grant_000il2"
+      },
+      "feeLamports": 9557,
+      "feeUsd": 0.04730714999999999,
+      "status": "confirmed",
+      "explorerUrl": "https://explorer.solana.com/tx/5br1g5XiFzAppe2qtkeWStffkxBf4nBVSbJ9PSp7e06YStIkGQQUhAvNpvDFGwrguNsZh0MthhnPp24Yy7sOJ37L?cluster=devnet"
+    },
+    {
+      "signature": "MYV9iZkBMTF9Ud2rRG2ffMcHDkUpZ61CYkFrh19UdDi7vEASTKrRXL2OIYElbkZsDF5SV2ZyGSScWi2wIQaEwqQU",
+      "kali_entity_id": "sol_001bro",
+      "type": "vendor_payment",
+      "amountUsdc": 234,
+      "blockTime": 1763917184,
+      "fromWallet": "rivertowncf7Hp9YJK8Lm3X2N4P5Q6R7S8T9U0V1W2X3Y",
+      "toWallet": "OpJRoFfRdkGgwrFHx4aWy9UmDTYJNLpSZLa7je1miXVo",
+      "recipientId": "org_000064",
+      "reference": {
+        "kind": "vendor",
+        "id": "org_000064"
+      },
+      "feeLamports": 8168,
+      "feeUsd": 0.0404316,
+      "status": "confirmed",
+      "explorerUrl": "https://explorer.solana.com/tx/MYV9iZkBMTF9Ud2rRG2ffMcHDkUpZ61CYkFrh19UdDi7vEASTKrRXL2OIYElbkZsDF5SV2ZyGSScWi2wIQaEwqQU?cluster=devnet"
+    },
+    {
+      "signature": "wke4M8V0VdMHs7vDToyFEsZYna4w4TBYFT6O56QqpC2ApwazUNbypO75jmaG4IqmIDFSpHHyoER32GpiexrLH6ej",
+      "kali_entity_id": "sol_001brp",
+      "type": "grant_disbursement",
+      "amountUsdc": 34747,
+      "blockTime": 1771894841,
+      "fromWallet": "rivertowncf7Hp9YJK8Lm3X2N4P5Q6R7S8T9U0V1W2X3Y",
+      "toWallet": "T4Wg3AbkmgUepTg6WJPFCV49f1t9D61vCDD2rEvinIox",
+      "recipientId": "org_00002t",
+      "reference": {
+        "kind": "grant",
+        "id": "grant_000ik0"
+      },
+      "feeLamports": 5825,
+      "feeUsd": 0.02883375,
+      "status": "confirmed",
+      "explorerUrl": "https://explorer.solana.com/tx/wke4M8V0VdMHs7vDToyFEsZYna4w4TBYFT6O56QqpC2ApwazUNbypO75jmaG4IqmIDFSpHHyoER32GpiexrLH6ej?cluster=devnet"
+    },
+    {
+      "signature": "PzGPZSN4HxVWZJpwADKqnm2JE16Dw3IqUxUnuFFEAUKtJnKH2E4OLNERbZQUUsVBDSvRlPV427rTwr1rq7fcGb8M",
+      "kali_entity_id": "sol_001brq",
+      "type": "donor_refund",
+      "amountUsdc": 1352,
+      "blockTime": 1775727290,
+      "fromWallet": "rivertowncf7Hp9YJK8Lm3X2N4P5Q6R7S8T9U0V1W2X3Y",
+      "toWallet": "MGVkkn908JRJjuymAceusBgUnsxceDzAt37rnBTZ46vo",
+      "recipientId": "ppl_0003e0",
+      "reference": {
+        "kind": "donation",
+        "id": "don_000h5z"
+      },
+      "feeLamports": 5542,
+      "feeUsd": 0.0274329,
+      "status": "confirmed",
+      "explorerUrl": "https://explorer.solana.com/tx/PzGPZSN4HxVWZJpwADKqnm2JE16Dw3IqUxUnuFFEAUKtJnKH2E4OLNERbZQUUsVBDSvRlPV427rTwr1rq7fcGb8M?cluster=devnet"
+    },
+    {
+      "signature": "Lov0z4J4Vk8AtwFuckTzvhJ6LWNEKdhTXeNzpbwtRf18smsWlM68AOI3R2MUz6rlgr52RWPqJFrnVePeSPfV9Goa",
+      "kali_entity_id": "sol_001brr",
+      "type": "board_stipend",
+      "amountUsdc": 500,
+      "blockTime": 1774527798,
+      "fromWallet": "rivertowncf7Hp9YJK8Lm3X2N4P5Q6R7S8T9U0V1W2X3Y",
+      "toWallet": "iAbtjfRVL5ga30MXwCmAUXd3ThGfHvVKmtA54vQAmViV",
+      "recipientId": "ppl_00008t",
+      "reference": {
+        "kind": "board",
+        "id": "ppl_00008t"
+      },
+      "feeLamports": 11761,
+      "feeUsd": 0.058216949999999996,
+      "status": "confirmed",
+      "explorerUrl": "https://explorer.solana.com/tx/Lov0z4J4Vk8AtwFuckTzvhJ6LWNEKdhTXeNzpbwtRf18smsWlM68AOI3R2MUz6rlgr52RWPqJFrnVePeSPfV9Goa?cluster=devnet"
+    },
+    {
+      "signature": "5O425U4zoNgvy4jlCazdveM8H4zuf1PQqMMxmjdZG9GB3uxmmK4toYBtT7QfaGPCAw9HPC26xfrJEMwAtT0nDKQH",
+      "kali_entity_id": "sol_001brs",
+      "type": "board_stipend",
+      "amountUsdc": 500,
+      "blockTime": 1763422166,
+      "fromWallet": "rivertowncf7Hp9YJK8Lm3X2N4P5Q6R7S8T9U0V1W2X3Y",
+      "toWallet": "PeFbia9dJDlsUaVD2Zw3rev8kU3vV4dvOM7KaniikrWM",
+      "recipientId": "ppl_00008t",
+      "reference": {
+        "kind": "board",
+        "id": "ppl_00008t"
+      },
+      "feeLamports": 9916,
+      "feeUsd": 0.049084199999999995,
+      "status": "confirmed",
+      "explorerUrl": "https://explorer.solana.com/tx/5O425U4zoNgvy4jlCazdveM8H4zuf1PQqMMxmjdZG9GB3uxmmK4toYBtT7QfaGPCAw9HPC26xfrJEMwAtT0nDKQH?cluster=devnet"
+    },
+    {
+      "signature": "IypFPR65XqKX7yPdSIrSF4pibGLo4mnEpDJAP24KFipmO2b6nSXjfzVgQaBXJVxzPbIpLknqqcZHpTzP4f0UuAuz",
+      "kali_entity_id": "sol_001brt",
+      "type": "board_stipend",
+      "amountUsdc": 1000,
+      "blockTime": 1767889315,
+      "fromWallet": "rivertowncf7Hp9YJK8Lm3X2N4P5Q6R7S8T9U0V1W2X3Y",
+      "toWallet": "13CNkZyZrA3lV3QLoUnFfy9gchBXZPepRRGVbzuuWeZW",
+      "recipientId": "ppl_00008q",
+      "reference": {
+        "kind": "board",
+        "id": "ppl_00008q"
+      },
+      "feeLamports": 5408,
+      "feeUsd": 0.026769599999999998,
+      "status": "confirmed",
+      "explorerUrl": "https://explorer.solana.com/tx/IypFPR65XqKX7yPdSIrSF4pibGLo4mnEpDJAP24KFipmO2b6nSXjfzVgQaBXJVxzPbIpLknqqcZHpTzP4f0UuAuz?cluster=devnet"
+    },
+    {
+      "signature": "1EsRWHRSDe4xnoGRYLrfC26RCFljO3t8LaUbZj3IL5f9XA2CI70CUCEGgQhf3eToG27z4IFyug2z5Gr4BmpWyVAb",
+      "kali_entity_id": "sol_001bru",
+      "type": "grant_disbursement",
+      "amountUsdc": 35678,
+      "blockTime": 1774976234,
+      "fromWallet": "rivertowncf7Hp9YJK8Lm3X2N4P5Q6R7S8T9U0V1W2X3Y",
+      "toWallet": "9K1HoHvqs9g67gI8SeiXS8DQFmvhG4wxRuCCSR7qO80v",
+      "recipientId": "org_00003j",
+      "reference": {
+        "kind": "grant",
+        "id": "grant_000ikl"
+      },
+      "feeLamports": 7193,
+      "feeUsd": 0.03560535,
+      "status": "confirmed",
+      "explorerUrl": "https://explorer.solana.com/tx/1EsRWHRSDe4xnoGRYLrfC26RCFljO3t8LaUbZj3IL5f9XA2CI70CUCEGgQhf3eToG27z4IFyug2z5Gr4BmpWyVAb?cluster=devnet"
+    },
+    {
+      "signature": "UQyVGyZeXyYFm2iolU2CdD7gntWMFurttOs7tSqHDXfqdwyjGJxavfVOuKNhjm1CQLVDtmqXrCAbcDDHaEI7Stys",
+      "kali_entity_id": "sol_001brv",
+      "type": "vendor_payment",
+      "amountUsdc": 4990,
+      "blockTime": 1764521022,
+      "fromWallet": "rivertowncf7Hp9YJK8Lm3X2N4P5Q6R7S8T9U0V1W2X3Y",
+      "toWallet": "dXwNHFpyLD2O77PJL8bozWHsc8AzColM5Q7o56gBcFPP",
+      "recipientId": "org_00005g",
+      "reference": {
+        "kind": "vendor",
+        "id": "org_00005g"
+      },
+      "feeLamports": 7698,
+      "feeUsd": 0.038105099999999996,
+      "status": "confirmed",
+      "explorerUrl": "https://explorer.solana.com/tx/UQyVGyZeXyYFm2iolU2CdD7gntWMFurttOs7tSqHDXfqdwyjGJxavfVOuKNhjm1CQLVDtmqXrCAbcDDHaEI7Stys?cluster=devnet"
+    },
+    {
+      "signature": "YujdGz539feWmbYF757KtA0FuHrUH2cQCJMq1fY5SAA5K4KgpE3ukfA7kAljodciXqr7drwScGiEx2LR0rOVCa0Z",
+      "kali_entity_id": "sol_001brw",
+      "type": "grant_disbursement",
+      "amountUsdc": 8386,
+      "blockTime": 1765354674,
+      "fromWallet": "rivertowncf7Hp9YJK8Lm3X2N4P5Q6R7S8T9U0V1W2X3Y",
+      "toWallet": "oakNyZzGaXWlIiMI26l2q1fJd0MoqKvmbHNnWRAyCgKe",
+      "recipientId": "org_00003f",
+      "reference": {
+        "kind": "grant",
+        "id": "grant_000ikw"
+      },
+      "feeLamports": 8192,
+      "feeUsd": 0.04055039999999999,
+      "status": "confirmed",
+      "explorerUrl": "https://explorer.solana.com/tx/YujdGz539feWmbYF757KtA0FuHrUH2cQCJMq1fY5SAA5K4KgpE3ukfA7kAljodciXqr7drwScGiEx2LR0rOVCa0Z?cluster=devnet"
+    },
+    {
+      "signature": "atsjA5jE6UVN1HZwAeWTujwRSLfIYLWAfnPNv9YIhabbWRrjyci4KNhsdSDDgoZiVPmeEFFgULHAeuNKcN6b10nX",
+      "kali_entity_id": "sol_001brx",
+      "type": "donor_refund",
+      "amountUsdc": 1584,
+      "blockTime": 1763834329,
+      "fromWallet": "rivertowncf7Hp9YJK8Lm3X2N4P5Q6R7S8T9U0V1W2X3Y",
+      "toWallet": "98lAepb9xl7e8vV30k56VtcEZxR9v1LgUshODt5755K3",
+      "recipientId": "ppl_000181",
+      "reference": {
+        "kind": "donation",
+        "id": "don_0008i3"
+      },
+      "feeLamports": 7858,
+      "feeUsd": 0.0388971,
+      "status": "confirmed",
+      "explorerUrl": "https://explorer.solana.com/tx/atsjA5jE6UVN1HZwAeWTujwRSLfIYLWAfnPNv9YIhabbWRrjyci4KNhsdSDDgoZiVPmeEFFgULHAeuNKcN6b10nX?cluster=devnet"
+    },
+    {
+      "signature": "mYo2YIeZsmSml5yMNd4jbANu8dtk3nwMvpn6gGHN7CAZeAGkvaqtmFhzXgobvJi8ZfNddHgkPRg8dgv5JbIN7l44",
+      "kali_entity_id": "sol_001bry",
+      "type": "board_stipend",
+      "amountUsdc": 1000,
+      "blockTime": 1763933076,
+      "fromWallet": "rivertowncf7Hp9YJK8Lm3X2N4P5Q6R7S8T9U0V1W2X3Y",
+      "toWallet": "fcRY4gaUly4pNJXstIGaacKH52te1FzHhu4UQEDa7BsA",
+      "recipientId": "ppl_00008z",
+      "reference": {
+        "kind": "board",
+        "id": "ppl_00008z"
+      },
+      "feeLamports": 9625,
+      "feeUsd": 0.04764375,
+      "status": "confirmed",
+      "explorerUrl": "https://explorer.solana.com/tx/mYo2YIeZsmSml5yMNd4jbANu8dtk3nwMvpn6gGHN7CAZeAGkvaqtmFhzXgobvJi8ZfNddHgkPRg8dgv5JbIN7l44?cluster=devnet"
+    },
+    {
+      "signature": "B1geanTSFKsvA3uTE3UQ5bcOzK5l9M9T7fXhbwLzpDDuwunR53IW5DctwkGr8MZi6lTqbFp3zJzJwtqkTvgtRmgQ",
+      "kali_entity_id": "sol_001brz",
+      "type": "donor_refund",
+      "amountUsdc": 90,
+      "blockTime": 1777451007,
+      "fromWallet": "rivertowncf7Hp9YJK8Lm3X2N4P5Q6R7S8T9U0V1W2X3Y",
+      "toWallet": "7WDf9KBWAZy0I29j52vEK5UfYVxh0vQDaSZxa1uv7YnU",
+      "recipientId": "ppl_00038m",
+      "reference": {
+        "kind": "donation",
+        "id": "don_000gkb"
+      },
+      "feeLamports": 9206,
+      "feeUsd": 0.0455697,
+      "status": "confirmed",
+      "explorerUrl": "https://explorer.solana.com/tx/B1geanTSFKsvA3uTE3UQ5bcOzK5l9M9T7fXhbwLzpDDuwunR53IW5DctwkGr8MZi6lTqbFp3zJzJwtqkTvgtRmgQ?cluster=devnet"
+    },
+    {
+      "signature": "A8XvTnH1NuXDMYeDQDA0CWe9R6bTCHk5OEUr52A2MrPOWEeUgK1jU9OQjvwf9z4ERqQLVOx8K4e0l0BlAynCcLnP",
+      "kali_entity_id": "sol_001bs0",
+      "type": "donor_refund",
+      "amountUsdc": 684,
+      "blockTime": 1768332876,
+      "fromWallet": "rivertowncf7Hp9YJK8Lm3X2N4P5Q6R7S8T9U0V1W2X3Y",
+      "toWallet": "Qb4xxl8lnq6nmcDl6JTDXSdUakVcRDpcYjDCaDG2CuMl",
+      "recipientId": "ppl_0000o7",
+      "reference": {
+        "kind": "donation",
+        "id": "don_0006bz"
+      },
+      "feeLamports": 9706,
+      "feeUsd": 0.048044699999999996,
+      "status": "confirmed",
+      "explorerUrl": "https://explorer.solana.com/tx/A8XvTnH1NuXDMYeDQDA0CWe9R6bTCHk5OEUr52A2MrPOWEeUgK1jU9OQjvwf9z4ERqQLVOx8K4e0l0BlAynCcLnP?cluster=devnet"
+    },
+    {
+      "signature": "g8fAxeVl8ECxXS2VHV52XDSCX57lw8kd10LZ1NjtuE4KkTirT4DD7pTk2XVaXw4y7M4AMrZL4pPl5uhw5VTvSb7l",
+      "kali_entity_id": "sol_001bs1",
+      "type": "vendor_payment",
+      "amountUsdc": 4111,
+      "blockTime": 1776343328,
+      "fromWallet": "rivertowncf7Hp9YJK8Lm3X2N4P5Q6R7S8T9U0V1W2X3Y",
+      "toWallet": "RdWxP4w0cKFaR2xCLUDTZOm3VtcfdKGOHGCosGo9O91q",
+      "recipientId": "org_000054",
+      "reference": {
+        "kind": "vendor",
+        "id": "org_000054"
+      },
+      "feeLamports": 9364,
+      "feeUsd": 0.0463518,
+      "status": "confirmed",
+      "explorerUrl": "https://explorer.solana.com/tx/g8fAxeVl8ECxXS2VHV52XDSCX57lw8kd10LZ1NjtuE4KkTirT4DD7pTk2XVaXw4y7M4AMrZL4pPl5uhw5VTvSb7l?cluster=devnet"
+    },
+    {
+      "signature": "r4Dkd002paqEONqxPsJORIIflG5jsgVVvHIF0b7GvJhR8iTeYa9AInuZInta62swHsvxy55A8xfUfPCSetucIda2",
+      "kali_entity_id": "sol_001bs2",
+      "type": "donor_refund",
+      "amountUsdc": 425,
+      "blockTime": 1765111226,
+      "fromWallet": "rivertowncf7Hp9YJK8Lm3X2N4P5Q6R7S8T9U0V1W2X3Y",
+      "toWallet": "TRjAMURLrPzNeUdLDCEsiR4Q78CLDPZX5RZyvF9LnHPi",
+      "recipientId": "ppl_0003fi",
+      "reference": {
+        "kind": "donation",
+        "id": "don_000hb6"
+      },
+      "feeLamports": 6974,
+      "feeUsd": 0.0345213,
+      "status": "confirmed",
+      "explorerUrl": "https://explorer.solana.com/tx/r4Dkd002paqEONqxPsJORIIflG5jsgVVvHIF0b7GvJhR8iTeYa9AInuZInta62swHsvxy55A8xfUfPCSetucIda2?cluster=devnet"
+    },
+    {
+      "signature": "51ZTzrGpKibWu4gJgM5oD0Yu8aMl3Qso30OKaLBMgZciaodsM1h0O7IKaHgdFMGhr3xK9Z0vhRDOvYKTblXAbMb7",
+      "kali_entity_id": "sol_001bs3",
+      "type": "board_stipend",
+      "amountUsdc": 1000,
+      "blockTime": 1772276491,
+      "fromWallet": "rivertowncf7Hp9YJK8Lm3X2N4P5Q6R7S8T9U0V1W2X3Y",
+      "toWallet": "ykWkTiNFbaImLFcpQxj6uNa34UyoK0rVffDHPvqT1XXh",
+      "recipientId": "ppl_00008p",
+      "reference": {
+        "kind": "board",
+        "id": "ppl_00008p"
+      },
+      "feeLamports": 6139,
+      "feeUsd": 0.03038805,
+      "status": "confirmed",
+      "explorerUrl": "https://explorer.solana.com/tx/51ZTzrGpKibWu4gJgM5oD0Yu8aMl3Qso30OKaLBMgZciaodsM1h0O7IKaHgdFMGhr3xK9Z0vhRDOvYKTblXAbMb7?cluster=devnet"
+    },
+    {
+      "signature": "K1tb30MuG70bdf7KD0A2Xhx6E2IPxmlL62HNd59x6rvV2dxHUAtusahNNRN7MDaoAIclUJlmNNQoysFt6hZDS17M",
+      "kali_entity_id": "sol_001bs4",
+      "type": "vendor_payment",
+      "amountUsdc": 2208,
+      "blockTime": 1768514343,
+      "fromWallet": "rivertowncf7Hp9YJK8Lm3X2N4P5Q6R7S8T9U0V1W2X3Y",
+      "toWallet": "RdWxP4w0cKFaR2xCLUDTZOm3VtcfdKGOHGCosGo9O91q",
+      "recipientId": "org_000054",
+      "reference": {
+        "kind": "vendor",
+        "id": "org_000054"
+      },
+      "feeLamports": 11529,
+      "feeUsd": 0.057068549999999996,
+      "status": "confirmed",
+      "explorerUrl": "https://explorer.solana.com/tx/K1tb30MuG70bdf7KD0A2Xhx6E2IPxmlL62HNd59x6rvV2dxHUAtusahNNRN7MDaoAIclUJlmNNQoysFt6hZDS17M?cluster=devnet"
+    },
+    {
+      "signature": "IuUJ4eu8RFfDKNgI20z8WhdyeLRmdOTzIrsYG3I4S1fB5dXhxVta91RQw3Y6FWNh1XgLQpdbvQAUZMx9IYsa4hVm",
+      "kali_entity_id": "sol_001bs5",
+      "type": "vendor_payment",
+      "amountUsdc": 2137,
+      "blockTime": 1769509405,
+      "fromWallet": "rivertowncf7Hp9YJK8Lm3X2N4P5Q6R7S8T9U0V1W2X3Y",
+      "toWallet": "UlkmHtu25MeXuX0Luj1NX4PzGt1XNd7MELHmQUP8PDyX",
+      "recipientId": "org_00004r",
+      "reference": {
+        "kind": "vendor",
+        "id": "org_00004r"
+      },
+      "feeLamports": 7911,
+      "feeUsd": 0.03915945,
+      "status": "confirmed",
+      "explorerUrl": "https://explorer.solana.com/tx/IuUJ4eu8RFfDKNgI20z8WhdyeLRmdOTzIrsYG3I4S1fB5dXhxVta91RQw3Y6FWNh1XgLQpdbvQAUZMx9IYsa4hVm?cluster=devnet"
+    },
+    {
+      "signature": "ROAuAGwvveb7najgbNeYTWZWINzCYniryNW8B1HFO4sa7QI9tPA9mEKJ8QtesWbFUx7K6eWkO4OG9uDq5PztOZXE",
+      "kali_entity_id": "sol_001bs6",
+      "type": "board_stipend",
+      "amountUsdc": 750,
+      "blockTime": 1777460850,
+      "fromWallet": "rivertowncf7Hp9YJK8Lm3X2N4P5Q6R7S8T9U0V1W2X3Y",
+      "toWallet": "q9hLWPYKKcPQsXPbnQojGZSds0DNdkVZulsLJrYMZD0p",
+      "recipientId": "ppl_000090",
+      "reference": {
+        "kind": "board",
+        "id": "ppl_000090"
+      },
+      "feeLamports": 8702,
+      "feeUsd": 0.04307489999999999,
+      "status": "confirmed",
+      "explorerUrl": "https://explorer.solana.com/tx/ROAuAGwvveb7najgbNeYTWZWINzCYniryNW8B1HFO4sa7QI9tPA9mEKJ8QtesWbFUx7K6eWkO4OG9uDq5PztOZXE?cluster=devnet"
+    },
+    {
+      "signature": "GmGUiGFys5OZ9PLbt64UoUrRu1YGKEf7cTasE6zv9NPLSquxVpMpZBxi9js9FGFRciSrQI4li5oAFIYzlJSunRZe",
+      "kali_entity_id": "sol_001bs7",
+      "type": "vendor_payment",
+      "amountUsdc": 7758,
+      "blockTime": 1775467852,
+      "fromWallet": "rivertowncf7Hp9YJK8Lm3X2N4P5Q6R7S8T9U0V1W2X3Y",
+      "toWallet": "l6mOSWRkc1BlQpO6x7eHHdHHzqAdHlt7tfdqAyoNUdjV",
+      "recipientId": "org_00006f",
+      "reference": {
+        "kind": "vendor",
+        "id": "org_00006f"
+      },
+      "feeLamports": 5576,
+      "feeUsd": 0.027601199999999996,
+      "status": "confirmed",
+      "explorerUrl": "https://explorer.solana.com/tx/GmGUiGFys5OZ9PLbt64UoUrRu1YGKEf7cTasE6zv9NPLSquxVpMpZBxi9js9FGFRciSrQI4li5oAFIYzlJSunRZe?cluster=devnet"
+    },
+    {
+      "signature": "oO4nDodfXTI2dIllP04IRdysLGfBuRKNnI7UvuUpijNJ9Dm3aLArCgV7Do9ZM0KTQYpxYh91ghbJDFyJagm2JIo3",
+      "kali_entity_id": "sol_001bs8",
+      "type": "grant_disbursement",
+      "amountUsdc": 4080,
+      "blockTime": 1766332913,
+      "fromWallet": "rivertowncf7Hp9YJK8Lm3X2N4P5Q6R7S8T9U0V1W2X3Y",
+      "toWallet": "wdUQ1yFvnrDiAKa6nsLtBVZzueqOy50L7YsteycVm4e2",
+      "recipientId": "org_000039",
+      "reference": {
+        "kind": "grant",
+        "id": "grant_000ikw"
+      },
+      "feeLamports": 11152,
+      "feeUsd": 0.05520239999999999,
+      "status": "confirmed",
+      "explorerUrl": "https://explorer.solana.com/tx/oO4nDodfXTI2dIllP04IRdysLGfBuRKNnI7UvuUpijNJ9Dm3aLArCgV7Do9ZM0KTQYpxYh91ghbJDFyJagm2JIo3?cluster=devnet"
+    },
+    {
+      "signature": "vxdL9URultmRqEWzTqflgbGCLSpTkVeSOoR0qXXYbXWuRSOko0AoELlXK8R3PopT3ZfRPt5Ms7nAicEqevoEczA6",
+      "kali_entity_id": "sol_001bs9",
+      "type": "vendor_payment",
+      "amountUsdc": 5111,
+      "blockTime": 1774325401,
+      "fromWallet": "rivertowncf7Hp9YJK8Lm3X2N4P5Q6R7S8T9U0V1W2X3Y",
+      "toWallet": "UtjgUNgRYX0L4JSxY8MxP43D0kR9uFNWizPfPjGrIEpg",
+      "recipientId": "org_00004z",
+      "reference": {
+        "kind": "vendor",
+        "id": "org_00004z"
+      },
+      "feeLamports": 7463,
+      "feeUsd": 0.03694185,
+      "status": "confirmed",
+      "explorerUrl": "https://explorer.solana.com/tx/vxdL9URultmRqEWzTqflgbGCLSpTkVeSOoR0qXXYbXWuRSOko0AoELlXK8R3PopT3ZfRPt5Ms7nAicEqevoEczA6?cluster=devnet"
+    },
+    {
+      "signature": "rZ5nyGffjbjaw0PfT4fkNA3R7GNAr5yPFTv7sID9sd1GpNBYegXI58inixYAliRWG3E2oZNyWBcyi1TfssiGa9az",
+      "kali_entity_id": "sol_001bsa",
+      "type": "vendor_payment",
+      "amountUsdc": 243,
+      "blockTime": 1771432504,
+      "fromWallet": "rivertowncf7Hp9YJK8Lm3X2N4P5Q6R7S8T9U0V1W2X3Y",
+      "toWallet": "yoe4WvR5aC6Bfo03KAMYdig0aqgZBAbpjBYlwCS8jkx7",
+      "recipientId": "org_00005q",
+      "reference": {
+        "kind": "vendor",
+        "id": "org_00005q"
+      },
+      "feeLamports": 6180,
+      "feeUsd": 0.030590999999999997,
+      "status": "confirmed",
+      "explorerUrl": "https://explorer.solana.com/tx/rZ5nyGffjbjaw0PfT4fkNA3R7GNAr5yPFTv7sID9sd1GpNBYegXI58inixYAliRWG3E2oZNyWBcyi1TfssiGa9az?cluster=devnet"
+    },
+    {
+      "signature": "OKYmnZHxqe50tXulztHKYrPbNIGK32POfx53iAtBHazpWVAMk3eRiKyWMBwvokM5GCytYVuIo6FOHYJQTT18pySJ",
+      "kali_entity_id": "sol_001bsb",
+      "type": "donor_refund",
+      "amountUsdc": 307,
+      "blockTime": 1768885829,
+      "fromWallet": "rivertowncf7Hp9YJK8Lm3X2N4P5Q6R7S8T9U0V1W2X3Y",
+      "toWallet": "vnNTijfzyOlG0pjbDoiZVSunGkQMIquCsFJvA1eprecv",
+      "recipientId": "ppl_0000sp",
+      "reference": {
+        "kind": "donation",
+        "id": "don_0006u6"
+      },
+      "feeLamports": 9037,
+      "feeUsd": 0.04473314999999999,
+      "status": "confirmed",
+      "explorerUrl": "https://explorer.solana.com/tx/OKYmnZHxqe50tXulztHKYrPbNIGK32POfx53iAtBHazpWVAMk3eRiKyWMBwvokM5GCytYVuIo6FOHYJQTT18pySJ?cluster=devnet"
+    },
+    {
+      "signature": "BCvjeW2wpPkYKLfxASVVquz4vP1L1Rz2GEK1r6LYKKQD56xHj3dABGpl7hwtRj4mPw3TvnO1zwn5XfhDF3Jd4k0C",
+      "kali_entity_id": "sol_001bsc",
+      "type": "donor_refund",
+      "amountUsdc": 399,
+      "blockTime": 1768671910,
+      "fromWallet": "rivertowncf7Hp9YJK8Lm3X2N4P5Q6R7S8T9U0V1W2X3Y",
+      "toWallet": "1rj9WoFmbXKlD25ZnCh2ufuNr0vkeOY66hoRRABlwmrg",
+      "recipientId": "ppl_0003lb",
+      "reference": {
+        "kind": "donation",
+        "id": "don_000i0m"
+      },
+      "feeLamports": 6439,
+      "feeUsd": 0.03187305,
+      "status": "confirmed",
+      "explorerUrl": "https://explorer.solana.com/tx/BCvjeW2wpPkYKLfxASVVquz4vP1L1Rz2GEK1r6LYKKQD56xHj3dABGpl7hwtRj4mPw3TvnO1zwn5XfhDF3Jd4k0C?cluster=devnet"
+    },
+    {
+      "signature": "aHzRG150upf380Izh5agB42tt3GAjSSZG4pSAlcwDh9pVwxQVNAr2eoR4DOlADM0bNYCAnDj2M0PLxyETeZ5lS7P",
+      "kali_entity_id": "sol_001bsd",
+      "type": "donor_refund",
+      "amountUsdc": 406,
+      "blockTime": 1770803938,
+      "fromWallet": "rivertowncf7Hp9YJK8Lm3X2N4P5Q6R7S8T9U0V1W2X3Y",
+      "toWallet": "REQUpZjjInHMIib8qwtMARqJ6qxtysBAai2ZzeWaEV9V",
+      "recipientId": "ppl_0003hf",
+      "reference": {
+        "kind": "donation",
+        "id": "don_000hje"
+      },
+      "feeLamports": 10476,
+      "feeUsd": 0.05185619999999999,
+      "status": "confirmed",
+      "explorerUrl": "https://explorer.solana.com/tx/aHzRG150upf380Izh5agB42tt3GAjSSZG4pSAlcwDh9pVwxQVNAr2eoR4DOlADM0bNYCAnDj2M0PLxyETeZ5lS7P?cluster=devnet"
+    },
+    {
+      "signature": "L3pC1zQqibntThTkv3z7hsqzVGOsyqVazZThtqdKbZzwlAsRuNkxq72YZ2qPWcftCLxbQDswwWNV3GhagjAqWQ3I",
+      "kali_entity_id": "sol_001bse",
+      "type": "board_stipend",
+      "amountUsdc": 750,
+      "blockTime": 1763775036,
+      "fromWallet": "rivertowncf7Hp9YJK8Lm3X2N4P5Q6R7S8T9U0V1W2X3Y",
+      "toWallet": "rRbaEK5F6hrxxxxZkwRpVVy6kIhn5ZsvO2zluKoAOH8g",
+      "recipientId": "ppl_00008n",
+      "reference": {
+        "kind": "board",
+        "id": "ppl_00008n"
+      },
+      "feeLamports": 11307,
+      "feeUsd": 0.05596964999999999,
+      "status": "confirmed",
+      "explorerUrl": "https://explorer.solana.com/tx/L3pC1zQqibntThTkv3z7hsqzVGOsyqVazZThtqdKbZzwlAsRuNkxq72YZ2qPWcftCLxbQDswwWNV3GhagjAqWQ3I?cluster=devnet"
+    },
+    {
+      "signature": "cRZNQby1kKx59SyiusgVnKiXxMv4nj2QdleefJXgSdJY5N7Ta2rJYf5KyFdZii5w9WnXkkXh8M6SM8zzF8muet8m",
+      "kali_entity_id": "sol_001bsf",
+      "type": "vendor_payment",
+      "amountUsdc": 10896,
+      "blockTime": 1767510713,
+      "fromWallet": "rivertowncf7Hp9YJK8Lm3X2N4P5Q6R7S8T9U0V1W2X3Y",
+      "toWallet": "q1uz6PJDpPHkrbqqz3b6xJqV2r9lUKogzn62OTQ0rg5d",
+      "recipientId": "org_00005k",
+      "reference": {
+        "kind": "vendor",
+        "id": "org_00005k"
+      },
+      "feeLamports": 6760,
+      "feeUsd": 0.03346199999999999,
+      "status": "confirmed",
+      "explorerUrl": "https://explorer.solana.com/tx/cRZNQby1kKx59SyiusgVnKiXxMv4nj2QdleefJXgSdJY5N7Ta2rJYf5KyFdZii5w9WnXkkXh8M6SM8zzF8muet8m?cluster=devnet"
+    },
+    {
+      "signature": "0NsJjIXKo175tmo0REcSs7jlKFnfKF7mBFiSJy6Nxbz7eHM9BG1HKkBxP6anAkPW8eg1emC0tIAOkaTEZ7ti6NtR",
+      "kali_entity_id": "sol_001bsg",
+      "type": "board_stipend",
+      "amountUsdc": 500,
+      "blockTime": 1766934966,
+      "fromWallet": "rivertowncf7Hp9YJK8Lm3X2N4P5Q6R7S8T9U0V1W2X3Y",
+      "toWallet": "J1EbyWVbqIIxo2YgCc9doYTahmnTGuE4vOfAy7hL3gCj",
+      "recipientId": "ppl_00008x",
+      "reference": {
+        "kind": "board",
+        "id": "ppl_00008x"
+      },
+      "feeLamports": 8206,
+      "feeUsd": 0.040619699999999995,
+      "status": "confirmed",
+      "explorerUrl": "https://explorer.solana.com/tx/0NsJjIXKo175tmo0REcSs7jlKFnfKF7mBFiSJy6Nxbz7eHM9BG1HKkBxP6anAkPW8eg1emC0tIAOkaTEZ7ti6NtR?cluster=devnet"
+    },
+    {
+      "signature": "pxzKk8iejGstls7jUQhl2DFm7RL7sfAmoq4Ma6gfFuwkVEvVTum3H5pYDJSJSo60QrsxIAAIoVRZL8wvn2en91s0",
+      "kali_entity_id": "sol_001bsh",
+      "type": "grant_disbursement",
+      "amountUsdc": 30206,
+      "blockTime": 1776124066,
+      "fromWallet": "rivertowncf7Hp9YJK8Lm3X2N4P5Q6R7S8T9U0V1W2X3Y",
+      "toWallet": "p1e1MCt2ZmbcK9FcaSLj8cPpdRd3Rb3UO9Dp0W0AsRyD",
+      "recipientId": "org_00003j",
+      "reference": {
+        "kind": "grant",
+        "id": "grant_000il2"
+      },
+      "feeLamports": 10648,
+      "feeUsd": 0.0527076,
+      "status": "confirmed",
+      "explorerUrl": "https://explorer.solana.com/tx/pxzKk8iejGstls7jUQhl2DFm7RL7sfAmoq4Ma6gfFuwkVEvVTum3H5pYDJSJSo60QrsxIAAIoVRZL8wvn2en91s0?cluster=devnet"
+    },
+    {
+      "signature": "wVtwe3KUoJAdz8c9neWAANcXy86BUezjTPASSWANDHT2SpWwLtv9uWCgR479CNd5xdgwdfdVFVcC1mCg4Skcjuhy",
+      "kali_entity_id": "sol_001bsi",
+      "type": "donor_refund",
+      "amountUsdc": 72,
+      "blockTime": 1769821932,
+      "fromWallet": "rivertowncf7Hp9YJK8Lm3X2N4P5Q6R7S8T9U0V1W2X3Y",
+      "toWallet": "eSFMQ0HRFnEPP7XWRpsZRFMfDEukFxDYaY3PySmtLZDU",
+      "recipientId": "ppl_0002f9",
+      "reference": {
+        "kind": "donation",
+        "id": "don_000dbu"
+      },
+      "feeLamports": 6813,
+      "feeUsd": 0.03372435,
+      "status": "confirmed",
+      "explorerUrl": "https://explorer.solana.com/tx/wVtwe3KUoJAdz8c9neWAANcXy86BUezjTPASSWANDHT2SpWwLtv9uWCgR479CNd5xdgwdfdVFVcC1mCg4Skcjuhy?cluster=devnet"
+    },
+    {
+      "signature": "BX20NAMwUkCAHL52YpQb4JuAAXisFwcGET9mbljRStACCw5RcS5ikmzVT37NAFCyOJ1DvgQyFaLQUk7zTRPlXl3H",
+      "kali_entity_id": "sol_001bsj",
+      "type": "vendor_payment",
+      "amountUsdc": 1328,
+      "blockTime": 1776648268,
+      "fromWallet": "rivertowncf7Hp9YJK8Lm3X2N4P5Q6R7S8T9U0V1W2X3Y",
+      "toWallet": "P3NirxZj7kxqGqecMRNLGQW6xXCGUZfyOIl84h6cNkBM",
+      "recipientId": "org_00004v",
+      "reference": {
+        "kind": "vendor",
+        "id": "org_00004v"
+      },
+      "feeLamports": 10108,
+      "feeUsd": 0.0500346,
+      "status": "confirmed",
+      "explorerUrl": "https://explorer.solana.com/tx/BX20NAMwUkCAHL52YpQb4JuAAXisFwcGET9mbljRStACCw5RcS5ikmzVT37NAFCyOJ1DvgQyFaLQUk7zTRPlXl3H?cluster=devnet"
+    },
+    {
+      "signature": "uIzrNtuJ1RY6he7eYXJ8yirov9zCMed1QlWaWO1B2XVo7ceL6NyJ68JFpvV5xTFSgqPP2oBseMpRUzrGvZfAhEt2",
+      "kali_entity_id": "sol_001bsk",
+      "type": "grant_disbursement",
+      "amountUsdc": 10956,
+      "blockTime": 1776978966,
+      "fromWallet": "rivertowncf7Hp9YJK8Lm3X2N4P5Q6R7S8T9U0V1W2X3Y",
+      "toWallet": "ed5uFQidx0qIdHxBv6jmAhjBDLwZlMy09NWV2Kx50qaj",
+      "recipientId": "org_00003r",
+      "reference": {
+        "kind": "grant",
+        "id": "grant_000ijm"
+      },
+      "feeLamports": 10803,
+      "feeUsd": 0.05347485,
+      "status": "confirmed",
+      "explorerUrl": "https://explorer.solana.com/tx/uIzrNtuJ1RY6he7eYXJ8yirov9zCMed1QlWaWO1B2XVo7ceL6NyJ68JFpvV5xTFSgqPP2oBseMpRUzrGvZfAhEt2?cluster=devnet"
+    },
+    {
+      "signature": "2ZoZq9SVNeef37abkbV2wrBqIqZ50bncDL52R6kJNCyFJJt5vXcnwwsW9aQOBLf8Kdw3VC8TblZXVZ0JA0XWKGVb",
+      "kali_entity_id": "sol_001bsl",
+      "type": "donor_refund",
+      "amountUsdc": 273,
+      "blockTime": 1768832604,
+      "fromWallet": "rivertowncf7Hp9YJK8Lm3X2N4P5Q6R7S8T9U0V1W2X3Y",
+      "toWallet": "YJtUPNDovqcjBzo41aUQXI1S6dgZ5Vv10On3rFZvPYSu",
+      "recipientId": "ppl_00017p",
+      "reference": {
+        "kind": "donation",
+        "id": "don_0008gt"
+      },
+      "feeLamports": 7288,
+      "feeUsd": 0.0360756,
+      "status": "confirmed",
+      "explorerUrl": "https://explorer.solana.com/tx/2ZoZq9SVNeef37abkbV2wrBqIqZ50bncDL52R6kJNCyFJJt5vXcnwwsW9aQOBLf8Kdw3VC8TblZXVZ0JA0XWKGVb?cluster=devnet"
+    },
+    {
+      "signature": "1Z8KC6csdpjrGycOodEXSvwJ5DTpgrBlDqfDBiCXbS8gX5F9NJnY9rJvBjLFAyZfzAqEKpRsPC6thimdarVXwfNW",
+      "kali_entity_id": "sol_001bsm",
+      "type": "donor_refund",
+      "amountUsdc": 145,
+      "blockTime": 1772180365,
+      "fromWallet": "rivertowncf7Hp9YJK8Lm3X2N4P5Q6R7S8T9U0V1W2X3Y",
+      "toWallet": "El0mWfFOkeoormWbrzxEqjuhJc9E1ZDgPWi4RC7vd9Fz",
+      "recipientId": "ppl_00024i",
+      "reference": {
+        "kind": "donation",
+        "id": "don_000c4m"
+      },
+      "feeLamports": 10987,
+      "feeUsd": 0.05438565,
+      "status": "confirmed",
+      "explorerUrl": "https://explorer.solana.com/tx/1Z8KC6csdpjrGycOodEXSvwJ5DTpgrBlDqfDBiCXbS8gX5F9NJnY9rJvBjLFAyZfzAqEKpRsPC6thimdarVXwfNW?cluster=devnet"
+    },
+    {
+      "signature": "6TuSNHvxPE4hIyKhwEBYpq9UWSk6iFc1stgr9CeuiKRZrWJsum1HSwzhQhAKRK98c5Z9R9L8manVf19FsU06is8P",
+      "kali_entity_id": "sol_001bsn",
+      "type": "donor_refund",
+      "amountUsdc": 1361,
+      "blockTime": 1768035461,
+      "fromWallet": "rivertowncf7Hp9YJK8Lm3X2N4P5Q6R7S8T9U0V1W2X3Y",
+      "toWallet": "a04Igd6lnAUIZTh1gRvotdQcbWiNi517wq51mNX4NG8k",
+      "recipientId": "ppl_00027m",
+      "reference": {
+        "kind": "donation",
+        "id": "don_000cht"
+      },
+      "feeLamports": 11688,
+      "feeUsd": 0.0578556,
+      "status": "confirmed",
+      "explorerUrl": "https://explorer.solana.com/tx/6TuSNHvxPE4hIyKhwEBYpq9UWSk6iFc1stgr9CeuiKRZrWJsum1HSwzhQhAKRK98c5Z9R9L8manVf19FsU06is8P?cluster=devnet"
+    },
+    {
+      "signature": "MdteSX5f0uKL80N2k997tSaYwKkcONhyqwCEfckgS3ip8AzO0Ca7XIZaFfgTshZ6EDr6e41Qx2e8TFAZwqbqzXcP",
+      "kali_entity_id": "sol_001bso",
+      "type": "vendor_payment",
+      "amountUsdc": 311,
+      "blockTime": 1768409655,
+      "fromWallet": "rivertowncf7Hp9YJK8Lm3X2N4P5Q6R7S8T9U0V1W2X3Y",
+      "toWallet": "Uf4ntVewCJsyUgrg4el4lEilfaLW333ctR8wqNKKpZVM",
+      "recipientId": "org_00005n",
+      "reference": {
+        "kind": "vendor",
+        "id": "org_00005n"
+      },
+      "feeLamports": 7624,
+      "feeUsd": 0.037738799999999996,
+      "status": "confirmed",
+      "explorerUrl": "https://explorer.solana.com/tx/MdteSX5f0uKL80N2k997tSaYwKkcONhyqwCEfckgS3ip8AzO0Ca7XIZaFfgTshZ6EDr6e41Qx2e8TFAZwqbqzXcP?cluster=devnet"
+    },
+    {
+      "signature": "cueluLfZbZmNkP7Yt6W5PLLm9qQNRnnbv7aDWy7ycu0JJsRar2RLnmQlbZcpBMmCkGej5gmUYjULUMBEZnDmm1tt",
+      "kali_entity_id": "sol_001bsp",
+      "type": "vendor_payment",
+      "amountUsdc": 4507,
+      "blockTime": 1771157005,
+      "fromWallet": "rivertowncf7Hp9YJK8Lm3X2N4P5Q6R7S8T9U0V1W2X3Y",
+      "toWallet": "kctvYQe8tDb1nJHxRl9Ne4rtKDhSa4JFuViI3H4cbp11",
+      "recipientId": "org_00004l",
+      "reference": {
+        "kind": "vendor",
+        "id": "org_00004l"
+      },
+      "feeLamports": 9548,
+      "feeUsd": 0.04726259999999999,
+      "status": "confirmed",
+      "explorerUrl": "https://explorer.solana.com/tx/cueluLfZbZmNkP7Yt6W5PLLm9qQNRnnbv7aDWy7ycu0JJsRar2RLnmQlbZcpBMmCkGej5gmUYjULUMBEZnDmm1tt?cluster=devnet"
+    },
+    {
+      "signature": "CuKl9vVk8TecqZLQZ2bOf90UBLeKecmmjR1BkxWx0K4qhNEqxapPhPN2t80LfcXKRZtgttZnJFLpxaBu7XutwgxE",
+      "kali_entity_id": "sol_001bsq",
+      "type": "board_stipend",
+      "amountUsdc": 1000,
+      "blockTime": 1775532687,
+      "fromWallet": "rivertowncf7Hp9YJK8Lm3X2N4P5Q6R7S8T9U0V1W2X3Y",
+      "toWallet": "Qq8qy8A4B6cVh4Ze2hkoXJe97XKchw8qZbFh8JcdgvNY",
+      "recipientId": "ppl_00008x",
+      "reference": {
+        "kind": "board",
+        "id": "ppl_00008x"
+      },
+      "feeLamports": 9860,
+      "feeUsd": 0.048806999999999996,
+      "status": "confirmed",
+      "explorerUrl": "https://explorer.solana.com/tx/CuKl9vVk8TecqZLQZ2bOf90UBLeKecmmjR1BkxWx0K4qhNEqxapPhPN2t80LfcXKRZtgttZnJFLpxaBu7XutwgxE?cluster=devnet"
+    },
+    {
+      "signature": "uYO9iRdqsDnp2PS3h64dwApzovy6Wqss0mQkbBS5DfaQaM6Xsfr35AQ5inYZ73P80ckjjyd7zoEEJDaMEn1JrEcP",
+      "kali_entity_id": "sol_001bsr",
+      "type": "grant_disbursement",
+      "amountUsdc": 10209,
+      "blockTime": 1770012404,
+      "fromWallet": "rivertowncf7Hp9YJK8Lm3X2N4P5Q6R7S8T9U0V1W2X3Y",
+      "toWallet": "8U1XvhFYVgFMv6w1ZRZnYUoXpDRnYyL1MjwToap99DgR",
+      "recipientId": "org_00003o",
+      "reference": {
+        "kind": "grant",
+        "id": "grant_000ilf"
+      },
+      "feeLamports": 10759,
+      "feeUsd": 0.05325704999999999,
+      "status": "confirmed",
+      "explorerUrl": "https://explorer.solana.com/tx/uYO9iRdqsDnp2PS3h64dwApzovy6Wqss0mQkbBS5DfaQaM6Xsfr35AQ5inYZ73P80ckjjyd7zoEEJDaMEn1JrEcP?cluster=devnet"
+    },
+    {
+      "signature": "4TuZZu86cnfnhwhmhG9iPOpri97a8LcYUUtwfVUtg1YdUOlwWvPv9ShhcFzqVy877KwOBcJ3Jj60vY7qqFLYUJIV",
+      "kali_entity_id": "sol_001bss",
+      "type": "donor_refund",
+      "amountUsdc": 627,
+      "blockTime": 1773559747,
+      "fromWallet": "rivertowncf7Hp9YJK8Lm3X2N4P5Q6R7S8T9U0V1W2X3Y",
+      "toWallet": "Wo7UfjoKGrlLwBOdSFpeMfzoRnx9xVkz25TIKvVAhpfZ",
+      "recipientId": "ppl_0001sj",
+      "reference": {
+        "kind": "donation",
+        "id": "don_000atr"
+      },
+      "feeLamports": 9349,
+      "feeUsd": 0.046277549999999994,
+      "status": "confirmed",
+      "explorerUrl": "https://explorer.solana.com/tx/4TuZZu86cnfnhwhmhG9iPOpri97a8LcYUUtwfVUtg1YdUOlwWvPv9ShhcFzqVy877KwOBcJ3Jj60vY7qqFLYUJIV?cluster=devnet"
+    },
+    {
+      "signature": "GoX0uEORA2lacmuPmzUMEr6YheobPteNumSxAtB435KyyhfQZHq4UqMFhZfTNHqmOjQUgj6PcbpoQjYExDrjJ0KX",
+      "kali_entity_id": "sol_001bst",
+      "type": "donor_refund",
+      "amountUsdc": 1745,
+      "blockTime": 1771114949,
+      "fromWallet": "rivertowncf7Hp9YJK8Lm3X2N4P5Q6R7S8T9U0V1W2X3Y",
+      "toWallet": "Qb5qKPjsXr6vJtUnQcAzPbJFJGv5NgjFBilwuJTHp8qB",
+      "recipientId": "ppl_0001b3",
+      "reference": {
+        "kind": "donation",
+        "id": "don_0008ug"
+      },
+      "feeLamports": 5321,
+      "feeUsd": 0.026338949999999996,
+      "status": "confirmed",
+      "explorerUrl": "https://explorer.solana.com/tx/GoX0uEORA2lacmuPmzUMEr6YheobPteNumSxAtB435KyyhfQZHq4UqMFhZfTNHqmOjQUgj6PcbpoQjYExDrjJ0KX?cluster=devnet"
+    },
+    {
+      "signature": "6zHurFsBHhgbjTTm282ea158B4hErTfEjRnQgZ5JNWoOGRT7qMqjtNR6hWlh4OBAbDGipGVorY3e6xAThE70KCJ7",
+      "kali_entity_id": "sol_001bsu",
+      "type": "donor_refund",
+      "amountUsdc": 277,
+      "blockTime": 1776121820,
+      "fromWallet": "rivertowncf7Hp9YJK8Lm3X2N4P5Q6R7S8T9U0V1W2X3Y",
+      "toWallet": "Lts0ENv45c84qq0gg72XeGR0MJiZARoUJF9mjtyuzzpA",
+      "recipientId": "ppl_000162",
+      "reference": {
+        "kind": "donation",
+        "id": "don_0008ap"
+      },
+      "feeLamports": 5815,
+      "feeUsd": 0.028784249999999997,
+      "status": "confirmed",
+      "explorerUrl": "https://explorer.solana.com/tx/6zHurFsBHhgbjTTm282ea158B4hErTfEjRnQgZ5JNWoOGRT7qMqjtNR6hWlh4OBAbDGipGVorY3e6xAThE70KCJ7?cluster=devnet"
+    },
+    {
+      "signature": "IfNbRaWsB89PjhZwRnJk99j5LYYEG3odGf3kGOStwotbqnxDte3RsDsAs9ohbAKZK0PxjXS1annAdzmSj96J7GxW",
+      "kali_entity_id": "sol_001bsv",
+      "type": "vendor_payment",
+      "amountUsdc": 1241,
+      "blockTime": 1775391232,
+      "fromWallet": "rivertowncf7Hp9YJK8Lm3X2N4P5Q6R7S8T9U0V1W2X3Y",
+      "toWallet": "vkEdsPTB4XpIQpt0QrTAKynrXRiZyF0OTD9MG7acxZ3c",
+      "recipientId": "org_000059",
+      "reference": {
+        "kind": "vendor",
+        "id": "org_000059"
+      },
+      "feeLamports": 9163,
+      "feeUsd": 0.04535685,
+      "status": "confirmed",
+      "explorerUrl": "https://explorer.solana.com/tx/IfNbRaWsB89PjhZwRnJk99j5LYYEG3odGf3kGOStwotbqnxDte3RsDsAs9ohbAKZK0PxjXS1annAdzmSj96J7GxW?cluster=devnet"
+    },
+    {
+      "signature": "7M4aRfP6UNsii8dwjcgyfhxvKOLOq80SA7Pks5OkXc1tUhmemaeng18bsw30bhGh8ZUpdKdzTHOGK2zytXO3MHGL",
+      "kali_entity_id": "sol_001bsw",
+      "type": "donor_refund",
+      "amountUsdc": 566,
+      "blockTime": 1765951025,
+      "fromWallet": "rivertowncf7Hp9YJK8Lm3X2N4P5Q6R7S8T9U0V1W2X3Y",
+      "toWallet": "TaE7AZSgHLg9riakDLwtxl5ti00TREf0bCMI7XpNSfzL",
+      "recipientId": "ppl_0003hj",
+      "reference": {
+        "kind": "donation",
+        "id": "don_000hjs"
+      },
+      "feeLamports": 6962,
+      "feeUsd": 0.0344619,
+      "status": "confirmed",
+      "explorerUrl": "https://explorer.solana.com/tx/7M4aRfP6UNsii8dwjcgyfhxvKOLOq80SA7Pks5OkXc1tUhmemaeng18bsw30bhGh8ZUpdKdzTHOGK2zytXO3MHGL?cluster=devnet"
+    },
+    {
+      "signature": "ccKrvqIOlQGb7Jw8ZxEZkeEmj8OLcmz8hf7DI0PCDumM1XDLjqbVbkXdQIOEH0JM06vI1cTGUs6twnxzo4J2KyoJ",
+      "kali_entity_id": "sol_001bsx",
+      "type": "grant_disbursement",
+      "amountUsdc": 1745,
+      "blockTime": 1766188359,
+      "fromWallet": "rivertowncf7Hp9YJK8Lm3X2N4P5Q6R7S8T9U0V1W2X3Y",
+      "toWallet": "1Zr4UfC8gA8A7wh2k2ijtHzec7AuOd6GAYTzfJUNEHr0",
+      "recipientId": "org_000032",
+      "reference": {
+        "kind": "grant",
+        "id": "grant_000iki"
+      },
+      "feeLamports": 6543,
+      "feeUsd": 0.032387849999999996,
+      "status": "confirmed",
+      "explorerUrl": "https://explorer.solana.com/tx/ccKrvqIOlQGb7Jw8ZxEZkeEmj8OLcmz8hf7DI0PCDumM1XDLjqbVbkXdQIOEH0JM06vI1cTGUs6twnxzo4J2KyoJ?cluster=devnet"
+    },
+    {
+      "signature": "7pyIpCyVKhGXtAdhXcs5nFVR0WV9iHejZ4j16qDnpCFYx6t8gop3s4Jz2jzbZAheQAe3x9bwKxZ9SFSMV1zwPzZf",
+      "kali_entity_id": "sol_001bsy",
+      "type": "board_stipend",
+      "amountUsdc": 750,
+      "blockTime": 1771697877,
+      "fromWallet": "rivertowncf7Hp9YJK8Lm3X2N4P5Q6R7S8T9U0V1W2X3Y",
+      "toWallet": "ZBbfXep81SwyzpxU3QF1cwEHblXUDZjD6PVHKbSbnqNF",
+      "recipientId": "ppl_000090",
+      "reference": {
+        "kind": "board",
+        "id": "ppl_000090"
+      },
+      "feeLamports": 5594,
+      "feeUsd": 0.027690299999999998,
+      "status": "confirmed",
+      "explorerUrl": "https://explorer.solana.com/tx/7pyIpCyVKhGXtAdhXcs5nFVR0WV9iHejZ4j16qDnpCFYx6t8gop3s4Jz2jzbZAheQAe3x9bwKxZ9SFSMV1zwPzZf?cluster=devnet"
+    },
+    {
+      "signature": "YMSxRcGqrFBW2sd7siBYcgLgOA6vgDO1JsxserVxZlLMLVGD9rE6fUukGM5hjLw0N1rdVo6jll2uWYrBrNLKYYX1",
+      "kali_entity_id": "sol_001bsz",
+      "type": "donor_refund",
+      "amountUsdc": 63,
+      "blockTime": 1775653700,
+      "fromWallet": "rivertowncf7Hp9YJK8Lm3X2N4P5Q6R7S8T9U0V1W2X3Y",
+      "toWallet": "taw5jfiM8RcTwkqtYoSQYD4EHJ3zBr0mqZyiks4uLZar",
+      "recipientId": "ppl_000368",
+      "reference": {
+        "kind": "donation",
+        "id": "don_000gap"
+      },
+      "feeLamports": 6775,
+      "feeUsd": 0.03353625,
+      "status": "confirmed",
+      "explorerUrl": "https://explorer.solana.com/tx/YMSxRcGqrFBW2sd7siBYcgLgOA6vgDO1JsxserVxZlLMLVGD9rE6fUukGM5hjLw0N1rdVo6jll2uWYrBrNLKYYX1?cluster=devnet"
+    },
+    {
+      "signature": "sMOniC6Hw3WXDz5zmTaJsd4C6wBP2OevT3XIztfgwTHt16A2NTHyJkDsjobZKLhn9SMHITcwshdKaq0F8eF9x9B1",
+      "kali_entity_id": "sol_001bt0",
+      "type": "grant_disbursement",
+      "amountUsdc": 97962,
+      "blockTime": 1768825048,
+      "fromWallet": "rivertowncf7Hp9YJK8Lm3X2N4P5Q6R7S8T9U0V1W2X3Y",
+      "toWallet": "EvjKrVJpvFV6b3uxjYfToyZ4R0D8o6ei3QmgVx4zgziI",
+      "recipientId": "org_00003n",
+      "reference": {
+        "kind": "grant",
+        "id": "grant_000ik2"
+      },
+      "feeLamports": 10081,
+      "feeUsd": 0.04990094999999999,
+      "status": "confirmed",
+      "explorerUrl": "https://explorer.solana.com/tx/sMOniC6Hw3WXDz5zmTaJsd4C6wBP2OevT3XIztfgwTHt16A2NTHyJkDsjobZKLhn9SMHITcwshdKaq0F8eF9x9B1?cluster=devnet"
+    },
+    {
+      "signature": "V8rTWWgoJnseaGFb4zgIKYDR8YhjxkTolDI6cTnRaCXV0MNN0s4i5H36NHFzzPf7tp4j4WLAb9BNGvijOn5nkTGL",
+      "kali_entity_id": "sol_001bt1",
+      "type": "donor_refund",
+      "amountUsdc": 444,
+      "blockTime": 1775941158,
+      "fromWallet": "rivertowncf7Hp9YJK8Lm3X2N4P5Q6R7S8T9U0V1W2X3Y",
+      "toWallet": "4Vh4xX9v8Acak1efeUXCxVMlbfAj7wZFDeKRx90wea7F",
+      "recipientId": "ppl_00028h",
+      "reference": {
+        "kind": "donation",
+        "id": "don_000ckm"
+      },
+      "feeLamports": 5717,
+      "feeUsd": 0.02829915,
+      "status": "confirmed",
+      "explorerUrl": "https://explorer.solana.com/tx/V8rTWWgoJnseaGFb4zgIKYDR8YhjxkTolDI6cTnRaCXV0MNN0s4i5H36NHFzzPf7tp4j4WLAb9BNGvijOn5nkTGL?cluster=devnet"
+    },
+    {
+      "signature": "AXJU3i87nG4TMz8FIumPHZE9B8z2TXmSw2rx509ZLHPmQOWoZxU5tcLHTj83eppjKz8Pw54Z2hH9q9K1BZ5ozYR6",
+      "kali_entity_id": "sol_001bt2",
+      "type": "board_stipend",
+      "amountUsdc": 500,
+      "blockTime": 1773354269,
+      "fromWallet": "rivertowncf7Hp9YJK8Lm3X2N4P5Q6R7S8T9U0V1W2X3Y",
+      "toWallet": "v63jiaEo8Pua3HSePz1Fxxmp050JuqHmpTw5e4nPGxuj",
+      "recipientId": "ppl_00008z",
+      "reference": {
+        "kind": "board",
+        "id": "ppl_00008z"
+      },
+      "feeLamports": 7400,
+      "feeUsd": 0.036629999999999996,
+      "status": "confirmed",
+      "explorerUrl": "https://explorer.solana.com/tx/AXJU3i87nG4TMz8FIumPHZE9B8z2TXmSw2rx509ZLHPmQOWoZxU5tcLHTj83eppjKz8Pw54Z2hH9q9K1BZ5ozYR6?cluster=devnet"
+    },
+    {
+      "signature": "feP7y8QOQKKWlxqB8HtE8czDt0ARj1lZLfYkQzZmNTwEYAowXnQJ6z6rpzp3EjqIdaWoLVkicXP5yj1S8kKNylDV",
+      "kali_entity_id": "sol_001bt3",
+      "type": "grant_disbursement",
+      "amountUsdc": 33005,
+      "blockTime": 1768638917,
+      "fromWallet": "rivertowncf7Hp9YJK8Lm3X2N4P5Q6R7S8T9U0V1W2X3Y",
+      "toWallet": "0dxeutNvtNm0GO55m86ssmWCxkFreJ4OYqbhF5NOvdKu",
+      "recipientId": "org_000039",
+      "reference": {
+        "kind": "grant",
+        "id": "grant_000ilo"
+      },
+      "feeLamports": 8023,
+      "feeUsd": 0.039713849999999995,
+      "status": "confirmed",
+      "explorerUrl": "https://explorer.solana.com/tx/feP7y8QOQKKWlxqB8HtE8czDt0ARj1lZLfYkQzZmNTwEYAowXnQJ6z6rpzp3EjqIdaWoLVkicXP5yj1S8kKNylDV?cluster=devnet"
+    },
+    {
+      "signature": "A8SfJBKQCV20hsHrsANmj5Xlfra2OegrousaFBQFXiA3ZSloodF7GqellMR8Qd2XnsrigT6DkAme5lTyAoV4omgh",
+      "kali_entity_id": "sol_001bt4",
+      "type": "donor_refund",
+      "amountUsdc": 1089,
+      "blockTime": 1768168235,
+      "fromWallet": "rivertowncf7Hp9YJK8Lm3X2N4P5Q6R7S8T9U0V1W2X3Y",
+      "toWallet": "aJ6DLodOgBVpgN4q1BrbmoxKDMFAnfdLSPGJZDW8aBdU",
+      "recipientId": "ppl_0000qx",
+      "reference": {
+        "kind": "donation",
+        "id": "don_0006n4"
+      },
+      "feeLamports": 10795,
+      "feeUsd": 0.05343525,
+      "status": "confirmed",
+      "explorerUrl": "https://explorer.solana.com/tx/A8SfJBKQCV20hsHrsANmj5Xlfra2OegrousaFBQFXiA3ZSloodF7GqellMR8Qd2XnsrigT6DkAme5lTyAoV4omgh?cluster=devnet"
+    },
+    {
+      "signature": "H4kP1CzsDit7YGozuYdLFMVplrAOW1mSz4CNJ3m3puJ3HGff4WdYTlgKmmOCxJwi25Jhmw7sxa80HYxaPaXXL4vP",
+      "kali_entity_id": "sol_001bt5",
+      "type": "grant_disbursement",
+      "amountUsdc": 1708,
+      "blockTime": 1778172768,
+      "fromWallet": "rivertowncf7Hp9YJK8Lm3X2N4P5Q6R7S8T9U0V1W2X3Y",
+      "toWallet": "S74ewwxrkooLDgrDk0BERf17mDzHa0XG1fzNg4HjWYmQ",
+      "recipientId": "org_000043",
+      "reference": {
+        "kind": "grant",
+        "id": "grant_000ijx"
+      },
+      "feeLamports": 7903,
+      "feeUsd": 0.03911985,
+      "status": "confirmed",
+      "explorerUrl": "https://explorer.solana.com/tx/H4kP1CzsDit7YGozuYdLFMVplrAOW1mSz4CNJ3m3puJ3HGff4WdYTlgKmmOCxJwi25Jhmw7sxa80HYxaPaXXL4vP?cluster=devnet"
+    },
+    {
+      "signature": "ECwLfMEXFj6ZMdvih3Fvio15lrUbcU9EdiF5LYedZnbGjcJOBdmPctnFxta2ZvHhmnmZ1vKyIuoEjVRRWepx5KNP",
+      "kali_entity_id": "sol_001bt6",
+      "type": "donor_refund",
+      "amountUsdc": 443,
+      "blockTime": 1777381580,
+      "fromWallet": "rivertowncf7Hp9YJK8Lm3X2N4P5Q6R7S8T9U0V1W2X3Y",
+      "toWallet": "lk7SKtHfDuHKTlKgq1nvtPFklc0EJhVn5D9brkG2hyoz",
+      "recipientId": "ppl_0002kr",
+      "reference": {
+        "kind": "donation",
+        "id": "don_000dxu"
+      },
+      "feeLamports": 8610,
+      "feeUsd": 0.0426195,
+      "status": "confirmed",
+      "explorerUrl": "https://explorer.solana.com/tx/ECwLfMEXFj6ZMdvih3Fvio15lrUbcU9EdiF5LYedZnbGjcJOBdmPctnFxta2ZvHhmnmZ1vKyIuoEjVRRWepx5KNP?cluster=devnet"
+    },
+    {
+      "signature": "v8LmNxFpMSnIBclSDR4EMheTJC3SaTaZl57QGEKg7Q3tkJF0lguicW5JfOTtGoO6AcN9l8haYBysGPI8lo0nHWPt",
+      "kali_entity_id": "sol_001bt7",
+      "type": "vendor_payment",
+      "amountUsdc": 2141,
+      "blockTime": 1767460757,
+      "fromWallet": "rivertowncf7Hp9YJK8Lm3X2N4P5Q6R7S8T9U0V1W2X3Y",
+      "toWallet": "TqBWm1VnDtgSJeaqmrrwdPWHozFFQi2eKCNszKly4uxI",
+      "recipientId": "org_00006h",
+      "reference": {
+        "kind": "vendor",
+        "id": "org_00006h"
+      },
+      "feeLamports": 7747,
+      "feeUsd": 0.03834765,
+      "status": "confirmed",
+      "explorerUrl": "https://explorer.solana.com/tx/v8LmNxFpMSnIBclSDR4EMheTJC3SaTaZl57QGEKg7Q3tkJF0lguicW5JfOTtGoO6AcN9l8haYBysGPI8lo0nHWPt?cluster=devnet"
+    },
+    {
+      "signature": "Tl849SguQXD9mB0TdQyItqBuHxUcVYB689hLUqppOzFfy7J6AJn7bbwO2c6bN7PfVIgOdE6gTGZQrYRH3v7uoW4x",
+      "kali_entity_id": "sol_001bt8",
+      "type": "vendor_payment",
+      "amountUsdc": 4816,
+      "blockTime": 1774473519,
+      "fromWallet": "rivertowncf7Hp9YJK8Lm3X2N4P5Q6R7S8T9U0V1W2X3Y",
+      "toWallet": "GPOIZ2HHcjOzP6xBoiCLTQTWqsBAJz4YtkPPIEAoRwDf",
+      "recipientId": "org_00005s",
+      "reference": {
+        "kind": "vendor",
+        "id": "org_00005s"
+      },
+      "feeLamports": 8754,
+      "feeUsd": 0.0433323,
+      "status": "confirmed",
+      "explorerUrl": "https://explorer.solana.com/tx/Tl849SguQXD9mB0TdQyItqBuHxUcVYB689hLUqppOzFfy7J6AJn7bbwO2c6bN7PfVIgOdE6gTGZQrYRH3v7uoW4x?cluster=devnet"
+    },
+    {
+      "signature": "WW605qOn9EQnuB1CdtyETPXtNma9DwyiDLXHIa11v1aTUt3YLeiMG2mGIpDNRdFL6jBfg5L1CpphMn4sVrUVGcjo",
+      "kali_entity_id": "sol_001bt9",
+      "type": "vendor_payment",
+      "amountUsdc": 862,
+      "blockTime": 1775308604,
+      "fromWallet": "rivertowncf7Hp9YJK8Lm3X2N4P5Q6R7S8T9U0V1W2X3Y",
+      "toWallet": "fHxRKXH3fB4A40u9cmQ5XMG92gwWFQ8s7dzMO3oNBrZU",
+      "recipientId": "org_00004t",
+      "reference": {
+        "kind": "vendor",
+        "id": "org_00004t"
+      },
+      "feeLamports": 5881,
+      "feeUsd": 0.029110949999999997,
+      "status": "confirmed",
+      "explorerUrl": "https://explorer.solana.com/tx/WW605qOn9EQnuB1CdtyETPXtNma9DwyiDLXHIa11v1aTUt3YLeiMG2mGIpDNRdFL6jBfg5L1CpphMn4sVrUVGcjo?cluster=devnet"
+    },
+    {
+      "signature": "GxMDtSB6hBdn83FQiurhSPIB1gw7CzaNExJf9Q4q9j9V0FcbkcIlt6EoZ3edwty6f4xxek2kVKoV8CsViiGkouwp",
+      "kali_entity_id": "sol_001bta",
+      "type": "board_stipend",
+      "amountUsdc": 750,
+      "blockTime": 1769091249,
+      "fromWallet": "rivertowncf7Hp9YJK8Lm3X2N4P5Q6R7S8T9U0V1W2X3Y",
+      "toWallet": "qpwXE5ClbDzag8e8CgZzXQIuNR9IrTPdXQzl5Wv9GidM",
+      "recipientId": "ppl_00008t",
+      "reference": {
+        "kind": "board",
+        "id": "ppl_00008t"
+      },
+      "feeLamports": 9584,
+      "feeUsd": 0.0474408,
+      "status": "confirmed",
+      "explorerUrl": "https://explorer.solana.com/tx/GxMDtSB6hBdn83FQiurhSPIB1gw7CzaNExJf9Q4q9j9V0FcbkcIlt6EoZ3edwty6f4xxek2kVKoV8CsViiGkouwp?cluster=devnet"
+    },
+    {
+      "signature": "iPS6kx4IpavS2O5RahdV4OGKe8Gq2LH40KsacEQk4bIT0PaLRKM2qGMqg9G1nboltj5IvWEvkyB095foXiXDsIdQ",
+      "kali_entity_id": "sol_001btb",
+      "type": "vendor_payment",
+      "amountUsdc": 397,
+      "blockTime": 1775383000,
+      "fromWallet": "rivertowncf7Hp9YJK8Lm3X2N4P5Q6R7S8T9U0V1W2X3Y",
+      "toWallet": "mPADdBGDLe7K3eXggFcbYH1MyPFV5AO2irK6yRGFtUPG",
+      "recipientId": "org_00006g",
+      "reference": {
+        "kind": "vendor",
+        "id": "org_00006g"
+      },
+      "feeLamports": 6752,
+      "feeUsd": 0.0334224,
+      "status": "confirmed",
+      "explorerUrl": "https://explorer.solana.com/tx/iPS6kx4IpavS2O5RahdV4OGKe8Gq2LH40KsacEQk4bIT0PaLRKM2qGMqg9G1nboltj5IvWEvkyB095foXiXDsIdQ?cluster=devnet"
+    },
+    {
+      "signature": "DTvoiDuMqOHIit5M3Giv8k6GcuN9kzdKEpem9UjHBB60rpmCNndR7FEp0D0zIWT05u6F2hpJvn0w3u0J4PQ1ZzPb",
+      "kali_entity_id": "sol_001btc",
+      "type": "board_stipend",
+      "amountUsdc": 500,
+      "blockTime": 1767089430,
+      "fromWallet": "rivertowncf7Hp9YJK8Lm3X2N4P5Q6R7S8T9U0V1W2X3Y",
+      "toWallet": "oxdfsAiVB4qZyIjPma2fYA8MXgPRUPbqL8Fr2aJ8awpD",
+      "recipientId": "ppl_00008n",
+      "reference": {
+        "kind": "board",
+        "id": "ppl_00008n"
+      },
+      "feeLamports": 9324,
+      "feeUsd": 0.046153799999999995,
+      "status": "confirmed",
+      "explorerUrl": "https://explorer.solana.com/tx/DTvoiDuMqOHIit5M3Giv8k6GcuN9kzdKEpem9UjHBB60rpmCNndR7FEp0D0zIWT05u6F2hpJvn0w3u0J4PQ1ZzPb?cluster=devnet"
+    },
+    {
+      "signature": "nYKihPp0YCwXmnvE6SC2I4ImF3JZJ2agH646eEYC8tAVucZDIj4RqmohViE0K5P1IAkXWMamthtQbnbSvYW6wO4L",
+      "kali_entity_id": "sol_001btd",
+      "type": "donor_refund",
+      "amountUsdc": 392,
+      "blockTime": 1768712748,
+      "fromWallet": "rivertowncf7Hp9YJK8Lm3X2N4P5Q6R7S8T9U0V1W2X3Y",
+      "toWallet": "QolJOkmICyyn92ocxmiRmmVsIea0OnG2IMcBra90tlHT",
+      "recipientId": "ppl_00014u",
+      "reference": {
+        "kind": "donation",
+        "id": "don_00085x"
+      },
+      "feeLamports": 6659,
+      "feeUsd": 0.03296205,
+      "status": "confirmed",
+      "explorerUrl": "https://explorer.solana.com/tx/nYKihPp0YCwXmnvE6SC2I4ImF3JZJ2agH646eEYC8tAVucZDIj4RqmohViE0K5P1IAkXWMamthtQbnbSvYW6wO4L?cluster=devnet"
+    },
+    {
+      "signature": "JjVUvfhgy2aUWJGrdvhxB4uANoEnV54ZefGHJ54BNV0yZF30LeA08puLm3PINNSjw8YDEIIdFXAKagVe2byisacO",
+      "kali_entity_id": "sol_001bte",
+      "type": "grant_disbursement",
+      "amountUsdc": 45547,
+      "blockTime": 1768137557,
+      "fromWallet": "rivertowncf7Hp9YJK8Lm3X2N4P5Q6R7S8T9U0V1W2X3Y",
+      "toWallet": "XcYeVJKx43nDDZiRbmnFtaqDtQ7Se1T6ppKKuAHVBhh3",
+      "recipientId": "org_00003p",
+      "reference": {
+        "kind": "grant",
+        "id": "grant_000ik4"
+      },
+      "feeLamports": 7535,
+      "feeUsd": 0.03729825,
+      "status": "confirmed",
+      "explorerUrl": "https://explorer.solana.com/tx/JjVUvfhgy2aUWJGrdvhxB4uANoEnV54ZefGHJ54BNV0yZF30LeA08puLm3PINNSjw8YDEIIdFXAKagVe2byisacO?cluster=devnet"
+    },
+    {
+      "signature": "9qsNEruxORTY27HMEiXIQbxBuFFq0uGk5imD4ZE75zDv3hF29ZJHrYlqsPzuoSz1FqhJpZVP6PFg2zK0OTFbneyv",
+      "kali_entity_id": "sol_001btf",
+      "type": "donor_refund",
+      "amountUsdc": 755,
+      "blockTime": 1768117696,
+      "fromWallet": "rivertowncf7Hp9YJK8Lm3X2N4P5Q6R7S8T9U0V1W2X3Y",
+      "toWallet": "Ks7sGdk1GnpyYgSvU9AFV8OrZI2M38RDaPxxCpM5v9za",
+      "recipientId": "ppl_0001hy",
+      "reference": {
+        "kind": "donation",
+        "id": "don_0009md"
+      },
+      "feeLamports": 11897,
+      "feeUsd": 0.05889014999999999,
+      "status": "confirmed",
+      "explorerUrl": "https://explorer.solana.com/tx/9qsNEruxORTY27HMEiXIQbxBuFFq0uGk5imD4ZE75zDv3hF29ZJHrYlqsPzuoSz1FqhJpZVP6PFg2zK0OTFbneyv?cluster=devnet"
+    },
+    {
+      "signature": "dpIEcZMoiy5ncKkaOxHDBOO53MtBwRV6k7W2OfOTWba9C4IKNMU3UswtJOgkEm6fcOPRvxZ3QlIrkXIOXXUzucHE",
+      "kali_entity_id": "sol_001btg",
+      "type": "grant_disbursement",
+      "amountUsdc": 16356,
+      "blockTime": 1776435931,
+      "fromWallet": "rivertowncf7Hp9YJK8Lm3X2N4P5Q6R7S8T9U0V1W2X3Y",
+      "toWallet": "EPF02C5KisSq3yaeNUWCPcmUMrpdAr2eTBUNLTEZHAc6",
+      "recipientId": "org_000021",
+      "reference": {
+        "kind": "grant",
+        "id": "grant_000ik9"
+      },
+      "feeLamports": 8233,
+      "feeUsd": 0.04075335,
+      "status": "confirmed",
+      "explorerUrl": "https://explorer.solana.com/tx/dpIEcZMoiy5ncKkaOxHDBOO53MtBwRV6k7W2OfOTWba9C4IKNMU3UswtJOgkEm6fcOPRvxZ3QlIrkXIOXXUzucHE?cluster=devnet"
+    },
+    {
+      "signature": "b0nLpGsmNE8u95JlgCWwsgYT9qDuVD2uqBGXKACfBX2SfZWhRY7kVHiAaLp4BzhZMP3lVmhdGswcE0SPqtgg2Tfd",
+      "kali_entity_id": "sol_001bth",
+      "type": "vendor_payment",
+      "amountUsdc": 271,
+      "blockTime": 1764393070,
+      "fromWallet": "rivertowncf7Hp9YJK8Lm3X2N4P5Q6R7S8T9U0V1W2X3Y",
+      "toWallet": "XSefp3UKG8gXW2pWuu0DbQKOTRMQB2fm2EQymcu2wKhd",
+      "recipientId": "org_00006d",
+      "reference": {
+        "kind": "vendor",
+        "id": "org_00006d"
+      },
+      "feeLamports": 9654,
+      "feeUsd": 0.0477873,
+      "status": "confirmed",
+      "explorerUrl": "https://explorer.solana.com/tx/b0nLpGsmNE8u95JlgCWwsgYT9qDuVD2uqBGXKACfBX2SfZWhRY7kVHiAaLp4BzhZMP3lVmhdGswcE0SPqtgg2Tfd?cluster=devnet"
+    },
+    {
+      "signature": "hpZfmyv1gawZditqXwdSlqdE4Wzk2QP6BFH62EdzQXmrwQNJwT1vz0RvS54m4c4TxnjyyglHTTzyLE9CeYaitzgk",
+      "kali_entity_id": "sol_001bti",
+      "type": "grant_disbursement",
+      "amountUsdc": 64573,
+      "blockTime": 1768277773,
+      "fromWallet": "rivertowncf7Hp9YJK8Lm3X2N4P5Q6R7S8T9U0V1W2X3Y",
+      "toWallet": "V2YwNL3iw7BWrPo4b1jamNC36qAMGIRwnQnNBHy5oYel",
+      "recipientId": "org_00003y",
+      "reference": {
+        "kind": "grant",
+        "id": "grant_000ilh"
+      },
+      "feeLamports": 11553,
+      "feeUsd": 0.05718735,
+      "status": "confirmed",
+      "explorerUrl": "https://explorer.solana.com/tx/hpZfmyv1gawZditqXwdSlqdE4Wzk2QP6BFH62EdzQXmrwQNJwT1vz0RvS54m4c4TxnjyyglHTTzyLE9CeYaitzgk?cluster=devnet"
+    },
+    {
+      "signature": "V3sjr5gdFiIqB93vFKaRvlaRejaYcz7cziPBJwV2OYljq3M2Hi4HadDs7B8mkolQw3qiD0Ti7jp2nKR5QddjH9YA",
+      "kali_entity_id": "sol_001btj",
+      "type": "donor_refund",
+      "amountUsdc": 234,
+      "blockTime": 1774238404,
+      "fromWallet": "rivertowncf7Hp9YJK8Lm3X2N4P5Q6R7S8T9U0V1W2X3Y",
+      "toWallet": "ceJdv2cZECdAM8Pm5eo0dOINQNgoxCtYgpmpfbsqAfpU",
+      "recipientId": "ppl_0002b3",
+      "reference": {
+        "kind": "donation",
+        "id": "don_000cw1"
+      },
+      "feeLamports": 10327,
+      "feeUsd": 0.05111865,
+      "status": "confirmed",
+      "explorerUrl": "https://explorer.solana.com/tx/V3sjr5gdFiIqB93vFKaRvlaRejaYcz7cziPBJwV2OYljq3M2Hi4HadDs7B8mkolQw3qiD0Ti7jp2nKR5QddjH9YA?cluster=devnet"
+    },
+    {
+      "signature": "nBHF5zsEG6Jm22jnav202pZEPFpyKLUTwhgBJRMcDtuDvHfecabqGQEnsBCrkvRHgPvuW3hTDXx8oyPEKzdYy5VH",
+      "kali_entity_id": "sol_001btk",
+      "type": "donor_refund",
+      "amountUsdc": 1226,
+      "blockTime": 1764633931,
+      "fromWallet": "rivertowncf7Hp9YJK8Lm3X2N4P5Q6R7S8T9U0V1W2X3Y",
+      "toWallet": "DtLmnnCXCaf2mOoTa67ub6TqCY6ZX1O25Tv07F4gsItP",
+      "recipientId": "ppl_00035i",
+      "reference": {
+        "kind": "donation",
+        "id": "don_000g7u"
+      },
+      "feeLamports": 8116,
+      "feeUsd": 0.04017419999999999,
+      "status": "confirmed",
+      "explorerUrl": "https://explorer.solana.com/tx/nBHF5zsEG6Jm22jnav202pZEPFpyKLUTwhgBJRMcDtuDvHfecabqGQEnsBCrkvRHgPvuW3hTDXx8oyPEKzdYy5VH?cluster=devnet"
+    },
+    {
+      "signature": "NCzubqdn9Z1xj7gc63EH93bqU0VhlVKpKtU0907UtnVNBTBbQrTmkB5iasGwqJeNQrjkTCW0JrtULZWI7pO8hbOq",
+      "kali_entity_id": "sol_001btl",
+      "type": "board_stipend",
+      "amountUsdc": 1000,
+      "blockTime": 1776058304,
+      "fromWallet": "rivertowncf7Hp9YJK8Lm3X2N4P5Q6R7S8T9U0V1W2X3Y",
+      "toWallet": "Pp3fC347Bg3YFxsiHdqfjk0Ei2HwkflszMsdvFPHew18",
+      "recipientId": "ppl_00008s",
+      "reference": {
+        "kind": "board",
+        "id": "ppl_00008s"
+      },
+      "feeLamports": 9782,
+      "feeUsd": 0.0484209,
+      "status": "confirmed",
+      "explorerUrl": "https://explorer.solana.com/tx/NCzubqdn9Z1xj7gc63EH93bqU0VhlVKpKtU0907UtnVNBTBbQrTmkB5iasGwqJeNQrjkTCW0JrtULZWI7pO8hbOq?cluster=devnet"
+    },
+    {
+      "signature": "0p1gvlab7tgwPyckuTnvKGXKYgHQtg1pwsL2SzkQoUUXBMJpEYOXvbGzLYlNhBMDFeIxW3B0xat99yYwcetA3kGt",
+      "kali_entity_id": "sol_001btm",
+      "type": "board_stipend",
+      "amountUsdc": 750,
+      "blockTime": 1765345573,
+      "fromWallet": "rivertowncf7Hp9YJK8Lm3X2N4P5Q6R7S8T9U0V1W2X3Y",
+      "toWallet": "Pmo0omOUdfgnKZPMDqwQLkaa85jCiaBqck6baDgw4f0W",
+      "recipientId": "ppl_00008v",
+      "reference": {
+        "kind": "board",
+        "id": "ppl_00008v"
+      },
+      "feeLamports": 11182,
+      "feeUsd": 0.0553509,
+      "status": "confirmed",
+      "explorerUrl": "https://explorer.solana.com/tx/0p1gvlab7tgwPyckuTnvKGXKYgHQtg1pwsL2SzkQoUUXBMJpEYOXvbGzLYlNhBMDFeIxW3B0xat99yYwcetA3kGt?cluster=devnet"
+    },
+    {
+      "signature": "3pnEylg6NSA5br5knnVBBC0ce4W5AKPTFoCnRoOuxU4jBYAfNj29BlK59pYQNqp6FpFYLg42VVManaNELtqSMBgT",
+      "kali_entity_id": "sol_001btn",
+      "type": "vendor_payment",
+      "amountUsdc": 7807,
+      "blockTime": 1776898767,
+      "fromWallet": "rivertowncf7Hp9YJK8Lm3X2N4P5Q6R7S8T9U0V1W2X3Y",
+      "toWallet": "vkEdsPTB4XpIQpt0QrTAKynrXRiZyF0OTD9MG7acxZ3c",
+      "recipientId": "org_000059",
+      "reference": {
+        "kind": "vendor",
+        "id": "org_000059"
+      },
+      "feeLamports": 6456,
+      "feeUsd": 0.0319572,
+      "status": "confirmed",
+      "explorerUrl": "https://explorer.solana.com/tx/3pnEylg6NSA5br5knnVBBC0ce4W5AKPTFoCnRoOuxU4jBYAfNj29BlK59pYQNqp6FpFYLg42VVManaNELtqSMBgT?cluster=devnet"
+    },
+    {
+      "signature": "ojveah9UN9z5QIz5UHGooqtdKcTI2j5jV1XL3tSzGdESMmM5cBwvnJ5RQTl2pRKTEZxQAgVHLkEUx0Sqt3TwzBJ7",
+      "kali_entity_id": "sol_001bto",
+      "type": "grant_disbursement",
+      "amountUsdc": 1522,
+      "blockTime": 1773754382,
+      "fromWallet": "rivertowncf7Hp9YJK8Lm3X2N4P5Q6R7S8T9U0V1W2X3Y",
+      "toWallet": "Qpf36hYPpgAqzBFSPyocJTucjID4RnhwsfsOn9zSMAlL",
+      "recipientId": "org_00002w",
+      "reference": {
+        "kind": "grant",
+        "id": "grant_000ija"
+      },
+      "feeLamports": 7333,
+      "feeUsd": 0.03629835,
+      "status": "confirmed",
+      "explorerUrl": "https://explorer.solana.com/tx/ojveah9UN9z5QIz5UHGooqtdKcTI2j5jV1XL3tSzGdESMmM5cBwvnJ5RQTl2pRKTEZxQAgVHLkEUx0Sqt3TwzBJ7?cluster=devnet"
+    },
+    {
+      "signature": "dFL5NB6LOHXDA77UvnELvPPj0SIz9aDtEYnXp9q23xoelDi7jzk5ZYFx7CFSQUBKW8Fb8bLjwIKlPg00r3vr0FFW",
+      "kali_entity_id": "sol_001btp",
+      "type": "grant_disbursement",
+      "amountUsdc": 48507,
+      "blockTime": 1769842046,
+      "fromWallet": "rivertowncf7Hp9YJK8Lm3X2N4P5Q6R7S8T9U0V1W2X3Y",
+      "toWallet": "BnGswwkbGukm8LuLl6aXVa7NZshCLc3njIcPG0EbBJzv",
+      "recipientId": "org_000037",
+      "reference": {
+        "kind": "grant",
+        "id": "grant_000ilv"
+      },
+      "feeLamports": 6165,
+      "feeUsd": 0.03051675,
+      "status": "confirmed",
+      "explorerUrl": "https://explorer.solana.com/tx/dFL5NB6LOHXDA77UvnELvPPj0SIz9aDtEYnXp9q23xoelDi7jzk5ZYFx7CFSQUBKW8Fb8bLjwIKlPg00r3vr0FFW?cluster=devnet"
+    },
+    {
+      "signature": "wvJuMdlXsjqa3PwhElhv1WZjWhj6hgMB2qU5CO46lMLDB2dXuns9zZ9XEYaSqAa16ZqQYwkClYIDb0rzm81u3rul",
+      "kali_entity_id": "sol_001btq",
+      "type": "board_stipend",
+      "amountUsdc": 750,
+      "blockTime": 1765357247,
+      "fromWallet": "rivertowncf7Hp9YJK8Lm3X2N4P5Q6R7S8T9U0V1W2X3Y",
+      "toWallet": "gzvLNdLpV5H3Ek2awTE3LoVneXH7uIigFByKdclStnk3",
+      "recipientId": "ppl_00008n",
+      "reference": {
+        "kind": "board",
+        "id": "ppl_00008n"
+      },
+      "feeLamports": 8571,
+      "feeUsd": 0.04242645,
+      "status": "confirmed",
+      "explorerUrl": "https://explorer.solana.com/tx/wvJuMdlXsjqa3PwhElhv1WZjWhj6hgMB2qU5CO46lMLDB2dXuns9zZ9XEYaSqAa16ZqQYwkClYIDb0rzm81u3rul?cluster=devnet"
+    },
+    {
+      "signature": "VpXsj56l5avNZahEEDZDXWnRHIXxPuTy9mRf0AkdxSH9ASvfAuwahWJfQou6giWq7oYhUxAQA2ardBaGrSVWHDu3",
+      "kali_entity_id": "sol_001btr",
+      "type": "donor_refund",
+      "amountUsdc": 431,
+      "blockTime": 1768373420,
+      "fromWallet": "rivertowncf7Hp9YJK8Lm3X2N4P5Q6R7S8T9U0V1W2X3Y",
+      "toWallet": "X9I1CeJ08zj2w3TpGUbpq64MD7NrYZG21ZjEy1Fi0SBc",
+      "recipientId": "ppl_0000rf",
+      "reference": {
+        "kind": "donation",
+        "id": "don_0006p7"
+      },
+      "feeLamports": 10863,
+      "feeUsd": 0.053771849999999996,
+      "status": "confirmed",
+      "explorerUrl": "https://explorer.solana.com/tx/VpXsj56l5avNZahEEDZDXWnRHIXxPuTy9mRf0AkdxSH9ASvfAuwahWJfQou6giWq7oYhUxAQA2ardBaGrSVWHDu3?cluster=devnet"
+    },
+    {
+      "signature": "gNzZvbye16bVi7CSQAPLo9XPxxdqgS7Xlj4UlqKPMJoCLZef9rg6TrJWnMs96nBWMsj1MNsoQ7X6A5xcLxQGdhRv",
+      "kali_entity_id": "sol_001bts",
+      "type": "grant_disbursement",
+      "amountUsdc": 1170,
+      "blockTime": 1776287034,
+      "fromWallet": "rivertowncf7Hp9YJK8Lm3X2N4P5Q6R7S8T9U0V1W2X3Y",
+      "toWallet": "DZnk6k4qmO7IzURjBrqeLJ0zeXpTrDFeiOQPFJ2hsVHm",
+      "recipientId": "org_00002h",
+      "reference": {
+        "kind": "grant",
+        "id": "grant_000iks"
+      },
+      "feeLamports": 11900,
+      "feeUsd": 0.05890499999999999,
+      "status": "confirmed",
+      "explorerUrl": "https://explorer.solana.com/tx/gNzZvbye16bVi7CSQAPLo9XPxxdqgS7Xlj4UlqKPMJoCLZef9rg6TrJWnMs96nBWMsj1MNsoQ7X6A5xcLxQGdhRv?cluster=devnet"
+    },
+    {
+      "signature": "3vy7hUMl0CVd02tPEVLHbU2lFPtIHAkuhsyxizYKXXjDy8UT8hiF3FxI3gXSiMdQFOuNMcNcMkm5vq6wO9PGxw9f",
+      "kali_entity_id": "sol_001btt",
+      "type": "grant_disbursement",
+      "amountUsdc": 46077,
+      "blockTime": 1774283121,
+      "fromWallet": "rivertowncf7Hp9YJK8Lm3X2N4P5Q6R7S8T9U0V1W2X3Y",
+      "toWallet": "phs6OWDJsIGi0VBTzr3QrAenThnk7Q1nd1e7hHskaYCI",
+      "recipientId": "org_00003v",
+      "reference": {
+        "kind": "grant",
+        "id": "grant_000ik8"
+      },
+      "feeLamports": 10677,
+      "feeUsd": 0.05285114999999999,
+      "status": "confirmed",
+      "explorerUrl": "https://explorer.solana.com/tx/3vy7hUMl0CVd02tPEVLHbU2lFPtIHAkuhsyxizYKXXjDy8UT8hiF3FxI3gXSiMdQFOuNMcNcMkm5vq6wO9PGxw9f?cluster=devnet"
+    },
+    {
+      "signature": "QKBwMQvO1wVZJtkgoqicxGlJYmqLQ6NpIuaeAT1SHEH0yAHo6VNZZKUimCZsboUeiV3Fnw1oE7vWQg9WipSiEcmN",
+      "kali_entity_id": "sol_001btu",
+      "type": "grant_disbursement",
+      "amountUsdc": 40970,
+      "blockTime": 1763668659,
+      "fromWallet": "rivertowncf7Hp9YJK8Lm3X2N4P5Q6R7S8T9U0V1W2X3Y",
+      "toWallet": "4KxKoJWTNmqP9W09xY7GXp3V1OTQVIefIy4hy2bArXA9",
+      "recipientId": "org_000043",
+      "reference": {
+        "kind": "grant",
+        "id": "grant_000ikv"
+      },
+      "feeLamports": 8638,
+      "feeUsd": 0.0427581,
+      "status": "confirmed",
+      "explorerUrl": "https://explorer.solana.com/tx/QKBwMQvO1wVZJtkgoqicxGlJYmqLQ6NpIuaeAT1SHEH0yAHo6VNZZKUimCZsboUeiV3Fnw1oE7vWQg9WipSiEcmN?cluster=devnet"
+    },
+    {
+      "signature": "pOeQAmN20dQpYeT93QJNsah5e8W5yTMgek0DLC7v2qVjQIeQiYk7dQTc0CfgjQZEwAe60VuOurtMvHoXRRaqHXXC",
+      "kali_entity_id": "sol_001btv",
+      "type": "vendor_payment",
+      "amountUsdc": 8065,
+      "blockTime": 1771179341,
+      "fromWallet": "rivertowncf7Hp9YJK8Lm3X2N4P5Q6R7S8T9U0V1W2X3Y",
+      "toWallet": "q1uz6PJDpPHkrbqqz3b6xJqV2r9lUKogzn62OTQ0rg5d",
+      "recipientId": "org_00005k",
+      "reference": {
+        "kind": "vendor",
+        "id": "org_00005k"
+      },
+      "feeLamports": 7449,
+      "feeUsd": 0.03687255,
+      "status": "confirmed",
+      "explorerUrl": "https://explorer.solana.com/tx/pOeQAmN20dQpYeT93QJNsah5e8W5yTMgek0DLC7v2qVjQIeQiYk7dQTc0CfgjQZEwAe60VuOurtMvHoXRRaqHXXC?cluster=devnet"
+    },
+    {
+      "signature": "Ykbatg6xVuUCicU0rjFUrUQMckquq4ZHkHIfv1IKbolO8AY4pe9kaIo9YNWSliZXsFjOiGmDlBqZ7MFYG14SNsEP",
+      "kali_entity_id": "sol_001btw",
+      "type": "vendor_payment",
+      "amountUsdc": 3864,
+      "blockTime": 1774836726,
+      "fromWallet": "rivertowncf7Hp9YJK8Lm3X2N4P5Q6R7S8T9U0V1W2X3Y",
+      "toWallet": "FUYcmu0piFvHeVe34lKCHnD3lJu1EIhQyy4yamRpKyss",
+      "recipientId": "org_00006j",
+      "reference": {
+        "kind": "vendor",
+        "id": "org_00006j"
+      },
+      "feeLamports": 6043,
+      "feeUsd": 0.029912849999999998,
+      "status": "confirmed",
+      "explorerUrl": "https://explorer.solana.com/tx/Ykbatg6xVuUCicU0rjFUrUQMckquq4ZHkHIfv1IKbolO8AY4pe9kaIo9YNWSliZXsFjOiGmDlBqZ7MFYG14SNsEP?cluster=devnet"
+    },
+    {
+      "signature": "v9hjGSvflxaOYZG1uQfmvZOUVkBBeN3yvm9sYQFL2f2aTJ3XLCarb7k3OnHeyiiXH5Q5r13Rhy06ZlYEQj04iEG7",
+      "kali_entity_id": "sol_001btx",
+      "type": "grant_disbursement",
+      "amountUsdc": 4423,
+      "blockTime": 1770631414,
+      "fromWallet": "rivertowncf7Hp9YJK8Lm3X2N4P5Q6R7S8T9U0V1W2X3Y",
+      "toWallet": "6ATtzFpvXMxu1QOi1r5oUxylcsAz5DeLD1j5ktK5a1Pj",
+      "recipientId": "org_000038",
+      "reference": {
+        "kind": "grant",
+        "id": "grant_000ilk"
+      },
+      "feeLamports": 8362,
+      "feeUsd": 0.0413919,
+      "status": "confirmed",
+      "explorerUrl": "https://explorer.solana.com/tx/v9hjGSvflxaOYZG1uQfmvZOUVkBBeN3yvm9sYQFL2f2aTJ3XLCarb7k3OnHeyiiXH5Q5r13Rhy06ZlYEQj04iEG7?cluster=devnet"
+    },
+    {
+      "signature": "EqAmjhFe0NczNDwN9CZCkmRJiFMpw6HlZ3LZ064gc4limgoS5ILFTvHmCt1YJ2sHklolcFmMtadHNmyuozWAQTUG",
+      "kali_entity_id": "sol_001bty",
+      "type": "donor_refund",
+      "amountUsdc": 473,
+      "blockTime": 1770130265,
+      "fromWallet": "rivertowncf7Hp9YJK8Lm3X2N4P5Q6R7S8T9U0V1W2X3Y",
+      "toWallet": "B6uXuVIgKpPiRlz1ItlHeMPcDFYUNkxnZoy6t5ILidoB",
+      "recipientId": "ppl_0000f4",
+      "reference": {
+        "kind": "donation",
+        "id": "don_0005bv"
+      },
+      "feeLamports": 7878,
+      "feeUsd": 0.0389961,
+      "status": "confirmed",
+      "explorerUrl": "https://explorer.solana.com/tx/EqAmjhFe0NczNDwN9CZCkmRJiFMpw6HlZ3LZ064gc4limgoS5ILFTvHmCt1YJ2sHklolcFmMtadHNmyuozWAQTUG?cluster=devnet"
+    },
+    {
+      "signature": "MG5cKovWBppCf84cHisoC9ZRkURKmMvgfiavWSGDBJ6n4KiaoKOgb4nphmv7SRFI7MI8xlJ7M6g4u8TPK1vomNBx",
+      "kali_entity_id": "sol_001btz",
+      "type": "donor_refund",
+      "amountUsdc": 622,
+      "blockTime": 1767400998,
+      "fromWallet": "rivertowncf7Hp9YJK8Lm3X2N4P5Q6R7S8T9U0V1W2X3Y",
+      "toWallet": "7LF5H1PHUxD4M06oHyn2GynBbqr1s8BSpeQ2yXGpy4aM",
+      "recipientId": "ppl_0001bo",
+      "reference": {
+        "kind": "donation",
+        "id": "don_0008wg"
+      },
+      "feeLamports": 10997,
+      "feeUsd": 0.05443515,
+      "status": "confirmed",
+      "explorerUrl": "https://explorer.solana.com/tx/MG5cKovWBppCf84cHisoC9ZRkURKmMvgfiavWSGDBJ6n4KiaoKOgb4nphmv7SRFI7MI8xlJ7M6g4u8TPK1vomNBx?cluster=devnet"
+    },
+    {
+      "signature": "h1apRbIMql4ppfr7meszg6RfnSHZKZUo0SJ1IEpDv5V9A8Sl00ooMhEHBchW3EnqqfxCvaRWLnEMcbTthZTQtFt8",
+      "kali_entity_id": "sol_001bu0",
+      "type": "vendor_payment",
+      "amountUsdc": 950,
+      "blockTime": 1774365743,
+      "fromWallet": "rivertowncf7Hp9YJK8Lm3X2N4P5Q6R7S8T9U0V1W2X3Y",
+      "toWallet": "OpJRoFfRdkGgwrFHx4aWy9UmDTYJNLpSZLa7je1miXVo",
+      "recipientId": "org_000064",
+      "reference": {
+        "kind": "vendor",
+        "id": "org_000064"
+      },
+      "feeLamports": 9155,
+      "feeUsd": 0.045317249999999996,
+      "status": "confirmed",
+      "explorerUrl": "https://explorer.solana.com/tx/h1apRbIMql4ppfr7meszg6RfnSHZKZUo0SJ1IEpDv5V9A8Sl00ooMhEHBchW3EnqqfxCvaRWLnEMcbTthZTQtFt8?cluster=devnet"
+    },
+    {
+      "signature": "xGNWvJC4IBb7KxoFRh4i78mpqF1cPlaIBtarPE82JOFeuCffU5FIQtedIZSH3Rey4DGJRGD7QH3JrFDePzh2tHMl",
+      "kali_entity_id": "sol_001bu1",
+      "type": "vendor_payment",
+      "amountUsdc": 857,
+      "blockTime": 1772605802,
+      "fromWallet": "rivertowncf7Hp9YJK8Lm3X2N4P5Q6R7S8T9U0V1W2X3Y",
+      "toWallet": "JFmxvM2YJp1ToDvEqZCvjuIxdVlEr2gJ71srs9uWAvRN",
+      "recipientId": "org_00005m",
+      "reference": {
+        "kind": "vendor",
+        "id": "org_00005m"
+      },
+      "feeLamports": 6758,
+      "feeUsd": 0.0334521,
+      "status": "confirmed",
+      "explorerUrl": "https://explorer.solana.com/tx/xGNWvJC4IBb7KxoFRh4i78mpqF1cPlaIBtarPE82JOFeuCffU5FIQtedIZSH3Rey4DGJRGD7QH3JrFDePzh2tHMl?cluster=devnet"
+    },
+    {
+      "signature": "uUI971dbJZKgY7bNWuTn8NP0rXqjQzDT4LABgN3vvO2DtsmXy8BixAFnZd7Gcf7DKmzZIauih5KMQKtti5jqkw9r",
+      "kali_entity_id": "sol_001bu2",
+      "type": "board_stipend",
+      "amountUsdc": 750,
+      "blockTime": 1773076444,
+      "fromWallet": "rivertowncf7Hp9YJK8Lm3X2N4P5Q6R7S8T9U0V1W2X3Y",
+      "toWallet": "SiGe2nDutW0AS5hX7zRxOG6DJGvjFlzD02xKpUHIq1Qz",
+      "recipientId": "ppl_00008x",
+      "reference": {
+        "kind": "board",
+        "id": "ppl_00008x"
+      },
+      "feeLamports": 6847,
+      "feeUsd": 0.033892649999999996,
+      "status": "confirmed",
+      "explorerUrl": "https://explorer.solana.com/tx/uUI971dbJZKgY7bNWuTn8NP0rXqjQzDT4LABgN3vvO2DtsmXy8BixAFnZd7Gcf7DKmzZIauih5KMQKtti5jqkw9r?cluster=devnet"
+    },
+    {
+      "signature": "obbrHbJjFmJdFgogk5Pl33F2QoZK3rP7vkk5KCkBt2AnWTTmTrQSSpCifIjvb9FVMcyLoyanqC2IZnuFq96bdD6W",
+      "kali_entity_id": "sol_001bu3",
+      "type": "vendor_payment",
+      "amountUsdc": 593,
+      "blockTime": 1765086028,
+      "fromWallet": "rivertowncf7Hp9YJK8Lm3X2N4P5Q6R7S8T9U0V1W2X3Y",
+      "toWallet": "iCx9vuc82TiMoHneYbNZIcB4JzEo2r6ViIq9fDXKDVV5",
+      "recipientId": "org_00004j",
+      "reference": {
+        "kind": "vendor",
+        "id": "org_00004j"
+      },
+      "feeLamports": 10220,
+      "feeUsd": 0.050588999999999995,
+      "status": "confirmed",
+      "explorerUrl": "https://explorer.solana.com/tx/obbrHbJjFmJdFgogk5Pl33F2QoZK3rP7vkk5KCkBt2AnWTTmTrQSSpCifIjvb9FVMcyLoyanqC2IZnuFq96bdD6W?cluster=devnet"
+    },
+    {
+      "signature": "KDJwJqKgLJ2RpVc2xbBJn8fwzWUQMlsoQCImDQCNVBXoSsvYioON69G2eSiVE1ydcMHd7wxDJ7A8v8meoICMkgyA",
+      "kali_entity_id": "sol_001bu4",
+      "type": "grant_disbursement",
+      "amountUsdc": 1998,
+      "blockTime": 1776947933,
+      "fromWallet": "rivertowncf7Hp9YJK8Lm3X2N4P5Q6R7S8T9U0V1W2X3Y",
+      "toWallet": "B9N1BRDfdCVvo3rRA6AZlvyevbnPeASIJKAM2Fl2nncy",
+      "recipientId": "org_00003k",
+      "reference": {
+        "kind": "grant",
+        "id": "grant_000ilu"
+      },
+      "feeLamports": 9315,
+      "feeUsd": 0.04610925,
+      "status": "confirmed",
+      "explorerUrl": "https://explorer.solana.com/tx/KDJwJqKgLJ2RpVc2xbBJn8fwzWUQMlsoQCImDQCNVBXoSsvYioON69G2eSiVE1ydcMHd7wxDJ7A8v8meoICMkgyA?cluster=devnet"
+    },
+    {
+      "signature": "wBfi1xzOPW2Z8FC6kwiQnlX8x9aknSY6L7DXshkzLMEerB2pIesuFiUl3XbANFzK457aRLDSXHbWgBWEFDcYwGBq",
+      "kali_entity_id": "sol_001bu5",
+      "type": "board_stipend",
+      "amountUsdc": 500,
+      "blockTime": 1778221192,
+      "fromWallet": "rivertowncf7Hp9YJK8Lm3X2N4P5Q6R7S8T9U0V1W2X3Y",
+      "toWallet": "s63azM04nMyqb8l6bnaHk1oazBz5BxtyhbgyJygpcEQT",
+      "recipientId": "ppl_000091",
+      "reference": {
+        "kind": "board",
+        "id": "ppl_000091"
+      },
+      "feeLamports": 9932,
+      "feeUsd": 0.0491634,
+      "status": "confirmed",
+      "explorerUrl": "https://explorer.solana.com/tx/wBfi1xzOPW2Z8FC6kwiQnlX8x9aknSY6L7DXshkzLMEerB2pIesuFiUl3XbANFzK457aRLDSXHbWgBWEFDcYwGBq?cluster=devnet"
+    },
+    {
+      "signature": "l8Iox1l8GaU4zLICZAgDNx3dfNpdxGZJIcOKoGkPfwScaFgWcX7fRAmVemB7X6BeG2G5HDWo5K8cCCGr5ojlMoMT",
+      "kali_entity_id": "sol_001bu6",
+      "type": "board_stipend",
+      "amountUsdc": 750,
+      "blockTime": 1772385991,
+      "fromWallet": "rivertowncf7Hp9YJK8Lm3X2N4P5Q6R7S8T9U0V1W2X3Y",
+      "toWallet": "29dUq25ZcJNFf4A2GJ61V5EHkhayuavxUd1Xm8vGaDki",
+      "recipientId": "ppl_000090",
+      "reference": {
+        "kind": "board",
+        "id": "ppl_000090"
+      },
+      "feeLamports": 6433,
+      "feeUsd": 0.03184335,
+      "status": "confirmed",
+      "explorerUrl": "https://explorer.solana.com/tx/l8Iox1l8GaU4zLICZAgDNx3dfNpdxGZJIcOKoGkPfwScaFgWcX7fRAmVemB7X6BeG2G5HDWo5K8cCCGr5ojlMoMT?cluster=devnet"
+    },
+    {
+      "signature": "L9r6l06nC9NrIhYHdXKdSFU0PVRbKuCioWYn7f3hRjqOIgeJOvjOZou2b6XaJZR5KUQZCGQfLcBIdkMQSPMMIuFS",
+      "kali_entity_id": "sol_001bu7",
+      "type": "board_stipend",
+      "amountUsdc": 500,
+      "blockTime": 1775249898,
+      "fromWallet": "rivertowncf7Hp9YJK8Lm3X2N4P5Q6R7S8T9U0V1W2X3Y",
+      "toWallet": "rLJPkgy4JvwbR7h4pJD0HoWE0iWsZ0UsDAnMwBDRFGIK",
+      "recipientId": "ppl_00008t",
+      "reference": {
+        "kind": "board",
+        "id": "ppl_00008t"
+      },
+      "feeLamports": 11015,
+      "feeUsd": 0.054524249999999996,
+      "status": "confirmed",
+      "explorerUrl": "https://explorer.solana.com/tx/L9r6l06nC9NrIhYHdXKdSFU0PVRbKuCioWYn7f3hRjqOIgeJOvjOZou2b6XaJZR5KUQZCGQfLcBIdkMQSPMMIuFS?cluster=devnet"
+    },
+    {
+      "signature": "A0tJszD8WgQhlsfkqJQSiIuwG8chtfumN7IXU8TG1ucnXziGvAq817qpULGRmuQZkjoG4JzmFfkydFLF5jY3rg9y",
+      "kali_entity_id": "sol_001bu8",
+      "type": "vendor_payment",
+      "amountUsdc": 11194,
+      "blockTime": 1776207314,
+      "fromWallet": "rivertowncf7Hp9YJK8Lm3X2N4P5Q6R7S8T9U0V1W2X3Y",
+      "toWallet": "jMEYaKa2f5RPZExbuAqkaPKZtd3XQwLxZcCS2nDp8tGK",
+      "recipientId": "org_00005i",
+      "reference": {
+        "kind": "vendor",
+        "id": "org_00005i"
+      },
+      "feeLamports": 11604,
+      "feeUsd": 0.0574398,
+      "status": "confirmed",
+      "explorerUrl": "https://explorer.solana.com/tx/A0tJszD8WgQhlsfkqJQSiIuwG8chtfumN7IXU8TG1ucnXziGvAq817qpULGRmuQZkjoG4JzmFfkydFLF5jY3rg9y?cluster=devnet"
+    },
+    {
+      "signature": "dPO92lLxSv9hp7FUu8TE7xbHG5pGvFnzSKETbGhZgNbjrFSPY7bLOJWZvAIkAnDHtZ23Ztk0aMsS8Tnxuz4oFCEN",
+      "kali_entity_id": "sol_001bu9",
+      "type": "board_stipend",
+      "amountUsdc": 750,
+      "blockTime": 1770123699,
+      "fromWallet": "rivertowncf7Hp9YJK8Lm3X2N4P5Q6R7S8T9U0V1W2X3Y",
+      "toWallet": "hUmyPQpJ2xtF4Fw5KdvIP9wyOmk2lG2QUI5cXsTmKCCk",
+      "recipientId": "ppl_00008y",
+      "reference": {
+        "kind": "board",
+        "id": "ppl_00008y"
+      },
+      "feeLamports": 5517,
+      "feeUsd": 0.027309149999999997,
+      "status": "confirmed",
+      "explorerUrl": "https://explorer.solana.com/tx/dPO92lLxSv9hp7FUu8TE7xbHG5pGvFnzSKETbGhZgNbjrFSPY7bLOJWZvAIkAnDHtZ23Ztk0aMsS8Tnxuz4oFCEN?cluster=devnet"
+    },
+    {
+      "signature": "ohaP1C6twYxlGMiLtWYN5t4NFZXuZSy6zF3z4me2O6F3mp7ULxA2zCjm54TxcocJTj03ogH5Tmvg0Osj0ZBNgLzE",
+      "kali_entity_id": "sol_001bua",
+      "type": "grant_disbursement",
+      "amountUsdc": 75279,
+      "blockTime": 1767532046,
+      "fromWallet": "rivertowncf7Hp9YJK8Lm3X2N4P5Q6R7S8T9U0V1W2X3Y",
+      "toWallet": "mvNY6UHH4evhLfkL0xX0g5lkvtvjPhlB601B4H7b8FWW",
+      "recipientId": "org_000021",
+      "reference": {
+        "kind": "grant",
+        "id": "grant_000ili"
+      },
+      "feeLamports": 8888,
+      "feeUsd": 0.043995599999999996,
+      "status": "confirmed",
+      "explorerUrl": "https://explorer.solana.com/tx/ohaP1C6twYxlGMiLtWYN5t4NFZXuZSy6zF3z4me2O6F3mp7ULxA2zCjm54TxcocJTj03ogH5Tmvg0Osj0ZBNgLzE?cluster=devnet"
+    },
+    {
+      "signature": "Taw5EF9oT3JCIIQ2rGiyHuegwmJTGZi0Pdr3sttcou36BTxaBSkce8OWsCG5Nfb9j2YdN7akiFpj0tEkdfhlmdkv",
+      "kali_entity_id": "sol_001bub",
+      "type": "grant_disbursement",
+      "amountUsdc": 16358,
+      "blockTime": 1776423834,
+      "fromWallet": "rivertowncf7Hp9YJK8Lm3X2N4P5Q6R7S8T9U0V1W2X3Y",
+      "toWallet": "ffqjYNP1t8qANNIU1f9uZtEwDx8YLFj5OpqOj6ssD5oa",
+      "recipientId": "org_00002y",
+      "reference": {
+        "kind": "grant",
+        "id": "grant_000ik4"
+      },
+      "feeLamports": 10061,
+      "feeUsd": 0.04980194999999999,
+      "status": "confirmed",
+      "explorerUrl": "https://explorer.solana.com/tx/Taw5EF9oT3JCIIQ2rGiyHuegwmJTGZi0Pdr3sttcou36BTxaBSkce8OWsCG5Nfb9j2YdN7akiFpj0tEkdfhlmdkv?cluster=devnet"
+    },
+    {
+      "signature": "zBHyELL6eMXXEY1zJ9yAfUyktgcFr6qSGS9sIlPNTds514FMWb6aLYATsLcMnSQ5pSp41FlruWKaSLdqFCoy67St",
+      "kali_entity_id": "sol_001buc",
+      "type": "vendor_payment",
+      "amountUsdc": 3078,
+      "blockTime": 1770635819,
+      "fromWallet": "rivertowncf7Hp9YJK8Lm3X2N4P5Q6R7S8T9U0V1W2X3Y",
+      "toWallet": "EmXUarRwADgB0t84CNwDT8j4SUruZCMx6djRAtDR4RMr",
+      "recipientId": "org_00004i",
+      "reference": {
+        "kind": "vendor",
+        "id": "org_00004i"
+      },
+      "feeLamports": 10702,
+      "feeUsd": 0.05297489999999999,
+      "status": "confirmed",
+      "explorerUrl": "https://explorer.solana.com/tx/zBHyELL6eMXXEY1zJ9yAfUyktgcFr6qSGS9sIlPNTds514FMWb6aLYATsLcMnSQ5pSp41FlruWKaSLdqFCoy67St?cluster=devnet"
+    },
+    {
+      "signature": "mG3LFfnDU1nbOBRj6QalssxjUayzqhsdKWQrb7SFP1mjdJjwv2c8zjBzZqm6Qyl1qlSeKl6IZ0WAVxCL2OvzwSb1",
+      "kali_entity_id": "sol_001bud",
+      "type": "board_stipend",
+      "amountUsdc": 500,
+      "blockTime": 1777739000,
+      "fromWallet": "rivertowncf7Hp9YJK8Lm3X2N4P5Q6R7S8T9U0V1W2X3Y",
+      "toWallet": "HULRMk1O7SPr0q6Yh9wg1nk4okoBTFtgwKrwUqGLZipE",
+      "recipientId": "ppl_00008q",
+      "reference": {
+        "kind": "board",
+        "id": "ppl_00008q"
+      },
+      "feeLamports": 7087,
+      "feeUsd": 0.03508065,
+      "status": "confirmed",
+      "explorerUrl": "https://explorer.solana.com/tx/mG3LFfnDU1nbOBRj6QalssxjUayzqhsdKWQrb7SFP1mjdJjwv2c8zjBzZqm6Qyl1qlSeKl6IZ0WAVxCL2OvzwSb1?cluster=devnet"
+    },
+    {
+      "signature": "pnEqmOiKM4zov98QjuEGhLu1XAnl2v4UDrHiGVm6GlXt4ZjTU8qTSr4n8gAUfo5AyzFVFzDyg6n8qIDQTxSEgMra",
+      "kali_entity_id": "sol_001bue",
+      "type": "vendor_payment",
+      "amountUsdc": 888,
+      "blockTime": 1770422118,
+      "fromWallet": "rivertowncf7Hp9YJK8Lm3X2N4P5Q6R7S8T9U0V1W2X3Y",
+      "toWallet": "yoe4WvR5aC6Bfo03KAMYdig0aqgZBAbpjBYlwCS8jkx7",
+      "recipientId": "org_00005q",
+      "reference": {
+        "kind": "vendor",
+        "id": "org_00005q"
+      },
+      "feeLamports": 7539,
+      "feeUsd": 0.03731805,
+      "status": "confirmed",
+      "explorerUrl": "https://explorer.solana.com/tx/pnEqmOiKM4zov98QjuEGhLu1XAnl2v4UDrHiGVm6GlXt4ZjTU8qTSr4n8gAUfo5AyzFVFzDyg6n8qIDQTxSEgMra?cluster=devnet"
+    },
+    {
+      "signature": "YPhYUN5lqT2JC0t8OItOZ9HSemMPTODyD4XVOs5WDK7dsKev7lodPCzYFUslQqpAbdwPNgoWRHwlI6NTuQCmNDW6",
+      "kali_entity_id": "sol_001buf",
+      "type": "board_stipend",
+      "amountUsdc": 750,
+      "blockTime": 1766374667,
+      "fromWallet": "rivertowncf7Hp9YJK8Lm3X2N4P5Q6R7S8T9U0V1W2X3Y",
+      "toWallet": "IG3SZFrLiX1KMv36h9VICGjfMyu1dlK7wEJSzHjNsyPS",
+      "recipientId": "ppl_000090",
+      "reference": {
+        "kind": "board",
+        "id": "ppl_000090"
+      },
+      "feeLamports": 10093,
+      "feeUsd": 0.04996035,
+      "status": "confirmed",
+      "explorerUrl": "https://explorer.solana.com/tx/YPhYUN5lqT2JC0t8OItOZ9HSemMPTODyD4XVOs5WDK7dsKev7lodPCzYFUslQqpAbdwPNgoWRHwlI6NTuQCmNDW6?cluster=devnet"
+    },
+    {
+      "signature": "BQQFyGnIcAsH0mQ40FX60r2KV8vBDwvlZVIVNQXauGbyRcl0uuaMyROr7sMV1hVvteWEG0wK3if6nWopVNqv9RU9",
+      "kali_entity_id": "sol_001bug",
+      "type": "vendor_payment",
+      "amountUsdc": 725,
+      "blockTime": 1763177886,
+      "fromWallet": "rivertowncf7Hp9YJK8Lm3X2N4P5Q6R7S8T9U0V1W2X3Y",
+      "toWallet": "6y32aZmJrwnXBJIqciz7ghxWWEBrxzfM8Xhe0lNmhMiz",
+      "recipientId": "org_00006n",
+      "reference": {
+        "kind": "vendor",
+        "id": "org_00006n"
+      },
+      "feeLamports": 11744,
+      "feeUsd": 0.0581328,
+      "status": "confirmed",
+      "explorerUrl": "https://explorer.solana.com/tx/BQQFyGnIcAsH0mQ40FX60r2KV8vBDwvlZVIVNQXauGbyRcl0uuaMyROr7sMV1hVvteWEG0wK3if6nWopVNqv9RU9?cluster=devnet"
+    },
+    {
+      "signature": "PQmtEvbHmiHLPYtCTk9ZZsq7HilwanElXxa0qLSJLgib9ZvD3O0MRxXmlydXT5Er2ippFKrur0NG8nCoKkIgM2DO",
+      "kali_entity_id": "sol_001buh",
+      "type": "board_stipend",
+      "amountUsdc": 1000,
+      "blockTime": 1769651850,
+      "fromWallet": "rivertowncf7Hp9YJK8Lm3X2N4P5Q6R7S8T9U0V1W2X3Y",
+      "toWallet": "fIFSxdT21lcdxzRP1WJz22cDo115XHBU51dJzMqJXEsZ",
+      "recipientId": "ppl_00008q",
+      "reference": {
+        "kind": "board",
+        "id": "ppl_00008q"
+      },
+      "feeLamports": 6899,
+      "feeUsd": 0.034150049999999994,
+      "status": "confirmed",
+      "explorerUrl": "https://explorer.solana.com/tx/PQmtEvbHmiHLPYtCTk9ZZsq7HilwanElXxa0qLSJLgib9ZvD3O0MRxXmlydXT5Er2ippFKrur0NG8nCoKkIgM2DO?cluster=devnet"
+    },
+    {
+      "signature": "6Iy6lFYveyknowZm2aEjJCZUlY7UYrCUwr3FX6LcqmV10pCbOxtjU5X9UPU00Bt6jo3vZIKgBDenilwKtPaBOHIg",
+      "kali_entity_id": "sol_001bui",
+      "type": "vendor_payment",
+      "amountUsdc": 104,
+      "blockTime": 1766608913,
+      "fromWallet": "rivertowncf7Hp9YJK8Lm3X2N4P5Q6R7S8T9U0V1W2X3Y",
+      "toWallet": "JFmxvM2YJp1ToDvEqZCvjuIxdVlEr2gJ71srs9uWAvRN",
+      "recipientId": "org_00005m",
+      "reference": {
+        "kind": "vendor",
+        "id": "org_00005m"
+      },
+      "feeLamports": 8066,
+      "feeUsd": 0.039926699999999996,
+      "status": "confirmed",
+      "explorerUrl": "https://explorer.solana.com/tx/6Iy6lFYveyknowZm2aEjJCZUlY7UYrCUwr3FX6LcqmV10pCbOxtjU5X9UPU00Bt6jo3vZIKgBDenilwKtPaBOHIg?cluster=devnet"
+    },
+    {
+      "signature": "ySQdJKa6ppn5BHahjxENxxRPhKNmzbU1vzBiJzK20eWiF6o6pIWBbIaIGwj9vlU6TCsbX2zIz9Oy62GJ90SplV6j",
+      "kali_entity_id": "sol_001buj",
+      "type": "donor_refund",
+      "amountUsdc": 1817,
+      "blockTime": 1774263500,
+      "fromWallet": "rivertowncf7Hp9YJK8Lm3X2N4P5Q6R7S8T9U0V1W2X3Y",
+      "toWallet": "kGsmCeyOTTGgs99uYTLH6n8c6LjqMZlk2Vdrld9muaXb",
+      "recipientId": "ppl_0003o4",
+      "reference": {
+        "kind": "donation",
+        "id": "don_000ic4"
+      },
+      "feeLamports": 5517,
+      "feeUsd": 0.027309149999999997,
+      "status": "confirmed",
+      "explorerUrl": "https://explorer.solana.com/tx/ySQdJKa6ppn5BHahjxENxxRPhKNmzbU1vzBiJzK20eWiF6o6pIWBbIaIGwj9vlU6TCsbX2zIz9Oy62GJ90SplV6j?cluster=devnet"
+    },
+    {
+      "signature": "w70lQBnLFUnSNX747gXL5vkid9NXLCF2YwjxlO77DIQoQADCngRMp3ITZZfb1UF0NNXpQta5oRlCDLpbUAKLS7ci",
+      "kali_entity_id": "sol_001buk",
+      "type": "board_stipend",
+      "amountUsdc": 750,
+      "blockTime": 1774596227,
+      "fromWallet": "rivertowncf7Hp9YJK8Lm3X2N4P5Q6R7S8T9U0V1W2X3Y",
+      "toWallet": "IJ9nbFPvLOxfN7vrc1fvM6Rzgb0kJpneNfOnvO1I5wVV",
+      "recipientId": "ppl_00008u",
+      "reference": {
+        "kind": "board",
+        "id": "ppl_00008u"
+      },
+      "feeLamports": 10601,
+      "feeUsd": 0.05247494999999999,
+      "status": "confirmed",
+      "explorerUrl": "https://explorer.solana.com/tx/w70lQBnLFUnSNX747gXL5vkid9NXLCF2YwjxlO77DIQoQADCngRMp3ITZZfb1UF0NNXpQta5oRlCDLpbUAKLS7ci?cluster=devnet"
+    },
+    {
+      "signature": "9AXjeKG4RoAQzcyEfLboKFGd4Q8S6gH5NWFZr9YoMh1zP1zfs6w2fm1EisBtNUtbApKfSzoxNzAdSxAp0Y0jOaHS",
+      "kali_entity_id": "sol_001bul",
+      "type": "grant_disbursement",
+      "amountUsdc": 3236,
+      "blockTime": 1777593357,
+      "fromWallet": "rivertowncf7Hp9YJK8Lm3X2N4P5Q6R7S8T9U0V1W2X3Y",
+      "toWallet": "KLCwU68xVTOAe29amMy7qvDASNicj9I34ftbpThCR1Fb",
+      "recipientId": "org_00002i",
+      "reference": {
+        "kind": "grant",
+        "id": "grant_000ika"
+      },
+      "feeLamports": 11081,
+      "feeUsd": 0.054850949999999996,
+      "status": "confirmed",
+      "explorerUrl": "https://explorer.solana.com/tx/9AXjeKG4RoAQzcyEfLboKFGd4Q8S6gH5NWFZr9YoMh1zP1zfs6w2fm1EisBtNUtbApKfSzoxNzAdSxAp0Y0jOaHS?cluster=devnet"
+    },
+    {
+      "signature": "hClPpk3c4AfVV9dtqw160MCqv9pqwqwbFKAKkjls6OYI1z1O4WkjhkYc4MHD7URcSTH8ETbq11vkFCiNca7OJcMs",
+      "kali_entity_id": "sol_001bum",
+      "type": "vendor_payment",
+      "amountUsdc": 2805,
+      "blockTime": 1777886066,
+      "fromWallet": "rivertowncf7Hp9YJK8Lm3X2N4P5Q6R7S8T9U0V1W2X3Y",
+      "toWallet": "qxy3M4ynOEk97kiKDq1cQFRayWWTntFBi6nVsmvUOUvi",
+      "recipientId": "org_000060",
+      "reference": {
+        "kind": "vendor",
+        "id": "org_000060"
+      },
+      "feeLamports": 9258,
+      "feeUsd": 0.045827099999999996,
+      "status": "confirmed",
+      "explorerUrl": "https://explorer.solana.com/tx/hClPpk3c4AfVV9dtqw160MCqv9pqwqwbFKAKkjls6OYI1z1O4WkjhkYc4MHD7URcSTH8ETbq11vkFCiNca7OJcMs?cluster=devnet"
+    },
+    {
+      "signature": "BGvQlOAuXLw5P76G7XD6hPbxSTN2JmxoV6EBxMeTACLdT4PVWzjkYmUIN59NJTyxVUvZDhAFFo3AGQdXng4EvYf1",
+      "kali_entity_id": "sol_001bun",
+      "type": "grant_disbursement",
+      "amountUsdc": 1228,
+      "blockTime": 1772310962,
+      "fromWallet": "rivertowncf7Hp9YJK8Lm3X2N4P5Q6R7S8T9U0V1W2X3Y",
+      "toWallet": "y3Ry3NOYKRf8CuwbapJL22EnJ2MnEostKTkoBldBqKXU",
+      "recipientId": "org_000038",
+      "reference": {
+        "kind": "grant",
+        "id": "grant_000ijn"
+      },
+      "feeLamports": 11053,
+      "feeUsd": 0.05471235,
+      "status": "confirmed",
+      "explorerUrl": "https://explorer.solana.com/tx/BGvQlOAuXLw5P76G7XD6hPbxSTN2JmxoV6EBxMeTACLdT4PVWzjkYmUIN59NJTyxVUvZDhAFFo3AGQdXng4EvYf1?cluster=devnet"
+    },
+    {
+      "signature": "6zsL7r3vuJENZrmi4BH42AIHjKLTWnZamVEp6NnpCyfUrHykJY5TuqvQGWZlDCYHVTfDulPHBpSXOeyAoZQbTwnj",
+      "kali_entity_id": "sol_001buo",
+      "type": "donor_refund",
+      "amountUsdc": 1179,
+      "blockTime": 1771790607,
+      "fromWallet": "rivertowncf7Hp9YJK8Lm3X2N4P5Q6R7S8T9U0V1W2X3Y",
+      "toWallet": "lpGb56fNm23Vn2cegy2URY0Uioq2BMXwXZPNeWA5K5W9",
+      "recipientId": "ppl_00013f",
+      "reference": {
+        "kind": "donation",
+        "id": "don_00080f"
+      },
+      "feeLamports": 11097,
+      "feeUsd": 0.05493014999999999,
+      "status": "confirmed",
+      "explorerUrl": "https://explorer.solana.com/tx/6zsL7r3vuJENZrmi4BH42AIHjKLTWnZamVEp6NnpCyfUrHykJY5TuqvQGWZlDCYHVTfDulPHBpSXOeyAoZQbTwnj?cluster=devnet"
+    },
+    {
+      "signature": "SfV8nmpXWrde4eZ4KYqkIM8ICOw2QVa2IaCp6sPD9hsdezukY4ykWu1uu0JgOieZsmdBZ2Ri9gKl1aWJ13iVnoDg",
+      "kali_entity_id": "sol_001bup",
+      "type": "board_stipend",
+      "amountUsdc": 1000,
+      "blockTime": 1765607451,
+      "fromWallet": "rivertowncf7Hp9YJK8Lm3X2N4P5Q6R7S8T9U0V1W2X3Y",
+      "toWallet": "tHInS2TYC5uwmbaNcoH0StVFK6l6tY2bnVXcGpuaSuQq",
+      "recipientId": "ppl_00008r",
+      "reference": {
+        "kind": "board",
+        "id": "ppl_00008r"
+      },
+      "feeLamports": 6908,
+      "feeUsd": 0.0341946,
+      "status": "confirmed",
+      "explorerUrl": "https://explorer.solana.com/tx/SfV8nmpXWrde4eZ4KYqkIM8ICOw2QVa2IaCp6sPD9hsdezukY4ykWu1uu0JgOieZsmdBZ2Ri9gKl1aWJ13iVnoDg?cluster=devnet"
+    },
+    {
+      "signature": "uUOYECA4N9xVrLQ38wdara8vCASEZGWeJxmFvOKvAVwX1dgg73UdTiACscS9RBVsUjDHoIvKKOZUxwFQpcUXi5Pb",
+      "kali_entity_id": "sol_001buq",
+      "type": "donor_refund",
+      "amountUsdc": 214,
+      "blockTime": 1765928002,
+      "fromWallet": "rivertowncf7Hp9YJK8Lm3X2N4P5Q6R7S8T9U0V1W2X3Y",
+      "toWallet": "sy2R4i5ZPgaBN7wzumWCuAjtYrYilBk42DUEmHlQv5lg",
+      "recipientId": "ppl_000271",
+      "reference": {
+        "kind": "donation",
+        "id": "don_000cfb"
+      },
+      "feeLamports": 10021,
+      "feeUsd": 0.049603949999999994,
+      "status": "confirmed",
+      "explorerUrl": "https://explorer.solana.com/tx/uUOYECA4N9xVrLQ38wdara8vCASEZGWeJxmFvOKvAVwX1dgg73UdTiACscS9RBVsUjDHoIvKKOZUxwFQpcUXi5Pb?cluster=devnet"
+    },
+    {
+      "signature": "xHlEi39b5nZrewtsxwTzWKyDwDEfyXdFIb9Y6YwP9NXETkzraiEHIqA2CSHmNmExji4z0CWbeErSv8KmjKz78vy5",
+      "kali_entity_id": "sol_001bur",
+      "type": "board_stipend",
+      "amountUsdc": 750,
+      "blockTime": 1773859722,
+      "fromWallet": "rivertowncf7Hp9YJK8Lm3X2N4P5Q6R7S8T9U0V1W2X3Y",
+      "toWallet": "YQh1UOqgqlzjDIuHiwfNrHjBIidaiUk67EdXTTRogjaQ",
+      "recipientId": "ppl_00008q",
+      "reference": {
+        "kind": "board",
+        "id": "ppl_00008q"
+      },
+      "feeLamports": 11679,
+      "feeUsd": 0.057811049999999996,
+      "status": "confirmed",
+      "explorerUrl": "https://explorer.solana.com/tx/xHlEi39b5nZrewtsxwTzWKyDwDEfyXdFIb9Y6YwP9NXETkzraiEHIqA2CSHmNmExji4z0CWbeErSv8KmjKz78vy5?cluster=devnet"
+    },
+    {
+      "signature": "um6cvIax0357E6pOUDhCqXT5zGL01Kr9OLmmLXPTiYEr7oTgRzu2SrxQKf5rZS4ycAhKp8TQ1ZFsXSaoT3QRtgQs",
+      "kali_entity_id": "sol_001bus",
+      "type": "donor_refund",
+      "amountUsdc": 57,
+      "blockTime": 1773815163,
+      "fromWallet": "rivertowncf7Hp9YJK8Lm3X2N4P5Q6R7S8T9U0V1W2X3Y",
+      "toWallet": "GkIRSQ29tx4ef9xUc4MzxnoyjBRxID934oqBWrWqwx2R",
+      "recipientId": "ppl_0003b9",
+      "reference": {
+        "kind": "donation",
+        "id": "don_000gux"
+      },
+      "feeLamports": 7632,
+      "feeUsd": 0.0377784,
+      "status": "confirmed",
+      "explorerUrl": "https://explorer.solana.com/tx/um6cvIax0357E6pOUDhCqXT5zGL01Kr9OLmmLXPTiYEr7oTgRzu2SrxQKf5rZS4ycAhKp8TQ1ZFsXSaoT3QRtgQs?cluster=devnet"
+    },
+    {
+      "signature": "CzJBfdhipr0Gwe5McJdrcc0gazzhqlNijQDjjBS9aOlI0mXffgBmKwZ0xay8Ae2aO9aHnlfyfachhoEZvoxa0RGI",
+      "kali_entity_id": "sol_001but",
+      "type": "donor_refund",
+      "amountUsdc": 153,
+      "blockTime": 1765333004,
+      "fromWallet": "rivertowncf7Hp9YJK8Lm3X2N4P5Q6R7S8T9U0V1W2X3Y",
+      "toWallet": "Vf1oNUNtmPYvdxXop0XTaV5xIYIspgwc7kdFan0IFB9j",
+      "recipientId": "ppl_0002gv",
+      "reference": {
+        "kind": "donation",
+        "id": "don_000di6"
+      },
+      "feeLamports": 8734,
+      "feeUsd": 0.043233299999999995,
+      "status": "confirmed",
+      "explorerUrl": "https://explorer.solana.com/tx/CzJBfdhipr0Gwe5McJdrcc0gazzhqlNijQDjjBS9aOlI0mXffgBmKwZ0xay8Ae2aO9aHnlfyfachhoEZvoxa0RGI?cluster=devnet"
+    },
+    {
+      "signature": "QcVxAcuf9Xe9eSylhNDW5yhl75kib4J5B0iWV2SyyssEjpLziPNc7crE58pyC8msh6RUM1XA3NSelXUf1W6mNAkw",
+      "kali_entity_id": "sol_001buu",
+      "type": "grant_disbursement",
+      "amountUsdc": 9300,
+      "blockTime": 1768678511,
+      "fromWallet": "rivertowncf7Hp9YJK8Lm3X2N4P5Q6R7S8T9U0V1W2X3Y",
+      "toWallet": "40khBQfGgbESwMeObct1ewajg05uNVuCWvQi56D6Yduv",
+      "recipientId": "org_000021",
+      "reference": {
+        "kind": "grant",
+        "id": "grant_000ijo"
+      },
+      "feeLamports": 10535,
+      "feeUsd": 0.05214824999999999,
+      "status": "confirmed",
+      "explorerUrl": "https://explorer.solana.com/tx/QcVxAcuf9Xe9eSylhNDW5yhl75kib4J5B0iWV2SyyssEjpLziPNc7crE58pyC8msh6RUM1XA3NSelXUf1W6mNAkw?cluster=devnet"
+    },
+    {
+      "signature": "kzOTyuHDznpGHNk9cC28H1GY55jYTG0lgTdcvNkPqetiJImbNYTVsaGCInzueN1U9C9ix4FVsBcRAnXP1WowQPcQ",
+      "kali_entity_id": "sol_001buv",
+      "type": "board_stipend",
+      "amountUsdc": 750,
+      "blockTime": 1769826074,
+      "fromWallet": "rivertowncf7Hp9YJK8Lm3X2N4P5Q6R7S8T9U0V1W2X3Y",
+      "toWallet": "NRopg0kzXrzPQiBRoIxhcF6xEVokjzI1vMklQ3T4fkkg",
+      "recipientId": "ppl_00008x",
+      "reference": {
+        "kind": "board",
+        "id": "ppl_00008x"
+      },
+      "feeLamports": 11556,
+      "feeUsd": 0.057202199999999995,
+      "status": "confirmed",
+      "explorerUrl": "https://explorer.solana.com/tx/kzOTyuHDznpGHNk9cC28H1GY55jYTG0lgTdcvNkPqetiJImbNYTVsaGCInzueN1U9C9ix4FVsBcRAnXP1WowQPcQ?cluster=devnet"
+    },
+    {
+      "signature": "LveVbJxGMcrWzzun9wIvvvY4ySgI0d9WXVwg0SPET7qFrHRwg7UbSYSfxbmlV768lDkOeTl9dIO2YjgDb16QGRL3",
+      "kali_entity_id": "sol_001buw",
+      "type": "grant_disbursement",
+      "amountUsdc": 9089,
+      "blockTime": 1767049796,
+      "fromWallet": "rivertowncf7Hp9YJK8Lm3X2N4P5Q6R7S8T9U0V1W2X3Y",
+      "toWallet": "M1SJAvyUb3WCglVY1X7gCtYZLeq723Bp3xyYRRs0iEO0",
+      "recipientId": "org_00002n",
+      "reference": {
+        "kind": "grant",
+        "id": "grant_000ilq"
+      },
+      "feeLamports": 6429,
+      "feeUsd": 0.03182355,
+      "status": "confirmed",
+      "explorerUrl": "https://explorer.solana.com/tx/LveVbJxGMcrWzzun9wIvvvY4ySgI0d9WXVwg0SPET7qFrHRwg7UbSYSfxbmlV768lDkOeTl9dIO2YjgDb16QGRL3?cluster=devnet"
+    },
+    {
+      "signature": "XrIrljim643pdpP3bByCPAzYAsentFoqsy6XenLrl6rsvdi72ZYoXnNLwxr3HXLn0MFi8q7J9rlS4tCEESL7DcF1",
+      "kali_entity_id": "sol_001bux",
+      "type": "vendor_payment",
+      "amountUsdc": 941,
+      "blockTime": 1776613624,
+      "fromWallet": "rivertowncf7Hp9YJK8Lm3X2N4P5Q6R7S8T9U0V1W2X3Y",
+      "toWallet": "OEYpu8q8r8zfREC87ryWtUb5Lt4ZzBV82um3U20tDCAE",
+      "recipientId": "org_00005d",
+      "reference": {
+        "kind": "vendor",
+        "id": "org_00005d"
+      },
+      "feeLamports": 8484,
+      "feeUsd": 0.0419958,
+      "status": "confirmed",
+      "explorerUrl": "https://explorer.solana.com/tx/XrIrljim643pdpP3bByCPAzYAsentFoqsy6XenLrl6rsvdi72ZYoXnNLwxr3HXLn0MFi8q7J9rlS4tCEESL7DcF1?cluster=devnet"
+    },
+    {
+      "signature": "UnVClkPv4fAQyxuMhFqHUy2Y5CVaLYDoYdvCDSSpYOODk2LaIOEs9TZfzs6hAXON7vkYO4FP4fL4aO7L9EGb8T7o",
+      "kali_entity_id": "sol_001buy",
+      "type": "vendor_payment",
+      "amountUsdc": 212,
+      "blockTime": 1772891276,
+      "fromWallet": "rivertowncf7Hp9YJK8Lm3X2N4P5Q6R7S8T9U0V1W2X3Y",
+      "toWallet": "jMEYaKa2f5RPZExbuAqkaPKZtd3XQwLxZcCS2nDp8tGK",
+      "recipientId": "org_00005i",
+      "reference": {
+        "kind": "vendor",
+        "id": "org_00005i"
+      },
+      "feeLamports": 7419,
+      "feeUsd": 0.036724049999999994,
+      "status": "confirmed",
+      "explorerUrl": "https://explorer.solana.com/tx/UnVClkPv4fAQyxuMhFqHUy2Y5CVaLYDoYdvCDSSpYOODk2LaIOEs9TZfzs6hAXON7vkYO4FP4fL4aO7L9EGb8T7o?cluster=devnet"
+    },
+    {
+      "signature": "JMPWKqmWlGoy08sGBcT0TDeOWF9niy79k6Y3x6nIIccqEUYLX1Qja31ghBpiAJ6JMnFyB6GS7rsOH0MJo7j8HpZU",
+      "kali_entity_id": "sol_001buz",
+      "type": "board_stipend",
+      "amountUsdc": 750,
+      "blockTime": 1767388844,
+      "fromWallet": "rivertowncf7Hp9YJK8Lm3X2N4P5Q6R7S8T9U0V1W2X3Y",
+      "toWallet": "OlyFzMHBV9zahlMNL9E7l2Y66bVFLDlrFEJzyoBh8FTc",
+      "recipientId": "ppl_00008u",
+      "reference": {
+        "kind": "board",
+        "id": "ppl_00008u"
+      },
+      "feeLamports": 8083,
+      "feeUsd": 0.04001085,
+      "status": "confirmed",
+      "explorerUrl": "https://explorer.solana.com/tx/JMPWKqmWlGoy08sGBcT0TDeOWF9niy79k6Y3x6nIIccqEUYLX1Qja31ghBpiAJ6JMnFyB6GS7rsOH0MJo7j8HpZU?cluster=devnet"
+    },
+    {
+      "signature": "xeLbNj6KhDcOxNMePHM618NnHlnXFy5VhU7wRLySWdEAXREW3Ii6jDEzz4OAJNsX1js4KM0EoArv7PwrWHJnG4WN",
+      "kali_entity_id": "sol_001bv0",
+      "type": "donor_refund",
+      "amountUsdc": 80,
+      "blockTime": 1768457099,
+      "fromWallet": "rivertowncf7Hp9YJK8Lm3X2N4P5Q6R7S8T9U0V1W2X3Y",
+      "toWallet": "Zs3Fl3rCrZljex4GBRhWdF5nA7G2G1q5rDIeuueRrCQw",
+      "recipientId": "ppl_00019k",
+      "reference": {
+        "kind": "donation",
+        "id": "don_0008ny"
+      },
+      "feeLamports": 8009,
+      "feeUsd": 0.039644549999999994,
+      "status": "confirmed",
+      "explorerUrl": "https://explorer.solana.com/tx/xeLbNj6KhDcOxNMePHM618NnHlnXFy5VhU7wRLySWdEAXREW3Ii6jDEzz4OAJNsX1js4KM0EoArv7PwrWHJnG4WN?cluster=devnet"
+    },
+    {
+      "signature": "OuDF0Gry9H6tZzERMouowFQEQcQkeuFmufY1192mhSAttdGKQP2FSr3WFCtJpv2pbP6j1hs2fLB7TRdK3Q7idB2Q",
+      "kali_entity_id": "sol_001bv1",
+      "type": "board_stipend",
+      "amountUsdc": 750,
+      "blockTime": 1777392564,
+      "fromWallet": "rivertowncf7Hp9YJK8Lm3X2N4P5Q6R7S8T9U0V1W2X3Y",
+      "toWallet": "jY5UWZxG2OHyKMKv88Q9MBjzDEVtyn3XeLox5PebVebO",
+      "recipientId": "ppl_00008z",
+      "reference": {
+        "kind": "board",
+        "id": "ppl_00008z"
+      },
+      "feeLamports": 10479,
+      "feeUsd": 0.051871049999999995,
+      "status": "confirmed",
+      "explorerUrl": "https://explorer.solana.com/tx/OuDF0Gry9H6tZzERMouowFQEQcQkeuFmufY1192mhSAttdGKQP2FSr3WFCtJpv2pbP6j1hs2fLB7TRdK3Q7idB2Q?cluster=devnet"
+    },
+    {
+      "signature": "QWp9sINr0ECvm6YUMK3fjeQ0pwdujGfrx8W1YsJ18yebwCZnmg2XKh0cm3C4P3YH2wtAU8Ts00wtlqt9JieLzuza",
+      "kali_entity_id": "sol_001bv2",
+      "type": "donor_refund",
+      "amountUsdc": 771,
+      "blockTime": 1770677480,
+      "fromWallet": "rivertowncf7Hp9YJK8Lm3X2N4P5Q6R7S8T9U0V1W2X3Y",
+      "toWallet": "P9LlntNbU5niSczOoQeEP45HLosI1veIMIJ2DkGdVdFU",
+      "recipientId": "ppl_0001jl",
+      "reference": {
+        "kind": "donation",
+        "id": "don_0009sf"
+      },
+      "feeLamports": 6996,
+      "feeUsd": 0.0346302,
+      "status": "confirmed",
+      "explorerUrl": "https://explorer.solana.com/tx/QWp9sINr0ECvm6YUMK3fjeQ0pwdujGfrx8W1YsJ18yebwCZnmg2XKh0cm3C4P3YH2wtAU8Ts00wtlqt9JieLzuza?cluster=devnet"
+    },
+    {
+      "signature": "8NByJSbqPoBsNiTTTmrdDGq0PB9pTZ1YVjEctVrkrXxqXe9AmmmCvlWKmrTHx1InUN6LtsTYUw8Sap8Jr5jWUCOK",
+      "kali_entity_id": "sol_001bv3",
+      "type": "vendor_payment",
+      "amountUsdc": 1128,
+      "blockTime": 1772959591,
+      "fromWallet": "rivertowncf7Hp9YJK8Lm3X2N4P5Q6R7S8T9U0V1W2X3Y",
+      "toWallet": "4TPNcYjiUe4GxpMQcbpZC7WoknfMyDSutcdAjqNWAOky",
+      "recipientId": "org_000057",
+      "reference": {
+        "kind": "vendor",
+        "id": "org_000057"
+      },
+      "feeLamports": 5889,
+      "feeUsd": 0.029150549999999997,
+      "status": "confirmed",
+      "explorerUrl": "https://explorer.solana.com/tx/8NByJSbqPoBsNiTTTmrdDGq0PB9pTZ1YVjEctVrkrXxqXe9AmmmCvlWKmrTHx1InUN6LtsTYUw8Sap8Jr5jWUCOK?cluster=devnet"
+    },
+    {
+      "signature": "MpbaAf9jX2iRs6zB9Kz2InXxkQXLgXDh5v913OMtIMVVm8ASxSnZ7dyIZtybjYVQkY00JLEOkJfcDSbCxshuPNRs",
+      "kali_entity_id": "sol_001bv4",
+      "type": "vendor_payment",
+      "amountUsdc": 188,
+      "blockTime": 1767438224,
+      "fromWallet": "rivertowncf7Hp9YJK8Lm3X2N4P5Q6R7S8T9U0V1W2X3Y",
+      "toWallet": "hvPd40XPNNlGFzyZ4O4vyFefukIhwIjuReHo5XrGRdrQ",
+      "recipientId": "org_000063",
+      "reference": {
+        "kind": "vendor",
+        "id": "org_000063"
+      },
+      "feeLamports": 5526,
+      "feeUsd": 0.027353699999999995,
+      "status": "confirmed",
+      "explorerUrl": "https://explorer.solana.com/tx/MpbaAf9jX2iRs6zB9Kz2InXxkQXLgXDh5v913OMtIMVVm8ASxSnZ7dyIZtybjYVQkY00JLEOkJfcDSbCxshuPNRs?cluster=devnet"
+    },
+    {
+      "signature": "0rUqCspZqDIauIFKI88N71hLYFkJ0TdOMRrylI54qJci5cg0zedVJck2A5L7VCH04ieJ8is7b2dMW4jCwsxbMOsw",
+      "kali_entity_id": "sol_001bv5",
+      "type": "board_stipend",
+      "amountUsdc": 750,
+      "blockTime": 1776560233,
+      "fromWallet": "rivertowncf7Hp9YJK8Lm3X2N4P5Q6R7S8T9U0V1W2X3Y",
+      "toWallet": "RhwdZ15TqfCdg8zMWjALsOLnN7RtT61RRH259lUxps9u",
+      "recipientId": "ppl_00008t",
+      "reference": {
+        "kind": "board",
+        "id": "ppl_00008t"
+      },
+      "feeLamports": 11740,
+      "feeUsd": 0.05811299999999999,
+      "status": "confirmed",
+      "explorerUrl": "https://explorer.solana.com/tx/0rUqCspZqDIauIFKI88N71hLYFkJ0TdOMRrylI54qJci5cg0zedVJck2A5L7VCH04ieJ8is7b2dMW4jCwsxbMOsw?cluster=devnet"
+    },
+    {
+      "signature": "URNZkdbK6OEMIttszAqS7RmTrGWdDn6eYjyaTxXpUzQtHyX59DfVCQJADqhOnbZGy9JhM6u5BwTOm5pfjenCxIWX",
+      "kali_entity_id": "sol_001bv6",
+      "type": "board_stipend",
+      "amountUsdc": 750,
+      "blockTime": 1770229816,
+      "fromWallet": "rivertowncf7Hp9YJK8Lm3X2N4P5Q6R7S8T9U0V1W2X3Y",
+      "toWallet": "G91ZSO0xZglX97wUlo7HoRP0GWBvA7xO5SPn0XRkdsgK",
+      "recipientId": "ppl_000090",
+      "reference": {
+        "kind": "board",
+        "id": "ppl_000090"
+      },
+      "feeLamports": 5524,
+      "feeUsd": 0.027343799999999998,
+      "status": "confirmed",
+      "explorerUrl": "https://explorer.solana.com/tx/URNZkdbK6OEMIttszAqS7RmTrGWdDn6eYjyaTxXpUzQtHyX59DfVCQJADqhOnbZGy9JhM6u5BwTOm5pfjenCxIWX?cluster=devnet"
+    },
+    {
+      "signature": "0UrjlMW2EOI5n4jX3EjaGifDv54l7lL2HvkDCna79YlxlU0Rzoo1Ry48pw2VTmJKONiNDnVUusBddk3yVIJGwvaV",
+      "kali_entity_id": "sol_001bv7",
+      "type": "donor_refund",
+      "amountUsdc": 1954,
+      "blockTime": 1774804240,
+      "fromWallet": "rivertowncf7Hp9YJK8Lm3X2N4P5Q6R7S8T9U0V1W2X3Y",
+      "toWallet": "zEA1BRNMdX3muCVtklHWijl3HeW5BwUMn2FuQkYG3a1G",
+      "recipientId": "ppl_0003jq",
+      "reference": {
+        "kind": "donation",
+        "id": "don_000htu"
+      },
+      "feeLamports": 5826,
+      "feeUsd": 0.028838699999999995,
+      "status": "confirmed",
+      "explorerUrl": "https://explorer.solana.com/tx/0UrjlMW2EOI5n4jX3EjaGifDv54l7lL2HvkDCna79YlxlU0Rzoo1Ry48pw2VTmJKONiNDnVUusBddk3yVIJGwvaV?cluster=devnet"
+    },
+    {
+      "signature": "6GmreesNeZMw3FaKHVImS7PEJlLk3RLl0fFmPGDdgwKq2bKUCkoBnvbIcAXsucyvC00cDeEgNk3OUYSZjAF0aD46",
+      "kali_entity_id": "sol_001bv8",
+      "type": "board_stipend",
+      "amountUsdc": 500,
+      "blockTime": 1775299927,
+      "fromWallet": "rivertowncf7Hp9YJK8Lm3X2N4P5Q6R7S8T9U0V1W2X3Y",
+      "toWallet": "OMa0cWv6XH1j5xEuUEIIiLkdzZJFM2r8OCan9UAC9MJC",
+      "recipientId": "ppl_00008y",
+      "reference": {
+        "kind": "board",
+        "id": "ppl_00008y"
+      },
+      "feeLamports": 8565,
+      "feeUsd": 0.04239675,
+      "status": "confirmed",
+      "explorerUrl": "https://explorer.solana.com/tx/6GmreesNeZMw3FaKHVImS7PEJlLk3RLl0fFmPGDdgwKq2bKUCkoBnvbIcAXsucyvC00cDeEgNk3OUYSZjAF0aD46?cluster=devnet"
+    },
+    {
+      "signature": "ZUvEwZFiDiU9B88q5xU40R2H1n4zk0IDt0MjSV0KpprQLtuU9j9gCatUiO5CM5SGlGu2GUvWMOozKnXS2ohiDRa8",
+      "kali_entity_id": "sol_001bv9",
+      "type": "board_stipend",
+      "amountUsdc": 1000,
+      "blockTime": 1764337822,
+      "fromWallet": "rivertowncf7Hp9YJK8Lm3X2N4P5Q6R7S8T9U0V1W2X3Y",
+      "toWallet": "fjZj4aoPn1MHSqXbZRppfyHVEvwOudBHZEvpSlW49bHo",
+      "recipientId": "ppl_00008x",
+      "reference": {
+        "kind": "board",
+        "id": "ppl_00008x"
+      },
+      "feeLamports": 5087,
+      "feeUsd": 0.02518065,
+      "status": "confirmed",
+      "explorerUrl": "https://explorer.solana.com/tx/ZUvEwZFiDiU9B88q5xU40R2H1n4zk0IDt0MjSV0KpprQLtuU9j9gCatUiO5CM5SGlGu2GUvWMOozKnXS2ohiDRa8?cluster=devnet"
+    },
+    {
+      "signature": "mPBPprgj3OOCiwsQTwFPtxhOBeHwTociMVnyx9WO8VVbVFZVvQrn3FH4Mxfm8E0hf8Pwc1aRRBQb7EB1BiDL20YS",
+      "kali_entity_id": "sol_001bva",
+      "type": "vendor_payment",
+      "amountUsdc": 1293,
+      "blockTime": 1769207832,
+      "fromWallet": "rivertowncf7Hp9YJK8Lm3X2N4P5Q6R7S8T9U0V1W2X3Y",
+      "toWallet": "P3NirxZj7kxqGqecMRNLGQW6xXCGUZfyOIl84h6cNkBM",
+      "recipientId": "org_00004v",
+      "reference": {
+        "kind": "vendor",
+        "id": "org_00004v"
+      },
+      "feeLamports": 10853,
+      "feeUsd": 0.053722349999999995,
+      "status": "confirmed",
+      "explorerUrl": "https://explorer.solana.com/tx/mPBPprgj3OOCiwsQTwFPtxhOBeHwTociMVnyx9WO8VVbVFZVvQrn3FH4Mxfm8E0hf8Pwc1aRRBQb7EB1BiDL20YS?cluster=devnet"
+    },
+    {
+      "signature": "Yz4Taji1l2nhEXsIVe0wQVXRbVuiLHUZp7PqU0uSNolxhmzIGdtWaSvVtEvTkjFzrvYUFputU81tSgDs1W6aVePm",
+      "kali_entity_id": "sol_001bvb",
+      "type": "grant_disbursement",
+      "amountUsdc": 2401,
+      "blockTime": 1774217523,
+      "fromWallet": "rivertowncf7Hp9YJK8Lm3X2N4P5Q6R7S8T9U0V1W2X3Y",
+      "toWallet": "UtLzZYlqZeKZwRFhueBORuoO6HThpwhoFlwtYZevGaL4",
+      "recipientId": "org_00002w",
+      "reference": {
+        "kind": "grant",
+        "id": "grant_000ijz"
+      },
+      "feeLamports": 6231,
+      "feeUsd": 0.030843449999999994,
+      "status": "confirmed",
+      "explorerUrl": "https://explorer.solana.com/tx/Yz4Taji1l2nhEXsIVe0wQVXRbVuiLHUZp7PqU0uSNolxhmzIGdtWaSvVtEvTkjFzrvYUFputU81tSgDs1W6aVePm?cluster=devnet"
+    },
+    {
+      "signature": "qtg6e2tQ48FTonJisjiyhjUBXH4PIW9VI3KoLvJjcqmzBGrKzspsSWz6yUTUkCHzRpCXB8yKpgFbq4eq4CimDDmA",
+      "kali_entity_id": "sol_001bvc",
+      "type": "vendor_payment",
+      "amountUsdc": 2180,
+      "blockTime": 1772593142,
+      "fromWallet": "rivertowncf7Hp9YJK8Lm3X2N4P5Q6R7S8T9U0V1W2X3Y",
+      "toWallet": "LsRi0dHWNZeOwS4lQc6YaNZHjAhYYzcGz8lM0rZ1kzJu",
+      "recipientId": "org_00005v",
+      "reference": {
+        "kind": "vendor",
+        "id": "org_00005v"
+      },
+      "feeLamports": 5367,
+      "feeUsd": 0.026566649999999997,
+      "status": "confirmed",
+      "explorerUrl": "https://explorer.solana.com/tx/qtg6e2tQ48FTonJisjiyhjUBXH4PIW9VI3KoLvJjcqmzBGrKzspsSWz6yUTUkCHzRpCXB8yKpgFbq4eq4CimDDmA?cluster=devnet"
+    },
+    {
+      "signature": "1G0Zg9TE5gEjevEa612KiDH5Rla4RrVd04nfQppazdvp6RNzSOCAn9puHqzkmTlw8qw8vK45TCIVqyYMwHrSVUUV",
+      "kali_entity_id": "sol_001bvd",
+      "type": "vendor_payment",
+      "amountUsdc": 284,
+      "blockTime": 1763523747,
+      "fromWallet": "rivertowncf7Hp9YJK8Lm3X2N4P5Q6R7S8T9U0V1W2X3Y",
+      "toWallet": "QHP3NCjcLM0K1fqBnRRlocAwjtJw19UERqoNN53k0Ahf",
+      "recipientId": "org_00005a",
+      "reference": {
+        "kind": "vendor",
+        "id": "org_00005a"
+      },
+      "feeLamports": 9731,
+      "feeUsd": 0.048168449999999995,
+      "status": "confirmed",
+      "explorerUrl": "https://explorer.solana.com/tx/1G0Zg9TE5gEjevEa612KiDH5Rla4RrVd04nfQppazdvp6RNzSOCAn9puHqzkmTlw8qw8vK45TCIVqyYMwHrSVUUV?cluster=devnet"
+    },
+    {
+      "signature": "vnrAM7DxJqs7qnH0D6w7cgCrnP3iJigVX8HrD942wTtHHpMMa09o4TzyoZzvL4YRSTqQdHF5SatnrOR3KbMWXJCs",
+      "kali_entity_id": "sol_001bve",
+      "type": "board_stipend",
+      "amountUsdc": 500,
+      "blockTime": 1778382774,
+      "fromWallet": "rivertowncf7Hp9YJK8Lm3X2N4P5Q6R7S8T9U0V1W2X3Y",
+      "toWallet": "zX2W9FUONPXXJCfbpFbifz88tXOukVz65s9ylQ7NUDKG",
+      "recipientId": "ppl_000092",
+      "reference": {
+        "kind": "board",
+        "id": "ppl_000092"
+      },
+      "feeLamports": 10799,
+      "feeUsd": 0.05345505,
+      "status": "confirmed",
+      "explorerUrl": "https://explorer.solana.com/tx/vnrAM7DxJqs7qnH0D6w7cgCrnP3iJigVX8HrD942wTtHHpMMa09o4TzyoZzvL4YRSTqQdHF5SatnrOR3KbMWXJCs?cluster=devnet"
+    },
+    {
+      "signature": "8JfFyBBsI4JmKywjyxjDc0o5glaiwl0DozONoqTE7F6sjeW4Dh4MKkCdWzSioHFbmxPSxhTMLRZyI0kKwPHmooGJ",
+      "kali_entity_id": "sol_001bvf",
+      "type": "grant_disbursement",
+      "amountUsdc": 73957,
+      "blockTime": 1763601497,
+      "fromWallet": "rivertowncf7Hp9YJK8Lm3X2N4P5Q6R7S8T9U0V1W2X3Y",
+      "toWallet": "i0VmhAktANdyVYGOW8FCmGvhCn0pxwfEhmyVTmiqF1er",
+      "recipientId": "org_00003y",
+      "reference": {
+        "kind": "grant",
+        "id": "grant_000ik4"
+      },
+      "feeLamports": 8895,
+      "feeUsd": 0.04403024999999999,
+      "status": "confirmed",
+      "explorerUrl": "https://explorer.solana.com/tx/8JfFyBBsI4JmKywjyxjDc0o5glaiwl0DozONoqTE7F6sjeW4Dh4MKkCdWzSioHFbmxPSxhTMLRZyI0kKwPHmooGJ?cluster=devnet"
+    },
+    {
+      "signature": "VvNAIBSgOyxRfMaX38RsUAWaZJ5T0M22aPT1pwDROVg1SjJ6O2INeTtBIUZ2Mhui9qWCbxP4k0MOAZNEUk7EBszv",
+      "kali_entity_id": "sol_001bvg",
+      "type": "donor_refund",
+      "amountUsdc": 1931,
+      "blockTime": 1773481926,
+      "fromWallet": "rivertowncf7Hp9YJK8Lm3X2N4P5Q6R7S8T9U0V1W2X3Y",
+      "toWallet": "xYRoxyVh1K4kST5B5maNiPLZM2ZHsRd4mHgohAbHy5N7",
+      "recipientId": "ppl_000140",
+      "reference": {
+        "kind": "donation",
+        "id": "don_00082n"
+      },
+      "feeLamports": 10414,
+      "feeUsd": 0.0515493,
+      "status": "confirmed",
+      "explorerUrl": "https://explorer.solana.com/tx/VvNAIBSgOyxRfMaX38RsUAWaZJ5T0M22aPT1pwDROVg1SjJ6O2INeTtBIUZ2Mhui9qWCbxP4k0MOAZNEUk7EBszv?cluster=devnet"
+    },
+    {
+      "signature": "xYdAaI9LjD3D3uaYenAzin2EcbCflS39jQFtkIQT6Mszb7btlZVfleqm0DerR1fI9QE6VMCIUF09uljUkiN9c6o3",
+      "kali_entity_id": "sol_001bvh",
+      "type": "grant_disbursement",
+      "amountUsdc": 65513,
+      "blockTime": 1774284649,
+      "fromWallet": "rivertowncf7Hp9YJK8Lm3X2N4P5Q6R7S8T9U0V1W2X3Y",
+      "toWallet": "aByko8xv5rwp6uliqEVRWh4aIgtYP48By72idJpm3kYJ",
+      "recipientId": "org_00002k",
+      "reference": {
+        "kind": "grant",
+        "id": "grant_000ilp"
+      },
+      "feeLamports": 8173,
+      "feeUsd": 0.04045635,
+      "status": "confirmed",
+      "explorerUrl": "https://explorer.solana.com/tx/xYdAaI9LjD3D3uaYenAzin2EcbCflS39jQFtkIQT6Mszb7btlZVfleqm0DerR1fI9QE6VMCIUF09uljUkiN9c6o3?cluster=devnet"
+    },
+    {
+      "signature": "gywiMI5TkiSoBjXD81SblnYUxhvKXnCY4cnaRSunwUfk4AHtVVxn1Ke2Zxhhf2Yh03Z7r1xr5QOXrLZiLDyz6VN8",
+      "kali_entity_id": "sol_001bvi",
+      "type": "donor_refund",
+      "amountUsdc": 613,
+      "blockTime": 1768351416,
+      "fromWallet": "rivertowncf7Hp9YJK8Lm3X2N4P5Q6R7S8T9U0V1W2X3Y",
+      "toWallet": "UtjyYZLWRdrKDhzY8TeG664PCsqhKgCkNaLWFc6N54bq",
+      "recipientId": "ppl_0000by",
+      "reference": {
+        "kind": "donation",
+        "id": "don_0004zm"
+      },
+      "feeLamports": 9143,
+      "feeUsd": 0.04525784999999999,
+      "status": "confirmed",
+      "explorerUrl": "https://explorer.solana.com/tx/gywiMI5TkiSoBjXD81SblnYUxhvKXnCY4cnaRSunwUfk4AHtVVxn1Ke2Zxhhf2Yh03Z7r1xr5QOXrLZiLDyz6VN8?cluster=devnet"
+    },
+    {
+      "signature": "3vEmttrIY43mPV1NCMicb6oJQNNbyPMcBS0Nq1R5hj3mNf9usF0MUEVsVf0IWd0Z5CIPBLo4uFbZXl2cP0BgQ0m7",
+      "kali_entity_id": "sol_001bvj",
+      "type": "vendor_payment",
+      "amountUsdc": 1257,
+      "blockTime": 1765327658,
+      "fromWallet": "rivertowncf7Hp9YJK8Lm3X2N4P5Q6R7S8T9U0V1W2X3Y",
+      "toWallet": "EmXUarRwADgB0t84CNwDT8j4SUruZCMx6djRAtDR4RMr",
+      "recipientId": "org_00004i",
+      "reference": {
+        "kind": "vendor",
+        "id": "org_00004i"
+      },
+      "feeLamports": 6813,
+      "feeUsd": 0.03372435,
+      "status": "confirmed",
+      "explorerUrl": "https://explorer.solana.com/tx/3vEmttrIY43mPV1NCMicb6oJQNNbyPMcBS0Nq1R5hj3mNf9usF0MUEVsVf0IWd0Z5CIPBLo4uFbZXl2cP0BgQ0m7?cluster=devnet"
+    },
+    {
+      "signature": "oDTBe9ZrTItrLnhTrstYnUVqeHmg5iPIppAW0ZdnuSbm36Pg1xfXQjk0uvHAZJHOTxa6rt5TKOnxybRXpl9lAdur",
+      "kali_entity_id": "sol_001bvk",
+      "type": "vendor_payment",
+      "amountUsdc": 135,
+      "blockTime": 1774143163,
+      "fromWallet": "rivertowncf7Hp9YJK8Lm3X2N4P5Q6R7S8T9U0V1W2X3Y",
+      "toWallet": "Yoti81yZzRdpQBBB9SNEZLcnBdkLbwIEizKeIB4tzQxX",
+      "recipientId": "org_00004m",
+      "reference": {
+        "kind": "vendor",
+        "id": "org_00004m"
+      },
+      "feeLamports": 6801,
+      "feeUsd": 0.03366495,
+      "status": "confirmed",
+      "explorerUrl": "https://explorer.solana.com/tx/oDTBe9ZrTItrLnhTrstYnUVqeHmg5iPIppAW0ZdnuSbm36Pg1xfXQjk0uvHAZJHOTxa6rt5TKOnxybRXpl9lAdur?cluster=devnet"
+    },
+    {
+      "signature": "Vzk8TLwRknwtFsBEpju4KAExG887HAPL4aBNvfewR0cN6Zeo9z1fVw8BrHaH4uQriNAPrUXQVj5YhbXyoMrpxFeW",
+      "kali_entity_id": "sol_001bvl",
+      "type": "grant_disbursement",
+      "amountUsdc": 4373,
+      "blockTime": 1773431394,
+      "fromWallet": "rivertowncf7Hp9YJK8Lm3X2N4P5Q6R7S8T9U0V1W2X3Y",
+      "toWallet": "8GEBYH8Jyn5VhktItloljU5zw5ycXkv2lsy75hXL6DcA",
+      "recipientId": "org_00002f",
+      "reference": {
+        "kind": "grant",
+        "id": "grant_000ikf"
+      },
+      "feeLamports": 8544,
+      "feeUsd": 0.0422928,
+      "status": "confirmed",
+      "explorerUrl": "https://explorer.solana.com/tx/Vzk8TLwRknwtFsBEpju4KAExG887HAPL4aBNvfewR0cN6Zeo9z1fVw8BrHaH4uQriNAPrUXQVj5YhbXyoMrpxFeW?cluster=devnet"
+    },
+    {
+      "signature": "cxCY1AdPa0rfH6BZ7Q8ab5lRIwJX5Wfd9OhSMNenHNrjcPjaXylTMCrJRzyNxEAydQUclFWttftohLfOEOqNytEa",
+      "kali_entity_id": "sol_001bvm",
+      "type": "board_stipend",
+      "amountUsdc": 1000,
+      "blockTime": 1775340135,
+      "fromWallet": "rivertowncf7Hp9YJK8Lm3X2N4P5Q6R7S8T9U0V1W2X3Y",
+      "toWallet": "VqYdZtzEev8cReO86vREhA7RRQhWloTRocV0hWtGZfS1",
+      "recipientId": "ppl_000091",
+      "reference": {
+        "kind": "board",
+        "id": "ppl_000091"
+      },
+      "feeLamports": 7439,
+      "feeUsd": 0.036823049999999996,
+      "status": "confirmed",
+      "explorerUrl": "https://explorer.solana.com/tx/cxCY1AdPa0rfH6BZ7Q8ab5lRIwJX5Wfd9OhSMNenHNrjcPjaXylTMCrJRzyNxEAydQUclFWttftohLfOEOqNytEa?cluster=devnet"
+    },
+    {
+      "signature": "65AYbeDTh0NNcMTjsksDKIhS8Lph4mW4CHVzV1ilTG6NLPbVCjDD0JFp69aLlBLZ85HJ3R7tGVlNM3Bcgpc1a495",
+      "kali_entity_id": "sol_001bvn",
+      "type": "donor_refund",
+      "amountUsdc": 58,
+      "blockTime": 1772917905,
+      "fromWallet": "rivertowncf7Hp9YJK8Lm3X2N4P5Q6R7S8T9U0V1W2X3Y",
+      "toWallet": "lq8eOQFWf1DC27dHPBZMFoeSYwfGjmq6ckko6KXOZ97a",
+      "recipientId": "ppl_0001pu",
+      "reference": {
+        "kind": "donation",
+        "id": "don_000aji"
+      },
+      "feeLamports": 9237,
+      "feeUsd": 0.04572314999999999,
+      "status": "confirmed",
+      "explorerUrl": "https://explorer.solana.com/tx/65AYbeDTh0NNcMTjsksDKIhS8Lph4mW4CHVzV1ilTG6NLPbVCjDD0JFp69aLlBLZ85HJ3R7tGVlNM3Bcgpc1a495?cluster=devnet"
+    },
+    {
+      "signature": "tuT6QZhYVp6mYGWwkdcraa7rLgCmmjP9Kz5XlaO1oR2wE9GM50fcigj9w0sYZZZ85KBCLwhMKUxFuNipS81L4Fl8",
+      "kali_entity_id": "sol_001bvo",
+      "type": "donor_refund",
+      "amountUsdc": 1275,
+      "blockTime": 1767506655,
+      "fromWallet": "rivertowncf7Hp9YJK8Lm3X2N4P5Q6R7S8T9U0V1W2X3Y",
+      "toWallet": "alEETVspZSYNM1aq4sJwQsfJbkcMEcUP5Bxc5xeHp7po",
+      "recipientId": "ppl_0002nu",
+      "reference": {
+        "kind": "donation",
+        "id": "don_000e97"
+      },
+      "feeLamports": 7097,
+      "feeUsd": 0.03513015,
+      "status": "confirmed",
+      "explorerUrl": "https://explorer.solana.com/tx/tuT6QZhYVp6mYGWwkdcraa7rLgCmmjP9Kz5XlaO1oR2wE9GM50fcigj9w0sYZZZ85KBCLwhMKUxFuNipS81L4Fl8?cluster=devnet"
+    },
+    {
+      "signature": "zNvi1tW0q3KzmPYAxNtJwrK0oiY7txiR4VFghO1u0mmY2KzHypzp8PlBr3r3oI801aw2sUtIqnzObBXbSuUI4VaF",
+      "kali_entity_id": "sol_001bvp",
+      "type": "donor_refund",
+      "amountUsdc": 298,
+      "blockTime": 1768555320,
+      "fromWallet": "rivertowncf7Hp9YJK8Lm3X2N4P5Q6R7S8T9U0V1W2X3Y",
+      "toWallet": "w9AXjf7JX4mKnm1RzMSK2lEFKC7l1rgqPk3gRze2sW37",
+      "recipientId": "ppl_0001jp",
+      "reference": {
+        "kind": "donation",
+        "id": "don_0009sv"
+      },
+      "feeLamports": 5368,
+      "feeUsd": 0.026571599999999997,
+      "status": "confirmed",
+      "explorerUrl": "https://explorer.solana.com/tx/zNvi1tW0q3KzmPYAxNtJwrK0oiY7txiR4VFghO1u0mmY2KzHypzp8PlBr3r3oI801aw2sUtIqnzObBXbSuUI4VaF?cluster=devnet"
+    },
+    {
+      "signature": "q2ro5jDh9rU66Q8ZkA1AmwkqBwWQmiMrTBobPAGf72eOLusCAuHjJ0I9EIVQ6R1wafE9lhQIBq3reqQ9ywRXphCO",
+      "kali_entity_id": "sol_001bvq",
+      "type": "grant_disbursement",
+      "amountUsdc": 2459,
+      "blockTime": 1764575592,
+      "fromWallet": "rivertowncf7Hp9YJK8Lm3X2N4P5Q6R7S8T9U0V1W2X3Y",
+      "toWallet": "6q5JCitpIBBJzbMc76SiWjqE0HaRntA86OakxsDbIAsk",
+      "recipientId": "org_000021",
+      "reference": {
+        "kind": "grant",
+        "id": "grant_000ikj"
+      },
+      "feeLamports": 5901,
+      "feeUsd": 0.029209949999999995,
+      "status": "confirmed",
+      "explorerUrl": "https://explorer.solana.com/tx/q2ro5jDh9rU66Q8ZkA1AmwkqBwWQmiMrTBobPAGf72eOLusCAuHjJ0I9EIVQ6R1wafE9lhQIBq3reqQ9ywRXphCO?cluster=devnet"
+    },
+    {
+      "signature": "gPKvETgYp85GykAP5Pzf68egje4GsTIjg2emMKo3i0x7T6qzEI2ZIqhy9RMTk196gv0GPSF3Qo6ojndPhcT8x0Ov",
+      "kali_entity_id": "sol_001bvr",
+      "type": "donor_refund",
+      "amountUsdc": 660,
+      "blockTime": 1771872230,
+      "fromWallet": "rivertowncf7Hp9YJK8Lm3X2N4P5Q6R7S8T9U0V1W2X3Y",
+      "toWallet": "8PlT9d7qwexHhAqxFbf4pWQvTC75yf7OnKDTuY25SfS6",
+      "recipientId": "ppl_0001xp",
+      "reference": {
+        "kind": "donation",
+        "id": "don_000bep"
+      },
+      "feeLamports": 8024,
+      "feeUsd": 0.0397188,
+      "status": "confirmed",
+      "explorerUrl": "https://explorer.solana.com/tx/gPKvETgYp85GykAP5Pzf68egje4GsTIjg2emMKo3i0x7T6qzEI2ZIqhy9RMTk196gv0GPSF3Qo6ojndPhcT8x0Ov?cluster=devnet"
+    },
+    {
+      "signature": "D7i1D0oLk19AXH9hjbfJ3KLreCGKphMvHwvrUnFOinwuBCLKY0BBdVYnFJXm7m1WcFfkVN8xFfy6iNDqRd9M35Ej",
+      "kali_entity_id": "sol_001bvs",
+      "type": "grant_disbursement",
+      "amountUsdc": 11664,
+      "blockTime": 1764734899,
+      "fromWallet": "rivertowncf7Hp9YJK8Lm3X2N4P5Q6R7S8T9U0V1W2X3Y",
+      "toWallet": "lYa1iCn1ImRJIdsOMKJVmQxuOra5NeeCXbMjf1bhXg9O",
+      "recipientId": "org_000027",
+      "reference": {
+        "kind": "grant",
+        "id": "grant_000ijd"
+      },
+      "feeLamports": 9845,
+      "feeUsd": 0.04873275,
+      "status": "confirmed",
+      "explorerUrl": "https://explorer.solana.com/tx/D7i1D0oLk19AXH9hjbfJ3KLreCGKphMvHwvrUnFOinwuBCLKY0BBdVYnFJXm7m1WcFfkVN8xFfy6iNDqRd9M35Ej?cluster=devnet"
+    },
+    {
+      "signature": "FwtQG7Aaj0jFtrvTyLOT3aeEX1pUQVx9fEIy4bTOlTShqgzBUhZkuf9S7TyxMf9Cn8qRqL3ElRBecg1kJdAEsr1B",
+      "kali_entity_id": "sol_001bvt",
+      "type": "donor_refund",
+      "amountUsdc": 111,
+      "blockTime": 1766336427,
+      "fromWallet": "rivertowncf7Hp9YJK8Lm3X2N4P5Q6R7S8T9U0V1W2X3Y",
+      "toWallet": "27TlM8hezkHtwAMRKbSDELb8LevKCtwBZ1SLgggxsf53",
+      "recipientId": "ppl_0002w4",
+      "reference": {
+        "kind": "donation",
+        "id": "don_000f48"
+      },
+      "feeLamports": 11602,
+      "feeUsd": 0.05742989999999999,
+      "status": "confirmed",
+      "explorerUrl": "https://explorer.solana.com/tx/FwtQG7Aaj0jFtrvTyLOT3aeEX1pUQVx9fEIy4bTOlTShqgzBUhZkuf9S7TyxMf9Cn8qRqL3ElRBecg1kJdAEsr1B?cluster=devnet"
+    },
+    {
+      "signature": "Dd4bbGnkn1VnCgFzSL16HRLoA8FFBJnGASX7ab1YDCK9mAjrAm4BrszD12obNXN1x0fw3tSoUC196h01R2Cxwzi5",
+      "kali_entity_id": "sol_001bvu",
+      "type": "board_stipend",
+      "amountUsdc": 500,
+      "blockTime": 1773879636,
+      "fromWallet": "rivertowncf7Hp9YJK8Lm3X2N4P5Q6R7S8T9U0V1W2X3Y",
+      "toWallet": "Pm1FOl5WBVoGPR5sKvrNIY2Ng2ZVuEs2BZyFnaZNAtqs",
+      "recipientId": "ppl_00008t",
+      "reference": {
+        "kind": "board",
+        "id": "ppl_00008t"
+      },
+      "feeLamports": 9768,
+      "feeUsd": 0.0483516,
+      "status": "confirmed",
+      "explorerUrl": "https://explorer.solana.com/tx/Dd4bbGnkn1VnCgFzSL16HRLoA8FFBJnGASX7ab1YDCK9mAjrAm4BrszD12obNXN1x0fw3tSoUC196h01R2Cxwzi5?cluster=devnet"
+    },
+    {
+      "signature": "cXpWFPhIBw1OI3VmVDodHrcMsg0G6G0k2eybaiFRVzBKeI8QNBuhUGsQCfa7X85dABVqJkZf3X928A19jVfJzXo3",
+      "kali_entity_id": "sol_001bvv",
+      "type": "vendor_payment",
+      "amountUsdc": 5954,
+      "blockTime": 1772345100,
+      "fromWallet": "rivertowncf7Hp9YJK8Lm3X2N4P5Q6R7S8T9U0V1W2X3Y",
+      "toWallet": "jMEYaKa2f5RPZExbuAqkaPKZtd3XQwLxZcCS2nDp8tGK",
+      "recipientId": "org_00005i",
+      "reference": {
+        "kind": "vendor",
+        "id": "org_00005i"
+      },
+      "feeLamports": 11459,
+      "feeUsd": 0.056722049999999996,
+      "status": "confirmed",
+      "explorerUrl": "https://explorer.solana.com/tx/cXpWFPhIBw1OI3VmVDodHrcMsg0G6G0k2eybaiFRVzBKeI8QNBuhUGsQCfa7X85dABVqJkZf3X928A19jVfJzXo3?cluster=devnet"
+    },
+    {
+      "signature": "LpF15UEO0mrLYUrACDW5jcp6FJMTOXltIiksMXBZ8iuy2rIQ2XYXBX8mUdvzrEH6SQ7RiCtf9eqve79Wqi4Fd6ip",
+      "kali_entity_id": "sol_001bvw",
+      "type": "donor_refund",
+      "amountUsdc": 2009,
+      "blockTime": 1769121304,
+      "fromWallet": "rivertowncf7Hp9YJK8Lm3X2N4P5Q6R7S8T9U0V1W2X3Y",
+      "toWallet": "BcVdkMLVSmEqunJ2LibQCeFP8hsFeRKdW6KNVrIceEpJ",
+      "recipientId": "ppl_00022u",
+      "reference": {
+        "kind": "donation",
+        "id": "don_000byp"
+      },
+      "feeLamports": 7932,
+      "feeUsd": 0.0392634,
+      "status": "confirmed",
+      "explorerUrl": "https://explorer.solana.com/tx/LpF15UEO0mrLYUrACDW5jcp6FJMTOXltIiksMXBZ8iuy2rIQ2XYXBX8mUdvzrEH6SQ7RiCtf9eqve79Wqi4Fd6ip?cluster=devnet"
+    },
+    {
+      "signature": "vcfR1F2n7TCj5K9N6V9mxliK6D5jqzfEHwQwt3zrm2rbFFEE2vBTf2PbqnNCgOnLc7ZtUJk3oRtTfQlZgBopDUAL",
+      "kali_entity_id": "sol_001bvx",
+      "type": "grant_disbursement",
+      "amountUsdc": 10217,
+      "blockTime": 1764162512,
+      "fromWallet": "rivertowncf7Hp9YJK8Lm3X2N4P5Q6R7S8T9U0V1W2X3Y",
+      "toWallet": "fNTdZlFE0tZzIYukecwKcjK6AkSnLHoPKFYHqsyEXWWV",
+      "recipientId": "org_00002f",
+      "reference": {
+        "kind": "grant",
+        "id": "grant_000iji"
+      },
+      "feeLamports": 5029,
+      "feeUsd": 0.02489355,
+      "status": "confirmed",
+      "explorerUrl": "https://explorer.solana.com/tx/vcfR1F2n7TCj5K9N6V9mxliK6D5jqzfEHwQwt3zrm2rbFFEE2vBTf2PbqnNCgOnLc7ZtUJk3oRtTfQlZgBopDUAL?cluster=devnet"
+    },
+    {
+      "signature": "qGqZABFcLGGGeUBVh6OOeefRnNt32YnJem5iNxC2XZ0KG5d19QSNPNw5kF5GiYm11EEN1Z2siTPL63y0dUz4lcuX",
+      "kali_entity_id": "sol_001bvy",
+      "type": "board_stipend",
+      "amountUsdc": 1000,
+      "blockTime": 1765155480,
+      "fromWallet": "rivertowncf7Hp9YJK8Lm3X2N4P5Q6R7S8T9U0V1W2X3Y",
+      "toWallet": "etmosGcry8FnWS8bB6DyDQ03edeEWv17keaEldOSOrQN",
+      "recipientId": "ppl_000091",
+      "reference": {
+        "kind": "board",
+        "id": "ppl_000091"
+      },
+      "feeLamports": 10630,
+      "feeUsd": 0.05261849999999999,
+      "status": "confirmed",
+      "explorerUrl": "https://explorer.solana.com/tx/qGqZABFcLGGGeUBVh6OOeefRnNt32YnJem5iNxC2XZ0KG5d19QSNPNw5kF5GiYm11EEN1Z2siTPL63y0dUz4lcuX?cluster=devnet"
+    },
+    {
+      "signature": "K9rviY6Pcab7zjPYT9Mx9Mdq7ypdf4kbqHuLXcG8WEbAuAR5YxOgudItwFhRtjk68Ok68OtrymBgH4Lpgs0St3mP",
+      "kali_entity_id": "sol_001bvz",
+      "type": "grant_disbursement",
+      "amountUsdc": 36147,
+      "blockTime": 1776347730,
+      "fromWallet": "rivertowncf7Hp9YJK8Lm3X2N4P5Q6R7S8T9U0V1W2X3Y",
+      "toWallet": "thccuLhnDksycW2FaDVEVrntZnnQEXIrMcfnRCnrZII4",
+      "recipientId": "org_00003z",
+      "reference": {
+        "kind": "grant",
+        "id": "grant_000il9"
+      },
+      "feeLamports": 10679,
+      "feeUsd": 0.05286105,
+      "status": "confirmed",
+      "explorerUrl": "https://explorer.solana.com/tx/K9rviY6Pcab7zjPYT9Mx9Mdq7ypdf4kbqHuLXcG8WEbAuAR5YxOgudItwFhRtjk68Ok68OtrymBgH4Lpgs0St3mP?cluster=devnet"
+    },
+    {
+      "signature": "x7E1UsAjNtOLEJqzUn9MalPoLpWN5MUyTycOfdjg8Pt2KLzeMiyY6nxMWZALYJtYPDo8b36LTygqTEvmxYKHh2Ed",
+      "kali_entity_id": "sol_001bw0",
+      "type": "grant_disbursement",
+      "amountUsdc": 7284,
+      "blockTime": 1763318679,
+      "fromWallet": "rivertowncf7Hp9YJK8Lm3X2N4P5Q6R7S8T9U0V1W2X3Y",
+      "toWallet": "7uIAe4Tb18XqialCAqaSAOJcZe1mlGsXKjiuXzGFEQzM",
+      "recipientId": "org_000040",
+      "reference": {
+        "kind": "grant",
+        "id": "grant_000ik0"
+      },
+      "feeLamports": 8541,
+      "feeUsd": 0.042277949999999995,
+      "status": "confirmed",
+      "explorerUrl": "https://explorer.solana.com/tx/x7E1UsAjNtOLEJqzUn9MalPoLpWN5MUyTycOfdjg8Pt2KLzeMiyY6nxMWZALYJtYPDo8b36LTygqTEvmxYKHh2Ed?cluster=devnet"
+    },
+    {
+      "signature": "1dLpQNRJYPg3TArCH7e6cplbN10U7llOPtvZXhMsepEpZWFmUNYJU1qk8vkt5pr84X7g3fpo8ju1VzAhFrs1QDhC",
+      "kali_entity_id": "sol_001bw1",
+      "type": "donor_refund",
+      "amountUsdc": 235,
+      "blockTime": 1764592670,
+      "fromWallet": "rivertowncf7Hp9YJK8Lm3X2N4P5Q6R7S8T9U0V1W2X3Y",
+      "toWallet": "aJyjOcREiwl8u2itkQq4dY9vpAZFcWJ3AndxrkmD7FLj",
+      "recipientId": "ppl_0002an",
+      "reference": {
+        "kind": "donation",
+        "id": "don_000ctj"
+      },
+      "feeLamports": 11850,
+      "feeUsd": 0.058657499999999994,
+      "status": "confirmed",
+      "explorerUrl": "https://explorer.solana.com/tx/1dLpQNRJYPg3TArCH7e6cplbN10U7llOPtvZXhMsepEpZWFmUNYJU1qk8vkt5pr84X7g3fpo8ju1VzAhFrs1QDhC?cluster=devnet"
+    },
+    {
+      "signature": "xrpEviSg9yCZl6qT5CytIcjIzUdNmeBXBwU1WJcS8D6F2o3sisfP4qIxLyyxNBc9PwN5gCTcHooVoXgrk4ClMnRl",
+      "kali_entity_id": "sol_001bw2",
+      "type": "board_stipend",
+      "amountUsdc": 1000,
+      "blockTime": 1777996424,
+      "fromWallet": "rivertowncf7Hp9YJK8Lm3X2N4P5Q6R7S8T9U0V1W2X3Y",
+      "toWallet": "9yRxXgFV7lx6AVNctIz81QlvKnivujS7QChezRpWDIkD",
+      "recipientId": "ppl_00008z",
+      "reference": {
+        "kind": "board",
+        "id": "ppl_00008z"
+      },
+      "feeLamports": 11178,
+      "feeUsd": 0.055331099999999994,
+      "status": "confirmed",
+      "explorerUrl": "https://explorer.solana.com/tx/xrpEviSg9yCZl6qT5CytIcjIzUdNmeBXBwU1WJcS8D6F2o3sisfP4qIxLyyxNBc9PwN5gCTcHooVoXgrk4ClMnRl?cluster=devnet"
+    },
+    {
+      "signature": "XpZKtCWxvUGv69NC6xq8DXcQPO0YFSxDECfgsEuDrde0Rzeac87BQrCzpR673Jc69xkWexT0KJt1xOMCQXowuRGs",
+      "kali_entity_id": "sol_001bw3",
+      "type": "vendor_payment",
+      "amountUsdc": 5843,
+      "blockTime": 1768105899,
+      "fromWallet": "rivertowncf7Hp9YJK8Lm3X2N4P5Q6R7S8T9U0V1W2X3Y",
+      "toWallet": "dXwNHFpyLD2O77PJL8bozWHsc8AzColM5Q7o56gBcFPP",
+      "recipientId": "org_00005g",
+      "reference": {
+        "kind": "vendor",
+        "id": "org_00005g"
+      },
+      "feeLamports": 9820,
+      "feeUsd": 0.04860899999999999,
+      "status": "confirmed",
+      "explorerUrl": "https://explorer.solana.com/tx/XpZKtCWxvUGv69NC6xq8DXcQPO0YFSxDECfgsEuDrde0Rzeac87BQrCzpR673Jc69xkWexT0KJt1xOMCQXowuRGs?cluster=devnet"
+    },
+    {
+      "signature": "ZRUcPnkV5ye4hh5nnKfFViqvBCYTO0Dz9AMELs4731PsfkCajxYV3SpWv9fj6t9E5KVXbauezehFdYmhRT9oGf4N",
+      "kali_entity_id": "sol_001bw4",
+      "type": "vendor_payment",
+      "amountUsdc": 7156,
+      "blockTime": 1775374533,
+      "fromWallet": "rivertowncf7Hp9YJK8Lm3X2N4P5Q6R7S8T9U0V1W2X3Y",
+      "toWallet": "iCx9vuc82TiMoHneYbNZIcB4JzEo2r6ViIq9fDXKDVV5",
+      "recipientId": "org_00004j",
+      "reference": {
+        "kind": "vendor",
+        "id": "org_00004j"
+      },
+      "feeLamports": 8626,
+      "feeUsd": 0.04269869999999999,
+      "status": "confirmed",
+      "explorerUrl": "https://explorer.solana.com/tx/ZRUcPnkV5ye4hh5nnKfFViqvBCYTO0Dz9AMELs4731PsfkCajxYV3SpWv9fj6t9E5KVXbauezehFdYmhRT9oGf4N?cluster=devnet"
+    },
+    {
+      "signature": "cyRUIaOEmKC84QzXWu5rZXt0ftGvBCkQIJPV5wloAsKAXGYCzVMcWOoXs1tpz6y4FU4xts24ZYAWLQ5CK1Wt6Oww",
+      "kali_entity_id": "sol_001bw5",
+      "type": "board_stipend",
+      "amountUsdc": 500,
+      "blockTime": 1766091577,
+      "fromWallet": "rivertowncf7Hp9YJK8Lm3X2N4P5Q6R7S8T9U0V1W2X3Y",
+      "toWallet": "dZ0osq7ssyFL7rtJnkN8POd070QyfEECk9K2mgsPKUeL",
+      "recipientId": "ppl_00008z",
+      "reference": {
+        "kind": "board",
+        "id": "ppl_00008z"
+      },
+      "feeLamports": 6610,
+      "feeUsd": 0.0327195,
+      "status": "confirmed",
+      "explorerUrl": "https://explorer.solana.com/tx/cyRUIaOEmKC84QzXWu5rZXt0ftGvBCkQIJPV5wloAsKAXGYCzVMcWOoXs1tpz6y4FU4xts24ZYAWLQ5CK1Wt6Oww?cluster=devnet"
+    },
+    {
+      "signature": "d2uyc3Y7eYPD1gIb68tXSXZgQyhOD60OWp77B3bqVMCKRluQNIERu8U7osXgrbXa2AR0J4PrYl7SejlyICkKCNUH",
+      "kali_entity_id": "sol_001bw6",
+      "type": "vendor_payment",
+      "amountUsdc": 1013,
+      "blockTime": 1765597615,
+      "fromWallet": "rivertowncf7Hp9YJK8Lm3X2N4P5Q6R7S8T9U0V1W2X3Y",
+      "toWallet": "UmUYwEtZFMcRP9x39AQWIzTGL6fltGyeQ5c13rvxmz3q",
+      "recipientId": "org_000058",
+      "reference": {
+        "kind": "vendor",
+        "id": "org_000058"
+      },
+      "feeLamports": 7853,
+      "feeUsd": 0.03887235,
+      "status": "confirmed",
+      "explorerUrl": "https://explorer.solana.com/tx/d2uyc3Y7eYPD1gIb68tXSXZgQyhOD60OWp77B3bqVMCKRluQNIERu8U7osXgrbXa2AR0J4PrYl7SejlyICkKCNUH?cluster=devnet"
+    },
+    {
+      "signature": "GhIEBVePYijhWBvBcj3DZI70ifRS05H0WjxGHAT7uOJyMRB5hjHKrThJIUVfyrldMemRZsIVhcvGZJlY05h84neK",
+      "kali_entity_id": "sol_001bw7",
+      "type": "grant_disbursement",
+      "amountUsdc": 8922,
+      "blockTime": 1771351434,
+      "fromWallet": "rivertowncf7Hp9YJK8Lm3X2N4P5Q6R7S8T9U0V1W2X3Y",
+      "toWallet": "pqXVPQbPLjCuupbhXFKz37PekuKPNk8wXz14gDufcGzP",
+      "recipientId": "org_00002j",
+      "reference": {
+        "kind": "grant",
+        "id": "grant_000ikh"
+      },
+      "feeLamports": 8597,
+      "feeUsd": 0.04255514999999999,
+      "status": "confirmed",
+      "explorerUrl": "https://explorer.solana.com/tx/GhIEBVePYijhWBvBcj3DZI70ifRS05H0WjxGHAT7uOJyMRB5hjHKrThJIUVfyrldMemRZsIVhcvGZJlY05h84neK?cluster=devnet"
+    },
+    {
+      "signature": "bwJnkIRISCOJVqjW4xCnf8xVER8LxZ3X0fHonBYh7JnEJvkPt034R5wC5CjNPaHPCDxW50wtNa2UeNTaiOOnn5Yz",
+      "kali_entity_id": "sol_001bw8",
+      "type": "vendor_payment",
+      "amountUsdc": 4258,
+      "blockTime": 1769116832,
+      "fromWallet": "rivertowncf7Hp9YJK8Lm3X2N4P5Q6R7S8T9U0V1W2X3Y",
+      "toWallet": "5yZLaWGM5FaOCAgGHPRocrZ85Po24Iiief1qUwywfGZW",
+      "recipientId": "org_000053",
+      "reference": {
+        "kind": "vendor",
+        "id": "org_000053"
+      },
+      "feeLamports": 8419,
+      "feeUsd": 0.04167405,
+      "status": "confirmed",
+      "explorerUrl": "https://explorer.solana.com/tx/bwJnkIRISCOJVqjW4xCnf8xVER8LxZ3X0fHonBYh7JnEJvkPt034R5wC5CjNPaHPCDxW50wtNa2UeNTaiOOnn5Yz?cluster=devnet"
+    },
+    {
+      "signature": "zoq0zx2vjZ0hWbsHZKL4dz31BuJhhNyta4JZyxOvX2PpVDZZZSOiTdweeWLEJQIi3jgfGU7jr3DZvIoFpEI6Oaa0",
+      "kali_entity_id": "sol_001bw9",
+      "type": "donor_refund",
+      "amountUsdc": 375,
+      "blockTime": 1775017851,
+      "fromWallet": "rivertowncf7Hp9YJK8Lm3X2N4P5Q6R7S8T9U0V1W2X3Y",
+      "toWallet": "KXENJY5ZbepxdgG2shHTeA8lUCF07mFCDyutPYvBbuCK",
+      "recipientId": "ppl_0000fh",
+      "reference": {
+        "kind": "donation",
+        "id": "don_0005dw"
+      },
+      "feeLamports": 11717,
+      "feeUsd": 0.05799914999999999,
+      "status": "confirmed",
+      "explorerUrl": "https://explorer.solana.com/tx/zoq0zx2vjZ0hWbsHZKL4dz31BuJhhNyta4JZyxOvX2PpVDZZZSOiTdweeWLEJQIi3jgfGU7jr3DZvIoFpEI6Oaa0?cluster=devnet"
+    },
+    {
+      "signature": "hvo1m3tWd23yfX7JFIaeb3BMXqNkEJ2GmViWBgDvBktxLDZTfWenR2m8DEg2eYZtI2RLtX6Szuv72ZiOt2ChWvAL",
+      "kali_entity_id": "sol_001bwa",
+      "type": "board_stipend",
+      "amountUsdc": 750,
+      "blockTime": 1777161248,
+      "fromWallet": "rivertowncf7Hp9YJK8Lm3X2N4P5Q6R7S8T9U0V1W2X3Y",
+      "toWallet": "YgzOgK1J1BLJLLalxCN2Nj7eM52oAjOT34nTptKfWPLc",
+      "recipientId": "ppl_000093",
+      "reference": {
+        "kind": "board",
+        "id": "ppl_000093"
+      },
+      "feeLamports": 11914,
+      "feeUsd": 0.05897429999999999,
+      "status": "confirmed",
+      "explorerUrl": "https://explorer.solana.com/tx/hvo1m3tWd23yfX7JFIaeb3BMXqNkEJ2GmViWBgDvBktxLDZTfWenR2m8DEg2eYZtI2RLtX6Szuv72ZiOt2ChWvAL?cluster=devnet"
+    },
+    {
+      "signature": "JFvkScybojOvXoMruBtcA3ZOedM1He2i1ZChrczdOQj8h4fpZSwA53rCJq9KNTNvcFRMaEgI2z9wXNtsFoov0EY1",
+      "kali_entity_id": "sol_001bwb",
+      "type": "board_stipend",
+      "amountUsdc": 1000,
+      "blockTime": 1777725304,
+      "fromWallet": "rivertowncf7Hp9YJK8Lm3X2N4P5Q6R7S8T9U0V1W2X3Y",
+      "toWallet": "4hyooHCqgvkaEvh1QyzmmkDBEAUQa12kdHDfcQ7bQXZi",
+      "recipientId": "ppl_00008r",
+      "reference": {
+        "kind": "board",
+        "id": "ppl_00008r"
+      },
+      "feeLamports": 6086,
+      "feeUsd": 0.030125699999999995,
+      "status": "confirmed",
+      "explorerUrl": "https://explorer.solana.com/tx/JFvkScybojOvXoMruBtcA3ZOedM1He2i1ZChrczdOQj8h4fpZSwA53rCJq9KNTNvcFRMaEgI2z9wXNtsFoov0EY1?cluster=devnet"
+    },
+    {
+      "signature": "GpSrHa34AaX9doIAFy8MeujgIgQmx2qJ6RpliSLjN1lqrzhH10zLexry2f7yqepcPQrbNt7NXrl9WlDUYixptSL0",
+      "kali_entity_id": "sol_001bwc",
+      "type": "board_stipend",
+      "amountUsdc": 500,
+      "blockTime": 1774528297,
+      "fromWallet": "rivertowncf7Hp9YJK8Lm3X2N4P5Q6R7S8T9U0V1W2X3Y",
+      "toWallet": "VsaFK5HcbNoivDpQmS69HrzUdMN5GmoCdSRG6ySFQJCC",
+      "recipientId": "ppl_000092",
+      "reference": {
+        "kind": "board",
+        "id": "ppl_000092"
+      },
+      "feeLamports": 7622,
+      "feeUsd": 0.037728899999999996,
+      "status": "confirmed",
+      "explorerUrl": "https://explorer.solana.com/tx/GpSrHa34AaX9doIAFy8MeujgIgQmx2qJ6RpliSLjN1lqrzhH10zLexry2f7yqepcPQrbNt7NXrl9WlDUYixptSL0?cluster=devnet"
+    },
+    {
+      "signature": "UJIDujy8pjJicTZ3x3ko05CzAKxOl74cwYArmt0Ea7ANbVocEm8fBHpLkQonqjh2X8eofSwgpWbNpgZ1TbzOG6CW",
+      "kali_entity_id": "sol_001bwd",
+      "type": "board_stipend",
+      "amountUsdc": 500,
+      "blockTime": 1772900979,
+      "fromWallet": "rivertowncf7Hp9YJK8Lm3X2N4P5Q6R7S8T9U0V1W2X3Y",
+      "toWallet": "2Tqu4PNjYk9JsFGuIsKZvsHTsXAqXJkJiJD6fDTu2eF5",
+      "recipientId": "ppl_00008t",
+      "reference": {
+        "kind": "board",
+        "id": "ppl_00008t"
+      },
+      "feeLamports": 10367,
+      "feeUsd": 0.05131664999999999,
+      "status": "confirmed",
+      "explorerUrl": "https://explorer.solana.com/tx/UJIDujy8pjJicTZ3x3ko05CzAKxOl74cwYArmt0Ea7ANbVocEm8fBHpLkQonqjh2X8eofSwgpWbNpgZ1TbzOG6CW?cluster=devnet"
+    },
+    {
+      "signature": "Ft7zALVtaqoa3z6QeRv4HpgBoGo9llqO5oAxyuvNnRrVr9ca9vQVEZrcUch919xaX7a8GKLCAZIdxCpQdZK0HY4e",
+      "kali_entity_id": "sol_001bwe",
+      "type": "board_stipend",
+      "amountUsdc": 500,
+      "blockTime": 1773728326,
+      "fromWallet": "rivertowncf7Hp9YJK8Lm3X2N4P5Q6R7S8T9U0V1W2X3Y",
+      "toWallet": "a6J23boNh1ltpK8nvdNS9vucUvFsK3ocFKx0aBVRHQfa",
+      "recipientId": "ppl_00008n",
+      "reference": {
+        "kind": "board",
+        "id": "ppl_00008n"
+      },
+      "feeLamports": 9866,
+      "feeUsd": 0.0488367,
+      "status": "confirmed",
+      "explorerUrl": "https://explorer.solana.com/tx/Ft7zALVtaqoa3z6QeRv4HpgBoGo9llqO5oAxyuvNnRrVr9ca9vQVEZrcUch919xaX7a8GKLCAZIdxCpQdZK0HY4e?cluster=devnet"
+    },
+    {
+      "signature": "5kKxD812VxVfWaC8tXfEdL8bpaPy929hHVKlKd0xRQjTtlzbd4HJfubyuxX2bGEKnq1rOobSTaWfzaCObkV5NmIm",
+      "kali_entity_id": "sol_001bwf",
+      "type": "vendor_payment",
+      "amountUsdc": 8542,
+      "blockTime": 1766234971,
+      "fromWallet": "rivertowncf7Hp9YJK8Lm3X2N4P5Q6R7S8T9U0V1W2X3Y",
+      "toWallet": "BmJbeb80RlZ7EnVRW3d5fRTQxy2pyi2M92PgykpUI5Ue",
+      "recipientId": "org_000055",
+      "reference": {
+        "kind": "vendor",
+        "id": "org_000055"
+      },
+      "feeLamports": 9570,
+      "feeUsd": 0.0473715,
+      "status": "confirmed",
+      "explorerUrl": "https://explorer.solana.com/tx/5kKxD812VxVfWaC8tXfEdL8bpaPy929hHVKlKd0xRQjTtlzbd4HJfubyuxX2bGEKnq1rOobSTaWfzaCObkV5NmIm?cluster=devnet"
+    },
+    {
+      "signature": "hRUEgprHeoe45egc3jvvnC04Zpcfim5lGzCB07GrlI28bNNLpg2FTKL2vWHCZQXYSsOd5NLFaRCWkAuZ48zKHnKw",
+      "kali_entity_id": "sol_001bwg",
+      "type": "donor_refund",
+      "amountUsdc": 249,
+      "blockTime": 1774092408,
+      "fromWallet": "rivertowncf7Hp9YJK8Lm3X2N4P5Q6R7S8T9U0V1W2X3Y",
+      "toWallet": "5emhEByBITVfMAm3YuKuoU4HRPZQKbJQOG04Iw2KMcut",
+      "recipientId": "ppl_0001kj",
+      "reference": {
+        "kind": "donation",
+        "id": "don_0009w1"
+      },
+      "feeLamports": 5470,
+      "feeUsd": 0.027076499999999996,
+      "status": "confirmed",
+      "explorerUrl": "https://explorer.solana.com/tx/hRUEgprHeoe45egc3jvvnC04Zpcfim5lGzCB07GrlI28bNNLpg2FTKL2vWHCZQXYSsOd5NLFaRCWkAuZ48zKHnKw?cluster=devnet"
+    },
+    {
+      "signature": "CbfNKl5yTvllHkwNv44B9Q9uGYZ5nex3IsHl4JT2guslHWS3yhDoPelGVAUIqMhl7cQVHduL1LDyp1fdivYrPbA9",
+      "kali_entity_id": "sol_001bwh",
+      "type": "board_stipend",
+      "amountUsdc": 750,
+      "blockTime": 1778274765,
+      "fromWallet": "rivertowncf7Hp9YJK8Lm3X2N4P5Q6R7S8T9U0V1W2X3Y",
+      "toWallet": "mDKli3lSAs4m2d1WpiYCXXAAPBLIvZ7T7D1GHeiSZT2h",
+      "recipientId": "ppl_00008x",
+      "reference": {
+        "kind": "board",
+        "id": "ppl_00008x"
+      },
+      "feeLamports": 6581,
+      "feeUsd": 0.03257595,
+      "status": "confirmed",
+      "explorerUrl": "https://explorer.solana.com/tx/CbfNKl5yTvllHkwNv44B9Q9uGYZ5nex3IsHl4JT2guslHWS3yhDoPelGVAUIqMhl7cQVHduL1LDyp1fdivYrPbA9?cluster=devnet"
+    },
+    {
+      "signature": "oAwyBznrfTB1Z4X4luOPW22WELJTUWpysOMbFCA6VWgKr2LmNJn9Zt2bEdAFUSkvPWCnV3Wm60bD1IMUtDzSP0Er",
+      "kali_entity_id": "sol_001bwi",
+      "type": "donor_refund",
+      "amountUsdc": 133,
+      "blockTime": 1777754404,
+      "fromWallet": "rivertowncf7Hp9YJK8Lm3X2N4P5Q6R7S8T9U0V1W2X3Y",
+      "toWallet": "ftLFQYiT2hlF5HdtQ9PvumxUQoINnLh3XG4zjEsZKRsy",
+      "recipientId": "ppl_00013i",
+      "reference": {
+        "kind": "donation",
+        "id": "don_00080r"
+      },
+      "feeLamports": 5171,
+      "feeUsd": 0.025596449999999996,
+      "status": "confirmed",
+      "explorerUrl": "https://explorer.solana.com/tx/oAwyBznrfTB1Z4X4luOPW22WELJTUWpysOMbFCA6VWgKr2LmNJn9Zt2bEdAFUSkvPWCnV3Wm60bD1IMUtDzSP0Er?cluster=devnet"
+    },
+    {
+      "signature": "COC00dAQbBiswVl07XBdobcuqyQDkf0eYQ99e0a04mO7xw489qy8jtAw0ZKBg22OuXOq72KZo9TXWaTB4aHrSuyr",
+      "kali_entity_id": "sol_001bwj",
+      "type": "donor_refund",
+      "amountUsdc": 187,
+      "blockTime": 1766622315,
+      "fromWallet": "rivertowncf7Hp9YJK8Lm3X2N4P5Q6R7S8T9U0V1W2X3Y",
+      "toWallet": "EMhY5T7ok2QIoKjTLd4Ux33bKbdSnD93FKpdycOVQu9E",
+      "recipientId": "ppl_000233",
+      "reference": {
+        "kind": "donation",
+        "id": "don_000bzk"
+      },
+      "feeLamports": 10121,
+      "feeUsd": 0.050098949999999996,
+      "status": "confirmed",
+      "explorerUrl": "https://explorer.solana.com/tx/COC00dAQbBiswVl07XBdobcuqyQDkf0eYQ99e0a04mO7xw489qy8jtAw0ZKBg22OuXOq72KZo9TXWaTB4aHrSuyr?cluster=devnet"
+    },
+    {
+      "signature": "S0K84y6iVkXkF91TgmTEbJH7GdmS1If3rJduoZKDMYZsjZxOAnlj4bqCQr9csu1IB9gy4wqHceCOFmGqldwyl25p",
+      "kali_entity_id": "sol_001bwk",
+      "type": "vendor_payment",
+      "amountUsdc": 5005,
+      "blockTime": 1771329788,
+      "fromWallet": "rivertowncf7Hp9YJK8Lm3X2N4P5Q6R7S8T9U0V1W2X3Y",
+      "toWallet": "LsRi0dHWNZeOwS4lQc6YaNZHjAhYYzcGz8lM0rZ1kzJu",
+      "recipientId": "org_00005v",
+      "reference": {
+        "kind": "vendor",
+        "id": "org_00005v"
+      },
+      "feeLamports": 11132,
+      "feeUsd": 0.05510339999999999,
+      "status": "confirmed",
+      "explorerUrl": "https://explorer.solana.com/tx/S0K84y6iVkXkF91TgmTEbJH7GdmS1If3rJduoZKDMYZsjZxOAnlj4bqCQr9csu1IB9gy4wqHceCOFmGqldwyl25p?cluster=devnet"
+    },
+    {
+      "signature": "FWTLnipPCzsBWrkYiZFOenHeFUQN0ZCpNNKO3UbqZHr7MkgOP9CaS9v5kzQngsZRtFzHToin83gYRUWnBcfSigKd",
+      "kali_entity_id": "sol_001bwl",
+      "type": "donor_refund",
+      "amountUsdc": 99,
+      "blockTime": 1776362072,
+      "fromWallet": "rivertowncf7Hp9YJK8Lm3X2N4P5Q6R7S8T9U0V1W2X3Y",
+      "toWallet": "I9PAAfgjsrw35HwyFc2SdOfvVlRrwgIICL2OQ17vf7O5",
+      "recipientId": "ppl_0001xv",
+      "reference": {
+        "kind": "donation",
+        "id": "don_000bfv"
+      },
+      "feeLamports": 11709,
+      "feeUsd": 0.05795955,
+      "status": "confirmed",
+      "explorerUrl": "https://explorer.solana.com/tx/FWTLnipPCzsBWrkYiZFOenHeFUQN0ZCpNNKO3UbqZHr7MkgOP9CaS9v5kzQngsZRtFzHToin83gYRUWnBcfSigKd?cluster=devnet"
+    },
+    {
+      "signature": "jbC3xsBotzNaZR3tXyRr8qj3pVDvcnCXoSNU1opyd9QiNHmzoaVH3BIBwtjvc9DdgIFwKMHw7FM4u0qYRfu3gCOR",
+      "kali_entity_id": "sol_001bwm",
+      "type": "vendor_payment",
+      "amountUsdc": 7181,
+      "blockTime": 1776872467,
+      "fromWallet": "rivertowncf7Hp9YJK8Lm3X2N4P5Q6R7S8T9U0V1W2X3Y",
+      "toWallet": "6y32aZmJrwnXBJIqciz7ghxWWEBrxzfM8Xhe0lNmhMiz",
+      "recipientId": "org_00006n",
+      "reference": {
+        "kind": "vendor",
+        "id": "org_00006n"
+      },
+      "feeLamports": 6191,
+      "feeUsd": 0.030645449999999994,
+      "status": "confirmed",
+      "explorerUrl": "https://explorer.solana.com/tx/jbC3xsBotzNaZR3tXyRr8qj3pVDvcnCXoSNU1opyd9QiNHmzoaVH3BIBwtjvc9DdgIFwKMHw7FM4u0qYRfu3gCOR?cluster=devnet"
+    },
+    {
+      "signature": "QxRguRFjmvn7oPGug6DLFRhu0cycDnOZh7n0l1D4TjTpK84tT6rtjHEeLj0Q3gq7s7ynaNEcr1AsmgvIUkQhEOLQ",
+      "kali_entity_id": "sol_001bwn",
+      "type": "vendor_payment",
+      "amountUsdc": 162,
+      "blockTime": 1776205601,
+      "fromWallet": "rivertowncf7Hp9YJK8Lm3X2N4P5Q6R7S8T9U0V1W2X3Y",
+      "toWallet": "qxy3M4ynOEk97kiKDq1cQFRayWWTntFBi6nVsmvUOUvi",
+      "recipientId": "org_000060",
+      "reference": {
+        "kind": "vendor",
+        "id": "org_000060"
+      },
+      "feeLamports": 8889,
+      "feeUsd": 0.04400055,
+      "status": "confirmed",
+      "explorerUrl": "https://explorer.solana.com/tx/QxRguRFjmvn7oPGug6DLFRhu0cycDnOZh7n0l1D4TjTpK84tT6rtjHEeLj0Q3gq7s7ynaNEcr1AsmgvIUkQhEOLQ?cluster=devnet"
+    },
+    {
+      "signature": "JAuTQBlzQkUYrp6alRgL5bz9GrIg5ZXkMZCKY8WGAMDUZJhIt2T8TIl1JQS4GYTTkthKo3f3EhdKcypiLfiq6xpR",
+      "kali_entity_id": "sol_001bwo",
+      "type": "donor_refund",
+      "amountUsdc": 779,
+      "blockTime": 1777523262,
+      "fromWallet": "rivertowncf7Hp9YJK8Lm3X2N4P5Q6R7S8T9U0V1W2X3Y",
+      "toWallet": "PJyKB3XFr7K1PQkjmKHKWaW8TAmpIsoH8FgXeCjOkLck",
+      "recipientId": "ppl_0001qq",
+      "reference": {
+        "kind": "donation",
+        "id": "don_000an2"
+      },
+      "feeLamports": 8961,
+      "feeUsd": 0.04435694999999999,
+      "status": "confirmed",
+      "explorerUrl": "https://explorer.solana.com/tx/JAuTQBlzQkUYrp6alRgL5bz9GrIg5ZXkMZCKY8WGAMDUZJhIt2T8TIl1JQS4GYTTkthKo3f3EhdKcypiLfiq6xpR?cluster=devnet"
+    },
+    {
+      "signature": "q7ZvaN6F2WAF79EwK9tPeKvFr8DQo4usNvylRiKN5Q7rlNcPwp8bRO1NETMtnnmIxH8Cz1smp0PW4zmGpDoB8JS5",
+      "kali_entity_id": "sol_001bwp",
+      "type": "grant_disbursement",
+      "amountUsdc": 11288,
+      "blockTime": 1776127907,
+      "fromWallet": "rivertowncf7Hp9YJK8Lm3X2N4P5Q6R7S8T9U0V1W2X3Y",
+      "toWallet": "R2jv05LlKxXyFuFreNpM0Zaj8yOoItsrBq3UfLWajmo7",
+      "recipientId": "org_00002p",
+      "reference": {
+        "kind": "grant",
+        "id": "grant_000ilv"
+      },
+      "feeLamports": 7971,
+      "feeUsd": 0.03945645,
+      "status": "confirmed",
+      "explorerUrl": "https://explorer.solana.com/tx/q7ZvaN6F2WAF79EwK9tPeKvFr8DQo4usNvylRiKN5Q7rlNcPwp8bRO1NETMtnnmIxH8Cz1smp0PW4zmGpDoB8JS5?cluster=devnet"
+    },
+    {
+      "signature": "OnrCrR3qxjwTh84OTOLWIegsGxMI6JRqEjsBQ6K2D57ADTmamfZUmnNanLvS7PAQmc3fJ4auLsM4udNMBelNDpdD",
+      "kali_entity_id": "sol_001bwq",
+      "type": "vendor_payment",
+      "amountUsdc": 954,
+      "blockTime": 1768488418,
+      "fromWallet": "rivertowncf7Hp9YJK8Lm3X2N4P5Q6R7S8T9U0V1W2X3Y",
+      "toWallet": "8TLszBLYesUGHtaupP76aLG9vuHSuNNtDS50HQZ6K88w",
+      "recipientId": "org_00005e",
+      "reference": {
+        "kind": "vendor",
+        "id": "org_00005e"
+      },
+      "feeLamports": 6007,
+      "feeUsd": 0.029734649999999998,
+      "status": "confirmed",
+      "explorerUrl": "https://explorer.solana.com/tx/OnrCrR3qxjwTh84OTOLWIegsGxMI6JRqEjsBQ6K2D57ADTmamfZUmnNanLvS7PAQmc3fJ4auLsM4udNMBelNDpdD?cluster=devnet"
+    },
+    {
+      "signature": "70B9m9GWb0mcqHLpLzFOYQkNsEL8n2zZr7hDPkFZnarWH5WHNdLiZ6fWWcrDNXvXT8NQW8U2nC6UWAn9jhyUnPQL",
+      "kali_entity_id": "sol_001bwr",
+      "type": "donor_refund",
+      "amountUsdc": 1774,
+      "blockTime": 1773880331,
+      "fromWallet": "rivertowncf7Hp9YJK8Lm3X2N4P5Q6R7S8T9U0V1W2X3Y",
+      "toWallet": "lKYWlm23Ls323LZqBgsmmxShLJSBDrqY3DKqxy7vTCdh",
+      "recipientId": "ppl_00026l",
+      "reference": {
+        "kind": "donation",
+        "id": "don_000cdh"
+      },
+      "feeLamports": 10116,
+      "feeUsd": 0.05007419999999999,
+      "status": "confirmed",
+      "explorerUrl": "https://explorer.solana.com/tx/70B9m9GWb0mcqHLpLzFOYQkNsEL8n2zZr7hDPkFZnarWH5WHNdLiZ6fWWcrDNXvXT8NQW8U2nC6UWAn9jhyUnPQL?cluster=devnet"
+    },
+    {
+      "signature": "rcdp8ALH15LZHIr6jrFztKe7RcWbdih7xmlJG94B8HebTaAIgcsDR863zWuMkJ1dQ3ndVU1dn8rrmH2n3c2qvbKI",
+      "kali_entity_id": "sol_001bws",
+      "type": "grant_disbursement",
+      "amountUsdc": 2833,
+      "blockTime": 1777546856,
+      "fromWallet": "rivertowncf7Hp9YJK8Lm3X2N4P5Q6R7S8T9U0V1W2X3Y",
+      "toWallet": "pq4waEjmHC8JF0GLgtfqbsvUEtW3SxzEcbVzqU62fR5D",
+      "recipientId": "org_00003e",
+      "reference": {
+        "kind": "grant",
+        "id": "grant_000ikn"
+      },
+      "feeLamports": 9568,
+      "feeUsd": 0.0473616,
+      "status": "confirmed",
+      "explorerUrl": "https://explorer.solana.com/tx/rcdp8ALH15LZHIr6jrFztKe7RcWbdih7xmlJG94B8HebTaAIgcsDR863zWuMkJ1dQ3ndVU1dn8rrmH2n3c2qvbKI?cluster=devnet"
+    },
+    {
+      "signature": "rxbN5iyngguI1KOX6lbyWfcbQ6kGNR55nTDR6dmpEYEirDffHB0FW2kL7jsjbe0h3dh0KrikhB9cBt8CCWONAB4m",
+      "kali_entity_id": "sol_001bwt",
+      "type": "vendor_payment",
+      "amountUsdc": 4070,
+      "blockTime": 1763179394,
+      "fromWallet": "rivertowncf7Hp9YJK8Lm3X2N4P5Q6R7S8T9U0V1W2X3Y",
+      "toWallet": "OpJRoFfRdkGgwrFHx4aWy9UmDTYJNLpSZLa7je1miXVo",
+      "recipientId": "org_000064",
+      "reference": {
+        "kind": "vendor",
+        "id": "org_000064"
+      },
+      "feeLamports": 10023,
+      "feeUsd": 0.04961385,
+      "status": "confirmed",
+      "explorerUrl": "https://explorer.solana.com/tx/rxbN5iyngguI1KOX6lbyWfcbQ6kGNR55nTDR6dmpEYEirDffHB0FW2kL7jsjbe0h3dh0KrikhB9cBt8CCWONAB4m?cluster=devnet"
+    },
+    {
+      "signature": "QkNW5Zcw2gsubaVb4lda6Se6tATg2Zymt1VV023HeNlDmzbBJUraWC2HAmcNMFe9cuPqHJVIcsYnDe1acJ9nKhTQ",
+      "kali_entity_id": "sol_001bwu",
+      "type": "donor_refund",
+      "amountUsdc": 132,
+      "blockTime": 1775721915,
+      "fromWallet": "rivertowncf7Hp9YJK8Lm3X2N4P5Q6R7S8T9U0V1W2X3Y",
+      "toWallet": "ZaFUbWTEgVUmAcwXfh57hFtTxNLCSaHVFtsB5mRyLVM4",
+      "recipientId": "ppl_00013t",
+      "reference": {
+        "kind": "donation",
+        "id": "don_00081x"
+      },
+      "feeLamports": 10782,
+      "feeUsd": 0.05337089999999999,
+      "status": "confirmed",
+      "explorerUrl": "https://explorer.solana.com/tx/QkNW5Zcw2gsubaVb4lda6Se6tATg2Zymt1VV023HeNlDmzbBJUraWC2HAmcNMFe9cuPqHJVIcsYnDe1acJ9nKhTQ?cluster=devnet"
+    },
+    {
+      "signature": "UohYKpjYZiJAFU2HisUMz3inrk7EQqGZdCeTz4j0GIWoNZq2YnIP7r6QbjQ1z14O9yTS0kz0nrOuhQUAspBYw7xW",
+      "kali_entity_id": "sol_001bwv",
+      "type": "grant_disbursement",
+      "amountUsdc": 34665,
+      "blockTime": 1769237188,
+      "fromWallet": "rivertowncf7Hp9YJK8Lm3X2N4P5Q6R7S8T9U0V1W2X3Y",
+      "toWallet": "DsojvmZaHmRCexwQtCjAcZ5Tyi3OOnamzYZnVtNxw8ML",
+      "recipientId": "org_00002c",
+      "reference": {
+        "kind": "grant",
+        "id": "grant_000ijj"
+      },
+      "feeLamports": 7481,
+      "feeUsd": 0.03703095,
+      "status": "confirmed",
+      "explorerUrl": "https://explorer.solana.com/tx/UohYKpjYZiJAFU2HisUMz3inrk7EQqGZdCeTz4j0GIWoNZq2YnIP7r6QbjQ1z14O9yTS0kz0nrOuhQUAspBYw7xW?cluster=devnet"
+    },
+    {
+      "signature": "IvbVK2OL4D7gEtLu8Sd1v72EpMiS6j6RhAebPkCFbJ3WicCsZ48x5OTLrkeIMOxhomolHKaQdj6I8CVPkSKlCwQt",
+      "kali_entity_id": "sol_001bww",
+      "type": "grant_disbursement",
+      "amountUsdc": 3151,
+      "blockTime": 1765888191,
+      "fromWallet": "rivertowncf7Hp9YJK8Lm3X2N4P5Q6R7S8T9U0V1W2X3Y",
+      "toWallet": "GqkKwr25iw8tFPobV1MD6Va6XDAjUXpgTRoJ5g2DSB4a",
+      "recipientId": "org_00003x",
+      "reference": {
+        "kind": "grant",
+        "id": "grant_000ili"
+      },
+      "feeLamports": 8769,
+      "feeUsd": 0.043406549999999995,
+      "status": "confirmed",
+      "explorerUrl": "https://explorer.solana.com/tx/IvbVK2OL4D7gEtLu8Sd1v72EpMiS6j6RhAebPkCFbJ3WicCsZ48x5OTLrkeIMOxhomolHKaQdj6I8CVPkSKlCwQt?cluster=devnet"
+    },
+    {
+      "signature": "cgXCyGHBsPAmoyBrc3EU6KHDznpvFnQpGx0zir9qdc7SEJ3rpuO9XIt25IlX8sBLEtuQcPCDiKtHnBMVVJzjmJ0b",
+      "kali_entity_id": "sol_001bwx",
+      "type": "vendor_payment",
+      "amountUsdc": 2899,
+      "blockTime": 1771642616,
+      "fromWallet": "rivertowncf7Hp9YJK8Lm3X2N4P5Q6R7S8T9U0V1W2X3Y",
+      "toWallet": "q1uz6PJDpPHkrbqqz3b6xJqV2r9lUKogzn62OTQ0rg5d",
+      "recipientId": "org_00005k",
+      "reference": {
+        "kind": "vendor",
+        "id": "org_00005k"
+      },
+      "feeLamports": 8479,
+      "feeUsd": 0.041971049999999996,
+      "status": "confirmed",
+      "explorerUrl": "https://explorer.solana.com/tx/cgXCyGHBsPAmoyBrc3EU6KHDznpvFnQpGx0zir9qdc7SEJ3rpuO9XIt25IlX8sBLEtuQcPCDiKtHnBMVVJzjmJ0b?cluster=devnet"
+    },
+    {
+      "signature": "JV40Ir2nn7K2Q3anLwdL12plReG3R6vCizdPYPcKN7IFXvEV2pFHT7hojp88ZeYm9QkpxJiztOKmn3S9c4vVl1Bt",
+      "kali_entity_id": "sol_001bwy",
+      "type": "grant_disbursement",
+      "amountUsdc": 5268,
+      "blockTime": 1772739176,
+      "fromWallet": "rivertowncf7Hp9YJK8Lm3X2N4P5Q6R7S8T9U0V1W2X3Y",
+      "toWallet": "huaoCDAErGT9eNMrqXFicyb6KuCKsqlq2wUFUYuJEicG",
+      "recipientId": "org_00003v",
+      "reference": {
+        "kind": "grant",
+        "id": "grant_000ijt"
+      },
+      "feeLamports": 9806,
+      "feeUsd": 0.04853969999999999,
+      "status": "confirmed",
+      "explorerUrl": "https://explorer.solana.com/tx/JV40Ir2nn7K2Q3anLwdL12plReG3R6vCizdPYPcKN7IFXvEV2pFHT7hojp88ZeYm9QkpxJiztOKmn3S9c4vVl1Bt?cluster=devnet"
+    },
+    {
+      "signature": "POGwg6Jw1c32Vx55xbMthKtt1dToRs0VhBOdjyAuNT28qt97pJWEECBZ5w9NGG0qITDtEZcfycZtQUzdBFdcNq0d",
+      "kali_entity_id": "sol_001bwz",
+      "type": "board_stipend",
+      "amountUsdc": 750,
+      "blockTime": 1768874256,
+      "fromWallet": "rivertowncf7Hp9YJK8Lm3X2N4P5Q6R7S8T9U0V1W2X3Y",
+      "toWallet": "kRjvgByKTkbXOtONcuRnh04RJvHNZJpqVaS0PtZNdo09",
+      "recipientId": "ppl_00008r",
+      "reference": {
+        "kind": "board",
+        "id": "ppl_00008r"
+      },
+      "feeLamports": 5963,
+      "feeUsd": 0.029516849999999997,
+      "status": "confirmed",
+      "explorerUrl": "https://explorer.solana.com/tx/POGwg6Jw1c32Vx55xbMthKtt1dToRs0VhBOdjyAuNT28qt97pJWEECBZ5w9NGG0qITDtEZcfycZtQUzdBFdcNq0d?cluster=devnet"
+    },
+    {
+      "signature": "aMahwLZiikwGu7FUorI9Fuq73h9voJoyXsnuDmfUx9YVIcqFLKMmSdtqy4rpiMzlLa3yeG06j530z6HIM1crTSyx",
+      "kali_entity_id": "sol_001bx0",
+      "type": "vendor_payment",
+      "amountUsdc": 1021,
+      "blockTime": 1767760641,
+      "fromWallet": "rivertowncf7Hp9YJK8Lm3X2N4P5Q6R7S8T9U0V1W2X3Y",
+      "toWallet": "b2wPS3o5LhFLm7v1sTI7rCGt6MTNFGJuG3WTHe27IMAi",
+      "recipientId": "org_000050",
+      "reference": {
+        "kind": "vendor",
+        "id": "org_000050"
+      },
+      "feeLamports": 5109,
+      "feeUsd": 0.025289549999999997,
+      "status": "confirmed",
+      "explorerUrl": "https://explorer.solana.com/tx/aMahwLZiikwGu7FUorI9Fuq73h9voJoyXsnuDmfUx9YVIcqFLKMmSdtqy4rpiMzlLa3yeG06j530z6HIM1crTSyx?cluster=devnet"
+    },
+    {
+      "signature": "DFHF5ex41x4nr59Jr3WFu9T9MTHZ0D01yratA9GHOgrN29BCNXEbSmUK6QJeoqeL1IRogIsXX8du5t8Su4aiqrAu",
+      "kali_entity_id": "sol_001bx1",
+      "type": "grant_disbursement",
+      "amountUsdc": 6424,
+      "blockTime": 1770770638,
+      "fromWallet": "rivertowncf7Hp9YJK8Lm3X2N4P5Q6R7S8T9U0V1W2X3Y",
+      "toWallet": "ntLsyMdR0WmeIvVIVtCfDAHq5ncFslh9izyPCz10mD2S",
+      "recipientId": "org_000027",
+      "reference": {
+        "kind": "grant",
+        "id": "grant_000ijm"
+      },
+      "feeLamports": 11595,
+      "feeUsd": 0.057395249999999995,
+      "status": "confirmed",
+      "explorerUrl": "https://explorer.solana.com/tx/DFHF5ex41x4nr59Jr3WFu9T9MTHZ0D01yratA9GHOgrN29BCNXEbSmUK6QJeoqeL1IRogIsXX8du5t8Su4aiqrAu?cluster=devnet"
+    },
+    {
+      "signature": "OYWMayHsWPWUtqTLlAd1zchvtRs4IGpk9asUbPU8BXzeSWhbzT160uuUXEYpdAZwlO95VyHxRHZGCQ37ZdgWKlC5",
+      "kali_entity_id": "sol_001bx2",
+      "type": "board_stipend",
+      "amountUsdc": 1000,
+      "blockTime": 1767337924,
+      "fromWallet": "rivertowncf7Hp9YJK8Lm3X2N4P5Q6R7S8T9U0V1W2X3Y",
+      "toWallet": "SM6V9q5kReVvX1AIVYzDpVcy6gDVHkDMnJvX4m4XsIxb",
+      "recipientId": "ppl_00008u",
+      "reference": {
+        "kind": "board",
+        "id": "ppl_00008u"
+      },
+      "feeLamports": 5352,
+      "feeUsd": 0.0264924,
+      "status": "confirmed",
+      "explorerUrl": "https://explorer.solana.com/tx/OYWMayHsWPWUtqTLlAd1zchvtRs4IGpk9asUbPU8BXzeSWhbzT160uuUXEYpdAZwlO95VyHxRHZGCQ37ZdgWKlC5?cluster=devnet"
+    },
+    {
+      "signature": "g4zHRIvUI5CG2X2qzyUzQ1aSXrX62IM2LO4k4sjd7FZ7HPOVULgX9yE2rbNSKtAh18xPcwEDWUMqoq1mJ4yvOsmq",
+      "kali_entity_id": "sol_001bx3",
+      "type": "board_stipend",
+      "amountUsdc": 500,
+      "blockTime": 1776833472,
+      "fromWallet": "rivertowncf7Hp9YJK8Lm3X2N4P5Q6R7S8T9U0V1W2X3Y",
+      "toWallet": "TNi4rwKBIS6lPs8eeqBkWG2iIyfUWviqtWDMMSxGWjfZ",
+      "recipientId": "ppl_00008p",
+      "reference": {
+        "kind": "board",
+        "id": "ppl_00008p"
+      },
+      "feeLamports": 9382,
+      "feeUsd": 0.04644089999999999,
+      "status": "confirmed",
+      "explorerUrl": "https://explorer.solana.com/tx/g4zHRIvUI5CG2X2qzyUzQ1aSXrX62IM2LO4k4sjd7FZ7HPOVULgX9yE2rbNSKtAh18xPcwEDWUMqoq1mJ4yvOsmq?cluster=devnet"
+    },
+    {
+      "signature": "3Tu02LLU07GdcdePtOCyRvFhtii0pBHR5uNHAGcBkcc6VJc5q9OFWXdCI0CpvQ88upphS2hKeQ6HGCKvothhJx3t",
+      "kali_entity_id": "sol_001bx4",
+      "type": "board_stipend",
+      "amountUsdc": 750,
+      "blockTime": 1776684993,
+      "fromWallet": "rivertowncf7Hp9YJK8Lm3X2N4P5Q6R7S8T9U0V1W2X3Y",
+      "toWallet": "KqW6crgG6X6tt8eWRqRG3Q8Yc02zVQjteh7Sqe7mgzp8",
+      "recipientId": "ppl_00008v",
+      "reference": {
+        "kind": "board",
+        "id": "ppl_00008v"
+      },
+      "feeLamports": 7890,
+      "feeUsd": 0.0390555,
+      "status": "confirmed",
+      "explorerUrl": "https://explorer.solana.com/tx/3Tu02LLU07GdcdePtOCyRvFhtii0pBHR5uNHAGcBkcc6VJc5q9OFWXdCI0CpvQ88upphS2hKeQ6HGCKvothhJx3t?cluster=devnet"
+    },
+    {
+      "signature": "gLGbgmnOKqTcF00cYPYtcvweQHFhrVvlK29TCmPoVLKskJWy4divxUt3hDokRojE3b3fI6N9ffnqnUGFFjsJ0dA9",
+      "kali_entity_id": "sol_001bx5",
+      "type": "grant_disbursement",
+      "amountUsdc": 3276,
+      "blockTime": 1773172207,
+      "fromWallet": "rivertowncf7Hp9YJK8Lm3X2N4P5Q6R7S8T9U0V1W2X3Y",
+      "toWallet": "q4zFJv5udB1OhxdJHUd3FdXlkRdoIV3Qs5nWZefecNYK",
+      "recipientId": "org_00002a",
+      "reference": {
+        "kind": "grant",
+        "id": "grant_000ill"
+      },
+      "feeLamports": 7975,
+      "feeUsd": 0.03947625,
+      "status": "confirmed",
+      "explorerUrl": "https://explorer.solana.com/tx/gLGbgmnOKqTcF00cYPYtcvweQHFhrVvlK29TCmPoVLKskJWy4divxUt3hDokRojE3b3fI6N9ffnqnUGFFjsJ0dA9?cluster=devnet"
+    },
+    {
+      "signature": "fEc31bmaBieCriaM2Oqtkri0sMGqTzPAMy9HWhkeA0eqioUdmQ35g90aNf332taPxsqrCq53KFjvcchnsPEDHkms",
+      "kali_entity_id": "sol_001bx6",
+      "type": "board_stipend",
+      "amountUsdc": 500,
+      "blockTime": 1772040456,
+      "fromWallet": "rivertowncf7Hp9YJK8Lm3X2N4P5Q6R7S8T9U0V1W2X3Y",
+      "toWallet": "5VxXOxxWdsdRjTSBfkV7VQVEsBRECeYpsL2Z1wpUoNPR",
+      "recipientId": "ppl_000091",
+      "reference": {
+        "kind": "board",
+        "id": "ppl_000091"
+      },
+      "feeLamports": 10966,
+      "feeUsd": 0.054281699999999995,
+      "status": "confirmed",
+      "explorerUrl": "https://explorer.solana.com/tx/fEc31bmaBieCriaM2Oqtkri0sMGqTzPAMy9HWhkeA0eqioUdmQ35g90aNf332taPxsqrCq53KFjvcchnsPEDHkms?cluster=devnet"
+    },
+    {
+      "signature": "BonLOPcGDvJ4VHLuayRZMKmzmu3BHQEMCADSjRfHYFPcGBz6aTcGVZXESd3lPc9UcCJBalJWWAwKnrbTcvcpEzi5",
+      "kali_entity_id": "sol_001bx7",
+      "type": "grant_disbursement",
+      "amountUsdc": 1042,
+      "blockTime": 1773352079,
+      "fromWallet": "rivertowncf7Hp9YJK8Lm3X2N4P5Q6R7S8T9U0V1W2X3Y",
+      "toWallet": "kn4ioLesiZ0yOc43vOwhRGFlcbY2xjrfI78d13Lunod7",
+      "recipientId": "org_00002s",
+      "reference": {
+        "kind": "grant",
+        "id": "grant_000ika"
+      },
+      "feeLamports": 8404,
+      "feeUsd": 0.0415998,
+      "status": "confirmed",
+      "explorerUrl": "https://explorer.solana.com/tx/BonLOPcGDvJ4VHLuayRZMKmzmu3BHQEMCADSjRfHYFPcGBz6aTcGVZXESd3lPc9UcCJBalJWWAwKnrbTcvcpEzi5?cluster=devnet"
+    },
+    {
+      "signature": "ANxdMVfD1YpJnA8kdqgBsQwnJZ7rn7FhRhKgn3DmFf7McAOHmFzkEnPTYXjVi7AHe64dtLjdffyZf9RqTSxKAGgM",
+      "kali_entity_id": "sol_001bx8",
+      "type": "grant_disbursement",
+      "amountUsdc": 13388,
+      "blockTime": 1771322389,
+      "fromWallet": "rivertowncf7Hp9YJK8Lm3X2N4P5Q6R7S8T9U0V1W2X3Y",
+      "toWallet": "uH8dkUCd7i0qXLekIxcdvwQ7G77ehLa8bqcUihr7FckX",
+      "recipientId": "org_00002g",
+      "reference": {
+        "kind": "grant",
+        "id": "grant_000ila"
+      },
+      "feeLamports": 7808,
+      "feeUsd": 0.0386496,
+      "status": "confirmed",
+      "explorerUrl": "https://explorer.solana.com/tx/ANxdMVfD1YpJnA8kdqgBsQwnJZ7rn7FhRhKgn3DmFf7McAOHmFzkEnPTYXjVi7AHe64dtLjdffyZf9RqTSxKAGgM?cluster=devnet"
+    },
+    {
+      "signature": "yfpWwHfbXo3QIZCUVJ1etORAOEUQOmZQmSheFW4Id0Mf950YWkxrEbdvMMVU4Bbh8VwBOkqckxmYEQDwF0BG95Lq",
+      "kali_entity_id": "sol_001bx9",
+      "type": "vendor_payment",
+      "amountUsdc": 131,
+      "blockTime": 1777754357,
+      "fromWallet": "rivertowncf7Hp9YJK8Lm3X2N4P5Q6R7S8T9U0V1W2X3Y",
+      "toWallet": "BmJbeb80RlZ7EnVRW3d5fRTQxy2pyi2M92PgykpUI5Ue",
+      "recipientId": "org_000055",
+      "reference": {
+        "kind": "vendor",
+        "id": "org_000055"
+      },
+      "feeLamports": 9545,
+      "feeUsd": 0.04724775,
+      "status": "confirmed",
+      "explorerUrl": "https://explorer.solana.com/tx/yfpWwHfbXo3QIZCUVJ1etORAOEUQOmZQmSheFW4Id0Mf950YWkxrEbdvMMVU4Bbh8VwBOkqckxmYEQDwF0BG95Lq?cluster=devnet"
+    },
+    {
+      "signature": "gBNia6rSc4I8heUJ4q3PJU1X7S05mluKKN1C3kI3MhMhdEksTk4j8pLT9EBzZyGNGZG1y51XsgTn3VQqCqDphdeb",
+      "kali_entity_id": "sol_001bxa",
+      "type": "board_stipend",
+      "amountUsdc": 1000,
+      "blockTime": 1770008532,
+      "fromWallet": "rivertowncf7Hp9YJK8Lm3X2N4P5Q6R7S8T9U0V1W2X3Y",
+      "toWallet": "YoqnPjn3E6CTi1l2pyzWkP7e8QuS2C7DtvQRnGcXgIuW",
+      "recipientId": "ppl_000092",
+      "reference": {
+        "kind": "board",
+        "id": "ppl_000092"
+      },
+      "feeLamports": 8254,
+      "feeUsd": 0.0408573,
+      "status": "confirmed",
+      "explorerUrl": "https://explorer.solana.com/tx/gBNia6rSc4I8heUJ4q3PJU1X7S05mluKKN1C3kI3MhMhdEksTk4j8pLT9EBzZyGNGZG1y51XsgTn3VQqCqDphdeb?cluster=devnet"
+    },
+    {
+      "signature": "bUPiJ1TlR8lMj33C4BliHAhxjP7tupQitBu0S0xEEl5a8VeaLncUZXtVUBVhVQ45ZqsoKhAJrQPtTSZDPwswnLE7",
+      "kali_entity_id": "sol_001bxb",
+      "type": "grant_disbursement",
+      "amountUsdc": 2290,
+      "blockTime": 1768867490,
+      "fromWallet": "rivertowncf7Hp9YJK8Lm3X2N4P5Q6R7S8T9U0V1W2X3Y",
+      "toWallet": "AenzFd6nscWS8E6tduJftltFcBGkGuD6JGB6xOMtrCuv",
+      "recipientId": "org_00003m",
+      "reference": {
+        "kind": "grant",
+        "id": "grant_000ijb"
+      },
+      "feeLamports": 11438,
+      "feeUsd": 0.0566181,
+      "status": "confirmed",
+      "explorerUrl": "https://explorer.solana.com/tx/bUPiJ1TlR8lMj33C4BliHAhxjP7tupQitBu0S0xEEl5a8VeaLncUZXtVUBVhVQ45ZqsoKhAJrQPtTSZDPwswnLE7?cluster=devnet"
+    },
+    {
+      "signature": "ueMzkkDlp78rwt4VoSQoEL9x6b5VsbON3Oqn3oXLyJQwh9yDbGKwkXYANLnKBJgQYndqoHjefisK3YWDYbYZwcsC",
+      "kali_entity_id": "sol_001bxc",
+      "type": "grant_disbursement",
+      "amountUsdc": 8662,
+      "blockTime": 1771303714,
+      "fromWallet": "rivertowncf7Hp9YJK8Lm3X2N4P5Q6R7S8T9U0V1W2X3Y",
+      "toWallet": "fbBDCBa21wRUoEy2rK1HI96BfVQgZX5Mz0OeL5A5M8E0",
+      "recipientId": "org_00002u",
+      "reference": {
+        "kind": "grant",
+        "id": "grant_000iko"
+      },
+      "feeLamports": 5251,
+      "feeUsd": 0.025992449999999997,
+      "status": "confirmed",
+      "explorerUrl": "https://explorer.solana.com/tx/ueMzkkDlp78rwt4VoSQoEL9x6b5VsbON3Oqn3oXLyJQwh9yDbGKwkXYANLnKBJgQYndqoHjefisK3YWDYbYZwcsC?cluster=devnet"
+    },
+    {
+      "signature": "OWESIbbtgzcCgSERfpJRxVx7iYT7SB30kCcwzKVhf0Zqg91SwMwm2loeNg5Csschh8nnQdQHU4lWKwtBZbu6Ik8f",
+      "kali_entity_id": "sol_001bxd",
+      "type": "donor_refund",
+      "amountUsdc": 176,
+      "blockTime": 1772517939,
+      "fromWallet": "rivertowncf7Hp9YJK8Lm3X2N4P5Q6R7S8T9U0V1W2X3Y",
+      "toWallet": "xGVxRc6lglqeMYVgQLTi3gubbxXooHTPl7iLdKt9tpTr",
+      "recipientId": "ppl_0001wg",
+      "reference": {
+        "kind": "donation",
+        "id": "don_000b9e"
+      },
+      "feeLamports": 11717,
+      "feeUsd": 0.05799914999999999,
+      "status": "confirmed",
+      "explorerUrl": "https://explorer.solana.com/tx/OWESIbbtgzcCgSERfpJRxVx7iYT7SB30kCcwzKVhf0Zqg91SwMwm2loeNg5Csschh8nnQdQHU4lWKwtBZbu6Ik8f?cluster=devnet"
+    },
+    {
+      "signature": "g4YzEDfbthi2G0ZkaPHELPDOrt5Qotufo5GD96Y024m4nzWKGhB2UNH6y1PKFpWINYGJkWJaLOEdsfieqlYqCPxi",
+      "kali_entity_id": "sol_001bxe",
+      "type": "vendor_payment",
+      "amountUsdc": 109,
+      "blockTime": 1763887075,
+      "fromWallet": "rivertowncf7Hp9YJK8Lm3X2N4P5Q6R7S8T9U0V1W2X3Y",
+      "toWallet": "qxy3M4ynOEk97kiKDq1cQFRayWWTntFBi6nVsmvUOUvi",
+      "recipientId": "org_000060",
+      "reference": {
+        "kind": "vendor",
+        "id": "org_000060"
+      },
+      "feeLamports": 11366,
+      "feeUsd": 0.05626169999999999,
+      "status": "confirmed",
+      "explorerUrl": "https://explorer.solana.com/tx/g4YzEDfbthi2G0ZkaPHELPDOrt5Qotufo5GD96Y024m4nzWKGhB2UNH6y1PKFpWINYGJkWJaLOEdsfieqlYqCPxi?cluster=devnet"
+    },
+    {
+      "signature": "XfeDp3kUmplyNlmFWajzqW4ISmOqrLuSKi6M5ccay9ckVlzKFyvmyKdCCRs73dsE3g6fhuHzsvb75CTrY9Y5IOjg",
+      "kali_entity_id": "sol_001bxf",
+      "type": "grant_disbursement",
+      "amountUsdc": 48006,
+      "blockTime": 1767692102,
+      "fromWallet": "rivertowncf7Hp9YJK8Lm3X2N4P5Q6R7S8T9U0V1W2X3Y",
+      "toWallet": "pl5Y6dGr8Mhwoiwa1SHaWSKlzpOj0wXGHH5884vzcGGl",
+      "recipientId": "org_00002v",
+      "reference": {
+        "kind": "grant",
+        "id": "grant_000ilg"
+      },
+      "feeLamports": 6582,
+      "feeUsd": 0.032580899999999996,
+      "status": "confirmed",
+      "explorerUrl": "https://explorer.solana.com/tx/XfeDp3kUmplyNlmFWajzqW4ISmOqrLuSKi6M5ccay9ckVlzKFyvmyKdCCRs73dsE3g6fhuHzsvb75CTrY9Y5IOjg?cluster=devnet"
+    },
+    {
+      "signature": "bLic4QOKOrC0OuCSBNdZi1m5BkauOC6EjdEeu2TPlXEB0zmaBvlSmDs0n53R14MHZhMsckBzzOTW1xhbmiwXnb9o",
+      "kali_entity_id": "sol_001bxg",
+      "type": "grant_disbursement",
+      "amountUsdc": 38317,
+      "blockTime": 1776351492,
+      "fromWallet": "rivertowncf7Hp9YJK8Lm3X2N4P5Q6R7S8T9U0V1W2X3Y",
+      "toWallet": "3cMvTuG3QowQRCko0f4y7PTwf1aY34K8kZQoyxhQTlDt",
+      "recipientId": "org_00002o",
+      "reference": {
+        "kind": "grant",
+        "id": "grant_000ikr"
+      },
+      "feeLamports": 10535,
+      "feeUsd": 0.05214824999999999,
+      "status": "confirmed",
+      "explorerUrl": "https://explorer.solana.com/tx/bLic4QOKOrC0OuCSBNdZi1m5BkauOC6EjdEeu2TPlXEB0zmaBvlSmDs0n53R14MHZhMsckBzzOTW1xhbmiwXnb9o?cluster=devnet"
+    },
+    {
+      "signature": "HVUqIM6O6bSvB7lzovOQQJivRVPRaKVBeMTM7Z5EBcFzFTXZ2rLhpnbULbiUmwR4WflhrNMMnjDAdfZ2pyfN7yD6",
+      "kali_entity_id": "sol_001bxh",
+      "type": "vendor_payment",
+      "amountUsdc": 1826,
+      "blockTime": 1763469608,
+      "fromWallet": "rivertowncf7Hp9YJK8Lm3X2N4P5Q6R7S8T9U0V1W2X3Y",
+      "toWallet": "XlvT9a0oVEpIQE3YGtYtCMxRVySu6NL01nnXEJE0Huy0",
+      "recipientId": "org_000061",
+      "reference": {
+        "kind": "vendor",
+        "id": "org_000061"
+      },
+      "feeLamports": 10033,
+      "feeUsd": 0.049663349999999995,
+      "status": "confirmed",
+      "explorerUrl": "https://explorer.solana.com/tx/HVUqIM6O6bSvB7lzovOQQJivRVPRaKVBeMTM7Z5EBcFzFTXZ2rLhpnbULbiUmwR4WflhrNMMnjDAdfZ2pyfN7yD6?cluster=devnet"
+    }
+  ]
+}
