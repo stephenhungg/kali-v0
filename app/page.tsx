@@ -149,6 +149,7 @@ export default function HomePage() {
         <Hero />
         <SplitIntro />
         <WorkSection />
+        <SolanaSection />
         <Footer />
       </main>
     </KaliBaitIntro>
@@ -267,6 +268,9 @@ function StickyNav() {
         </a>
         <a data-nav-link href="#queries" className="kali-link">
           Uses
+        </a>
+        <a data-nav-link href="#solana" className="kali-link">
+          Onchain
         </a>
         <a data-nav-link href="/chat" className="kali-link">
           Open Kali
@@ -496,6 +500,106 @@ function WorkSection() {
             </li>
           ))}
         </ul>
+      </div>
+    </section>
+  );
+}
+
+const SOLANA_PILLARS = [
+  {
+    title: "x402 agent payments",
+    blurb:
+      "Every nonprofit gets a public HTTP 402 endpoint. Any AI agent can pay USDC over the wire — real onchain settlement on Solana, with tax-deductible receipts auto-issued for human-attributed gifts.",
+    tag: "USDC · HTTP 402 · Privy delegation",
+  },
+  {
+    title: "Cause coins",
+    blurb:
+      "Launch a tokenized version of your cause on Solana. Supporters trade, hold, and govern — bonding curves seed liquidity, and a portion of fees streams back to the nonprofit's treasury.",
+    tag: "SPL · bonding curve · governance",
+  },
+  {
+    title: "Onchain receipts",
+    blurb:
+      "Every donation, every approval, every agent call gets a verifiable receipt — a permanent, citable record your board, your auditors, and your donors can all read.",
+    tag: "Devnet · Solana Pay · transparency",
+  },
+];
+
+function SolanaSection() {
+  return (
+    <section
+      id="solana"
+      data-section-tone="dark-on-light"
+      className="matcha-page relative overflow-hidden"
+    >
+      <SparkleField density={20} />
+      <div className="gutter relative z-10 py-24 md:py-32">
+        <div className="grid gap-10 md:grid-cols-12 md:gap-12">
+          <div className="md:col-span-5">
+            <p
+              data-appear
+              className="font-mono text-[12px] uppercase tracking-[0.18em] text-matcha-700"
+            >
+              Built on Solana
+            </p>
+            <h2
+              data-appear
+              data-appear-delay="0.05"
+              className="mt-4 font-bagel text-[44px] font-normal leading-[0.98] text-matcha-800 md:text-[68px]"
+            >
+              Cute on top.
+              <br />
+              Onchain underneath.
+            </h2>
+            <p
+              data-appear
+              data-appear-delay="0.1"
+              className="mt-6 max-w-[440px] font-subtext text-[16px] font-bold leading-[1.5] text-muted-deep md:text-[17px]"
+            >
+              Kali ships with Solana-native rails so nonprofits can accept agent
+              payments, launch cause coins, and prove every dollar with a
+              receipt anyone can verify.
+            </p>
+            <div className="mt-8 flex flex-wrap items-center gap-3">
+              <a
+                href="/crypto"
+                className="source-transition mochi-button inline-flex h-12 items-center justify-center bg-matcha-700 px-6 text-[15px] font-medium leading-none text-cloud hover:bg-matcha-500"
+              >
+                See the onchain stack
+              </a>
+              <a
+                href="/pay/rivertown"
+                className="source-transition mochi-button inline-flex h-12 items-center justify-center bg-cloud px-6 text-[15px] font-medium leading-none text-matcha-700 ring-1 ring-matcha-700/20 hover:bg-matcha-100"
+              >
+                Demo x402 endpoint
+              </a>
+            </div>
+          </div>
+
+          <ul className="space-y-5 md:col-span-7">
+            {SOLANA_PILLARS.map((pillar, i) => (
+              <li
+                key={pillar.title}
+                data-appear
+                data-appear-delay={(0.05 * (i + 1)).toFixed(2)}
+                className="ceramic-panel rounded-[28px] p-6 md:p-7"
+              >
+                <div className="flex flex-wrap items-baseline justify-between gap-3">
+                  <h3 className="font-bagel text-[24px] font-normal leading-[1.05] text-matcha-800 md:text-[28px]">
+                    {pillar.title}
+                  </h3>
+                  <span className="font-mono text-[11px] uppercase tracking-[0.14em] text-matcha-700">
+                    {pillar.tag}
+                  </span>
+                </div>
+                <p className="mt-3 font-subtext text-[15px] font-medium leading-[1.5] text-muted-deep md:text-[16px]">
+                  {pillar.blurb}
+                </p>
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
     </section>
   );
