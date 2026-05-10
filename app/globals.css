@@ -8,6 +8,15 @@
   --matcha-mid: #639067;
   --matcha-deep: #044B3A;
 
+  /* white + mint extensions (chat surface) */
+  --mint-pale: #E7F0E9;       /* hover/active surfaces */
+  --mint-line: #C9DCCD;       /* subtle borders */
+  --mint-line-soft: #E4ECE5;  /* softer dividers */
+  --gray-ink: #6B7A6E;        /* muted mono captions */
+  --gray-line: #ECEFEC;       /* very subtle dividers on white */
+  --surface: #FFFFFF;
+  --surface-raised: #FAFBF9;
+
   /* radiance-derived motion tokens */
   --r-ease: cubic-bezier(0.04, 1.13, 0.5, 1);
   --r-duration: 800ms;
@@ -66,3 +75,39 @@ body {
   0% { transform: translateY(105%); opacity: 0; }
   100% { transform: translateY(0); opacity: 1; }
 }
+
+/* chat surface utilities — used by /chat */
+.chat-surface {
+  background: var(--surface);
+  color: var(--matcha-deep);
+}
+
+.chat-card {
+  background: var(--surface);
+  border: 1px solid var(--mint-line);
+}
+
+/* source-pulse glow — fired when a tool runs */
+@keyframes source-pulse {
+  0%   { box-shadow: 0 0 0 0 var(--matcha-mid), 0 0 0 0 transparent; background: var(--surface); }
+  20%  { box-shadow: 0 0 0 4px color-mix(in oklab, var(--matcha-mid) 40%, transparent), 0 0 24px 0 color-mix(in oklab, var(--matcha-mid) 30%, transparent); background: var(--mint-pale); }
+  100% { box-shadow: 0 0 0 0 transparent, 0 0 0 0 transparent; background: var(--surface); }
+}
+
+.source-pulse {
+  animation: source-pulse 1200ms var(--r-ease);
+}
+
+/* subtle blink for in-flight indicators */
+@keyframes blink-soft {
+  0%, 100% { opacity: 0.35; }
+  50%      { opacity: 1; }
+}
+.blink-soft { animation: blink-soft 1.4s ease-in-out infinite; }
+
+/* per-row stagger entrance for tool-call ledger + receipts items */
+@keyframes row-rise {
+  0%   { opacity: 0; transform: translateY(6px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+.row-rise { animation: row-rise 320ms var(--r-ease) both; }
