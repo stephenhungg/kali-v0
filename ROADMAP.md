@@ -67,13 +67,13 @@ each connector exposes its query functions per the scope, validates with zod, re
 - [ ] **F4.3** pgvector storage with per-tenant namespaces
 - [ ] **F4.4** hybrid retriever (semantic + structured filters, top-K=20 with reranking)
 - [ ] **F4.5** structured query DSL (typed, compiles to SQL)
-- [ ] **F4.6** audit log infrastructure (immutable, append-only)
+- [x] **F4.6** audit log infrastructure (immutable, append-only) — `lib/audit/log.ts` AuditLog class, per-tenant Map, `makeToolContext()` factory, CSV export. 16 tests passing.
 
 ## phase 5 — agent runtime
 
-- [ ] **F5.1** anthropic SDK wired up with prompt caching
-- [ ] **F5.2** tool registry — all 60+ connector functions exposed as anthropic tools
-- [ ] **F5.3** system prompt v1 (cached prefix, domain-tagged tool groupings, citation rules)
+- [x] **F5.1** anthropic SDK wired up with prompt caching — `lib/agent/runtime.ts` upgraded to `claude-sonnet-4-6` with `cache_control: { type: "ephemeral" }` on the system prompt + tools array tail. ~90% input-token savings after first turn. Tracks `cache_read_input_tokens` in RunResult.
+- [x] **F5.2** tool registry — all 69 connector functions exposed as anthropic tools via `lib/agent/runtime.ts::toAnthropicTools()`. zod 4 → JSON Schema conversion with `$schema` stripped. Side-effect imports in `lib/agent/registrations.ts` register all 11 connectors at startup.
+- [x] **F5.3** system prompt v1 (cached prefix, domain-tagged tool groupings, citation rules) — Kali identity + tenant context + per-domain reasoning approach + citation requirement + dynamic tool inventory (built from `listConnectors()` so it stays in sync as connectors evolve).
 - [ ] **F5.4** streaming chat endpoint (`app/api/chat/route.ts`) with vercel ai sdk
 - [ ] **F5.5** tool-call rendering in the message stream
 - [ ] **F5.6** parallel tool-use surfacing (multiple tool calls in one turn)
@@ -119,8 +119,8 @@ each demoable end-to-end: query → tools fire → citations land.
 
 ## current cursor
 
-**building right now:** phase 4 (context layer) — all 11 connectors are now shipped. F1.3 sync-state tracker still pending.
+**building right now:** phase 4 context layer (entity resolution / embeddings / retrieval / structured query DSL still pending — F4.1–F4.5).
 
-**last shipped:** F0.4 drizzle schema, F0.5 project layout, F0.6 env contract, F1.1 connector base interface + registry, F1.2 seed loader, F1.4 zod schema convention, F2.* full master entity graph + 11 connector seeds, **F3.1–F3.11 (all 11 connectors: bloomerang, salesforce, m365, zoom, sharepoint, instrumentl, quickbooks, solana w/ live devnet path, powerbi, powerautomate, knowbe4) with 326 passing tests.** Shared `_tool-factory.ts`. Phase 3 complete.
+**last shipped:** all 11 connectors (F3.1–F3.11), F4.6 audit log infrastructure, F5.1 anthropic SDK + prompt caching wired up on `claude-sonnet-4-6`, F5.2 tool registry exposing all 69 connector tools to Claude via zod→JSON Schema conversion, F5.3 system prompt v1 with dynamic tool inventory + citation rules. **347 passing tests across 14 test files.** Legacy `lib/agent/tools.ts` deleted — registry is now the single source of truth.
 
 frank/nicole — you don't need to wait on any of this to start the landing page. work on `app/page.tsx` and add components in `components/marketing/`. avoid touching `lib/` for now (that's tenzin's lane).
